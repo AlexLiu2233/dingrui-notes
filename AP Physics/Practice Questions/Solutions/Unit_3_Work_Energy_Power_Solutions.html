@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Physics C: Mechanics, Unit 3: Work, Energy &amp; Power, Solutions | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/AP%20Physics/Practice%20Questions/Solutions/Unit_3_Work_Energy_Power_Solutions.html">
+<meta name="description" content="Worked solutions for Unit 3: Work, Energy &amp; Power in AP Physics C: Mechanics. Step by step answers from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="AP Physics C: Mechanics, Unit 3: Work, Energy &amp; Power, Solutions | Dingrui Scholars">
+<meta property="og:description" content="Worked solutions for Unit 3: Work, Energy &amp; Power in AP Physics C: Mechanics. Step by step answers from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/AP%20Physics/Practice%20Questions/Solutions/Unit_3_Work_Energy_Power_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AP Physics C: Mechanics, Unit 3: Work, Energy &amp; Power, Solutions | Dingrui Scholars">
+<meta name="twitter:description" content="Worked solutions for Unit 3: Work, Energy &amp; Power in AP Physics C: Mechanics. Step by step answers from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style>
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --easy-bg:#E7F2E3; --easy-ink:#2F6B2F; --easy-rule:#79A977;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --calc-bg:#E4ECF7;  --calc-ink:#1E3F75;  --calc-rule:#7A9BCD;
+    --nocalc-bg:#ECECEE;--nocalc-ink:#333;   --nocalc-rule:#9A9A9A;
+    --sol-bg:#F1F7EE;   --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.easy{background:var(--easy-bg);color:var(--easy-ink);border-color:var(--easy-rule);}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.calc{background:var(--calc-bg);color:var(--calc-ink);border-color:var(--calc-rule);}
+  .pill.nocalc{background:var(--nocalc-bg);color:var(--nocalc-ink);border-color:var(--nocalc-rule);}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:46px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 4px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11.5pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 12px;}
+  .opts{list-style:none;margin:10px 0 0 12px;padding:0;}
+  .opts li{padding:4px 0;margin-bottom:4px;display:flex;gap:8px;align-items:baseline;}
+  .opts li .lbl{font-family:'Source Sans 3',sans-serif;font-weight:700;min-width:22px;}
+  .opts li.correct .lbl{color:var(--sol-accent);}
+  .opts li.correct{background:var(--sol-bg);border-radius:4px;padding:4px 8px;margin-left:-6px;}
+  .opts.cols2{display:grid;grid-template-columns:1fr 1fr;column-gap:20px;row-gap:2px;}
+  .opts.cols1{display:block;}
+  .solution{margin:18px 0 22px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:14px 18px 16px;font-size:11pt;line-height:1.65;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.06em;font-size:11.5pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.15em;letter-spacing:.1em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution .step-text{margin:10px 0 4px;color:#1f1f1f;}
+  .solution .step-math{margin:10px 0;padding:2px 0;text-align:center;font-size:11pt;}
+  .solution .step-label{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:9.5pt;letter-spacing:.08em;color:var(--sol-accent);text-transform:uppercase;margin-top:12px;}
+  .solution .part-sol{margin:14px 0 6px;padding-top:12px;border-top:1px dashed #cfe0c5;}
+  .solution .part-sol:first-child{padding-top:0;border-top:none;margin-top:0;}
+  .solution .part-sol > .tag{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-accent);margin-right:6px;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}.opts.cols2{grid-template-columns:1fr;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.opts.cols2{grid-template-columns:1fr 1fr;}}
+
+  /* consult-cta: lead-gen conversion surface (Sprint A) */
+  .consult-cta{border:1.5px solid var(--maroon);border-radius:8px;padding:12px 16px;margin:22px 0 6px;text-align:center;background:#FBECEC;break-inside:avoid;}
+  .consult-cta__lead{display:block;font-family:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:11pt;color:var(--maroon);}
+  .consult-cta__body{display:block;font-family:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;font-size:9.5pt;color:#555;margin:3px 0 6px;}
+  .consult-cta__btn{display:inline-block;font-family:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-decoration:underline;}
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "AP Physics C: Mechanics, Unit 3: Work, Energy & Power, Solutions",
+  "description": "Worked solutions for Unit 3: Work, Energy & Power in AP Physics C: Mechanics. Step by step answers from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/AP%20Physics/Practice%20Questions/Solutions/Unit_3_Work_Energy_Power_Solutions.html",
+  "inLanguage": [
+    "en"
+  ],
+  "learningResourceType": "Solutions",
+  "educationalLevel": "AP",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">A&nbsp;P&nbsp;&nbsp;P&nbsp;H&nbsp;Y&nbsp;S&nbsp;I&nbsp;C&nbsp;S&nbsp;&nbsp;C</div>
+<div class="chapter-tag"><span data-lang="en">Chapter 3 · Mechanics · Solutions</span><span data-lang="zh">第3章 · 力学 · 解析</span></div>
+<h1 class="chapter-title"><span data-lang="en">Work, Energy &amp; Power, Solutions</span><span data-lang="zh">功、能量与功率, 解析</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the AP-Style Practice Set</span><span data-lang="zh">AP 风格练习题配套解析</span></p>
+<div class="legend">
+  <span class="pill easy">EASY</span>
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+</div>
+<p class="topics-line"><span data-lang="en">Topics</span><span data-lang="zh">主题</span> <b>3.1 - 3.5</b><span class="scope">MECH</span></p>
+<hr class="thick"><hr class="thin">
+
+<div class="part"><span class="part-label">PART I</span><span class="part-meta"><span data-lang="en">Multiple Choice · Topics 3.1 - 3.5</span><span data-lang="zh">选择题 · 主题 3.1 - 3.5</span></span></div>
+<h2 class="section-head"><span data-lang="en">Multiple Choice, Worked Answers</span><span data-lang="zh">选择题, 详解</span></h2>
+<p class="instructions"><span data-lang="en">Each item below restates the prompt and choices, marks the correct letter, and gives a one- to three-sentence justification keyed to the AP topic.</span><span data-lang="zh">下方每题均重述题干和选项，标出正确字母，并给出与 AP 主题对应的一到三句解释。</span></p>
+
+<!-- ─────── Q1 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span><span class="pill easy">EASY</span>
+    <span class="pill topic"><span data-lang="en">3.1 Kinetic Energy</span><span data-lang="zh">3.1 动能</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A $2.0~\mathrm{kg}$ block moves at $6.0~\mathrm{m/s}$. Its kinetic energy is</span><span data-lang="zh">一个质量为 $2.0~\mathrm{kg}$ 的滑块以 $6.0~\mathrm{m/s}$ 的速度运动，其动能为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $6~\mathrm{J}$</li>
+      <li><span class="lbl">(B)</span> $12~\mathrm{J}$</li>
+      <li><span class="lbl">(C)</span> $24~\mathrm{J}$</li>
+      <li class="correct"><span class="lbl">(D)</span> $36~\mathrm{J}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(D)</span></div>
+    <div class="rationale">
+      <div class="step-math">$$K = \tfrac{1}{2} m v^2 = \tfrac{1}{2}(2.0)(6.0)^2 = 36~\mathrm{J}$$</div>
+      <span data-lang="en">Trap (B) forgets to square $v$; (C) uses $mv$ (momentum-like, wrong factor of $\tfrac{1}{2}$).</span><span data-lang="zh">干扰项 (B) 忘记对 $v$ 平方；(C) 使用 $mv$（类似动量，缺少 $\tfrac{1}{2}$ 因子）。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q2 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span><span class="pill easy">EASY</span>
+    <span class="pill topic"><span data-lang="en">3.2 Work at an Angle</span><span data-lang="zh">3.2 斜角做功</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A constant force of magnitude $F = 50~\mathrm{N}$ pulls a block through a displacement of $d = 4.0~\mathrm{m}$. The angle between the force and the displacement is $60^\circ$. The work done by the force is</span><span data-lang="zh">一个大小为 $F = 50~\mathrm{N}$ 的恒力拉动滑块位移 $d = 4.0~\mathrm{m}$，力与位移之间的夹角为 $60^\circ$，该力做的功为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $50~\mathrm{J}$</li>
+      <li class="correct"><span class="lbl">(B)</span> $100~\mathrm{J}$</li>
+      <li><span class="lbl">(C)</span> $173~\mathrm{J}$</li>
+      <li><span class="lbl">(D)</span> $200~\mathrm{J}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(B)</span></div>
+    <div class="rationale">
+      <div class="step-math">$$W = F\,d\cos\theta = 50(4.0)\cos 60^\circ = 200(0.5) = 100~\mathrm{J}$$</div>
+      <span data-lang="en">Trap (D) drops the cosine; (C) uses $\cos 30^\circ$ (i.e., the complement of the given angle).</span><span data-lang="zh">干扰项 (D) 丢掉了余弦；(C) 使用 $\cos 30^\circ$（即给定角度的余角）。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q3 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span><span class="pill easy">EASY</span>
+    <span class="pill topic"><span data-lang="en">3.3 Average Power</span><span data-lang="zh">3.3 平均功率</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A motor performs $600~\mathrm{J}$ of work over $30~\mathrm{s}$. Its average power output is</span><span data-lang="zh">一台电动机在 $30~\mathrm{s}$ 内做了 $600~\mathrm{J}$ 的功，其平均功率为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $0.05~\mathrm{W}$</li>
+      <li class="correct"><span class="lbl">(B)</span> $20~\mathrm{W}$</li>
+      <li><span class="lbl">(C)</span> $600~\mathrm{W}$</li>
+      <li><span class="lbl">(D)</span> $18{,}000~\mathrm{W}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(B)</span></div>
+    <div class="rationale">
+      <div class="step-math">$$P_\text{avg} = \frac{W}{t} = \frac{600}{30} = 20~\mathrm{W}$$</div>
+      <span data-lang="en">Trap (D) multiplies by $t$; (A) inverts the ratio.</span><span data-lang="zh">干扰项 (D) 乘以 $t$；(A) 颠倒了比值。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q4 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span><span class="pill easy">EASY</span>
+    <span class="pill topic"><span data-lang="en">3.4 Spring Potential Energy</span><span data-lang="zh">3.4 弹簧弹性势能</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A spring with $k = 200~\mathrm{N/m}$ is compressed $0.10~\mathrm{m}$ from its natural length. The elastic potential energy stored in the spring is</span><span data-lang="zh">一根弹簧的弹簧常数 $k = 200~\mathrm{N/m}$，从自然长度压缩 $0.10~\mathrm{m}$，弹簧中储存的弹性势能为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $0.5~\mathrm{J}$</li>
+      <li class="correct"><span class="lbl">(B)</span> $1.0~\mathrm{J}$</li>
+      <li><span class="lbl">(C)</span> $2.0~\mathrm{J}$</li>
+      <li><span class="lbl">(D)</span> $10~\mathrm{J}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(B)</span></div>
+    <div class="rationale">
+      <div class="step-math">$$U_s = \tfrac{1}{2} k (\Delta x)^2 = \tfrac{1}{2}(200)(0.10)^2 = 1.0~\mathrm{J}$$</div>
+      <span data-lang="en">Trap (C) drops the factor of $\tfrac{1}{2}$; (D) forgets to square $\Delta x$.</span><span data-lang="zh">干扰项 (C) 丢掉了 $\tfrac{1}{2}$ 因子；(D) 忘记对 $\Delta x$ 平方。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q5 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.2 Work-Energy Theorem</span><span data-lang="zh">3.2 动能定理</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A $5.0~\mathrm{kg}$ block moving at $10~\mathrm{m/s}$ along a horizontal surface is brought to rest by friction alone. The total work done on the block by friction is</span><span data-lang="zh">一个质量为 $5.0~\mathrm{kg}$ 的滑块以 $10~\mathrm{m/s}$ 沿水平面运动，仅由摩擦力使其静止，摩擦力对滑块做的总功为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $+250~\mathrm{J}$</li>
+      <li class="correct"><span class="lbl">(B)</span> $-250~\mathrm{J}$</li>
+      <li><span class="lbl">(C)</span> $+500~\mathrm{J}$</li>
+      <li><span class="lbl">(D)</span> $-500~\mathrm{J}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(B)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Work-energy theorem: $W_\text{net} = \Delta K = K_f - K_i$. Friction is the only horizontal force doing work, so</span><span data-lang="zh">动能定理：$W_\text{net} = \Delta K = K_f - K_i$。摩擦力是唯一做功的水平力，故</span>
+      <div class="step-math">$$W_f = 0 - \tfrac{1}{2}(5.0)(10)^2 = -250~\mathrm{J}$$</div>
+      <span data-lang="en">The minus sign reflects that friction opposes the motion (removes KE). Trap (A) gets the magnitude right but the sign wrong; (D) drops the factor of $\tfrac{1}{2}$.</span><span data-lang="zh">负号反映摩擦力与运动方向相反（减少动能）。干扰项 (A) 数值正确但符号错误；(D) 丢掉了 $\tfrac{1}{2}$ 因子。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q6 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.4 Force from Potential Energy</span><span data-lang="zh">3.4 由势能求力</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A particle moves along the $x$-axis under a conservative potential $U(x) = 3x^2 - 6x + 2$ (J, with $x$ in m). The force on the particle at $x = 1~\mathrm{m}$ is</span><span data-lang="zh">一个质点在保守势能 $U(x) = 3x^2 - 6x + 2$（J，$x$ 单位为 m）的作用下沿 $x$ 轴运动，质点在 $x = 1~\mathrm{m}$ 处所受的力为</span></p>
+    <ul class="opts cols2">
+      <li class="correct"><span class="lbl">(A)</span> $0$</li>
+      <li><span class="lbl">(B)</span> $-1~\mathrm{N}$</li>
+      <li><span class="lbl">(C)</span> $+1~\mathrm{N}$</li>
+      <li><span class="lbl">(D)</span> $+6~\mathrm{N}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(A)</span></div>
+    <div class="rationale">
+      <div class="step-math">$$F(x) = -\frac{dU}{dx} = -(6x - 6) = 6 - 6x$$</div>
+      <div class="step-math">$$F(1) = 6 - 6(1) = 0$$</div>
+      <span data-lang="en">$x = 1$ is the minimum of $U$ (stable equilibrium), so the force vanishes there. Trap (D) reports $|dU/dx|$ at the wrong point; the sign trap returns $\pm 1$ if $\theta$ is shifted by one unit.</span><span data-lang="zh">$x = 1$ 是 $U$ 的极小值（稳定平衡），故该处力为零。干扰项 (D) 给出错误位置处 $|dU/dx|$ 的值；符号陷阱在 $\theta$ 偏移一个单位时给出 $\pm 1$。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q7 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.5 Frictionless Ramp</span><span data-lang="zh">3.5 无摩擦斜面</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A $1.0~\mathrm{kg}$ block is released from rest on a frictionless ramp at height $h = 5.0~\mathrm{m}$ above the bottom. Take $g = 10~\mathrm{m/s^2}$. Its speed at the bottom of the ramp is</span><span data-lang="zh">一个质量为 $1.0~\mathrm{kg}$ 的滑块从无摩擦斜面上距底部高度 $h = 5.0~\mathrm{m}$ 处由静止释放，取 $g = 10~\mathrm{m/s^2}$，到达斜面底部时的速度为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $5~\mathrm{m/s}$</li>
+      <li class="correct"><span class="lbl">(B)</span> $10~\mathrm{m/s}$</li>
+      <li><span class="lbl">(C)</span> $25~\mathrm{m/s}$</li>
+      <li><span class="lbl">(D)</span> $50~\mathrm{m/s}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(B)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Energy conservation: $m g h = \tfrac{1}{2} m v^2 \Rightarrow v = \sqrt{2 g h}$.</span><span data-lang="zh">能量守恒：$m g h = \tfrac{1}{2} m v^2 \Rightarrow v = \sqrt{2 g h}$。</span>
+      <div class="step-math">$$v = \sqrt{2(10)(5)} = \sqrt{100} = 10~\mathrm{m/s}$$</div>
+      <span data-lang="en">Mass-independent. Trap (C) reports $v^2$; (D) reports $2gh$.</span><span data-lang="zh">结果与质量无关。干扰项 (C) 给出 $v^2$；(D) 给出 $2gh$。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q8 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.2 Variable Force Integral</span><span data-lang="zh">3.2 变力积分做功</span></span><span class="pill calc">Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A force $F(x) = 3x^2 + 2x$ (in N, with $x$ in m) acts on a particle as it moves along the $x$-axis. The work done by this force as the particle moves from $x = 0$ to $x = 2~\mathrm{m}$ is</span><span data-lang="zh">一个力 $F(x) = 3x^2 + 2x$（N，$x$ 单位为 m）作用于质点沿 $x$ 轴运动，质点从 $x = 0$ 运动到 $x = 2~\mathrm{m}$ 过程中该力做的功为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $4~\mathrm{J}$</li>
+      <li><span class="lbl">(B)</span> $8~\mathrm{J}$</li>
+      <li class="correct"><span class="lbl">(C)</span> $12~\mathrm{J}$</li>
+      <li><span class="lbl">(D)</span> $16~\mathrm{J}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(C)</span></div>
+    <div class="rationale">
+      <div class="step-math">$$W = \int_0^2 (3x^2 + 2x)\,dx = \bigl[x^3 + x^2\bigr]_0^2 = 8 + 4 = 12~\mathrm{J}$$</div>
+      <span data-lang="en">Trap (D) evaluates $F(2) \cdot 2$ (treating $F$ as constant at its endpoint value).</span><span data-lang="zh">干扰项 (D) 计算 $F(2) \cdot 2$（将 $F$ 视为在端点处恒定）。</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ─────── Q9 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.4 Equilibrium Stability</span><span data-lang="zh">3.4 平衡稳定性</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A particle moves under the potential $U(x) = x^3 - 3x$ (J, with $x$ in m). Which statement about its equilibria is correct?</span><span data-lang="zh">一个质点在势能 $U(x) = x^3 - 3x$（J，$x$ 单位为 m）的作用下运动，关于其平衡位置，下列说法正确的是</span></p>
+    <ul class="opts cols1">
+      <li class="correct"><span class="lbl">(A)</span> <span data-lang="en">$x = +1$ is a stable equilibrium; $x = -1$ is unstable.</span><span data-lang="zh">$x = +1$ 是稳定平衡；$x = -1$ 是不稳定平衡。</span></li>
+      <li><span class="lbl">(B)</span> <span data-lang="en">$x = -1$ is a stable equilibrium; $x = +1$ is unstable.</span><span data-lang="zh">$x = -1$ 是稳定平衡；$x = +1$ 是不稳定平衡。</span></li>
+      <li><span class="lbl">(C)</span> <span data-lang="en">Both $x = \pm 1$ are stable.</span><span data-lang="zh">$x = \pm 1$ 均为稳定平衡。</span></li>
+      <li><span class="lbl">(D)</span> <span data-lang="en">Both $x = \pm 1$ are unstable.</span><span data-lang="zh">$x = \pm 1$ 均为不稳定平衡。</span></li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(A)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Equilibria from $dU/dx = 3x^2 - 3 = 0 \Rightarrow x = \pm 1$. Classify with the second derivative $d^2 U/dx^2 = 6x$:</span><span data-lang="zh">由 $dU/dx = 3x^2 - 3 = 0 \Rightarrow x = \pm 1$ 求平衡位置，用二阶导数 $d^2 U/dx^2 = 6x$ 判断稳定性：</span>
+      <div class="step-math">$$x = +1\!: \;\; \tfrac{d^2 U}{dx^2} = +6 > 0~(\text{stable})$$</div>
+      <div class="step-math">$$x = -1\!: \;\; \tfrac{d^2 U}{dx^2} = -6 < 0~(\text{unstable})$$</div>
+      <span data-lang="en">Stable equilibria sit at local <em>minima</em> of $U$; unstable at local maxima. Trap (B) flips the sign convention.</span><span data-lang="zh">稳定平衡对应 $U$ 的局部<em>极小值</em>，不稳定平衡对应局部极大值。干扰项 (B) 颠倒了符号判别规则。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q10 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.5 Spring Launcher</span><span data-lang="zh">3.5 弹簧发射器</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A spring with $k = 200~\mathrm{N/m}$ is compressed by $0.30~\mathrm{m}$ and used to launch a $0.50~\mathrm{kg}$ block on a frictionless surface. The block's speed after release is</span><span data-lang="zh">弹簧常数 $k = 200~\mathrm{N/m}$ 的弹簧被压缩 $0.30~\mathrm{m}$，在无摩擦面上弹射一个质量为 $0.50~\mathrm{kg}$ 的滑块，释放后滑块的速度为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $3~\mathrm{m/s}$</li>
+      <li class="correct"><span class="lbl">(B)</span> $6~\mathrm{m/s}$</li>
+      <li><span class="lbl">(C)</span> $9~\mathrm{m/s}$</li>
+      <li><span class="lbl">(D)</span> $12~\mathrm{m/s}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(B)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Energy conservation: $\tfrac{1}{2} k (\Delta x)^2 = \tfrac{1}{2} m v^2$.</span><span data-lang="zh">能量守恒：$\tfrac{1}{2} k (\Delta x)^2 = \tfrac{1}{2} m v^2$。</span>
+      <div class="step-math">$$v = \Delta x\sqrt{k/m} = 0.30\sqrt{200/0.50} = 0.30(20) = 6.0~\mathrm{m/s}$$</div>
+      <span data-lang="en">Trap (D) misses the factor $\sqrt{m}$ in the denominator.</span><span data-lang="zh">干扰项 (D) 分母中漏掉了 $\sqrt{m}$ 因子。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q11 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q11</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.3 Instantaneous Power on Incline</span><span data-lang="zh">3.3 斜面上的瞬时功率</span></span><span class="pill calc">Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A $1500~\mathrm{kg}$ car climbs a $5^\circ$ incline at constant velocity $v = 20~\mathrm{m/s}$. Drag is negligible. The instantaneous mechanical power delivered by the engine is closest to</span><span data-lang="zh">一辆质量为 $1500~\mathrm{kg}$ 的汽车以匀速 $v = 20~\mathrm{m/s}$ 爬上 $5^\circ$ 的坡道，空气阻力不计，发动机输出的瞬时机械功率最接近</span></p>
+    <ul class="opts cols2">
+      <li class="correct"><span class="lbl">(A)</span> $26~\mathrm{kW}$</li>
+      <li><span class="lbl">(B)</span> $76~\mathrm{kW}$</li>
+      <li><span class="lbl">(C)</span> $147~\mathrm{kW}$</li>
+      <li><span class="lbl">(D)</span> $293~\mathrm{kW}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(A)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Constant velocity means engine force balances slope-parallel gravity: $F = m g \sin\theta$. Then</span><span data-lang="zh">匀速运动意味着发动机牵引力与沿坡道方向的重力分量平衡：$F = m g \sin\theta$，因此</span>
+      <div class="step-math">$$P = F v = m g \sin\theta\,v = 1500(9.8)\sin 5^\circ\,(20)$$</div>
+      <div class="step-math">$$P \approx 1500(9.8)(0.0872)(20) \approx 25.6~\mathrm{kW}$$</div>
+      <span data-lang="en">Trap (C) uses $m g v$ (no $\sin\theta$, i.e. treats road as vertical).</span><span data-lang="zh">干扰项 (C) 使用 $m g v$（无 $\sin\theta$，即将道路视为竖直方向）。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q12 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q12</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.5 Conservative vs. Non-Conservative</span><span data-lang="zh">3.5 保守力与非保守力</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Which of the following forces is <em>not</em> conservative?</span><span data-lang="zh">下列哪个力<em>不是</em>保守力？</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <span data-lang="en">Gravity (near Earth's surface)</span><span data-lang="zh">重力（地球表面附近）</span></li>
+      <li><span class="lbl">(B)</span> <span data-lang="en">Ideal spring force</span><span data-lang="zh">理想弹簧弹力</span></li>
+      <li><span class="lbl">(C)</span> <span data-lang="en">Universal gravitation</span><span data-lang="zh">万有引力</span></li>
+      <li class="correct"><span class="lbl">(D)</span> <span data-lang="en">Kinetic friction</span><span data-lang="zh">滑动摩擦力</span></li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(D)</span></div>
+    <div class="rationale"><span data-lang="en">Conservative forces derive from a potential and have path-independent work. Kinetic friction depends on path length (the longer the path, the more energy dissipated), so it cannot be derived from a $U(x)$, non-conservative. The other three each have a standard potential ($U = mgh$, $U = \tfrac{1}{2}kx^2$, $U = -GMm/r$).</span><span data-lang="zh">保守力来自势能，做功与路径无关。滑动摩擦力取决于路径长度（路径越长，耗散能量越多），因此无法由 $U(x)$ 导出，属于非保守力。其余三项各有标准势能（$U = mgh$，$U = \tfrac{1}{2}kx^2$，$U = -GMm/r$）。</span></div>
+  </div>
+</div>
+
+<!-- ─────── Q13 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q13</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.1 KE Scaling</span><span data-lang="zh">3.1 动能的比例关系</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A car's speed is doubled. Its kinetic energy</span><span data-lang="zh">一辆汽车的速度翻倍，其动能</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <span data-lang="en">halves</span><span data-lang="zh">减半</span></li>
+      <li><span class="lbl">(B)</span> <span data-lang="en">stays the same</span><span data-lang="zh">保持不变</span></li>
+      <li><span class="lbl">(C)</span> <span data-lang="en">doubles</span><span data-lang="zh">翻倍</span></li>
+      <li class="correct"><span class="lbl">(D)</span> <span data-lang="en">quadruples</span><span data-lang="zh">变为原来的四倍</span></li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(D)</span></div>
+    <div class="rationale"><span data-lang="en">$K = \tfrac{1}{2} m v^2$, so $K$ scales as $v^2$. Doubling $v$ multiplies $K$ by $4$. Important consequence for safety: braking distance also scales as $v^2$ (constant friction force absorbs $\Delta K$ over the stopping distance).</span><span data-lang="zh">$K = \tfrac{1}{2} m v^2$，故 $K$ 与 $v^2$ 成正比。速度翻倍则动能变为原来的 $4$ 倍。安全驾驶的重要推论：制动距离同样与 $v^2$ 成正比（恒定摩擦力通过制动距离吸收 $\Delta K$）。</span></div>
+  </div>
+</div>
+
+<!-- ─────── Q14 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q14</span><span class="pill hard">HARD</span>
+    <span class="pill topic"><span data-lang="en">3.2 Line Integral of $\vec F \cdot d\vec r$</span><span data-lang="zh">3.2 力的线积分 $\vec F \cdot d\vec r$</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A particle moves along the straight line from $(0, 0)$ to $(2, 3)$ (in metres) under the force $\vec F = 2y\,\hat\imath + 3x\,\hat\jmath$ (in N). The work done by $\vec F$ along this path is</span><span data-lang="zh">一个质点在力 $\vec F = 2y\,\hat\imath + 3x\,\hat\jmath$（N）的作用下沿直线从 $(0, 0)$ 运动到 $(2, 3)$（单位：m），$\vec F$ 沿该路径所做的功为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $6~\mathrm{J}$</li>
+      <li><span class="lbl">(B)</span> $12~\mathrm{J}$</li>
+      <li class="correct"><span class="lbl">(C)</span> $15~\mathrm{J}$</li>
+      <li><span class="lbl">(D)</span> $30~\mathrm{J}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(C)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Parameterize the line: $x(t) = 2t$, $y(t) = 3t$, $t \in [0, 1]$. Then $dx = 2\,dt$, $dy = 3\,dt$, and</span><span data-lang="zh">参数化直线：$x(t) = 2t$，$y(t) = 3t$，$t \in [0, 1]$。则 $dx = 2\,dt$，$dy = 3\,dt$，于是</span>
+      <div class="step-math">$$\vec F \cdot d\vec r = (2y)\,dx + (3x)\,dy = (6t)(2)\,dt + (6t)(3)\,dt = 30\,t\,dt$$</div>
+      <div class="step-math">$$W = \int_0^1 30 t\,dt = 30 \cdot \tfrac{1}{2} = 15~\mathrm{J}$$</div>
+      <span data-lang="en">Trap (D) drops the factor of $\tfrac{1}{2}$ from the integral.</span><span data-lang="zh">干扰项 (D) 积分时丢掉了 $\tfrac{1}{2}$ 因子。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q15 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q15</span><span class="pill hard">HARD</span>
+    <span class="pill topic"><span data-lang="en">3.4 Stable Equilibrium</span><span data-lang="zh">3.4 稳定平衡</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A particle moves along the $x$-axis under the potential $U(x) = x^3 - 9x$ (J, with $x$ in m). The locations of the particle's stable equilibrium are</span><span data-lang="zh">一个质点在势能 $U(x) = x^3 - 9x$（J，$x$ 单位为 m）的作用下沿 $x$ 轴运动，质点稳定平衡的位置为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $x = -\sqrt{3}~\mathrm{m}$ <span data-lang="en">only</span><span data-lang="zh">处</span></li>
+      <li class="correct"><span class="lbl">(B)</span> $x = +\sqrt{3}~\mathrm{m}$ <span data-lang="en">only</span><span data-lang="zh">处</span></li>
+      <li><span class="lbl">(C)</span> $x = \pm\sqrt{3}~\mathrm{m}$</li>
+      <li><span class="lbl">(D)</span> $x = 0$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(B)</span></div>
+    <div class="rationale">
+      <span data-lang="en">$dU/dx = 3x^2 - 9 = 0 \Rightarrow x = \pm\sqrt{3}$. Classify via $d^2 U/dx^2 = 6x$:</span><span data-lang="zh">由 $dU/dx = 3x^2 - 9 = 0 \Rightarrow x = \pm\sqrt{3}$，用 $d^2 U/dx^2 = 6x$ 判断稳定性：</span>
+      <div class="step-math">$$x = +\sqrt{3}\!: \;\; 6\sqrt{3} > 0~(\text{stable})$$</div>
+      <div class="step-math">$$x = -\sqrt{3}\!: \;\; -6\sqrt{3} < 0~(\text{unstable})$$</div>
+      <span data-lang="en">Trap (C) lumps both equilibria as the same type.</span><span data-lang="zh">干扰项 (C) 将两个平衡位置归为同一类型。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q16 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q16</span><span class="pill hard">HARD</span>
+    <span class="pill topic"><span data-lang="en">3.3 Constant-Power Acceleration</span><span data-lang="zh">3.3 恒功率加速</span></span><span class="pill nocalc">No Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A car of mass $m$ starts from rest on a flat road and is driven by an engine that delivers constant mechanical power $P$. Drag is neglected. The car's speed at time $t$ is</span><span data-lang="zh">一辆质量为 $m$ 的汽车从静止出发在平路上行驶，发动机以恒定机械功率 $P$ 驱动，忽略阻力，汽车在时刻 $t$ 的速度为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $v(t) = \sqrt{Pt/m}$</li>
+      <li class="correct"><span class="lbl">(B)</span> $v(t) = \sqrt{2Pt/m}$</li>
+      <li><span class="lbl">(C)</span> $v(t) = 2Pt/m$</li>
+      <li><span class="lbl">(D)</span> $v(t) = \bigl(Pt/m\bigr)^{2}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(B)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Constant $P$ means $dK/dt = P$, so $K(t) = Pt$ from rest. Then $\tfrac{1}{2} m v^2 = P t$, giving $v = \sqrt{2Pt/m}$. Trap (A) drops the factor of 2; (C) inverts the square root, returning a quantity with units of length per time per time.</span><span data-lang="zh">恒定功率 $P$ 意味着 $dK/dt = P$，从静止开始故 $K(t) = Pt$。则 $\tfrac{1}{2} m v^2 = P t$，得 $v = \sqrt{2Pt/m}$。干扰项 (A) 丢掉了因子 2；(C) 将开方倒置，给出单位为"长度/时间/时间"的量。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q17 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q17</span><span class="pill hard">HARD</span>
+    <span class="pill topic"><span data-lang="en">3.5 Loop-the-Loop</span><span data-lang="zh">3.5 竖直圆环运动</span></span><span class="pill calc">Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A small block is released from rest at height $h$ on a frictionless track that leads into a vertical loop of radius $R$. The minimum value of $h$ such that the block maintains contact with the track at the top of the loop is</span><span data-lang="zh">一个小滑块从无摩擦轨道上高度 $h$ 处由静止释放，进入半径为 $R$ 的竖直圆环，使滑块在圆环顶端保持与轨道接触所需 $h$ 的最小值为</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $h = R$</li>
+      <li><span class="lbl">(B)</span> $h = 2R$</li>
+      <li class="correct"><span class="lbl">(C)</span> $h = \dfrac{5R}{2}$</li>
+      <li><span class="lbl">(D)</span> $h = 3R$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(C)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Centripetal condition at the top with $N = 0$: $m g = m v_\text{top}^2/R$, so $v_\text{top}^2 = g R$. Energy conservation from height $h$ to the top (height $2R$):</span><span data-lang="zh">顶端 $N = 0$ 时的向心力条件：$m g = m v_\text{top}^2/R$，故 $v_\text{top}^2 = g R$。从高度 $h$ 到顶端（高度 $2R$）的能量守恒：</span>
+      <div class="step-math">$$m g h = m g (2R) + \tfrac{1}{2} m v_\text{top}^2 = 2 m g R + \tfrac{1}{2} m g R$$</div>
+      <div class="step-math">$$h = 2R + \tfrac{R}{2} = \frac{5R}{2}$$</div>
+      <span data-lang="en">Trap (B) forgets the kinetic-energy term at the top.</span><span data-lang="zh">干扰项 (B) 忘记了顶端处的动能项。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── Q18 ─────── -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q18</span><span class="pill hard">HARD</span>
+    <span class="pill topic"><span data-lang="en">3.3 Pump Power</span><span data-lang="zh">3.3 水泵功率</span></span><span class="pill calc">Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A pump lifts water from a well of depth $h = 30~\mathrm{m}$ and delivers it to ground level at a steady rate of $5.0~\mathrm{kg/s}$. Assuming the water is delivered with negligible exit speed, the minimum mechanical power the pump must supply is closest to</span><span data-lang="zh">一台水泵以 $5.0~\mathrm{kg/s}$ 的稳定速率将水从深度 $h = 30~\mathrm{m}$ 的水井中提升至地面，假设出水口速度可忽略不计，水泵需提供的最小机械功率最接近</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> $150~\mathrm{W}$</li>
+      <li><span class="lbl">(B)</span> $250~\mathrm{W}$</li>
+      <li class="correct"><span class="lbl">(C)</span> $1{,}470~\mathrm{W}$</li>
+      <li><span class="lbl">(D)</span> $6{,}000~\mathrm{W}$</li>
+    </ul>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span> <span class="ans">(C)</span></div>
+    <div class="rationale">
+      <span data-lang="en">Energy raised per second equals power. With $dm/dt$ kg lifted height $h$ per second:</span><span data-lang="zh">每秒提升的能量即为功率。每秒提升 $dm/dt$ kg 的水至高度 $h$：</span>
+      <div class="step-math">$$P = \frac{dm}{dt}\,g\,h = 5.0(9.8)(30) = 1470~\mathrm{W}$$</div>
+      <span data-lang="en">Negligible exit KE means all the input work becomes gravitational PE. Trap (A) drops a factor of $g$; (D) treats $dm/dt$ as mass and uses $mgh$ once.</span><span data-lang="zh">出口动能可忽略，意味着所有输入功均转化为重力势能。干扰项 (A) 丢掉了 $g$ 因子；(D) 将 $dm/dt$ 当作质量，只用了一次 $mgh$。</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II</span><span class="part-meta"><span data-lang="en">Free-Response · Topics 3.1 - 3.5</span><span data-lang="zh">自由作答 · 主题 3.1 - 3.5</span></span></div>
+<h2 class="section-head"><span data-lang="en">Free-Response, Worked Solutions</span><span data-lang="zh">自由作答, 详解</span></h2>
+<p class="instructions"><span data-lang="en">Each FRQ walks every part in the canonical AP-style setup → execute → evaluate structure. Numbers use $g = 9.8~\mathrm{m/s^2}$.</span><span data-lang="zh">每道自由作答题按照 AP 标准的"建立 → 求解 → 评估"结构逐步演示每个小问，数值计算取 $g = 9.8~\mathrm{m/s^2}$。</span></p>
+
+<!-- ─────── FRQ 1 ─────── -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">FRQ 1</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.5 Energy Bookkeeping</span><span data-lang="zh">3.5 能量守恒分析</span></span><span class="pill calc">Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$m = 0.50~\mathrm{kg}$ released from rest at $h = 1.2~\mathrm{m}$ on a frictionless curved ramp; floor then frictionless to a spring ($k = 600~\mathrm{N/m}$); on return trip floor has $\mu_k = 0.20$.</span><span data-lang="zh">$m = 0.50~\mathrm{kg}$ 从无摩擦弧形斜面上 $h = 1.2~\mathrm{m}$ 处由静止释放；地面无摩擦直至压缩弹簧（$k = 600~\mathrm{N/m}$）；返回途中地面动摩擦系数 $\mu_k = 0.20$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="part-sol">
+      <span class="tag">(a)</span> <span data-lang="en">Speed at the bottom of the ramp. Energy conservation $m g h = \tfrac{1}{2} m v^2$:</span><span data-lang="zh">斜面底部的速度。能量守恒 $m g h = \tfrac{1}{2} m v^2$：</span>
+      <div class="step-math">$$v = \sqrt{2 g h} = \sqrt{2(9.8)(1.2)} = \sqrt{23.52} \approx 4.85~\mathrm{m/s}$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(b)</span> <span data-lang="en">Maximum spring compression. All KE → spring PE: $\tfrac{1}{2} m v^2 = \tfrac{1}{2} k x_\max^2$, equivalently $m g h = \tfrac{1}{2} k x_\max^2$:</span><span data-lang="zh">弹簧最大压缩量。所有动能转化为弹簧弹性势能：$\tfrac{1}{2} m v^2 = \tfrac{1}{2} k x_\max^2$，等价地 $m g h = \tfrac{1}{2} k x_\max^2$：</span>
+      <div class="step-math">$$x_\max = \sqrt{\frac{2 m g h}{k}} = \sqrt{\frac{2(0.50)(9.8)(1.2)}{600}} = \sqrt{0.0196} \approx 0.140~\mathrm{m}$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(c)</span> <span data-lang="en">Distance on the return trip before friction stops the block. The spring returns all $5.88~\mathrm{J}$ of stored PE to KE, so the block leaves the spring with the same speed $4.85~\mathrm{m/s}$. On the new (frictioned) floor, work-energy theorem with $W_f = -\mu_k m g\,d$:</span><span data-lang="zh">返回途中摩擦力使滑块停止前滑行的距离。弹簧将全部 $5.88~\mathrm{J}$ 的弹性势能还原为动能，故滑块离开弹簧时速度仍为 $4.85~\mathrm{m/s}$。在有摩擦的地面上，由动能定理 $W_f = -\mu_k m g\,d$：</span>
+      <div class="step-math">$$\tfrac{1}{2} m v^2 = \mu_k m g\,d \;\Longrightarrow\; d = \frac{v^2}{2\mu_k g} = \frac{23.52}{2(0.20)(9.8)} = \frac{23.52}{3.92} = 6.0~\mathrm{m}$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(d)</span> <span data-lang="en">Fraction of original mechanical energy dissipated. The block ends at rest on the floor (gravitational PE = 0 relative to its end state), so <em>all</em> of the original $m g h = 5.88~\mathrm{J}$ is gone to friction, fraction $= 1.00$ (100%). The spring/return-trip path simply specifies <em>where</em> the dissipation happens, not how much.</span><span data-lang="zh">原始机械能被耗散的比例。滑块最终静止在地面（重力势能相对末态为 0），故原始 $m g h = 5.88~\mathrm{J}$ 全部转化为摩擦热，比例 $= 1.00$（100%）。弹簧和返程路径只说明<em>耗散发生在何处</em>，而非耗散了多少。</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ─────── FRQ 2 ─────── -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">FRQ 2</span><span class="pill med">MEDIUM</span>
+    <span class="pill topic"><span data-lang="en">3.4 Potential Energy Diagram</span><span data-lang="zh">3.4 势能曲线分析</span></span><span class="pill calc">Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$m = 2.0~\mathrm{kg}$ on the $x$-axis under $U(x) = \tfrac{1}{4} x^4 - 2 x^2 + 3$ (J, $x$ in m).</span><span data-lang="zh">$m = 2.0~\mathrm{kg}$ 的质点在势能 $U(x) = \tfrac{1}{4} x^4 - 2 x^2 + 3$（J，$x$ 单位为 m）的作用下沿 $x$ 轴运动。</span></p>
+  </div>
+  <div class="solution">
+    <div class="part-sol">
+      <span class="tag">(a)</span> <span data-lang="en">Force.</span><span data-lang="zh">力。</span>
+      <div class="step-math">$$F(x) = -\frac{dU}{dx} = -(x^3 - 4x) = 4x - x^3$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(b)</span> <span data-lang="en">Equilibria and classification. Set $dU/dx = x^3 - 4x = x(x^2 - 4) = 0$, giving $x = 0,\,\pm 2$. Then $d^2 U/dx^2 = 3 x^2 - 4$:</span><span data-lang="zh">平衡位置及分类。令 $dU/dx = x^3 - 4x = x(x^2 - 4) = 0$，得 $x = 0,\,\pm 2$。再用 $d^2 U/dx^2 = 3 x^2 - 4$：</span>
+      <div class="step-math">$$x = 0\!: \;\; -4~(\text{unstable, local max})$$</div>
+      <div class="step-math">$$x = \pm 2\!: \;\; 8~(\text{stable, local min})$$</div>
+      <span data-lang="en">The double-well $U(x)$ has $U(\pm 2) = 4 - 8 + 3 = -1~\mathrm{J}$ and $U(0) = 3~\mathrm{J}$.</span><span data-lang="zh">双阱势能 $U(x)$ 满足 $U(\pm 2) = 4 - 8 + 3 = -1~\mathrm{J}$，$U(0) = 3~\mathrm{J}$。</span>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(c)</span> <span data-lang="en">Released from rest at $x = 0$. The energy is $E = U(0) = 3~\mathrm{J}$. Solving $U(x) = E$: $\tfrac{1}{4}x^4 - 2x^2 = 0 \Rightarrow x^2(x^2 - 8) = 0$, so the classical turning points are $x = 0$ and $x = \pm 2\sqrt{2}$.</span><span data-lang="zh">从 $x = 0$ 处由静止释放。能量 $E = U(0) = 3~\mathrm{J}$。解 $U(x) = E$：$\tfrac{1}{4}x^4 - 2x^2 = 0 \Rightarrow x^2(x^2 - 8) = 0$，经典转折点为 $x = 0$ 和 $x = \pm 2\sqrt{2}$。</span>
+      <div class="step-text"><span data-lang="en">Strictly, the particle sits at an unstable equilibrium and remains at rest there for all time (zero force, zero velocity). With <em>any</em> infinitesimal perturbation, it slides toward one of the wells; from energy conservation the motion is then bounded between $x = 0$ and $x = +2\sqrt{2}$ (or its mirror), with the orbit through $x = 0$ taking infinite time.</span><span data-lang="zh">严格来说，质点位于不稳定平衡处，将永远保持静止（力为零，速度为零）。若有<em>任意</em>无穷小扰动，它将向某个势阱滑动；由能量守恒，运动被限制在 $x = 0$ 与 $x = +2\sqrt{2}$（或对称的另侧）之间，经过 $x = 0$ 的轨道所需时间为无穷大。</span></div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(d)</span> <span data-lang="en">Released from rest at $x = 3$. Now $E = U(3) = \tfrac{81}{4} - 18 + 3 = 5.25~\mathrm{J}$. Speed at $x = 0$ from $E = \tfrac{1}{2} m v^2 + U(0)$:</span><span data-lang="zh">从 $x = 3$ 处由静止释放。此时 $E = U(3) = \tfrac{81}{4} - 18 + 3 = 5.25~\mathrm{J}$。由 $E = \tfrac{1}{2} m v^2 + U(0)$ 求 $x = 0$ 处的速度：</span>
+      <div class="step-math">$$\tfrac{1}{2}(2.0)\,v^2 = 5.25 - 3 = 2.25 \;\Longrightarrow\; v = \sqrt{2.25} = 1.5~\mathrm{m/s}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ─────── FRQ 3 ─────── -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">FRQ 3</span><span class="pill hard">HARD</span>
+    <span class="pill topic"><span data-lang="en">3.2 Variable Friction Coefficient</span><span data-lang="zh">3.2 变摩擦系数</span></span><span class="pill calc">Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$m = 4.0~\mathrm{kg}$ slides along a horizontal surface with $\mu_k(x) = 0.10 + 0.05 x$ (x in m); enters $x = 0$ at $v_0 = 5.0~\mathrm{m/s}$.</span><span data-lang="zh">$m = 4.0~\mathrm{kg}$ 的滑块沿水平面滑动，$\mu_k(x) = 0.10 + 0.05 x$（$x$ 单位为 m），以 $v_0 = 5.0~\mathrm{m/s}$ 从 $x = 0$ 处进入。</span></p>
+  </div>
+  <div class="solution">
+    <div class="part-sol">
+      <span class="tag">(a)</span> <span data-lang="en">Friction force magnitude.</span><span data-lang="zh">摩擦力的大小。</span>
+      <div class="step-math">$$f(x) = \mu_k(x)\,m g = (0.10 + 0.05 x)(4.0)(9.8) = 3.92 + 1.96\,x~~(\mathrm{N})$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(b)</span> <span data-lang="en">Work by friction (opposes motion):</span><span data-lang="zh">摩擦力做的功（与运动方向相反）：</span>
+      <div class="step-math">$$W_f = -\int_0^d f(x)\,dx = -\int_0^d (3.92 + 1.96\,x)\,dx$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(c)</span> <span data-lang="en">Evaluate at $d = 4.0~\mathrm{m}$:</span><span data-lang="zh">对 $d = 4.0~\mathrm{m}$ 求值：</span>
+      <div class="step-math">$$W_f = -\bigl[3.92 x + 0.98 x^2\bigr]_0^{4} = -\bigl(15.68 + 15.68\bigr) = -31.36~\mathrm{J}$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(d)</span> <span data-lang="en">Speed at $x = 4~\mathrm{m}$. Initial KE: $\tfrac{1}{2}(4.0)(5.0)^2 = 50~\mathrm{J} > |W_f|$, so the block reaches $x = 4$ still moving. Work-energy theorem:</span><span data-lang="zh">$x = 4~\mathrm{m}$ 处的速度。初始动能：$\tfrac{1}{2}(4.0)(5.0)^2 = 50~\mathrm{J} > |W_f|$，故滑块到达 $x = 4$ 时仍在运动。由动能定理：</span>
+      <div class="step-math">$$\tfrac{1}{2} m v^2 = K_0 + W_f = 50 - 31.36 = 18.64~\mathrm{J}$$</div>
+      <div class="step-math">$$v = \sqrt{2(18.64)/4.0} = \sqrt{9.32} \approx 3.05~\mathrm{m/s}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ─────── FRQ 4 ─────── -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">FRQ 4</span><span class="pill hard">HARD</span>
+    <span class="pill topic"><span data-lang="en">3.3 Constant-Power Car</span><span data-lang="zh">3.3 恒功率汽车</span></span><span class="pill calc">Calculator</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$m = 1200~\mathrm{kg}$, constant engine power $P = 60~\mathrm{kW}$ from $t = 0$ from rest; no drag.</span><span data-lang="zh">$m = 1200~\mathrm{kg}$，从 $t = 0$ 由静止以恒定发动机功率 $P = 60~\mathrm{kW}$ 驱动；无阻力。</span></p>
+  </div>
+  <div class="solution">
+    <div class="part-sol">
+      <span class="tag">(a)</span> <span data-lang="en">ODE. Engine force is $F = P/v$ (since $P = Fv$), so</span><span data-lang="zh">微分方程。发动机牵引力 $F = P/v$（因为 $P = Fv$），故</span>
+      <div class="step-math">$$m\,\frac{dv}{dt} = \frac{P}{v}$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(b)</span> <span data-lang="en">Separate variables: $m\,v\,dv = P\,dt$. Integrate from $v(0) = 0$:</span><span data-lang="zh">分离变量：$m\,v\,dv = P\,dt$，从 $v(0) = 0$ 积分：</span>
+      <div class="step-math">$$\tfrac{1}{2} m v^2 = P t \;\Longrightarrow\; v(t) = \sqrt{2 P t / m}$$</div>
+      <span data-lang="en">(Same identity as the constant-power result $K(t) = P t$ from rest, dressed in calculus.)</span><span data-lang="zh">（与恒功率从静止出发时 $K(t) = P t$ 的结论一致，此处用微积分形式推导。）</span>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(c)</span> <span data-lang="en">Time to reach $v = 25~\mathrm{m/s}$:</span><span data-lang="zh">达到 $v = 25~\mathrm{m/s}$ 所需时间：</span>
+      <div class="step-math">$$25 = \sqrt{\frac{2(60000)\,t}{1200}} = \sqrt{100\,t} \;\Longrightarrow\; t = \frac{625}{100} = 6.25~\mathrm{s}$$</div>
+    </div>
+    <div class="part-sol">
+      <span class="tag">(d)</span> <span data-lang="en">Position by integrating $v(t)$:</span><span data-lang="zh">对 $v(t)$ 积分求位置：</span>
+      <div class="step-math">$$x(t) = \int_0^t \sqrt{2 P \tau / m}\,d\tau = \sqrt{2 P / m}\;\tfrac{2}{3}\,t^{3/2} = \tfrac{2}{3}\sqrt{2 P / m}\;t^{3/2}$$</div>
+      <span data-lang="en">At $t = 10~\mathrm{s}$ with $\sqrt{2 P / m} = \sqrt{120000/1200} = 10~\mathrm{m^{1/2}/s^{1/2}}$:</span><span data-lang="zh">$t = 10~\mathrm{s}$ 时，$\sqrt{2 P / m} = \sqrt{120000/1200} = 10~\mathrm{m^{1/2}/s^{1/2}}$：</span>
+      <div class="step-math">$$x(10) = \tfrac{2}{3}(10)(10)^{3/2} = \tfrac{20}{3}\,\bigl(10\sqrt{10}\bigr) \approx 210.8~\mathrm{m}$$</div>
+    </div>
+  </div>
+</div>
+
+<!-- consult-cta: lead-gen conversion surface (Sprint A) -->
+<aside class="consult-cta">
+  <span class="consult-cta__lead"><span data-lang="en">Stuck, or want to go further?</span><span data-lang="zh">遇到困难，或想深入学习？</span></span>
+  <span class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor:</span><span data-lang="zh">预约丁睿学者辅导老师的免费 15 分钟咨询：</span></span>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=ap_physics&utm_content=unit_3_work_energy_power__solutions__en" target="_blank" rel="noopener">dingruischolars.com/signup</a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_3_Work_Energy_Power.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_3_Work_Energy_Power_Practice_Problems.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> · <span data-lang="en">AP Physics C: Mechanics, Chapter 3 Solutions (Draft v0)</span><span data-lang="zh">AP 物理 C：力学, 第3章解析（草稿 v0）</span></span>
+  <span><span data-lang="en">Page · 3.1 - 3.5</span><span data-lang="zh">页面 · 3.1 - 3.5</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

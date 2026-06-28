@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AP Computer Science A, Unit 1: Using Objects and Methods | Dingrui Scholars. Java fundamentals, variables, data types, Math &amp; String classes, and creating objects, with worked examples, interactive quizzes, dark mode, and print-friendly formatting.">
+<meta name="theme-color" content="#7A2E2E">
+<meta name="color-scheme" content="light dark">
+<title>AP CSA — Unit 1: Using Objects and Methods | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/AP%20CSA/Study%20Guides/Unit_1_Using_Objects_and_Methods.html">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="AP CSA — Unit 1: Using Objects and Methods | Dingrui Scholars">
+<meta property="og:description" content="AP Computer Science A, Unit 1: Using Objects and Methods | Dingrui Scholars. Java fundamentals, variables, data types, Math &amp; String classes, and creating objects, with worked examples, interactive quizzes, dark mode, and print-friendly formatting.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/AP%20CSA/Study%20Guides/Unit_1_Using_Objects_and_Methods.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AP CSA — Unit 1: Using Objects and Methods | Dingrui Scholars">
+<meta name="twitter:description" content="AP Computer Science A, Unit 1: Using Objects and Methods | Dingrui Scholars. Java fundamentals, variables, data types, Math &amp; String classes, and creating objects, with worked examples, interactive quizzes, dark mode, and print-friendly formatting.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="icon" type="image/png" href="../LOGO.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --bg-code: #0F0F0F;
+  --text: #0F0F0F;
+  --text-secondary: #585858;
+  --accent: #7A2E2E; --pop: #0099FF; --pop-light: #E8F4FF; --ink: #0F0F0F;
+  --accent-light: #F2E4E4;
+  --accent-dark: #5C1E1E;
+  --green: #2E6B4F;
+  --green-light: #DFF0E8;
+  --orange: #A65E1A;
+  --orange-light: #FBF0E0;
+  --red: #B03030;
+  --red-light: #FCEAEA;
+  --purple: #5E3D7A;
+  --purple-light: #EDE4F5;
+  --border: #E6E6E6;
+  --shadow: 0 1px 3px rgba(60,30,30,0.06), 0 1px 2px rgba(60,30,30,0.04);
+  --shadow-lg: 0 4px 12px rgba(60,30,30,0.10);
+  --radius: 10px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-w: 860px;
+  --toc-w: 280px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F0F0F;
+  --bg-card: #1A1A1A;
+  --bg-code: #000000;
+  --text: #FAFAFA;
+  --text-secondary: #A0A0A0;
+  --accent: #C87070; --pop: #4DB2FF; --pop-light: #12283A; --ink: #FAFAFA;
+  --accent-light: #3A2020;
+  --accent-dark: #E89090;
+  --green: #5CB88A;
+  --green-light: #1A2E24;
+  --orange: #D4944A;
+  --orange-light: #2E2010;
+  --red: #E07070;
+  --red-light: #301515;
+  --purple: #A888C8;
+  --purple-light: #201828;
+  --border: #2A2A2A;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ─── SKIP LINK (A11Y) ─── */
+.skip-link {
+  position: absolute; left: 16px; top: -48px; z-index: 2000;
+  background: var(--accent); color: #fff; text-decoration: none;
+  padding: 10px 14px; border-radius: 10px; font-weight: 700;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 12px; }
+
+/* ─── BACK TO TOP ─── */
+.backtotop {
+  position: fixed; right: 18px; bottom: 18px; z-index: 120;
+  width: 46px; height: 46px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--bg-card); color: var(--accent);
+  box-shadow: var(--shadow-lg); font-size: 1.05rem; font-weight: 700; cursor: pointer;
+  opacity: 0; transform: translateY(10px); pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+.backtotop.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.backtotop:hover { background: var(--accent-light); }
+@media print { .backtotop { display: none !important; } }
+
+/* ─── TOP NAV ─── */
+.topnav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 56px;
+  transition: background 0.3s, border 0.3s;
+}
+.topnav-brand {
+  font-family: var(--font-display);
+  font-size: 1.15rem; color: var(--text);
+  display: flex; align-items: center; gap: 10px;
+}
+.topnav-brand .unit-badge {
+  background: var(--accent);
+  color: #fff; font-family: var(--font-body);
+  font-size: 0.7rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+.topnav-actions { display: flex; align-items: center; gap: 8px; }
+.topnav-actions button {
+  background: none; border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px;
+  padding: 6px 12px; font-size: 0.82rem;
+  cursor: pointer; font-family: var(--font-body);
+  transition: all 0.2s;
+}
+.topnav-actions button:hover { background: var(--accent-light); border-color: var(--accent); }
+.topnav-actions button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.topnav-actions .back-link {
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px;
+  padding: 6px 12px; font-size: 0.82rem;
+  cursor: pointer; font-family: var(--font-body); font-weight: 600;
+  text-decoration: none; transition: all 0.2s;
+}
+.topnav-actions .back-link:hover { background: var(--accent-light); border-color: var(--accent); }
+
+/* ─── PROGRESS BAR ─── */
+.progress-track {
+  position: fixed; top: 56px; left: 0; right: 0;
+  height: 3px; background: var(--border); z-index: 99;
+}
+.progress-fill {
+  height: 100%; width: 0; background: var(--accent);
+  transition: width 0.15s;
+}
+
+/* ─── SIDEBAR TOC ─── */
+.sidebar {
+  position: fixed; top: 59px; left: 0; bottom: 0;
+  width: var(--toc-w); background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 20px 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, background 0.3s;
+  z-index: 90;
+}
+.sidebar.open { transform: translateX(0); }
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem; padding: 0 20px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.sidebar a {
+  display: block; padding: 7px 20px;
+  color: var(--text-secondary);
+  text-decoration: none; font-size: 0.85rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.sidebar a:hover { color: var(--accent); background: var(--accent-light); }
+.sidebar a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 600; }
+.sidebar a.sub { padding-left: 36px; font-size: 0.8rem; }
+
+/* ─── MAIN ─── */
+.main-wrap {
+  max-width: var(--max-w);
+  margin: 80px auto 120px;
+  padding: 0 24px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  text-align: center; padding: 56px 24px 48px;
+  background: linear-gradient(180deg, #F4F4F4 0%, transparent 100%);
+  border-radius: var(--radius); margin-bottom: 40px;
+}
+[data-theme="dark"] .hero { background: linear-gradient(180deg, rgba(58,32,32,0.4) 0%, transparent 100%); }
+.hero-overline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  line-height: 1.15; margin-bottom: 16px;
+}
+.hero-meta {
+  display: flex; gap: 24px; justify-content: center;
+  flex-wrap: wrap; margin-top: 16px;
+}
+.hero-meta .chip {
+  font-size: 0.8rem; font-weight: 600;
+  padding: 5px 14px; border-radius: 20px;
+}
+.chip-maroon { background: var(--accent-light); color: var(--accent); }
+.chip-green { background: var(--green-light); color: var(--green); }
+.chip-purple { background: var(--purple-light); color: var(--purple); }
+
+/* ─── SECTION ─── */
+.section {
+  margin-bottom: 48px;
+  scroll-margin-top: 80px;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem; margin-bottom: 16px;
+  line-height: 1.25;
+  border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 8px; display: inline-block;
+}
+.section h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem; margin: 28px 0 10px;
+  line-height: 1.3;
+}
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+  transition: background 0.3s, border 0.3s;
+}
+.card-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 10px;
+}
+.card-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 700; flex-shrink: 0;
+}
+.icon-blue { background: var(--accent-light); color: var(--accent); }
+.icon-green { background: var(--green-light); color: var(--green); }
+.icon-orange { background: var(--orange-light); color: var(--orange); }
+.icon-red { background: var(--red-light); color: var(--red); }
+.icon-purple { background: var(--purple-light); color: var(--purple); }
+.card-title { font-weight: 700; font-size: 0.95rem; }
+
+/* ─── CODE BLOCKS ─── */
+pre {
+  background: var(--bg-code);
+  color: #CDD6F4;
+  padding: 18px 22px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  margin: 12px 0;
+}
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+:not(pre) > code {
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.kw { color: #CBA6F7; }
+.ty { color: #89B4FA; }
+.str { color: #A6E3A1; }
+.cm { color: #6C7086; font-style: italic; }
+.num { color: #FAB387; }
+.fn { color: #89DCEB; }
+
+/* ─── KEY CONCEPT BOX ─── */
+.concept-box {
+  border-left: 4px solid var(--accent);
+  background: var(--accent-light);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 16px 0;
+}
+.concept-box.green { border-left-color: var(--green); background: var(--green-light); }
+.concept-box.orange { border-left-color: var(--orange); background: var(--orange-light); }
+.concept-box.red { border-left-color: var(--red); background: var(--red-light); }
+.concept-box.purple { border-left-color: var(--purple); background: var(--purple-light); }
+.concept-box strong { display: block; margin-bottom: 4px; }
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.9rem;
+}
+th, td {
+  padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  background: var(--accent-light);
+  font-weight: 700; font-size: 0.82rem;
+  letter-spacing: 0.3px;
+}
+tr:hover td { background: var(--accent-light); }
+
+/* ─── QUIZ ─── */
+.quiz { margin: 20px 0; }
+.quiz-q {
+  font-weight: 600; margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 6px; }
+.quiz-opt {
+  padding: 10px 16px; border: 1px solid var(--border);
+  border-radius: 8px; cursor: pointer;
+  font-size: 0.9rem; transition: all 0.2s;
+  background: var(--bg-card);
+}
+.quiz-opt:hover { border-color: var(--accent); background: var(--accent-light); }
+.quiz-opt.correct { border-color: var(--green); background: var(--green-light); }
+.quiz-opt.wrong { border-color: var(--red); background: var(--red-light); }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.7; }
+.quiz-explain {
+  margin-top: 10px; padding: 12px 16px;
+  border-radius: 8px; font-size: 0.88rem;
+  display: none;
+}
+.quiz-explain.show { display: block; }
+.quiz-explain.correct-exp { background: var(--green-light); color: var(--green); }
+.quiz-explain.wrong-exp { background: var(--red-light); color: var(--red); }
+
+/* ─── ACCORDION / DETAILS ─── */
+details {
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+summary {
+  padding: 14px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.92rem;
+  user-select: none;
+  list-style: none;
+  display: flex; align-items: center; gap: 8px;
+}
+summary::before {
+  content: '▸'; transition: transform 0.2s;
+  font-size: 0.8rem; color: var(--accent);
+}
+details[open] summary::before { transform: rotate(90deg); }
+details .detail-body { padding: 0 18px 16px; font-size: 0.92rem; }
+
+/* ─── QUICK REF ─── */
+.qref {
+  background: var(--bg-card);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.qref-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 10px;
+}
+
+/* ─── FLASHCARD ─── */
+.flashcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: 16px 0; }
+.flashcard {
+  perspective: 600px; height: 160px; cursor: pointer;
+}
+.flashcard-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s; transform-style: preserve-3d;
+}
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+.flashcard-front, .flashcard-back {
+  position: absolute; width: 100%; height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px; text-align: center;
+  font-size: 0.88rem;
+}
+.flashcard-front {
+  background: var(--bg-card);
+  font-weight: 700;
+}
+.flashcard-back {
+  background: var(--accent-light);
+  transform: rotateY(180deg);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  padding: 20px;
+  overflow-y: auto;
+}
+.flashcard-front code, .flashcard-back code {
+  background: var(--bg-card);
+  font-size: 0.92em;
+}
+[data-theme="dark"] .flashcard-back code {
+  background: var(--bg);
+}
+
+/* ─── SEPARATOR ─── */
+.sep {
+  border: none; border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 1100px) {
+  .sidebar { transform: translateX(0); box-shadow: none; }
+  .main-wrap {
+    max-width: none;
+    margin-left: calc(var(--toc-w) + 40px);
+    margin-right: 0;
+    padding: 0 48px;
+  }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.8rem; }
+  .main-wrap { padding: 0 16px; }
+  pre { font-size: 0.75rem; padding: 14px; }
+  .flashcard-grid { grid-template-columns: 1fr; }
+}
+
+/* Print */
+@media print {
+  .topnav, .progress-track, .sidebar, .topnav-actions { display: none !important; }
+  .main-wrap { margin: 0 auto; max-width: 100%; padding: 0; }
+  body { font-size: 11pt; background: white; color: black; }
+  pre { border: 1px solid #ccc; white-space: pre-wrap; }
+  .card, .concept-box, .quiz { break-inside: avoid; }
+}
+
+/* ─── FINAL POLISH ─── */
+:root { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+::selection { background: var(--accent-light); color: var(--accent-dark); }
+button:focus-visible, .quiz-opt:focus-visible, summary:focus-visible, a:focus-visible, .flashcard:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ─── BILINGUAL TOGGLE ─── */
+/* Default: English visible, Chinese hidden. Toggle by adding body.lang-zh.
+   body-scoped selectors raise specificity to (0,2,1) so they beat .section h2
+   (0,1,1) and similar class+element rules. */
+body:not(.lang-zh) [data-lang="zh"] { display: none; }
+body.lang-zh [data-lang="en"] { display: none; }
+
+/* consult-cta: lead-gen conversion surface (Sprint A) */
+.consult-cta { background: linear-gradient(180deg, var(--accent-light, #F2E4E4) 0%, var(--bg-card, #fff) 100%); border: 2px solid var(--accent); border-radius: var(--radius, 12px); padding: 22px 26px; margin: 30px 0 8px; text-align: center; }
+.consult-cta__lead { font-family: var(--font-display); font-size: 1.25rem; color: var(--accent); margin: 0 0 6px; }
+.consult-cta__body { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; margin: 0 auto 16px; max-width: 48ch; }
+.consult-cta__btn { display: inline-block; background: var(--ink); color: var(--bg-card); font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 12px 22px; border-radius: 12px; transition: transform 0.15s, opacity 0.2s; }
+.consult-cta__btn:hover { opacity: 0.88; transform: translateY(-1px); }
+/* design-refresh links */ .card a:not(.feeder-link), .concept-box a, .going-deeper a, .section > p a { color: var(--pop); text-underline-offset: 2px; }
+@media print { .consult-cta { border: 1px solid #999; background: #fff; } .consult-cta__btn { background: #fff !important; color: #000 !important; border: 1px solid #999; } .consult-cta__btn[data-lang="en"]::after { content: " (dingruischolars.com/signup)"; font-weight: 400; } .consult-cta__btn[data-lang="zh"]::after { content: " (dingruischolars.com/signup-ch)"; font-weight: 400; } }
+
+/* __sg_mobile_spacing__ tighten phone layout + fix top-nav clip (injected by declutter_sg.py) */
+@media (max-width: 600px){
+  .main-wrap{ margin: 64px auto 56px !important; padding: 0 14px !important; }
+  .hero{ padding: 40px 18px 32px !important; margin-bottom: 26px !important; }
+  .hero-sub{ font-size: 0.96rem !important; }
+  .section{ margin-bottom: 36px !important; }
+  .section h2{ font-size: 1.45rem !important; }
+  .section h3{ margin: 24px 0 10px !important; }
+  .card{ padding: 18px 16px !important; }
+  .concept-box{ padding: 16px 16px !important; }
+  .quiz{ padding: 18px 14px !important; }
+  .formula-box{ padding: 16px 12px !important; }
+  .worked-solution{ padding: 16px 16px !important; }
+  .sep{ margin: 28px 0 !important; }
+  .detail-body{ padding: 16px !important; }
+  .top-nav{ padding: 0 10px !important; }
+  .nav-left{ gap: 6px !important; min-width: 0; }
+  .nav-right{ gap: 4px !important; }
+  .nav-btn{ padding: 6px 9px !important; font-size: 0.78rem !important; }
+  .score-badge{ display: none !important; }
+}
+@media (max-width: 430px){
+  .nav-left .nav-badge:nth-child(2){ display: none !important; }
+}
+/* __end_sg_mobile_spacing__ */
+
+  /* mobile-overflow-lock v1: lock to viewport width on phone/tablet, no horizontal pan (laptop sidebar layout >=1100px unaffected) */
+  @media (max-width: 1024px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .main-wrap, .hero, .hero-sub, .consult-cta, .sg-appendix { max-width: 100%; }
+    img, table, video, iframe, pre { max-width: 100%; }
+    .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+  }
+</style>
+<!-- BEGIN unit-nav-css -->
+<style data-section="unit-nav">
+.unit-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 980px;
+  margin: 64px auto 32px;
+  padding: 0 24px;
+}
+.unit-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  padding: 18px 20px;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border, #DDD0C8);
+  border-radius: 12px;
+  color: inherit;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.unit-nav__link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #7A2E2E);
+  box-shadow: 0 6px 16px -4px rgba(60, 20, 30, 0.12);
+}
+.unit-nav__link--next {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.unit-nav__arrow {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent, #7A2E2E);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.unit-nav__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.unit-nav__hint {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #6B5058);
+}
+.unit-nav__title {
+  font-family: var(--font-display, 'DM Serif Display', Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--text, #2C1B1F);
+}
+.unit-nav__placeholder {
+  border: 1px dashed var(--border, #DDD0C8);
+  border-radius: 12px;
+  background: transparent;
+  opacity: 0.6;
+}
+@media (max-width: 640px) {
+  .unit-nav { grid-template-columns: 1fr; gap: 10px; margin-top: 48px; }
+  .unit-nav__link--next { flex-direction: row; text-align: left; }
+}
+@media print { .unit-nav { display: none; } }
+</style>
+<!-- END unit-nav-css -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "AP CSA — Unit 1: Using Objects and Methods",
+  "description": "AP Computer Science A, Unit 1: Using Objects and Methods | Dingrui Scholars. Java fundamentals, variables, data types, Math & String classes, and creating objects, with worked examples, interactive quizzes, dark mode, and print-friendly formatting.",
+  "url": "https://alexliu2233.github.io/dingrui-products/AP%20CSA/Study%20Guides/Unit_1_Using_Objects_and_Methods.html",
+  "inLanguage": [
+    "en",
+    "zh"
+  ],
+  "learningResourceType": "Study Guide",
+  "educationalLevel": "AP",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-brand">
+    <span class="unit-badge">UNIT 1</span>
+    <span data-lang="en">Using Objects &amp; Methods</span><span data-lang="zh">使用对象与方法</span>
+  </div>
+  <div class="topnav-actions">
+    <a class="back-link" href="../index.html" aria-label="Back to all units"><span data-lang="en">← All Units</span><span data-lang="zh">← 返回单元列表</span></a>
+    <button id="tocToggle" onclick="toggleSidebar()"><span data-lang="en">Contents</span><span data-lang="zh">目录</span></button>
+    <button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+    <button id="themeToggle" onclick="toggleTheme()"><span data-lang="en">Dark</span><span data-lang="zh">深色</span></button>
+  </div>
+</nav>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-title"><span data-lang="en">Table of Contents</span><span data-lang="zh">目录</span></div>
+  <a href="#hero"><span data-lang="en">Overview</span><span data-lang="zh">单元概览</span></a>
+  <a href="#s1-1"><span data-lang="en">1.1 Algorithms &amp; Compilers</span><span data-lang="zh">1.1 算法与编译器</span></a>
+  <a href="#s1-2"><span data-lang="en">1.2 Variables &amp; Data Types</span><span data-lang="zh">1.2 变量与数据类型</span></a>
+  <a href="#s1-3"><span data-lang="en">1.3 Expressions &amp; Output</span><span data-lang="zh">1.3 表达式与输出</span></a>
+  <a href="#s1-4"><span data-lang="en">1.4 Assignment &amp; Input</span><span data-lang="zh">1.4 赋值与输入</span></a>
+  <a href="#s1-5"><span data-lang="en">1.5 Casting &amp; Range</span><span data-lang="zh">1.5 类型转换与取值范围</span></a>
+  <a href="#s1-6"><span data-lang="en">1.6 Compound Operators</span><span data-lang="zh">1.6 复合赋值运算符</span></a>
+  <a href="#s1-7"><span data-lang="en">1.7 API &amp; Libraries</span><span data-lang="zh">1.7 API 与库</span></a>
+  <a href="#s1-8"><span data-lang="en">1.8 Comments</span><span data-lang="zh">1.8 注释</span></a>
+  <a href="#s1-9"><span data-lang="en">1.9 Method Signatures</span><span data-lang="zh">1.9 方法签名</span></a>
+  <a href="#s1-10"><span data-lang="en">1.10 Calling Class Methods</span><span data-lang="zh">1.10 调用类方法</span></a>
+  <a href="#s1-11"><span data-lang="en">1.11 Math Class</span><span data-lang="zh">1.11 Math 类</span></a>
+  <a href="#s1-12"><span data-lang="en">1.12 Objects &amp; Classes</span><span data-lang="zh">1.12 对象与类</span></a>
+  <a href="#s1-13"><span data-lang="en">1.13 Instantiation</span><span data-lang="zh">1.13 实例化</span></a>
+  <a href="#s1-14"><span data-lang="en">1.14 Instance Methods</span><span data-lang="zh">1.14 实例方法</span></a>
+  <a href="#s1-15"><span data-lang="en">1.15 String Manipulation</span><span data-lang="zh">1.15 字符串操作</span></a>
+  <a href="#mcq-patterns"><span data-lang="en">MCQ Patterns</span><span data-lang="zh">选择题套路</span></a>
+  <a href="#flashcards"><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></a>
+  <a href="#unit-quiz"><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元小测</span></a>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main-wrap" id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-overline">AP Computer Science A · 鼎睿学苑</div>
+  <h1 data-lang="en">Unit 1: Using Objects<br>and Methods</h1>
+  <h1 data-lang="zh">单元 1：使用对象<br>与方法</h1>
+  <p data-lang="en" style="color: var(--text-secondary); max-width: 560px; margin: 0 auto;">
+    Foundation of Java programming, variables, data types, expressions, the Math and String classes, and creating &amp; using objects.
+  </p>
+  <p data-lang="zh" style="color: var(--text-secondary); max-width: 560px; margin: 0 auto;">
+    Java 编程基础：变量、数据类型、表达式、Math 类与 String 类，以及创建和使用对象。
+  </p>
+  <div class="hero-meta">
+    <span class="chip chip-maroon" data-lang="en">15–25% of AP Exam</span>
+    <span class="chip chip-maroon" data-lang="zh">占 AP 考试 15–25%</span>
+    <span class="chip chip-green" data-lang="en">~32–34 Class Periods</span>
+    <span class="chip chip-green" data-lang="zh">约 32–34 课时</span>
+    <span class="chip chip-purple" data-lang="en">15 Topics</span>
+    <span class="chip chip-purple" data-lang="zh">15 个小节</span>
+  </div>
+</section>
+
+<!-- consult-cta(intro): lead-gen conversion surface under read-me -->
+<aside class="consult-cta consult-cta--intro">
+  <p class="consult-cta__lead"><span data-lang="en">Aiming for the top of the mark scheme?</span><span data-lang="zh">想冲刺满分？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will help you master this unit and map your path forward.</span><span data-lang="zh">预约 Dingrui Scholars 导师的 15 分钟免费咨询。我们将帮助你掌握本单元，并规划下一步的学习路径。</span></p>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=ap_csa&utm_content=unit_1_using_objects_and_methods__sg_intro__en" target="_blank" rel="noopener">Book a free consult &rarr;</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=ap_csa&utm_content=unit_1_using_objects_and_methods__sg_intro__zh" target="_blank" rel="noopener">预约免费咨询 &rarr;</a>
+</aside>
+
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.1 ═══════════════ -->
+<section class="section" id="s1-1">
+  <div class="section-label" data-lang="en">Topic 1.1</div>
+  <div class="section-label" data-lang="zh">小节 1.1</div>
+  <h2 data-lang="en">Introduction to Algorithms, Programming, and Compilers</h2>
+  <h2 data-lang="zh">算法、编程与编译器入门</h2>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Algorithm</strong>
+    A step-by-step process for completing a task or solving a problem. Can be represented with written language or diagrams.
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>算法（<code>algorithm</code>）</strong>
+    完成某项任务或解决某个问题的一步一步的过程。可以用文字或图表来表示。
+  </div>
+
+  <p data-lang="en"><strong>Sequencing</strong> means steps execute one at a time, in order. This is the most basic control structure in any program.</p>
+  <p data-lang="zh"><strong>顺序执行</strong>是指各个步骤按顺序逐条执行。这是任何程序中最基本的控制结构。</p>
+
+  <h3 data-lang="en">The Build Process</h3>
+  <h3 data-lang="zh">构建流程</h3>
+  <div class="card" data-lang="en">
+    <p><strong>Write</strong> source code → <strong>Compile</strong> (javac) → <strong>Run</strong> (java) → Output</p>
+    <p style="margin-top:8px; font-size:0.9rem; color: var(--text-secondary);">
+      An <strong>IDE</strong> (Integrated Development Environment) bundles editing, compiling, and running into one tool.
+      A <strong>compiler</strong> checks for errors before the program runs; errors must be fixed first.
+    </p>
+  </div>
+  <div class="card" data-lang="zh">
+    <p><strong>编写</strong>源代码 → <strong>编译</strong>（javac）→ <strong>运行</strong>（java）→ 输出</p>
+    <p style="margin-top:8px; font-size:0.9rem; color: var(--text-secondary);">
+      <strong>IDE</strong>（集成开发环境）将编辑、编译和运行整合到同一个工具中。
+      <strong>编译器（<code>compiler</code>）</strong>在程序运行之前会检查错误；必须先修复错误才能运行。
+    </p>
+  </div>
+
+  <h3 data-lang="en">Three Types of Errors</h3>
+  <h3 data-lang="zh">三种错误类型</h3>
+  <div class="table-wrap" data-lang="en">
+    <table>
+      <tr><th>Error Type</th><th>When Detected</th><th>Example</th></tr>
+      <tr>
+        <td><strong>Syntax Error</strong></td>
+        <td>Compile-time</td>
+        <td>Missing semicolon, misspelled keyword</td>
+      </tr>
+      <tr>
+        <td><strong>Logic Error</strong></td>
+        <td>Testing / runtime</td>
+        <td>Using <code>+</code> instead of <code>-</code>; program runs but gives wrong answer</td>
+      </tr>
+      <tr>
+        <td><strong>Run-time Error</strong></td>
+        <td>During execution</td>
+        <td>Dividing by zero → <code>ArithmeticException</code></td>
+      </tr>
+    </table>
+  </div>
+  <div class="table-wrap" data-lang="zh">
+    <table>
+      <tr><th>错误类型</th><th>检测时机</th><th>示例</th></tr>
+      <tr>
+        <td><strong>语法错误（<code>syntax error</code>）</strong></td>
+        <td>编译时（<code>compile-time</code>）</td>
+        <td>缺少分号、关键字拼写错误</td>
+      </tr>
+      <tr>
+        <td><strong>逻辑错误（<code>logic error</code>）</strong></td>
+        <td>测试 / 运行时（<code>runtime</code>）</td>
+        <td>把 <code>-</code> 写成 <code>+</code>；程序能运行但结果是错的</td>
+      </tr>
+      <tr>
+        <td><strong>运行时错误（<code>run-time error</code>）</strong></td>
+        <td>执行期间</td>
+        <td>除以零 → <code>ArithmeticException</code></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="concept-box orange" data-lang="en">
+    <strong>Exception</strong>
+    A specific kind of run-time error that interrupts normal program flow. Not caught by the compiler.
+  </div>
+  <div class="concept-box orange" data-lang="zh">
+    <strong>异常（<code>exception</code>）</strong>
+    一种特定的运行时错误，会中断程序的正常流程。编译器无法捕获它。
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.2 ═══════════════ -->
+<section class="section" id="s1-2">
+  <div class="section-label" data-lang="en">Topic 1.2</div>
+  <div class="section-label" data-lang="zh">小节 1.2</div>
+  <h2 data-lang="en">Variables and Data Types</h2>
+  <h2 data-lang="zh">变量与数据类型</h2>
+
+  <p data-lang="en">A <strong>data type</strong> is a set of values plus operations on those values. Java data types fall into two categories: <strong>primitive</strong> and <strong>reference</strong>.</p>
+  <p data-lang="zh"><strong>数据类型</strong>是一组值以及作用于这些值的运算的集合。Java 的数据类型分为两大类：<strong>基本类型（<code>primitive type</code>）</strong>和<strong>引用类型（<code>reference type</code>）</strong>。</p>
+
+  <h3 data-lang="en">The Three Primitive Types (AP CSA)</h3>
+  <h3 data-lang="zh">三种基本类型（AP CSA）</h3>
+  <div class="table-wrap" data-lang="en">
+    <table>
+      <tr><th>Type</th><th>What It Stores</th><th>Example</th></tr>
+      <tr><td><code>int</code></td><td>Integers (whole numbers)</td><td><code>int age = 17;</code></td></tr>
+      <tr><td><code>double</code></td><td>Real numbers (decimals)</td><td><code>double gpa = 3.85;</code></td></tr>
+      <tr><td><code>boolean</code></td><td><code>true</code> or <code>false</code></td><td><code>boolean passed = true;</code></td></tr>
+    </table>
+  </div>
+  <div class="table-wrap" data-lang="zh">
+    <table>
+      <tr><th>类型</th><th>存储内容</th><th>示例</th></tr>
+      <tr><td><code>int</code></td><td>整数（整型数）</td><td><code>int age = 17;</code></td></tr>
+      <tr><td><code>double</code></td><td>实数（带小数）</td><td><code>double gpa = 3.85;</code></td></tr>
+      <tr><td><code>boolean</code></td><td><code>true</code> 或 <code>false</code></td><td><code>boolean passed = true;</code></td></tr>
+    </table>
+  </div>
+
+  <div class="concept-box purple" data-lang="en">
+    <strong>Reference Types</strong>
+    Used for objects (non-primitive). A reference variable stores a <em>reference</em> (memory address) to the object, not the object itself.
+  </div>
+  <div class="concept-box purple" data-lang="zh">
+    <strong>引用类型</strong>
+    用于对象（非基本类型）。引用变量存储的是指向对象的<em>引用</em>（内存地址），而不是对象本身。
+  </div>
+
+  <p data-lang="en">A <strong>variable</strong> is a named storage location. It has a name, a type, and a value that can change while the program runs.</p>
+  <p data-lang="zh"><strong>变量</strong>是一个有名字的存储位置。它有一个名字、一个类型，以及一个在程序运行过程中可以改变的值。</p>
+
+<pre><span class="ty">int</span> score = <span class="num">95</span>;         <span class="cm" data-lang="en">// primitive, holds the value directly</span><span class="cm" data-lang="zh">// 基本类型，直接保存值</span>
+<span class="ty">String</span> name = <span class="str">"Alice"</span>;  <span class="cm" data-lang="en">// reference, holds address of String object</span><span class="cm" data-lang="zh">// 引用类型，保存指向 String 对象的地址</span></pre>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q"><span data-lang="en">Quick Check: Which data type would you use to store whether a light switch is on or off?</span><span data-lang="zh">即时小测：要存储电灯开关是开还是关，应该使用哪种数据类型？</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">int</div>
+      <div class="quiz-opt" data-idx="1">boolean</div>
+      <div class="quiz-opt" data-idx="2">double</div>
+      <div class="quiz-opt" data-idx="3">String</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! A light switch is either on (<code>true</code>) or off (<code>false</code>), a perfect fit for <code>boolean</code>.</span><span data-lang="zh">正确！电灯开关只有开（<code>true</code>）或关（<code>false</code>）两种状态，正好用 <code>boolean</code>。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Not quite. Since a light switch only has two states (on/off), <code>boolean</code> is the best choice.</span><span data-lang="zh">不太对。由于电灯开关只有两种状态（开/关），<code>boolean</code> 是最合适的选择。</span></div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.3 ═══════════════ -->
+<section class="section" id="s1-3">
+  <div class="section-label" data-lang="en">Topic 1.3</div>
+  <div class="section-label" data-lang="zh">小节 1.3</div>
+  <h2 data-lang="en">Expressions and Output</h2>
+  <h2 data-lang="zh">表达式与输出</h2>
+
+  <h3 data-lang="en">Printing to the Console</h3>
+  <h3 data-lang="zh">打印到控制台</h3>
+<pre><span class="ty">System</span>.out.<span class="fn">println</span>(<span class="str">"Hello!"</span>);  <span class="cm" data-lang="en">// prints + newline</span><span class="cm" data-lang="zh">// 打印并换行</span>
+<span class="ty">System</span>.out.<span class="fn">print</span>(<span class="str">"Hi "</span>);       <span class="cm" data-lang="en">// prints, cursor stays</span><span class="cm" data-lang="zh">// 打印，光标停在原行</span>
+<span class="ty">System</span>.out.<span class="fn">print</span>(<span class="str">"there"</span>);     <span class="cm" data-lang="en">// continues on same line</span><span class="cm" data-lang="zh">// 在同一行继续输出</span>
+<span class="cm" data-lang="en">// Output: Hi there</span><span class="cm" data-lang="zh">// 输出：Hi there</span></pre>
+
+  <h3 data-lang="en">Literals &amp; Escape Sequences</h3>
+  <h3 data-lang="zh">字面量与转义序列（<code>escape sequence</code>）</h3>
+  <p data-lang="en">A <strong>literal</strong> is a fixed value in code. A <strong>string literal</strong> is text in double quotes: <code>"Hello"</code>.</p>
+  <p data-lang="zh"><strong>字面量（<code>literal</code>）</strong>是代码中的固定值。<strong>字符串字面量</strong>是写在双引号里的文本：<code>"Hello"</code>。</p>
+
+  <div class="table-wrap" data-lang="en">
+    <table>
+      <tr><th>Escape</th><th>Meaning</th><th>Example Output</th></tr>
+      <tr><td><code>\"</code></td><td>Double quote</td><td><code>"She said \"hi\""</code> → She said "hi"</td></tr>
+      <tr><td><code>\\</code></td><td>Backslash</td><td><code>"C:\\Users"</code> → C:\Users</td></tr>
+      <tr><td><code>\n</code></td><td>Newline</td><td><code>"Line1\nLine2"</code> → two lines</td></tr>
+    </table>
+  </div>
+  <div class="table-wrap" data-lang="zh">
+    <table>
+      <tr><th>转义序列</th><th>含义</th><th>输出示例</th></tr>
+      <tr><td><code>\"</code></td><td>双引号</td><td><code>"She said \"hi\""</code> → She said "hi"</td></tr>
+      <tr><td><code>\\</code></td><td>反斜杠</td><td><code>"C:\\Users"</code> → C:\Users</td></tr>
+      <tr><td><code>\n</code></td><td>换行</td><td><code>"Line1\nLine2"</code> → 分成两行</td></tr>
+    </table>
+  </div>
+
+  <h3 data-lang="en">Arithmetic Operators</h3>
+  <h3 data-lang="zh">算术运算符（<code>operator</code>）</h3>
+  <div class="table-wrap" data-lang="en">
+    <table>
+      <tr><th>Operator</th><th>Operation</th><th>Example</th><th>Result</th></tr>
+      <tr><td><code>+</code></td><td>Addition</td><td><code>7 + 3</code></td><td><code>10</code></td></tr>
+      <tr><td><code>-</code></td><td>Subtraction</td><td><code>7 - 3</code></td><td><code>4</code></td></tr>
+      <tr><td><code>*</code></td><td>Multiplication</td><td><code>7 * 3</code></td><td><code>21</code></td></tr>
+      <tr><td><code>/</code></td><td>Division</td><td><code>7 / 3</code></td><td><code>2</code> (int!)</td></tr>
+      <tr><td><code>%</code></td><td>Remainder</td><td><code>7 % 3</code></td><td><code>1</code></td></tr>
+    </table>
+  </div>
+  <div class="table-wrap" data-lang="zh">
+    <table>
+      <tr><th>运算符</th><th>运算</th><th>示例</th><th>结果</th></tr>
+      <tr><td><code>+</code></td><td>加法</td><td><code>7 + 3</code></td><td><code>10</code></td></tr>
+      <tr><td><code>-</code></td><td>减法</td><td><code>7 - 3</code></td><td><code>4</code></td></tr>
+      <tr><td><code>*</code></td><td>乘法</td><td><code>7 * 3</code></td><td><code>21</code></td></tr>
+      <tr><td><code>/</code></td><td>除法</td><td><code>7 / 3</code></td><td><code>2</code>（整型！）</td></tr>
+      <tr><td><code>%</code></td><td>取余</td><td><code>7 % 3</code></td><td><code>1</code></td></tr>
+    </table>
+  </div>
+
+  <div class="concept-box red" data-lang="en">
+    <strong>Integer Division Trap</strong>
+    <code>7 / 2</code> → <code>3</code> (not 3.5!). Both operands are <code>int</code>, so the result is <code>int</code>, the decimal is dropped. Use at least one <code>double</code> to get 3.5: <code>7.0 / 2</code>.
+  </div>
+  <div class="concept-box red" data-lang="zh">
+    <strong>整数除法陷阱</strong>
+    <code>7 / 2</code> → <code>3</code>（不是 3.5！）。两个操作数都是 <code>int</code>，所以结果也是 <code>int</code>，小数部分会被丢掉。要得到 3.5，至少要有一个 <code>double</code>：<code>7.0 / 2</code>。
+  </div>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Operator Precedence</strong>
+    <code>* / %</code> happen before <code>+ -</code> (left to right). Parentheses override precedence.
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>运算符优先级（<code>precedence</code>）</strong>
+    <code>* / %</code> 先于 <code>+ -</code>（从左到右）。括号可以覆盖默认优先级。
+  </div>
+
+  <div class="concept-box red" data-lang="en">
+    <strong>ArithmeticException</strong>
+    Dividing an <code>int</code> by <code>0</code> throws this exception at run-time.
+  </div>
+  <div class="concept-box red" data-lang="zh">
+    <strong>ArithmeticException（算术异常）</strong>
+    用 <code>int</code> 除以 <code>0</code> 会在运行时抛出该异常（<code>exception</code>）。
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q"><span data-lang="en">What is the value of <code>13 / 5 + 13 % 5</code>?</span><span data-lang="zh"><code>13 / 5 + 13 % 5</code> 的值是多少？</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">5</div>
+      <div class="quiz-opt" data-idx="1">4</div>
+      <div class="quiz-opt" data-idx="2">5</div>
+      <div class="quiz-opt" data-idx="3">2.6</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! <code>13 / 5</code> = 2 (integer division), <code>13 % 5</code> = 3, so 2 + 3 = <strong>5</strong>.</span><span data-lang="zh">正确！<code>13 / 5</code> = 2（整数除法），<code>13 % 5</code> = 3，所以 2 + 3 = <strong>5</strong>。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en"><code>13 / 5</code> = 2 (integer division), <code>13 % 5</code> = 3, so the answer is 2 + 3 = <strong>5</strong>.</span><span data-lang="zh"><code>13 / 5</code> = 2（整数除法），<code>13 % 5</code> = 3，所以答案是 2 + 3 = <strong>5</strong>。</span></div>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--accent);">
+    <div class="card-header" style="color:var(--accent);"><span data-lang="en">Worked Example: Mixed-type expression</span><span data-lang="zh">例题：混合类型表达式</span></div>
+<pre><span class="ty">double</span> avg = <span class="num">5</span> / <span class="num">2</span> * <span class="num">2.0</span>;
+<span class="cm" data-lang="en">// Step 1: 5 / 2 evaluates to 2 (both ints, integer division)</span><span class="cm" data-lang="zh">// 第 1 步：5 / 2 = 2（两边都是 int，整数除法）</span>
+<span class="cm" data-lang="en">// Step 2: 2 * 2.0 evaluates to 4.0 (int gets promoted to double)</span><span class="cm" data-lang="zh">// 第 2 步：2 * 2.0 = 4.0（int 被提升为 double）</span>
+<span class="cm" data-lang="en">// avg = 4.0, not 5.0</span><span class="cm" data-lang="zh">// avg = 4.0，而不是 5.0</span></pre>
+    <p data-lang="en" style="margin-top:10px"><strong>What tripped people up:</strong> Java evaluates left to right at equal precedence. The integer division finishes before the <code>double</code> ever shows up to promote anything. If you want the real average, move the <code>2.0</code> earlier (or write one of the literals as <code>5.0</code>).</p>
+    <p data-lang="zh" style="margin-top:10px"><strong>容易被坑的地方：</strong>当优先级相同时，Java 从左到右求值。整数除法在 <code>double</code> 出现之前就已经完成，根本来不及把任何东西提升为 <code>double</code>。如果想要真正的平均值，把 <code>2.0</code> 往前移（或者把其中一个字面量写成 <code>5.0</code>）。</p>
+  </div>
+
+  <div class="concept-box red" data-lang="en">
+    <strong>AP Trap: The result type comes from the operands, not from the variable</strong>
+    The result type of <code>a / b</code> depends on the types of <code>a</code> and <code>b</code>, not on what you store the result in. <code>double d = 7 / 2;</code> gives <code>d = 3.0</code>, because <code>7 / 2</code> evaluates to the int <code>3</code> first, and then that <code>3</code> gets widened to <code>3.0</code>. The destination type can't reach back into the expression to fix it.
+  </div>
+  <div class="concept-box red" data-lang="zh">
+    <strong>AP 陷阱：结果类型由操作数决定，而不是由变量决定</strong>
+    <code>a / b</code> 的结果类型取决于 <code>a</code> 和 <code>b</code> 的类型，而不是你把结果存到哪里。<code>double d = 7 / 2;</code> 得到的是 <code>d = 3.0</code>，因为 <code>7 / 2</code> 先算成 int <code>3</code>，然后这个 <code>3</code> 才被扩展成 <code>3.0</code>。赋值的目标类型并不会回头去修正表达式本身。
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.4 ═══════════════ -->
+<section class="section" id="s1-4">
+  <div class="section-label" data-lang="en">Topic 1.4</div>
+  <div class="section-label" data-lang="zh">小节 1.4</div>
+  <h2 data-lang="en">Assignment Statements and Input</h2>
+  <h2 data-lang="zh">赋值语句与输入</h2>
+
+  <p data-lang="en">The <strong>assignment operator</strong> <code>=</code> stores the value on the right into the variable on the left. The expression on the right is evaluated first.</p>
+  <p data-lang="zh"><strong>赋值（<code>assignment</code>）运算符</strong> <code>=</code> 把右侧的值存入左侧的变量。右侧的表达式会先被求值。</p>
+
+<pre><span class="ty">int</span> x = <span class="num">5</span>;
+x = x + <span class="num">3</span>;  <span class="cm" data-lang="en">// x is now 8, right side evaluates first</span><span class="cm" data-lang="zh">// x 现在是 8，右边先求值</span></pre>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Initialization</strong>
+    A variable must be assigned a value before you use it. The first assignment is called <em>initialization</em>.
+    Reference types can be assigned <code>null</code> (no object).
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>初始化（<code>initialization</code>）</strong>
+    在使用变量之前，必须先给它赋值。第一次赋值称为<em>初始化</em>。
+    引用类型可以被赋值为 <code>null</code>（表示没有对象）。
+  </div>
+
+  <h3 data-lang="en">Reading Input</h3>
+  <h3 data-lang="zh">读取输入</h3>
+<pre><span class="kw">import</span> java.util.Scanner;
+
+<span class="ty">Scanner</span> input = <span class="kw">new</span> <span class="ty">Scanner</span>(System.in);
+<span class="ty">System</span>.out.<span class="fn">print</span>(<span class="str">"Enter age: "</span>);
+<span class="ty">int</span> age = input.<span class="fn">nextInt</span>();</pre>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.5 ═══════════════ -->
+<section class="section" id="s1-5">
+  <div class="section-label" data-lang="en">Topic 1.5</div>
+  <div class="section-label" data-lang="zh">小节 1.5</div>
+  <h2 data-lang="en">Casting and Range of Variables</h2>
+  <h2 data-lang="zh">类型转换（<code>casting</code>）与变量取值范围</h2>
+
+  <h3 data-lang="en">Casting</h3>
+  <h3 data-lang="zh">类型转换</h3>
+  <p data-lang="en">Explicit casting converts one primitive type to another.</p>
+  <p data-lang="zh">显式类型转换可以把一种基本类型（<code>primitive type</code>）转换成另一种。</p>
+
+<pre><span class="ty">double</span> d = <span class="num">9.7</span>;
+<span class="ty">int</span> n = (<span class="ty">int</span>) d;       <span class="cm" data-lang="en">// n = 9, truncates (does NOT round)</span><span class="cm" data-lang="zh">// n = 9，向零截断（不是四舍五入）</span>
+<span class="ty">double</span> e = (<span class="ty">double</span>) <span class="num">5</span>; <span class="cm" data-lang="en">// e = 5.0</span><span class="cm" data-lang="zh">// e = 5.0</span></pre>
+
+  <div class="concept-box orange" data-lang="en">
+    <strong>Widening (Automatic)</strong>
+    Java automatically promotes <code>int</code> → <code>double</code> when needed (e.g., assigning an <code>int</code> to a <code>double</code> variable).
+  </div>
+  <div class="concept-box orange" data-lang="zh">
+    <strong>自动扩展（隐式扩宽）</strong>
+    Java 会在需要的时候自动把 <code>int</code> 提升为 <code>double</code>（例如，把一个 <code>int</code> 赋值给一个 <code>double</code> 变量时）。
+  </div>
+
+  <div class="concept-box green" data-lang="en">
+    <strong>Rounding Trick</strong>
+    <code>(int)(x + 0.5)</code> for non-negative numbers rounds to the nearest integer. For negatives: <code>(int)(x - 0.5)</code>.
+  </div>
+  <div class="concept-box green" data-lang="zh">
+    <strong>四舍五入技巧</strong>
+    对非负数，<code>(int)(x + 0.5)</code> 可以四舍五入到最接近的整数。对负数则用 <code>(int)(x - 0.5)</code>。
+  </div>
+
+  <h3 data-lang="en">Integer Range &amp; Overflow</h3>
+  <h3 data-lang="zh">整数取值范围与溢出</h3>
+  <p data-lang="en"><code>int</code> uses 4 bytes: range is <code>Integer.MIN_VALUE</code> (−2,147,483,648) to <code>Integer.MAX_VALUE</code> (2,147,483,647). Going beyond → <strong>integer overflow</strong>: result wraps around unpredictably.</p>
+  <p data-lang="zh"><code>int</code> 占 4 字节：取值范围是 <code>Integer.MIN_VALUE</code>（−2,147,483,648）到 <code>Integer.MAX_VALUE</code>（2,147,483,647）。超出该范围会发生<strong>整数溢出（<code>integer overflow</code>）</strong>：结果会以不可预测的方式回卷。</p>
+
+  <div class="concept-box orange" data-lang="en">
+    <strong>Round-off Errors</strong>
+    <code>double</code> has limited precision. Expressions may produce slightly inaccurate results (e.g., <code>0.1 + 0.2</code> ≠ exactly 0.3). Use <code>int</code> when exact values are needed.
+  </div>
+  <div class="concept-box orange" data-lang="zh">
+    <strong>舍入误差</strong>
+    <code>double</code> 的精度是有限的。表达式可能产生稍有偏差的结果（例如 <code>0.1 + 0.2</code> 并不严格等于 0.3）。当需要精确值时，请使用 <code>int</code>。
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--accent);">
+    <div class="card-header" style="color:var(--accent);"><span data-lang="en">Worked Example: Casts truncate toward zero</span><span data-lang="zh">例题：类型转换向零截断（<code>truncation</code>）</span></div>
+<pre><span class="ty">int</span> a = (<span class="ty">int</span>) <span class="num">9.7</span>;          <span class="cm" data-lang="en">// 9   (drops the .7)</span><span class="cm" data-lang="zh">// 9   （丢弃 .7）</span>
+<span class="ty">int</span> b = (<span class="ty">int</span>) -<span class="num">9.7</span>;         <span class="cm" data-lang="en">// -9  (NOT -10; truncates toward zero)</span><span class="cm" data-lang="zh">// -9  （不是 -10；向零截断）</span>
+<span class="ty">double</span> c = (<span class="ty">int</span>) <span class="num">3.9</span> + <span class="num">0.5</span>;   <span class="cm" data-lang="en">// 3.5  (cast hits 3.9 only, then 3 + 0.5)</span><span class="cm" data-lang="zh">// 3.5  （转换只作用于 3.9，然后 3 + 0.5）</span>
+<span class="ty">int</span> d = (<span class="ty">int</span>) (<span class="num">3.9</span> + <span class="num">0.5</span>);    <span class="cm" data-lang="en">// 4    (parentheses make the cast hit the whole sum)</span><span class="cm" data-lang="zh">// 4    （括号让转换作用于整个和）</span></pre>
+    <p data-lang="en" style="margin-top:10px"><strong>Two things to watch:</strong> the cast applies to whatever sits to its right (in line 3, just <code>3.9</code>), not to the whole expression after it. And for negative doubles, the cast drops the fractional part toward zero, not toward minus infinity, so <code>(int)(-3.9)</code> is <code>-3</code>, not <code>-4</code>.</p>
+    <p data-lang="zh" style="margin-top:10px"><strong>两点要小心：</strong>类型转换只作用于紧跟在它右边的那一项（第 3 行只作用于 <code>3.9</code>），而不是后面整段表达式。对负的 <code>double</code> 而言，转换会把小数部分向零截断，而不是向负无穷取整，所以 <code>(int)(-3.9)</code> 是 <code>-3</code>，而不是 <code>-4</code>。</p>
+  </div>
+
+  <div class="concept-box red" data-lang="en">
+    <strong>AP Trap: Implicit widening in arithmetic</strong>
+    Any expression that mixes an <code>int</code> with a <code>double</code> evaluates as a <code>double</code>. <code>3 + 1.0</code> is <code>4.0</code>, not <code>4</code>. To assign the result to an <code>int</code> variable, you need an explicit cast, and the cast will truncate the fractional part.
+  </div>
+  <div class="concept-box red" data-lang="zh">
+    <strong>AP 陷阱：算术运算中的隐式扩宽</strong>
+    任何把 <code>int</code> 和 <code>double</code> 混在一起的表达式都会按 <code>double</code> 计算。<code>3 + 1.0</code> 是 <code>4.0</code>，而不是 <code>4</code>。要把结果赋值给一个 <code>int</code> 变量，必须使用显式类型转换，而且转换会把小数部分截断。
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.6 ═══════════════ -->
+<section class="section" id="s1-6">
+  <div class="section-label" data-lang="en">Topic 1.6</div>
+  <div class="section-label" data-lang="zh">小节 1.6</div>
+  <h2 data-lang="en">Compound Assignment Operators</h2>
+  <h2 data-lang="zh">复合赋值运算符（<code>operator</code>）</h2>
+
+  <div class="table-wrap" data-lang="en">
+    <table>
+      <tr><th>Operator</th><th>Equivalent To</th><th>Example</th></tr>
+      <tr><td><code>x += 5</code></td><td><code>x = x + 5</code></td><td></td></tr>
+      <tr><td><code>x -= 3</code></td><td><code>x = x - 3</code></td><td></td></tr>
+      <tr><td><code>x *= 2</code></td><td><code>x = x * 2</code></td><td></td></tr>
+      <tr><td><code>x /= 4</code></td><td><code>x = x / 4</code></td><td></td></tr>
+      <tr><td><code>x %= 3</code></td><td><code>x = x % 3</code></td><td></td></tr>
+      <tr><td><code>x++</code></td><td><code>x = x + 1</code></td><td>Post-increment</td></tr>
+      <tr><td><code>x--</code></td><td><code>x = x - 1</code></td><td>Post-decrement</td></tr>
+    </table>
+  </div>
+  <div class="table-wrap" data-lang="zh">
+    <table>
+      <tr><th>运算符</th><th>等价于</th><th>说明</th></tr>
+      <tr><td><code>x += 5</code></td><td><code>x = x + 5</code></td><td></td></tr>
+      <tr><td><code>x -= 3</code></td><td><code>x = x - 3</code></td><td></td></tr>
+      <tr><td><code>x *= 2</code></td><td><code>x = x * 2</code></td><td></td></tr>
+      <tr><td><code>x /= 4</code></td><td><code>x = x / 4</code></td><td></td></tr>
+      <tr><td><code>x %= 3</code></td><td><code>x = x % 3</code></td><td></td></tr>
+      <tr><td><code>x++</code></td><td><code>x = x + 1</code></td><td>后置自增</td></tr>
+      <tr><td><code>x--</code></td><td><code>x = x - 1</code></td><td>后置自减</td></tr>
+    </table>
+  </div>
+
+<pre><span class="ty">int</span> score = <span class="num">10</span>;
+score += <span class="num">5</span>;   <span class="cm" data-lang="en">// 15</span><span class="cm" data-lang="zh">// 15</span>
+score *= <span class="num">2</span>;   <span class="cm" data-lang="en">// 30</span><span class="cm" data-lang="zh">// 30</span>
+score--;       <span class="cm" data-lang="en">// 29</span><span class="cm" data-lang="zh">// 29</span></pre>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.7 ═══════════════ -->
+<section class="section" id="s1-7">
+  <div class="section-label" data-lang="en">Topic 1.7</div>
+  <div class="section-label" data-lang="zh">小节 1.7</div>
+  <h2 data-lang="en">Application Program Interface (API) and Libraries</h2>
+  <h2 data-lang="zh">应用程序接口（API）与库</h2>
+
+  <p data-lang="en"><strong>Libraries</strong> are collections of pre-written classes. An <strong>API</strong> (Application Programming Interface) is documentation that tells you how to use those classes.</p>
+  <p data-lang="zh"><strong>库</strong>是一组已经写好的类的集合。<strong>API</strong>（应用程序接口）是一份文档，告诉你如何使用这些类。</p>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Attributes vs Behaviors</strong>
+    <em>Attributes</em> = data stored in variables. <em>Behaviors</em> = what objects can do, defined by methods.
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>属性 vs 行为</strong>
+    <em>属性</em>＝存放在变量里的数据。<em>行为</em>＝对象能做的事情，由方法定义。
+  </div>
+
+  <p data-lang="en">Classes in APIs are grouped into <strong>packages</strong>. You use existing classes to create objects and call their methods.</p>
+  <p data-lang="zh">API 中的类按<strong>包</strong>来组织。你使用已有的类来创建对象，并调用它们的方法。</p>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.8 ═══════════════ -->
+<section class="section" id="s1-8">
+  <div class="section-label" data-lang="en">Topic 1.8</div>
+  <div class="section-label" data-lang="zh">小节 1.8</div>
+  <h2 data-lang="en">Documentation with Comments</h2>
+  <h2 data-lang="zh">使用注释做文档</h2>
+
+<pre><span class="cm" data-lang="en">// Single-line comment</span><span class="cm" data-lang="zh">// 单行注释</span>
+
+<span class="cm" data-lang="en">/* Multi-line
+   block comment */</span><span class="cm" data-lang="zh">/* 多行
+   块注释 */</span>
+
+<span class="cm" data-lang="en">/** Javadoc comment, used to
+  * generate API documentation */</span><span class="cm" data-lang="zh">/** Javadoc 注释，用于
+  * 生成 API 文档 */</span></pre>
+
+  <div class="concept-box green" data-lang="en">
+    <strong>Precondition</strong>
+    A condition that must be true <em>before</em> a method executes for it to work correctly. The method is not required to check it.
+  </div>
+  <div class="concept-box green" data-lang="zh">
+    <strong>前置条件（Precondition）</strong>
+    在方法执行<em>之前</em>必须为真的条件，方法才能正确工作。方法本身并不要求去检查它。
+  </div>
+
+  <div class="concept-box purple" data-lang="en">
+    <strong>Postcondition</strong>
+    A condition guaranteed to be true <em>after</em> a method finishes. Describes what was returned or how the object changed.
+  </div>
+  <div class="concept-box purple" data-lang="zh">
+    <strong>后置条件（Postcondition）</strong>
+    方法执行完成<em>之后</em>保证为真的条件。它描述返回了什么，或者对象发生了怎样的变化。
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.9 ═══════════════ -->
+<section class="section" id="s1-9">
+  <div class="section-label" data-lang="en">Topic 1.9</div>
+  <div class="section-label" data-lang="zh">小节 1.9</div>
+  <h2 data-lang="en">Method Signatures</h2>
+  <h2 data-lang="zh">方法签名</h2>
+
+  <p data-lang="en">A <strong>method</strong> is a named block of code that runs only when called. <strong>Procedural abstraction</strong>: you can use a method knowing <em>what</em> it does without knowing <em>how</em>.</p>
+  <p data-lang="zh"><strong>方法（<code>method</code>）</strong>是一段有名字的代码块，只有在被调用时才会执行。<strong>过程抽象</strong>：你只需要知道一个方法<em>做什么</em>就能使用它，而不必知道它<em>怎么做</em>。</p>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Method Signature</strong>
+    The method name + ordered list of parameter types. Example: <code>substring(int, int)</code>
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>方法签名</strong>
+    方法名 + 有序的形参类型列表。例如：<code>substring(int, int)</code>。
+  </div>
+
+  <h3 data-lang="en">Parameters vs Arguments</h3>
+  <h3 data-lang="zh">形参（<code>parameter</code>） vs 实参（<code>argument</code>）</h3>
+  <p data-lang="en"><strong>Parameter</strong>: variable declared in the method header. <strong>Argument</strong>: the actual value passed in when calling the method. Java uses <strong>call by value</strong>, parameters get <em>copies</em> of the arguments.</p>
+  <p data-lang="zh"><strong>形参</strong>：方法头中声明的变量。<strong>实参</strong>：调用方法时实际传入的值。Java 采用<strong>按值调用</strong>，形参拿到的是实参的<em>副本</em>。</p>
+
+  <h3 data-lang="en">Void vs Non-Void Methods</h3>
+  <h3 data-lang="zh">void 方法 vs 非 void 方法</h3>
+  <div class="table-wrap" data-lang="en">
+    <table>
+      <tr><th></th><th>void</th><th>Non-void</th></tr>
+      <tr><td>Returns a value?</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Used in expressions?</td><td>No, standalone call</td><td>Yes, store/use the return value</td></tr>
+    </table>
+  </div>
+  <div class="table-wrap" data-lang="zh">
+    <table>
+      <tr><th></th><th>void</th><th>非 void</th></tr>
+      <tr><td>是否返回值？</td><td>否</td><td>是</td></tr>
+      <tr><td>能用在表达式中吗？</td><td>不能，只作为独立调用</td><td>能，可保存或使用返回值</td></tr>
+    </table>
+  </div>
+
+  <div class="concept-box orange" data-lang="en">
+    <strong>Overloaded Methods</strong>
+    Multiple methods with the <em>same name</em> but <em>different signatures</em> (different parameter lists). Java picks the right one based on the arguments.
+  </div>
+  <div class="concept-box orange" data-lang="zh">
+    <strong>重载方法（<code>overloading</code>）</strong>
+    多个方法<em>同名</em>但<em>签名不同</em>（形参列表不同）。Java 会根据实参选出正确的那一个。
+  </div>
+
+  <p data-lang="en">When a method is called, execution jumps into that method. After the method finishes (or hits a <code>return</code>), control returns to the calling point.</p>
+  <p data-lang="zh">方法被调用时，执行会跳转到该方法中。方法执行完毕（或遇到 <code>return</code>）后，控制权再回到调用点。</p>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.10 ═══════════════ -->
+<section class="section" id="s1-10">
+  <div class="section-label" data-lang="en">Topic 1.10</div>
+  <div class="section-label" data-lang="zh">小节 1.10</div>
+  <h2 data-lang="en">Calling Class Methods</h2>
+  <h2 data-lang="zh">调用类（<code>class</code>）方法</h2>
+
+  <p data-lang="en"><strong>Class methods</strong> (also called <em>static</em> methods) belong to the class itself, not to any particular object. They have <code>static</code> in the header.</p>
+  <p data-lang="zh"><strong>类方法</strong>（也称为<em>静态</em>方法）属于类本身，而不属于某个具体的对象。它们的方法头中带有 <code>static</code>。</p>
+
+<pre><span class="cm" data-lang="en">// Called using ClassName.methodName()</span><span class="cm" data-lang="zh">// 通过 ClassName.methodName() 调用</span>
+<span class="ty">int</span> absVal = <span class="ty">Math</span>.<span class="fn">abs</span>(-<span class="num">42</span>);  <span class="cm" data-lang="en">// 42</span><span class="cm" data-lang="zh">// 42</span></pre>
+
+  <p data-lang="en">If you call a static method from <em>within</em> the same class, the class name is optional.</p>
+  <p data-lang="zh">如果在<em>同一个类内部</em>调用静态方法，类名可以省略。</p>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.11 ═══════════════ -->
+<section class="section" id="s1-11">
+  <div class="section-label" data-lang="en">Topic 1.11</div>
+  <div class="section-label" data-lang="zh">小节 1.11</div>
+  <h2 data-lang="en">Math Class</h2>
+  <h2 data-lang="zh">Math 类</h2>
+
+  <p data-lang="en">Part of <code>java.lang</code> (automatically available). Contains only <strong>static</strong> methods, no objects needed.</p>
+  <p data-lang="zh">属于 <code>java.lang</code>（自动可用）。只包含<strong>静态</strong>方法，不需要创建对象就能使用。</p>
+
+  <div class="qref">
+    <div class="qref-title" data-lang="en">Quick Reference, Math Methods</div>
+    <div class="qref-title" data-lang="zh">快速参考：Math 类方法</div>
+    <div class="table-wrap" data-lang="en">
+      <table>
+        <tr><th>Method</th><th>Returns</th></tr>
+        <tr><td><code>Math.abs(int x)</code></td><td>Absolute value (int)</td></tr>
+        <tr><td><code>Math.abs(double x)</code></td><td>Absolute value (double)</td></tr>
+        <tr><td><code>Math.pow(double b, double e)</code></td><td>b raised to power e</td></tr>
+        <tr><td><code>Math.sqrt(double x)</code></td><td>Square root of x</td></tr>
+        <tr><td><code>Math.random()</code></td><td>Random double in [0.0, 1.0)</td></tr>
+      </table>
+    </div>
+    <div class="table-wrap" data-lang="zh">
+      <table>
+        <tr><th>方法</th><th>返回值</th></tr>
+        <tr><td><code>Math.abs(int x)</code></td><td>绝对值（int）</td></tr>
+        <tr><td><code>Math.abs(double x)</code></td><td>绝对值（double）</td></tr>
+        <tr><td><code>Math.pow(double b, double e)</code></td><td>b 的 e 次幂</td></tr>
+        <tr><td><code>Math.sqrt(double x)</code></td><td>x 的平方根</td></tr>
+        <tr><td><code>Math.random()</code></td><td>[0.0, 1.0) 之间的随机 double</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h3 data-lang="en">Generating Random Integers</h3>
+  <h3 data-lang="zh">生成随机整数</h3>
+<pre><span class="cm" data-lang="en">// Random int from min to max (inclusive)</span><span class="cm" data-lang="zh">// 从 min 到 max（含端点）的随机整数</span>
+<span class="ty">int</span> roll = (<span class="ty">int</span>) (<span class="ty">Math</span>.<span class="fn">random</span>() * <span class="num">6</span>) + <span class="num">1</span>;  <span class="cm" data-lang="en">// 1–6</span><span class="cm" data-lang="zh">// 1–6</span>
+
+<span class="cm" data-lang="en">// General formula: (int)(Math.random() * range) + min</span><span class="cm" data-lang="zh">// 通用公式：(int)(Math.random() * range) + min</span>
+<span class="cm" data-lang="en">// where range = max - min + 1</span><span class="cm" data-lang="zh">// 其中 range = max - min + 1</span></pre>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q"><span data-lang="en">Which expression produces a random integer from 5 to 10 inclusive?</span><span data-lang="zh">下列哪个表达式生成 5 到 10（含端点）之间的随机整数？</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0"><code>(int)(Math.random() * 5) + 5</code></div>
+      <div class="quiz-opt" data-idx="1"><code>(int)(Math.random() * 6) + 5</code></div>
+      <div class="quiz-opt" data-idx="2"><code>(int)(Math.random() * 10) + 5</code></div>
+      <div class="quiz-opt" data-idx="3"><code>(int)(Math.random() * 6) + 4</code></div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! Range = 10 − 5 + 1 = 6. So: <code>(int)(Math.random() * 6) + 5</code> → values 5, 6, 7, 8, 9, 10.</span><span data-lang="zh">正确！范围 = 10 − 5 + 1 = 6。所以 <code>(int)(Math.random() * 6) + 5</code> → 取值 5、6、7、8、9、10。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Range = max − min + 1 = 6. The formula is <code>(int)(Math.random() * 6) + 5</code>.</span><span data-lang="zh">范围 = max − min + 1 = 6。公式是 <code>(int)(Math.random() * 6) + 5</code>。</span></div>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--accent);">
+    <div class="card-header" style="color:var(--accent);"><span data-lang="en">Worked Example: Deriving the random-int formula</span><span data-lang="zh">例题：推导随机整数公式</span></div>
+    <p data-lang="en">Goal: pick a random integer from <code>min</code> to <code>max</code> inclusive.</p>
+    <p data-lang="zh">目标：从 <code>min</code> 到 <code>max</code>（含端点）取一个随机整数。</p>
+    <p data-lang="en" style="margin-top:8px">Step 1. <code>Math.random()</code> returns a <code>double</code> in <code>[0.0, 1.0)</code>.</p>
+    <p data-lang="zh" style="margin-top:8px">第 1 步。<code>Math.random()</code> 返回一个位于 <code>[0.0, 1.0)</code> 的 <code>double</code>。</p>
+    <p data-lang="en">Step 2. Multiplying by <code>n</code> stretches the range to <code>[0.0, n)</code>.</p>
+    <p data-lang="zh">第 2 步。乘以 <code>n</code> 后，范围被拉伸到 <code>[0.0, n)</code>。</p>
+    <p data-lang="en">Step 3. Casting to <code>int</code> truncates the fractional part, leaving an int in <code>{0, 1, ..., n-1}</code>, which is exactly <code>n</code> possible values.</p>
+    <p data-lang="zh">第 3 步。强制转换为 <code>int</code> 会截断小数部分，得到 <code>{0, 1, ..., n-1}</code> 中的整数，正好是 <code>n</code> 个可能的取值。</p>
+    <p data-lang="en">Step 4. Adding <code>min</code> shifts the set to <code>{min, min+1, ..., min+n-1}</code>. To reach <code>max</code>, you need <code>min + n - 1 = max</code>, so <code>n = max - min + 1</code>.</p>
+    <p data-lang="zh">第 4 步。再加上 <code>min</code>，集合就移动到 <code>{min, min+1, ..., min+n-1}</code>。要能取到 <code>max</code>，需要 <code>min + n - 1 = max</code>，所以 <code>n = max - min + 1</code>。</p>
+<pre><span class="cm" data-lang="en">// Random integer in [min, max] inclusive:</span><span class="cm" data-lang="zh">// [min, max] 闭区间内的随机整数：</span>
+<span class="ty">int</span> r = (<span class="ty">int</span>)(<span class="ty">Math</span>.<span class="fn">random</span>() * (max - min + <span class="num">1</span>)) + min;</pre>
+  </div>
+
+  <div class="concept-box red" data-lang="en">
+    <strong>AP Trap: Off-by-one on the multiplier</strong>
+    Two common wrong answers on AP MCQs: using <code>(max - min)</code> instead of <code>(max - min + 1)</code> (loses the <code>max</code> value, since multiplication stops just below the multiplier), or putting the cast in the wrong place. <code>(int) Math.random() * 6</code> casts <code>Math.random()</code> first, which is always <code>0</code> as an int, so the whole thing is <code>0</code>. The cast has to surround the multiplication: <code>(int)(Math.random() * 6)</code>.
+  </div>
+  <div class="concept-box red" data-lang="zh">
+    <strong>AP 陷阱：乘数上的差一错误</strong>
+    AP 选择题里常见的两种错答：一是用 <code>(max - min)</code> 而不是 <code>(max - min + 1)</code>（会取不到 <code>max</code>，因为乘法结果总停在乘数下方），二是把强制类型转换放错位置。<code>(int) Math.random() * 6</code> 先把 <code>Math.random()</code> 转成 int，那永远是 <code>0</code>，整个表达式就成了 <code>0</code>。强制转换必须包住整个乘法：<code>(int)(Math.random() * 6)</code>。
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.12 ═══════════════ -->
+<section class="section" id="s1-12">
+  <div class="section-label" data-lang="en">Topic 1.12</div>
+  <div class="section-label" data-lang="zh">小节 1.12</div>
+  <h2 data-lang="en">Objects: Instances of Classes</h2>
+  <h2 data-lang="zh">对象（<code>object</code>）：类的实例（<code>instance</code>）</h2>
+
+  <div class="concept-box purple" data-lang="en">
+    <strong>Class vs Object</strong>
+    A <strong>class</strong> is a blueprint. An <strong>object</strong> is a specific instance of that class with defined attribute values. Think: <em>Cookie Cutter</em> (class) → <em>Cookie</em> (object).
+  </div>
+  <div class="concept-box purple" data-lang="zh">
+    <strong>类 vs 对象</strong>
+    <strong>类</strong>是一份蓝图。<strong>对象</strong>是该类的一个具体实例，带有具体的属性值。可以类比为：<em>饼干模具</em>（类）→ <em>饼干</em>（对象）。
+  </div>
+
+  <p data-lang="en">Key ideas about class hierarchies (for awareness, not implementation on the AP exam):</p>
+  <p data-lang="zh">关于类层级结构的几个关键概念（AP 考试只要求了解，不要求自己实现）：</p>
+  <div class="card" data-lang="en">
+    <p><strong>Superclass</strong>: a general class that holds common attributes/behaviors.</p>
+    <p><strong>Subclass</strong>: extends a superclass, inheriting its attributes and behaviors.</p>
+    <p><strong>Inheritance</strong>: the subclass → superclass relationship.</p>
+    <p style="margin-top:8px;">All classes in Java are subclasses of <code>Object</code>.</p>
+  </div>
+  <div class="card" data-lang="zh">
+    <p><strong>父类（Superclass）</strong>：包含公共属性/行为的一般类。</p>
+    <p><strong>子类（Subclass）</strong>：扩展父类，继承其属性和行为。</p>
+    <p><strong>继承</strong>：子类 → 父类的关系。</p>
+    <p style="margin-top:8px;">Java 中所有类都是 <code>Object</code> 的子类。</p>
+  </div>
+
+  <p data-lang="en">A <strong>reference variable</strong> stores an object reference (essentially the memory address of the object).</p>
+  <p data-lang="zh"><strong>引用变量</strong>存储的是对象引用（本质上是该对象的内存地址）。</p>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.13 ═══════════════ -->
+<section class="section" id="s1-13">
+  <div class="section-label" data-lang="en">Topic 1.13</div>
+  <div class="section-label" data-lang="zh">小节 1.13</div>
+  <h2 data-lang="en">Object Creation and Storage (Instantiation)</h2>
+  <h2 data-lang="zh">对象的创建与存储（实例化 <code>instantiation</code>）</h2>
+
+  <p data-lang="en">Objects are created using the <code>new</code> keyword followed by a <strong>constructor</strong> call.</p>
+  <p data-lang="zh">使用 <code>new</code> 关键字加上一次<strong>构造方法（<code>constructor</code>）</strong>调用来创建对象。</p>
+
+<pre><span class="cm" data-lang="en">// ClassName variableName = new ClassName(arguments);</span><span class="cm" data-lang="zh">// 类名 变量名 = new 类名(参数列表);</span>
+<span class="ty">Scanner</span> sc = <span class="kw">new</span> <span class="ty">Scanner</span>(System.in);
+<span class="ty">String</span> greeting = <span class="kw">new</span> <span class="ty">String</span>(<span class="str">"Hello"</span>);</pre>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Constructor</strong>
+    A special method with the same name as the class. Sets up initial values.
+    <em>Constructor signature</em> = name + ordered parameter types. Constructors can be <strong>overloaded</strong> (multiple constructors with different parameter lists).
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>构造方法（Constructor）</strong>
+    一种特殊的方法，名字与类相同，用于设置初始值。
+    <em>构造方法签名</em> = 名字 + 有序的形参类型列表。构造方法可以<strong>重载</strong>（多个构造方法，形参列表不同）。
+  </div>
+
+  <p data-lang="en">Like method calls, constructor calls use <strong>call by value</strong>, parameters get copies of arguments. A constructor call interrupts sequential flow: statements in the constructor execute first, then control returns.</p>
+  <p data-lang="zh">与普通方法调用一样，构造方法调用也使用<strong>按值调用</strong>，形参拿到的是实参的副本。构造方法的调用会打断顺序执行：构造方法内的语句先执行，然后控制权再返回。</p>
+
+  <p data-lang="en">Reference variables hold either an object reference or <code>null</code>.</p>
+  <p data-lang="zh">引用变量保存的要么是对象引用，要么是 <code>null</code>。</p>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.14 ═══════════════ -->
+<section class="section" id="s1-14">
+  <div class="section-label" data-lang="en">Topic 1.14</div>
+  <div class="section-label" data-lang="zh">小节 1.14</div>
+  <h2 data-lang="en">Calling Instance Methods</h2>
+  <h2 data-lang="zh">调用实例方法</h2>
+
+  <p data-lang="en"><strong>Instance methods</strong> are called <em>on</em> an object using the dot operator.</p>
+  <p data-lang="zh"><strong>实例方法（<code>instance</code> method）</strong>通过点运算符<em>在某个对象上</em>调用。</p>
+
+<pre><span class="ty">String</span> name = <span class="str">"Alice"</span>;
+<span class="ty">int</span> len = name.<span class="fn">length</span>();  <span class="cm" data-lang="en">// instance method call → 5</span><span class="cm" data-lang="zh">// 实例方法调用 → 5</span></pre>
+
+  <div class="concept-box red" data-lang="en">
+    <strong>NullPointerException</strong>
+    Calling a method on a <code>null</code> reference throws this run-time error. Always make sure the object exists!
+  </div>
+  <div class="concept-box red" data-lang="zh">
+    <strong>NullPointerException</strong>
+    在 <code>null</code> 引用上调用方法会在运行时抛出该错误。一定要先确认对象存在！
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ TOPIC 1.15 ═══════════════ -->
+<section class="section" id="s1-15">
+  <div class="section-label" data-lang="en">Topic 1.15</div>
+  <div class="section-label" data-lang="zh">小节 1.15</div>
+  <h2 data-lang="en">String Manipulation</h2>
+  <h2 data-lang="zh">字符串（<code>String</code>）操作</h2>
+
+  <p data-lang="en"><code>String</code> is in <code>java.lang</code> (auto-imported). Strings are <strong>immutable</strong>, once created, they cannot be changed. Methods return <em>new</em> strings.</p>
+  <p data-lang="zh"><code>String</code> 位于 <code>java.lang</code>（自动导入）。字符串是<strong>不可变的（<code>immutable</code>）</strong>：一旦创建就无法被修改。相关方法返回的都是<em>新的</em>字符串。</p>
+
+  <h3 data-lang="en">Creating Strings</h3>
+  <h3 data-lang="zh">创建字符串</h3>
+<pre><span class="ty">String</span> a = <span class="str">"hello"</span>;                      <span class="cm" data-lang="en">// string literal</span><span class="cm" data-lang="zh">// 字符串字面量</span>
+<span class="ty">String</span> b = <span class="kw">new</span> <span class="ty">String</span>(<span class="str">"hello"</span>);         <span class="cm" data-lang="en">// constructor</span><span class="cm" data-lang="zh">// 构造方法</span></pre>
+
+  <h3 data-lang="en">Concatenation</h3>
+  <h3 data-lang="zh">字符串拼接（<code>concatenation</code>）</h3>
+<pre><span class="ty">String</span> full = <span class="str">"AP"</span> + <span class="str">" CSA"</span>;   <span class="cm" data-lang="en">// "AP CSA"</span><span class="cm" data-lang="zh">// "AP CSA"</span>
+<span class="ty">int</span> num = <span class="num">5</span>;
+<span class="ty">String</span> msg = <span class="str">"Unit "</span> + num;    <span class="cm" data-lang="en">// "Unit 5", int auto-converts</span><span class="cm" data-lang="zh">// "Unit 5"，int 自动转换</span></pre>
+
+  <div class="qref">
+    <div class="qref-title" data-lang="en">Quick Reference, String Methods</div>
+    <div class="qref-title" data-lang="zh">快速参考：String 类方法</div>
+    <div class="table-wrap" data-lang="en">
+      <table>
+        <tr><th>Method</th><th>Returns</th></tr>
+        <tr><td><code>str.length()</code></td><td>Number of characters</td></tr>
+        <tr><td><code>str.substring(from, to)</code></td><td>Chars from index <code>from</code> to <code>to-1</code></td></tr>
+        <tr><td><code>str.substring(from)</code></td><td>From index <code>from</code> to end</td></tr>
+        <tr><td><code>str.indexOf(s)</code></td><td>Index of first occurrence of <code>s</code>; <code>-1</code> if not found</td></tr>
+        <tr><td><code>str.equals(other)</code></td><td><code>true</code> if same sequence of chars</td></tr>
+        <tr><td><code>str.compareTo(other)</code></td><td>Negative if <code>str</code>&lt;<code>other</code>, 0 if equal, positive if greater</td></tr>
+      </table>
+    </div>
+    <div class="table-wrap" data-lang="zh">
+      <table>
+        <tr><th>方法</th><th>返回值</th></tr>
+        <tr><td><code>str.length()</code></td><td>字符的数量</td></tr>
+        <tr><td><code>str.substring(from, to)</code></td><td>索引 <code>from</code> 到 <code>to-1</code> 之间的字符</td></tr>
+        <tr><td><code>str.substring(from)</code></td><td>从索引 <code>from</code> 到末尾</td></tr>
+        <tr><td><code>str.indexOf(s)</code></td><td><code>s</code> 第一次出现的索引；找不到返回 <code>-1</code></td></tr>
+        <tr><td><code>str.equals(other)</code></td><td>字符序列相同则为 <code>true</code></td></tr>
+        <tr><td><code>str.compareTo(other)</code></td><td><code>str</code>&lt;<code>other</code> 时为负，相等为 0，大于时为正</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="concept-box red" data-lang="en">
+    <strong>StringIndexOutOfBoundsException</strong>
+    Indices run from <code>0</code> to <code>length() - 1</code>. Accessing outside this range crashes the program.
+  </div>
+  <div class="concept-box red" data-lang="zh">
+    <strong>StringIndexOutOfBoundsException</strong>
+    索引范围是 <code>0</code> 到 <code>length() - 1</code>。访问超出该范围会导致程序崩溃。
+  </div>
+
+  <h3 data-lang="en">Worked Example</h3>
+  <h3 data-lang="zh">例题</h3>
+<pre><span class="ty">String</span> s = <span class="str">"computer"</span>;
+s.<span class="fn">length</span>()              <span class="cm" data-lang="en">// 8</span><span class="cm" data-lang="zh">// 8</span>
+s.<span class="fn">substring</span>(<span class="num">0</span>, <span class="num">3</span>)       <span class="cm" data-lang="en">// "com"</span><span class="cm" data-lang="zh">// "com"</span>
+s.<span class="fn">substring</span>(<span class="num">3</span>)          <span class="cm" data-lang="en">// "puter"</span><span class="cm" data-lang="zh">// "puter"</span>
+s.<span class="fn">indexOf</span>(<span class="str">"put"</span>)        <span class="cm" data-lang="en">// 3</span><span class="cm" data-lang="zh">// 3</span>
+s.<span class="fn">indexOf</span>(<span class="str">"xyz"</span>)        <span class="cm" data-lang="en">// -1</span><span class="cm" data-lang="zh">// -1</span>
+s.<span class="fn">substring</span>(<span class="num">2</span>, <span class="num">3</span>)       <span class="cm" data-lang="en">// "m", single char at index 2</span><span class="cm" data-lang="zh">// "m"，索引 2 处的单个字符</span></pre>
+
+  <details>
+    <summary><span data-lang="en">toString() &amp; Concatenation with Objects</span><span data-lang="zh">toString() 与对象的拼接</span></summary>
+    <div class="detail-body">
+      <p data-lang="en">When you concatenate a <code>String</code> with any object using <code>+</code>, Java implicitly calls that object's <code>toString()</code> method. Every class inherits <code>toString()</code> from <code>Object</code>, and subclasses often override it to return something meaningful.</p>
+      <p data-lang="zh">当你用 <code>+</code> 把一个 <code>String</code> 与任何对象拼接时，Java 会隐式调用该对象的 <code>toString()</code> 方法。每个类都从 <code>Object</code> 继承了 <code>toString()</code>，子类通常会重写它以返回有意义的内容。</p>
+    </div>
+  </details>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q"><span data-lang="en">Given <code>String s = "banana";</code>, what does <code>s.substring(1, 4)</code> return?</span><span data-lang="zh">给定 <code>String s = "banana";</code>，<code>s.substring(1, 4)</code> 返回什么？</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">"ban"</div>
+      <div class="quiz-opt" data-idx="1">"bana"</div>
+      <div class="quiz-opt" data-idx="2">"ana"</div>
+      <div class="quiz-opt" data-idx="3">"anan"</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! Index 1='a', 2='n', 3='a'. <code>substring(1,4)</code> returns chars at indices 1, 2, 3 → "ana".</span><span data-lang="zh">正确！索引 1='a'、2='n'、3='a'。<code>substring(1,4)</code> 返回索引 1、2、3 处的字符 → "ana"。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Remember: <code>substring(from, to)</code> includes <code>from</code> but excludes <code>to</code>. Indices 1,2,3 → "ana".</span><span data-lang="zh">记住：<code>substring(from, to)</code> 包含 <code>from</code>，但不包含 <code>to</code>。索引 1、2、3 → "ana"。</span></div>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--accent);">
+    <div class="card-header" style="color:var(--accent);"><span data-lang="en">Worked Example: <code>.equals()</code> vs <code>==</code></span><span data-lang="zh">例题：<code>.equals()</code> 与 <code>==</code> 的区别</span></div>
+<pre><span class="ty">String</span> a = <span class="str">"hi"</span>;
+<span class="ty">String</span> b = <span class="str">"hi"</span>;
+<span class="ty">String</span> c = <span class="kw">new</span> <span class="ty">String</span>(<span class="str">"hi"</span>);
+
+a == b           <span class="cm" data-lang="en">// true   (string-pool sharing, both point to the same literal)</span><span class="cm" data-lang="zh">// true   （字符串池共享，两者指向同一个字面量）</span>
+a == c           <span class="cm" data-lang="en">// false  (c is a fresh object on the heap)</span><span class="cm" data-lang="zh">// false  （c 是堆上新建的对象）</span>
+a.<span class="fn">equals</span>(c)      <span class="cm" data-lang="en">// true   (same characters)</span><span class="cm" data-lang="zh">// true   （字符序列相同）</span></pre>
+    <p data-lang="en" style="margin-top:10px"><strong>The rule:</strong> use <code>.equals()</code> for content equality on every object type. <code>==</code> on references asks "are these the same object?", which is almost never what an AP MCQ wants when the question says "is the text the same?".</p>
+    <p data-lang="zh" style="margin-top:10px"><strong>规则：</strong>对任何对象类型的内容相等判断都用 <code>.equals()</code>。<code>==</code> 作用在引用上问的是"是不是同一个对象？"，当 AP 选择题问"文本是否相同？"时，这几乎永远不是它想要的。</p>
+  </div>
+
+  <div class="concept-box red" data-lang="en">
+    <strong>AP Trap: Strings are immutable</strong>
+    Methods like <code>toUpperCase()</code>, <code>substring()</code>, and <code>replace()</code> return a <em>new</em> String, they don't modify the original. <code>s.toUpperCase();</code> by itself does nothing useful, you have to write <code>s = s.toUpperCase();</code> to keep the result. Forgetting to reassign is one of the most common String-manipulation MCQ traps.
+  </div>
+  <div class="concept-box red" data-lang="zh">
+    <strong>AP 陷阱：字符串是不可变的</strong>
+    <code>toUpperCase()</code>、<code>substring()</code>、<code>replace()</code> 等方法返回的是<em>新的</em> String，并不会修改原字符串。单独写 <code>s.toUpperCase();</code> 没有任何效果，必须写成 <code>s = s.toUpperCase();</code> 才能保留结果。忘了重新赋值，是字符串操作选择题里最常见的陷阱之一。
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ MCQ PATTERNS PREVIEW ═══════════════ -->
+<section class="section" id="mcq-patterns">
+  <div class="section-label" data-lang="en">AP MCQ Preview</div>
+  <div class="section-label" data-lang="zh">AP 选择题预览</div>
+  <h2 data-lang="en">Unit 1 MCQ Patterns That Show Up Every Year</h2>
+  <h2 data-lang="zh">单元 1 每年都会出现的选择题套路</h2>
+  <p data-lang="en">Unit 1 is mostly tested on the MCQ section. The same handful of patterns reappear in different costumes. If you can spot which pattern a question is testing, you can usually answer it in under 30 seconds.</p>
+  <p data-lang="zh">单元 1 主要在选择题部分被考察。同样的几种套路会换着包装反复出现。只要能认出题目在考哪一种套路，通常 30 秒之内就能作答。</p>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Pattern 1: Integer division hiding inside an expression</strong>
+    Look for <code>/</code> with two int operands. If both sides are ints, the result is an int, the fractional part is dropped. Common disguise: storing the result in a <code>double</code> variable, which doesn't change the division itself. (See Topic 1.3.)
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>套路 1：藏在表达式里的整数除法</strong>
+    留意两侧都是 int 操作数的 <code>/</code>。如果两边都是 int，结果就是 int，小数部分会被丢掉。常见的伪装：把结果存到一个 <code>double</code> 变量里——这并不会改变除法本身。（见小节 1.3。）
+  </div>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Pattern 2: Cast precedence</strong>
+    A cast binds tightly. <code>(int) 3.7 + 0.5</code> is <code>3.5</code> (cast hits <code>3.7</code> only), not <code>4</code>. Compare with <code>(int)(3.7 + 0.5)</code>, which is <code>4</code>. (See Topic 1.5.)
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>套路 2：强制类型转换的优先级</strong>
+    强制类型转换的结合性非常强。<code>(int) 3.7 + 0.5</code> 的结果是 <code>3.5</code>（转换只作用于 <code>3.7</code>），而不是 <code>4</code>。对比 <code>(int)(3.7 + 0.5)</code>，那才是 <code>4</code>。（见小节 1.5。）
+  </div>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Pattern 3: Math.random() range derivation</strong>
+    Either pick the right formula <code>(int)(Math.random() * (max-min+1)) + min</code> or read a given expression and back-solve the inclusive range. Watch for off-by-one in the multiplier and for casts in the wrong spot. (See Topic 1.11.)
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>套路 3：Math.random() 区间推导</strong>
+    要么挑出正确的公式 <code>(int)(Math.random() * (max-min+1)) + min</code>，要么读懂给定的表达式、反推它能取到的闭区间。小心乘数上的差一错误，以及强制类型转换的位置不对。（见小节 1.11。）
+  </div>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Pattern 4: String <code>==</code> vs <code>.equals()</code></strong>
+    If the question stores strings two different ways (one literal, one <code>new String(...)</code>), <code>==</code> can be <code>false</code> even though the text is identical. <code>.equals()</code> is the AP-correct answer for content comparison. (See Topic 1.15.)
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>套路 4：String 的 <code>==</code> 与 <code>.equals()</code></strong>
+    如果题目用两种方式存放字符串（一个是字面量，另一个是 <code>new String(...)</code>），即使文字完全相同，<code>==</code> 也可能是 <code>false</code>。在 AP 中，比较内容的正确答案是 <code>.equals()</code>。（见小节 1.15。）
+  </div>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Pattern 5: substring index bounds</strong>
+    <code>s.substring(a, b)</code> includes index <code>a</code>, excludes index <code>b</code>. Length of the result is <code>b - a</code>. <code>s.substring(a)</code> runs to the end. Always check that <code>0 ≤ a ≤ b ≤ s.length()</code>, otherwise it crashes.
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>套路 5：substring 的索引边界</strong>
+    <code>s.substring(a, b)</code> 包含索引 <code>a</code>、不包含索引 <code>b</code>。结果的长度是 <code>b - a</code>。<code>s.substring(a)</code> 一直取到末尾。务必检查 <code>0 ≤ a ≤ b ≤ s.length()</code>，否则程序会崩溃。
+  </div>
+
+  <div class="concept-box" data-lang="en">
+    <strong>Pattern 6: NullPointerException on uninitialized reference</strong>
+    Calling any instance method on a <code>null</code> reference crashes the program. If a code segment declares <code>String s;</code> but never assigns it, then <code>s.length()</code> throws NullPointerException. Watch for the missing <code>new</code>.
+  </div>
+  <div class="concept-box" data-lang="zh">
+    <strong>套路 6：在未初始化的引用上发生 NullPointerException</strong>
+    在 <code>null</code> 引用上调用任何实例方法都会让程序崩溃。如果一段代码只写了 <code>String s;</code> 却始终没有给它赋值，那么 <code>s.length()</code> 会抛出 NullPointerException。留意缺失的 <code>new</code>。
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ FLASHCARDS ═══════════════ -->
+<section class="section" id="flashcards">
+  <div class="section-label" data-lang="en">Review</div>
+  <div class="section-label" data-lang="zh">复习</div>
+  <h2 data-lang="en">Flashcards, Click to Flip</h2>
+  <h2 data-lang="zh">闪卡（点击翻面）</h2>
+
+  <div class="flashcard-grid">
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en">What is an algorithm?</span><span data-lang="zh">什么是算法？</span></div>
+        <div class="flashcard-back"><span data-lang="en">A step-by-step process for completing a task or solving a problem.</span><span data-lang="zh">完成任务或解决问题的一步一步的过程。</span></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en">3 primitive types in AP CSA?</span><span data-lang="zh">AP CSA 的 3 种基本类型？</span></div>
+        <div class="flashcard-back"><code>int</code>, <code>double</code>, <code>boolean</code></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en">What does <code>7 / 2</code> equal?</span><span data-lang="zh"><code>7 / 2</code> 等于多少？</span></div>
+        <div class="flashcard-back"><span data-lang="en"><code>3</code>, integer division truncates the decimal.</span><span data-lang="zh"><code>3</code>，整数除法会截断小数部分。</span></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en">Casting <code>(int) 9.8</code> gives?</span><span data-lang="zh"><code>(int) 9.8</code> 转换后是？</span></div>
+        <div class="flashcard-back"><span data-lang="en"><code>9</code>, truncation, not rounding.</span><span data-lang="zh"><code>9</code>，是截断，不是四舍五入。</span></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en">Class method vs Instance method?</span><span data-lang="zh">类方法与实例方法的区别？</span></div>
+        <div class="flashcard-back"><span data-lang="en">Class (static): called on the class.<br>Instance: called on an object.</span><span data-lang="zh">类方法（静态）：在类上调用。<br>实例方法：在对象上调用。</span></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en">What does <code>Math.random()</code> return?</span><span data-lang="zh"><code>Math.random()</code> 返回什么？</span></div>
+        <div class="flashcard-back"><span data-lang="en">A <code>double</code> ≥ 0.0 and &lt; 1.0</span><span data-lang="zh">一个 ≥ 0.0 且 &lt; 1.0 的 <code>double</code>。</span></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en">Strings are ___?</span><span data-lang="zh">字符串是 ___？</span></div>
+        <div class="flashcard-back"><span data-lang="en"><strong>Immutable</strong>, once created, their content cannot change.</span><span data-lang="zh"><strong>不可变的</strong>，一旦创建，内容就无法改变。</span></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en"><code>s.substring(2, 5)</code> returns what indices?</span><span data-lang="zh"><code>s.substring(2, 5)</code> 返回哪些索引处的字符？</span></div>
+        <div class="flashcard-back"><span data-lang="en">Characters at indices 2, 3, 4 (includes <code>from</code>, excludes <code>to</code>).</span><span data-lang="zh">索引 2、3、4 处的字符（含 <code>from</code>，不含 <code>to</code>）。</span></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">NullPointerException</div>
+        <div class="flashcard-back"><span data-lang="en">Thrown when you call a method on a reference that is <code>null</code>.</span><span data-lang="zh">当你在一个值为 <code>null</code> 的引用上调用方法时抛出。</span></div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front"><span data-lang="en">Precondition vs Postcondition?</span><span data-lang="zh">前置条件与后置条件的区别？</span></div>
+        <div class="flashcard-back"><span data-lang="en">Pre: must be true <em>before</em> method runs.<br>Post: guaranteed true <em>after</em> method runs.</span><span data-lang="zh">前置条件：方法运行<em>前</em>必须为真。<br>后置条件：方法运行<em>后</em>保证为真。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══════════════ UNIT QUIZ ═══════════════ -->
+<section class="section" id="unit-quiz">
+  <div class="section-label" data-lang="en">Assessment</div>
+  <div class="section-label" data-lang="zh">测验</div>
+  <h2 data-lang="en">Unit 1, Practice Quiz</h2>
+  <h2 data-lang="zh">单元 1：练习小测</h2>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q"><span data-lang="en">1. What is the output of <code>System.out.println(3 + 4 + "Hi" + 3 + 4);</code>?</span><span data-lang="zh">1. <code>System.out.println(3 + 4 + "Hi" + 3 + 4);</code> 的输出是什么？</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">34Hi34</div>
+      <div class="quiz-opt" data-idx="1">3 + 4 + Hi + 3 + 4</div>
+      <div class="quiz-opt" data-idx="2">7Hi34</div>
+      <div class="quiz-opt" data-idx="3">7Hi7</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! Left to right: 3+4=7 (int math), then 7+"Hi"="7Hi" (string concat), then "7Hi"+3="7Hi3", then "7Hi3"+4="7Hi34".</span><span data-lang="zh">正确！从左到右：3+4=7（整数运算），然后 7+"Hi"="7Hi"（字符串拼接），接着 "7Hi"+3="7Hi3"，最后 "7Hi3"+4="7Hi34"。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Evaluate left to right: 3+4=7, then 7+"Hi"="7Hi" (switching to string concat), then append 3 and 4 as strings → "7Hi34".</span><span data-lang="zh">从左到右求值：3+4=7，然后 7+"Hi"="7Hi"（切换为字符串拼接），再把 3 和 4 当作字符串追加 → "7Hi34"。</span></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q"><span data-lang="en">2. Which correctly creates a random integer from 1 to 100?</span><span data-lang="zh">2. 哪一项正确生成 1 到 100 之间的随机整数？</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0"><code>(int)(Math.random() * 100)</code></div>
+      <div class="quiz-opt" data-idx="1"><code>(int)(Math.random() * 100) + 1</code></div>
+      <div class="quiz-opt" data-idx="2"><code>(int)(Math.random() * 101)</code></div>
+      <div class="quiz-opt" data-idx="3"><code>(int)(Math.random() * 99) + 1</code></div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! <code>Math.random()*100</code> gives [0, 100), cast to int gives 0–99, + 1 gives 1–100.</span><span data-lang="zh">正确！<code>Math.random()*100</code> 取值在 [0, 100)，转成 int 得到 0–99，再加 1 得到 1–100。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Formula: <code>(int)(Math.random() * range) + min</code> where range = 100 and min = 1.</span><span data-lang="zh">公式：<code>(int)(Math.random() * range) + min</code>，其中 range = 100，min = 1。</span></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q"><span data-lang="en">3. What does the following code print?<br>
+    <code>String s = "APCS"; System.out.println(s.substring(1, 3));</code></span><span data-lang="zh">3. 下面这段代码打印什么？<br>
+    <code>String s = "APCS"; System.out.println(s.substring(1, 3));</code></span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">PC</div>
+      <div class="quiz-opt" data-idx="1">PCS</div>
+      <div class="quiz-opt" data-idx="2">AP</div>
+      <div class="quiz-opt" data-idx="3">APC</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! Index 1='P', index 2='C'. <code>substring(1,3)</code> → "PC" (3 is exclusive).</span><span data-lang="zh">正确！索引 1='P'、索引 2='C'。<code>substring(1,3)</code> → "PC"（3 是开区间）。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en"><code>substring(1,3)</code> returns characters at indices 1 and 2 → "PC".</span><span data-lang="zh"><code>substring(1,3)</code> 返回索引 1 和 2 处的字符 → "PC"。</span></div>
+  </div>
+
+  <div class="quiz" data-answer="3">
+    <div class="quiz-q"><span data-lang="en">4. Which is a logic error?</span><span data-lang="zh">4. 下列哪一项是逻辑错误？</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0"><span data-lang="en">Missing semicolon</span><span data-lang="zh">缺少分号</span></div>
+      <div class="quiz-opt" data-idx="1"><span data-lang="en">Dividing by zero at run-time</span><span data-lang="zh">运行时除以零</span></div>
+      <div class="quiz-opt" data-idx="2"><span data-lang="en">Using an undeclared variable</span><span data-lang="zh">使用未声明的变量</span></div>
+      <div class="quiz-opt" data-idx="3"><span data-lang="en">Using + instead of − in a formula</span><span data-lang="zh">在公式中把 − 写成了 +</span></div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! Logic errors produce wrong results but no compiler/runtime errors. Using the wrong operator is a classic logic error.</span><span data-lang="zh">正确！逻辑错误会让结果出错，但既不会有编译错误也不会有运行时错误。用错运算符是典型的逻辑错误。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">A logic error makes the program produce incorrect output without crashing. Using the wrong operator (+ instead of −) is a logic error.</span><span data-lang="zh">逻辑错误会让程序输出不正确，但不会崩溃。用错运算符（把 − 写成 +）就是一种逻辑错误。</span></div>
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q"><span data-lang="en">5. What value is stored after: <code>int x = 5; x %= 3;</code>?</span><span data-lang="zh">5. 执行 <code>int x = 5; x %= 3;</code> 之后存储的值是多少？</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">1.67</div>
+      <div class="quiz-opt" data-idx="1">3</div>
+      <div class="quiz-opt" data-idx="2">2</div>
+      <div class="quiz-opt" data-idx="3">0</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct! <code>x %= 3</code> means <code>x = x % 3</code> = <code>5 % 3</code> = 2.</span><span data-lang="zh">正确！<code>x %= 3</code> 等同于 <code>x = x % 3</code> = <code>5 % 3</code> = 2。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en"><code>x %= 3</code> is the same as <code>x = 5 % 3</code>. 5 divided by 3 has remainder 2.</span><span data-lang="zh"><code>x %= 3</code> 等同于 <code>x = 5 % 3</code>。5 除以 3 的余数是 2。</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════ AP-STYLE PRACTICE ═══════════════ -->
+<section class="section" id="ap-practice">
+  <div class="section-label" data-lang="en">Next Step</div>
+  <div class="section-label" data-lang="zh">下一步</div>
+  <h2 data-lang="en">AP-Style Practice Problems</h2>
+  <h2 data-lang="zh">AP 风格练习题</h2>
+  <div style="background:var(--accent-light);border-left:4px solid var(--accent);border-radius:var(--radius);padding:20px 24px;margin:12px 0;">
+    <p data-lang="en" style="margin-bottom:16px;">15 exam-level multiple-choice questions (3 medium · 12 hard), code-trace heavy with realistic distractors and fully worked solutions. Built for top-score prep — go here after you've worked through the notes and the in-page quiz above.</p>
+    <p data-lang="zh" style="margin-bottom:16px;">15 道考试级别的选择题（3 道中等难度 · 12 道高难度），以代码跟踪为主，含真实的干扰项和完整的解题过程。专为冲刺高分准备——在你看完本页笔记并做完上方的小测之后再来。</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="../Practice%20Questions/Unit_1_Using_Objects_and_Methods_Practice_Problems.html" style="display:inline-block;padding:10px 22px;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:.9rem;"><span data-lang="en">Practice Problems →</span><span data-lang="zh">练习题 →</span></a>
+    </div>
+  </div>
+</section>
+
+<div style="text-align: center; padding: 40px 0; color: var(--text-secondary); font-size: 0.85rem;">
+  <p style="font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 4px; color: var(--text);">鼎睿学苑 · Dingrui Scholars</p>
+  <p data-lang="en">AP Computer Science A, Unit 1: Using Objects &amp; Methods · 2026 Edition</p>
+  <p data-lang="zh">AP 计算机科学 A，单元 1：使用对象与方法 · 2026 版</p>
+</div>
+
+<!-- BEGIN unit-nav -->
+<nav class="unit-nav" aria-label="Course navigation">
+  <div class="unit-nav__placeholder unit-nav__link unit-nav__link--prev" aria-hidden="true"></div>
+  <a class="unit-nav__link unit-nav__link--next" href="Unit_2_Selection_and_Iteration.html">
+    <span class="unit-nav__arrow" aria-hidden="true">&rarr;</span>
+    <span class="unit-nav__body">
+      <span class="unit-nav__hint"><span data-lang="en">Next unit</span><span data-lang="zh">下一单元</span></span>
+      <span class="unit-nav__title"><span data-lang="en">Unit 2: Selection and Iteration</span><span data-lang="zh">第 2 单元：选择与循环</span></span>
+    </span>
+  </a>
+</nav>
+<!-- END unit-nav -->
+<!-- consult-cta: lead-gen conversion surface (Sprint A) -->
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Want to go further, faster?</span><span data-lang="zh">想走得更远、更快？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will help you master this unit and map your path into university.</span><span data-lang="zh">预约 Dingrui Scholars 导师的 15 分钟免费咨询。我们将帮助你掌握本单元，并规划通往大学的学习路径。</span></p>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=ap_csa&utm_content=unit_1_using_objects_and_methods__sg__en" target="_blank" rel="noopener">Book a free consult &rarr;</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=ap_csa&utm_content=unit_1_using_objects_and_methods__sg__zh" target="_blank" rel="noopener">预约免费咨询 &rarr;</a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span></span>
+  <a href="../Practice%20Questions/Unit_1_Using_Objects_and_Methods_Practice_Problems.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <a href="../Practice%20Questions/Solutions/Unit_1_Using_Objects_and_Methods_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+</main>
+
+<button class="backtotop" id="backtotop" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+<script>
+// ─── THEME ───
+function setThemeBtnLabel(toLight) {
+  const tt = document.getElementById('themeToggle');
+  if (!tt) return;
+  tt.innerHTML = toLight
+    ? '<span data-lang="en">Light</span><span data-lang="zh">浅色</span>'
+    : '<span data-lang="en">Dark</span><span data-lang="zh">深色</span>';
+}
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  setThemeBtnLabel(!isDark);
+}
+// System preference
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  setThemeBtnLabel(true);
+}
+
+// ─── LANGUAGE ───
+function toggleLang() {
+  const isZh = document.body.classList.contains('lang-zh');
+  document.body.classList.toggle('lang-zh', !isZh);
+  try { localStorage.setItem('drs.lang', isZh ? 'en' : 'zh'); } catch(e) {}
+}
+try {
+  if (false) {
+    document.body.classList.add('lang-zh');
+  }
+} catch(e) {}
+
+// ─── SIDEBAR ───
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+// ─── PROGRESS BAR + BACK-TO-TOP ───
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+  const btt = document.getElementById('backtotop');
+  if (btt) btt.classList.toggle('show', window.scrollY > 400);
+});
+
+// ─── ACTIVE TOC ───
+const sections = document.querySelectorAll('.section');
+const tocLinks = document.querySelectorAll('.sidebar a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-80px 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// ─── QUIZZES ───
+document.querySelectorAll('.quiz').forEach(quiz => {
+  const answer = parseInt(quiz.dataset.answer);
+  const opts = quiz.querySelectorAll('.quiz-opt');
+  const expCorrect = quiz.querySelector('.quiz-explain.correct-exp');
+  const expWrong = quiz.querySelector('.quiz-explain.wrong-exp');
+
+  opts.forEach(opt => {
+    opt.addEventListener('click', () => {
+      const idx = parseInt(opt.dataset.idx);
+      opts.forEach(o => o.classList.add('disabled'));
+      if (idx === answer) {
+        opt.classList.add('correct');
+        if (expCorrect) expCorrect.classList.add('show');
+      } else {
+        opt.classList.add('wrong');
+        opts[answer].classList.add('correct');
+        if (expWrong) expWrong.classList.add('show');
+      }
+    });
+  });
+});
+</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP CSA — Unit 1: Using Objects and Methods — AP-Style Practice</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/AP%20CSA/Practice%20Questions/Unit_1_Using_Objects_and_Methods_Practice_Problems.html">
+<meta name="description" content="Practice questions for Unit 1: Using Objects and Methods AP-Style Practice in AP CSA. Exam style problems with full worked solutions from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="AP CSA — Unit 1: Using Objects and Methods — AP-Style Practice">
+<meta property="og:description" content="Practice questions for Unit 1: Using Objects and Methods AP-Style Practice in AP CSA. Exam style problems with full worked solutions from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/AP%20CSA/Practice%20Questions/Unit_1_Using_Objects_and_Methods_Practice_Problems.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AP CSA — Unit 1: Using Objects and Methods — AP-Style Practice">
+<meta name="twitter:description" content="Practice questions for Unit 1: Using Objects and Methods AP-Style Practice in AP CSA. Exam style problems with full worked solutions from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --mc-bg:#ECECEE;   --mc-ink:#333;      --mc-rule:#9A9A9A;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'Songti SC','SimSun','宋体',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display','Songti SC','SimSun','宋体',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.mc{background:var(--mc-bg);color:var(--mc-ink);border-color:var(--mc-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .nameline{display:flex;justify-content:space-between;font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:10.5pt;margin:4px 0 22px;color:#222;}
+  .nameline .blank{display:inline-block;border-bottom:1px solid #555;min-width:240px;margin-left:6px;}
+  .nameline .blank.period{min-width:90px;}
+  .draft-banner{font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display','Songti SC','SimSun','宋体',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:12px 18px 14px;margin-bottom:16px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:10px;font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+  .q-body{font-size:11.5pt;line-height:1.5;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;}
+  .opts{list-style:none;margin:8px 0 0 12px;padding:0;}
+  .opts li{padding:3px 0;margin-bottom:3px;display:flex;gap:8px;align-items:baseline;}
+  .opts li .lbl{font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-weight:700;min-width:22px;}
+  .opts.cols2{display:grid;grid-template-columns:1fr 1fr;column-gap:20px;row-gap:2px;}
+  .opts.cols1{display:block;}
+  code{font-family:'JetBrains Mono',monospace;font-size:0.95em;}
+  pre{font-family:'JetBrains Mono',monospace;font-size:10.5pt;line-height:1.5;background:#F8F6F1;border:1px solid #DDD0C8;border-radius:4px;padding:10px 14px;margin:8px 0;overflow-x:auto;}
+  pre code{font-size:inherit;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+
+  /* ─── BILINGUAL TOGGLE ─── */
+  body:not(.lang-zh) [data-lang="zh"] { display: none; }
+  body.lang-zh       [data-lang="en"] { display: none; }
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:var(--maroon-ink);border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+
+  @media (max-width: 600px){body{font-size:10.5pt;}.opts.cols2{grid-template-columns:1fr;}.nameline{flex-direction:column;align-items:flex-start;gap:6px;}.nameline .blank{min-width:200px;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.opts.cols2{grid-template-columns:1fr 1fr;}.draft-banner{display:none;}pre{background:#f5f5f0;}#langToggle{display:none !important;}}
+
+  /* consult-cta: lead-gen conversion surface (Sprint A) */
+  .consult-cta{border:1.5px solid var(--maroon);border-radius:8px;padding:12px 16px;margin:22px 0 6px;text-align:center;background:#FBECEC;break-inside:avoid;}
+  .consult-cta__lead{display:block;font-family:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:11pt;color:var(--maroon);}
+  .consult-cta__body{display:block;font-family:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;font-size:9.5pt;color:#555;margin:3px 0 6px;}
+  .consult-cta__btn{display:inline-block;font-family:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-decoration:underline;}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "AP CSA — Unit 1: Using Objects and Methods — AP-Style Practice",
+  "description": "Practice questions for Unit 1: Using Objects and Methods AP-Style Practice in AP CSA. Exam style problems with full worked solutions from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/AP%20CSA/Practice%20Questions/Unit_1_Using_Objects_and_Methods_Practice_Problems.html",
+  "inLanguage": [
+    "en",
+    "zh"
+  ],
+  "learningResourceType": "Practice problems",
+  "educationalLevel": "AP",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">A&nbsp;P&nbsp;&nbsp;C&nbsp;O&nbsp;M&nbsp;P&nbsp;U&nbsp;T&nbsp;E&nbsp;R&nbsp;&nbsp;S&nbsp;C&nbsp;I&nbsp;E&nbsp;N&nbsp;C&nbsp;E&nbsp;&nbsp;A</div>
+<div class="chapter-tag"><span data-lang="en">Unit 1 · Using Objects and Methods</span><span data-lang="zh">第 1 单元 · 使用对象与方法</span></div>
+<h1 class="chapter-title"><span data-lang="en">Using Objects and Methods</span><span data-lang="zh">使用对象与方法</span></h1>
+<p class="chapter-sub"><span data-lang="en">AP-Style MC Practice Questions</span><span data-lang="zh">AP 风格选择题练习</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill mc">AP MC</span>
+</div>
+<p class="topics-line"><span data-lang="en">Unit <b>1: Using Objects and Methods</b></span><span data-lang="zh">第 <b>1 单元：使用对象与方法</b></span><span class="scope">CSA</span></p>
+<hr class="thick"><hr class="thin">
+<div class="nameline"><span><span data-lang="en">Name:</span><span data-lang="zh">姓名：</span><span class="blank"></span></span><span><span data-lang="en">Date:</span><span data-lang="zh">日期：</span><span class="blank period"></span></span></div>
+<p class="draft-banner"><span data-lang="en">Draft v3 — 15 AP-style MCQs at exam level (3 MED + 12 HARD); code-trace heavy with realistic distractors. HARDs upgraded: multi-step chains, aliased reassignment timing, swap-without-temp, Math.pow edge inputs, compareTo case/lex. Assumes top-score target. No calculator. Java Quick Reference assumed available.</span><span data-lang="zh">v3 草稿 —— 15 道 AP 风格选择题（<code>MC</code>），考试难度（3 道 MED + 12 道 HARD）；偏重代码追踪（<code>code trace</code>），干扰项贴近真题。HARD 题目升级方向：多步链式调用、别名重新赋值的时序（<code>aliased reassignment</code>）、不使用临时变量的交换（<code>swap without temp</code>）、<code>Math.pow</code> 边界输入、<code>compareTo</code> 大小写与字典序。面向冲击 5 分的考生。不允许使用计算器。假定考生可使用 Java Quick Reference。</span></p>
+
+<!-- ════════════════════════════════ MULTIPLE CHOICE ════════════════════════════════ -->
+<div class="part"><span class="part-label">MULTIPLE CHOICE</span><span class="part-meta"><span data-lang="en">15 questions · ~34 min at exam pace</span><span data-lang="zh">15 道题 · 考试节奏约 34 分钟</span></span></div>
+<h2 class="section-head"><span data-lang="en">Multiple Choice</span><span data-lang="zh">选择题（<code>Multiple Choice</code>）</span></h2>
+<p class="instructions"><span data-lang="en">Choose the best of the four options. Assume all referenced classes and methods are imported / available unless otherwise stated. "Consider the following code segment" implies the code compiles and runs without exception unless the question states otherwise.</span><span data-lang="zh">从四个选项中选择最合适的一个。除非另有说明，假定所有引用的类（<code>class</code>）与方法（<code>method</code>）均已导入且可用。"<code>Consider the following code segment</code>"（"考虑以下代码段"）默认代码可以正常编译并运行（不抛出异常），除非题目另有说明。</span></p>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.3 / 1.4 Integer Ops</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段（<code>code segment</code>）。</span></p>
+<pre><code>int x = 17;
+int y = 4;
+System.out.println(x / y + x % y);</code></pre>
+    <p><span data-lang="en">What is printed as a result of executing the code segment?</span><span data-lang="zh">运行此代码段后输出的结果是什么？</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>4</code></li>
+      <li><span class="lbl">(B)</span> <code>5</code></li>
+      <li><span class="lbl">(C)</span> <code>6</code></li>
+      <li><span class="lbl">(D)</span> <code>7</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x Math.random()</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Which of the following expressions returns a random <em>even</em> integer between 2 and 10 inclusive (i.e., one of 2, 4, 6, 8, or 10)?</span><span data-lang="zh">下列哪个表达式返回 2 到 10（含端点，<code>inclusive</code>）之间的一个随机<em>偶数</em>（即 2、4、6、8 或 10 之一）？</span></p>
+    <ul class="opts cols1">
+      <li><span class="lbl">(A)</span> <code>(int)(Math.random() * 5) * 2 + 2</code></li>
+      <li><span class="lbl">(B)</span> <code>(int)(Math.random() * 9) + 2</code></li>
+      <li><span class="lbl">(C)</span> <code>2 * ((int)(Math.random() * 6) + 1)</code></li>
+      <li><span class="lbl">(D)</span> <code>(int)(Math.random() * 5) * 2</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span><span class="pill med">MEDIUM</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x String — Identity vs Equality</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following declarations.</span><span data-lang="zh">考虑以下变量声明（<code>declarations</code>）。</span></p>
+<pre><code>String a = "Java";
+String b = "Ja" + "va";
+String c = new String("Java");</code></pre>
+    <p><span data-lang="en">Which row in the table correctly evaluates the listed expressions?</span><span data-lang="zh">下面哪一行正确给出了所列表达式的求值结果？</span></p>
+    <ul class="opts cols1">
+      <li><span class="lbl">(A)</span> <code>a == b</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>true</code>; <code>a == c</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>true</code>; <code>a.equals(c)</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>true</code></li>
+      <li><span class="lbl">(B)</span> <code>a == b</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>true</code>; <code>a == c</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>false</code>; <code>a.equals(c)</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>true</code></li>
+      <li><span class="lbl">(C)</span> <code>a == b</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>false</code>; <code>a == c</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>false</code>; <code>a.equals(c)</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>true</code></li>
+      <li><span class="lbl">(D)</span> <code>a == b</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>false</code>; <code>a == c</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>false</code>; <code>a.equals(c)</code> <span data-lang="en">is</span><span data-lang="zh">为</span> <code>false</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.5 Casting Placement</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>int a = 10;
+int b = 4;
+double r = (double) a / b + a / b;
+System.out.println(r);</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>4.0</code></li>
+      <li><span class="lbl">(B)</span> <code>4.5</code></li>
+      <li><span class="lbl">(C)</span> <code>5.0</code></li>
+      <li><span class="lbl">(D)</span> <code>2.5</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x String — 4-step Chain</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>String s = "ABCDEFG";
+String t = s.substring(2);
+String u = t.substring(t.indexOf("E"));
+String v = u.substring(0, u.length() - 1);
+System.out.println(v + u.substring(u.length() - 1));</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>EF</code></li>
+      <li><span class="lbl">(B)</span> <code>EFG</code></li>
+      <li><span class="lbl">(C)</span> <code>EFGFG</code></li>
+      <li><span class="lbl">(D)</span> <code>FG</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x String — Aliased Reassignment Timing</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>String a = "go";
+String b = a;
+a = a + a;
+b += a;
+System.out.println(b);</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>gogo</code></li>
+      <li><span class="lbl">(B)</span> <code>gogogo</code></li>
+      <li><span class="lbl">(C)</span> <code>gogogogo</code></li>
+      <li><span class="lbl">(D)</span> <code>gogogogogo</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.5 Integer Overflow</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following expression.</span><span data-lang="zh">考虑以下表达式。</span></p>
+<pre><code>(Integer.MAX_VALUE + 1) / 2</code></pre>
+    <p><span data-lang="en">What is the value of this expression in Java?</span><span data-lang="zh">在 Java 中，此表达式的值是多少？（提示：考虑整数溢出 <code>integer overflow</code>。）</span></p>
+    <ul class="opts cols1">
+      <li><span class="lbl">(A)</span> <code>1073741824</code></li>
+      <li><span class="lbl">(B)</span> <code>-1073741824</code></li>
+      <li><span class="lbl">(C)</span> <code>Integer.MAX_VALUE</code></li>
+      <li><span class="lbl">(D)</span> <span data-lang="en">A run-time error occurs.</span><span data-lang="zh">出现运行时错误（<code>run-time error</code>）。</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.5 Type Promotion + Cast</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>int x = 7;
+double y = 2.0;
+double z = (int) (x / y * 2);
+System.out.println(z);</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>6.0</code></li>
+      <li><span class="lbl">(B)</span> <code>7.0</code></li>
+      <li><span class="lbl">(C)</span> <code>14.0</code></li>
+      <li><span class="lbl">(D)</span> <span data-lang="en">A compile-time error occurs.</span><span data-lang="zh">出现编译错误（<code>compile-time error</code>）。</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x String — Self-referential length arithmetic</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>String s = "BAOBAB";
+int i = s.indexOf("OB");
+String a = s.substring(i);
+String b = s.substring(i, i + a.length() - 2);
+System.out.println(a.length() + b.length());</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>4</code></li>
+      <li><span class="lbl">(B)</span> <code>5</code></li>
+      <li><span class="lbl">(C)</span> <code>6</code></li>
+      <li><span class="lbl">(D)</span> <code>7</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.3 Negative Division &amp; Modulus</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>int x = -17;
+int y = 5;
+System.out.println((x / y) + " " + (x % y));</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？（注意 Java 中负数的整除与取模 <code>modulus</code> 的方向。）</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>-4 -3</code></li>
+      <li><span class="lbl">(B)</span> <code>-3 -2</code></li>
+      <li><span class="lbl">(C)</span> <code>-4 3</code></li>
+      <li><span class="lbl">(D)</span> <code>-3 2</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q11</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x String — Swap without a temp</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>String a = "AB";
+String b = "CD";
+a = a + b;
+b = a.substring(0, a.length() - b.length());
+a = a.substring(b.length());
+System.out.println(a + b);</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>ABCD</code></li>
+      <li><span class="lbl">(B)</span> <code>CDAB</code></li>
+      <li><span class="lbl">(C)</span> <code>ABAB</code></li>
+      <li><span class="lbl">(D)</span> <code>CDCD</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q12</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.6 Math.pow — Edge inputs + Cast</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>int x = (int) Math.pow(-3, 3)
+      + (int) Math.pow(-3, -1)
+      + (int) Math.pow(0, 0);
+System.out.println(x);</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？（注意：<code>(int)</code> 强制类型转换会向零截断 <code>truncate toward zero</code>。）</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>-28</code></li>
+      <li><span class="lbl">(B)</span> <code>-27</code></li>
+      <li><span class="lbl">(C)</span> <code>-26</code></li>
+      <li><span class="lbl">(D)</span> <code>-25</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q13</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x String — Concatenation Order</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>String s = "" + 1 + 2 + 3;
+String t = 1 + 2 + 3 + "";
+System.out.println(s.length() + t.length());</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？（注意 <code>+</code> 操作符的左结合 <code>left-associative</code> 求值顺序。）</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>2</code></li>
+      <li><span class="lbl">(B)</span> <code>3</code></li>
+      <li><span class="lbl">(C)</span> <code>4</code></li>
+      <li><span class="lbl">(D)</span> <code>6</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q14</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x Wrapper — Autoboxing</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>Integer a = 5;
+Integer b = 7;
+int c = a + b;
+System.out.println(c);</code></pre>
+    <p><span data-lang="en">What is printed (or what happens)?</span><span data-lang="zh">输出是什么（或者会发生什么）？</span></p>
+    <ul class="opts cols1">
+      <li><span class="lbl">(A)</span> <code>12</code></li>
+      <li><span class="lbl">(B)</span> <code>57</code></li>
+      <li><span class="lbl">(C)</span> <span data-lang="en">A compile-time error: <code>Integer + Integer</code> is not defined.</span><span data-lang="zh">编译错误（<code>compile-time error</code>）：<code>Integer + Integer</code> 未定义。</span></li>
+      <li><span class="lbl">(D)</span> <span data-lang="en">A run-time error: <code>Integer</code> cannot be auto-unboxed.</span><span data-lang="zh">运行时错误（<code>run-time error</code>）：<code>Integer</code> 无法自动拆箱（<code>auto-unboxing</code>）。</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q15</span><span class="pill hard">HARD</span>
+    <span class="pill mc">AP MC</span>
+    <span class="pill topic">1.x String — compareTo, case &amp; lex</span>
+    <span class="pill marks">[1]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the following code segment.</span><span data-lang="zh">考虑以下代码段。</span></p>
+<pre><code>String a = "apple";
+String b = "Apple";
+String c = "apricot";
+int p = a.compareTo(b);
+int q = a.compareTo(c);
+System.out.println((p > 0) + " " + (q > 0));</code></pre>
+    <p><span data-lang="en">What is printed?</span><span data-lang="zh">输出是什么？（提示：<code>compareTo</code> 比较的是字典序 <code>lexicographic order</code>，且区分大小写 <code>case-sensitive</code>。）</span></p>
+    <ul class="opts cols2">
+      <li><span class="lbl">(A)</span> <code>true true</code></li>
+      <li><span class="lbl">(B)</span> <code>true false</code></li>
+      <li><span class="lbl">(C)</span> <code>false true</code></li>
+      <li><span class="lbl">(D)</span> <code>false false</code></li>
+    </ul>
+  </div>
+</div>
+
+<!-- consult-cta: lead-gen conversion surface (Sprint A) -->
+<aside class="consult-cta">
+  <span class="consult-cta__lead"><span data-lang="en">Stuck, or want to go further?</span><span data-lang="zh">遇到困难，或想更进一步？</span></span>
+  <span class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor:</span><span data-lang="zh">预约 Dingrui Scholars 导师的 15 分钟免费咨询：</span></span>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=ap_csa&utm_content=unit_1_using_objects_and_methods__practice__en" target="_blank" rel="noopener">dingruischolars.com/signup</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=ap_csa&utm_content=unit_1_using_objects_and_methods__practice__zh" target="_blank" rel="noopener">dingruischolars.com/signup-ch</a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../Study%20Guides/Unit_1_Using_Objects_and_Methods.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Practice</span><span data-lang="zh">练习</span></span>
+  <a href="Solutions/Unit_1_Using_Objects_and_Methods_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> · <span data-lang="en">AP Computer Science A — Unit 1 Practice (Draft v3 · exam-level)</span><span data-lang="zh">AP 计算机科学 A — 第 1 单元练习（v3 草稿 · 考试难度）</span></span>
+  <span><span data-lang="en">Page · Unit 1</span><span data-lang="zh">页 · 第 1 单元</span></span>
+</footer>
+
+<script>
+function toggleLang() {
+  document.body.classList.toggle('lang-zh');
+  try {
+    localStorage.setItem('drs.lang', document.body.classList.contains('lang-zh') ? 'zh' : 'en');
+  } catch (e) { /* ignore storage errors */ }
+}
+(function () {
+  try {
+    if (false) {
+      document.body.classList.add('lang-zh');
+    }
+  } catch (e) { /* ignore */ }
+})();
+</script>
+
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

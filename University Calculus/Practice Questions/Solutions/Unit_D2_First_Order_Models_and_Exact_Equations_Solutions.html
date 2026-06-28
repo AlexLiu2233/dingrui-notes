@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit D2: First-Order Models and Exact Equations | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-D2  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D2_First_Order_Models_and_Exact_Equations_Solutions.html">
+<meta name="description" content="Worked solutions for Unit D2: First-Order Models and Exact Equations in University Calculus. Step-by-step exact equations, integrating factors, Bernoulli substitution, logistic growth, mixing tanks, and Newton cooling from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit D2: First-Order Models and Exact Equations | Solutions">
+<meta property="og:description" content="Worked solutions for Unit D2: First-Order Models and Exact Equations in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D2_First_Order_Models_and_Exact_Equations_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit D2: First-Order Models and Exact Equations | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit D2: First-Order Models and Exact Equations in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit D2: First-Order Models and Exact Equations | Solutions",
+  "description": "Worked solutions for Unit D2: First-Order Models and Exact Equations in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D2_First_Order_Models_and_Exact_Equations_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit D2 &middot; Solutions</span><span data-lang="zh">第D2单元 &middot; 解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">First-Order Models and Exact Equations &middot; Solutions</span><span data-lang="zh">一阶模型与恰当方程 &middot; 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题配套解答</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: exact equations, integrating factors, Bernoulli and homogeneous substitution, autonomous equations, logistic growth, mixing models, Newton cooling</span><span data-lang="zh">第 <b>1 至 7</b> 节：恰当方程、积分因子、Bernoulli 换元与齐次换元、自治方程、逻辑斯谛增长、混合模型、牛顿冷却定律</span><span class="scope">CALC IV</span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to</span><span data-lang="zh">配套练习：</span> <code style="font-style:normal;">Unit_D2_First_Order_Models_and_Exact_Equations_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; Parts I/II/III: 28/26/28 &middot; <span data-lang="en">method walk with</span><span data-lang="zh">方法解析：</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method</span><span data-lang="zh">方法</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer</span><span data-lang="zh">答案</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning mark callouts</span><span data-lang="zh">推理评分标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">testing exactness and finding the potential</span><span data-lang="zh">验证恰当性并求势函数</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Test exactness and find the general solution for: (a) $(y^2+2xy)\,dx+(2xy+x^2)\,dy=0$; (b) $(3x^2y)\,dx+(x^3+2y)\,dy=0$; (c) show $(2xy+y^2)\,dx+(x^2-y)\,dy=0$ is not exact.</span><span data-lang="zh">验证恰当性并求通解：(a) $(y^2+2xy)\,dx+(2xy+x^2)\,dy=0$；(b) $(3x^2y)\,dx+(x^3+2y)\,dy=0$；(c) 证明 $(2xy+y^2)\,dx+(x^2-y)\,dy=0$ 不是恰当方程。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $xy^2+x^2y=C$ &nbsp;·&nbsp; <span class="ans">(b)</span> $x^3y+y^2=C$ &nbsp;·&nbsp; <span class="ans">(c)</span> $M_y-N_x=2y\ne0$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Exact: integrate $M$ in $x$</span><span data-lang="zh">(a) 恰当方程：对 $M$ 关于 $x$ 积分</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Set $M=y^2+2xy$ and $N=2xy+x^2$. Compute the mixed partials: $M_y=2y+2x$ and $N_x=2y+2x$. (M1) Since $M_y=N_x$ on all of $\mathbb{R}^2$, the equation is exact.</span><span data-lang="zh">令 $M=y^2+2xy$，$N=2xy+x^2$。计算混合偏导数：$M_y=2y+2x$，$N_x=2y+2x$。(M1) 由于在整个 $\mathbb{R}^2$ 上 $M_y=N_x$，该方程是恰当方程。</span></p>
+      <p><span data-lang="en">Integrate $M$ in $x$ (holding $y$ fixed): $F=\displaystyle\int(y^2+2xy)\,dx=xy^2+x^2y+g(y)$. Differentiate in $y$ and match $F_y=N$: $2xy+x^2+g'(y)=2xy+x^2$, so $g'(y)=0$ and $g$ is a constant absorbed into $C$. (A1)</span><span data-lang="zh">对 $M$ 关于 $x$ 积分（固定 $y$）：$F=\displaystyle\int(y^2+2xy)\,dx=xy^2+x^2y+g(y)$。对 $y$ 求偏导并匹配 $F_y=N$：$2xy+x^2+g'(y)=2xy+x^2$，故 $g'(y)=0$，$g$ 为常数可并入 $C$。(A1)</span></p>
+      $$ F(x,y)=xy^2+x^2y=C. $$
+      <p><span data-lang="en">Verification: $\nabla F=(y^2+2xy,\,2xy+x^2)=(M,N)$. (A1)</span><span data-lang="zh">验证：$\nabla F=(y^2+2xy,\,2xy+x^2)=(M,N)$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Exact: potential by the same method</span><span data-lang="zh">(b) 恰当方程：用相同方法求势函数</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$M=3x^2y$, $M_y=3x^2$; $N=x^3+2y$, $N_x=3x^2$. Equal, so exact. (M1)</span><span data-lang="zh">$M=3x^2y$，$M_y=3x^2$；$N=x^3+2y$，$N_x=3x^2$。二者相等，故为恰当方程。(M1)</span></p>
+      <p><span data-lang="en">$F=\displaystyle\int 3x^2y\,dx=x^3y+g(y)$. Then $F_y=x^3+g'(y)=x^3+2y$, giving $g'(y)=2y$ and $g(y)=y^2$. (A1)</span><span data-lang="zh">$F=\displaystyle\int 3x^2y\,dx=x^3y+g(y)$。则 $F_y=x^3+g'(y)=x^3+2y$，得 $g'(y)=2y$，$g(y)=y^2$。(A1)</span></p>
+      $$ F(x,y)=x^3y+y^2=C. $$
+      <p><span data-lang="en">Verification: $F_x=3x^2y=M$ and $F_y=x^3+2y=N$. (A1)</span><span data-lang="zh">验证：$F_x=3x^2y=M$，$F_y=x^3+2y=N$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Not exact: compute the obstruction</span><span data-lang="zh">(c) 非恰当方程：计算障碍项</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$M=2xy+y^2$, $M_y=2x+2y$; $N=x^2-y$, $N_x=2x$. (M1) Then</span><span data-lang="zh">$M=2xy+y^2$，$M_y=2x+2y$；$N=x^2-y$，$N_x=2x$。(M1) 则</span></p>
+      $$ M_y-N_x=(2x+2y)-2x=2y\ne 0 $$
+      <p><span data-lang="en">in general, so the equation is not exact. (A1) The non-zero obstruction $2y$ signals that no potential exists as written; an integrating factor would be needed.</span><span data-lang="zh">一般情况下不为零，故该方程不是恰当方程。(A1) 非零障碍项 $2y$ 说明如原式所写不存在势函数，需引入积分因子。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">Always test $M_y=N_x$ before attempting to build $F$. In (a) the mixed partials match instantly because $xy^2+x^2y$ is visibly a single potential; in (b) the test still works cleanly even though the potential is less obvious. Part (c) shows the failure mode: $M_y-N_x=2y$ depends on $y$, which prevents a $\mu(x)$-only factor (since $(M_y-N_x)/N$ would not simplify to a function of $x$ alone here). Check for a $y$-only factor as the next step.</span><span data-lang="zh">在尝试构造势函数 $F$ 之前，务必先验证 $M_y=N_x$。(a) 中混合偏导数立即吻合，因为 $xy^2+x^2y$ 显然是一个势函数；(b) 中即使势函数不那么直观，判据仍然整洁有效。(c) 展示了失败情形：$M_y-N_x=2y$ 依赖于 $y$，这使得仅关于 $x$ 的积分因子 $\mu(x)$ 不可行（因为 $(M_y-N_x)/N$ 无法化简为仅含 $x$ 的函数）。下一步应检验是否存在仅关于 $y$ 的积分因子。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">exact IVP integrating in $y$ first</span><span data-lang="zh">恰当方程初值问题：先对 $y$ 积分</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Solve $(3x^2y+2xy+y^3)\,dx+(x^3+x^2+3xy^2)\,dy=0$, $y(1)=2$. Integrate $N$ in $y$ first.</span><span data-lang="zh">求解 $(3x^2y+2xy+y^3)\,dx+(x^3+x^2+3xy^2)\,dy=0$，$y(1)=2$。先对 $N$ 关于 $y$ 积分。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $M_y=N_x=3x^2+2x+3y^2$ &nbsp;·&nbsp; <span class="ans">(b)</span> $F=x^3y+x^2y+xy^3$ &nbsp;·&nbsp; <span class="ans">(c)</span> $x^3y+x^2y+xy^3=12$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Verify exactness</span><span data-lang="zh">(a) 验证恰当性</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Set $M=3x^2y+2xy+y^3$ and $N=x^3+x^2+3xy^2$. Differentiate: (M1)</span><span data-lang="zh">令 $M=3x^2y+2xy+y^3$，$N=x^3+x^2+3xy^2$。求偏导数：(M1)</span></p>
+      $$ M_y=3x^2+2x+3y^2, \qquad N_x=3x^2+2x+3y^2. $$
+      <p><span data-lang="en">They agree everywhere, so the equation is exact. (A1)</span><span data-lang="zh">二者处处相等，故该方程是恰当方程。(A1)</span></p>
+      <h4><span data-lang="en">(b) Integrate $N$ in $y$ and find $h(x)$</span><span data-lang="zh">(b) 对 $N$ 关于 $y$ 积分并求 $h(x)$</span> <span class="marks-call">M1·M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Integrate $N=x^3+x^2+3xy^2$ in $y$ (holding $x$ fixed): (M1)</span><span data-lang="zh">对 $N=x^3+x^2+3xy^2$ 关于 $y$ 积分（固定 $x$）：(M1)</span></p>
+      $$ F=\int N\,dy=x^3y+x^2y+xy^3+h(x). $$
+      <p><span data-lang="en">(M1 for carrying out the integration correctly) Differentiate $F$ in $x$ and match $F_x=M$: (M1)</span><span data-lang="zh">（M1 为正确完成积分）对 $F$ 关于 $x$ 求偏导并匹配 $F_x=M$：(M1)</span></p>
+      $$ F_x=3x^2y+2xy+y^3+h'(x)=M=3x^2y+2xy+y^3. $$
+      <p><span data-lang="en">Therefore $h'(x)=0$, so $h$ is a constant absorbed into $C$. (A1) The potential is $F(x,y)=x^3y+x^2y+xy^3$. (A1)</span><span data-lang="zh">故 $h'(x)=0$，$h$ 为常数可并入 $C$。(A1) 势函数为 $F(x,y)=x^3y+x^2y+xy^3$。(A1)</span></p>
+      <p><span data-lang="en">Verification: $F_y=x^3+x^2+3xy^2=N$ and $F_x=3x^2y+2xy+y^3=M$. Both match.</span><span data-lang="zh">验证：$F_y=x^3+x^2+3xy^2=N$，$F_x=3x^2y+2xy+y^3=M$，两者均吻合。</span></p>
+      <h4><span data-lang="en">(c) Apply the initial condition</span><span data-lang="zh">(c) 代入初始条件</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">The general solution is $x^3y+x^2y+xy^3=C$. Apply $y(1)=2$: (M1)</span><span data-lang="zh">通解为 $x^3y+x^2y+xy^3=C$。代入 $y(1)=2$：(M1)</span></p>
+      $$ F(1,2)=1\cdot2+1\cdot2+1\cdot8=12. $$
+      <p><span data-lang="en">(A1) The particular solution is (A1)</span><span data-lang="zh">(A1) 特解为 (A1)</span></p>
+      $$ x^3y+x^2y+xy^3=12. $$
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">Integrating $N$ in $y$ instead of $M$ in $x$ is purely a strategic choice: pick whichever integral is cleaner. The check that $h'(x)=0$ (with no $x$ surviving in the expression for $h'$) is a built-in verification that $M_y=N_x$ was correct. If anything depending on $x$ remained in $h'$, it would signal a computation error or a non-exact equation.</span><span data-lang="zh">选择先对 $N$ 关于 $y$ 积分而非对 $M$ 关于 $x$ 积分，纯粹是策略性选择：选择计算更简便的那个。验证 $h'(x)=0$（即 $h'$ 的表达式中不含 $x$）是对 $M_y=N_x$ 正确性的内置检验。若 $h'$ 中仍含 $x$ 的项，则说明存在计算错误或该方程并非恰当方程。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">integrating factor restoring exactness</span><span data-lang="zh">利用积分因子恢复恰当性</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$(3xy+y^2)\,dx+(x^2+xy)\,dy=0$: (a) show not exact and compute $(M_y-N_x)/N$; (b) find $\mu(x)$ and verify new exactness; (c) solve.</span><span data-lang="zh">$(3xy+y^2)\,dx+(x^2+xy)\,dy=0$：(a) 证明非恰当并计算 $(M_y-N_x)/N$；(b) 求 $\mu(x)$ 并验证新方程的恰当性；(c) 求解。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $(M_y-N_x)/N=1/x$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\mu=x$, <span data-lang="en">verified</span><span data-lang="zh">已验证</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $2x^3y+x^2y^2=C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Compute the obstruction ratio</span><span data-lang="zh">(a) 计算障碍比</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$M=3xy+y^2$, $M_y=3x+2y$; $N=x^2+xy$, $N_x=2x+y$. (M1) The obstruction is</span><span data-lang="zh">$M=3xy+y^2$，$M_y=3x+2y$；$N=x^2+xy$，$N_x=2x+y$。(M1) 障碍项为</span></p>
+      $$ M_y-N_x=(3x+2y)-(2x+y)=x+y. $$
+      <p><span data-lang="en">Since $M_y\ne N_x$, the equation is not exact. (A1) Divide by $N$:</span><span data-lang="zh">由于 $M_y\ne N_x$，该方程不是恰当方程。(A1) 除以 $N$：</span></p>
+      $$ \frac{M_y-N_x}{N}=\frac{x+y}{x^2+xy}=\frac{x+y}{x(x+y)}=\frac{1}{x}, $$
+      <p><span data-lang="en">which depends on $x$ alone, so an integrating factor $\mu(x)$ exists. (A1)</span><span data-lang="zh">结果仅依赖于 $x$，故存在积分因子 $\mu(x)$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Compute $\mu$ and verify</span><span data-lang="zh">(b) 计算 $\mu$ 并验证</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">$\mu=e^{\int(1/x)\,dx}=e^{\ln x}=x$. (M1·A1) Multiply through by $\mu=x$:</span><span data-lang="zh">$\mu=e^{\int(1/x)\,dx}=e^{\ln x}=x$。(M1·A1) 方程两边乘以 $\mu=x$：</span></p>
+      $$ \tilde{M}=x(3xy+y^2)=3x^2y+xy^2, \qquad \tilde{N}=x(x^2+xy)=x^3+x^2y. $$
+      <p><span data-lang="en">Check: $\tilde{M}_y=3x^2+2xy$ and $\tilde{N}_x=3x^2+2xy$. (M1) Equal, so the multiplied equation is exact. (A1)</span><span data-lang="zh">验证：$\tilde{M}_y=3x^2+2xy$，$\tilde{N}_x=3x^2+2xy$。(M1) 二者相等，故乘以积分因子后的方程是恰当方程。(A1)</span></p>
+      <h4><span data-lang="en">(c) Find the potential and state the solution</span><span data-lang="zh">(c) 求势函数并写出解</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Integrate $\tilde{N}=x^3+x^2y$ in $y$: (M1)</span><span data-lang="zh">对 $\tilde{N}=x^3+x^2y$ 关于 $y$ 积分：(M1)</span></p>
+      $$ F=\int(x^3+x^2y)\,dy=x^3y+\tfrac{1}{2}x^2y^2+h(x). $$
+      <p><span data-lang="en">Match $F_x=3x^2y+xy^2+h'(x)=\tilde{M}=3x^2y+xy^2$, so $h'(x)=0$ and $h$ is constant. (A1) The general solution is</span><span data-lang="zh">匹配 $F_x=3x^2y+xy^2+h'(x)=\tilde{M}=3x^2y+xy^2$，故 $h'(x)=0$，$h$ 为常数。(A1) 通解为</span></p>
+      $$ x^3y+\tfrac{1}{2}x^2y^2=C, \quad\text{or equivalently}\quad 2x^3y+x^2y^2=C. $$
+      <p><span data-lang="en">Verification: $\nabla F=(3x^2y+xy^2,\,x^3+x^2y)=(\tilde{M},\tilde{N})$, confirming the potential. (A1)</span><span data-lang="zh">验证：$\nabla F=(3x^2y+xy^2,\,x^3+x^2y)=(\tilde{M},\tilde{N})$，势函数正确。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">The ratio test $(M_y-N_x)/N=1/x$ is the standard diagnostic: if it simplifies to a function of $x$ only, a $\mu(x)$ factor exists. The $(x+y)$ factor cancels from numerator and denominator here; always simplify before concluding the ratio is not a function of $x$ alone. After multiplying by $\mu$, re-verify $\tilde{M}_y=\tilde{N}_x$ as a sanity check before spending time building $F$.</span><span data-lang="zh">比值检验 $(M_y-N_x)/N=1/x$ 是标准诊断方法：若能化简为仅含 $x$ 的函数，则存在积分因子 $\mu(x)$。此处 $(x+y)$ 因子在分子分母中约去；在得出比值不是 $x$ 的函数这一结论之前，务必先化简。乘以 $\mu$ 后，在花时间构造 $F$ 之前，再次验证 $\tilde{M}_y=\tilde{N}_x$ 作为合理性检验。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">deriving the exactness criterion from Clairaut's theorem</span><span data-lang="zh">由 Clairaut 定理推导恰当性判据</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Prove $M_y=N_x$ is necessary for exactness using $F_{xy}=F_{yx}$. (b) Show $g'(y)=N-\partial_y\int M\,dx$ is independent of $x$ when $M_y=N_x$, so $F$ can be constructed.</span><span data-lang="zh">(a) 利用 $F_{xy}=F_{yx}$ 证明 $M_y=N_x$ 是方程为恰当方程的必要条件。(b) 在 $M_y=N_x$ 时，证明 $g'(y)=N-\partial_y\int M\,dx$ 与 $x$ 无关，从而 $F$ 可以被构造。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $M_y=F_{xy}=F_{yx}=N_x$ <span data-lang="en">via Clairaut</span><span data-lang="zh">由 Clairaut 定理得</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $\partial_x(g'(y))=N_x-M_y=0$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Necessity via Clairaut's theorem</span><span data-lang="zh">(a) 由 Clairaut 定理证明必要性</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Suppose $F$ exists with $F_x=M$ and $F_y=N$. Since $M$ and $N$ have continuous second partials, $F$ has continuous second partials, and Clairaut's theorem guarantees $F_{xy}=F_{yx}$. (M1) Therefore</span><span data-lang="zh">设 $F$ 存在，且 $F_x=M$，$F_y=N$。由于 $M$ 和 $N$ 具有连续的二阶偏导数，$F$ 也具有连续的二阶偏导数，Clairaut 定理保证 $F_{xy}=F_{yx}$。(M1) 因此</span></p>
+      $$ M_y=\frac{\partial M}{\partial y}=\frac{\partial F_x}{\partial y}=F_{xy}=F_{yx}=\frac{\partial F_y}{\partial x}=\frac{\partial N}{\partial x}=N_x. $$
+      <p><span data-lang="en">(A1) Hence $M_y=N_x$ is a necessary condition: if a potential exists, the mixed partials must agree. (R1)</span><span data-lang="zh">(A1) 故 $M_y=N_x$ 是必要条件：若势函数存在，则混合偏导数必须相等。(R1)</span></p>
+      <h4><span data-lang="en">(b) Sufficiency: the key independence argument</span><span data-lang="zh">(b) 充分性：关键的独立性论证</span> <span class="marks-call">M1·M1·A1·R1·A1</span></h4>
+      <p><span data-lang="en">Now assume $M_y=N_x$ on a simply connected region. Integrate $M$ in $x$ (holding $y$ fixed): (M1)</span><span data-lang="zh">现设 $M_y=N_x$ 在单连通区域上成立。对 $M$ 关于 $x$ 积分（固定 $y$）：(M1)</span></p>
+      $$ F(x,y)=\int M(x,y)\,dx+g(y). $$
+      <p><span data-lang="en">The unknown $g(y)$ arises because $y$ was held fixed during integration. Differentiate $F$ in $y$ and require $F_y=N$: (M1)</span><span data-lang="zh">未知函数 $g(y)$ 的出现是因为积分时 $y$ 被固定。对 $F$ 关于 $y$ 求偏导并要求 $F_y=N$：(M1)</span></p>
+      $$ F_y=\frac{\partial}{\partial y}\int M\,dx+g'(y)=N \implies g'(y)=N-\frac{\partial}{\partial y}\int M\,dx. $$
+      <p><span data-lang="en">To integrate $g'(y)$ in $y$ we must confirm the right side does not depend on $x$. Differentiate with respect to $x$: (A1)</span><span data-lang="zh">为了对 $g'(y)$ 关于 $y$ 积分，须确认右侧不依赖于 $x$。对 $x$ 求偏导：(A1)</span></p>
+      $$ \frac{\partial}{\partial x}g'(y)=\frac{\partial N}{\partial x}-\frac{\partial}{\partial x}\frac{\partial}{\partial y}\int M\,dx=N_x-\frac{\partial^2}{\partial x\,\partial y}\int M\,dx=N_x-M_y=0, $$
+      <p><span data-lang="en">where the last step uses the hypothesis $M_y=N_x$ and the fact that differentiation and integration interchange (by continuity). (R1) Since $\partial_x(g'(y))=0$, the expression for $g'$ truly depends only on $y$, so $g(y)=\displaystyle\int g'(y)\,dy$ is well-defined by a single integration in $y$, and $F$ is constructed. (A1)</span><span data-lang="zh">最后一步利用了假设 $M_y=N_x$ 以及微分与积分可交换（由连续性保证）。(R1) 由于 $\partial_x(g'(y))=0$，$g'$ 的表达式确实仅依赖于 $y$，故 $g(y)=\displaystyle\int g'(y)\,dy$ 由单次关于 $y$ 的积分确定，$F$ 的构造完成。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">The proof is the same idea as recovering a scalar potential from a conservative vector field: $M_y=N_x$ is the curl-free condition, and on a simply connected region curl-free implies conservative. The argument in (b) is the constructive half: it does not just assert $F$ exists, it builds it and shows the procedure terminates. The independence check $\partial_x(g'(y))=0$ is where $M_y=N_x$ actually gets used; without it, $g$ could depend on $x$ and the method would be undefined.</span><span data-lang="zh">该证明与从保守向量场恢复标量势函数的思路相同：$M_y=N_x$ 是无旋条件，而在单连通区域上无旋意味着保守。(b) 中的论证是构造性的一半：它不仅断言 $F$ 存在，而且将其构造出来并说明该过程终止。独立性检验 $\partial_x(g'(y))=0$ 正是 $M_y=N_x$ 发挥作用的关键所在；若没有这一步，$g$ 可能依赖于 $x$，从而该方法将无法定义。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">Bernoulli equation: derive the substitution and solve</span><span data-lang="zh">Bernoulli 方程：推导换元并求解</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$y'+\frac{1}{x}y=xy^3$, $y(1)=1$, $x>0$: (a) derive the linear $v$-equation from $v=y^{-2}$; (b) solve by integrating factor; (c) revert to $y$ and find the particular solution with its domain.</span><span data-lang="zh">$y'+\frac{1}{x}y=xy^3$，$y(1)=1$，$x>0$：(a) 由 $v=y^{-2}$ 推导关于 $v$ 的线性方程；(b) 用积分因子法求解；(c) 回代得 $y$ 并求特解及其定义域。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $v'-\tfrac{2}{x}v=-2x$ &nbsp;·&nbsp; <span class="ans">(b)</span> $v=x^2(C-2\ln x)$ &nbsp;·&nbsp; <span class="ans">(c)</span> $y=\dfrac{1}{x\sqrt{1-2\ln x}}$, <span data-lang="en">valid for $x\in(0,\sqrt{e}\,)$</span><span data-lang="zh">有效定义域 $x\in(0,\sqrt{e}\,)$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Derive the linearised equation step by step</span><span data-lang="zh">(a) 逐步推导线性化方程</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Here $n=3$. Divide the equation $y'+\tfrac{1}{x}y=xy^3$ through by $y^3$ (assuming $y\ne0$): (M1)</span><span data-lang="zh">此处 $n=3$。方程 $y'+\tfrac{1}{x}y=xy^3$ 两边除以 $y^3$（设 $y\ne0$）：(M1)</span></p>
+      $$ y^{-3}y'+\frac{1}{x}y^{-2}=x. $$
+      <p><span data-lang="en">Set $v=y^{1-n}=y^{-2}$. By the chain rule, $v'=-2y^{-3}y'$, so $y^{-3}y'=v'/(-2)$. (M1) Substitute: $v'/(-2)+(1/x)v=x$, which gives (A1)</span><span data-lang="zh">令 $v=y^{1-n}=y^{-2}$。由链式法则，$v'=-2y^{-3}y'$，故 $y^{-3}y'=v'/(-2)$。(M1) 代入：$v'/(-2)+(1/x)v=x$，得 (A1)</span></p>
+      $$ v'-\frac{2}{x}v=-2x. $$
+      <p><span data-lang="en">This is linear in $v$; the factor $(1-n)=1-3=-2$ appears both as the coefficient of the $p$-term and on the right side, as the Bernoulli formula predicts. (A1)</span><span data-lang="zh">该方程关于 $v$ 是线性的；因子 $(1-n)=1-3=-2$ 同时出现在 $p$ 项的系数和右侧，与 Bernoulli 公式的预测一致。(A1)</span></p>
+      <h4><span data-lang="en">(b) Solve by integrating factor</span><span data-lang="zh">(b) 用积分因子法求解</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">The equation $v'-(2/x)v=-2x$ has $p=-2/x$. The integrating factor is (M1)</span><span data-lang="zh">方程 $v'-(2/x)v=-2x$ 中 $p=-2/x$。积分因子为 (M1)</span></p>
+      $$ \mu=e^{\int(-2/x)\,dx}=e^{-2\ln x}=x^{-2}. $$
+      <p><span data-lang="en">Multiply through by $x^{-2}$: $\displaystyle\frac{d}{dx}(x^{-2}v)=x^{-2}\cdot(-2x)=-\frac{2}{x}$. (A1) Integrate both sides: (M1)</span><span data-lang="zh">方程两边乘以 $x^{-2}$：$\displaystyle\frac{d}{dx}(x^{-2}v)=x^{-2}\cdot(-2x)=-\frac{2}{x}$。(A1) 对两边积分：(M1)</span></p>
+      $$ x^{-2}v=\int-\frac{2}{x}\,dx=-2\ln x+C. $$
+      <p><span data-lang="en">Therefore $v=x^2(C-2\ln x)$. (A1)</span><span data-lang="zh">故 $v=x^2(C-2\ln x)$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Revert to $y$ and apply the initial condition</span><span data-lang="zh">(c) 回代得 $y$ 并代入初始条件</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Since $v=y^{-2}$, we have $y^{-2}=x^2(C-2\ln x)$, so $y^2=\dfrac{1}{x^2(C-2\ln x)}$. (M1) Apply $y(1)=1$: $1=\dfrac{1}{1^2(C-0)}$ gives $C=1$. Therefore</span><span data-lang="zh">由 $v=y^{-2}$，得 $y^{-2}=x^2(C-2\ln x)$，故 $y^2=\dfrac{1}{x^2(C-2\ln x)}$。(M1) 代入 $y(1)=1$：$1=\dfrac{1}{1^2(C-0)}$，得 $C=1$。因此</span></p>
+      $$ y(x)=\frac{1}{x\sqrt{1-2\ln x}}. $$
+      <p><span data-lang="en">The solution is valid where $1-2\ln x>0$, i.e. $\ln x<\tfrac12$, i.e. $x<e^{1/2}=\sqrt{e}$. Combined with $x>0$, the domain is $x\in(0,\sqrt{e}\,)$. (A1)</span><span data-lang="zh">解的有效区域为 $1-2\ln x>0$，即 $\ln x<\tfrac12$，即 $x<e^{1/2}=\sqrt{e}$。结合 $x>0$，定义域为 $x\in(0,\sqrt{e}\,)$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">The Bernoulli substitution $v=y^{1-n}$ is the only substitution that linearises $y^n$ on the right; do not confuse it with $v=y^n$ or $v=1/y$. The factor $(1-n)=-2$ on both sides of the linearised equation is a sign-reversal trap: the equation in (a) has a negative coefficient on $v$ and a negative right side, which are both correct. The finite blow-up at $x=\sqrt{e}$ (where the denominator vanishes) is not a flaw in the method; it reflects the true behavior of the solution, and Picard's theorem guarantees uniqueness only within $(0,\sqrt{e}\,)$.</span><span data-lang="zh">Bernoulli 换元 $v=y^{1-n}$ 是唯一能线性化右侧 $y^n$ 的换元；不要与 $v=y^n$ 或 $v=1/y$ 混淆。线性化方程两侧的因子 $(1-n)=-2$ 是一个符号陷阱：(a) 中的方程在 $v$ 的系数和右侧均为负，这是正确的。$x=\sqrt{e}$ 处的有限爆破（分母消失处）并非方法的缺陷，它反映了解的真实行为，Picard 定理仅在 $(0,\sqrt{e}\,)$ 内保证唯一性。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">autonomous equations and phase-line stability</span><span data-lang="zh">自治方程与相线稳定性</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$y'=y(y-2)(4-y)$: (a) find and classify equilibria via $f'(y^*)$; (b) draw a phase line; (c) give $\lim_{t\to\infty}y(t)$ for $y(0)=3$.</span><span data-lang="zh">$y'=y(y-2)(4-y)$：(a) 用 $f'(y^*)$ 求平衡点并分类；(b) 画相线；(c) 给出 $y(0)=3$ 时 $\lim_{t\to\infty}y(t)$ 的值。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y^*=0$ <span data-lang="en">stable</span><span data-lang="zh">稳定</span>, $y^*=2$ <span data-lang="en">unstable</span><span data-lang="zh">不稳定</span>, $y^*=4$ <span data-lang="en">stable</span><span data-lang="zh">稳定</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">arrows: up on $(-\infty,0)$, down on $(0,2)$, up on $(2,4)$, down on $(4,\infty)$</span><span data-lang="zh">箭头方向：$(-\infty,0)$ 上，$(0,2)$ 下，$(2,4)$ 上，$(4,\infty)$ 下</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $\lim_{t\to\infty}y(t)=4$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Find equilibria and apply the linearised stability test</span><span data-lang="zh">(a) 求平衡点并应用线性化稳定性判据</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Set $f(y)=y(y-2)(4-y)=0$. The equilibria are $y^*=0$, $y^*=2$, and $y^*=4$. (M1)</span><span data-lang="zh">令 $f(y)=y(y-2)(4-y)=0$。平衡点为 $y^*=0$、$y^*=2$ 和 $y^*=4$。(M1)</span></p>
+      <p><span data-lang="en">Expand to differentiate: $f(y)=y(y-2)(4-y)=y(4y-y^2-8+2y)=6y^2-y^3-8y$, so $f'(y)=12y-3y^2-8$. (M1) Evaluate at each equilibrium: (A1)</span><span data-lang="zh">展开后求导：$f(y)=y(y-2)(4-y)=y(4y-y^2-8+2y)=6y^2-y^3-8y$，故 $f'(y)=12y-3y^2-8$。(M1) 在各平衡点处求值：(A1)</span></p>
+      $$ f'(0)=-8<0\;(\text{stable}), \quad f'(2)=24-12-8=4>0\;(\text{unstable}), \quad f'(4)=48-48-8=-8<0\;(\text{stable}). $$
+      <p><span data-lang="en">So $y^*=0$ and $y^*=4$ are sinks; $y^*=2$ is a source. (A1)</span><span data-lang="zh">故 $y^*=0$ 和 $y^*=4$ 是稳定平衡点（汇）；$y^*=2$ 是不稳定平衡点（源）。(A1)</span></p>
+      <h4><span data-lang="en">(b) Phase line</span><span data-lang="zh">(b) 相线</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Check the sign of $f$ on each interval using a test point: (M1)</span><span data-lang="zh">用测试点检验 $f$ 在各区间上的符号：(M1)</span></p>
+      <ul>
+        <li><span data-lang="en">$y<0$: test $y=-1$, $f(-1)=(-1)(-3)(5)=15>0$. Arrow pointing up.</span><span data-lang="zh">$y<0$：取 $y=-1$，$f(-1)=(-1)(-3)(5)=15>0$，箭头向上。</span></li>
+        <li><span data-lang="en">$0<y<2$: test $y=1$, $f(1)=(1)(-1)(3)=-3<0$. Arrow pointing down.</span><span data-lang="zh">$0<y<2$：取 $y=1$，$f(1)=(1)(-1)(3)=-3<0$，箭头向下。</span></li>
+        <li><span data-lang="en">$2<y<4$: test $y=3$, $f(3)=(3)(1)(1)=3>0$. Arrow pointing up.</span><span data-lang="zh">$2<y<4$：取 $y=3$，$f(3)=(3)(1)(1)=3>0$，箭头向上。</span></li>
+        <li><span data-lang="en">$y>4$: test $y=5$, $f(5)=(5)(3)(-1)=-15<0$. Arrow pointing down.</span><span data-lang="zh">$y>4$：取 $y=5$，$f(5)=(5)(3)(-1)=-15<0$，箭头向下。</span></li>
+      </ul>
+      <p><span data-lang="en">Phase line: arrows converge toward $0$ from $(-\infty,0)\cup(0,2)$ (note: from below $0$ arrows go up toward $0$, from above $0$ until $2$ arrows go down toward $0$), and arrows converge toward $4$ from $(2,4)\cup(4,\infty)$. The unstable equilibrium $y^*=2$ separates the two basins of attraction. (A1)</span><span data-lang="zh">相线：来自 $(-\infty,0)\cup(0,2)$ 的箭头收敛于 $0$（注意：从 $0$ 以下箭头向上指向 $0$，从 $0$ 到 $2$ 之间箭头向下指向 $0$），来自 $(2,4)\cup(4,\infty)$ 的箭头收敛于 $4$。不稳定平衡点 $y^*=2$ 将两个吸引盆分隔开。(A1)</span></p>
+      <h4><span data-lang="en">(c) Long-term behavior from $y(0)=3$</span><span data-lang="zh">(c) 从 $y(0)=3$ 出发的长期行为</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Since $y(0)=3\in(2,4)$ and $f>0$ on this interval, $y$ is increasing and cannot cross the equilibrium $y^*=4$ (by uniqueness). (M1) All solutions starting in $(2,4)$ are attracted to the stable equilibrium $y^*=4$, so</span><span data-lang="zh">由于 $y(0)=3\in(2,4)$ 且 $f$ 在该区间上 $f>0$，$y$ 单调递增且不能越过平衡点 $y^*=4$（由唯一性保证）。(M1) 所有从 $(2,4)$ 出发的解均被稳定平衡点 $y^*=4$ 吸引，故</span></p>
+      $$ \lim_{t\to\infty}y(t)=4. $$
+      <p><span data-lang="en">(A1)</span><span data-lang="zh">(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">The phase line encodes global qualitative behavior without solving the ODE. The sign of $f$ between equilibria is the only information needed; computing $f'(y^*)$ then makes the local stability precise. The unstable equilibrium $y^*=2$ acts as a threshold: any $y(0)>2$ is eventually drawn toward $4$, while any $y(0)\in(0,2)$ is drawn toward $0$. This is precisely the basin-of-attraction structure the logistic model lacks (it has only one stable equilibrium), making this cubic richer dynamically.</span><span data-lang="zh">相线在无需求解微分方程的情况下，编码了全局定性行为。平衡点之间 $f$ 的符号是所需的唯一信息；计算 $f'(y^*)$ 则使局部稳定性得到精确刻画。不稳定平衡点 $y^*=2$ 起到阈值的作用：任何 $y(0)>2$ 最终都趋向 $4$，而任何 $y(0)\in(0,2)$ 则趋向 $0$。这正是逻辑斯谛模型所缺乏的吸引盆结构（逻辑斯谛模型仅有一个稳定平衡点），使得本题的三次方程在动力学上更为丰富。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合应用题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">logistic IVP: closed-form solution and long-term behavior</span><span data-lang="zh">逻辑斯谛初值问题：闭合形式解与长期行为</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$P'=0.4P(1-P/500)$, $P(0)=50$: (a) state $K$, $k$, equilibria and classify them; (b) separate variables and derive $P/(1-P/K)=Ae^{kt}$; (c) solve for $P(t)$; (d) find $\lim_{t\to\infty}P(t)$ and confirm it equals the stable equilibrium.</span><span data-lang="zh">$P'=0.4P(1-P/500)$，$P(0)=50$：(a) 写出 $K$、$k$、平衡点并分类；(b) 分离变量并推导 $P/(1-P/K)=Ae^{kt}$；(c) 求 $P(t)$；(d) 求 $\lim_{t\to\infty}P(t)$ 并确认其等于稳定平衡点。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $K=500$, $k=0.4$, <span data-lang="en">equilibria $P=0$ (unstable) and $P=500$ (stable)</span><span data-lang="zh">平衡点 $P=0$（不稳定）和 $P=500$（稳定）</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">derived below</span><span data-lang="zh">见下方推导</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $P(t)=\dfrac{500}{1+9e^{-0.4t}}$ &nbsp;·&nbsp; <span class="ans">(d)</span> $\lim_{t\to\infty}P=500$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Parameters and equilibria</span><span data-lang="zh">(a) 参数与平衡点</span> <span class="marks-call">A1</span></h4>
+      <p><span data-lang="en">Reading off the equation: carrying capacity $K=500$ and intrinsic growth rate $k=0.4$. Setting $f(P)=0.4P(1-P/500)=0$ gives equilibria $P=0$ (unstable, since $f'(0)=0.4>0$) and $P=500$ (stable, since $f'(500)=-0.4<0$). (A1)</span><span data-lang="zh">从方程中读出：环境容量 $K=500$，固有增长率 $k=0.4$。令 $f(P)=0.4P(1-P/500)=0$，得平衡点 $P=0$（不稳定，因为 $f'(0)=0.4>0$）和 $P=500$（稳定，因为 $f'(500)=-0.4<0$）。(A1)</span></p>
+      <h4><span data-lang="en">(b) Separate variables and partial fractions</span><span data-lang="zh">(b) 分离变量与部分分式</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Rewrite: $\dfrac{dP}{P(1-P/500)}=0.4\,dt$. (M1) Decompose the left integrand by partial fractions, writing $\dfrac{1}{P(1-P/500)}=\dfrac{1}{P}+\dfrac{1/500}{1-P/500}$ (verified by common denominator): (M1)</span><span data-lang="zh">改写为：$\dfrac{dP}{P(1-P/500)}=0.4\,dt$。(M1) 用部分分式分解左侧被积函数，写成 $\dfrac{1}{P(1-P/500)}=\dfrac{1}{P}+\dfrac{1/500}{1-P/500}$（通分可验证）：(M1)</span></p>
+      $$ \int\left(\frac{1}{P}+\frac{1/500}{1-P/500}\right)dP=\int0.4\,dt. $$
+      $$ \ln|P|-\ln\!\left|1-\frac{P}{500}\right|=0.4t+C_1. $$
+      <p><span data-lang="en">(A1) Exponentiate: $\dfrac{P}{1-P/500}=e^{C_1}e^{0.4t}=A\,e^{0.4t}$. (A1)</span><span data-lang="zh">(A1) 取指数：$\dfrac{P}{1-P/500}=e^{C_1}e^{0.4t}=A\,e^{0.4t}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Solve for $P(t)$ and apply $P(0)=50$</span><span data-lang="zh">(c) 求 $P(t)$ 并代入 $P(0)=50$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">At $t=0$: $A=\dfrac{P_0}{1-P_0/K}=\dfrac{50}{1-50/500}=\dfrac{50}{0.9}=\dfrac{500}{9}$. (M1) Solve $\dfrac{P}{1-P/500}=\dfrac{500}{9}e^{0.4t}$ for $P$: cross-multiply and rearrange,</span><span data-lang="zh">当 $t=0$ 时：$A=\dfrac{P_0}{1-P_0/K}=\dfrac{50}{1-50/500}=\dfrac{50}{0.9}=\dfrac{500}{9}$。(M1) 从 $\dfrac{P}{1-P/500}=\dfrac{500}{9}e^{0.4t}$ 中解出 $P$：交叉相乘并整理，</span></p>
+      $$ P=\frac{K P_0}{P_0+(K-P_0)e^{-kt}}=\frac{500\cdot50}{50+450\,e^{-0.4t}}=\frac{500}{1+9e^{-0.4t}}. $$
+      <p><span data-lang="en">(A1) Verification at $t=0$: $P=500/(1+9)=50$. Correct.</span><span data-lang="zh">(A1) 验证 $t=0$ 时：$P=500/(1+9)=50$，正确。</span></p>
+      <h4><span data-lang="en">(d) Long-term limit</span><span data-lang="zh">(d) 长期极限</span> <span class="marks-call">A1</span></h4>
+      <p><span data-lang="en">As $t\to\infty$, $e^{-0.4t}\to0$, so $P(t)\to500=K$. (A1) This confirms $P=500$ is the stable equilibrium: any positive initial population is attracted to the carrying capacity, consistent with the linearised stability finding $f'(500)=-0.4<0$.</span><span data-lang="zh">当 $t\to\infty$ 时，$e^{-0.4t}\to0$，故 $P(t)\to500=K$。(A1) 这证实 $P=500$ 是稳定平衡点：任何正的初始种群都被环境容量吸引，与线性化稳定性分析结果 $f'(500)=-0.4<0$ 一致。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">Test $M_y=N_x$ before assuming exactness; in a logistic problem the equation is autonomous, so the relevant test is whether $P=K$ is a stable equilibrium, read off from $f'(K)<0$. The partial-fraction step is mechanical once you recognise $1/(P(1-P/K))$; the key is to write the decomposition with the $1/K$ scaling in the second term so integration gives clean logarithms. The logistic formula $P(t)=K/(1+Ae^{-kt})$ is worth memorising in this form: $A=(K-P_0)/P_0$ measures how far the initial population is from carrying capacity.</span><span data-lang="zh">在假定恰当性之前先验证 $M_y=N_x$；在逻辑斯谛问题中，方程是自治的，相关验证是判断 $P=K$ 是否为稳定平衡点，由 $f'(K)<0$ 读出。一旦识别出 $1/(P(1-P/K))$ 的形式，部分分式分解步骤是机械性的；关键在于第二项中写入 $1/K$ 的缩放因子，从而积分后得到整洁的对数。逻辑斯谛公式 $P(t)=K/(1+Ae^{-kt})$ 值得以这种形式记忆：$A=(K-P_0)/P_0$ 衡量初始种群偏离环境容量的程度。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">mixing tank: linear ODE with constant-volume balance</span><span data-lang="zh">混合槽：恒容守恒下的线性常微分方程</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Tank: 200 L pure water, inflow 0.05 kg/L at 4 L/min, outflow 4 L/min. $A(t)$ = salt mass. (a) set up $A'+pA=q$; (b) solve with $A(0)=0$; (c) find $A(30)$ and $\lim_{t\to\infty}A(t)$.</span><span data-lang="zh">水槽：200 L 纯水，0.05 kg/L 盐水以 4 L/min 流入，4 L/min 流出。$A(t)$ 为盐的质量。(a) 建立 $A'+pA=q$；(b) 以 $A(0)=0$ 求解；(c) 求 $A(30)$ 和 $\lim_{t\to\infty}A(t)$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $A'+\tfrac{1}{50}A=0.2$ &nbsp;·&nbsp; <span class="ans">(b)</span> $A(t)=10(1-e^{-t/50})$ &nbsp;·&nbsp; <span class="ans">(c)</span> $A(30)\approx4.51$ kg; $\lim_{t\to\infty}A=10$ kg</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Set up the mass-balance ODE</span><span data-lang="zh">(a) 建立质量守恒微分方程</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Apply the balance law: $A'=(\text{rate in})-(\text{rate out})$. Rate in: $0.05\times4=0.2\,\text{kg/min}$. Rate out: $(A/200)\times4=A/50\,\text{kg/min}$. (M1) Therefore</span><span data-lang="zh">应用守恒律：$A'=(\text{流入速率})-(\text{流出速率})$。流入速率：$0.05\times4=0.2\,\text{kg/min}$。流出速率：$(A/200)\times4=A/50\,\text{kg/min}$。(M1) 因此</span></p>
+      $$ A'+\frac{1}{50}A=0.2, \quad p=\frac{1}{50},\quad q=0.2. \quad\text{(A1)}$$
+      <h4><span data-lang="en">(b) Solve by integrating factor</span><span data-lang="zh">(b) 用积分因子法求解</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$\mu=e^{t/50}$. Multiply: $(e^{t/50}A)'=0.2e^{t/50}$. (M1) Integrate: $e^{t/50}A=10e^{t/50}+C$, so $A=10+Ce^{-t/50}$. Apply $A(0)=0$: $C=-10$. (A1)</span><span data-lang="zh">$\mu=e^{t/50}$。两边乘以 $\mu$：$(e^{t/50}A)'=0.2e^{t/50}$。(M1) 积分：$e^{t/50}A=10e^{t/50}+C$，故 $A=10+Ce^{-t/50}$。代入 $A(0)=0$：$C=-10$。(A1)</span></p>
+      $$ A(t)=10\!\left(1-e^{-t/50}\right). $$
+      <p><span data-lang="en">Verification: $A'=0.2e^{-t/50}$ and $0.2-A/50=0.2e^{-t/50}$. Matches.</span><span data-lang="zh">验证：$A'=0.2e^{-t/50}$，$0.2-A/50=0.2e^{-t/50}$，两者吻合。</span></p>
+      <h4><span data-lang="en">(c) Evaluate and interpret the limit</span><span data-lang="zh">(c) 计算并解释极限</span> <span class="marks-call">A1·A1</span></h4>
+      <p><span data-lang="en">$A(30)=10(1-e^{-30/50})=10(1-e^{-0.6})\approx10(1-0.5488)=10\times0.4512\approx4.51\,\text{kg}$. (A1)</span><span data-lang="zh">$A(30)=10(1-e^{-30/50})=10(1-e^{-0.6})\approx10(1-0.5488)=10\times0.4512\approx4.51\,\text{kg}$。(A1)</span></p>
+      <p><span data-lang="en">$\displaystyle\lim_{t\to\infty}A(t)=10\,\text{kg}$. (A1) Physical interpretation: at steady state the salt concentration in the tank equals $10/200=0.05\,\text{kg/L}$, which is exactly the inflow concentration. The tank equilibrates to the incoming brine strength, as the balance law requires (rate in equals rate out at steady state).</span><span data-lang="zh">$\displaystyle\lim_{t\to\infty}A(t)=10\,\text{kg}$。(A1) 物理解释：稳态时槽内盐的浓度为 $10/200=0.05\,\text{kg/L}$，恰好等于流入浓度。槽内浓度趋近于流入盐水的浓度，这与守恒律的要求一致（稳态时流入速率等于流出速率）。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">The mixing ODE is always $A'+(\text{outflow rate}/V)A=c_{\text{in}}\cdot r_{\text{in}}$; the constant-volume assumption makes both $p$ and $q$ constant, so the integrating factor is a simple exponential. The steady-state value $A_\infty=q/p=0.2/(1/50)=10$ can be read from the ODE directly (set $A'=0$) without solving it, and gives a useful sanity check on the formula.</span><span data-lang="zh">混合槽的微分方程始终为 $A'+(\text{流出速率}/V)A=c_{\text{流入}}\cdot r_{\text{流入}}$；恒容假设使 $p$ 和 $q$ 均为常数，故积分因子为简单指数函数。稳态值 $A_\infty=q/p=0.2/(1/50)=10$ 可直接从方程读出（令 $A'=0$），无需求解，可作为对公式的有用验证。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">Newton's law of cooling: parameter estimation and inversion</span><span data-lang="zh">牛顿冷却定律：参数估计与反解</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Coffee cools from 90&deg;C, room at 20&deg;C; after 10 min it is 70&deg;C. (a) solve for $T(t)$; (b) find $k$; (c) find time to reach 50&deg;C; (d) state $\lim_{t\to\infty}T(t)$ and link to autonomous stability.</span><span data-lang="zh">咖啡从 90&deg;C 冷却，室温 20&deg;C；10 分钟后降至 70&deg;C。(a) 求 $T(t)$；(b) 求 $k$；(c) 求降至 50&deg;C 所需时间；(d) 写出 $\lim_{t\to\infty}T(t)$ 并联系自治方程稳定性。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $T=20+70e^{-kt}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $k=\tfrac{1}{10}\ln\tfrac{7}{5}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $t^*=10\ln(7/3)/\ln(7/5)\approx25.2\,\text{min}$ &nbsp;·&nbsp; <span class="ans">(d)</span> $20=T_a$, <span data-lang="en">stable equilibrium</span><span data-lang="zh">稳定平衡点</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Solve the separable linear ODE</span><span data-lang="zh">(a) 求解可分离线性常微分方程</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Let $u=T-20$; then $u'=-ku$, giving $u=70e^{-kt}$. (M1)</span><span data-lang="zh">令 $u=T-20$，则 $u'=-ku$，得 $u=70e^{-kt}$。(M1)</span></p>
+      $$ T(t)=20+70\,e^{-kt}. $$
+      <p><span data-lang="en">Verification: $T(0)=20+70=90$. (A1)</span><span data-lang="zh">验证：$T(0)=20+70=90$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Determine $k$ from $T(10)=70$</span><span data-lang="zh">(b) 由 $T(10)=70$ 确定 $k$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$70=20+70e^{-10k}$, so $e^{-10k}=5/7$ and (M1)</span><span data-lang="zh">$70=20+70e^{-10k}$，故 $e^{-10k}=5/7$，(M1)</span></p>
+      $$ k=\frac{1}{10}\ln\frac{7}{5}. $$
+      <p><span data-lang="en">Numerical value: $k\approx0.03365\,\text{min}^{-1}$. (A1)</span><span data-lang="zh">数值：$k\approx0.03365\,\text{min}^{-1}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Find the time to reach 50&deg;C</span><span data-lang="zh">(c) 求降至 50&deg;C 的时间</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Set $T(t^*)=50$: $50=20+70e^{-kt^*}$, so $30=70e^{-kt^*}$ and $e^{-kt^*}=\dfrac{3}{7}$. (M1) Taking the natural log:</span><span data-lang="zh">令 $T(t^*)=50$：$50=20+70e^{-kt^*}$，故 $30=70e^{-kt^*}$，$e^{-kt^*}=\dfrac{3}{7}$。(M1) 取自然对数：</span></p>
+      $$ kt^*=\ln\frac{7}{3} \implies t^*=\frac{\ln(7/3)}{k}=\frac{10\ln(7/3)}{\ln(7/5)}. $$
+      <p><span data-lang="en">Numerically: $\ln(7/3)\approx0.8473$, $\ln(7/5)\approx0.3365$, so $t^*\approx8.473/0.3365\approx25.2\,\text{min}$. (A1)</span><span data-lang="zh">数值计算：$\ln(7/3)\approx0.8473$，$\ln(7/5)\approx0.3365$，故 $t^*\approx8.473/0.3365\approx25.2\,\text{min}$。(A1)</span></p>
+      <h4><span data-lang="en">(d) Long-term limit and autonomous stability</span><span data-lang="zh">(d) 长期极限与自治方程稳定性</span> <span class="marks-call">A1·A1</span></h4>
+      <p><span data-lang="en">Since $k>0$, $e^{-kt}\to0$ as $t\to\infty$, so $\displaystyle\lim_{t\to\infty}T(t)=20=T_a$. (A1)</span><span data-lang="zh">由于 $k>0$，当 $t\to\infty$ 时 $e^{-kt}\to0$，故 $\displaystyle\lim_{t\to\infty}T(t)=20=T_a$。(A1)</span></p>
+      <p><span data-lang="en">This matches the autonomous stability analysis: rewrite $T'=-k(T-20)=f(T)$. The equilibrium is $T^*=20$, and $f'(T^*)=-k<0$, so $T^*$ is a stable equilibrium (a sink). Any initial temperature is attracted to room temperature, which is exactly what the formula $T=20+70e^{-kt}$ confirms. (A1)</span><span data-lang="zh">这与自治方程的稳定性分析一致：改写为 $T'=-k(T-20)=f(T)$。平衡点为 $T^*=20$，$f'(T^*)=-k<0$，故 $T^*$ 是稳定平衡点（汇）。任何初始温度都被室温吸引，这正是公式 $T=20+70e^{-kt}$ 所证实的。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">Newton's law of cooling is a linear equation in disguise: the substitution $u=T-T_a$ converts it to exponential decay $u'=-ku$. Parameter estimation proceeds by plugging in the second data point ($T(10)=70$) after the general solution is known. The inversion in (c) shows a key applied skill: given a target temperature, solve for $t$ by dividing through, then taking a logarithm. Always check the limiting temperature against the ambient value $T_a$ as a built-in sanity check.</span><span data-lang="zh">牛顿冷却定律本质上是一个线性方程：换元 $u=T-T_a$ 将其转化为指数衰减 $u'=-ku$。参数估计的步骤是：在已知通解后，代入第二个数据点（$T(10)=70$）。(c) 中的反解展示了一项重要的应用技能：给定目标温度，通过两边除法再取对数解出 $t$。务必将极限温度与环境温度 $T_a$ 对照，作为内置的合理性检验。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">homogeneous substitution and exact method compared</span><span data-lang="zh">齐次换元法与恰当方程法的比较</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$2xy\,dx+(y^2-x^2)\,dy=0$: (a) find $\mu(y)$ via $(N_x-M_y)/M$; (b) multiply, verify exactness, solve; (c) confirm the same family via the homogeneous substitution $w=x/y$.</span><span data-lang="zh">$2xy\,dx+(y^2-x^2)\,dy=0$：(a) 通过 $(N_x-M_y)/M$ 求 $\mu(y)$；(b) 乘以积分因子，验证恰当性，求解；(c) 通过齐次换元 $w=x/y$ 确认相同的曲线族。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\mu=y^{-2}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $x^2+y^2=Cy$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">same family $x^2+y^2=Cy$ confirmed</span><span data-lang="zh">同一曲线族 $x^2+y^2=Cy$ 已验证</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Identify the $y$-only integrating factor</span><span data-lang="zh">(a) 确定仅关于 $y$ 的积分因子</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$M=2xy$, $M_y=2x$; $N=y^2-x^2$, $N_x=-2x$. Since $M_y\ne N_x$, not exact. Test the $y$-only formula: (M1)</span><span data-lang="zh">$M=2xy$，$M_y=2x$；$N=y^2-x^2$，$N_x=-2x$。由于 $M_y\ne N_x$，非恰当方程。检验仅关于 $y$ 的公式：(M1)</span></p>
+      $$ \frac{N_x-M_y}{M}=\frac{-4x}{2xy}=\frac{-2}{y}. $$
+      <p><span data-lang="en">Depends only on $y$, so $\mu=e^{\int(-2/y)\,dy}=y^{-2}$. (A1)</span><span data-lang="zh">仅依赖于 $y$，故 $\mu=e^{\int(-2/y)\,dy}=y^{-2}$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Multiply, verify exactness, and solve</span><span data-lang="zh">(b) 乘以积分因子、验证恰当性并求解</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Multiply by $y^{-2}$: $\tilde{M}=2x/y$, $\tilde{N}=1-x^2/y^2$. Check: $\tilde{M}_y=-2x/y^2=\tilde{N}_x$. Exact. (M1) Integrate $\tilde{M}$ in $x$: $F=x^2/y+g(y)$. Match $F_y=1-x^2/y^2$ gives $g'(y)=1$, $g=y$. (A1)</span><span data-lang="zh">两边乘以 $y^{-2}$：$\tilde{M}=2x/y$，$\tilde{N}=1-x^2/y^2$。验证：$\tilde{M}_y=-2x/y^2=\tilde{N}_x$，恰当方程。(M1) 对 $\tilde{M}$ 关于 $x$ 积分：$F=x^2/y+g(y)$。匹配 $F_y=1-x^2/y^2$ 得 $g'(y)=1$，$g=y$。(A1)</span></p>
+      $$ x^2+y^2=Cy. $$
+      <h4><span data-lang="en">(c) Confirm via the homogeneous substitution $w=x/y$</span><span data-lang="zh">(c) 通过齐次换元 $w=x/y$ 验证</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Rewrite the equation treating $x$ as a function of $y$: $dx/dy=-(y^2-x^2)/(2xy)=(x^2-y^2)/(2xy)$. This is a homogeneous equation with the ratio $w=x/y$. Set $x=wy$, so $dx/dy=w+y\,dw/dy$: (M1)</span><span data-lang="zh">将方程改写为以 $x$ 作为 $y$ 的函数：$dx/dy=-(y^2-x^2)/(2xy)=(x^2-y^2)/(2xy)$。这是含比值 $w=x/y$ 的齐次方程。令 $x=wy$，则 $dx/dy=w+y\,dw/dy$：(M1)</span></p>
+      $$ w+y\frac{dw}{dy}=\frac{w^2y^2-y^2}{2wy^2}=\frac{w^2-1}{2w} \implies y\frac{dw}{dy}=\frac{w^2-1}{2w}-w=\frac{-w^2-1}{2w}. $$
+      <p><span data-lang="en">Separate: $\dfrac{2w}{w^2+1}\,dw=-\dfrac{dy}{y}$. Integrate: $\ln(w^2+1)=-\ln y+C_1$. Substitute $w=x/y$:</span><span data-lang="zh">分离变量：$\dfrac{2w}{w^2+1}\,dw=-\dfrac{dy}{y}$。积分：$\ln(w^2+1)=-\ln y+C_1$。代入 $w=x/y$：</span></p>
+      $$ \ln\!\left(\frac{x^2}{y^2}+1\right)+\ln y=C_1 \implies \ln\!\left(\frac{x^2+y^2}{y}\right)=C_1 \implies \frac{x^2+y^2}{y}=C. $$
+      <p><span data-lang="en">This is $x^2+y^2=Cy$, identical to the exact-method result. (A1)</span><span data-lang="zh">即 $x^2+y^2=Cy$，与恰当方程法的结果完全一致。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">解题要点。</span></strong> <span data-lang="en">When $(N_x-M_y)/M$ is a function of $y$ alone, the integrating factor formula gives $\mu(y)=e^{\int[(N_x-M_y)/M]\,dy}$; note the sign convention: the $y$-formula uses $N_x-M_y$ over $M$, not $M_y-N_x$ over $N$. The agreement between the exact method and the homogeneous substitution is a consistency check, not a coincidence: both routes find the same one-parameter family of curves because they are solving the same ODE. The homogeneous route via $x=wy$ is slightly non-standard (usually $v=y/x$), but is cleaner here because the equation is more naturally viewed as $dx/dy = f(x/y)$.</span><span data-lang="zh">当 $(N_x-M_y)/M$ 仅为 $y$ 的函数时，积分因子公式给出 $\mu(y)=e^{\int[(N_x-M_y)/M]\,dy}$；注意符号约定：关于 $y$ 的公式使用 $N_x-M_y$ 除以 $M$，而非 $M_y-N_x$ 除以 $N$。恰当方程法与齐次换元法的结果吻合是一致性检验，而非巧合：两条路径求出相同的单参数曲线族，因为它们求解的是同一个常微分方程。通过 $x=wy$ 进行的齐次换元略显非标准（通常用 $v=y/x$），但在此处更简洁，因为方程更自然地被视为 $dx/dy = f(x/y)$。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中对本单元感到困惑？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约鼎睿学者导师的免费 15 分钟咨询，在你的下次期中或期末考试前帮你突破难关。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_d2_first_order_models_and_exact_equations__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_D2_First_Order_Models_and_Exact_Equations.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_D2_First_Order_Models_and_Exact_Equations_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit D2 Solutions</span><span data-lang="zh">大学微积分 &middot; 第D2单元解答</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">配套练习 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第1至7节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

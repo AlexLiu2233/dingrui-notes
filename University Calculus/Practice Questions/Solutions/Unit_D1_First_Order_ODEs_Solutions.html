@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit D1: First-Order ODEs | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-D1  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D1_First_Order_ODEs_Solutions.html">
+<meta name="description" content="Worked solutions for Unit D1: First-Order ODEs in University Calculus. Separable equations, integrating factors, existence-uniqueness, and first-order models from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit D1: First-Order ODEs | Solutions">
+<meta property="og:description" content="Worked solutions for Unit D1: First-Order ODEs in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D1_First_Order_ODEs_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit D1: First-Order ODEs | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit D1: First-Order ODEs in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit D1: First-Order ODEs | Solutions",
+  "description": "Worked solutions for Unit D1: First-Order ODEs in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D1_First_Order_ODEs_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit D1 &middot; Solutions</span><span data-lang="zh">第 D1 单元 &middot; 解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">First-Order ODEs &middot; Solutions</span><span data-lang="zh">一阶常微分方程 &middot; 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题配套解答</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: classifying ODEs, separable equations, first-order linear equations and integrating factors, IVPs, direction fields and equilibria, existence-uniqueness, and first-order models<span class="scope">CALC IV</span></span><span data-lang="zh">第 <b>1 至 7</b> 节：常微分方程的分类、可分离方程、一阶线性方程与积分因子、初值问题、方向场与平衡点、存在唯一性定理、一阶模型<span class="scope">CALC IV</span></span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to</span><span data-lang="zh">配套</span> <code style="font-style:normal;">Unit_D1_First_Order_ODEs_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; <span data-lang="en">method walk with</span><span data-lang="zh">解题过程标注</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method</span><span data-lang="zh">方法</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer</span><span data-lang="zh">答案</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning mark callouts</span><span data-lang="zh">推理分标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算能力 &middot; 28 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">classifying ODEs: order, linearity, and normal form</span><span data-lang="zh">常微分方程的分类：阶数、线性性与标准形式</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For each equation, state (i) the order and (ii) linear or nonlinear, with standard form or the nonlinear term: (a) $xy' + 2y = \sin x$; (b) $y'' - 3y' + 2y = e^{x}$; (c) $dy/dx = y^{2} - x$.</span><span data-lang="zh">对于每个方程，说明 (i) 阶数，(ii) 线性或非线性，给出标准形式或非线性项：(a) $xy' + 2y = \sin x$；(b) $y'' - 3y' + 2y = e^{x}$；(c) $dy/dx = y^{2} - x$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">first order, linear,</span><span data-lang="zh">一阶，线性，</span> $y' + \tfrac{2}{x}y = \tfrac{\sin x}{x}$ &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">second order, linear</span><span data-lang="zh">二阶，线性</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">first order, nonlinear ($y^{2}$)</span><span data-lang="zh">一阶，非线性（$y^{2}$）</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) First-order linear: divide by $x$</span><span data-lang="zh">(a) 一阶线性方程：两边除以 $x$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The equation involves $y$ and $y'$ to the first power only, with no products of $y$ and $y'$, so it is linear. (M1) Dividing by $x$ (for $x \ne 0$) puts it in standard form:</span><span data-lang="zh">方程中 $y$ 和 $y'$ 均以一次幂出现，且无 $y$ 与 $y'$ 的乘积，故为线性方程。(M1) 两边除以 $x$（$x \ne 0$）得标准形式：</span></p>
+      $$ y' + \frac{2}{x}\,y = \frac{\sin x}{x}. $$
+      <p><span data-lang="en">Order: 1. Linear. Standard form: $P(x) = \tfrac{2}{x}$, $Q(x) = \tfrac{\sin x}{x}$. (A1)</span><span data-lang="zh">阶数：1。线性。标准形式：$P(x) = \tfrac{2}{x}$，$Q(x) = \tfrac{\sin x}{x}$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Second-order linear</span><span data-lang="zh">(b) 二阶线性方程</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The equation contains $y''$, making it order 2. (M1) It is linear because $y$, $y'$, $y''$ all appear to the first power with no products among them. The equation is already in standard form for a second-order linear ODE. (A1)</span><span data-lang="zh">方程含 $y''$，故为 2 阶。(M1) 由于 $y$、$y'$、$y''$ 均以一次幂出现且无相互乘积，故为线性方程。方程已为二阶线性常微分方程的标准形式。(A1)</span></p>
+      <h4><span data-lang="en">(c) First-order nonlinear: the $y^{2}$ term</span><span data-lang="zh">(c) 一阶非线性方程：$y^{2}$ 项</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The highest derivative is $dy/dx$, so the order is 1. (M1) The term $y^{2}$ is a nonlinear function of the dependent variable $y$; a linear ODE would require all such terms to be linear (first power, no products). Therefore the equation is nonlinear. (A1)</span><span data-lang="zh">最高阶导数为 $dy/dx$，故阶数为 1。(M1) 项 $y^{2}$ 是因变量 $y$ 的非线性函数；线性常微分方程要求所有此类项均为一次幂且无乘积。因此该方程为非线性方程。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">Linearity is entirely about how $y$ and its derivatives appear, not about how $x$ appears. The coefficients $P(x)$ and $Q(x)$ can be any functions of $x$, including $\sin x$ or $1/x$; what is forbidden is any product $y \cdot y'$, any power $y^{n}$ with $n \ne 1$, or any nonlinear function of $y$ such as $e^{y}$. Always divide through by the leading coefficient to reach standard form before computing the integrating factor.</span><span data-lang="zh">线性性完全取决于 $y$ 及其导数的出现方式，与 $x$ 的出现方式无关。系数 $P(x)$ 和 $Q(x)$ 可以是 $x$ 的任意函数，包括 $\sin x$ 或 $1/x$；禁止出现的是 $y \cdot y'$ 的乘积、$n \ne 1$ 时的 $y^{n}$ 次幂，或 $y$ 的非线性函数如 $e^{y}$。计算积分因子前，始终先除以最高阶系数以得到标准形式。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">separable equations with initial value problems</span><span data-lang="zh">带初值条件的可分离变量方程</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Solve by separating variables: (a) $dy/dx = 2xy$, $y(0) = 3$; (b) $dy/dx = x/y$, $y(0) = 4$.</span><span data-lang="zh">用分离变量法求解：(a) $dy/dx = 2xy$，$y(0) = 3$；(b) $dy/dx = x/y$，$y(0) = 4$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y = 3e^{x^{2}}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $y = \sqrt{x^{2}+16}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Exponential growth IVP</span><span data-lang="zh">(a) 指数增长初值问题</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Separate: $\dfrac{dy}{y} = 2x\,dx$ (valid for $y \ne 0$). (M1) Integrate both sides:</span><span data-lang="zh">分离变量：$\dfrac{dy}{y} = 2x\,dx$（$y \ne 0$ 时有效）。(M1) 两边积分：</span></p>
+      $$ \ln|y| = x^{2} + C_{1} \implies y = Ce^{x^{2}}, \quad C \ne 0. $$
+      <p><span data-lang="en">(M1·A1) Apply $y(0) = 3$: $3 = Ce^{0} = C$. (A1) So $y = 3e^{x^{2}}$.</span><span data-lang="zh">(M1·A1) 代入 $y(0) = 3$：$3 = Ce^{0} = C$。(A1) 故 $y = 3e^{x^{2}}$。</span></p>
+      <p><em><span data-lang="en">Verification:</span><span data-lang="zh">验证：</span></em> <span data-lang="en">$y' = 6xe^{x^{2}} = 2x \cdot 3e^{x^{2}} = 2xy$. Initial condition: $y(0) = 3e^{0} = 3$. Both satisfied.</span><span data-lang="zh">$y' = 6xe^{x^{2}} = 2x \cdot 3e^{x^{2}} = 2xy$。初始条件：$y(0) = 3e^{0} = 3$。两者均满足。</span></p>
+      <h4><span data-lang="en">(b) Circle IVP</span><span data-lang="zh">(b) 圆形曲线初值问题</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Separate: $y\,dy = x\,dx$. (M1) Integrate both sides:</span><span data-lang="zh">分离变量：$y\,dy = x\,dx$。(M1) 两边积分：</span></p>
+      $$ \frac{y^{2}}{2} = \frac{x^{2}}{2} + C \implies y^{2} = x^{2} + K. $$
+      <p><span data-lang="en">(M1·A1) Apply $y(0) = 4$: $16 = 0 + K$, so $K = 16$. (A1) Since $y(0) = 4 > 0$, take the positive root: $y = \sqrt{x^{2}+16}$.</span><span data-lang="zh">(M1·A1) 代入 $y(0) = 4$：$16 = 0 + K$，故 $K = 16$。(A1) 因 $y(0) = 4 > 0$，取正根：$y = \sqrt{x^{2}+16}$。</span></p>
+      <p><em><span data-lang="en">Verification:</span><span data-lang="zh">验证：</span></em> <span data-lang="en">$y' = \tfrac{x}{\sqrt{x^{2}+16}} = \tfrac{x}{y}$. Initial condition: $y(0) = \sqrt{16} = 4$. Both satisfied.</span><span data-lang="zh">$y' = \tfrac{x}{\sqrt{x^{2}+16}} = \tfrac{x}{y}$。初始条件：$y(0) = \sqrt{16} = 4$。两者均满足。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">Always separate fully before integrating: $dy/y$ on one side, $2x\,dx$ on the other. After finding the general solution, apply the initial condition to pin down the constant. In (b), the implicit relation $y^{2} - x^{2} = 16$ is a hyperbola, but the initial condition $y(0) = 4 > 0$ selects the upper branch, giving an explicit function. Always check: substitute the answer back into the ODE and verify the initial condition separately.</span><span data-lang="zh">积分前务必完整分离变量：$dy/y$ 在一侧，$2x\,dx$ 在另一侧。求得通解后，代入初始条件确定常数。在 (b) 中，隐式关系 $y^{2} - x^{2} = 16$ 是双曲线，但初始条件 $y(0) = 4 > 0$ 选取上支，得到显式函数。务必验证：将答案代回常微分方程，并单独验证初始条件。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">first-order linear equations via the integrating factor</span><span data-lang="zh">用积分因子法求解一阶线性方程</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Solve using the integrating-factor method: (a) $y' - \tfrac{2}{x}y = x^{2}$, $x > 0$; (b) $y' + y\tan x = \sec x$, $-\tfrac{\pi}{2} &lt; x &lt; \tfrac{\pi}{2}$, $y(0) = 0$.</span><span data-lang="zh">用积分因子法求解：(a) $y' - \tfrac{2}{x}y = x^{2}$，$x > 0$；(b) $y' + y\tan x = \sec x$，$-\tfrac{\pi}{2} &lt; x &lt; \tfrac{\pi}{2}$，$y(0) = 0$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y = x^{3} + Cx^{2}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $y = \sin x$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Integrating factor $\mu = x^{-2}$</span><span data-lang="zh">(a) 积分因子 $\mu = x^{-2}$</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Already in standard form with $P(x) = -2/x$. (M1) Compute the integrating factor:</span><span data-lang="zh">方程已为标准形式，$P(x) = -2/x$。(M1) 计算积分因子：</span></p>
+      $$ \mu = e^{\int -2/x\,dx} = e^{-2\ln x} = x^{-2} \quad (x > 0). $$
+      <p><span data-lang="en">(M1) Multiply through by $\mu = x^{-2}$:</span><span data-lang="zh">(M1) 两边乘以 $\mu = x^{-2}$：</span></p>
+      $$ \left(x^{-2}y\right)' = x^{-2} \cdot x^{2} = 1. $$
+      <p><span data-lang="en">(A1) Integrate: $x^{-2}y = x + C$. (A1) Hence $y = x^{3} + Cx^{2}$.</span><span data-lang="zh">(A1) 积分得：$x^{-2}y = x + C$。(A1) 故 $y = x^{3} + Cx^{2}$。</span></p>
+      <p><em><span data-lang="en">Verification:</span><span data-lang="zh">验证：</span></em> <span data-lang="en">$y' = 3x^{2} + 2Cx$. Then $y' - \tfrac{2}{x}y = 3x^{2} + 2Cx - \tfrac{2}{x}(x^{3} + Cx^{2}) = 3x^{2} + 2Cx - 2x^{2} - 2Cx = x^{2}$. Correct.</span><span data-lang="zh">$y' = 3x^{2} + 2Cx$。则 $y' - \tfrac{2}{x}y = 3x^{2} + 2Cx - \tfrac{2}{x}(x^{3} + Cx^{2}) = 3x^{2} + 2Cx - 2x^{2} - 2Cx = x^{2}$。正确。</span></p>
+      <h4><span data-lang="en">(b) Integrating factor $\mu = \sec x$</span><span data-lang="zh">(b) 积分因子 $\mu = \sec x$</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Standard form: $P(x) = \tan x$, $Q(x) = \sec x$. (M1) Integrating factor:</span><span data-lang="zh">标准形式：$P(x) = \tan x$，$Q(x) = \sec x$。(M1) 积分因子：</span></p>
+      $$ \mu = e^{\int \tan x\,dx} = e^{\ln|\sec x|} = \sec x \quad \text{on } \left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right). $$
+      <p><span data-lang="en">(M1) Multiply through by $\sec x$:</span><span data-lang="zh">(M1) 两边乘以 $\sec x$：</span></p>
+      $$ (\sec x\cdot y)' = \sec x \cdot \sec x = \sec^{2}x. $$
+      <p><span data-lang="en">(A1) Integrate: $y\sec x = \tan x + C$, so $y\sec x = \tan x + C$. Apply $y(0) = 0$: $0 \cdot \sec 0 = 0 + C$, so $C = 0$. (A1) Hence $y\sec x = \tan x$, giving $y = \tan x\cos x = \sin x$.</span><span data-lang="zh">(A1) 积分得：$y\sec x = \tan x + C$。代入 $y(0) = 0$：$0 \cdot \sec 0 = 0 + C$，故 $C = 0$。(A1) 从而 $y\sec x = \tan x$，得 $y = \tan x\cos x = \sin x$。</span></p>
+      <p><em><span data-lang="en">Verification:</span><span data-lang="zh">验证：</span></em> <span data-lang="en">$y' = \cos x$. Then $y' + y\tan x = \cos x + \sin x \cdot \tfrac{\sin x}{\cos x} = \tfrac{\cos^{2}x + \sin^{2}x}{\cos x} = \sec x$. Correct. The closed form is $y = \sin x$.</span><span data-lang="zh">$y' = \cos x$。则 $y' + y\tan x = \cos x + \sin x \cdot \tfrac{\sin x}{\cos x} = \tfrac{\cos^{2}x + \sin^{2}x}{\cos x} = \sec x$。正确。闭合形式为 $y = \sin x$。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">Always put the equation in standard form $y' + P(x)y = Q(x)$ before computing $\mu = e^{\int P\,dx}$. A sign error in $P$ at this stage propagates through the entire calculation. In (a), $P = -2/x$ gives $\mu = x^{-2}$, not $x^{2}$; getting the sign wrong there produces a wrong integrating factor. After multiplying through by $\mu$, the left side must collapse to $(\mu y)'$ exactly. If it does not, recheck the sign of $P$ and recompute $\mu$.</span><span data-lang="zh">计算 $\mu = e^{\int P\,dx}$ 前，务必将方程化为标准形式 $y' + P(x)y = Q(x)$。此时 $P$ 的符号错误将贯穿整个计算。在 (a) 中，$P = -2/x$ 给出 $\mu = x^{-2}$，而非 $x^{2}$；符号错误将导致积分因子错误。乘以 $\mu$ 后，左边必须恰好化为 $(\mu y)'$。若不然，重新检查 $P$ 的符号并重新计算 $\mu$。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">direction fields, equilibria, and qualitative behaviour</span><span data-lang="zh">方向场、平衡点与定性行为</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $dy/dt = y(2-y)$: (a) find all equilibria; (b) determine stability via $\partial f/\partial y$ at each equilibrium; (c) long-run behaviour of solutions starting at $y(0) = 1$ and $y(0) = 3$.</span><span data-lang="zh">对于 $dy/dt = y(2-y)$：(a) 求所有平衡点；(b) 通过在各平衡点处求 $\partial f/\partial y$ 判断稳定性；(c) 从 $y(0) = 1$ 和 $y(0) = 3$ 出发的解的长期行为。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y = 0$ <span data-lang="en">(unstable),</span><span data-lang="zh">（不稳定），</span> $y = 2$ <span data-lang="en">(stable)</span><span data-lang="zh">（稳定）</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $f'(0) = 2 > 0$; $f'(2) = -2 < 0$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">both tend to $y = 2$ as $t \to \infty$</span><span data-lang="zh">两者均趋向 $y = 2$（$t \to \infty$）</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Equilibrium solutions</span><span data-lang="zh">(a) 平衡解</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Equilibria occur where $f(y) = y(2-y) = 0$. (M1) This gives $y = 0$ or $y = 2$. (A1)</span><span data-lang="zh">平衡点满足 $f(y) = y(2-y) = 0$。(M1) 得 $y = 0$ 或 $y = 2$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Stability analysis</span><span data-lang="zh">(b) 稳定性分析</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Compute $f'(y) = \dfrac{\partial}{\partial y}[y(2-y)] = 2 - 2y$. (M1)</span><span data-lang="zh">计算 $f'(y) = \dfrac{\partial}{\partial y}[y(2-y)] = 2 - 2y$。(M1)</span></p>
+      <p><span data-lang="en">At $y = 0$: $f'(0) = 2 > 0$, so $y = 0$ is an unstable equilibrium (small perturbations grow). At $y = 2$: $f'(2) = 2 - 4 = -2 < 0$, so $y = 2$ is a stable equilibrium (small perturbations decay). (A1)</span><span data-lang="zh">在 $y = 0$ 处：$f'(0) = 2 > 0$，故 $y = 0$ 为不稳定平衡点（小扰动增大）。在 $y = 2$ 处：$f'(2) = 2 - 4 = -2 < 0$，故 $y = 2$ 为稳定平衡点（小扰动衰减）。(A1)</span></p>
+      <h4><span data-lang="en">(c) Long-run behaviour</span><span data-lang="zh">(c) 长期行为</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">For $y(0) = 1$: since $0 < 1 < 2$ we have $f(1) = 1 > 0$, so $y$ is increasing and, since $y = 2$ is stable and acts as an upper bound, $y(t) \to 2$ as $t \to \infty$. (M1)</span><span data-lang="zh">对于 $y(0) = 1$：因 $0 < 1 < 2$，有 $f(1) = 1 > 0$，故 $y$ 递增，又因 $y = 2$ 为稳定平衡点且为上界，故 $y(t) \to 2$（$t \to \infty$）。(M1)</span></p>
+      <p><span data-lang="en">For $y(0) = 3$: since $3 > 2$ we have $f(3) = 3(-1) = -3 < 0$, so $y$ is decreasing and again $y(t) \to 2$ as $t \to \infty$. (A1) Both solutions are attracted to the stable equilibrium $y = 2$.</span><span data-lang="zh">对于 $y(0) = 3$：因 $3 > 2$，有 $f(3) = 3(-1) = -3 < 0$，故 $y$ 递减，同样 $y(t) \to 2$（$t \to \infty$）。(A1) 两个解均被稳定平衡点 $y = 2$ 吸引。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The sign of $\partial f/\partial y$ at an equilibrium is the linearised growth rate of perturbations. Negative means the equilibrium attracts nearby trajectories (stable); positive means it repels them (unstable). In a direction field, stable equilibria appear as horizontal isoclines that solutions curve toward from both sides, while unstable ones are curves that solutions flee. This qualitative analysis gives the full picture without solving the ODE explicitly.</span><span data-lang="zh">平衡点处 $\partial f/\partial y$ 的符号是扰动的线性化增长率。负值表示平衡点吸引附近轨迹（稳定）；正值表示排斥（不稳定）。在方向场中，稳定平衡点表现为解曲线从两侧趋近的水平等斜线，而不稳定平衡点则是解曲线远离的曲线。此定性分析无需显式求解常微分方程即可给出完整图像。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严密论证 &middot; 26 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">deriving the integrating-factor formula</span><span data-lang="zh">推导积分因子公式</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $y' + P(x)y = Q(x)$: (a) show $\mu$ must satisfy $\mu' = P\mu$ and hence $\mu = e^{\int P\,dx}$; (b) integrate $(\mu y)' = \mu Q$ from $x_0$ to $x$ to derive the explicit solution formula and state why it is unique.</span><span data-lang="zh">对于 $y' + P(x)y = Q(x)$：(a) 证明 $\mu$ 必须满足 $\mu' = P\mu$，从而 $\mu = e^{\int P\,dx}$；(b) 将 $(\mu y)' = \mu Q$ 从 $x_0$ 积分到 $x$，推导出显式解公式，并说明解唯一的原因。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\mu = e^{\int P(x)\,dx}$ <span data-lang="en">(forced, not guessed)</span><span data-lang="zh">（由推导确定，非猜测）</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $y = \tfrac{1}{\mu(x)}\!\left(y_0\mu(x_0) + \int_{x_0}^{x}\mu(t)Q(t)\,dt\right)$, <span data-lang="en">unique on $I$</span><span data-lang="zh">在 $I$ 上唯一</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Deriving the condition on $\mu$</span><span data-lang="zh">(a) 推导 $\mu$ 满足的条件</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Multiply both sides of $y' + P(x)y = Q(x)$ by an unknown positive function $\mu(x)$:</span><span data-lang="zh">将 $y' + P(x)y = Q(x)$ 两边乘以未知正函数 $\mu(x)$：</span></p>
+      $$ \mu y' + \mu P y = \mu Q. $$
+      <p><span data-lang="en">(M1) We want the left side to be $(\mu y)' = \mu' y + \mu y'$. Matching $\mu y' + \mu P y$ with $\mu y' + \mu' y$ requires:</span><span data-lang="zh">(M1) 我们希望左边变为 $(\mu y)' = \mu' y + \mu y'$。将 $\mu y' + \mu P y$ 与 $\mu y' + \mu' y$ 比较，需要：</span></p>
+      $$ \mu' y = \mu P y \implies \mu' = P(x)\,\mu. $$
+      <p><span data-lang="en">(M1) This is a separable equation for $\mu$:</span><span data-lang="zh">(M1) 这是关于 $\mu$ 的可分离方程：</span></p>
+      $$ \frac{d\mu}{\mu} = P(x)\,dx \implies \ln|\mu| = \int P(x)\,dx \implies \mu = e^{\int P(x)\,dx}. $$
+      <p><span data-lang="en">(A1) We choose the positive solution (no absolute value, no integration constant needed because any nonzero constant would cancel). With this $\mu$, the equation becomes $(\mu y)' = \mu Q$. (A1)</span><span data-lang="zh">(A1) 取正解（不含绝对值，积分常数可省略，因任何非零常数均可约去）。有了此 $\mu$，方程化为 $(\mu y)' = \mu Q$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Integrating to the explicit solution formula</span><span data-lang="zh">(b) 积分推导显式解公式</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Integrate both sides of $(\mu y)' = \mu(t) Q(t)$ from $x_0$ to $x$: (M1)</span><span data-lang="zh">将 $(\mu y)' = \mu(t) Q(t)$ 两边从 $x_0$ 积分到 $x$：(M1)</span></p>
+      $$ \mu(x)\,y(x) - \mu(x_0)\,y_0 = \int_{x_0}^{x} \mu(t)\,Q(t)\,dt. $$
+      <p><span data-lang="en">(M1) Solve for $y(x)$: (A1)</span><span data-lang="zh">(M1) 解出 $y(x)$：(A1)</span></p>
+      $$ y(x) = \frac{1}{\mu(x)}\!\left(y_0\,\mu(x_0) + \int_{x_0}^{x}\mu(t)\,Q(t)\,dt\right). $$
+      <p><span data-lang="en">(A1) Uniqueness: every step is reversible. Any solution of the IVP satisfies $(\mu y)' = \mu Q$ (since $\mu \ne 0$), and integrating a continuous function from $x_0$ to $x$ gives a unique antiderivative (by the Fundamental Theorem of Calculus). Hence the formula gives the only solution on $I$.</span><span data-lang="zh">(A1) 唯一性：每步均可逆。初值问题的任意解均满足 $(\mu y)' = \mu Q$（因 $\mu \ne 0$），而对连续函数从 $x_0$ 到 $x$ 积分，由微积分基本定理给出唯一的原函数。故该公式给出 $I$ 上的唯一解。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The integrating-factor method is forced, not guessed. The requirement that $\mu y' + \mu P y$ equal an exact derivative $(\mu y)'$ uniquely determines the ODE $\mu' = P\mu$, which is always separable and always solvable. The definite-integral form of the solution in (b) is more useful than the indefinite-integral form because it automatically incorporates the initial condition and makes the uniqueness argument transparent.</span><span data-lang="zh">积分因子方法是推导出来的，而非猜测。要求 $\mu y' + \mu P y$ 等于恰当导数 $(\mu y)'$ 唯一确定了方程 $\mu' = P\mu$，该方程始终可分离且可求解。(b) 中解的定积分形式比不定积分形式更有用，因为它自动包含了初始条件，并使唯一性论证更为清晰。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">Picard existence-uniqueness theorem: hypotheses and failures</span><span data-lang="zh">皮卡存在唯一性定理：假设条件与失效情形</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Picard theorem: if $f$ and $\partial f/\partial y$ are continuous near $(x_0,y_0)$, the IVP $y'=f(x,y)$, $y(x_0)=y_0$ has a unique local solution. (a) $y'=y^{1/3}$, $y(0)=0$: find two solutions and identify which hypothesis fails; (b) $y'=y^2$, $y(0)=1$: solve and state the maximal interval; (c) $y'=\sqrt{|y|}$, $y(0)=0$: show the hypothesis fails and verify the one-parameter family of solutions.</span><span data-lang="zh">皮卡定理：若 $f$ 和 $\partial f/\partial y$ 在 $(x_0,y_0)$ 附近连续，则初值问题 $y'=f(x,y)$，$y(x_0)=y_0$ 在 $x_0$ 某邻域内有唯一局部解。(a) $y'=y^{1/3}$，$y(0)=0$：求两个解并指出哪个假设失效；(b) $y'=y^2$，$y(0)=1$：求解并给出最大存在区间；(c) $y'=\sqrt{|y|}$，$y(0)=0$：证明假设失效并验证单参数族解。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y\equiv 0$ <span data-lang="en">and</span><span data-lang="zh">和</span> $y=(\tfrac{2}{3}x)^{3/2}$; $\partial f/\partial y$ <span data-lang="en">unbounded at $y=0$</span><span data-lang="zh">在 $y=0$ 处无界</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $y=\tfrac{1}{1-x}$, <span data-lang="en">maximal interval $(-\infty,1)$</span><span data-lang="zh">最大存在区间 $(-\infty,1)$</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">infinitely many solutions; $\partial f/\partial y$ discontinuous at $y=0$</span><span data-lang="zh">无穷多个解；$\partial f/\partial y$ 在 $y=0$ 处不连续</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Two solutions when $\partial f/\partial y$ blows up</span><span data-lang="zh">(a) $\partial f/\partial y$ 爆破时的两个解</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $f(x,y) = y^{1/3}$. First, $y \equiv 0$ satisfies $y' = 0 = 0^{1/3}$, so it is a solution. (M1) For a second solution, try $y = \bigl(\tfrac{2}{3}x\bigr)^{3/2}$ for $x \ge 0$. Then</span><span data-lang="zh">设 $f(x,y) = y^{1/3}$。首先，$y \equiv 0$ 满足 $y' = 0 = 0^{1/3}$，故为一个解。(M1) 对于第二个解，尝试 $y = \bigl(\tfrac{2}{3}x\bigr)^{3/2}$（$x \ge 0$）。则</span></p>
+      $$ y' = \frac{3}{2}\cdot\left(\frac{2}{3}x\right)^{1/2}\cdot\frac{2}{3} = \left(\frac{2}{3}x\right)^{1/2}, $$
+      <p><span data-lang="en">and $y^{1/3} = \bigl[(\tfrac{2}{3}x)^{3/2}\bigr]^{1/3} = (\tfrac{2}{3}x)^{1/2}$. (A1) Both sides agree, confirming the second solution. The Picard hypothesis that fails is the continuity of $\partial f/\partial y = \tfrac{1}{3}y^{-2/3}$, which blows up as $y \to 0$, precisely at the initial point $(0,0)$. (R1)</span><span data-lang="zh">且 $y^{1/3} = \bigl[(\tfrac{2}{3}x)^{3/2}\bigr]^{1/3} = (\tfrac{2}{3}x)^{1/2}$。(A1) 两边相等，确认了第二个解。失效的皮卡假设是 $\partial f/\partial y = \tfrac{1}{3}y^{-2/3}$ 的连续性，当 $y \to 0$ 时其爆破，恰在初始点 $(0,0)$ 处。(R1)</span></p>
+      <h4><span data-lang="en">(b) Finite-time blow-up</span><span data-lang="zh">(b) 有限时间爆破</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Separate: $dy/y^{2} = dx$, so $-1/y = x + C$. (M1) With $y(0) = 1$: $-1 = 0 + C$, giving $C = -1$. Hence $y = \tfrac{1}{1-x}$. (A1)</span><span data-lang="zh">分离变量：$dy/y^{2} = dx$，得 $-1/y = x + C$。(M1) 代入 $y(0) = 1$：$-1 = 0 + C$，故 $C = -1$。从而 $y = \tfrac{1}{1-x}$。(A1)</span></p>
+      <p><span data-lang="en">As $x \to 1^{-}$, $y \to +\infty$: the solution blows up in finite time. The Picard theorem only guarantees existence on <em>some</em> interval around $x_0$; it says nothing about how large that interval is. Even though $f = y^{2}$ and $\partial f/\partial y = 2y$ are smooth for all $(x,y)$, the solution grows without bound before reaching $x = 1$. The maximal interval of existence is $(-\infty, 1)$. (R1)</span><span data-lang="zh">当 $x \to 1^{-}$ 时，$y \to +\infty$：解在有限时间内爆破。皮卡定理仅保证在 $x_0$ 的<em>某个</em>邻域上存在解；对区间大小无任何保证。即使 $f = y^{2}$ 和 $\partial f/\partial y = 2y$ 对所有 $(x,y)$ 均光滑，解在到达 $x = 1$ 之前仍会无界增长。最大存在区间为 $(-\infty, 1)$。(R1)</span></p>
+      <h4><span data-lang="en">(c) Infinitely many solutions</span><span data-lang="zh">(c) 无穷多个解</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Here $f(x,y) = \sqrt{|y|}$. Compute $\partial f/\partial y = \tfrac{1}{2\sqrt{|y|}}$ for $y \ne 0$; this is undefined at $y = 0$, so $\partial f/\partial y$ is not continuous at $(0,0)$. (M1) The Picard uniqueness hypothesis fails.</span><span data-lang="zh">此处 $f(x,y) = \sqrt{|y|}$。计算 $\partial f/\partial y = \tfrac{1}{2\sqrt{|y|}}$（$y \ne 0$）；该量在 $y = 0$ 处无定义，故 $\partial f/\partial y$ 在 $(0,0)$ 处不连续。(M1) 皮卡唯一性假设失效。</span></p>
+      <p><span data-lang="en">Consider the family: for any $a \ge 0$, define $y_a(x) = 0$ for $x \le a$ and $y_a(x) = \tfrac{1}{4}(x-a)^{2}$ for $x > a$. (M1)</span><span data-lang="zh">考虑如下一族解：对任意 $a \ge 0$，定义 $y_a(x) = 0$（$x \le a$），$y_a(x) = \tfrac{1}{4}(x-a)^{2}$（$x > a$）。(M1)</span></p>
+      <p><span data-lang="en">Verification: for $x \le a$, $y_a = 0$ so $y_a' = 0 = \sqrt{|0|}$. For $x > a$, $y_a' = \tfrac{1}{2}(x-a)$ and $\sqrt{|y_a|} = \sqrt{\tfrac{1}{4}(x-a)^{2}} = \tfrac{1}{2}(x-a)$ (since $x > a$). (A1) Both match. At $x = a$: $y_a(a) = 0$ and $y_a'(a^{+}) = 0$, so the function is differentiable and solves the ODE everywhere. Each $y_a$ satisfies $y(0) = 0$ because $0 < a$ or $a = 0$ both give $y_a(0) = 0$. (A1)</span><span data-lang="zh">验证：当 $x \le a$ 时，$y_a = 0$，故 $y_a' = 0 = \sqrt{|0|}$。当 $x > a$ 时，$y_a' = \tfrac{1}{2}(x-a)$，$\sqrt{|y_a|} = \sqrt{\tfrac{1}{4}(x-a)^{2}} = \tfrac{1}{2}(x-a)$（因 $x > a$）。(A1) 两边吻合。在 $x = a$ 处：$y_a(a) = 0$，$y_a'(a^{+}) = 0$，故函数在处处可微且满足常微分方程。每个 $y_a$ 均满足 $y(0) = 0$，因为 $0 < a$ 或 $a = 0$ 均给出 $y_a(0) = 0$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The Picard theorem is a local existence and uniqueness result; it guarantees a solution near $x_0$ but not globally. Two distinct failure modes appear here: (a)/(c) show non-uniqueness when $\partial f/\partial y$ is not continuous, while (b) shows a perfectly smooth $f$ can still produce finite-time blow-up. The solution in (b) does not "break" the Picard theorem because that theorem only claims existence on some small interval around $x_0 = 0$, which is a subset of $(-\infty,1)$.</span><span data-lang="zh">皮卡定理是局部存在唯一性结果；它保证在 $x_0$ 附近存在解，但不保证全局存在。此处出现两种不同的失效模式：(a)/(c) 展示了 $\partial f/\partial y$ 不连续时的非唯一性，而 (b) 表明即使 $f$ 完全光滑，解仍可能在有限时间内爆破。(b) 中的解并不"违反"皮卡定理，因为该定理仅声明在 $x_0 = 0$ 的某小邻域上存在解，而该邻域是 $(-\infty,1)$ 的子集。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">IVP with definite-integral solution and interval of validity</span><span data-lang="zh">含定积分解的初值问题及其有效区间</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $y' + 2xy = e^{-x^{2}}\cos x$, $y(0)=1$: (a) show $\mu = e^{x^2}$ and derive $y = e^{-x^2}(1+\int_0^x \cos t\,dt)$; (b) state the maximal interval, simplify to $y = e^{-x^2}(1+\sin x)$, and verify by differentiating.</span><span data-lang="zh">对于 $y' + 2xy = e^{-x^{2}}\cos x$，$y(0)=1$：(a) 证明 $\mu = e^{x^2}$，推导 $y = e^{-x^2}(1+\int_0^x \cos t\,dt)$；(b) 给出最大存在区间，化简为 $y = e^{-x^2}(1+\sin x)$，并通过求导验证。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y(x) = e^{-x^{2}}\!\left(1 + \int_{0}^{x}\cos t\,dt\right)$ &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">maximal interval $(-\infty, \infty)$; closed form $y = e^{-x^{2}}(1 + \sin x)$</span><span data-lang="zh">最大存在区间 $(-\infty, \infty)$；闭合形式 $y = e^{-x^{2}}(1 + \sin x)$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Integrating factor and definite-integral form</span><span data-lang="zh">(a) 积分因子与定积分形式</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Standard form: $P(x) = 2x$, $Q(x) = e^{-x^{2}}\cos x$. Integrating factor: (M1)</span><span data-lang="zh">标准形式：$P(x) = 2x$，$Q(x) = e^{-x^{2}}\cos x$。积分因子：(M1)</span></p>
+      $$ \mu = e^{\int 2x\,dx} = e^{x^{2}}. $$
+      <p><span data-lang="en">Multiply through by $e^{x^{2}}$:</span><span data-lang="zh">两边乘以 $e^{x^{2}}$：</span></p>
+      $$ e^{x^{2}}y' + 2xe^{x^{2}}y = e^{x^{2}}\cdot e^{-x^{2}}\cos x = \cos x. $$
+      <p><span data-lang="en">(M1) The left side is $(e^{x^{2}}y)'$. Integrate from $0$ to $x$:</span><span data-lang="zh">(M1) 左边为 $(e^{x^{2}}y)'$。从 $0$ 到 $x$ 积分：</span></p>
+      $$ e^{x^{2}}y(x) - e^{0}y(0) = \int_{0}^{x}\cos t\,dt. $$
+      <p><span data-lang="en">(A1) Since $y(0) = 1$:</span><span data-lang="zh">(A1) 因 $y(0) = 1$：</span></p>
+      $$ y(x) = e^{-x^{2}}\!\left(1 + \int_{0}^{x}\cos t\,dt\right). $$
+      <p><span data-lang="en">(A1) Check: $y(0) = e^{0}(1 + 0) = 1$. Correct.</span><span data-lang="zh">(A1) 验证：$y(0) = e^{0}(1 + 0) = 1$。正确。</span></p>
+      <h4><span data-lang="en">(b) Interval, closed form, and verification</span><span data-lang="zh">(b) 区间、闭合形式与验证</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Since $P(x) = 2x$ and $Q(x) = e^{-x^{2}}\cos x$ are both continuous on all of $\mathbb{R}$, the Picard theorem (or linear ODE theory) guarantees the solution exists on $(-\infty, \infty)$. (M1) The maximal interval of existence is $(-\infty, \infty)$. (A1)</span><span data-lang="zh">由于 $P(x) = 2x$ 和 $Q(x) = e^{-x^{2}}\cos x$ 在整个 $\mathbb{R}$ 上均连续，皮卡定理（或线性常微分方程理论）保证解在 $(-\infty, \infty)$ 上存在。(M1) 最大存在区间为 $(-\infty, \infty)$。(A1)</span></p>
+      <p><span data-lang="en">Evaluate the integral: $\int_{0}^{x}\cos t\,dt = \sin x - \sin 0 = \sin x$. So the closed form is: (M1)</span><span data-lang="zh">计算积分：$\int_{0}^{x}\cos t\,dt = \sin x - \sin 0 = \sin x$。故闭合形式为：(M1)</span></p>
+      $$ y = e^{-x^{2}}(1 + \sin x). $$
+      <p><span data-lang="en">Verification: differentiate using the product rule:</span><span data-lang="zh">验证：用乘积法则求导：</span></p>
+      $$ y' = -2x e^{-x^{2}}(1+\sin x) + e^{-x^{2}}\cos x. $$
+      <p><span data-lang="en">Then $y' + 2xy = -2xe^{-x^{2}}(1+\sin x) + e^{-x^{2}}\cos x + 2xe^{-x^{2}}(1+\sin x) = e^{-x^{2}}\cos x$. (A1) The ODE is satisfied exactly.</span><span data-lang="zh">则 $y' + 2xy = -2xe^{-x^{2}}(1+\sin x) + e^{-x^{2}}\cos x + 2xe^{-x^{2}}(1+\sin x) = e^{-x^{2}}\cos x$。(A1) 常微分方程恰好满足。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The definite-integral form of the solution $y = \tfrac{1}{\mu(x)}(y_0\mu(x_0) + \int_{x_0}^{x}\mu(t)Q(t)\,dt)$ is always valid when $P$ and $Q$ are continuous; the integral evaluates to a closed form only when $\mu Q$ has an elementary antiderivative. Here $\mu Q = \cos x$ integrates cleanly, but the intermediate step with $e^{-x^2}$ in $Q$ being cancelled by $e^{x^2}$ from $\mu$ is the key simplification. Always verify by differentiating the answer; a single product-rule error in verification is the most common mistake.</span><span data-lang="zh">当 $P$ 和 $Q$ 连续时，解的定积分形式 $y = \tfrac{1}{\mu(x)}(y_0\mu(x_0) + \int_{x_0}^{x}\mu(t)Q(t)\,dt)$ 始终有效；只有当 $\mu Q$ 有初等原函数时，积分才能化为闭合形式。此处 $\mu Q = \cos x$ 可直接积分，但中间步骤中 $Q$ 中的 $e^{-x^2}$ 被 $\mu$ 中的 $e^{x^2}$ 约去是关键化简。务必通过对答案求导来验证；验证中的乘积法则错误是最常见的失误。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合应用题 &middot; 28 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">Newton's law of cooling: setup, IVP, and prediction</span><span data-lang="zh">牛顿冷却定律：建模、初值问题与预测</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Tea at $95^{\circ}\text{C}$ in a $20^{\circ}\text{C}$ room cools to $65^{\circ}\text{C}$ after 10 min. (a) Derive $T(t) = 20 + 75e^{-kt}$; (b) find $k$ exactly and as a decimal; (c) find $t^*$ when $T = 40^{\circ}\text{C}$.</span><span data-lang="zh">$95^{\circ}\text{C}$ 的茶在 $20^{\circ}\text{C}$ 的房间中，10 分钟后冷却至 $65^{\circ}\text{C}$。(a) 推导 $T(t) = 20 + 75e^{-kt}$；(b) 精确求 $k$ 并给出近似值；(c) 求 $T = 40^{\circ}\text{C}$ 时的 $t^*$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $T(t) = 20 + 75e^{-kt}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $k = \tfrac{1}{10}\ln\!\tfrac{5}{3} \approx 0.0511$ min$^{-1}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $t^{*} = \dfrac{10\ln(15/4)}{\ln(5/3)} \approx 26$ min</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Setting up and solving the IVP</span><span data-lang="zh">(a) 建立并求解初值问题</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Let $u = T - 20$. Then $u' = T'$ and Newton's law becomes $u' = -ku$. (M1) This is separable with solution $u = Ae^{-kt}$. The initial condition $T(0) = 95$ gives $u(0) = 75$, so $A = 75$. (M1) Therefore:</span><span data-lang="zh">令 $u = T - 20$。则 $u' = T'$，牛顿冷却定律变为 $u' = -ku$。(M1) 此方程可分离，解为 $u = Ae^{-kt}$。初始条件 $T(0) = 95$ 给出 $u(0) = 75$，故 $A = 75$。(M1) 因此：</span></p>
+      $$ T(t) = 20 + 75e^{-kt}. $$
+      <p><span data-lang="en">(A1)</span><span data-lang="zh">(A1)</span></p>
+      <h4><span data-lang="en">(b) Finding the decay constant $k$</span><span data-lang="zh">(b) 求衰减常数 $k$</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Apply $T(10) = 65$: (M1)</span><span data-lang="zh">代入 $T(10) = 65$：(M1)</span></p>
+      $$ 65 = 20 + 75e^{-10k} \implies 45 = 75e^{-10k} \implies e^{-10k} = \frac{45}{75} = \frac{3}{5}. $$
+      <p><span data-lang="en">(M1) Taking logarithms: $-10k = \ln(3/5)$, so:</span><span data-lang="zh">(M1) 取对数：$-10k = \ln(3/5)$，故：</span></p>
+      $$ k = -\frac{1}{10}\ln\!\frac{3}{5} = \frac{1}{10}\ln\!\frac{5}{3} = \frac{\ln 5 - \ln 3}{10}. $$
+      <p><span data-lang="en">(A1) Decimal: $k \approx \tfrac{0.5108}{10} \approx 0.0511$ min$^{-1}$. (A1)</span><span data-lang="zh">(A1) 近似值：$k \approx \tfrac{0.5108}{10} \approx 0.0511$ min$^{-1}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Time to reach $40^{\circ}\text{C}$</span><span data-lang="zh">(c) 降温至 $40^{\circ}\text{C}$ 的时刻</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Set $T(t^{*}) = 40$: (M1)</span><span data-lang="zh">令 $T(t^{*}) = 40$：(M1)</span></p>
+      $$ 40 = 20 + 75e^{-kt^{*}} \implies e^{-kt^{*}} = \frac{20}{75} = \frac{4}{15}. $$
+      <p><span data-lang="en">(A1) Take logarithms: $-kt^{*} = \ln(4/15)$, so $t^{*} = \tfrac{\ln(15/4)}{k} = \tfrac{10\ln(15/4)}{\ln(5/3)}$. (A1) Numerically: $t^{*} \approx \tfrac{10 \times 1.3218}{0.5108} \approx 25.9$ min, so approximately $26$ minutes.</span><span data-lang="zh">(A1) 取对数：$-kt^{*} = \ln(4/15)$，故 $t^{*} = \tfrac{\ln(15/4)}{k} = \tfrac{10\ln(15/4)}{\ln(5/3)}$。(A1) 数值上：$t^{*} \approx \tfrac{10 \times 1.3218}{0.5108} \approx 25.9$ 分钟，约为 $26$ 分钟。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The substitution $u = T - T_{\text{env}}$ converts Newton's law into the simple ODE $u' = -ku$, whose solution $e^{-kt}$ is immediate. Always solve for $k$ in exact logarithmic form before substituting numerics; rounding $k$ early introduces compounding error in any further calculation. The ratio $T - T_{\text{env}}$ decays exponentially, so successive equal intervals of time reduce it by the same factor $(3/5)$ each 10 minutes.</span><span data-lang="zh">代换 $u = T - T_{\text{env}}$ 将牛顿冷却定律化为简单常微分方程 $u' = -ku$，其解 $e^{-kt}$ 可立即写出。在代入数值之前，务必以精确对数形式求 $k$；过早取近似值会在后续计算中引入累积误差。比值 $T - T_{\text{env}}$ 指数衰减，每 10 分钟缩小相同因子 $(3/5)$。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">mixing tank model: linear ODE and steady-state behaviour</span><span data-lang="zh">混合槽模型：线性常微分方程与稳态行为</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">200 L tank, pure water initially, 3 g/L brine in at 4 L/min, well-mixed out at 4 L/min. (a) Write the ODE in standard form and state $A(0)$; (b) solve to get $A(t) = 600(1-e^{-t/50})$; (c) steady state, physical explanation, and time when concentration reaches 2 g/L.</span><span data-lang="zh">200 L 槽，初始为纯水，3 g/L 盐水以 4 L/min 流入，充分混合后以 4 L/min 流出。(a) 写出标准形式的常微分方程并给出 $A(0)$；(b) 求解得 $A(t) = 600(1-e^{-t/50})$；(c) 稳态，物理解释，以及浓度达到 2 g/L 的时刻。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $A' + \tfrac{1}{50}A = 12$, $A(0)=0$ &nbsp;·&nbsp; <span class="ans">(b)</span> $A(t) = 600(1-e^{-t/50})$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">steady state $600$ g; time $t = 50\ln 3 \approx 55$ min</span><span data-lang="zh">稳态 $600$ 克；时刻 $t = 50\ln 3 \approx 55$ 分钟</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Setting up the rate equation</span><span data-lang="zh">(a) 建立速率方程</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Volume is constant at 200 L since inflow rate equals outflow rate. (M1) Rate in: $3\,\text{g/L} \times 4\,\text{L/min} = 12\,\text{g/min}$. Rate out: $\tfrac{A(t)}{200}\,\text{g/L} \times 4\,\text{L/min} = \tfrac{A}{50}\,\text{g/min}$. (M1) Therefore:</span><span data-lang="zh">由于流入速率等于流出速率，体积恒为 200 L。(M1) 流入速率：$3\,\text{g/L} \times 4\,\text{L/min} = 12\,\text{g/min}$。流出速率：$\tfrac{A(t)}{200}\,\text{g/L} \times 4\,\text{L/min} = \tfrac{A}{50}\,\text{g/min}$。(M1) 因此：</span></p>
+      $$ A' = 12 - \frac{A}{50} \implies A' + \frac{1}{50}A = 12, \quad A(0) = 0. $$
+      <p><span data-lang="en">(A1)</span><span data-lang="zh">(A1)</span></p>
+      <h4><span data-lang="en">(b) Solving via the integrating factor</span><span data-lang="zh">(b) 用积分因子法求解</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">$P(t) = 1/50$, so $\mu = e^{t/50}$. (M1) Multiply: $(e^{t/50}A)' = 12e^{t/50}$. Integrate:</span><span data-lang="zh">$P(t) = 1/50$，故 $\mu = e^{t/50}$。(M1) 乘以积分因子：$(e^{t/50}A)' = 12e^{t/50}$。积分：</span></p>
+      $$ e^{t/50}A = 600e^{t/50} + C. $$
+      <p><span data-lang="en">(M1) Hence $A = 600 + Ce^{-t/50}$. Apply $A(0) = 0$: $0 = 600 + C$, so $C = -600$. (A1)</span><span data-lang="zh">(M1) 故 $A = 600 + Ce^{-t/50}$。代入 $A(0) = 0$：$0 = 600 + C$，故 $C = -600$。(A1)</span></p>
+      $$ A(t) = 600\!\left(1 - e^{-t/50}\right). $$
+      <h4><span data-lang="en">(c) Steady state, physical reasoning, and concentration target</span><span data-lang="zh">(c) 稳态、物理推理与浓度目标</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">As $t \to \infty$, $e^{-t/50} \to 0$ and $A \to 600$ g. (M1) Physical explanation: at steady state, outflow concentration equals inflow concentration (3 g/L), so the tank holds $3\,\text{g/L} \times 200\,\text{L} = 600\,\text{g}$.</span><span data-lang="zh">当 $t \to \infty$ 时，$e^{-t/50} \to 0$，$A \to 600$ 克。(M1) 物理解释：稳态时，流出浓度等于流入浓度（3 g/L），故槽中含盐 $3\,\text{g/L} \times 200\,\text{L} = 600\,\text{g}$。</span></p>
+      <p><span data-lang="en">Concentration 2 g/L corresponds to $A = 2 \times 200 = 400$ g. Solve $600(1 - e^{-t/50}) = 400$: $e^{-t/50} = 1/3$, so $t = 50\ln 3 \approx 54.9 \approx 55$ min. (A1)</span><span data-lang="zh">浓度 2 g/L 对应 $A = 2 \times 200 = 400$ 克。解 $600(1 - e^{-t/50}) = 400$：$e^{-t/50} = 1/3$，故 $t = 50\ln 3 \approx 54.9 \approx 55$ 分钟。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The mixing model is always rate-in minus rate-out. When inflow and outflow rates match, the volume stays constant and the coefficient $P(t)$ is the constant $r_{\text{out}}/V$; this produces the simple integrating factor $e^{(r_{\text{out}}/V)t}$. The steady state equals inflow concentration times volume: a result you can read off before solving. The solution $A(t) = A_{\infty}(1 - e^{-t/\tau})$ with time constant $\tau = V/r_{\text{out}}$ is a standard pattern worth recognising.</span><span data-lang="zh">混合模型始终是流入速率减去流出速率。当流入速率与流出速率相同时，体积保持不变，系数 $P(t)$ 为常数 $r_{\text{out}}/V$；这给出简单的积分因子 $e^{(r_{\text{out}}/V)t}$。稳态等于流入浓度乘以体积，这一结果可在求解前直接读出。时间常数 $\tau = V/r_{\text{out}}$ 的解 $A(t) = A_{\infty}(1 - e^{-t/\tau})$ 是值得熟记的标准模式。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">separable IVP: explicit solution and interval of validity</span><span data-lang="zh">可分离变量初值问题：显式解与有效区间</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $dy/dx = x/(1-y^2)$, $y(0) = 0$: (a) separate and integrate to $y - y^3/3 = x^2/2$, noting excluded values; (b) explain why the solution cannot extend to all of $\mathbb{R}$ and find the maximal interval; (c) explain geometrically why the solution terminates before $y = 1$.</span><span data-lang="zh">对于 $dy/dx = x/(1-y^2)$，$y(0) = 0$：(a) 分离变量并积分得 $y - y^3/3 = x^2/2$，注明排除值；(b) 解释为何解不能延拓到整个 $\mathbb{R}$，并求最大存在区间；(c) 从几何角度解释为何解在 $y = 1$ 之前终止。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">implicit form $y - \tfrac{y^{3}}{3} = \tfrac{x^{2}}{2}$; $y = \pm 1$ excluded during separation</span><span data-lang="zh">隐式形式 $y - \tfrac{y^{3}}{3} = \tfrac{x^{2}}{2}$；分离变量时排除 $y = \pm 1$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">solution terminates when $y \to 1$; valid near $x=0$ until $y$ reaches $1$, at which point $x^2/2 = 1 - 1/3 = 2/3$, so $x = \sqrt{4/3} = 2/\sqrt{3}$</span><span data-lang="zh">解在 $y \to 1$ 时终止；在 $y$ 达到 $1$ 之前，在 $x=0$ 附近有效，此时 $x^2/2 = 1 - 1/3 = 2/3$，故 $x = \sqrt{4/3} = 2/\sqrt{3}$</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">slope field has vertical isoclines $y = \pm 1$; the curve cannot cross a vertical tangent</span><span data-lang="zh">斜率场在 $y = \pm 1$ 处有竖直等斜线；曲线不能穿过竖直切线</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Separating and integrating</span><span data-lang="zh">(a) 分离变量与积分</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Separate variables (assuming $y \ne \pm 1$): $(1 - y^{2})\,dy = x\,dx$. (M1) Integrate both sides:</span><span data-lang="zh">分离变量（假设 $y \ne \pm 1$）：$(1 - y^{2})\,dy = x\,dx$。(M1) 两边积分：</span></p>
+      $$ \int(1 - y^{2})\,dy = \int x\,dx \implies y - \frac{y^{3}}{3} = \frac{x^{2}}{2} + C. $$
+      <p><span data-lang="en">(M1) Apply $y(0) = 0$: $0 - 0 = 0 + C$, so $C = 0$. (A1) The implicit solution is:</span><span data-lang="zh">(M1) 代入 $y(0) = 0$：$0 - 0 = 0 + C$，故 $C = 0$。(A1) 隐式解为：</span></p>
+      $$ y - \frac{y^{3}}{3} = \frac{x^{2}}{2}. $$
+      <p><span data-lang="en">(A1) The values $y = \pm 1$ were excluded when we divided by $1 - y^{2}$; they must be checked separately. Substituting $y = 1$: $1 - 1/3 = 2/3 \ne x^{2}/2$ for $x = 0$, so $y \equiv 1$ does not satisfy the initial condition.</span><span data-lang="zh">(A1) 我们除以 $1 - y^{2}$ 时排除了 $y = \pm 1$；须单独检验。代入 $y = 1$：$1 - 1/3 = 2/3 \ne x^{2}/2$（$x = 0$ 时），故 $y \equiv 1$ 不满足初始条件。</span></p>
+      <h4><span data-lang="en">(b) Interval of validity</span><span data-lang="zh">(b) 有效区间</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">By the Picard theorem, since $f = x/(1-y^{2})$ and $\partial f/\partial y = 2xy/(1-y^{2})^{2}$ are continuous near $(0,0)$ (where $y = 0 \ne \pm 1$), a unique local solution exists. (M1)</span><span data-lang="zh">由皮卡定理，由于 $f = x/(1-y^{2})$ 和 $\partial f/\partial y = 2xy/(1-y^{2})^{2}$ 在 $(0,0)$ 附近连续（此处 $y = 0 \ne \pm 1$），唯一局部解存在。(M1)</span></p>
+      <p><span data-lang="en">The implicit function theorem requires $\partial/\partial y(y - y^3/3) = 1 - y^2 \ne 0$ to solve for $y$ as a function of $x$; this fails when $y = \pm 1$. As $y$ increases from $0$ (since $y' = x/(1-y^2) > 0$ for $x > 0$ near $0$), the solution reaches $y = 1$ when $1 - 1/3 = x^{2}/2$, i.e. $x^{2} = 4/3$, so $x = 2/\sqrt{3}$. (M1·A1) The solution is valid on the interval $(-2/\sqrt{3},\,2/\sqrt{3})$; beyond this $x$-range the solution cannot be continued as a single-valued function.</span><span data-lang="zh">隐函数定理要求 $\partial/\partial y(y - y^3/3) = 1 - y^2 \ne 0$ 以将 $y$ 表示为 $x$ 的函数；当 $y = \pm 1$ 时此条件失效。由于 $y$ 从 $0$ 开始递增（$x > 0$ 且 $x$ 接近 $0$ 时 $y' = x/(1-y^2) > 0$），解在 $1 - 1/3 = x^{2}/2$ 即 $x^{2} = 4/3$ 时达到 $y = 1$，故 $x = 2/\sqrt{3}$。(M1·A1) 解在区间 $(-2/\sqrt{3},\,2/\sqrt{3})$ 上有效；超出此 $x$ 范围，解无法作为单值函数延续。</span></p>
+      <h4><span data-lang="en">(c) Geometric argument via the direction field</span><span data-lang="zh">(c) 通过方向场的几何论证</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">The right-hand side $f(x,y) = x/(1-y^{2})$ is undefined on the horizontal lines $y = 1$ and $y = -1$. (M1) On these lines, the slope field has no defined slope; approaching these lines from below, the slope $y' \to +\infty$ (for $x > 0$), so the solution curve becomes arbitrarily steep. (A1) A smooth solution cannot cross a line of vertical tangents: the direction field is singular there, and the curve must terminate at or before $y = 1$. (R1)</span><span data-lang="zh">右端函数 $f(x,y) = x/(1-y^{2})$ 在水平线 $y = 1$ 和 $y = -1$ 上无定义。(M1) 在这些直线上，斜率场无定义斜率；从下方趋近这些直线时，斜率 $y' \to +\infty$（$x > 0$ 时），故解曲线变得任意陡峭。(A1) 光滑解不能穿过竖直切线所在的直线：方向场在那里奇异，曲线必须在到达 $y = 1$ 之前或恰好在该处终止。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">"Interval of validity" and "interval of existence" are the same thing: the largest open interval on which the solution is defined and differentiable. For separable equations, the interval ends where either the denominator of the separated equation vanishes (a singularity in $f$) or where the implicit solution cannot be inverted to an explicit function. Always substitute the implicit solution back to find the specific $x$-values where $y$ would reach the forbidden values, then compute those $x$-values explicitly.</span><span data-lang="zh">"有效区间"与"存在区间"是同一概念：解有定义且可微的最大开区间。对于可分离方程，区间在以下情况终止：分离方程的分母消失（$f$ 的奇异点），或隐式解无法反解为显式函数。务必将隐式解代回，求 $y$ 将达到禁值时的具体 $x$ 值，然后显式计算这些 $x$ 值。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中遇到本单元的困难？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约鼎睿学者导师的免费 15 分钟咨询。在你的下次期中或期末考试前，我们帮你解决难题。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_d1_first_order_odes__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_D1_First_Order_ODEs.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_D1_First_Order_ODEs_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit D1 Solutions</span><span data-lang="zh">大学微积分 &middot; 第 D1 单元解答</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">配套练习题 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第 1 至 7 节 &middot; 共 82 分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

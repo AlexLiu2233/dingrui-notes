@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit C1: Vectors and the Geometry of Space | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-C1  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_C1_Vectors_and_the_Geometry_of_Space_Solutions.html">
+<meta name="description" content="Worked solutions for Unit C1: Vectors and the Geometry of Space in University Calculus. Cross products, dot products, lines and planes in 3-space, distance formulas, and quadric surfaces from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit C1: Vectors and the Geometry of Space | Solutions">
+<meta property="og:description" content="Worked solutions for Unit C1: Vectors and the Geometry of Space in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_C1_Vectors_and_the_Geometry_of_Space_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit C1: Vectors and the Geometry of Space | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit C1: Vectors and the Geometry of Space in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit C1: Vectors and the Geometry of Space | Solutions",
+  "description": "Worked solutions for Unit C1: Vectors and the Geometry of Space in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_C1_Vectors_and_the_Geometry_of_Space_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit C1 &middot; Solutions</span><span data-lang="zh">第C1单元 &middot; 解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">Vectors and the Geometry of Space &middot; Solutions</span><span data-lang="zh">向量与空间解析几何 &middot; 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题配套解答</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: 3-D coordinates, vectors, dot product, cross product, lines, planes, quadric surfaces</span><span data-lang="zh">第 <b>1 至 7</b> 节：三维坐标、向量、点积、叉积、直线、平面、二次曲面</span><span class="scope">CALC III</span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to</span><span data-lang="zh">配套</span> <code style="font-style:normal;">Unit_C1_Vectors_and_the_Geometry_of_Space_Practice.html</code> &middot; <span data-lang="en">10 Qs &middot; 82 marks &middot; method walk with</span><span data-lang="zh">共10题 &middot; 82分 &middot; 步骤讲解含</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method /</span><span data-lang="zh">方法 /</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer /</span><span data-lang="zh">答案 /</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning mark callouts</span><span data-lang="zh">推理得分标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算流畅度 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">vectors: components, magnitude, unit vector</span><span data-lang="zh">向量：分量、模长、单位向量</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{u} = \langle 2,-1,3 \rangle$ and $\mathbf{v} = \langle -1,4,-2 \rangle$. (a) Compute $|\mathbf{u}|$ and the unit vector $\hat{\mathbf{u}}$. (b) Compute $3\mathbf{u} - 2\mathbf{v}$ and its magnitude. (c) For $\mathbf{w} = \overrightarrow{PQ}$ with $P=(1,-2,4)$ and $Q=(3,0,1)$, write $\mathbf{w}$ in component form and verify $|\mathbf{w}| \ne |\mathbf{u}|$.</span><span data-lang="zh">设 $\mathbf{u} = \langle 2,-1,3 \rangle$，$\mathbf{v} = \langle -1,4,-2 \rangle$。(a) 计算 $|\mathbf{u}|$ 及单位向量 $\hat{\mathbf{u}}$。(b) 计算 $3\mathbf{u} - 2\mathbf{v}$ 及其模长。(c) 对于 $\mathbf{w} = \overrightarrow{PQ}$，$P=(1,-2,4)$，$Q=(3,0,1)$，写出 $\mathbf{w}$ 的分量形式，并验证 $|\mathbf{w}| \ne |\mathbf{u}|$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $|\mathbf{u}|=\sqrt{14}$, $\hat{\mathbf{u}}=\tfrac{1}{\sqrt{14}}\langle 2,-1,3\rangle$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\langle 8,-11,13\rangle$, <span data-lang="en">magnitude</span><span data-lang="zh">模长</span> $\sqrt{354}$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $\mathbf{w}=\langle 2,2,-3\rangle$, $|\mathbf{w}|=\sqrt{17}\ne\sqrt{14}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Magnitude and unit vector</span><span data-lang="zh">(a) 模长与单位向量</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Apply $|\mathbf{u}| = \sqrt{u_1^2 + u_2^2 + u_3^2}$: (M1)</span><span data-lang="zh">代入公式 $|\mathbf{u}| = \sqrt{u_1^2 + u_2^2 + u_3^2}$：(M1)</span></p>
+      $$ |\mathbf{u}| = \sqrt{2^2 + (-1)^2 + 3^2} = \sqrt{4+1+9} = \sqrt{14}. $$
+      <p><span data-lang="en">(A1) The unit vector is $\hat{\mathbf{u}} = \dfrac{\mathbf{u}}{|\mathbf{u}|} = \dfrac{1}{\sqrt{14}}\langle 2,-1,3 \rangle$. (A1)</span><span data-lang="zh">(A1) 单位向量为 $\hat{\mathbf{u}} = \dfrac{\mathbf{u}}{|\mathbf{u}|} = \dfrac{1}{\sqrt{14}}\langle 2,-1,3 \rangle$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Linear combination and its magnitude</span><span data-lang="zh">(b) 线性组合及其模长</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Compute $3\mathbf{u} - 2\mathbf{v}$ component by component: (M1)</span><span data-lang="zh">逐分量计算 $3\mathbf{u} - 2\mathbf{v}$：(M1)</span></p>
+      $$ 3\langle 2,-1,3\rangle - 2\langle -1,4,-2\rangle = \langle 6-(-2),\,-3-8,\,9-(-4)\rangle = \langle 8,-11,13\rangle. $$
+      <p><span data-lang="en">(A1) Its magnitude is $\sqrt{64+121+169} = \sqrt{354}$. (A1)</span><span data-lang="zh">(A1) 其模长为 $\sqrt{64+121+169} = \sqrt{354}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Vector between two points</span><span data-lang="zh">(c) 两点间的向量</span> <span class="marks-call">M1·A1</span></h4>
+      <p>$\mathbf{w} = Q - P = \langle 3-1,\,0-(-2),\,1-4\rangle = \langle 2,2,-3\rangle$. (M1)</p>
+      <p><span data-lang="en">$|\mathbf{w}| = \sqrt{4+4+9} = \sqrt{17}$. Since $\sqrt{17} \ne \sqrt{14}$, we have $|\mathbf{w}| \ne |\mathbf{u}|$. (A1)</span><span data-lang="zh">$|\mathbf{w}| = \sqrt{4+4+9} = \sqrt{17}$。因为 $\sqrt{17} \ne \sqrt{14}$，所以 $|\mathbf{w}| \ne |\mathbf{u}|$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The magnitude formula is the 3-D Pythagorean theorem: add the squares of all three components. A unit vector has magnitude exactly $1$ and points in the same direction; dividing by $|\mathbf{u}|$ scales without rotating. Two vectors with the same magnitude need not be equal or even parallel, since their directions can differ entirely.</span><span data-lang="zh">模长公式是三维勾股定理：将三个分量的平方相加再开方。单位向量的模长恰好为 $1$，方向与原向量相同；除以 $|\mathbf{u}|$ 只改变大小而不改变方向。两个模长相同的向量不一定相等甚至不一定平行，因为它们的方向可以完全不同。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">dot product: angle, scalar projection, work</span><span data-lang="zh">点积：夹角、标量投影、功</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{a} = \langle 1,2,-2\rangle$ and $\mathbf{b} = \langle 3,-1,2\rangle$. (a) Compute $\mathbf{a}\cdot\mathbf{b}$. (b) Find the angle $\theta$ between $\mathbf{a}$ and $\mathbf{b}$. (c) Find the scalar and vector projections of $\mathbf{a}$ onto $\mathbf{b}$. (d) Find the work done by $\mathbf{F}=\langle 2,3,-1\rangle$ N along the path from $A=(0,0,0)$ to $B=(4,-1,2)$.</span><span data-lang="zh">设 $\mathbf{a} = \langle 1,2,-2\rangle$，$\mathbf{b} = \langle 3,-1,2\rangle$。(a) 计算 $\mathbf{a}\cdot\mathbf{b}$。(b) 求 $\mathbf{a}$ 与 $\mathbf{b}$ 之间的夹角 $\theta$。(c) 求 $\mathbf{a}$ 在 $\mathbf{b}$ 上的标量投影与向量投影。(d) 求力 $\mathbf{F}=\langle 2,3,-1\rangle$ N 沿从 $A=(0,0,0)$ 到 $B=(4,-1,2)$ 路径所做的功。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $-3$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\theta = \arccos\!\bigl(-\tfrac{1}{\sqrt{14}}\bigr)$, <span data-lang="en">obtuse</span><span data-lang="zh">钝角</span> &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">scalar proj</span><span data-lang="zh">标量投影</span> $= -\tfrac{3}{\sqrt{14}}$, <span data-lang="en">vector proj</span><span data-lang="zh">向量投影</span> $= \tfrac{-3}{14}\langle 3,-1,2\rangle$ &nbsp;&middot;&nbsp; <span class="ans">(d)</span> $W = 3$ J</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) The dot product</span><span data-lang="zh">(a) 点积</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Multiply corresponding components and sum: (M1)</span><span data-lang="zh">将对应分量相乘后求和：(M1)</span></p>
+      $$ \mathbf{a}\cdot\mathbf{b} = (1)(3) + (2)(-1) + (-2)(2) = 3 - 2 - 4 = -3. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Angle from the dot product formula</span><span data-lang="zh">(b) 由点积公式求夹角</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Use $\mathbf{a}\cdot\mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta$. First compute the magnitudes: (M1)</span><span data-lang="zh">利用 $\mathbf{a}\cdot\mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta$。先计算模长：(M1)</span></p>
+      $$ |\mathbf{a}| = \sqrt{1+4+4} = 3, \qquad |\mathbf{b}| = \sqrt{9+1+4} = \sqrt{14}. $$
+      <p><span data-lang="en">(A1) Therefore $\cos\theta = \dfrac{-3}{3\sqrt{14}} = \dfrac{-1}{\sqrt{14}}$, so $\theta = \arccos\!\left(\dfrac{-1}{\sqrt{14}}\right)$. (A1)</span><span data-lang="zh">(A1) 因此 $\cos\theta = \dfrac{-3}{3\sqrt{14}} = \dfrac{-1}{\sqrt{14}}$，故 $\theta = \arccos\!\left(\dfrac{-1}{\sqrt{14}}\right)$。(A1)</span></p>
+      <p><span data-lang="en">Since $\cos\theta < 0$, the angle is obtuse.</span><span data-lang="zh">由于 $\cos\theta < 0$，该角为钝角。</span></p>
+      <h4><span data-lang="en">(c) Scalar and vector projections</span><span data-lang="zh">(c) 标量投影与向量投影</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">The scalar projection of $\mathbf{a}$ onto $\mathbf{b}$ is $\operatorname{comp}_{\mathbf{b}}\mathbf{a} = \dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|}$: (M1)</span><span data-lang="zh">$\mathbf{a}$ 在 $\mathbf{b}$ 上的标量投影为 $\operatorname{comp}_{\mathbf{b}}\mathbf{a} = \dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|}$：(M1)</span></p>
+      $$ \operatorname{comp}_{\mathbf{b}}\mathbf{a} = \frac{-3}{\sqrt{14}}. $$
+      <p><span data-lang="en">(A1) The vector projection is $\operatorname{proj}_{\mathbf{b}}\mathbf{a} = \dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|^2}\,\mathbf{b}$:</span><span data-lang="zh">(A1) 向量投影为 $\operatorname{proj}_{\mathbf{b}}\mathbf{a} = \dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|^2}\,\mathbf{b}$：</span></p>
+      $$ \operatorname{proj}_{\mathbf{b}}\mathbf{a} = \frac{-3}{14}\langle 3,-1,2\rangle = \left\langle \frac{-9}{14},\,\frac{3}{14},\,\frac{-3}{7}\right\rangle. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(d) Work as a dot product</span><span data-lang="zh">(d) 用点积计算功</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The displacement vector is $\overrightarrow{AB} = \langle 4,-1,2\rangle$. Work is $W = \mathbf{F}\cdot\overrightarrow{AB}$: (M1)</span><span data-lang="zh">位移向量为 $\overrightarrow{AB} = \langle 4,-1,2\rangle$。功为 $W = \mathbf{F}\cdot\overrightarrow{AB}$：(M1)</span></p>
+      $$ W = (2)(4) + (3)(-1) + (-1)(2) = 8 - 3 - 2 = 3 \text{ J}. $$
+      <p>(A1)</p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The dot product encodes the component of one vector along another: a negative dot product means the angle exceeds $90^\circ$. Projections split $\mathbf{a}$ into a part parallel to $\mathbf{b}$ (the vector projection) and a residual perpendicular to $\mathbf{b}$. Work captures only the component of force along the direction of motion; force perpendicular to displacement does no work.</span><span data-lang="zh">点积反映一个向量沿另一个向量方向的分量：点积为负表示夹角超过 $90^\circ$。投影将 $\mathbf{a}$ 分解为平行于 $\mathbf{b}$ 的部分（向量投影）和垂直于 $\mathbf{b}$ 的余量。功只计算力沿运动方向的分量；垂直于位移的力不做功。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">cross product: area, orthogonality, scalar triple product</span><span data-lang="zh">叉积：面积、正交性、混合积</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{p}=\langle 1,3,-2\rangle$, $\mathbf{q}=\langle -2,1,4\rangle$, $\mathbf{r}=\langle 0,2,1\rangle$. (a) Compute $\mathbf{p}\times\mathbf{q}$. (b) Verify $\mathbf{p}\times\mathbf{q}$ is orthogonal to both $\mathbf{p}$ and $\mathbf{q}$. (c) Find the area of the parallelogram and triangle with sides $\mathbf{p}$, $\mathbf{q}$. (d) Compute $\mathbf{p}\cdot(\mathbf{q}\times\mathbf{r})$ and find the volume of the parallelepiped.</span><span data-lang="zh">设 $\mathbf{p}=\langle 1,3,-2\rangle$，$\mathbf{q}=\langle -2,1,4\rangle$，$\mathbf{r}=\langle 0,2,1\rangle$。(a) 计算 $\mathbf{p}\times\mathbf{q}$。(b) 验证 $\mathbf{p}\times\mathbf{q}$ 与 $\mathbf{p}$ 和 $\mathbf{q}$ 均正交。(c) 求以 $\mathbf{p}$、$\mathbf{q}$ 为边的平行四边形和三角形的面积。(d) 计算 $\mathbf{p}\cdot(\mathbf{q}\times\mathbf{r})$，并求平行六面体的体积。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\langle 14,0,7\rangle$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> <span data-lang="en">both dot products equal $0$</span><span data-lang="zh">两个点积均等于 $0$</span> &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">parallelogram</span><span data-lang="zh">平行四边形</span> $7\sqrt{5}$, <span data-lang="en">triangle</span><span data-lang="zh">三角形</span> $\tfrac{7\sqrt{5}}{2}$ &nbsp;&middot;&nbsp; <span class="ans">(d)</span> <span data-lang="en">triple product</span><span data-lang="zh">混合积</span> $7$, <span data-lang="en">volume</span><span data-lang="zh">体积</span> $7$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Cross product via the determinant</span><span data-lang="zh">(a) 用行列式计算叉积</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Expand along the first row of the $3\times 3$ determinant: (M1)</span><span data-lang="zh">沿 $3\times 3$ 行列式第一行展开：(M1)</span></p>
+      $$ \mathbf{p}\times\mathbf{q} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 3 & -2 \\ -2 & 1 & 4 \end{vmatrix}. $$
+      <p><span data-lang="en">$\mathbf{i}$-component: $3\cdot 4 - (-2)\cdot 1 = 12 + 2 = 14$. (M1)</span><span data-lang="zh">$\mathbf{i}$ 分量：$3\cdot 4 - (-2)\cdot 1 = 12 + 2 = 14$。(M1)</span></p>
+      <p><span data-lang="en">$\mathbf{j}$-component: $-(1\cdot 4 - (-2)\cdot(-2)) = -(4-4) = 0$.</span><span data-lang="zh">$\mathbf{j}$ 分量：$-(1\cdot 4 - (-2)\cdot(-2)) = -(4-4) = 0$。</span></p>
+      <p><span data-lang="en">$\mathbf{k}$-component: $1\cdot 1 - 3\cdot(-2) = 1+6 = 7$. (A1 for each pair; A1 for assembled answer)</span><span data-lang="zh">$\mathbf{k}$ 分量：$1\cdot 1 - 3\cdot(-2) = 1+6 = 7$。（每对 A1；组合结果 A1）</span></p>
+      $$ \mathbf{p}\times\mathbf{q} = \langle 14,\,0,\,7\rangle. $$
+      <h4><span data-lang="en">(b) Orthogonality checks</span><span data-lang="zh">(b) 正交性验证</span> <span class="marks-call">A1·A1</span></h4>
+      <p><span data-lang="en">Compute $\mathbf{p}\cdot(\mathbf{p}\times\mathbf{q}) = \langle 1,3,-2\rangle\cdot\langle 14,0,7\rangle = 14 + 0 - 14 = 0$. (A1)</span><span data-lang="zh">计算 $\mathbf{p}\cdot(\mathbf{p}\times\mathbf{q}) = \langle 1,3,-2\rangle\cdot\langle 14,0,7\rangle = 14 + 0 - 14 = 0$。(A1)</span></p>
+      <p><span data-lang="en">Compute $\mathbf{q}\cdot(\mathbf{p}\times\mathbf{q}) = \langle -2,1,4\rangle\cdot\langle 14,0,7\rangle = -28 + 0 + 28 = 0$. (A1)</span><span data-lang="zh">计算 $\mathbf{q}\cdot(\mathbf{p}\times\mathbf{q}) = \langle -2,1,4\rangle\cdot\langle 14,0,7\rangle = -28 + 0 + 28 = 0$。(A1)</span></p>
+      <p><span data-lang="en">Both are zero, confirming orthogonality.</span><span data-lang="zh">两者均为零，证实了正交性。</span></p>
+      <h4><span data-lang="en">(c) Areas of parallelogram and triangle</span><span data-lang="zh">(c) 平行四边形与三角形面积</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The area of the parallelogram is $|\mathbf{p}\times\mathbf{q}|$: (M1)</span><span data-lang="zh">平行四边形的面积为 $|\mathbf{p}\times\mathbf{q}|$：(M1)</span></p>
+      $$ |\langle 14,0,7\rangle| = \sqrt{196+0+49} = \sqrt{245} = 7\sqrt{5}. $$
+      <p><span data-lang="en">The triangle has half that area: $\dfrac{7\sqrt{5}}{2}$. (A1)</span><span data-lang="zh">三角形面积为其一半：$\dfrac{7\sqrt{5}}{2}$。(A1)</span></p>
+      <h4><span data-lang="en">(d) Scalar triple product and parallelepiped volume</span><span data-lang="zh">(d) 混合积与平行六面体体积</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">First compute $\mathbf{q}\times\mathbf{r} = \langle -2,1,4\rangle\times\langle 0,2,1\rangle$: (M1)</span><span data-lang="zh">先计算 $\mathbf{q}\times\mathbf{r} = \langle -2,1,4\rangle\times\langle 0,2,1\rangle$：(M1)</span></p>
+      $$ \mathbf{q}\times\mathbf{r} = \langle 1\cdot 1 - 4\cdot 2,\;4\cdot 0-(-2)\cdot 1,\;(-2)\cdot 2 - 1\cdot 0\rangle = \langle 1-8,\;0+2,\;-4-0\rangle = \langle -7,2,-4\rangle. $$
+      <p><span data-lang="en">Then $\mathbf{p}\cdot(\mathbf{q}\times\mathbf{r}) = \langle 1,3,-2\rangle\cdot\langle -7,2,-4\rangle = -7+6+8 = 7$.</span><span data-lang="zh">再计算 $\mathbf{p}\cdot(\mathbf{q}\times\mathbf{r}) = \langle 1,3,-2\rangle\cdot\langle -7,2,-4\rangle = -7+6+8 = 7$。</span></p>
+      <p><span data-lang="en">Volume $= |\,7\,| = 7$. (A1)</span><span data-lang="zh">体积 $= |\,7\,| = 7$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The $\mathbf{j}$-component of the cross product carries a minus sign in the cofactor expansion; missing it is the most common arithmetic error. The fact that $\mathbf{p}\cdot(\mathbf{p}\times\mathbf{q})=0$ is not just a numerical coincidence but a theorem: the cross product is always perpendicular to both factors. The scalar triple product is signed; its absolute value gives volume, while the sign encodes orientation (whether $\mathbf{a},\mathbf{b},\mathbf{c}$ form a right-handed or left-handed triple).</span><span data-lang="zh">叉积的 $\mathbf{j}$ 分量在余子式展开中带负号，遗漏这个负号是最常见的计算错误。$\mathbf{p}\cdot(\mathbf{p}\times\mathbf{q})=0$ 不只是数值上的巧合，而是一个定理：叉积始终垂直于两个因子。混合积是有符号的；其绝对值给出体积，符号则反映方向（$\mathbf{a},\mathbf{b},\mathbf{c}$ 构成右手系还是左手系）。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严谨论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">cross product is orthogonal to both factors</span><span data-lang="zh">叉积与两个因子均正交</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{u}=\langle u_1,u_2,u_3\rangle$, $\mathbf{v}=\langle v_1,v_2,v_3\rangle$, $\mathbf{w}=\mathbf{u}\times\mathbf{v}$. (a) Write $\mathbf{w}$ in full component form. (b) Prove $\mathbf{u}\cdot\mathbf{w}=0$. (c) Explain why $\mathbf{v}\cdot\mathbf{w}=0$ and state the geometric conclusion.</span><span data-lang="zh">设 $\mathbf{u}=\langle u_1,u_2,u_3\rangle$，$\mathbf{v}=\langle v_1,v_2,v_3\rangle$，$\mathbf{w}=\mathbf{u}\times\mathbf{v}$。(a) 写出 $\mathbf{w}$ 的完整分量形式。(b) 证明 $\mathbf{u}\cdot\mathbf{w}=0$。(c) 解释为何 $\mathbf{v}\cdot\mathbf{w}=0$，并陈述几何结论。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\mathbf{w}=\langle u_2v_3-u_3v_2,\;u_3v_1-u_1v_3,\;u_1v_2-u_2v_1\rangle$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> <span data-lang="en">$\mathbf{u}\cdot\mathbf{w}=0$ by term cancellation</span><span data-lang="zh">$\mathbf{u}\cdot\mathbf{w}=0$，各项相消</span> &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">same structure; $\mathbf{u}\times\mathbf{v}$ is normal to the plane of $\mathbf{u}$ and $\mathbf{v}$</span><span data-lang="zh">结构相同；$\mathbf{u}\times\mathbf{v}$ 是 $\mathbf{u}$ 和 $\mathbf{v}$ 所在平面的法向量</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) The determinant definition</span><span data-lang="zh">(a) 行列式定义</span> <span class="marks-call">B1·A1</span></h4>
+      <p><span data-lang="en">The cross product is defined by expanding the formal $3\times 3$ determinant: (B1)</span><span data-lang="zh">叉积由展开形式 $3\times 3$ 行列式来定义：(B1)</span></p>
+      $$ \mathbf{u}\times\mathbf{v} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix} = \langle u_2v_3-u_3v_2,\;u_3v_1-u_1v_3,\;u_1v_2-u_2v_1\rangle. $$
+      <p><span data-lang="en">So $w_1=u_2v_3-u_3v_2$, $w_2=u_3v_1-u_1v_3$, $w_3=u_1v_2-u_2v_1$. (A1)</span><span data-lang="zh">故 $w_1=u_2v_3-u_3v_2$，$w_2=u_3v_1-u_1v_3$，$w_3=u_1v_2-u_2v_1$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Proof that $\mathbf{u}\cdot\mathbf{w}=0$</span><span data-lang="zh">(b) 证明 $\mathbf{u}\cdot\mathbf{w}=0$</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Compute $\mathbf{u}\cdot\mathbf{w} = u_1w_1+u_2w_2+u_3w_3$. Substituting the components from (a): (M1)</span><span data-lang="zh">计算 $\mathbf{u}\cdot\mathbf{w} = u_1w_1+u_2w_2+u_3w_3$。代入 (a) 的分量：(M1)</span></p>
+      $$ \mathbf{u}\cdot\mathbf{w} = u_1(u_2v_3-u_3v_2) + u_2(u_3v_1-u_1v_3) + u_3(u_1v_2-u_2v_1). $$
+      <p><span data-lang="en">Expand: (A1)</span><span data-lang="zh">展开：(A1)</span></p>
+      $$ = u_1u_2v_3 - u_1u_3v_2 + u_2u_3v_1 - u_1u_2v_3 + u_1u_3v_2 - u_2u_3v_1. $$
+      <p><span data-lang="en">Each term $u_iu_jv_k$ appears exactly twice with opposite signs and cancels, leaving $0$. (R1)</span><span data-lang="zh">每个形如 $u_iu_jv_k$ 的项都以相反符号出现恰好两次，相消后剩余 $0$。(R1)</span></p>
+      <h4><span data-lang="en">(c) Analogous argument for $\mathbf{v}$ and geometric conclusion</span><span data-lang="zh">(c) 对 $\mathbf{v}$ 的类似论证及几何结论</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Compute $\mathbf{v}\cdot\mathbf{w} = v_1w_1+v_2w_2+v_3w_3$. Substituting: (M1)</span><span data-lang="zh">计算 $\mathbf{v}\cdot\mathbf{w} = v_1w_1+v_2w_2+v_3w_3$。代入：(M1)</span></p>
+      $$ \mathbf{v}\cdot\mathbf{w} = v_1(u_2v_3-u_3v_2)+v_2(u_3v_1-u_1v_3)+v_3(u_1v_2-u_2v_1). $$
+      <p><span data-lang="en">Expanding gives terms of the form $v_iu_jv_k$ and $-v_iu_jv_k$ (with $i=k$ in each pair), so every term cancels and $\mathbf{v}\cdot\mathbf{w}=0$. (A1)</span><span data-lang="zh">展开后得到形如 $v_iu_jv_k$ 与 $-v_iu_jv_k$（每对中 $i=k$）的项，所有项相消，故 $\mathbf{v}\cdot\mathbf{w}=0$。(A1)</span></p>
+      <p><span data-lang="en">Since $\mathbf{w}$ is perpendicular to both $\mathbf{u}$ and $\mathbf{v}$, it is perpendicular to every vector in the plane spanned by $\mathbf{u}$ and $\mathbf{v}$. Therefore $\mathbf{u}\times\mathbf{v}$ is a normal vector to that plane. (R1)</span><span data-lang="zh">由于 $\mathbf{w}$ 同时垂直于 $\mathbf{u}$ 和 $\mathbf{v}$，它垂直于 $\mathbf{u}$ 和 $\mathbf{v}$ 张成平面中的每一个向量。因此 $\mathbf{u}\times\mathbf{v}$ 是该平面的法向量。(R1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The cancellation in (b) is not accidental: it reflects the fact that the scalar triple product $\mathbf{u}\cdot(\mathbf{u}\times\mathbf{v})$ equals the volume of a degenerate parallelepiped whose two edge directions $\mathbf{u}$ and $\mathbf{u}$ coincide, which has zero volume. That algebraic identity is the engine behind the cross product's geometric role as a normal vector to a plane.</span><span data-lang="zh">(b) 中的相消并非偶然：它反映了混合积 $\mathbf{u}\cdot(\mathbf{u}\times\mathbf{v})$ 等于一个退化平行六面体的体积（其两条棱方向 $\mathbf{u}$ 重合），体积为零。正是这个代数恒等式支撑了叉积作为平面法向量的几何意义。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">vector projection formula and distance from a point to a line</span><span data-lang="zh">向量投影公式与点到直线距离</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\ell$ pass through $A$ with direction $\mathbf{d}$, $P$ a point not on $\ell$, $\mathbf{v}=\overrightarrow{AP}$. (a) Prove $d(P,\ell)=|\mathbf{v}\times\mathbf{d}|/|\mathbf{d}|$. (b) Apply to $P=(2,1,-1)$, $A=(0,0,0)$, $\mathbf{d}=\langle 1,2,2\rangle$. (c) Confirm by computing $\overrightarrow{FP}$ directly.</span><span data-lang="zh">设 $\ell$ 过点 $A$，方向向量为 $\mathbf{d}$，$P$ 为不在 $\ell$ 上的点，$\mathbf{v}=\overrightarrow{AP}$。(a) 证明 $d(P,\ell)=|\mathbf{v}\times\mathbf{d}|/|\mathbf{d}|$。(b) 应用于 $P=(2,1,-1)$，$A=(0,0,0)$，$\mathbf{d}=\langle 1,2,2\rangle$。(c) 通过直接计算 $\overrightarrow{FP}$ 验证结果。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">$d=|\mathbf{v}\times\mathbf{d}|/|\mathbf{d}|$ (from the cross product sine formula)</span><span data-lang="zh">$d=|\mathbf{v}\times\mathbf{d}|/|\mathbf{d}|$（由叉积正弦公式推导）</span> &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\tfrac{5\sqrt{2}}{3}$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $|\overrightarrow{FP}|=\tfrac{5\sqrt{2}}{3}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Proof of the distance formula</span><span data-lang="zh">(a) 距离公式的证明</span> <span class="marks-call">M1·M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Decompose $\mathbf{v}$ into the part along $\mathbf{d}$ and the part perpendicular to $\mathbf{d}$. The foot of the perpendicular is $F = A + \operatorname{proj}_{\mathbf{d}}\mathbf{v}$, so: (M1)</span><span data-lang="zh">将 $\mathbf{v}$ 分解为沿 $\mathbf{d}$ 方向的部分与垂直于 $\mathbf{d}$ 的部分。垂足为 $F = A + \operatorname{proj}_{\mathbf{d}}\mathbf{v}$，故：(M1)</span></p>
+      $$ \operatorname{proj}_{\mathbf{d}}\mathbf{v} = \frac{\mathbf{v}\cdot\mathbf{d}}{|\mathbf{d}|^2}\,\mathbf{d}, \qquad \overrightarrow{FP} = \mathbf{v} - \frac{\mathbf{v}\cdot\mathbf{d}}{|\mathbf{d}|^2}\,\mathbf{d}. $$
+      <p><span data-lang="en">The distance from $P$ to $\ell$ is $|\overrightarrow{FP}|$. (M1) Now use the cross product: since $\mathbf{v}\times\mathbf{d} = |\mathbf{v}||\mathbf{d}|\sin\theta\,\hat{\mathbf{n}}$ where $\theta$ is the angle between $\mathbf{v}$ and $\mathbf{d}$, we have $|\mathbf{v}\times\mathbf{d}|=|\mathbf{v}||\mathbf{d}|\sin\theta$. (A1) The perpendicular distance from $P$ to the line is</span><span data-lang="zh">$P$ 到 $\ell$ 的距离为 $|\overrightarrow{FP}|$。(M1) 利用叉积：由于 $\mathbf{v}\times\mathbf{d} = |\mathbf{v}||\mathbf{d}|\sin\theta\,\hat{\mathbf{n}}$，其中 $\theta$ 为 $\mathbf{v}$ 与 $\mathbf{d}$ 的夹角，故 $|\mathbf{v}\times\mathbf{d}|=|\mathbf{v}||\mathbf{d}|\sin\theta$。(A1) $P$ 到直线的垂直距离为</span></p>
+      $$ d(P,\ell) = |\mathbf{v}|\sin\theta = \frac{|\mathbf{v}||\mathbf{d}|\sin\theta}{|\mathbf{d}|} = \frac{|\mathbf{v}\times\mathbf{d}|}{|\mathbf{d}|}. $$
+      <p><span data-lang="en">(M1 for identifying $|\mathbf{v}|\sin\theta$ as the perpendicular component; A1 for the final assembly)</span><span data-lang="zh">（M1：将 $|\mathbf{v}|\sin\theta$ 识别为垂直分量；A1：最终整合）</span></p>
+      <h4><span data-lang="en">(b) Applying the formula</span><span data-lang="zh">(b) 应用公式</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Here $\mathbf{v}=\overrightarrow{AP}=\langle 2,1,-1\rangle$ and $\mathbf{d}=\langle 1,2,2\rangle$. Compute $\mathbf{v}\times\mathbf{d}$: (M1)</span><span data-lang="zh">此处 $\mathbf{v}=\overrightarrow{AP}=\langle 2,1,-1\rangle$，$\mathbf{d}=\langle 1,2,2\rangle$。计算 $\mathbf{v}\times\mathbf{d}$：(M1)</span></p>
+      $$ \mathbf{v}\times\mathbf{d} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\2&1&-1\\1&2&2\end{vmatrix} = \langle 1\cdot 2-(-1)\cdot 2,\;(-1)\cdot 1-2\cdot 2,\;2\cdot 2-1\cdot 1\rangle = \langle 4,-5,3\rangle. $$
+      <p><span data-lang="en">(A1) $|\mathbf{v}\times\mathbf{d}|=\sqrt{16+25+9}=\sqrt{50}=5\sqrt{2}$. Then $|\mathbf{d}|=\sqrt{1+4+4}=3$, so (A1)</span><span data-lang="zh">(A1) $|\mathbf{v}\times\mathbf{d}|=\sqrt{16+25+9}=\sqrt{50}=5\sqrt{2}$。又 $|\mathbf{d}|=\sqrt{1+4+4}=3$，故 (A1)</span></p>
+      $$ d(P,\ell) = \frac{5\sqrt{2}}{3}. $$
+      <h4><span data-lang="en">(c) Confirmation via the perpendicular vector</span><span data-lang="zh">(c) 通过垂直向量验证</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The scalar projection of $\mathbf{v}$ onto $\mathbf{d}$ is $\dfrac{\mathbf{v}\cdot\mathbf{d}}{|\mathbf{d}|^2} = \dfrac{2+2-2}{9} = \dfrac{2}{9}$. (M1) So:</span><span data-lang="zh">$\mathbf{v}$ 在 $\mathbf{d}$ 上的标量系数为 $\dfrac{\mathbf{v}\cdot\mathbf{d}}{|\mathbf{d}|^2} = \dfrac{2+2-2}{9} = \dfrac{2}{9}$。(M1) 故：</span></p>
+      $$ \operatorname{proj}_{\mathbf{d}}\mathbf{v} = \frac{2}{9}\langle 1,2,2\rangle = \left\langle\frac{2}{9},\frac{4}{9},\frac{4}{9}\right\rangle. $$
+      $$ \overrightarrow{FP} = \left\langle 2-\frac{2}{9},\;1-\frac{4}{9},\;-1-\frac{4}{9}\right\rangle = \left\langle\frac{16}{9},\,\frac{5}{9},\,-\frac{13}{9}\right\rangle. $$
+      $$ |\overrightarrow{FP}| = \frac{1}{9}\sqrt{256+25+169} = \frac{\sqrt{450}}{9} = \frac{15\sqrt{2}}{9} = \frac{5\sqrt{2}}{3}. \quad \checkmark $$
+      <p>(A1)</p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The cross product formula $d = |\mathbf{v}\times\mathbf{d}|/|\mathbf{d}|$ is powerful precisely because it avoids finding the foot $F$ explicitly. The confirmation in (c) shows that the longer route (projection, subtraction, then magnitude) gives the same answer, and reinforces that $\sin\theta = |\overrightarrow{FP}|/|\mathbf{v}|$ is the ratio behind both calculations.</span><span data-lang="zh">叉积公式 $d = |\mathbf{v}\times\mathbf{d}|/|\mathbf{d}|$ 的优势正在于无需显式求垂足 $F$。(c) 的验证表明较繁的路径（投影、作差、求模）给出相同结果，并强化了 $\sin\theta = |\overrightarrow{FP}|/|\mathbf{v}|$ 是两种计算背后共同的比值这一认识。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">scalar triple product volume formula and coplanarity</span><span data-lang="zh">混合积体积公式与共面性</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Edge-vectors $\mathbf{a}$, $\mathbf{b}$, $\mathbf{c}$ from a common vertex. (a) Prove volume of parallelepiped $=|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|$. (b) State and prove the coplanarity criterion. (c) Test $\mathbf{a}=\langle 1,2,3\rangle$, $\mathbf{b}=\langle 0,1,-1\rangle$, $\mathbf{c}=\langle 2,3,7\rangle$.</span><span data-lang="zh">$\mathbf{a}$、$\mathbf{b}$、$\mathbf{c}$ 为平行六面体从公共顶点出发的棱向量。(a) 证明平行六面体体积 $=|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|$。(b) 陈述并证明共面性判定准则。(c) 检验 $\mathbf{a}=\langle 1,2,3\rangle$，$\mathbf{b}=\langle 0,1,-1\rangle$，$\mathbf{c}=\langle 2,3,7\rangle$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">$V=\text{base area}\times\text{height}=|\mathbf{b}\times\mathbf{c}|\,|\mathbf{a}||\cos\phi|=|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|$</span><span data-lang="zh">$V=\text{底面积}\times\text{高}=|\mathbf{b}\times\mathbf{c}|\,|\mathbf{a}||\cos\phi|=|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|$</span> &nbsp;&middot;&nbsp; <span class="ans">(b)</span> <span data-lang="en">coplanar iff triple product $=0$</span><span data-lang="zh">共面当且仅当混合积 $=0$</span> &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">$\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})=0$, so coplanar</span><span data-lang="zh">$\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})=0$，故共面</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Volume formula</span><span data-lang="zh">(a) 体积公式</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">The base of the parallelepiped is the parallelogram spanned by $\mathbf{b}$ and $\mathbf{c}$. Its area is $|\mathbf{b}\times\mathbf{c}|$. (M1) Let $\hat{\mathbf{n}} = \dfrac{\mathbf{b}\times\mathbf{c}}{|\mathbf{b}\times\mathbf{c}|}$ be the unit normal to the base.</span><span data-lang="zh">平行六面体的底面是由 $\mathbf{b}$ 和 $\mathbf{c}$ 张成的平行四边形，面积为 $|\mathbf{b}\times\mathbf{c}|$。(M1) 设 $\hat{\mathbf{n}} = \dfrac{\mathbf{b}\times\mathbf{c}}{|\mathbf{b}\times\mathbf{c}|}$ 为底面的单位法向量。</span></p>
+      <p><span data-lang="en">The height of the parallelepiped is the length of the component of $\mathbf{a}$ in the direction of $\hat{\mathbf{n}}$, that is, $h = |\mathbf{a}\cdot\hat{\mathbf{n}}|$. (A1) Therefore: (M1)</span><span data-lang="zh">平行六面体的高为 $\mathbf{a}$ 在 $\hat{\mathbf{n}}$ 方向上分量的长度，即 $h = |\mathbf{a}\cdot\hat{\mathbf{n}}|$。(A1) 因此：(M1)</span></p>
+      $$ V = \text{base area}\times h = |\mathbf{b}\times\mathbf{c}|\,\left|\mathbf{a}\cdot\frac{\mathbf{b}\times\mathbf{c}}{|\mathbf{b}\times\mathbf{c}|}\right| = \left|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})\right|. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Coplanarity criterion</span><span data-lang="zh">(b) 共面性判定准则</span> <span class="marks-call">R1·A1</span></h4>
+      <p><span data-lang="en">Statement: $\mathbf{a}$, $\mathbf{b}$, $\mathbf{c}$ are coplanar if and only if $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})=0$.</span><span data-lang="zh">命题：$\mathbf{a}$、$\mathbf{b}$、$\mathbf{c}$ 共面，当且仅当 $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})=0$。</span></p>
+      <p><span data-lang="en">Proof: by part (a), $V=|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|$. The parallelepiped has volume zero if and only if its three edge vectors are coplanar (i.e. all lie in a common plane through the origin, which happens exactly when $\mathbf{a}$ is a linear combination of $\mathbf{b}$ and $\mathbf{c}$, so the height $h=0$). Therefore $V=0 \Leftrightarrow \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})=0 \Leftrightarrow$ the vectors are coplanar. (R1·A1)</span><span data-lang="zh">证明：由 (a)，$V=|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|$。平行六面体体积为零当且仅当三条棱向量共面（即均位于过原点的某一平面内，这恰好发生在 $\mathbf{a}$ 是 $\mathbf{b}$ 与 $\mathbf{c}$ 的线性组合时，高 $h=0$）。因此 $V=0 \Leftrightarrow \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})=0 \Leftrightarrow$ 向量共面。(R1·A1)</span></p>
+      <h4><span data-lang="en">(c) Numerical test</span><span data-lang="zh">(c) 数值验证</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Compute $\mathbf{b}\times\mathbf{c} = \langle 0,1,-1\rangle\times\langle 2,3,7\rangle$: (M1)</span><span data-lang="zh">计算 $\mathbf{b}\times\mathbf{c} = \langle 0,1,-1\rangle\times\langle 2,3,7\rangle$：(M1)</span></p>
+      $$ \mathbf{b}\times\mathbf{c} = \langle 1\cdot 7-(-1)\cdot 3,\;(-1)\cdot 2-0\cdot 7,\;0\cdot 3-1\cdot 2\rangle = \langle 10,-2,-2\rangle. $$
+      <p><span data-lang="en">Then $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = \langle 1,2,3\rangle\cdot\langle 10,-2,-2\rangle = 10-4-6 = 0$. (A1)</span><span data-lang="zh">再计算 $\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = \langle 1,2,3\rangle\cdot\langle 10,-2,-2\rangle = 10-4-6 = 0$。(A1)</span></p>
+      <p><span data-lang="en">Since the triple product is zero, the three vectors are coplanar by the criterion in (b).</span><span data-lang="zh">由于混合积为零，由 (b) 的判定准则可知三个向量共面。</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The scalar triple product is the signed volume of a parallelepiped, so a zero value literally means the parallelepiped has collapsed flat, which geometrically means all three vectors lie in one plane. For the test in (c), this is confirmed: one can check that $\mathbf{c} = 2\mathbf{a} - \mathbf{b}$ (since $\langle 2,3,7\rangle = 2\langle 1,2,3\rangle - \langle 0,1,-1\rangle$), so $\mathbf{c}$ is indeed a linear combination of $\mathbf{a}$ and $\mathbf{b}$.</span><span data-lang="zh">混合积是平行六面体的有符号体积，值为零意味着平行六面体退化为平面，几何上即三个向量共面。(c) 的验证可进一步通过 $\mathbf{c} = 2\mathbf{a} - \mathbf{b}$（因为 $\langle 2,3,7\rangle = 2\langle 1,2,3\rangle - \langle 0,1,-1\rangle$）来确认，说明 $\mathbf{c}$ 确实是 $\mathbf{a}$ 与 $\mathbf{b}$ 的线性组合。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合应用题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill med">MEDIUM</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">lines in space: vector, parametric, symmetric equations</span><span data-lang="zh">空间直线：向量式、参数式、对称式方程</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Line $\ell$ through $P_0=(1,-2,3)$ with direction $\mathbf{d}=\langle 2,1,-1\rangle$. (a) Vector and parametric equations. (b) Symmetric equations. (c) Does $Q=(5,0,1)$ lie on $\ell$? (d) The parallel line $m$ through $R=(0,1,-1)$.</span><span data-lang="zh">直线 $\ell$ 过点 $P_0=(1,-2,3)$，方向向量为 $\mathbf{d}=\langle 2,1,-1\rangle$。(a) 向量方程与参数方程。(b) 对称式方程。(c) 点 $Q=(5,0,1)$ 是否在 $\ell$ 上？(d) 过 $R=(0,1,-1)$ 且与 $\ell$ 平行的直线 $m$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\mathbf{r}=\langle 1+2t,-2+t,3-t\rangle$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\frac{x-1}{2}=\frac{y+2}{1}=\frac{z-3}{-1}$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">Yes, at $t=2$</span><span data-lang="zh">是，$t=2$ 时</span> &nbsp;&middot;&nbsp; <span class="ans">(d)</span> $x=2t,\,y=1+t,\,z=-1-t$; <span data-lang="en">distinct since $R\notin\ell$</span><span data-lang="zh">因 $R\notin\ell$ 故为不同直线</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Vector and parametric equations</span><span data-lang="zh">(a) 向量方程与参数方程</span> <span class="marks-call">B1·A1</span></h4>
+      <p><span data-lang="en">The vector equation is $\mathbf{r}(t) = \mathbf{r}_0 + t\mathbf{d}$: (B1)</span><span data-lang="zh">向量方程为 $\mathbf{r}(t) = \mathbf{r}_0 + t\mathbf{d}$：(B1)</span></p>
+      $$ \mathbf{r}(t) = \langle 1,-2,3\rangle + t\langle 2,1,-1\rangle = \langle 1+2t,\;-2+t,\;3-t\rangle. $$
+      <p><span data-lang="en">Parametric form: $x=1+2t$, $y=-2+t$, $z=3-t$. (A1)</span><span data-lang="zh">参数形式：$x=1+2t$，$y=-2+t$，$z=3-t$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Symmetric equations</span><span data-lang="zh">(b) 对称式方程</span> <span class="marks-call">A1</span></h4>
+      <p><span data-lang="en">Solve each parametric equation for $t$ and equate: (A1)</span><span data-lang="zh">从每个参数方程解出 $t$ 并令其相等：(A1)</span></p>
+      $$ \frac{x-1}{2} = \frac{y+2}{1} = \frac{z-3}{-1}. $$
+      <h4><span data-lang="en">(c) Does $Q=(5,0,1)$ lie on $\ell$?</span><span data-lang="zh">(c) 点 $Q=(5,0,1)$ 是否在 $\ell$ 上？</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Substitute into the parametric equations and test consistency. From $x=5$: $1+2t=5 \Rightarrow t=2$. (M1) Check $y$: $-2+2=0$ ✓. Check $z$: $3-2=1$ ✓. (A1) All three equations are satisfied at $t=2$, so $Q$ lies on $\ell$. (A1)</span><span data-lang="zh">代入参数方程并验证一致性。由 $x=5$：$1+2t=5 \Rightarrow t=2$。(M1) 验证 $y$：$-2+2=0$ ✓。验证 $z$：$3-2=1$ ✓。(A1) 三个方程在 $t=2$ 时均满足，故 $Q$ 在 $\ell$ 上。(A1)</span></p>
+      <h4><span data-lang="en">(d) The parallel line $m$ through $R=(0,1,-1)$</span><span data-lang="zh">(d) 过 $R=(0,1,-1)$ 且与 $\ell$ 平行的直线 $m$</span> <span class="marks-call">A1·A1</span></h4>
+      <p><span data-lang="en">A line parallel to $\ell$ has the same direction vector $\mathbf{d}=\langle 2,1,-1\rangle$. Using $R$ as the base point: (A1)</span><span data-lang="zh">与 $\ell$ 平行的直线具有相同方向向量 $\mathbf{d}=\langle 2,1,-1\rangle$。以 $R$ 为基点：(A1)</span></p>
+      $$ m:\quad x=2t,\quad y=1+t,\quad z=-1-t. $$
+      <p><span data-lang="en">To confirm $m\ne\ell$, check whether $R=(0,1,-1)\in\ell$. From $x=0$: $t=-\tfrac{1}{2}$; then $y=-2-\tfrac{1}{2}=-\tfrac{5}{2}\ne 1$. So $R\notin\ell$, confirming $m$ and $\ell$ are distinct parallel lines. (A1)</span><span data-lang="zh">为确认 $m\ne\ell$，验证 $R=(0,1,-1)$ 是否在 $\ell$ 上。由 $x=0$：$t=-\tfrac{1}{2}$；则 $y=-2-\tfrac{1}{2}=-\tfrac{5}{2}\ne 1$。故 $R\notin\ell$，确认 $m$ 与 $\ell$ 是不同的平行直线。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The symmetric equations are the parametric equations with $t$ eliminated, useful for checking point membership without introducing the parameter explicitly. Parallel lines share a direction but not a point; the distinctness check reduces to verifying that the second line's base point does not satisfy the first line's parametric equations.</span><span data-lang="zh">对称式方程是消去参数 $t$ 后的参数方程形式，适用于无需显式引入参数即可判断点是否在直线上的情况。平行直线共享方向但不共点；确认不同性只需验证第二条直线的基点不满足第一条直线的参数方程。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">planes: equation from three points, distance from a point</span><span data-lang="zh">平面：由三点确定方程、点到平面距离</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Points $A=(1,0,0)$, $B=(0,2,0)$, $C=(0,0,3)$ determine plane $\Pi$. (a) Find a normal $\mathbf{n}$ via cross product. (b) Write the scalar equation. (c) Distance from $O=(0,0,0)$ to $\Pi$. (d) Is $\Pi'$: $6x+3y+2z=0$ parallel to, perpendicular to, or at an angle to $\Pi$?</span><span data-lang="zh">三点 $A=(1,0,0)$、$B=(0,2,0)$、$C=(0,0,3)$ 确定平面 $\Pi$。(a) 用叉积求法向量 $\mathbf{n}$。(b) 写出标量方程。(c) 求原点 $O=(0,0,0)$ 到 $\Pi$ 的距离。(d) 判断 $\Pi'$：$6x+3y+2z=0$ 与 $\Pi$ 是平行、垂直还是成一定角度。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\mathbf{n}=\langle 6,3,2\rangle$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $6x+3y+2z=6$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $\tfrac{6}{7}$ &nbsp;&middot;&nbsp; <span class="ans">(d)</span> <span data-lang="en">$\Pi'$ passes through the origin and its normal is $\mathbf{n}' = \langle 6,3,2\rangle$, parallel to $\mathbf{n}$, so $\Pi\parallel\Pi'$</span><span data-lang="zh">$\Pi'$ 过原点，其法向量 $\mathbf{n}' = \langle 6,3,2\rangle$ 平行于 $\mathbf{n}$，故 $\Pi\parallel\Pi'$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Normal vector from the cross product</span><span data-lang="zh">(a) 用叉积求法向量</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Two vectors lying in $\Pi$ are $\overrightarrow{AB}=\langle -1,2,0\rangle$ and $\overrightarrow{AC}=\langle -1,0,3\rangle$. (M1) Compute $\mathbf{n}=\overrightarrow{AB}\times\overrightarrow{AC}$: (M1)</span><span data-lang="zh">平面 $\Pi$ 内的两个向量为 $\overrightarrow{AB}=\langle -1,2,0\rangle$ 和 $\overrightarrow{AC}=\langle -1,0,3\rangle$。(M1) 计算 $\mathbf{n}=\overrightarrow{AB}\times\overrightarrow{AC}$：(M1)</span></p>
+      $$ \mathbf{n} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\-1&2&0\\-1&0&3\end{vmatrix} = \langle 2\cdot 3-0\cdot 0,\;0\cdot(-1)-(-1)\cdot 3,\;(-1)\cdot 0-2\cdot(-1)\rangle = \langle 6,3,2\rangle. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Scalar plane equation</span><span data-lang="zh">(b) 平面的标量方程</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Using point $A=(1,0,0)$ and normal $\langle 6,3,2\rangle$: $6(x-1)+3(y-0)+2(z-0)=0$. (M1) Simplify: $6x+3y+2z=6$. (A1)</span><span data-lang="zh">用点 $A=(1,0,0)$ 和法向量 $\langle 6,3,2\rangle$：$6(x-1)+3(y-0)+2(z-0)=0$。(M1) 化简：$6x+3y+2z=6$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Distance from the origin to $\Pi$</span><span data-lang="zh">(c) 原点到 $\Pi$ 的距离</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The point-to-plane distance formula gives, for the origin $(0,0,0)$ and plane $6x+3y+2z=6$: (M1)</span><span data-lang="zh">对原点 $(0,0,0)$ 和平面 $6x+3y+2z=6$ 应用点到平面距离公式：(M1)</span></p>
+      $$ d = \frac{|6(0)+3(0)+2(0)-6|}{\sqrt{6^2+3^2+2^2}} = \frac{6}{\sqrt{36+9+4}} = \frac{6}{\sqrt{49}} = \frac{6}{7}. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(d) Relationship between $\Pi$ and $\Pi'$</span><span data-lang="zh">(d) $\Pi$ 与 $\Pi'$ 的位置关系</span> <span class="marks-call">A1</span></h4>
+      <p><span data-lang="en">The normal to $\Pi'$ is $\mathbf{n}'=\langle 6,3,2\rangle$, which is identical to $\mathbf{n}$, the normal to $\Pi$. Since the normals are parallel, the planes are parallel. (Note that $\Pi'$ passes through the origin, since $6(0)+3(0)+2(0)=0$, while $\Pi$ does not. So the planes are distinct and parallel.) (A1)</span><span data-lang="zh">$\Pi'$ 的法向量 $\mathbf{n}'=\langle 6,3,2\rangle$ 与 $\Pi$ 的法向量 $\mathbf{n}$ 完全相同。由于法向量平行，两平面平行。（注意 $\Pi'$ 过原点，因为 $6(0)+3(0)+2(0)=0$，而 $\Pi$ 不过原点。故两平面不同且平行。）(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">Three non-collinear points determine a plane uniquely because two vectors in the plane determine a normal via the cross product, and a single point pins down the constant. The $6/7$ distance to the origin has a neat interpretation: the intercept form of $\Pi$ is $\tfrac{x}{1}+\tfrac{y}{2}+\tfrac{z}{3}=1$, and the origin is the point being measured from. Two planes with proportional normals are parallel; equal normals and equal constants mean the same plane.</span><span data-lang="zh">三个不共线的点唯一确定一个平面，这是因为平面内两个向量通过叉积确定法向量，再由一个点定出常数项。$6/7$ 的距离有一个简洁的解释：$\Pi$ 的截距式为 $\tfrac{x}{1}+\tfrac{y}{2}+\tfrac{z}{3}=1$，原点是被测量的点。法向量成比例的两个平面平行；法向量相同且常数项相同则为同一平面。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">distance between skew lines; line-plane intersection; intersection of two planes</span><span data-lang="zh">异面直线距离；直线与平面交点；两平面的交线</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) $L_1: \mathbf{r}_1=\langle 1,0,0\rangle+t\langle 1,1,0\rangle$, $L_2: \mathbf{r}_2=\langle 0,1,0\rangle+s\langle 0,1,1\rangle$. Show they are skew and find the distance between them. (b) The line $\mathbf{r}=\langle 2,0,-1\rangle+t\langle 1,-1,3\rangle$ meets $x+2y+z=7$; find the point.</span><span data-lang="zh">(a) $L_1: \mathbf{r}_1=\langle 1,0,0\rangle+t\langle 1,1,0\rangle$，$L_2: \mathbf{r}_2=\langle 0,1,0\rangle+s\langle 0,1,1\rangle$。证明它们是异面直线并求距离。(b) 直线 $\mathbf{r}=\langle 2,0,-1\rangle+t\langle 1,-1,3\rangle$ 与平面 $x+2y+z=7$ 相交，求交点。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">skew (non-parallel, non-intersecting); distance $=\tfrac{2\sqrt{3}}{3}$</span><span data-lang="zh">异面（不平行、不相交）；距离 $=\tfrac{2\sqrt{3}}{3}$</span> &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $(5,-3,8)$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Skew lines and the distance formula</span><span data-lang="zh">(a) 异面直线与距离公式</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">The direction vectors are $\mathbf{d}_1=\langle 1,1,0\rangle$ and $\mathbf{d}_2=\langle 0,1,1\rangle$. Since $\mathbf{d}_1$ is not a scalar multiple of $\mathbf{d}_2$, the lines are not parallel. (M1)</span><span data-lang="zh">方向向量为 $\mathbf{d}_1=\langle 1,1,0\rangle$ 和 $\mathbf{d}_2=\langle 0,1,1\rangle$。由于 $\mathbf{d}_1$ 不是 $\mathbf{d}_2$ 的数量倍，两直线不平行。(M1)</span></p>
+      <p><span data-lang="en">Compute the common perpendicular direction: $\mathbf{d}_1\times\mathbf{d}_2 = \langle 1,-1,1\rangle$ (since $\langle 1\cdot 1-0\cdot 1,\;0\cdot 0-1\cdot 1,\;1\cdot 1-1\cdot 0\rangle=\langle 1,-1,1\rangle$). Now check whether the lines actually intersect: the vector connecting a point on $L_1$ to a point on $L_2$ is $\overrightarrow{P_1P_2}=\langle 0,1,0\rangle-\langle 1,0,0\rangle=\langle -1,1,0\rangle$. For intersection we would need $\overrightarrow{P_1P_2}=t\mathbf{d}_1-s\mathbf{d}_2$ to be solvable; computing $\overrightarrow{P_1P_2}\cdot(\mathbf{d}_1\times\mathbf{d}_2)=\langle -1,1,0\rangle\cdot\langle 1,-1,1\rangle=-1-1+0=-2\ne 0$, which proves the lines are skew. (A1)</span><span data-lang="zh">计算公垂线方向：$\mathbf{d}_1\times\mathbf{d}_2 = \langle 1,-1,1\rangle$（因为 $\langle 1\cdot 1-0\cdot 1,\;0\cdot 0-1\cdot 1,\;1\cdot 1-1\cdot 0\rangle=\langle 1,-1,1\rangle$）。检验两直线是否相交：连接 $L_1$ 上一点与 $L_2$ 上一点的向量为 $\overrightarrow{P_1P_2}=\langle 0,1,0\rangle-\langle 1,0,0\rangle=\langle -1,1,0\rangle$。若相交，方程 $\overrightarrow{P_1P_2}=t\mathbf{d}_1-s\mathbf{d}_2$ 须有解；计算 $\overrightarrow{P_1P_2}\cdot(\mathbf{d}_1\times\mathbf{d}_2)=\langle -1,1,0\rangle\cdot\langle 1,-1,1\rangle=-1-1+0=-2\ne 0$，证明两直线为异面直线。(A1)</span></p>
+      <p><span data-lang="en">The distance between skew lines is $d = \dfrac{|\overrightarrow{P_1P_2}\cdot(\mathbf{d}_1\times\mathbf{d}_2)|}{|\mathbf{d}_1\times\mathbf{d}_2|}$. (M1)</span><span data-lang="zh">异面直线间的距离为 $d = \dfrac{|\overrightarrow{P_1P_2}\cdot(\mathbf{d}_1\times\mathbf{d}_2)|}{|\mathbf{d}_1\times\mathbf{d}_2|}$。(M1)</span></p>
+      $$ |\mathbf{d}_1\times\mathbf{d}_2| = |\langle 1,-1,1\rangle| = \sqrt{3}. \qquad d = \frac{|-2|}{\sqrt{3}} = \frac{2}{\sqrt{3}} = \frac{2\sqrt{3}}{3}. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Line-plane intersection</span><span data-lang="zh">(b) 直线与平面的交点</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Substitute the parametric equations $x=2+t$, $y=-t$, $z=-1+3t$ into the plane $x+2y+z=7$: (M1)</span><span data-lang="zh">将参数方程 $x=2+t$，$y=-t$，$z=-1+3t$ 代入平面 $x+2y+z=7$：(M1)</span></p>
+      $$ (2+t)+2(-t)+(-1+3t)=7 \implies 2+t-2t-1+3t=7 \implies 1+2t=7 \implies t=3. $$
+      <p><span data-lang="en">(A1) The intersection point is $\langle 2+3,\;0-3,\;-1+9\rangle = (5,-3,8)$. Check: $5+2(-3)+8=5-6+8=7$ ✓.</span><span data-lang="zh">(A1) 交点为 $\langle 2+3,\;0-3,\;-1+9\rangle = (5,-3,8)$。验证：$5+2(-3)+8=5-6+8=7$ ✓。</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The key test for skew lines is $\overrightarrow{P_1P_2}\cdot(\mathbf{d}_1\times\mathbf{d}_2)\ne 0$: the vector connecting points on the two lines has a nonzero projection onto the mutual perpendicular, which is exactly what "not coplanar with both direction vectors" means. For the line-plane intersection, substituting the parametric form turns a 3-D geometry question into a single linear equation in $t$.</span><span data-lang="zh">异面直线的关键判定是 $\overrightarrow{P_1P_2}\cdot(\mathbf{d}_1\times\mathbf{d}_2)\ne 0$：连接两直线上各点的向量在公垂线方向上的投影不为零，这正是"与两方向向量不共面"的含义。对于直线与平面的交点，代入参数形式将三维几何问题转化为关于 $t$ 的单个线性方程。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">torque via cross product; intersection line of two planes; quadric surface classification</span><span data-lang="zh">叉积求力矩；两平面交线；二次曲面分类</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Torque $\boldsymbol{\tau}=\mathbf{r}\times\mathbf{F}$ with $\mathbf{r}=\langle 2,-1,3\rangle$ m and $\mathbf{F}=\langle 0,4,-2\rangle$ N. (b) Intersection line of $x+y+z=6$ and $2x-y+z=3$. (c) Identify each quadric surface: (i) $x^2/4+y^2/9+z^2=1$, (ii) $z=x^2+y^2/4$, (iii) $x^2+y^2-z^2=1$.</span><span data-lang="zh">(a) 力矩 $\boldsymbol{\tau}=\mathbf{r}\times\mathbf{F}$，$\mathbf{r}=\langle 2,-1,3\rangle$ m，$\mathbf{F}=\langle 0,4,-2\rangle$ N。(b) 求平面 $x+y+z=6$ 与 $2x-y+z=3$ 的交线。(c) 判断各二次曲面类型：(i) $x^2/4+y^2/9+z^2=1$，(ii) $z=x^2+y^2/4$，(iii) $x^2+y^2-z^2=1$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\boldsymbol{\tau}=\langle -10,4,8\rangle$ N m, $|\boldsymbol{\tau}|=6\sqrt{5}$ N m &nbsp;&middot;&nbsp; <span class="ans">(b)</span> <span data-lang="en">direction $\langle 2,1,-3\rangle$, point $(3,3,0)$, parametric $x=3+2t$, $y=3+t$, $z=-3t$</span><span data-lang="zh">方向 $\langle 2,1,-3\rangle$，点 $(3,3,0)$，参数方程 $x=3+2t$，$y=3+t$，$z=-3t$</span> &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">(i) ellipsoid, (ii) elliptic paraboloid (axis along $z$), (iii) hyperboloid of one sheet (axis along $z$)</span><span data-lang="zh">(i) 椭球面，(ii) 椭圆抛物面（轴沿 $z$ 轴），(iii) 单叶双曲面（轴沿 $z$ 轴）</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Torque as a cross product</span><span data-lang="zh">(a) 用叉积计算力矩</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Compute $\boldsymbol{\tau} = \mathbf{r}\times\mathbf{F}$ using the $3\times 3$ determinant: (M1)</span><span data-lang="zh">用 $3\times 3$ 行列式计算 $\boldsymbol{\tau} = \mathbf{r}\times\mathbf{F}$：(M1)</span></p>
+      $$ \boldsymbol{\tau} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\2&-1&3\\0&4&-2\end{vmatrix} = \langle (-1)(-2)-3\cdot 4,\;3\cdot 0-2\cdot(-2),\;2\cdot 4-(-1)\cdot 0\rangle = \langle 2-12,\;0+4,\;8-0\rangle = \langle -10,4,8\rangle. $$
+      <p><span data-lang="en">(A1) The magnitude is $|\boldsymbol{\tau}|=\sqrt{100+16+64}=\sqrt{180}=6\sqrt{5}$ N m. (A1)</span><span data-lang="zh">(A1) 模长为 $|\boldsymbol{\tau}|=\sqrt{100+16+64}=\sqrt{180}=6\sqrt{5}$ N m。(A1)</span></p>
+      <p><span data-lang="en">The torque vector $\langle -10,4,8\rangle$ is perpendicular to both $\mathbf{r}$ and $\mathbf{F}$; its direction gives the axis of rotation by the right-hand rule.</span><span data-lang="zh">力矩向量 $\langle -10,4,8\rangle$ 同时垂直于 $\mathbf{r}$ 和 $\mathbf{F}$；其方向由右手定则给出转轴方向。</span></p>
+      <h4><span data-lang="en">(b) Intersection line of two planes</span><span data-lang="zh">(b) 两平面的交线</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Direction vector: $\mathbf{n}_1\times\mathbf{n}_2 = \langle 1,1,1\rangle\times\langle 2,-1,1\rangle$. (M1)</span><span data-lang="zh">方向向量：$\mathbf{n}_1\times\mathbf{n}_2 = \langle 1,1,1\rangle\times\langle 2,-1,1\rangle$。(M1)</span></p>
+      $$ \mathbf{n}_1\times\mathbf{n}_2 = \langle 1\cdot 1-1\cdot(-1),\;1\cdot 2-1\cdot 1,\;1\cdot(-1)-1\cdot 2\rangle = \langle 2,1,-3\rangle. $$
+      <p><span data-lang="en">Find a point: set $z=0$. Then $x+y=6$ and $2x-y=3$. Adding: $3x=9$, $x=3$, $y=3$. Point $(3,3,0)$ lies on both planes (verify: $3+3+0=6$ ✓; $6-3+0=3$ ✓). (A1) Parametric equations of the intersection line:</span><span data-lang="zh">求一个点：令 $z=0$。则 $x+y=6$，$2x-y=3$。两式相加：$3x=9$，$x=3$，$y=3$。点 $(3,3,0)$ 在两平面上（验证：$3+3+0=6$ ✓；$6-3+0=3$ ✓）。(A1) 交线的参数方程：</span></p>
+      $$ x = 3+2t,\quad y = 3+t,\quad z = -3t. $$
+      <h4><span data-lang="en">(c) Quadric surface identification</span><span data-lang="zh">(c) 二次曲面识别</span> <span class="marks-call">A1·A1</span></h4>
+      <p><span data-lang="en">(i) $\dfrac{x^2}{4}+\dfrac{y^2}{9}+z^2=1$: this matches $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$ with $a=2$, $b=3$, $c=1$. It is an <strong>ellipsoid</strong>.</span><span data-lang="zh">(i) $\dfrac{x^2}{4}+\dfrac{y^2}{9}+z^2=1$：符合 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$，其中 $a=2$，$b=3$，$c=1$。这是<strong>椭球面</strong>。</span></p>
+      <p><span data-lang="en">(ii) $z = x^2+\dfrac{y^2}{4}$: this matches $z = \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}$ (opening in the positive $z$-direction). It is an <strong>elliptic paraboloid</strong> with axis along the $z$-axis.</span><span data-lang="zh">(ii) $z = x^2+\dfrac{y^2}{4}$：符合 $z = \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}$（沿正 $z$ 方向开口）。这是轴沿 $z$ 轴的<strong>椭圆抛物面</strong>。</span></p>
+      <p><span data-lang="en">(iii) $x^2+y^2-z^2=1$: this matches $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=1$ with positive sum minus one squared term. It is a <strong>hyperboloid of one sheet</strong> with axis along the $z$-axis. (A1 for two correct; A1 for all three correct)</span><span data-lang="zh">(iii) $x^2+y^2-z^2=1$：符合 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=1$，正项之和减去一个平方项。这是轴沿 $z$ 轴的<strong>单叶双曲面</strong>。（答对两个 A1；答对全部三个 A1）</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The torque cross product encodes both the magnitude of the rotational effect and its axis: the right-hand rule turns $\mathbf{r}$ toward $\mathbf{F}$ and the thumb points along $\boldsymbol{\tau}$. For quadric surfaces, the standard classification rule is: all positive terms on the left equal to $1$ gives an ellipsoid; two positive and one negative give a hyperboloid of one sheet; one missing coordinate on the right of an equation gives a paraboloid. Hyperboloids of two sheets arise when there are two negative squared terms, giving $\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}-\tfrac{z^2}{c^2}=-1$ (or equivalently $\tfrac{z^2}{c^2}-\tfrac{x^2}{a^2}-\tfrac{y^2}{b^2}=1$).</span><span data-lang="zh">力矩叉积同时蕴含旋转效果的大小和轴：右手定则将 $\mathbf{r}$ 转向 $\mathbf{F}$，拇指指向 $\boldsymbol{\tau}$ 的方向。对于二次曲面，标准分类规则为：左边全正项等于 $1$ 为椭球面；两正一负为单叶双曲面；方程右边缺少一个坐标为抛物面。两叶双曲面出现在有两个负平方项时，形如 $\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}-\tfrac{z^2}{c^2}=-1$（等价于 $\tfrac{z^2}{c^2}-\tfrac{x^2}{a^2}-\tfrac{y^2}{b^2}=1$）。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中遇到这个单元的难题了吗？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约丁睿学者导师的15分钟免费咨询，在下次期中或期末考试前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c1_vectors_and_the_geometry_of_space__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">免费预约咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_C1_Vectors_and_the_Geometry_of_Space.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_C1_Vectors_and_the_Geometry_of_Space_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit C1 Solutions</span><span data-lang="zh">大学微积分 &middot; 第C1单元解答</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">配套练习题 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第1至7节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

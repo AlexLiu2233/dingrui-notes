@@ -1,0 +1,849 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High School Computer Science — Control Flow — Solutions | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/High%20School%20Computer%20Science/Practice%20Questions/Solutions/Unit_3_Control_Flow_Solutions.html">
+<meta name="description" content="Worked solutions for Control Flow in High School Computer Science. Step by step answers from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="High School Computer Science — Control Flow — Solutions | Dingrui Scholars">
+<meta property="og:description" content="Worked solutions for Control Flow in High School Computer Science. Step by step answers from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/High%20School%20Computer%20Science/Practice%20Questions/Solutions/Unit_3_Control_Flow_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="High School Computer Science — Control Flow — Solutions | Dingrui Scholars">
+<meta name="twitter:description" content="Worked solutions for Control Flow in High School Computer Science. Step by step answers from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<!-- dingrui:version v1  dingrui:pair-key HS-CS-3  dingrui:doc-type solutions -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style>
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --easy-bg:#E7F2E3; --easy-ink:#2F6B2F; --easy-rule:#79A977;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --region-bg:#F5F2EE; --region-ink:#3A322B; --region-rule:#B5A68F;
+    --paper-bg:#FBE9E9;  --paper-ink:#7A2E2E;  --paper-rule:#C97A7A;
+    --honors-bg:#FDF5EC; --honors-ink:#7A5618; --honors-rule:#C4956A;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+    --font-body:'Times New Roman', Times, Georgia, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', serif;
+    --font-sans:'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:var(--font-body);font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:var(--font-sans);font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:var(--font-sans);text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:var(--font-sans);font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:var(--font-sans);font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.easy{background:var(--easy-bg);color:var(--easy-ink);border-color:var(--easy-rule);}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .pill.region{background:var(--region-bg);color:var(--region-ink);border-color:var(--region-rule);letter-spacing:.08em;}
+  .pill.paper {background:var(--paper-bg); color:var(--paper-ink); border-color:var(--paper-rule);}
+  .pill.honors{background:var(--honors-bg);color:var(--honors-ink);border-color:var(--honors-rule);text-transform:uppercase;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .draft-banner{font-family:var(--font-sans);font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-sans);border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:var(--font-sans);font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q.app{border-left-color:#C4956A;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:var(--font-sans);}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .q-body pre{font-family:var(--font-mono);font-size:10pt;background:#f4f1ee;border:1px solid #d8cdb8;border-radius:5px;padding:10px 14px;margin:8px 0;overflow-x:auto;line-height:1.4;}
+  .q-body code{font-family:var(--font-mono);font-size:10pt;background:#f4f1ee;padding:1px 5px;border-radius:3px;border:1px solid #d8cdb8;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:var(--font-sans);font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:var(--font-sans);font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul,.solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution pre{font-family:var(--font-mono);font-size:10pt;background:#e8f2e3;border:1px solid #b5d4a0;border-radius:5px;padding:10px 14px;margin:8px 0;overflow-x:auto;line-height:1.4;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  .solution .distractor{font-family:var(--font-sans);font-size:10pt;color:#3a3a3a;background:#fff;border:1px solid #d4e4cb;border-radius:4px;padding:8px 12px;margin-top:8px;}
+  .solution .distractor .lab{color:var(--maroon);font-weight:700;margin-right:6px;}
+  .trace-table{font-family:'JetBrains Mono',monospace;font-size:10pt;border-collapse:collapse;margin:8px 0;width:auto;}
+  .trace-table th{background:#d4e4cb;border:1px solid #9BBD7A;padding:5px 14px;color:#2F4E1E;font-weight:700;}
+  .trace-table td{border:1px solid #9BBD7A;padding:5px 14px;text-align:center;background:#f1f7ee;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:var(--font-sans);font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  .lang-bar{display:flex;justify-content:center;margin:6px 0 10px;}
+  .lang-btn{font-family:var(--font-sans);font-weight:700;font-size:9pt;letter-spacing:.1em;padding:4px 14px;border:1px solid var(--maroon);background:#fff;color:var(--maroon);border-radius:999px;cursor:pointer;transition:all 0.2s;}
+  .lang-btn:hover{background:var(--maroon);color:#fff;}
+  body:not(.lang-zh) [data-lang="zh"] { display: none; }
+  body.lang-zh       [data-lang="en"] { display: none; }
+  body.lang-zh{font-family:var(--font-sans);}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  .consult-cta{border:1.5px solid var(--maroon);border-radius:8px;padding:12px 16px;margin:22px 0 6px;text-align:center;background:var(--paper-bg);break-inside:avoid;}
+  .consult-cta__lead{display:block;font-family:var(--font-sans);font-weight:700;font-size:11pt;color:var(--maroon);}
+  .consult-cta__body{display:block;font-family:var(--font-sans);font-size:9.5pt;color:var(--muted);margin:3px 0 6px;}
+  .consult-cta__btn{display:inline-block;font-family:var(--font-sans);font-weight:700;font-size:10pt;color:var(--maroon);text-decoration:underline;}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}.draft-banner{display:none;}.lang-bar{display:none;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "High School Computer Science — Control Flow — Solutions",
+  "description": "Worked solutions for Control Flow in High School Computer Science. Step by step answers from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/High%20School%20Computer%20Science/Practice%20Questions/Solutions/Unit_3_Control_Flow_Solutions.html",
+  "inLanguage": ["en", "zh"],
+  "learningResourceType": "Solutions",
+  "educationalLevel": "High School",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+</div>
+
+<div class="brand">H&nbsp;I&nbsp;G&nbsp;H&nbsp;&nbsp;S&nbsp;C&nbsp;H&nbsp;O&nbsp;O&nbsp;L&nbsp;&nbsp;C&nbsp;O&nbsp;M&nbsp;P&nbsp;U&nbsp;T&nbsp;E&nbsp;R&nbsp;&nbsp;S&nbsp;C&nbsp;I&nbsp;E&nbsp;N&nbsp;C&nbsp;E</div>
+<div class="chapter-tag"><span data-lang="en">Solutions</span><span data-lang="zh">详解</span></div>
+<h1 class="chapter-title"><span data-lang="en">Control Flow &middot; Solutions</span><span data-lang="zh">控制流程 &middot; 详解</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the Practice Set &middot; Mark-by-mark walkthroughs &middot; AP CSP-Feeder / US / ON / BC / AB styles</span><span data-lang="zh">练习题配套详解 &middot; 逐分讲解 &middot; AP CSP 衔接 / 美 / 安 / 卑 / 阿省考风格</span></p>
+
+<div class="legend">
+  <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+  <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+  <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+  <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+  <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+  <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+  <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">AB</span><span data-lang="zh">阿</span></span>
+  <span class="pill paper"><span data-lang="en">AP CSP-style MCQ</span><span data-lang="zh">AP CSP 风格选择题</span></span>
+  <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+  <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+  <span class="pill paper"><span data-lang="en">BC Provincial-style</span><span data-lang="zh">卑诗省考风格</span></span>
+  <span class="pill paper"><span data-lang="en">AB/Universal Applied</span><span data-lang="zh">阿省/通用应用题</span></span>
+  <span class="pill honors"><span data-lang="en">Honors</span><span data-lang="zh">荣誉级</span></span>
+</div>
+
+<hr class="thick"><hr class="thin">
+<p class="draft-banner"><code>v1</code> &middot; <span data-lang="en">12 solutions &middot; ~81 marks &middot; companion Practice: <code>../Unit_3_Control_Flow_Practice.html</code></span><span data-lang="zh">共 12 题详解 &middot; 约 81 分 &middot; 配套练习题：<code>../Unit_3_Control_Flow_Practice.html</code></span></p>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART I  SHORT RESPONSE  SOLUTIONS   5 Qs  25 marks
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART I &nbsp;&middot;&nbsp; SHORT RESPONSE &nbsp;&middot;&nbsp; SOLUTIONS</span><span data-lang="zh">第一部分 &nbsp;&middot;&nbsp; 短答题 &nbsp;&middot;&nbsp; 详解</span></span><span class="part-meta"><span data-lang="en">25 marks</span><span data-lang="zh">共 25 分</span></span></div>
+
+<!-- S1 -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-style MCQ</span><span data-lang="zh">AP CSP 风格选择题</span></span>
+    <span class="pill topic">&sect;1 <span data-lang="en">Boolean Conditions</span><span data-lang="zh">布尔条件</span> &middot; AP CSP 3.6</span>
+    <span class="pill marks"><span data-lang="en">[3 marks]</span><span data-lang="zh">[3 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Which Boolean expression evaluates to <code>True</code> when <code>x = 7</code>?</span><span data-lang="zh">当 <code>x = 7</code> 时，哪个布尔表达式的值为 <code>True</code>？</span></p>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answer: <span class="ans">(B)</span> - <code>x &gt; 5 and x &lt; 10</code></span><span data-lang="zh">答案：<span class="ans">(B)</span> - <code>x &gt; 5 and x &lt; 10</code></span></div>
+      <div class="rationale">
+        <p><span data-lang="en">Evaluate each option with <code>x = 7</code>: <span class="marks-call">[1]</span></span><span data-lang="zh">将 <code>x = 7</code> 代入每个选项求值：<span class="marks-call">[1]</span></span></p>
+        <div class="distractor"><span class="lab">(A)</span> <span data-lang="en"><code>x == 6</code> → <code>7 == 6</code> → <code>False</code>. Incorrect.</span><span data-lang="zh"><code>x == 6</code> → <code>7 == 6</code> → <code>False</code>。不正确。</span></div>
+        <div class="distractor"><span class="lab">(B)</span> <span data-lang="en"><code>x &gt; 5 and x &lt; 10</code> → <code>7 &gt; 5</code> is <code>True</code> AND <code>7 &lt; 10</code> is <code>True</code> → <code>True and True</code> → <code>True</code>. Correct. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>x &gt; 5 and x &lt; 10</code> → <code>7 &gt; 5</code> 为 <code>True</code> 且 <code>7 &lt; 10</code> 为 <code>True</code> → <code>True and True</code> → <code>True</code>。正确。<span class="marks-call">[1]</span></span></div>
+        <div class="distractor"><span class="lab">(C)</span> <span data-lang="en"><code>x != 7</code> → <code>7 != 7</code> → <code>False</code>. Incorrect.</span><span data-lang="zh"><code>x != 7</code> → <code>7 != 7</code> → <code>False</code>。不正确。</span></div>
+        <div class="distractor"><span class="lab">(D)</span> <span data-lang="en"><code>x &gt; 10 or x &lt; 3</code> → <code>7 &gt; 10</code> is <code>False</code> OR <code>7 &lt; 3</code> is <code>False</code> → <code>False or False</code> → <code>False</code>. Incorrect. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>x &gt; 10 or x &lt; 3</code> → <code>7 &gt; 10</code> 为 <code>False</code> 或 <code>7 &lt; 3</code> 为 <code>False</code> → <code>False or False</code> → <code>False</code>。不正确。<span class="marks-call">[1]</span></span></div>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">The <code>and</code> operator requires BOTH sub-conditions to be True simultaneously. Here, 7 lies strictly between 5 and 10, satisfying both halves. Option (D) is a common trap: <code>or</code> needs only one side True, but neither side is True for x = 7.</span><span data-lang="zh"><code>and</code> 运算符要求两个子条件同时为 True。这里 7 严格介于 5 和 10 之间，两个子条件均满足。选项 (D) 是常见陷阱：<code>or</code> 只需一边为 True，但 x = 7 时两边均为 False。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S2 -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-style MCQ</span><span data-lang="zh">AP CSP 风格选择题</span></span>
+    <span class="pill topic">&sect;2 <span data-lang="en">if / elif / else</span><span data-lang="zh">if / elif / else</span> &middot; AP CSP 3.6</span>
+    <span class="pill marks"><span data-lang="en">[3 marks]</span><span data-lang="zh">[3 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">What does the following program output when <code>score = 75</code>?</span><span data-lang="zh">当 <code>score = 75</code> 时，以下程序输出什么？</span></p>
+    <pre><code>if score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")
+elif score >= 70:
+    print("C")
+else:
+    print("F")</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answer: <span class="ans">(C)</span> - output is <code>C</code></span><span data-lang="zh">答案：<span class="ans">(C)</span> - 输出为 <code>C</code></span></div>
+      <div class="rationale">
+        <p><span data-lang="en">Trace the if/elif chain top to bottom with <code>score = 75</code>: <span class="marks-call">[1]</span></span><span data-lang="zh">以 <code>score = 75</code> 从上到下追踪 if/elif 链：<span class="marks-call">[1]</span></span></p>
+        <p><span data-lang="en"><code>score &gt;= 90</code> → <code>75 &gt;= 90</code> → False, skip. <code>score &gt;= 80</code> → <code>75 &gt;= 80</code> → False, skip. <span class="marks-call">[1]</span> <code>score &gt;= 70</code> → <code>75 &gt;= 70</code> → True, execute <code>print("C")</code>. The remaining branches are skipped. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>score &gt;= 90</code> → <code>75 &gt;= 90</code> → False，跳过。<code>score &gt;= 80</code> → <code>75 &gt;= 80</code> → False，跳过。<span class="marks-call">[1]</span> <code>score &gt;= 70</code> → <code>75 &gt;= 70</code> → True，执行 <code>print("C")</code>，其余分支跳过。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">In an if/elif/else chain, only the FIRST branch whose condition is True executes. Once one branch fires, Python skips all remaining branches. A score of 75 satisfies <code>&gt;= 70</code> but also technically satisfies lower thresholds, which do not matter here because the chain stops at the first match.</span><span data-lang="zh">在 if/elif/else 链中，只有第一个条件为 True 的分支会执行。一旦某个分支触发，Python 会跳过所有后续分支。75 满足 <code>&gt;= 70</code>，但链式结构在首次匹配处停止，后续条件不再检查。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S3 -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+    <span class="pill topic">&sect;3 <span data-lang="en">Nested Conditionals</span><span data-lang="zh">嵌套条件</span> &middot; ICS3U A2.3</span>
+    <span class="pill marks"><span data-lang="en">[4 marks]</span><span data-lang="zh">[4 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Trace the nested conditional below with <code>age = 15</code> and <code>height = 130</code>.</span><span data-lang="zh">以 <code>age = 15</code>、<code>height = 130</code> 追踪以下嵌套条件。</span></p>
+    <pre><code>IF age >= 12 THEN
+    IF height >= 140 THEN
+        OUTPUT "Welcome!"
+    ELSE
+        OUTPUT "Too short."
+    END IF
+ELSE
+    OUTPUT "Too young."
+END IF</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answer: <span class="ans">"Too short."</span></span><span data-lang="zh">答案：<span class="ans">"Too short."</span></span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Output [1]</span><span data-lang="zh">第 (a) 部分 - 输出 [1]</span></h4>
+        <p><span data-lang="en">Output: <code>Too short.</code> <span class="marks-call">[1]</span></span><span data-lang="zh">输出：<code>Too short.</code> <span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (b) - Why the inner conditional executes [2]</span><span data-lang="zh">第 (b) 部分 - 内层条件为何被执行 [2]</span></h4>
+        <p><span data-lang="en">The outer condition <code>age &gt;= 12</code> is checked first: <code>15 &gt;= 12</code> is True, so execution enters the THEN block. <span class="marks-call">[1]</span> Inside that block, the inner condition <code>height &gt;= 140</code> is reached: <code>130 &gt;= 140</code> is False, so the ELSE branch fires and outputs "Too short." <span class="marks-call">[1]</span></span><span data-lang="zh">首先检查外层条件 <code>age &gt;= 12</code>：<code>15 &gt;= 12</code> 为 True，故进入 THEN 块。<span class="marks-call">[1]</span> 在该块内，内层条件 <code>height &gt;= 140</code> 被检查：<code>130 &gt;= 140</code> 为 False，故执行 ELSE 分支，输出 "Too short."。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (c) - Output if age = 10 [1]</span><span data-lang="zh">第 (c) 部分 - age = 10 时的输出 [1]</span></h4>
+        <p><span data-lang="en">Output: <code>Too young.</code> - because <code>10 &gt;= 12</code> is False so the outer ELSE fires and the inner conditional is never reached. <span class="marks-call">[1]</span></span><span data-lang="zh">输出：<code>Too young.</code> - 因为 <code>10 &gt;= 12</code> 为 False，外层 ELSE 分支触发，内层条件不会被执行到。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">In nested conditionals, the inner IF is only reachable if the outer IF condition is True. This creates a "guard" pattern: pass the first gate before the second is even checked. Here the age check guards the height check.</span><span data-lang="zh">在嵌套条件中，内层 IF 只有在外层 IF 条件为 True 时才可到达。这形成了"守卫"模式：只有通过第一道关卡，才会检查第二道。这里年龄检查保护了身高检查。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S4 -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">AB</span><span data-lang="zh">阿</span></span>
+    <span class="pill paper"><span data-lang="en">AB/Universal Applied</span><span data-lang="zh">阿省/通用应用题</span></span>
+    <span class="pill topic">&sect;4 <span data-lang="en">while Loops</span><span data-lang="zh">while 循环</span> &middot; CSE1120 outcome 1</span>
+    <span class="pill marks"><span data-lang="en">[7 marks]</span><span data-lang="zh">[7 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the pseudocode below.</span><span data-lang="zh">考察以下伪代码。</span></p>
+    <pre><code>SET n TO 0
+WHILE n &lt; 5:
+    SET n TO n + 2
+OUTPUT n</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Final output: <span class="ans">6</span></span><span data-lang="zh">最终输出：<span class="ans">6</span></span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Trace table [3]</span><span data-lang="zh">第 (a) 部分 - 追踪表 [3]</span></h4>
+        <table class="trace-table">
+          <tr><th><span data-lang="en">Iteration</span><span data-lang="zh">迭代</span></th><th><span data-lang="en">n before body</span><span data-lang="zh">循环体前 n</span></th><th><span data-lang="en">Condition (n &lt; 5)?</span><span data-lang="zh">条件（n &lt; 5）？</span></th><th><span data-lang="en">n after body</span><span data-lang="zh">循环体后 n</span></th></tr>
+          <tr><td>1</td><td>0</td><td>True</td><td>2</td></tr>
+          <tr><td>2</td><td>2</td><td>True</td><td>4</td></tr>
+          <tr><td>3</td><td>4</td><td>True</td><td>6</td></tr>
+        </table>
+        <p><span data-lang="en">After iteration 3: n = 6. Check condition: <code>6 &lt; 5</code> → False. Loop exits. <span class="marks-call">[3]</span></span><span data-lang="zh">第 3 次迭代后：n = 6。检查条件：<code>6 &lt; 5</code> → False。循环退出。<span class="marks-call">[3]</span></span></p>
+        <h4><span data-lang="en">Part (b) - Final output [1]</span><span data-lang="zh">第 (b) 部分 - 最终输出 [1]</span></h4>
+        <p><span data-lang="en"><code>OUTPUT n</code> prints <code>6</code>. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>OUTPUT n</code> 打印 <code>6</code>。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (c) - Number of iterations [2]</span><span data-lang="zh">第 (c) 部分 - 循环次数 [2]</span></h4>
+        <p><span data-lang="en">The loop body executes <strong>3</strong> times. <span class="marks-call">[1]</span> Justification: n starts at 0 and increments by 2 each time (0 → 2 → 4 → 6). The condition <code>n &lt; 5</code> is True for n = 0, 2, 4 and False for n = 6, giving exactly 3 iterations. <span class="marks-call">[1]</span></span><span data-lang="zh">循环体执行 <strong>3</strong> 次。<span class="marks-call">[1]</span> 理由：n 从 0 开始，每次加 2（0 → 2 → 4 → 6）。条件 <code>n &lt; 5</code> 在 n = 0, 2, 4 时为 True，n = 6 时为 False，恰好 3 次迭代。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (d) - Condition for exactly 2 iterations [1]</span><span data-lang="zh">第 (d) 部分 - 使循环恰好执行 2 次的条件 [1]</span></h4>
+        <p><span data-lang="en">Change the condition to <code>n &lt; 4</code>. Then: iteration 1 (n=0, True, n becomes 2), iteration 2 (n=2, True, n becomes 4), check: <code>4 &lt; 4</code> → False, exit. Exactly 2 iterations. <span class="marks-call">[1]</span></span><span data-lang="zh">将条件改为 <code>n &lt; 4</code>。则：第 1 次（n=0，True，n 变为 2），第 2 次（n=2，True，n 变为 4），检查：<code>4 &lt; 4</code> → False，退出。恰好 2 次。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">A while loop's condition is checked BEFORE each iteration, not after. This means if the condition is False from the start, the body never runs. The final value of n may overshoot the threshold (6 &gt; 5 here) because the update happens inside the body before the next condition check.</span><span data-lang="zh">while 循环的条件在每次迭代前检查，而非之后。因此若初始条件即为 False，循环体永远不执行。n 的最终值可能超过阈值（此处 6 &gt; 5），因为更新发生在循环体内，下次条件检查之前。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S5 -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill paper"><span data-lang="en">BC Provincial-style</span><span data-lang="zh">卑诗省考风格</span></span>
+    <span class="pill topic">&sect;5 <span data-lang="en">for Loops</span><span data-lang="zh">for 循环</span> &middot; CSTA 3A-AP-15</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A student writes the following program to print multiples of 2 from 2 to 6 inclusive.</span><span data-lang="zh">一名学生编写以下程序，打印 2 到 6（含）的 2 的倍数。</span></p>
+    <pre><code>for i in range(2, 8, 2):
+    print(i)</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Output: <span class="ans">2 / 4 / 6</span> (one per line)</span><span data-lang="zh">输出：<span class="ans">2 / 4 / 6</span>（每行一个）</span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Values of i [2]</span><span data-lang="zh">第 (a) 部分 - i 的取值 [2]</span></h4>
+        <p><span data-lang="en"><code>range(2, 8, 2)</code> generates values starting at 2, stepping by 2, stopping before 8: <strong>2, 4, 6</strong>. <span class="marks-call">[2]</span></span><span data-lang="zh"><code>range(2, 8, 2)</code> 从 2 开始，步长 2，在 8 之前停止，生成：<strong>2, 4, 6</strong>。<span class="marks-call">[2]</span></span></p>
+        <h4><span data-lang="en">Part (b) - Exact output [2]</span><span data-lang="zh">第 (b) 部分 - 精确输出 [2]</span></h4>
+        <pre>2
+4
+6</pre>
+        <p><span data-lang="en"><span class="marks-call">[2]</span> (1 mark per correct line; all three required for full marks)</span><span data-lang="zh"><span class="marks-call">[2]</span>（每行正确得 1 分；三行全对才能得满分）</span></p>
+        <h4><span data-lang="en">Part (c) - Error in range(1, 10) and correction [2]</span><span data-lang="zh">第 (c) 部分 - range(1, 10) 的错误与纠正 [2]</span></h4>
+        <p><span data-lang="en">Error: <code>range(1, 10)</code> stops before 10, so 10 is not included; the output would be 1 through 9 only. <span class="marks-call">[1]</span> Correction: use <code>range(1, 11)</code> so the stop value is 11, which causes Python to include 10. <span class="marks-call">[1]</span></span><span data-lang="zh">错误：<code>range(1, 10)</code> 在 10 之前停止，因此 10 不被包含，输出仅为 1 到 9。<span class="marks-call">[1]</span> 纠正：改用 <code>range(1, 11)</code>，停止值为 11，Python 因此会包含 10。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (d) - When for is preferred over while [2]</span><span data-lang="zh">第 (d) 部分 - for 优于 while 的情形 [2]</span></h4>
+        <p><span data-lang="en">A <code>for</code> loop is preferred when the number of iterations is known in advance (or when iterating over a defined sequence). <span class="marks-call">[1]</span> Example scenario: printing each student's name from a class list of 30 students; the count is fixed so <code>for name in students:</code> is cleaner than maintaining a counter in a while loop. <span class="marks-call">[1]</span></span><span data-lang="zh">当迭代次数事先已知（或遍历已定义的序列）时，<code>for</code> 循环更合适。<span class="marks-call">[1]</span> 应用场景举例：打印 30 名学生名单中的每个名字，次数固定，<code>for name in students:</code> 比在 while 循环中维护计数器更简洁。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en"><code>range(start, stop, step)</code>: start is inclusive, stop is exclusive. The most common mistake is forgetting that the stop value is excluded, causing an off-by-one error. Always set stop = desired_last_value + 1 for inclusive counting.</span><span data-lang="zh"><code>range(start, stop, step)</code>：start 含，stop 不含。最常见的错误是忘记 stop 值不被包含，导致差一错误。对于含端点计数，始终将 stop 设为所需最大值加一。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART II  EXTENDED RESPONSE  SOLUTIONS   4 Qs  31 marks
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART II &nbsp;&middot;&nbsp; EXTENDED RESPONSE &nbsp;&middot;&nbsp; SOLUTIONS</span><span data-lang="zh">第二部分 &nbsp;&middot;&nbsp; 简答题 &nbsp;&middot;&nbsp; 详解</span></span><span class="part-meta"><span data-lang="en">31 marks</span><span data-lang="zh">共 31 分</span></span></div>
+
+<!-- S6 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic">&sect;6 <span data-lang="en">break &amp; continue</span><span data-lang="zh">break 与 continue</span> &middot; CSE1120 2.8</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Study the two programs below.</span><span data-lang="zh">研究以下两个程序。</span></p>
+    <pre><code>numbers = [3, 7, 12, 5, 18]
+for n in numbers:
+    if n &gt; 10:
+        print("Found:", n)
+        break</code></pre>
+    <pre><code>scores = [5, -3, 8, -1, 4]
+total = 0
+for s in scores:
+    if s &lt; 0:
+        continue
+    total += s
+print(total)</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Program A output: <span class="ans">Found: 12</span> &nbsp;|&nbsp; Program B output: <span class="ans">17</span></span><span data-lang="zh">程序 A 输出：<span class="ans">Found: 12</span> &nbsp;|&nbsp; 程序 B 输出：<span class="ans">17</span></span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Trace Program A [3]</span><span data-lang="zh">第 (a) 部分 - 追踪程序 A [3]</span></h4>
+        <table class="trace-table">
+          <tr><th>n</th><th><span data-lang="en">n &gt; 10?</span><span data-lang="zh">n &gt; 10？</span></th><th><span data-lang="en">Action</span><span data-lang="zh">操作</span></th></tr>
+          <tr><td>3</td><td>False</td><td><span data-lang="en">continue loop</span><span data-lang="zh">继续循环</span></td></tr>
+          <tr><td>7</td><td>False</td><td><span data-lang="en">continue loop</span><span data-lang="zh">继续循环</span></td></tr>
+          <tr><td>12</td><td>True</td><td><span data-lang="en">print "Found: 12", break</span><span data-lang="zh">打印 "Found: 12"，退出</span></td></tr>
+        </table>
+        <p><span data-lang="en">Output: <code>Found: 12</code>. <span class="marks-call">[1]</span> The element that caused the loop to exit is <code>12</code> (first value &gt; 10). <span class="marks-call">[1]</span> Elements 5 and 18 are never reached. <span class="marks-call">[1]</span></span><span data-lang="zh">输出：<code>Found: 12</code>。<span class="marks-call">[1]</span> 导致循环退出的元素是 <code>12</code>（第一个大于 10 的值）。<span class="marks-call">[1]</span> 元素 5 和 18 从未被访问到。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (b) - Trace Program B step by step [3]</span><span data-lang="zh">第 (b) 部分 - 逐步追踪程序 B [3]</span></h4>
+        <table class="trace-table">
+          <tr><th>s</th><th><span data-lang="en">s &lt; 0?</span><span data-lang="zh">s &lt; 0？</span></th><th><span data-lang="en">Action</span><span data-lang="zh">操作</span></th><th><span data-lang="en">total after</span><span data-lang="zh">迭代后 total</span></th></tr>
+          <tr><td>5</td><td>False</td><td><span data-lang="en">total += 5</span><span data-lang="zh">total += 5</span></td><td>5</td></tr>
+          <tr><td>-3</td><td>True</td><td><span data-lang="en">continue (skip)</span><span data-lang="zh">continue（跳过）</span></td><td>5</td></tr>
+          <tr><td>8</td><td>False</td><td><span data-lang="en">total += 8</span><span data-lang="zh">total += 8</span></td><td>13</td></tr>
+          <tr><td>-1</td><td>True</td><td><span data-lang="en">continue (skip)</span><span data-lang="zh">continue（跳过）</span></td><td>13</td></tr>
+          <tr><td>4</td><td>False</td><td><span data-lang="en">total += 4</span><span data-lang="zh">total += 4</span></td><td>17</td></tr>
+        </table>
+        <p><span data-lang="en">Final output: <code>17</code>. <span class="marks-call">[3]</span> (1 mark per correct row group; deduct 1 for each incorrect total value)</span><span data-lang="zh">最终输出：<code>17</code>。<span class="marks-call">[3]</span>（每组正确行得 1 分；total 值每错一处扣 1 分）</span></p>
+        <h4><span data-lang="en">Part (c) - break vs continue [2]</span><span data-lang="zh">第 (c) 部分 - break 与 continue [2]</span></h4>
+        <p><span data-lang="en"><code>break</code> immediately exits the entire loop, skipping all remaining iterations. <span class="marks-call">[1]</span> <code>continue</code> skips only the remainder of the current iteration and jumps to the next one, keeping the loop running. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>break</code> 立即退出整个循环，跳过所有剩余迭代。<span class="marks-call">[1]</span> <code>continue</code> 仅跳过当前迭代的剩余部分，直接进入下一次迭代，循环继续运行。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">Use <code>break</code> when you have found what you need and further searching is wasteful. Use <code>continue</code> when you want to filter out certain items but still process everything else. Program A searches for the first large number; Program B accumulates only non-negative values.</span><span data-lang="zh">当你找到所需结果、无需继续搜索时，使用 <code>break</code>。当你想过滤掉某些项目、但仍需处理其余项目时，使用 <code>continue</code>。程序 A 查找第一个较大的数；程序 B 只累加非负数。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S7 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+    <span class="pill topic">&sect;7 <span data-lang="en">Nested Loops</span><span data-lang="zh">嵌套循环</span> &middot; ICS3U A2.3 / CSE1120 2.8.2</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A program uses nested loops to find all pairs <code>(i, j)</code> where i and j are in [1, 3] and <code>i + j == 4</code>.</span><span data-lang="zh">一个程序用嵌套循环找到满足 <code>i + j == 4</code> 的所有整数对 <code>(i, j)</code>，其中 i 和 j 均在 [1, 3] 内。</span></p>
+    <pre><code>FOR i FROM 1 TO 3:
+    FOR j FROM 1 TO 3:
+        IF i + j == 4 THEN
+            OUTPUT i, j
+        END IF
+    END FOR
+END FOR</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Pairs output: <span class="ans">(1, 3), (2, 2), (3, 1)</span></span><span data-lang="zh">输出的对：<span class="ans">(1, 3), (2, 2), (3, 1)</span></span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Total times inner body is checked [2]</span><span data-lang="zh">第 (a) 部分 - 内层循环体被检查的总次数 [2]</span></h4>
+        <p><span data-lang="en">The outer loop runs for i = 1, 2, 3 (3 values). <span class="marks-call">[1]</span> For each value of i, the inner loop runs for j = 1, 2, 3 (3 values). Total checks = 3 x 3 = <strong>9</strong>. <span class="marks-call">[1]</span></span><span data-lang="zh">外层循环对 i = 1, 2, 3 运行（共 3 次）。<span class="marks-call">[1]</span> 每个 i 值对应内层循环对 j = 1, 2, 3 运行（共 3 次）。总检查次数 = 3 x 3 = <strong>9</strong>。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (b) - All pairs satisfying i + j == 4 [3]</span><span data-lang="zh">第 (b) 部分 - 所有满足 i + j == 4 的对 [3]</span></h4>
+        <table class="trace-table">
+          <tr><th>i</th><th>j</th><th>i + j</th><th><span data-lang="en">== 4?</span><span data-lang="zh">== 4？</span></th><th><span data-lang="en">Output?</span><span data-lang="zh">是否输出？</span></th></tr>
+          <tr><td>1</td><td>1</td><td>2</td><td>No</td><td>-</td></tr>
+          <tr><td>1</td><td>2</td><td>3</td><td>No</td><td>-</td></tr>
+          <tr><td>1</td><td>3</td><td>4</td><td>Yes</td><td>(1, 3)</td></tr>
+          <tr><td>2</td><td>1</td><td>3</td><td>No</td><td>-</td></tr>
+          <tr><td>2</td><td>2</td><td>4</td><td>Yes</td><td>(2, 2)</td></tr>
+          <tr><td>2</td><td>3</td><td>5</td><td>No</td><td>-</td></tr>
+          <tr><td>3</td><td>1</td><td>4</td><td>Yes</td><td>(3, 1)</td></tr>
+          <tr><td>3</td><td>2</td><td>5</td><td>No</td><td>-</td></tr>
+          <tr><td>3</td><td>3</td><td>6</td><td>No</td><td>-</td></tr>
+        </table>
+        <p><span data-lang="en">Pairs output: <code>(1, 3)</code>, <code>(2, 2)</code>, <code>(3, 1)</code>. <span class="marks-call">[3]</span> (1 mark per correct pair)</span><span data-lang="zh">输出的对：<code>(1, 3)</code>、<code>(2, 2)</code>、<code>(3, 1)</code>。<span class="marks-call">[3]</span>（每对正确得 1 分）</span></p>
+        <h4><span data-lang="en">Part (c) - New outer loop for i from 1 to 5 [1]</span><span data-lang="zh">第 (c) 部分 - i 从 1 到 5 的新外层循环语句 [1]</span></h4>
+        <p><span data-lang="en"><code>FOR i FROM 1 TO 5</code> <span class="marks-call">[1]</span></span><span data-lang="zh"><code>FOR i FROM 1 TO 5</code> <span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (d) - Why two separate counter variables are required [2]</span><span data-lang="zh">第 (d) 部分 - 为何需要两个独立计数器变量 [2]</span></h4>
+        <p><span data-lang="en">Each counter tracks a different dimension of the iteration independently. <span class="marks-call">[1]</span> If both loops shared the same variable, advancing the inner loop would overwrite the outer loop's progress, making it impossible to enumerate all combinations of rows and columns correctly. <span class="marks-call">[1]</span></span><span data-lang="zh">每个计数器独立跟踪迭代的一个维度。<span class="marks-call">[1]</span> 若两个循环共用同一个变量，内层循环的推进会覆盖外层循环的进度，导致无法正确枚举行列的所有组合。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">Nested loops create a Cartesian product of their iteration sequences. For m outer iterations and n inner iterations, the inner body runs exactly m x n times. This is the foundation of 2D grid traversal, matrix operations, and exhaustive pair-searching algorithms.</span><span data-lang="zh">嵌套循环创建其迭代序列的笛卡尔积。外层 m 次、内层 n 次，则内层循环体恰好运行 m x n 次。这是二维网格遍历、矩阵运算和穷举对搜索算法的基础。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S8 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic">&sect;2 + &sect;4 <span data-lang="en">if inside while</span><span data-lang="zh">while 内嵌 if</span> &middot; CSTA 3A-AP-15</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A program accumulates a running total by repeatedly adding integers starting from 1. The loop stops as soon as the total exceeds 20.</span><span data-lang="zh">一个程序通过反复累加从 1 开始的整数来积累累计总和，当总和超过 20 时循环停止。</span></p>
+    <pre><code>SET total TO 0
+SET val TO 1
+WHILE total &lt;= 20:
+    SET total TO total + val
+    SET val TO val + 1
+OUTPUT total
+OUTPUT val</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Outputs: <span class="ans">total = 21, val = 7</span></span><span data-lang="zh">输出：<span class="ans">total = 21，val = 7</span></span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Complete trace table [4]</span><span data-lang="zh">第 (a) 部分 - 完整追踪表 [4]</span></h4>
+        <table class="trace-table">
+          <tr><th><span data-lang="en">Iter</span><span data-lang="zh">迭代</span></th><th><span data-lang="en">total after</span><span data-lang="zh">迭代后 total</span></th><th><span data-lang="en">val after</span><span data-lang="zh">迭代后 val</span></th><th><span data-lang="en">total &lt;= 20?</span><span data-lang="zh">total &lt;= 20？</span></th></tr>
+          <tr><td>1</td><td>1</td><td>2</td><td>True</td></tr>
+          <tr><td>2</td><td>3</td><td>3</td><td>True</td></tr>
+          <tr><td>3</td><td>6</td><td>4</td><td>True</td></tr>
+          <tr><td>4</td><td>10</td><td>5</td><td>True</td></tr>
+          <tr><td>5</td><td>15</td><td>6</td><td>True</td></tr>
+          <tr><td>6</td><td>21</td><td>7</td><td>False</td></tr>
+        </table>
+        <p><span data-lang="en"><span class="marks-call">[4]</span> (1 mark per two correct rows; all six rows must be filled)</span><span data-lang="zh"><span class="marks-call">[4]</span>（每两行正确得 1 分；六行须全部填写）</span></p>
+        <h4><span data-lang="en">Part (b) - Two values output [2]</span><span data-lang="zh">第 (b) 部分 - 程序输出的两个值 [2]</span></h4>
+        <p><span data-lang="en"><code>OUTPUT total</code> prints <code>21</code>. <span class="marks-call">[1]</span> <code>OUTPUT val</code> prints <code>7</code>. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>OUTPUT total</code> 打印 <code>21</code>。<span class="marks-call">[1]</span> <code>OUTPUT val</code> 打印 <code>7</code>。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (c) - Modified condition to exceed 50 [1]</span><span data-lang="zh">第 (c) 部分 - 超过 50 的修改条件 [1]</span></h4>
+        <p><span data-lang="en">Change <code>WHILE total &lt;= 20</code> to <code>WHILE total &lt;= 50</code>. <span class="marks-call">[1]</span></span><span data-lang="zh">将 <code>WHILE total &lt;= 20</code> 改为 <code>WHILE total &lt;= 50</code>。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (d) - Why while is more appropriate than for [1]</span><span data-lang="zh">第 (d) 部分 - while 比 for 更合适的原因 [1]</span></h4>
+        <p><span data-lang="en">A <code>while</code> loop is more appropriate because the number of iterations is not known in advance; the loop continues until a data-dependent condition (total exceeding the threshold) is met, which cannot be expressed cleanly with a fixed <code>range</code>. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>while</code> 循环更合适，因为迭代次数事先不可知；循环持续运行直到满足与数据相关的条件（total 超过阈值），这无法用固定的 <code>range</code> 简洁表达。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">The total here is the sum of 1+2+3+4+5+6 = 21. This follows the triangular number pattern: the n-th triangular number is n(n+1)/2. The loop runs until the cumulative sum first exceeds 20, which happens at n = 6 (sum = 21). Recognising this pattern helps verify the trace without enumerating every step.</span><span data-lang="zh">这里的 total 是 1+2+3+4+5+6 = 21，遵循三角数规律：第 n 个三角数为 n(n+1)/2。循环运行到累计和首次超过 20，在 n = 6（sum = 21）时发生。识别此规律有助于不逐步枚举就验证追踪结果。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S9 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill honors"><span data-lang="en">Honors</span><span data-lang="zh">荣誉级</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic">&sect;5 + &sect;7 <span data-lang="en">for + nested + analysis</span><span data-lang="zh">for + 嵌套 + 分析</span> &middot; CSTA 3A-AP-15</span>
+    <span class="pill marks"><span data-lang="en">[7 marks]</span><span data-lang="zh">[7 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A program prints a 2-row by 3-column grid of products.</span><span data-lang="zh">一个程序打印 2 行 3 列的乘积网格。</span></p>
+    <pre><code>for row in range(1, 3):
+    for col in range(1, 4):
+        print(row * col, end=" ")
+    print()</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Output: <span class="ans">1 2 3 &nbsp;/&nbsp; 2 4 6</span> (two lines)</span><span data-lang="zh">输出：<span class="ans">1 2 3 &nbsp;/&nbsp; 2 4 6</span>（两行）</span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Complete output [3]</span><span data-lang="zh">第 (a) 部分 - 完整输出 [3]</span></h4>
+        <p><span data-lang="en">row = 1: col = 1 prints <code>1 </code>, col = 2 prints <code>2 </code>, col = 3 prints <code>3 </code>, then <code>print()</code> moves to next line. <span class="marks-call">[1]</span></span><span data-lang="zh">row = 1：col = 1 打印 <code>1 </code>，col = 2 打印 <code>2 </code>，col = 3 打印 <code>3 </code>，<code>print()</code> 换行。<span class="marks-call">[1]</span></span></p>
+        <p><span data-lang="en">row = 2: col = 1 prints <code>2 </code>, col = 2 prints <code>4 </code>, col = 3 prints <code>6 </code>, then <code>print()</code> moves to next line. <span class="marks-call">[1]</span></span><span data-lang="zh">row = 2：col = 1 打印 <code>2 </code>，col = 2 打印 <code>4 </code>，col = 3 打印 <code>6 </code>，<code>print()</code> 换行。<span class="marks-call">[1]</span></span></p>
+        <pre>1 2 3
+2 4 6 </pre>
+        <p><span data-lang="en">(Each number is followed by a space; <code>print()</code> adds a newline after each row.) <span class="marks-call">[1]</span></span><span data-lang="zh">（每个数字后跟一个空格；<code>print()</code> 在每行结束后换行。）<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (b) - Total executions of inner print [1]</span><span data-lang="zh">第 (b) 部分 - 内层 print 的总执行次数 [1]</span></h4>
+        <p><span data-lang="en"><code>print(row * col, end=" ")</code> executes 2 (rows) x 3 (cols) = <strong>6</strong> times. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>print(row * col, end=" ")</code> 执行 2（行）x 3（列）= <strong>6</strong> 次。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (c) - Modified loop headers for 4 rows by 5 columns [2]</span><span data-lang="zh">第 (c) 部分 - 4 行 5 列的修改后循环头 [2]</span></h4>
+        <pre><code>for row in range(1, 5):
+for col in range(1, 6):</code></pre>
+        <p><span data-lang="en"><span class="marks-call">[1]</span> for the outer loop, <span class="marks-call">[1]</span> for the inner loop. (range stop = desired_last + 1)</span><span data-lang="zh">外层循环 <span class="marks-call">[1]</span>，内层循环 <span class="marks-call">[1]</span>。（range 的 stop = 所需最大值 + 1）</span></p>
+        <h4><span data-lang="en">Part (d) - Inner-body executions in terms of m and n [1]</span><span data-lang="zh">第 (d) 部分 - 用 m 和 n 表示内层循环体执行次数 [1]</span></h4>
+        <p><span data-lang="en">Total inner-body executions = <strong>m x n</strong>. <span class="marks-call">[1]</span></span><span data-lang="zh">内层循环体总执行次数 = <strong>m x n</strong>。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">The <code>end=" "</code> argument suppresses the default newline and replaces it with a space, so all values in a row print on one line. The bare <code>print()</code> at the outer loop level then emits the newline that separates rows. This technique is the standard pattern for printing 2D grids in Python.</span><span data-lang="zh"><code>end=" "</code> 参数抑制了默认换行符，替换为空格，使同一行的所有值打印在一行上。外层循环级别的 <code>print()</code> 负责在行之间输出换行符。这是 Python 打印二维网格的标准技巧。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART III  MODELING / APPLIED  SOLUTIONS   3 Qs  25 marks
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART III &nbsp;&middot;&nbsp; MODELING / APPLIED &nbsp;&middot;&nbsp; SOLUTIONS</span><span data-lang="zh">第三部分 &nbsp;&middot;&nbsp; 建模与应用 &nbsp;&middot;&nbsp; 详解</span></span><span class="part-meta"><span data-lang="en">25 marks</span><span data-lang="zh">共 25 分</span></span></div>
+
+<!-- S10 -->
+<div class="q app">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic">&sect;4 + &sect;5 <span data-lang="en">Loop selection + accumulator</span><span data-lang="zh">循环选择 + 累加器</span> &middot; ICS3U A2.2</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A program counts even numbers in a list and computes their sum.</span><span data-lang="zh">一个程序计算列表中偶数的个数，并计算它们的总和。</span></p>
+    <pre><code>data = [3, 8, 5, 12, 7, 4, 11, 6]
+count = 0
+total = 0
+for x in data:
+    if x % 2 == 0:
+        count += 1
+        total += x
+print(count)
+print(total)</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Outputs: <span class="ans">count = 4, total = 30</span></span><span data-lang="zh">输出：<span class="ans">count = 4，total = 30</span></span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Full trace [4]</span><span data-lang="zh">第 (a) 部分 - 完整追踪 [4]</span></h4>
+        <table class="trace-table">
+          <tr><th>x</th><th>x % 2 == 0?</th><th><span data-lang="en">count</span><span data-lang="zh">count</span></th><th><span data-lang="en">total</span><span data-lang="zh">total</span></th></tr>
+          <tr><td>3</td><td>False</td><td>0</td><td>0</td></tr>
+          <tr><td>8</td><td>True</td><td>1</td><td>8</td></tr>
+          <tr><td>5</td><td>False</td><td>1</td><td>8</td></tr>
+          <tr><td>12</td><td>True</td><td>2</td><td>20</td></tr>
+          <tr><td>7</td><td>False</td><td>2</td><td>20</td></tr>
+          <tr><td>4</td><td>True</td><td>3</td><td>24</td></tr>
+          <tr><td>11</td><td>False</td><td>3</td><td>24</td></tr>
+          <tr><td>6</td><td>True</td><td>4</td><td>30</td></tr>
+        </table>
+        <p><span data-lang="en"><span class="marks-call">[4]</span> (1 mark per two correct rows; penalise cumulative total errors)</span><span data-lang="zh"><span class="marks-call">[4]</span>（每两行正确得 1 分；累计 total 错误扣分）</span></p>
+        <h4><span data-lang="en">Part (b) - Two values output [2]</span><span data-lang="zh">第 (b) 部分 - 两个输出值 [2]</span></h4>
+        <p><span data-lang="en"><code>print(count)</code> outputs <code>4</code>. <span class="marks-call">[1]</span> <code>print(total)</code> outputs <code>30</code>. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>print(count)</code> 输出 <code>4</code>。<span class="marks-call">[1]</span> <code>print(total)</code> 输出 <code>30</code>。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (c) - Why continue is not used; alternative version [2]</span><span data-lang="zh">第 (c) 部分 - 未使用 continue 的原因；使用 continue 的替代版本 [2]</span></h4>
+        <p><span data-lang="en">The program uses an <code>if</code> block to only process even numbers; <code>continue</code> is not needed because the updates are already guarded inside the <code>if</code> body and odd numbers are simply skipped by not executing that block. <span class="marks-call">[1]</span></span><span data-lang="zh">程序使用 <code>if</code> 块来只处理偶数；不需要 <code>continue</code>，因为更新操作已在 <code>if</code> 体内受到保护，奇数只需不执行该块即可跳过。<span class="marks-call">[1]</span></span></p>
+        <p><span data-lang="en">Alternative version using <code>continue</code>: <span class="marks-call">[1]</span></span><span data-lang="zh">使用 <code>continue</code> 的替代版本：<span class="marks-call">[1]</span></span></p>
+        <pre><code>FOR x IN data:
+    IF x % 2 != 0 THEN
+        CONTINUE
+    END IF
+    count += 1
+    total += x</code></pre>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">The accumulator pattern (initialise counter/total to 0, update inside the loop) is one of the most fundamental algorithmic building blocks. The even numbers in data are 8, 12, 4, 6; their sum is 8 + 12 + 4 + 6 = 30. Spotting them before tracing lets you verify the trace quickly.</span><span data-lang="zh">累加器模式（将 counter/total 初始化为 0，在循环内更新）是最基本的算法构件之一。data 中的偶数为 8、12、4、6；它们的和为 8 + 12 + 4 + 6 = 30。追踪前先识别它们可以快速验证结果。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S11 -->
+<div class="q app">
+  <div class="q-head">
+    <span class="pill qnum">Q11</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+    <span class="pill topic">&sect;2 + &sect;3 + &sect;5 <span data-lang="en">Design: conditionals + for</span><span data-lang="zh">设计：条件 + for</span> &middot; ICS3U A2.2</span>
+    <span class="pill marks"><span data-lang="en">[9 marks]</span><span data-lang="zh">[9 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A student designs a program to print even numbers from 10 down to 2 using a while loop with an if inside.</span><span data-lang="zh">一名学生设计一个程序，使用 while 循环加内嵌 if 按降序打印 10 到 2 的偶数。</span></p>
+    <pre><code>SET i TO 10
+WHILE i >= 2:
+    IF i % 2 == 0 THEN
+        OUTPUT i
+    END IF
+    SET i TO i - 1
+END WHILE</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Output: <span class="ans">10, 8, 6, 4, 2</span> (one per line)</span><span data-lang="zh">输出：<span class="ans">10, 8, 6, 4, 2</span>（每行一个）</span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Complete output [3]</span><span data-lang="zh">第 (a) 部分 - 完整输出 [3]</span></h4>
+        <p><span data-lang="en">Trace: i starts at 10. Each iteration checks if i is even and outputs it, then decrements. Even values encountered: 10, 8, 6, 4, 2. When i = 1: <code>1 &gt;= 2</code> is False, loop exits. <span class="marks-call">[3]</span> (1 mark per correct output line up to 3)</span><span data-lang="zh">追踪：i 从 10 开始，每次迭代检查 i 是否为偶数并输出，然后递减。遇到的偶数：10、8、6、4、2。当 i = 1 时：<code>1 &gt;= 2</code> 为 False，循环退出。<span class="marks-call">[3]</span>（每行正确输出得 1 分，最多 3 分）</span></p>
+        <pre>10
+8
+6
+4
+2</pre>
+        <h4><span data-lang="en">Part (b) - Total loop body executions and OUTPUT executions [2]</span><span data-lang="zh">第 (b) 部分 - 循环体总执行次数与 OUTPUT 执行次数 [2]</span></h4>
+        <p><span data-lang="en">The loop body executes <strong>9</strong> times (i = 10, 9, 8, 7, 6, 5, 4, 3, 2). <span class="marks-call">[1]</span> The OUTPUT statement executes <strong>5</strong> times (for even values: 10, 8, 6, 4, 2). <span class="marks-call">[1]</span></span><span data-lang="zh">循环体执行 <strong>9</strong> 次（i = 10, 9, 8, 7, 6, 5, 4, 3, 2）。<span class="marks-call">[1]</span> OUTPUT 语句执行 <strong>5</strong> 次（对应偶数：10、8、6、4、2）。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (c) - Rewrite using for with range, no if needed [3]</span><span data-lang="zh">第 (c) 部分 - 用带 range 的 for 循环改写，无需 if [3]</span></h4>
+        <pre><code>for i in range(10, 1, -2):
+    print(i)</code></pre>
+        <p><span data-lang="en"><span class="marks-call">[3]</span>: 1 mark for <code>range</code> with correct start (10), 1 mark for correct stop (1, so 2 is included), 1 mark for correct step (-2). Accept any valid equivalent.</span><span data-lang="zh"><span class="marks-call">[3]</span>：start 正确（10）得 1 分，stop 正确（1，使 2 被包含）得 1 分，step 正确（-2）得 1 分。接受任何等效的正确写法。</span></p>
+        <h4><span data-lang="en">Part (d) - One advantage of the for version [1]</span><span data-lang="zh">第 (d) 部分 - for 版本的一个优点 [1]</span></h4>
+        <p><span data-lang="en">The <code>for</code> version is shorter and eliminates both the explicit counter decrement and the <code>if</code> statement, reducing the risk of errors such as forgetting to update the counter. <span class="marks-call">[1]</span></span><span data-lang="zh"><code>for</code> 版本更简洁，省去了显式计数器递减和 <code>if</code> 语句，降低了忘记更新计数器等错误的风险。<span class="marks-call">[1]</span></span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en"><code>range(start, stop, step)</code> supports negative steps for countdown loops. <code>range(10, 1, -2)</code> produces 10, 8, 6, 4, 2 directly, eliminating the need for a separate parity check. When the step encodes the selection logic, the if statement inside the loop becomes redundant.</span><span data-lang="zh"><code>range(start, stop, step)</code> 支持负步长用于倒计时循环。<code>range(10, 1, -2)</code> 直接生成 10, 8, 6, 4, 2，无需单独的奇偶检查。当步长本身已编码了选择逻辑时，循环内的 if 语句就变得多余了。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S12 -->
+<div class="q app">
+  <div class="q-head">
+    <span class="pill qnum">Q12</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic"><span data-lang="en">All sections &middot; Debugging + extension</span><span data-lang="zh">全节综合 &middot; 调试与扩展</span> &middot; CSTA 3A-AP-15</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A program finds and prints the first value in a list greater than a threshold, then stops.</span><span data-lang="zh">一个程序查找并打印列表中第一个大于给定阈值的值，然后停止。</span></p>
+    <pre><code>data = [4, 9, 2, 15, 7]
+threshold = 10
+for i in range(len(data)):
+    if data[i] &gt; threshold:
+        print("Found at index", i, ":", data[i])
+        break</code></pre>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Output: <span class="ans">Found at index 3 : 15</span></span><span data-lang="zh">输出：<span class="ans">Found at index 3 : 15</span></span></div>
+      <div class="rationale">
+        <h4><span data-lang="en">Part (a) - Step-by-step loop trace [3]</span><span data-lang="zh">第 (a) 部分 - 逐步循环追踪 [3]</span></h4>
+        <table class="trace-table">
+          <tr><th>i</th><th>data[i]</th><th><span data-lang="en">data[i] &gt; 10?</span><span data-lang="zh">data[i] &gt; 10？</span></th><th><span data-lang="en">Action</span><span data-lang="zh">操作</span></th></tr>
+          <tr><td>0</td><td>4</td><td>False</td><td><span data-lang="en">continue loop</span><span data-lang="zh">继续循环</span></td></tr>
+          <tr><td>1</td><td>9</td><td>False</td><td><span data-lang="en">continue loop</span><span data-lang="zh">继续循环</span></td></tr>
+          <tr><td>2</td><td>2</td><td>False</td><td><span data-lang="en">continue loop</span><span data-lang="zh">继续循环</span></td></tr>
+          <tr><td>3</td><td>15</td><td>True</td><td><span data-lang="en">print output, break</span><span data-lang="zh">打印输出，退出</span></td></tr>
+        </table>
+        <p><span data-lang="en"><span class="marks-call">[3]</span> (1 mark per column correct across all rows; i=4 never reached due to break)</span><span data-lang="zh"><span class="marks-call">[3]</span>（各列全行正确得 1 分；由于 break，i=4 从未被访问）</span></p>
+        <h4><span data-lang="en">Part (b) - Program output [1]</span><span data-lang="zh">第 (b) 部分 - 程序输出 [1]</span></h4>
+        <p><span data-lang="en"><code>Found at index 3 : 15</code> <span class="marks-call">[1]</span></span><span data-lang="zh"><code>Found at index 3 : 15</code> <span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (c) - Behaviour without break; all values now printed [2]</span><span data-lang="zh">第 (c) 部分 - 删去 break 后的行为；现在打印的所有值 [2]</span></h4>
+        <p><span data-lang="en">Without <code>break</code>, the loop continues checking all remaining elements after finding 15 at index 3. <span class="marks-call">[1]</span> The loop then checks index 4: <code>data[4] = 7</code>, <code>7 &gt; 10</code> is False, so nothing additional is printed. The only value printed is still <code>Found at index 3 : 15</code> because 7 does not exceed the threshold. The program no longer stops early and completes the full iteration. <span class="marks-call">[1]</span></span><span data-lang="zh">删去 <code>break</code> 后，循环在找到索引 3 处的 15 之后继续检查剩余元素。<span class="marks-call">[1]</span> 接着检查索引 4：<code>data[4] = 7</code>，<code>7 &gt; 10</code> 为 False，不打印额外内容。唯一打印的仍是 <code>Found at index 3 : 15</code>，因为 7 不超过阈值。程序不再提前停止，完成全部迭代。<span class="marks-call">[1]</span></span></p>
+        <h4><span data-lang="en">Part (d) - Extension: print "Not found" if no value exceeds threshold [2]</span><span data-lang="zh">第 (d) 部分 - 扩展：若无值超过阈值则打印 "Not found" [2]</span></h4>
+        <pre><code>found = False
+for i in range(len(data)):
+    if data[i] &gt; threshold:
+        print("Found at index", i, ":", data[i])
+        found = True
+        break
+if not found:
+    print("Not found")</code></pre>
+        <p><span data-lang="en"><span class="marks-call">[1]</span> for the <code>found</code> flag initialised before the loop, <span class="marks-call">[1]</span> for the correct post-loop check. (Accept equivalent pseudocode.)</span><span data-lang="zh"><span class="marks-call">[1]</span> 用于在循环前初始化 <code>found</code> 标志，<span class="marks-call">[1]</span> 用于循环后的正确检查。（接受等效的伪代码。）</span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">解题洞察：</span></strong> <span data-lang="en">The "search with a flag" pattern is fundamental to linear search algorithms. Setting a boolean flag before the loop and checking it after is the standard way to detect whether a loop found what it was looking for. Python also supports an elegant <code>for/else</code> construct where the <code>else</code> block runs only when the loop completes without hitting a <code>break</code>, achieving the same result more concisely.</span><span data-lang="zh">"带标志搜索"模式是线性搜索算法的基础。在循环前设置布尔标志并在循环后检查是检测循环是否找到所需内容的标准方式。Python 还支持优雅的 <code>for/else</code> 结构，<code>else</code> 块仅在循环未触发 <code>break</code> 的情况下执行，以更简洁的方式实现相同效果。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- consult-cta -->
+<aside class="consult-cta">
+  <span class="consult-cta__lead"><span data-lang="en">Want to go deeper or check your understanding?</span><span data-lang="zh">想深入学习或检验理解？</span></span>
+  <span class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor:</span><span data-lang="zh">预约 Dingrui Scholars 导师的 15 分钟免费咨询：</span></span>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&amp;utm_medium=cta&amp;utm_campaign=high_school_computer_science&amp;utm_content=Unit_3_Control_Flow__solutions__en" target="_blank" rel="noopener">dingruischolars.com/signup</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&amp;utm_medium=cta&amp;utm_campaign=high_school_computer_science&amp;utm_content=Unit_3_Control_Flow__solutions__zh" target="_blank" rel="noopener">dingruischolars.com/signup-ch</a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_3_Control_Flow.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_3_Control_Flow_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">High School Computer Science &middot; Solutions</span><span data-lang="zh">高中计算机科学 &middot; 详解</span> &middot; <code style="color:#555;">v1</code></span>
+  <span><span data-lang="en">Control Flow Solutions v1 &middot; 12 Qs &middot; ~81 marks &middot; US / ON / BC / AB &middot; HS-CS-3</span><span data-lang="zh">控制流程 详解 v1 &middot; 共 12 题 &middot; 约 81 分 &middot; 美 / 安 / 卑 / 阿 &middot; HS-CS-3</span></span>
+</footer>
+
+<script>
+function toggleLang() { const isZh = document.body.classList.toggle('lang-zh'); try { localStorage.setItem('lang', isZh ? 'zh' : 'en'); } catch (e) {} }
+try { if (localStorage.getItem('lang') === 'zh') document.body.classList.add('lang-zh'); } catch (e) {}
+</script>
+
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

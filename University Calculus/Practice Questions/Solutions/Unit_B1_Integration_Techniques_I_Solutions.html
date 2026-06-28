@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit B1: Integration Techniques I | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-B1  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B1_Integration_Techniques_I_Solutions.html">
+<meta name="description" content="Worked solutions for Unit B1: Integration Techniques I in University Calculus. Step-by-step substitution, integration by parts, reduction formulas, and definite integrals from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit B1: Integration Techniques I | Solutions">
+<meta property="og:description" content="Worked solutions for Unit B1: Integration Techniques I in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B1_Integration_Techniques_I_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit B1: Integration Techniques I | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit B1: Integration Techniques I in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit B1: Integration Techniques I | Solutions",
+  "description": "Worked solutions for Unit B1: Integration Techniques I in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B1_Integration_Techniques_I_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag">Unit B1 &middot; <span data-lang="en">Solutions</span><span data-lang="zh">解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">Integration Techniques I &middot; Solutions</span><span data-lang="zh">积分技巧 I &middot; 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">配套大学风格练习题集</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: substitution (indefinite and definite), integration by parts, repeated and tabular IBP, the cyclic trick, reduction formulas, and method selection</span><span data-lang="zh">第 <b>1 至 7</b> 节：换元法（不定积分与定积分）、分部积分法、多次及列表分部积分、循环积分技巧、递推公式与方法选择</span><span class="scope">CALC II</span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to</span><span data-lang="zh">配套</span> <code style="font-style:normal;">Unit_B1_Integration_Techniques_I_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; <span data-lang="en">method walk with</span><span data-lang="zh">方法演示，含</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method</span><span data-lang="zh">方法分</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer</span><span data-lang="zh">答案分</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning mark callouts</span><span data-lang="zh">推理分标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; <span data-lang="en">CORE TECHNIQUES</span><span data-lang="zh">核心技巧</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">u-substitution: indefinite and definite</span><span data-lang="zh">换元法：不定积分与定积分</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate: (a) $\int x^{2}\sin(x^{3}+1)\,dx$; (b) $\int_{0}^{1}\frac{2x}{(x^{2}+1)^{3}}\,dx$; (c) $\int_{1}^{e^{2}}\frac{(\ln x)^{2}}{x}\,dx$.</span><span data-lang="zh">计算：(a) $\int x^{2}\sin(x^{3}+1)\,dx$；(b) $\int_{0}^{1}\frac{2x}{(x^{2}+1)^{3}}\,dx$；(c) $\int_{1}^{e^{2}}\frac{(\ln x)^{2}}{x}\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $-\tfrac{1}{3}\cos(x^{3}+1)+C$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\tfrac{3}{8}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $\tfrac{8}{3}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Identify the composition and its inner derivative</span><span data-lang="zh">(a) 识别复合结构及内层导数</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The integrand is of the form $f'(g(x))\cdot g'(x)$ with $g(x)=x^{3}+1$. (M1) Set $u=x^{3}+1$, so $du=3x^{2}\,dx$ and $x^{2}\,dx=\tfrac{du}{3}$:</span><span data-lang="zh">被积函数具有 $f'(g(x))\cdot g'(x)$ 的形式，其中 $g(x)=x^{3}+1$。(M1) 令 $u=x^{3}+1$，则 $du=3x^{2}\,dx$，$x^{2}\,dx=\tfrac{du}{3}$：</span></p>
+      $$ \int x^{2}\sin(x^{3}+1)\,dx = \int \sin u\cdot\frac{du}{3} = -\frac{1}{3}\cos u+C = -\frac{1}{3}\cos(x^{3}+1)+C. $$
+      <p><span data-lang="en">Verification: differentiating gives $-\tfrac{1}{3}\cdot(-\sin(x^{3}+1))\cdot 3x^{2}=x^{2}\sin(x^{3}+1)$. (A1)</span><span data-lang="zh">验证：求导得 $-\tfrac{1}{3}\cdot(-\sin(x^{3}+1))\cdot 3x^{2}=x^{2}\sin(x^{3}+1)$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Change the limits when substituting into a definite integral</span><span data-lang="zh">(b) 定积分换元时须更换积分限</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Set $u=x^{2}+1$, $du=2x\,dx$. (M1) Limits: $x=0\Rightarrow u=1$; $x=1\Rightarrow u=2$. (A1)</span><span data-lang="zh">令 $u=x^{2}+1$，$du=2x\,dx$。(M1) 积分限：$x=0\Rightarrow u=1$；$x=1\Rightarrow u=2$。(A1)</span></p>
+      $$ \int_{0}^{1}\frac{2x}{(x^{2}+1)^{3}}\,dx = \int_{1}^{2}u^{-3}\,du = \left[-\frac{1}{2u^{2}}\right]_{1}^{2} = -\frac{1}{8}+\frac{1}{2} = \frac{3}{8}. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(c) Logarithm as the inner function</span><span data-lang="zh">(c) 以对数函数为内层函数</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Set $u=\ln x$, $du=\tfrac{dx}{x}$. (M1) Limits: $x=1\Rightarrow u=0$; $x=e^{2}\Rightarrow u=2$. (A1)</span><span data-lang="zh">令 $u=\ln x$，$du=\tfrac{dx}{x}$。(M1) 积分限：$x=1\Rightarrow u=0$；$x=e^{2}\Rightarrow u=2$。(A1)</span></p>
+      $$ \int_{1}^{e^{2}}\frac{(\ln x)^{2}}{x}\,dx = \int_{0}^{2}u^{2}\,du = \left[\frac{u^{3}}{3}\right]_{0}^{2} = \frac{8}{3}. $$
+      <p>(A1)</p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">Substitution works when the integrand contains a function and (up to a constant multiple) its own derivative. In (a) $3x^{2}$ is the derivative of $x^{3}+1$; in (b) $2x$ is the derivative of $x^{2}+1$; in (c) $1/x$ is the derivative of $\ln x$. The moment you change the variable in a definite integral, change the limits immediately so you never need to back-substitute at the end.</span><span data-lang="zh">换元法适用于被积函数中含有某函数及其导数（可差一常数倍）的情形。(a) 中 $3x^{2}$ 是 $x^{3}+1$ 的导数；(b) 中 $2x$ 是 $x^{2}+1$ 的导数；(c) 中 $1/x$ 是 $\ln x$ 的导数。对定积分换元时，应立即更换积分限，从而无需在最后反代。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">integration by parts: single application and LIATE</span><span data-lang="zh">分部积分法：单次应用与 LIATE 规则</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate using integration by parts once: (a) $\int x\,e^{2x}\,dx$; (b) $\int\ln x\,dx$.</span><span data-lang="zh">各使用一次分部积分法计算：(a) $\int x\,e^{2x}\,dx$；(b) $\int\ln x\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\tfrac{e^{2x}}{4}(2x-1)+C$ &nbsp;·&nbsp; <span class="ans">(b)</span> $x\ln x - x + C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Polynomial times exponential: LIATE gives $u=x$</span><span data-lang="zh">(a) 多项式乘以指数函数：LIATE 给出 $u=x$</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">By LIATE, the algebraic factor $x$ is differentiated and the exponential is integrated: $u=x$, $dv=e^{2x}\,dx$, so $du=dx$ and $v=\tfrac{1}{2}e^{2x}$. (M1)</span><span data-lang="zh">按 LIATE，代数因子 $x$ 求导，指数函数积分：$u=x$，$dv=e^{2x}\,dx$，则 $du=dx$，$v=\tfrac{1}{2}e^{2x}$。(M1)</span></p>
+      $$ \int x\,e^{2x}\,dx = \frac{x}{2}e^{2x} - \int\frac{1}{2}e^{2x}\,dx = \frac{x}{2}e^{2x} - \frac{1}{4}e^{2x}+C = \frac{e^{2x}}{4}(2x-1)+C. $$
+      <p><span data-lang="en">(A1) Verification: $\tfrac{d}{dx}\!\left[\tfrac{e^{2x}}{4}(2x-1)\right]=\tfrac{2e^{2x}}{4}(2x-1)+\tfrac{e^{2x}}{4}\cdot 2=\tfrac{e^{2x}}{2}(2x-1)+\tfrac{e^{2x}}{2}=xe^{2x}$. (A1)</span><span data-lang="zh">(A1) 验证：$\tfrac{d}{dx}\!\left[\tfrac{e^{2x}}{4}(2x-1)\right]=\tfrac{2e^{2x}}{4}(2x-1)+\tfrac{e^{2x}}{4}\cdot 2=\tfrac{e^{2x}}{2}(2x-1)+\tfrac{e^{2x}}{2}=xe^{2x}$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Logarithm alone: use $dv=dx$</span><span data-lang="zh">(b) 单独对数函数：取 $dv=dx$</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">There is no second factor, so write $\int\ln x\cdot 1\,dx$. LIATE gives $u=\ln x$, $dv=dx$, so $du=\tfrac{1}{x}\,dx$ and $v=x$. (M1)</span><span data-lang="zh">没有第二个因子，将其写成 $\int\ln x\cdot 1\,dx$。LIATE 给出 $u=\ln x$，$dv=dx$，则 $du=\tfrac{1}{x}\,dx$，$v=x$。(M1)</span></p>
+      $$ \int\ln x\,dx = x\ln x - \int x\cdot\frac{1}{x}\,dx = x\ln x - \int 1\,dx = x\ln x - x + C. $$
+      <p><span data-lang="en">(A1) Verification: $\ln x + 1 - 1 = \ln x$. (A1)</span><span data-lang="zh">(A1) 验证：$\ln x + 1 - 1 = \ln x$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">LIATE (Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential) gives the priority order for which factor becomes $u$. The higher in the list, the more you want it as $u$ because it simplifies upon differentiation. The $\int\ln x\,dx$ trick of inserting an invisible factor of $1$ to play the role of $dv$ is the standard move whenever a lone logarithm or inverse-trig function appears.</span><span data-lang="zh">LIATE（对数、反三角、代数、三角、指数）给出了选取 $u$ 的优先顺序：排列越靠前，越应作为 $u$，因为求导后会化简。对 $\int\ln x\,dx$ 插入隐含因子 $1$ 充当 $dv$ 的技巧，是遇到孤立对数或反三角函数时的标准处理方式。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">repeated integration by parts and tabular method</span><span data-lang="zh">多次分部积分与列表法</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate $I=\int x^{3}e^{x}\,dx$ by (a) applying IBP three times; (b) constructing the tabular table and confirming.</span><span data-lang="zh">计算 $I=\int x^{3}e^{x}\,dx$：(a) 连续使用三次分部积分法；(b) 构造列表并验证。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a) <span data-lang="en">and</span><span data-lang="zh">与</span> (b)</span> $e^{x}(x^{3}-3x^{2}+6x-6)+C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Three applications of IBP</span><span data-lang="zh">(a) 三次分部积分</span> <span class="marks-call">M1·A1·M1·A1·M1</span></h4>
+      <p><strong><span data-lang="en">Step 1.</span><span data-lang="zh">第 1 步。</span></strong> $u=x^{3}$, $dv=e^{x}\,dx$, $du=3x^{2}\,dx$, $v=e^{x}$. (M1)</p>
+      $$ I = x^{3}e^{x} - 3\int x^{2}e^{x}\,dx. $$
+      <p><strong><span data-lang="en">Step 2.</span><span data-lang="zh">第 2 步。</span></strong> <span data-lang="en">Apply IBP to $\int x^{2}e^{x}\,dx$:</span><span data-lang="zh">对 $\int x^{2}e^{x}\,dx$ 进行分部积分：</span> $u=x^{2}$, $dv=e^{x}\,dx$, $du=2x\,dx$, $v=e^{x}$. (M1)</p>
+      $$ \int x^{2}e^{x}\,dx = x^{2}e^{x}-2\int xe^{x}\,dx. $$
+      <p><strong><span data-lang="en">Step 3.</span><span data-lang="zh">第 3 步。</span></strong> <span data-lang="en">Apply IBP to $\int xe^{x}\,dx$:</span><span data-lang="zh">对 $\int xe^{x}\,dx$ 进行分部积分：</span> $u=x$, $dv=e^{x}\,dx$, $du=dx$, $v=e^{x}$. (M1)</p>
+      $$ \int xe^{x}\,dx = xe^{x}-e^{x}. $$
+      <p><span data-lang="en">Assembling from the innermost out: (A1)</span><span data-lang="zh">从最内层向外组合：(A1)</span></p>
+      $$ I = x^{3}e^{x} - 3\!\left[x^{2}e^{x}-2(xe^{x}-e^{x})\right] = x^{3}e^{x}-3x^{2}e^{x}+6xe^{x}-6e^{x}+C = e^{x}(x^{3}-3x^{2}+6x-6)+C. $$
+      <p><span data-lang="en">Verification: $\tfrac{d}{dx}[e^{x}(x^{3}-3x^{2}+6x-6)]=e^{x}(x^{3}-3x^{2}+6x-6)+e^{x}(3x^{2}-6x+6)=e^{x}\cdot x^{3}$. (A1)</span><span data-lang="zh">验证：$\tfrac{d}{dx}[e^{x}(x^{3}-3x^{2}+6x-6)]=e^{x}(x^{3}-3x^{2}+6x-6)+e^{x}(3x^{2}-6x+6)=e^{x}\cdot x^{3}$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Tabular method</span><span data-lang="zh">(b) 列表法</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Draw two columns: differentiate $x^{3}$ successively on the left, integrate $e^{x}$ successively on the right, alternating signs $+,-,+,-,+$. (M1)</span><span data-lang="zh">画两列：左列对 $x^{3}$ 逐次求导，右列对 $e^{x}$ 逐次积分，符号交替取 $+,-,+,-,+$。(M1)</span></p>
+      <table class="data" style="font-size:10pt;margin:10px 0;">
+        <tr><th><span data-lang="en">Sign</span><span data-lang="zh">符号</span></th><th><span data-lang="en">Differentiate ($u$-column)</span><span data-lang="zh">求导列（$u$ 列）</span></th><th><span data-lang="en">Integrate ($dv$-column)</span><span data-lang="zh">积分列（$dv$ 列）</span></th></tr>
+        <tr><td>$+$</td><td>$x^{3}$</td><td>$e^{x}$</td></tr>
+        <tr><td>$-$</td><td>$3x^{2}$</td><td>$e^{x}$</td></tr>
+        <tr><td>$+$</td><td>$6x$</td><td>$e^{x}$</td></tr>
+        <tr><td>$-$</td><td>$6$</td><td>$e^{x}$</td></tr>
+        <tr><td>$+$</td><td>$0$</td><td>$e^{x}$</td></tr>
+      </table>
+      <p><span data-lang="en">Multiply diagonally (each left entry times the entry one row down on the right), applying the sign: (A1)</span><span data-lang="zh">沿对角线相乘（左列每项乘以右列下一行对应项），并施加相应符号：(A1)</span></p>
+      $$ I = (+1)\cdot x^{3}e^{x} + (-1)\cdot 3x^{2}e^{x} + (+1)\cdot 6xe^{x} + (-1)\cdot 6e^{x} + C = e^{x}(x^{3}-3x^{2}+6x-6)+C. $$
+      <p><span data-lang="en">This matches part (a). (A1)</span><span data-lang="zh">与 (a) 的结果一致。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">The tabular method is not a different formula; it is a bookkeeping device that executes exactly the same sequence of IBP steps without re-stating $u$ and $dv$ each time. The process terminates when the left column reaches zero. The alternating signs reflect the alternating sign pattern that naturally arises when IBP is iterated. For any integral of the form (polynomial)$\times$(exponential or trig), the table is the fastest route.</span><span data-lang="zh">列表法并非不同的公式，而是一种记账工具，执行完全相同的分部积分步骤，无需每次重新声明 $u$ 与 $dv$。左列降为零时过程终止。交替符号反映了多次迭代分部积分时自然产生的符号交替规律。对于（多项式）乘以（指数函数或三角函数）形式的积分，列表法是最快的方法。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">cyclic integral: the return trick</span><span data-lang="zh">循环积分：回归技巧</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $I=\int e^{x}\sin x\,dx$. (a) Apply IBP twice, keeping $e^x$ as the $dv$ factor each time, and show $I$ reappears on the right. (b) Hence solve for $I$.</span><span data-lang="zh">设 $I=\int e^{x}\sin x\,dx$。(a) 进行两次分部积分，每次均以 $e^x$ 为 $dv$ 因子，证明 $I$ 重新出现在等式右侧。(b) 由此解出 $I$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">two IBP steps produce $I = e^{x}\sin x - e^{x}\cos x - I$</span><span data-lang="zh">两次分部积分后得 $I = e^{x}\sin x - e^{x}\cos x - I$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $I = \tfrac{e^{x}(\sin x - \cos x)}{2}+C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) First application of IBP</span><span data-lang="zh">(a) 第一次分部积分</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Choose $u=\sin x$, $dv=e^{x}\,dx$, so $du=\cos x\,dx$, $v=e^{x}$. (M1)</span><span data-lang="zh">取 $u=\sin x$，$dv=e^{x}\,dx$，则 $du=\cos x\,dx$，$v=e^{x}$。(M1)</span></p>
+      $$ I = e^{x}\sin x - \int e^{x}\cos x\,dx. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(a) Second application of IBP</span><span data-lang="zh">(a) 第二次分部积分</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Apply IBP to $\int e^{x}\cos x\,dx$, again keeping $e^{x}$ in the $dv$ role: $u=\cos x$, $dv=e^{x}\,dx$, so $du=-\sin x\,dx$, $v=e^{x}$. (M1)</span><span data-lang="zh">对 $\int e^{x}\cos x\,dx$ 进行分部积分，仍以 $e^{x}$ 担任 $dv$：$u=\cos x$，$dv=e^{x}\,dx$，则 $du=-\sin x\,dx$，$v=e^{x}$。(M1)</span></p>
+      $$ \int e^{x}\cos x\,dx = e^{x}\cos x - \int e^{x}(-\sin x)\,dx = e^{x}\cos x + \int e^{x}\sin x\,dx = e^{x}\cos x + I. $$
+      <p><span data-lang="en">Substituting back: $I = e^{x}\sin x - (e^{x}\cos x + I) = e^{x}\sin x - e^{x}\cos x - I$. (A1) The integral $I$ has returned on the right-hand side.</span><span data-lang="zh">代回得：$I = e^{x}\sin x - (e^{x}\cos x + I) = e^{x}\sin x - e^{x}\cos x - I$。(A1) 积分 $I$ 重新出现在等式右侧。</span></p>
+      <h4><span data-lang="en">(b) Solve the equation for $I$</span><span data-lang="zh">(b) 解方程求 $I$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Rearrange: $I + I = e^{x}\sin x - e^{x}\cos x$, so (M1)</span><span data-lang="zh">整理：$I + I = e^{x}\sin x - e^{x}\cos x$，从而 (M1)</span></p>
+      $$ 2I = e^{x}(\sin x - \cos x), \qquad I = \frac{e^{x}(\sin x - \cos x)}{2}+C. $$
+      <p><span data-lang="en">(A1) Verification: $\tfrac{d}{dx}\!\left[\tfrac{e^{x}(\sin x-\cos x)}{2}\right]=\tfrac{e^{x}(\sin x-\cos x)+e^{x}(\cos x+\sin x)}{2}=\tfrac{2e^{x}\sin x}{2}=e^{x}\sin x$.</span><span data-lang="zh">(A1) 验证：$\tfrac{d}{dx}\!\left[\tfrac{e^{x}(\sin x-\cos x)}{2}\right]=\tfrac{e^{x}(\sin x-\cos x)+e^{x}(\cos x+\sin x)}{2}=\tfrac{2e^{x}\sin x}{2}=e^{x}\sin x$。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">This "cyclic" technique works whenever two IBP steps reproduce the original integral. The critical discipline is consistency: if you switch which factor is $u$ between the two steps, you un-do the first step and end up with $0=0$. The resolution is always algebraic: collect $I$ terms and divide. The same trick solves $\int e^{x}\cos x\,dx$ and, with a sign flip, $\int e^{ax}\sin bx\,dx$ for any constants $a,b$.</span><span data-lang="zh">此"循环"技巧适用于两次分部积分后原积分重新出现的情形。关键在于保持一致性：若两步中 $u$ 的选取不同，会抵消第一步的结果，导致 $0=0$。解决方式始终是代数处理：合并含 $I$ 的项后除以系数。同样的技巧可用于求 $\int e^{x}\cos x\,dx$，以及对任意常数 $a,b$ 的 $\int e^{ax}\sin bx\,dx$（符号略有变化）。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; <span data-lang="en">DEFINITIONS AND PROOF</span><span data-lang="zh">定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">deriving the IBP formula; reduction formula for $\int x^n e^x\,dx$</span><span data-lang="zh">推导分部积分公式；$\int x^n e^x\,dx$ 的递推公式</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Derive $\int u\,dv=uv-\int v\,du$ from the product rule. (b) Derive $I_{n}=x^{n}e^{x}-nI_{n-1}$. (c) Evaluate $I_{3}$ using the reduction formula with $I_{0}=e^{x}+C$.</span><span data-lang="zh">(a) 从乘积法则推导 $\int u\,dv=uv-\int v\,du$。(b) 推导 $I_{n}=x^{n}e^{x}-nI_{n-1}$。(c) 利用递推公式及 $I_{0}=e^{x}+C$ 计算 $I_{3}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">IBP follows directly from integrating $(uv)'$</span><span data-lang="zh">分部积分公式直接由对 $(uv)'$ 积分得出</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $I_{n}=x^{n}e^{x}-nI_{n-1}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $e^{x}(x^{3}-3x^{2}+6x-6)+C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Deriving IBP from the product rule</span><span data-lang="zh">(a) 从乘积法则推导分部积分公式</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $u=u(x)$ and $v=v(x)$ be differentiable. The product rule states $(uv)'=u'v+uv'$. (M1) Integrate both sides with respect to $x$:</span><span data-lang="zh">设 $u=u(x)$ 与 $v=v(x)$ 均可微。乘积法则给出 $(uv)'=u'v+uv'$。(M1) 对两边关于 $x$ 积分：</span></p>
+      $$ uv = \int u'v\,dx + \int uv'\,dx. $$
+      <p><span data-lang="en">Rearranging: $\int uv'\,dx = uv - \int u'v\,dx$. Writing $dv=v'(x)\,dx$ and $du=u'(x)\,dx$ gives the IBP formula (A1)</span><span data-lang="zh">整理得：$\int uv'\,dx = uv - \int u'v\,dx$。记 $dv=v'(x)\,dx$，$du=u'(x)\,dx$，即得分部积分公式 (A1)</span></p>
+      $$ \int u\,dv = uv - \int v\,du. $$
+      <p><span data-lang="en">The formula is valid whenever $u$ and $v$ are differentiable and the integrals exist. (R1)</span><span data-lang="zh">只要 $u$ 与 $v$ 可微且积分存在，该公式即成立。(R1)</span></p>
+      <h4><span data-lang="en">(b) Reduction formula for $I_{n}$</span><span data-lang="zh">(b) $I_{n}$ 的递推公式</span> <span class="marks-call">M1·A1·A1·A1</span></h4>
+      <p><span data-lang="en">Let $I_{n}=\int x^{n}e^{x}\,dx$. Set $u=x^{n}$, $dv=e^{x}\,dx$, so $du=nx^{n-1}\,dx$ and $v=e^{x}$. (M1) Applying the IBP formula:</span><span data-lang="zh">设 $I_{n}=\int x^{n}e^{x}\,dx$。令 $u=x^{n}$，$dv=e^{x}\,dx$，则 $du=nx^{n-1}\,dx$，$v=e^{x}$。(M1) 应用分部积分公式：</span></p>
+      $$ I_{n} = x^{n}e^{x} - \int e^{x}\cdot nx^{n-1}\,dx. $$
+      <p><span data-lang="en">(A1) The remaining integral is $n\int x^{n-1}e^{x}\,dx = nI_{n-1}$. (A1) Therefore</span><span data-lang="zh">(A1) 余下的积分为 $n\int x^{n-1}e^{x}\,dx = nI_{n-1}$。(A1) 因此</span></p>
+      $$ I_{n} = x^{n}e^{x} - n\,I_{n-1}. \qquad \text{(A1)} $$
+      <h4><span data-lang="en">(c) Apply the reduction formula for $n=3$</span><span data-lang="zh">(c) 对 $n=3$ 应用递推公式</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Start from $I_{0}=e^{x}+C$. (M1)</span><span data-lang="zh">从 $I_{0}=e^{x}+C$ 出发。(M1)</span></p>
+      $$ I_{1} = xe^{x}-1\cdot I_{0} = xe^{x}-e^{x}+C = e^{x}(x-1)+C. $$
+      $$ I_{2} = x^{2}e^{x}-2I_{1} = x^{2}e^{x}-2e^{x}(x-1)+C = e^{x}(x^{2}-2x+2)+C. \quad\text{(A1)} $$
+      $$ I_{3} = x^{3}e^{x}-3I_{2} = x^{3}e^{x}-3e^{x}(x^{2}-2x+2)+C = e^{x}(x^{3}-3x^{2}+6x-6)+C. \quad\text{(A1)} $$
+      <p><span data-lang="en">This matches the direct calculation in Q3.</span><span data-lang="zh">此结果与 Q3 的直接计算一致。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">Integration by parts is simply the anti-differentiated product rule, so its proof is one line. The power of reduction formulas is that they encode the IBP step as a recurrence, letting you evaluate $I_{n}$ for large $n$ without re-doing the algebra at each level. The general result is $I_{n}=e^{x}\sum_{k=0}^{n}(-1)^{n-k}\frac{n!}{k!}x^{k}$, which you can derive by unrolling the recurrence.</span><span data-lang="zh">分部积分法本质上是乘积法则的反微分，因此其推导只需一行。递推公式的强大之处在于将分部积分步骤编码为递推关系，使你无需在每一层重复代数运算即可计算较大 $n$ 的 $I_{n}$。一般结果为 $I_{n}=e^{x}\sum_{k=0}^{n}(-1)^{n-k}\frac{n!}{k!}x^{k}$，可通过展开递推关系得到。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">Wallis-type reduction formula for $\int \sin^n x\,dx$</span><span data-lang="zh">$\int \sin^n x\,dx$ 的 Wallis 型递推公式</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$I_{n}=\int_{0}^{\pi/2}\sin^{n}x\,dx$. (a) Derive $I_{n}=\tfrac{n-1}{n}I_{n-2}$. (b) Evaluate $I_{1}$. (c) Compute $I_{5}$.</span><span data-lang="zh">$I_{n}=\int_{0}^{\pi/2}\sin^{n}x\,dx$。(a) 推导 $I_{n}=\tfrac{n-1}{n}I_{n-2}$。(b) 计算 $I_{1}$。(c) 计算 $I_{5}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $I_{n}=\tfrac{n-1}{n}I_{n-2}$ <span data-lang="en">(proved below)</span><span data-lang="zh">（如下证明）</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $I_{1}=1$ &nbsp;·&nbsp; <span class="ans">(c)</span> $I_{5}=\tfrac{8}{15}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Deriving the Wallis reduction formula</span><span data-lang="zh">(a) 推导 Wallis 递推公式</span> <span class="marks-call">M1·M1·A1·A1·A1·A1</span></h4>
+      <p><span data-lang="en">Write $\sin^{n}x=\sin^{n-1}x\cdot\sin x$ and apply IBP: set $u=\sin^{n-1}x$, $dv=\sin x\,dx$. Then $du=(n-1)\sin^{n-2}x\cos x\,dx$ and $v=-\cos x$. (M1)</span><span data-lang="zh">将 $\sin^{n}x$ 写成 $\sin^{n-1}x\cdot\sin x$，进行分部积分：令 $u=\sin^{n-1}x$，$dv=\sin x\,dx$，则 $du=(n-1)\sin^{n-2}x\cos x\,dx$，$v=-\cos x$。(M1)</span></p>
+      $$ I_{n} = \left[-\cos x\sin^{n-1}x\right]_{0}^{\pi/2} + (n-1)\int_{0}^{\pi/2}\cos^{2}x\sin^{n-2}x\,dx. $$
+      <p><span data-lang="en">(M1) Evaluate the boundary term: at $x=\tfrac{\pi}{2}$, $\cos(\tfrac{\pi}{2})=0$; at $x=0$, $\sin^{n-1}(0)=0$ for $n\ge 2$. Both endpoints contribute zero, so the boundary term vanishes. (A1)</span><span data-lang="zh">(M1) 计算边界项：在 $x=\tfrac{\pi}{2}$ 处，$\cos(\tfrac{\pi}{2})=0$；在 $x=0$ 处，当 $n\ge 2$ 时 $\sin^{n-1}(0)=0$。两端点均为零，边界项消失。(A1)</span></p>
+      <p><span data-lang="en">Use the Pythagorean identity $\cos^{2}x=1-\sin^{2}x$: (A1)</span><span data-lang="zh">利用勾股恒等式 $\cos^{2}x=1-\sin^{2}x$：(A1)</span></p>
+      $$ I_{n} = (n-1)\int_{0}^{\pi/2}(1-\sin^{2}x)\sin^{n-2}x\,dx = (n-1)\!\left[I_{n-2}-I_{n}\right]. $$
+      <p><span data-lang="en">Expand the right side and collect $I_{n}$ terms: (A1)</span><span data-lang="zh">展开右侧并合并含 $I_{n}$ 的项：(A1)</span></p>
+      $$ I_{n} + (n-1)I_{n} = (n-1)I_{n-2} \implies n\,I_{n} = (n-1)I_{n-2}. $$
+      $$ \boxed{I_{n} = \frac{n-1}{n}\,I_{n-2}.} \qquad\text{(A1)} $$
+      <h4><span data-lang="en">(b) Base case $I_{1}$</span><span data-lang="zh">(b) 初始情形 $I_{1}$</span> <span class="marks-call">B1</span></h4>
+      $$ I_{1} = \int_{0}^{\pi/2}\sin x\,dx = \left[-\cos x\right]_{0}^{\pi/2} = 0-(-1) = 1. $$
+      <h4><span data-lang="en">(c) Apply the recursion to reach $I_{5}$</span><span data-lang="zh">(c) 应用递推求 $I_{5}$</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Step down from $n=5$ using odd-index base $I_{1}=1$. (M1)</span><span data-lang="zh">从 $n=5$ 向下递推，利用奇数指标的初始值 $I_{1}=1$。(M1)</span></p>
+      $$ I_{3} = \frac{2}{3}I_{1} = \frac{2}{3}. \qquad\text{(A1)} $$
+      $$ I_{5} = \frac{4}{5}I_{3} = \frac{4}{5}\cdot\frac{2}{3} = \frac{8}{15}. \qquad\text{(A1)} $$
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">The key move in the derivation is the IBP that peels off one factor of $\sin x$, followed by the Pythagorean replacement $\cos^{2}x=1-\sin^{2}x$, which re-introduces the very integral $I_{n}$ that allows the algebraic resolution. The Wallis product $\tfrac{\pi}{2}=\tfrac{2}{1}\cdot\tfrac{2}{3}\cdot\tfrac{4}{3}\cdot\tfrac{4}{5}\cdots$ follows from comparing $I_{2k}$ and $I_{2k+1}$ as $k\to\infty$ via the squeeze theorem.</span><span data-lang="zh">推导的关键步骤是：先通过分部积分剥离一个 $\sin x$ 因子，再利用勾股恒等式 $\cos^{2}x=1-\sin^{2}x$ 重新引入积分 $I_{n}$，从而实现代数求解。Wallis 乘积 $\tfrac{\pi}{2}=\tfrac{2}{1}\cdot\tfrac{2}{3}\cdot\tfrac{4}{3}\cdot\tfrac{4}{5}\cdots$ 可通过夹逼定理比较 $k\to\infty$ 时的 $I_{2k}$ 与 $I_{2k+1}$ 得到。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill med">MEDIUM</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">reduction formula for $\int x^n \ln x\,dx$</span><span data-lang="zh">$\int x^n \ln x\,dx$ 的递推公式</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$J_{n}=\int x^{n}\ln x\,dx$, $x>0$. (a) Derive a closed form using IBP. (b) Verify by differentiation.</span><span data-lang="zh">$J_{n}=\int x^{n}\ln x\,dx$，$x>0$。(a) 利用分部积分法推导闭合形式。(b) 通过求导验证。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $J_{n}=\dfrac{x^{n+1}\ln x}{n+1}-\dfrac{x^{n+1}}{(n+1)^{2}}+C$ &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">differentiation recovers $x^{n}\ln x$</span><span data-lang="zh">求导还原被积函数 $x^{n}\ln x$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) IBP with the logarithm as $u$</span><span data-lang="zh">(a) 以对数函数为 $u$ 的分部积分</span> <span class="marks-call">M1·A1·A1·A1</span></h4>
+      <p><span data-lang="en">LIATE places $\ln x$ above any power, so set $u=\ln x$, $dv=x^{n}\,dx$. Then $du=\tfrac{1}{x}\,dx$ and $v=\tfrac{x^{n+1}}{n+1}$. (M1)</span><span data-lang="zh">LIATE 中对数函数优先于幂函数，故令 $u=\ln x$，$dv=x^{n}\,dx$，则 $du=\tfrac{1}{x}\,dx$，$v=\tfrac{x^{n+1}}{n+1}$。(M1)</span></p>
+      $$ J_{n} = \frac{x^{n+1}\ln x}{n+1} - \int\frac{x^{n+1}}{n+1}\cdot\frac{1}{x}\,dx = \frac{x^{n+1}\ln x}{n+1} - \frac{1}{n+1}\int x^{n}\,dx. $$
+      <p><span data-lang="en">(A1·A1) Evaluating the remaining power integral:</span><span data-lang="zh">(A1·A1) 计算余下的幂函数积分：</span></p>
+      $$ J_{n} = \frac{x^{n+1}\ln x}{n+1} - \frac{1}{n+1}\cdot\frac{x^{n+1}}{n+1}+C = \frac{x^{n+1}\ln x}{n+1}-\frac{x^{n+1}}{(n+1)^{2}}+C. \qquad\text{(A1)} $$
+      <h4><span data-lang="en">(b) Verify by differentiating</span><span data-lang="zh">(b) 通过求导验证</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Differentiate term by term using the product rule on $x^{n+1}\ln x$: (M1)</span><span data-lang="zh">逐项求导，对 $x^{n+1}\ln x$ 使用乘积法则：(M1)</span></p>
+      $$ \frac{d}{dx}\left[\frac{x^{n+1}\ln x}{n+1}-\frac{x^{n+1}}{(n+1)^{2}}\right] = \frac{(n+1)x^{n}\ln x + x^{n}}{n+1} - \frac{(n+1)x^{n}}{(n+1)^{2}} = x^{n}\ln x + \frac{x^{n}}{n+1} - \frac{x^{n}}{n+1} = x^{n}\ln x. $$
+      <p><span data-lang="en">(A1) The two extra terms cancel exactly, confirming the antiderivative.</span><span data-lang="zh">(A1) 两个多余项恰好抵消，从而确认原函数正确。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">Antidifferentiation is far harder to check by eye than differentiation, so differentiate to verify whenever the algebra is non-trivial. The cancellation in (b) is not accidental: it always happens when IBP is applied correctly, because the construction guarantees the derivative of the output equals the integrand. Checking this is good practice and earns marks in exam settings.</span><span data-lang="zh">不定积分比微分更难目测验证，因此只要代数过程不平凡，都应通过求导来验证。(b) 中的抵消并非偶然：只要分部积分应用正确，构造本身保证输出的导数等于被积函数。进行此类验证是良好习惯，在考试中也可获得额外分数。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; <span data-lang="en">APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合题 &middot; 28 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">definite integral requiring substitution then integration by parts</span><span data-lang="zh">先换元后分部积分的定积分</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate $\int_{0}^{1}x^{3}\sqrt{x^{2}+1}\,dx$ by letting $u=x^{2}+1$, then expanding and integrating.</span><span data-lang="zh">令 $u=x^{2}+1$，展开后积分，计算 $\int_{0}^{1}x^{3}\sqrt{x^{2}+1}\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">transforms to $\tfrac{1}{2}\int_{1}^{2}(u-1)\sqrt{u}\,du$</span><span data-lang="zh">变形为 $\tfrac{1}{2}\int_{1}^{2}(u-1)\sqrt{u}\,du$</span> &nbsp;·&nbsp; <span class="ans">(b) <span data-lang="en">and</span><span data-lang="zh">与</span> (c)</span> $\dfrac{2(\sqrt{2}+1)}{15}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Transform via $u=x^{2}+1$</span><span data-lang="zh">(a) 令 $u=x^{2}+1$ 变换积分</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Let $u=x^{2}+1$. Then $du=2x\,dx$, so $x\,dx=\tfrac{du}{2}$, and also $x^{2}=u-1$. (M1) New limits: $x=0\Rightarrow u=1$; $x=1\Rightarrow u=2$. (A1)</span><span data-lang="zh">令 $u=x^{2}+1$，则 $du=2x\,dx$，$x\,dx=\tfrac{du}{2}$，且 $x^{2}=u-1$。(M1) 新积分限：$x=0\Rightarrow u=1$；$x=1\Rightarrow u=2$。(A1)</span></p>
+      <p><span data-lang="en">Write $x^{3}\,dx=x^{2}\cdot(x\,dx)=(u-1)\tfrac{du}{2}$ and $\sqrt{x^{2}+1}=\sqrt{u}$:</span><span data-lang="zh">将 $x^{3}\,dx=x^{2}\cdot(x\,dx)=(u-1)\tfrac{du}{2}$，$\sqrt{x^{2}+1}=\sqrt{u}$：</span></p>
+      $$ \int_{0}^{1}x^{3}\sqrt{x^{2}+1}\,dx = \int_{1}^{2}(u-1)\sqrt{u}\cdot\frac{du}{2} = \frac{1}{2}\int_{1}^{2}(u-1)\sqrt{u}\,du. \qquad\text{(A1)} $$
+      <h4><span data-lang="en">(b) Expand and integrate term by term</span><span data-lang="zh">(b) 展开后逐项积分</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$(u-1)\sqrt{u}=u^{3/2}-u^{1/2}$. (M1)</span><span data-lang="zh">$(u-1)\sqrt{u}=u^{3/2}-u^{1/2}$。(M1)</span></p>
+      $$ \frac{1}{2}\int_{1}^{2}\!\left(u^{3/2}-u^{1/2}\right)du = \frac{1}{2}\left[\frac{2u^{5/2}}{5}-\frac{2u^{3/2}}{3}\right]_{1}^{2}. $$
+      <p><span data-lang="en">At $u=2$: $u^{5/2}=4\sqrt{2}$ and $u^{3/2}=2\sqrt{2}$. (A1)</span><span data-lang="zh">在 $u=2$ 处：$u^{5/2}=4\sqrt{2}$，$u^{3/2}=2\sqrt{2}$。(A1)</span></p>
+      <p><span data-lang="en">At $u=1$: $u^{5/2}=1$ and $u^{3/2}=1$. Evaluate:</span><span data-lang="zh">在 $u=1$ 处：$u^{5/2}=1$，$u^{3/2}=1$。计算：</span></p>
+      $$ = \frac{1}{2}\!\left[\left(\frac{8\sqrt{2}}{5}-\frac{4\sqrt{2}}{3}\right)-\left(\frac{2}{5}-\frac{2}{3}\right)\right]. $$
+      <p><span data-lang="en">Combine over a common denominator of 15: (A1)</span><span data-lang="zh">通分，公分母为 15：(A1)</span></p>
+      $$ \frac{8\sqrt{2}}{5}-\frac{4\sqrt{2}}{3}=\sqrt{2}\left(\frac{24-20}{15}\right)=\frac{4\sqrt{2}}{15}; \qquad \frac{2}{5}-\frac{2}{3}=\frac{6-10}{15}=-\frac{4}{15}. $$
+      <h4><span data-lang="en">(c) Exact value</span><span data-lang="zh">(c) 精确值</span> <span class="marks-call">A1·A1</span></h4>
+      $$ \frac{1}{2}\left[\frac{4\sqrt{2}}{15}-\left(-\frac{4}{15}\right)\right] = \frac{1}{2}\cdot\frac{4\sqrt{2}+4}{15} = \frac{2(\sqrt{2}+1)}{15}. $$
+      <p><span data-lang="en">(A1) No further simplification is possible, so the exact answer is $\dfrac{2(\sqrt{2}+1)}{15}$. (A1)</span><span data-lang="zh">(A1) 无法进一步化简，精确答案为 $\dfrac{2(\sqrt{2}+1)}{15}$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">The integrand $x^{3}\sqrt{x^{2}+1}$ looks like it might need IBP, but the substitution $u=x^{2}+1$ transforms it into a product of power functions, which are integrable directly. The check that this substitution works is that $x^{3}\,dx$ can be written as a power of $u$ times $du$, using both $x^{2}=u-1$ and $x\,dx=du/2$. This "split the odd power" strategy is standard for $\int x^{2k+1}f(x^{2}+a)\,dx$.</span><span data-lang="zh">被积函数 $x^{3}\sqrt{x^{2}+1}$ 看似需要分部积分，但换元 $u=x^{2}+1$ 将其转化为幂函数之积，可直接积分。判断此换元是否可行的依据是：利用 $x^{2}=u-1$ 与 $x\,dx=du/2$，可将 $x^{3}\,dx$ 写成 $u$ 的幂次与 $du$ 的乘积。这种"分离奇次幂"的策略是处理 $\int x^{2k+1}f(x^{2}+a)\,dx$ 的标准方法。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">area under a curve via integration by parts</span><span data-lang="zh">利用分部积分法求曲线下面积</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$f(x)=x\ln x$ on $[1,e]$. (a) Find $f'(x)$ and monotonicity. (b) Evaluate $\int_{1}^{e}x\ln x\,dx$. (c) Find the exact area of the region bounded by $y=x\ln x$, the $x$-axis, and $x=1$, $x=e$.</span><span data-lang="zh">$f(x)=x\ln x$ 定义在 $[1,e]$ 上。(a) 求 $f'(x)$ 及单调性。(b) 计算 $\int_{1}^{e}x\ln x\,dx$。(c) 求由 $y=x\ln x$、$x$ 轴及直线 $x=1$、$x=e$ 围成区域的精确面积。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $f'(x)=\ln x+1>0$ <span data-lang="en">on $(1,e)$, so $f$ is increasing</span><span data-lang="zh">在 $(1,e)$ 上成立，故 $f$ 单调递增</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $\tfrac{e^{2}+1}{4}$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">Area</span><span data-lang="zh">面积</span> $=\tfrac{e^{2}+1}{4}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Derivative and monotonicity</span><span data-lang="zh">(a) 导数与单调性</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">By the product rule, $f'(x)=\ln x + x\cdot\tfrac{1}{x}=\ln x+1$. (M1) For $x\in(1,e)$, $\ln x>0$, so $f'(x)>1>0$: $f$ is strictly increasing on $(1,e)$. (A1)</span><span data-lang="zh">由乘积法则，$f'(x)=\ln x + x\cdot\tfrac{1}{x}=\ln x+1$。(M1) 对 $x\in(1,e)$，$\ln x>0$，故 $f'(x)>1>0$：$f$ 在 $(1,e)$ 上严格单调递增。(A1)</span></p>
+      <h4><span data-lang="en">(b) Definite integral by IBP</span><span data-lang="zh">(b) 利用分部积分法求定积分</span> <span class="marks-call">M1·A1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Set $u=\ln x$, $dv=x\,dx$, so $du=\tfrac{1}{x}\,dx$ and $v=\tfrac{x^{2}}{2}$. (M1)</span><span data-lang="zh">令 $u=\ln x$，$dv=x\,dx$，则 $du=\tfrac{1}{x}\,dx$，$v=\tfrac{x^{2}}{2}$。(M1)</span></p>
+      $$ \int_{1}^{e}x\ln x\,dx = \left[\frac{x^{2}\ln x}{2}\right]_{1}^{e} - \int_{1}^{e}\frac{x^{2}}{2}\cdot\frac{1}{x}\,dx = \left[\frac{x^{2}\ln x}{2}\right]_{1}^{e} - \int_{1}^{e}\frac{x}{2}\,dx. $$
+      <p><span data-lang="en">(A1) Evaluate the boundary term: at $x=e$, $\tfrac{e^{2}\ln e}{2}=\tfrac{e^{2}}{2}$; at $x=1$, $\tfrac{1\cdot 0}{2}=0$. (M1) So the boundary term is $\tfrac{e^{2}}{2}$.</span><span data-lang="zh">(A1) 计算边界项：$x=e$ 时，$\tfrac{e^{2}\ln e}{2}=\tfrac{e^{2}}{2}$；$x=1$ 时，$\tfrac{1\cdot 0}{2}=0$。(M1) 故边界项为 $\tfrac{e^{2}}{2}$。</span></p>
+      $$ \int_{1}^{e}\frac{x}{2}\,dx = \left[\frac{x^{2}}{4}\right]_{1}^{e} = \frac{e^{2}}{4}-\frac{1}{4} = \frac{e^{2}-1}{4}. \qquad\text{(A1)} $$
+      $$ \int_{1}^{e}x\ln x\,dx = \frac{e^{2}}{2}-\frac{e^{2}-1}{4} = \frac{2e^{2}}{4}-\frac{e^{2}-1}{4} = \frac{e^{2}+1}{4}. \qquad\text{(A1)} $$
+      <h4><span data-lang="en">(c) Area of the region</span><span data-lang="zh">(c) 区域面积</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">On $[1,e]$: $f(1)=1\cdot\ln 1=0$ and $f$ is increasing with $f'(x)>0$, so $f(x)\ge f(1)=0$ throughout $[1,e]$. (M1) The curve lies on or above the $x$-axis, so the area equals the integral without absolute values. (A1)</span><span data-lang="zh">在 $[1,e]$ 上：$f(1)=1\cdot\ln 1=0$，且 $f$ 单调递增，$f'(x)>0$，故在整个 $[1,e]$ 上 $f(x)\ge f(1)=0$。(M1) 曲线在 $x$ 轴上方（或与之重合），面积等于积分值，无需取绝对值。(A1)</span></p>
+      $$ \text{Area} = \int_{1}^{e}x\ln x\,dx = \frac{e^{2}+1}{4}. \qquad\text{(A1)} $$
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">The non-negativity check in (c) is not optional: forgetting to verify that the integrand does not cross zero between the limits is the most common error in area problems. Here $f(1)=0$ and $f$ is increasing, so the region is entirely above the axis. The value $\tfrac{e^{2}+1}{4}\approx2.10$ is a good sanity check: the rectangle $[1,e]\times[0,e]$ has area $e(e-1)\approx4.67$, and the actual region being less than half of that is plausible.</span><span data-lang="zh">(c) 中的非负性验证并非可选步骤：忘记验证被积函数在积分限之间是否穿越零点，是面积题中最常见的错误。此处 $f(1)=0$ 且 $f$ 单调递增，故区域完全在 $x$ 轴上方。$\tfrac{e^{2}+1}{4}\approx2.10$ 是合理的合理性检验：矩形 $[1,e]\times[0,e]$ 的面积为 $e(e-1)\approx4.67$，实际区域不足其一半，符合直觉。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">method selection: substitution vs. IBP vs. direct</span><span data-lang="zh">方法选择：换元法、分部积分法与直接法</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For each integral, name the method, state the key step, then evaluate: (a) $\int\frac{x}{\sqrt{1-x^{2}}}\,dx$; (b) $\int x^{2}\cos x\,dx$; (c) $\int e^{x}\cos x\,dx$.</span><span data-lang="zh">对每个积分，说明方法、关键步骤，然后求值：(a) $\int\frac{x}{\sqrt{1-x^{2}}}\,dx$；(b) $\int x^{2}\cos x\,dx$；(c) $\int e^{x}\cos x\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $-\sqrt{1-x^{2}}+C$ &nbsp;·&nbsp; <span class="ans">(b)</span> $x^{2}\sin x+2x\cos x-2\sin x+C$ &nbsp;·&nbsp; <span class="ans">(c)</span> $\tfrac{e^{x}(\cos x+\sin x)}{2}+C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Substitution: the numerator is (half) the derivative of the radicand</span><span data-lang="zh">(a) 换元法：分子是被开方式导数的（一半）</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Method: substitution. Key step: $x\,dx$ is proportional to $d(1-x^{2})$. (M1) Set $u=1-x^{2}$, $du=-2x\,dx$, so $x\,dx=-\tfrac{du}{2}$:</span><span data-lang="zh">方法：换元法。关键步骤：$x\,dx$ 与 $d(1-x^{2})$ 成比例。(M1) 令 $u=1-x^{2}$，$du=-2x\,dx$，故 $x\,dx=-\tfrac{du}{2}$：</span></p>
+      $$ \int\frac{x}{\sqrt{1-x^{2}}}\,dx = \int\frac{-du/2}{\sqrt{u}} = -\int\frac{1}{2}u^{-1/2}\,du = -u^{1/2}+C = -\sqrt{1-x^{2}}+C. $$
+      <p><span data-lang="en">(A1) Verification: $\tfrac{d}{dx}[-\sqrt{1-x^{2}}]=\tfrac{x}{\sqrt{1-x^{2}}}$.</span><span data-lang="zh">(A1) 验证：$\tfrac{d}{dx}[-\sqrt{1-x^{2}}]=\tfrac{x}{\sqrt{1-x^{2}}}$。</span></p>
+      <h4><span data-lang="en">(b) Repeated IBP (or tabular): polynomial times trig</span><span data-lang="zh">(b) 多次分部积分（或列表法）：多项式乘以三角函数</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Method: tabular IBP. Key step: differentiate $x^{2}$ until it vanishes (two steps); integrate $\cos x$ correspondingly. (M1)</span><span data-lang="zh">方法：列表分部积分法。关键步骤：对 $x^{2}$ 逐次求导直至为零（两步）；对 $\cos x$ 逐次积分。(M1)</span></p>
+      <table class="data" style="font-size:10pt;margin:10px 0;">
+        <tr><th><span data-lang="en">Sign</span><span data-lang="zh">符号</span></th><th><span data-lang="en">Diff.</span><span data-lang="zh">求导列</span></th><th><span data-lang="en">Integ.</span><span data-lang="zh">积分列</span></th></tr>
+        <tr><td>$+$</td><td>$x^{2}$</td><td>$\cos x$</td></tr>
+        <tr><td>$-$</td><td>$2x$</td><td>$\sin x$</td></tr>
+        <tr><td>$+$</td><td>$2$</td><td>$-\cos x$</td></tr>
+        <tr><td>$-$</td><td>$0$</td><td>$-\sin x$</td></tr>
+      </table>
+      <p><span data-lang="en">Diagonal products with alternating signs: (M1)</span><span data-lang="zh">沿对角线相乘并施加交替符号：(M1)</span></p>
+      $$ \int x^{2}\cos x\,dx = x^{2}\sin x - 2x(-\cos x) + 2(-\sin x) + C = x^{2}\sin x + 2x\cos x - 2\sin x + C. $$
+      <p><span data-lang="en">(A1) Verification: $\tfrac{d}{dx}[x^{2}\sin x+2x\cos x-2\sin x]=2x\sin x+x^{2}\cos x+2\cos x-2x\sin x-2\cos x=x^{2}\cos x$. (A1)</span><span data-lang="zh">(A1) 验证：$\tfrac{d}{dx}[x^{2}\sin x+2x\cos x-2\sin x]=2x\sin x+x^{2}\cos x+2\cos x-2x\sin x-2\cos x=x^{2}\cos x$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Cyclic IBP: exponential times trig</span><span data-lang="zh">(c) 循环分部积分：指数函数乘以三角函数</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Method: cyclic IBP. Key step: two applications reproduce the original integral. Set $u=\cos x$, $dv=e^{x}\,dx$. (M1)</span><span data-lang="zh">方法：循环分部积分法。关键步骤：两次分部积分后还原原积分。令 $u=\cos x$，$dv=e^{x}\,dx$。(M1)</span></p>
+      $$ \int e^{x}\cos x\,dx = e^{x}\cos x + \int e^{x}\sin x\,dx. $$
+      <p><span data-lang="en">(A1) Apply IBP to $\int e^{x}\sin x\,dx$ with $u=\sin x$, $dv=e^{x}\,dx$:</span><span data-lang="zh">(A1) 对 $\int e^{x}\sin x\,dx$ 取 $u=\sin x$，$dv=e^{x}\,dx$ 进行分部积分：</span></p>
+      $$ \int e^{x}\sin x\,dx = e^{x}\sin x - \int e^{x}\cos x\,dx. $$
+      <p><span data-lang="en">(M1) Let $K=\int e^{x}\cos x\,dx$. Substituting back: $K=e^{x}\cos x+e^{x}\sin x-K$, so (A1)</span><span data-lang="zh">(M1) 设 $K=\int e^{x}\cos x\,dx$，代回得：$K=e^{x}\cos x+e^{x}\sin x-K$，从而 (A1)</span></p>
+      $$ 2K = e^{x}(\cos x+\sin x), \qquad K = \frac{e^{x}(\cos x+\sin x)}{2}+C. $$
+      <p><span data-lang="en">Verification: $\tfrac{d}{dx}\!\left[\tfrac{e^{x}(\cos x+\sin x)}{2}\right]=\tfrac{e^{x}(\cos x+\sin x)+e^{x}(-\sin x+\cos x)}{2}=\tfrac{2e^{x}\cos x}{2}=e^{x}\cos x$.</span><span data-lang="zh">验证：$\tfrac{d}{dx}\!\left[\tfrac{e^{x}(\cos x+\sin x)}{2}\right]=\tfrac{e^{x}(\cos x+\sin x)+e^{x}(-\sin x+\cos x)}{2}=\tfrac{2e^{x}\cos x}{2}=e^{x}\cos x$。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点拨。</span></strong> <span data-lang="en">Method selection hinges on recognising the structure: (a) numerator is a constant multiple of the derivative of the radicand, so substitution clears the radical in one step; (b) one factor is a polynomial that eventually differentiates to zero, so tabular IBP terminates; (c) neither factor simplifies to zero and both reproduce themselves under differentiation, so the cyclic technique is the only efficient route. Mistaking (c) for a case that needs substitution is a common trap when the integrand contains $e^x$.</span><span data-lang="zh">方法选择的关键在于识别结构：(a) 分子是被开方式导数的常数倍，换元一步即可消除根号；(b) 一个因子是多项式，最终求导为零，列表分部积分法可终止；(c) 两个因子求导后均不化简为零且均可还原自身，循环技巧是唯一高效方法。将 (c) 误判为需要换元是含 $e^x$ 被积函数时的常见陷阱。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中对本单元感到困惑？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约与鼎睿学者导师的免费 15 分钟咨询，让你在期中或期末考前突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_b1_integration_techniques_i__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_B1_Integration_Techniques_I.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_B1_Integration_Techniques_I_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit B1 Solutions</span><span data-lang="zh">大学微积分 &middot; B1 单元解答</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">配套练习题 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第 1 至 7 节 &middot; 共 82 分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

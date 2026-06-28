@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit C3: Partial Derivatives and the Gradient | Practice</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-C3  dingrui:doc-type practice -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C3_Partial_Derivatives_and_the_Gradient_Practice.html">
+<meta name="description" content="University-level practice problems for Unit C3: Partial Derivatives and the Gradient. Domain and level curves, limits in two variables, partial derivatives, Clairaut's theorem, the multivariable chain rule, and the gradient, with full worked solutions from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit C3: Partial Derivatives and the Gradient | Practice">
+<meta property="og:description" content="University-level practice problems for Unit C3: Partial Derivatives and the Gradient, with full worked solutions from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C3_Partial_Derivatives_and_the_Gradient_Practice.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit C3: Partial Derivatives and the Gradient | Practice">
+<meta name="twitter:description" content="University-level practice problems for Unit C3: Partial Derivatives and the Gradient, with full worked solutions from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{
+    font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;
+    font-size:11pt;line-height:1.45;
+    max-width:8.5in;margin:0 auto;
+    padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);
+  }
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .nameline{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:10.5pt;margin:4px 0 22px;color:#222;}
+  .nameline .blank{display:inline-block;border-bottom:1px solid #555;min-width:240px;margin-left:6px;}
+  .nameline .blank.period{min-width:90px;}
+  .draft-banner{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .draft-banner code{font-family:'JetBrains Mono',monospace;font-style:normal;}
+
+  .part{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:'Source Sans 3',sans-serif;
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:6px 2px;margin:18px 0 8px;
+  }
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+
+  .q{
+    border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;
+    padding:12px 18px 14px;margin-bottom:16px;background:#fff;
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:10px;font-family:'Source Sans 3',sans-serif;}
+  .q-head .title{margin-left:auto;font-size:9.5pt;color:#666;font-style:italic;}
+  .q-body{font-size:11.5pt;line-height:1.5;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;}
+
+  .work{min-height:90px;border-top:1px dashed #c9c4bd;margin-top:8px;}
+  .work.s{min-height:50px;} .work.m{min-height:120px;} .work.l{min-height:170px;} .work.xl{min-height:240px;}
+
+  .frq-parts{margin-top:6px;}
+  .frq-parts .part-item{margin:6px 0 4px;}
+  .frq-parts .part-item > .tag{font-family:'Source Sans 3',sans-serif;font-weight:700;margin-right:6px;}
+  .frq-parts .part-item .marks-inline{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;font-weight:700;float:right;letter-spacing:.05em;}
+  .frq-parts .part-item .sub-part{margin:4px 0 4px 18px;}
+
+  table.data{border-collapse:collapse;margin:8px auto;font-size:10.5pt;}
+  table.data th, table.data td{border:1px solid #444;padding:4px 14px;text-align:center;font-family:'Source Sans 3',sans-serif;}
+  table.data th{background:#f1ece4;font-weight:700;}
+
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+
+  .page-break{page-break-after:always;break-after:page;height:0;}
+
+  @media (max-width: 600px){
+    body{font-size:10.5pt;}
+    .nameline{flex-direction:column;align-items:flex-start;gap:6px;}
+    .nameline .blank{min-width:200px;}
+  }
+  @media print{
+    @page { size: letter; margin: 0.6in 0.65in; }
+    html,body{background:#fff;}
+    body{padding:0;max-width:none;font-size:11pt;}
+    .q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}
+    .draft-banner{display:none;}
+  }
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit C3: Partial Derivatives and the Gradient | Practice",
+  "description": "University-level practice problems for Unit C3: Partial Derivatives and the Gradient, with full worked solutions from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C3_Partial_Derivatives_and_the_Gradient_Practice.html",
+  "inLanguage": "en",
+  "learningResourceType": "Practice problems",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag">Unit C3 &middot; Calculus III</div>
+<h1 class="chapter-title"><span data-lang="en">Partial Derivatives and the Gradient</span><span data-lang="zh">偏导数与梯度</span></h1>
+<p class="chapter-sub"><span data-lang="en">University-Style Practice Problems</span><span data-lang="zh">大学风格练习题</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 6</b>: functions of several variables, domain and level curves, limits and continuity in two variables, partial derivatives, Clairaut's theorem, the multivariable chain rule, and the gradient<span class="scope">CALC III</span></span><span data-lang="zh">第 <b>1 至 6</b> 节：多元函数、定义域与水平曲线、二元极限与连续性、偏导数、克莱罗定理、多元链式法则及梯度<span class="scope">CALC III</span></span></p>
+<hr class="thick"><hr class="thin">
+<div class="nameline"><span><span data-lang="en">Name:</span><span data-lang="zh">姓名：</span><span class="blank"></span></span><span><span data-lang="en">Date:</span><span data-lang="zh">日期：</span><span class="blank period"></span></span></div>
+<p class="draft-banner"><code>v1.0</code> &middot; <span data-lang="en">10 Qs &middot; 82 marks &middot; Parts CORE / PROOF / APPLIED &middot; MEDIUM to HARD &middot; Sections 1 to 6 &middot; solutions:</span><span data-lang="zh">10 题 &middot; 82 分 &middot; 各部分 CORE / PROOF / APPLIED &middot; MEDIUM 至 HARD &middot; 第 1 至 6 节 &middot; 解答：</span> <code>Solutions/Unit_C3_Partial_Derivatives_and_the_Gradient_Solutions.html</code></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; <span data-lang="en">CORE TECHNIQUES</span><span data-lang="zh">核心技术</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Domain, Level Curves, and First Partial Derivatives</span><span data-lang="zh">定义域、水平曲线与一阶偏导数</span></h2>
+<p class="instructions"><span data-lang="en">Show all working. State the domain as a set with explicit inequalities. When computing partial derivatives, identify which variable you are treating as constant at each step.</span><span data-lang="zh">展示全部过程。将定义域表示为含有明确不等式的集合。计算偏导数时，在每一步指明将哪个变量视为常数。</span></p>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">domain and level curves of a two-variable function</span><span data-lang="zh">二元函数的定义域与水平曲线</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt">Let $f(x,y) = \ln(4 - x^2 - y^2)$.</p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">State the natural domain of $f$ as a set in the $xy$-plane. Describe the boundary and whether it is included.</span><span data-lang="zh">将 $f$ 的自然定义域表示为 $xy$ 平面上的集合。描述边界并说明是否包含在内。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Find the equation of the level curve $f(x,y) = k$ and describe its shape. Determine the range of values of $k$ for which a level curve exists.</span><span data-lang="zh">求水平曲线 $f(x,y) = k$ 的方程并描述其形状。确定水平曲线存在时 $k$ 的取值范围。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">As $k$ increases from $-\infty$ toward $\ln 4$, what happens to the level curves geometrically? Relate this to the steepness of the surface $z = f(x,y)$ near the boundary.</span><span data-lang="zh">当 $k$ 从 $-\infty$ 增大趋向 $\ln 4$ 时，水平曲线的几何形态如何变化？将此与曲面 $z = f(x,y)$ 在边界附近的陡峭程度联系起来。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">first and second partial derivatives</span><span data-lang="zh">一阶与二阶偏导数</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt">Let $f(x,y) = x^3 y^2 - 4xy + e^{x+2y}$.</p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute $f_x$ and $f_y$.</span><span data-lang="zh">计算 $f_x$ 和 $f_y$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Compute $f_{xx}$, $f_{yy}$, and both mixed partials $f_{xy}$ and $f_{yx}$.</span><span data-lang="zh">计算 $f_{xx}$、$f_{yy}$ 以及两个混合偏导数 $f_{xy}$ 和 $f_{yx}$。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Verify that $f_{xy} = f_{yx}$ and state the theorem that guarantees this for smooth functions.</span><span data-lang="zh">验证 $f_{xy} = f_{yx}$，并陈述对光滑函数保证此结论成立的定理。</span> <span class="marks-inline">[1]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">chain rule with one independent variable</span><span data-lang="zh">单自变量链式法则</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt">Let $w = x^2 y - y^2 z$ with $x = t^2$, $y = \sin t$, $z = e^t$.</p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Draw a dependency tree showing how $w$ depends on $t$ through $x$, $y$, and $z$. Write down all six elementary derivatives needed.</span><span data-lang="zh">画出依赖树，展示 $w$ 如何通过 $x$、$y$、$z$ 依赖于 $t$。写出所需的全部六个初等导数。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Apply the multivariable chain rule to find $dw/dt$ in terms of $t$ only. Leave the answer in simplified but unsimplified-exponential form.</span><span data-lang="zh">运用多元链式法则，求仅用 $t$ 表示的 $dw/dt$。答案保留化简后但指数项不展开的形式。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">gradient computation and steepest-ascent direction</span><span data-lang="zh">梯度计算与最速上升方向</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt">Let $f(x,y) = x^2 - xy + 2y^2$.</p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute $\nabla f$ at the point $(2, -1)$.</span><span data-lang="zh">计算点 $(2, -1)$ 处的 $\nabla f$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Find the unit vector in the direction of steepest increase of $f$ at $(2,-1)$, and state the maximum rate of increase.</span><span data-lang="zh">求 $f$ 在点 $(2,-1)$ 处最速上升方向的单位向量，并给出最大增长率。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Write the equation of the level curve $f(x,y) = f(2,-1)$ and confirm geometrically that $\nabla f(2,-1)$ is perpendicular to it.</span><span data-lang="zh">写出水平曲线 $f(x,y) = f(2,-1)$ 的方程，并从几何角度确认 $\nabla f(2,-1)$ 垂直于该曲线。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; <span data-lang="en">DEFINITIONS AND PROOF</span><span data-lang="zh">定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Limits in Two Variables and Clairaut's Theorem</span><span data-lang="zh">二元极限与克莱罗定理</span></h2>
+<p class="instructions"><span data-lang="en">These items are graded on the logic of the argument. A two-path proof must name both paths, substitute explicitly, and compare the values obtained. A proof of existence requires a bound that holds in all directions simultaneously, not just along selected paths.</span><span data-lang="zh">本部分按论证逻辑评分。双路径证明必须命名两条路径、显式代入并比较所得值。存在性证明需要一个在所有方向同时成立的上界，而非仅沿特定路径。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">two-path test: proving a limit does not exist</span><span data-lang="zh">双路径检验：证明极限不存在</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Investigate each limit as $(x,y) \to (0,0)$.</span><span data-lang="zh">研究以下各极限，其中 $(x,y) \to (0,0)$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Show that $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 - y^2}{x^2 + y^2}$ does not exist by testing two straight-line paths. State explicitly what each path gives and why the conclusion follows.</span><span data-lang="zh">通过检验两条直线路径，证明 $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 - y^2}{x^2 + y^2}$ 不存在。明确说明每条路径的结果以及由此得出结论的原因。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Show that $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y}{x^4 + y^2}$ does not exist. (Hint: every straight line $y = mx$ gives $0$, so you must try a curved path. Let $y = x^2$.) Explain why checking only straight lines is insufficient to prove existence.</span><span data-lang="zh">证明 $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y}{x^4 + y^2}$ 不存在。（提示：每条直线 $y = mx$ 均给出 $0$，因此必须尝试曲线路径。令 $y = x^2$。）解释为何仅检验直线路径不足以证明极限存在。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">polar-coordinate squeeze to prove a limit exists</span><span data-lang="zh">极坐标夹逼法证明极限存在</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Use polar coordinates $x = r\cos\theta$, $y = r\sin\theta$ to analyse limits at the origin.</span><span data-lang="zh">使用极坐标 $x = r\cos\theta$、$y = r\sin\theta$ 分析原点处的极限。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Prove that $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^3}{x^2 + y^2} = 0$. Write the expression in polar form, bound it by a quantity that depends only on $r$, and apply the squeeze theorem. State clearly why the bound is independent of $\theta$.</span><span data-lang="zh">证明 $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^3}{x^2 + y^2} = 0$。将表达式化为极坐标形式，用仅依赖 $r$ 的量对其进行上界估计，并应用夹逼定理。清楚说明该上界为何与 $\theta$ 无关。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Now prove that $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^2 + y^2} = 0$ by a similar polar argument.</span><span data-lang="zh">用类似的极坐标方法证明 $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^2 + y^2} = 0$。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">Clairaut's theorem: statement, verification, and counterexample insight</span><span data-lang="zh">克莱罗定理：陈述、验证与反例分析</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">This question concerns the equality of mixed partial derivatives.</span><span data-lang="zh">本题涉及混合偏导数的相等性。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">State Clairaut's theorem precisely, including the continuity hypothesis.</span><span data-lang="zh">精确陈述克莱罗定理，包括连续性假设。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">For $f(x,y) = x^4 y^3 - \sin(xy^2)$, compute $f_{xy}$ and $f_{yx}$ in full and confirm they agree. Show all intermediate steps.</span><span data-lang="zh">对于 $f(x,y) = x^4 y^3 - \sin(xy^2)$，完整计算 $f_{xy}$ 和 $f_{yx}$ 并确认它们相等。展示所有中间步骤。</span> <span class="marks-inline">[5]</span><div class="work xl"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Show that $u(x,y) = e^x \cos y$ satisfies Laplace's equation $u_{xx} + u_{yy} = 0$, and as a by-product verify $u_{xy} = u_{yx}$.</span><span data-lang="zh">证明 $u(x,y) = e^x \cos y$ 满足拉普拉斯方程 $u_{xx} + u_{yy} = 0$，并同时验证 $u_{xy} = u_{yx}$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; <span data-lang="en">APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合题 &middot; 28 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Chain Rule, Implicit Differentiation, and Gradient Applications</span><span data-lang="zh">链式法则、隐函数微分与梯度应用</span></h2>
+<p class="instructions"><span data-lang="en">Set up each problem cleanly. Carry exact symbolic expressions through intermediate steps. When using the chain rule with several intermediate variables, draw the dependency tree and label every edge before writing the formula.</span><span data-lang="zh">清晰建立每道题的框架。在中间步骤中保留精确符号表达式。使用含多个中间变量的链式法则时，先画出依赖树并标注每条边，再写出公式。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">chain rule with two independent variables and a Laplacian identity</span><span data-lang="zh">双自变量链式法则与拉普拉斯恒等式</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $z = f(x,y)$ where $x = s + t$ and $y = s - t$. Assume $f$ has continuous second-order partial derivatives.</span><span data-lang="zh">设 $z = f(x,y)$，其中 $x = s + t$，$y = s - t$。假设 $f$ 具有连续的二阶偏导数。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Use the chain rule to express $\partial z/\partial s$ and $\partial z/\partial t$ in terms of $f_x$ and $f_y$.</span><span data-lang="zh">使用链式法则，将 $\partial z/\partial s$ 和 $\partial z/\partial t$ 用 $f_x$ 和 $f_y$ 表示。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Differentiate again to find $\partial^2 z / \partial s^2$ and $\partial^2 z / \partial t^2$, each in terms of $f_{xx}$, $f_{xy}$, $f_{yx}$, $f_{yy}$. You may use $f_{xy} = f_{yx}$ by Clairaut's theorem.</span><span data-lang="zh">再次微分，求用 $f_{xx}$、$f_{xy}$、$f_{yx}$、$f_{yy}$ 表示的 $\partial^2 z / \partial s^2$ 和 $\partial^2 z / \partial t^2$。可由克莱罗定理使用 $f_{xy} = f_{yx}$。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Show that $\dfrac{\partial^2 z}{\partial s^2} - \dfrac{\partial^2 z}{\partial t^2} = 4\,f_{xy}$. Interpret this identity: if $f$ satisfies Laplace's equation $f_{xx} + f_{yy} = 0$, what additional relationship holds between $\partial^2 z/\partial s^2$ and $\partial^2 z/\partial t^2$?</span><span data-lang="zh">证明 $\dfrac{\partial^2 z}{\partial s^2} - \dfrac{\partial^2 z}{\partial t^2} = 4\,f_{xy}$。解释此恒等式：若 $f$ 满足拉普拉斯方程 $f_{xx} + f_{yy} = 0$，则 $\partial^2 z/\partial s^2$ 与 $\partial^2 z/\partial t^2$ 之间还有什么关系？</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">implicit partial differentiation from a surface constraint</span><span data-lang="zh">曲面约束下的隐函数偏微分</span></span>
+    <span class="pill marks">[9 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">The equation $F(x,y,z) = x^2 z + y^2 z^3 - 3xyz = 5$ implicitly defines $z$ as a function of $x$ and $y$ near a point where $F_z \ne 0$.</span><span data-lang="zh">方程 $F(x,y,z) = x^2 z + y^2 z^3 - 3xyz = 5$ 在满足 $F_z \ne 0$ 的点附近将 $z$ 隐式定义为 $x$ 和 $y$ 的函数。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute the three partial derivatives $F_x$, $F_y$, $F_z$ of the function $F(x,y,z) = x^2 z + y^2 z^3 - 3xyz$.</span><span data-lang="zh">计算函数 $F(x,y,z) = x^2 z + y^2 z^3 - 3xyz$ 的三个偏导数 $F_x$、$F_y$、$F_z$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Using the implicit differentiation formula $\dfrac{\partial z}{\partial x} = -\dfrac{F_x}{F_z}$ and $\dfrac{\partial z}{\partial y} = -\dfrac{F_y}{F_z}$, find $\partial z/\partial x$ and $\partial z/\partial y$ in terms of $x$, $y$, and $z$.</span><span data-lang="zh">使用隐函数微分公式 $\dfrac{\partial z}{\partial x} = -\dfrac{F_x}{F_z}$ 和 $\dfrac{\partial z}{\partial y} = -\dfrac{F_y}{F_z}$，求以 $x$、$y$、$z$ 表示的 $\partial z/\partial x$ 和 $\partial z/\partial y$。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Evaluate $\partial z/\partial x$ and $\partial z/\partial y$ at the point $(x,y,z) = (1,1,1)$ by substituting into the formulas from (b). Note: this point need not lie on the surface $F = 5$; the formulas in (b) give the partial derivatives in terms of $x$, $y$, $z$ at any point where $F_z \ne 0$.</span><span data-lang="zh">将 $(x,y,z) = (1,1,1)$ 代入 (b) 的公式，求此点处的 $\partial z/\partial x$ 和 $\partial z/\partial y$。注意：该点不必在曲面 $F = 5$ 上；(b) 中的公式在任意满足 $F_z \ne 0$ 的点处均给出以 $x$、$y$、$z$ 表示的偏导数。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">gradient, level surfaces, and normal vector to a surface</span><span data-lang="zh">梯度、水平曲面与曲面法向量</span></span>
+    <span class="pill marks">[9 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the surface $S$ defined by $F(x,y,z) = x^2 + 2y^2 - z = 4$ and the function $g(x,y) = x^2 + 2y^2$.</span><span data-lang="zh">考虑由 $F(x,y,z) = x^2 + 2y^2 - z = 4$ 定义的曲面 $S$ 以及函数 $g(x,y) = x^2 + 2y^2$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute $\nabla F(x,y,z)$ and evaluate it at the point $P = (1, 1, -1)$. Verify that $P$ lies on $S$.</span><span data-lang="zh">计算 $\nabla F(x,y,z)$ 并在点 $P = (1, 1, -1)$ 处求值。验证 $P$ 在 $S$ 上。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Write the equation of the tangent plane to $S$ at $P$ using the gradient as the normal vector.</span><span data-lang="zh">以梯度为法向量，写出曲面 $S$ 在点 $P$ 处的切平面方程。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Compute $\nabla g(1,1)$ for the two-variable function $g(x,y) = x^2 + 2y^2$. Find the maximum rate of increase of $g$ at $(1,1)$, the unit direction achieving it, and a unit vector tangent to the level curve $g = 3$ at $(1,1)$.</span><span data-lang="zh">计算二元函数 $g(x,y) = x^2 + 2y^2$ 在点 $(1,1)$ 处的 $\nabla g(1,1)$。求 $g$ 在 $(1,1)$ 处的最大增长率、实现最大增长率的单位方向向量，以及水平曲线 $g = 3$ 在点 $(1,1)$ 处的单位切向量。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中卡在这个单元了吗？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约一次与鼎睿学者辅导老师的免费 15 分钟咨询。我们将在您的下次期中或期末考试前帮您突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c3_partial_derivatives_and_the_gradient__practice__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../Study%20Guides/Unit_C3_Partial_Derivatives_and_the_Gradient.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Practice</span><span data-lang="zh">练习</span></span>
+  <a href="Solutions/Unit_C3_Partial_Derivatives_and_the_Gradient_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit C3 Practice</span><span data-lang="zh">大学微积分 &middot; C3 单元练习</span> <code style="color:#555;">v1.0</code></span>
+  <span><span data-lang="en">Sections 1 to 6 &middot; 82 marks total</span><span data-lang="zh">第 1 至 6 节 &middot; 共 82 分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

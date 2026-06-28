@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit B3: Improper and Numerical Integration | Practice</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-B3  dingrui:doc-type practice -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_B3_Improper_and_Numerical_Integration_Practice.html">
+<meta name="description" content="University-level practice problems for Unit B3: Improper and Numerical Integration. Type I and II improper integrals, p-integral convergence, comparison tests, trapezoidal and Simpson rules with error bounds, from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit B3: Improper and Numerical Integration | Practice">
+<meta property="og:description" content="University-level practice problems for Unit B3: Improper and Numerical Integration, with full worked solutions from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_B3_Improper_and_Numerical_Integration_Practice.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit B3: Improper and Numerical Integration | Practice">
+<meta name="twitter:description" content="University-level practice problems for Unit B3: Improper and Numerical Integration, with full worked solutions from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{
+    font-family:'Times New Roman',Times,Georgia,serif,'PingFang SC','Microsoft YaHei';
+    font-size:11pt;line-height:1.45;
+    max-width:8.5in;margin:0 auto;
+    padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);
+  }
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .nameline{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:10.5pt;margin:4px 0 22px;color:#222;}
+  .nameline .blank{display:inline-block;border-bottom:1px solid #555;min-width:240px;margin-left:6px;}
+  .nameline .blank.period{min-width:90px;}
+  .draft-banner{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .draft-banner code{font-family:'JetBrains Mono',monospace;font-style:normal;}
+
+  .part{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:'Source Sans 3',sans-serif;
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:6px 2px;margin:18px 0 8px;
+  }
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+
+  .q{
+    border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;
+    padding:12px 18px 14px;margin-bottom:16px;background:#fff;
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:10px;font-family:'Source Sans 3',sans-serif;}
+  .q-head .title{margin-left:auto;font-size:9.5pt;color:#666;font-style:italic;}
+  .q-body{font-size:11.5pt;line-height:1.5;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;}
+
+  .work{min-height:90px;border-top:1px dashed #c9c4bd;margin-top:8px;}
+  .work.s{min-height:50px;} .work.m{min-height:120px;} .work.l{min-height:170px;} .work.xl{min-height:240px;}
+
+  .frq-parts{margin-top:6px;}
+  .frq-parts .part-item{margin:6px 0 4px;}
+  .frq-parts .part-item > .tag{font-family:'Source Sans 3',sans-serif;font-weight:700;margin-right:6px;}
+  .frq-parts .part-item .marks-inline{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;font-weight:700;float:right;letter-spacing:.05em;}
+  .frq-parts .part-item .sub-part{margin:4px 0 4px 18px;}
+
+  table.data{border-collapse:collapse;margin:8px auto;font-size:10.5pt;}
+  table.data th, table.data td{border:1px solid #444;padding:4px 14px;text-align:center;font-family:'Source Sans 3',sans-serif;}
+  table.data th{background:#f1ece4;font-weight:700;}
+
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+
+  .page-break{page-break-after:always;break-after:page;height:0;}
+
+  @media (max-width: 600px){
+    body{font-size:10.5pt;}
+    .nameline{flex-direction:column;align-items:flex-start;gap:6px;}
+    .nameline .blank{min-width:200px;}
+  }
+  @media print{
+    @page { size: letter; margin: 0.6in 0.65in; }
+    html,body{background:#fff;}
+    body{padding:0;max-width:none;font-size:11pt;}
+    .q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}
+    .draft-banner{display:none;}
+  }
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit B3: Improper and Numerical Integration | Practice",
+  "description": "University-level practice problems for Unit B3: Improper and Numerical Integration, with full worked solutions from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_B3_Improper_and_Numerical_Integration_Practice.html",
+  "inLanguage": "en",
+  "learningResourceType": "Practice problems",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit B3 &middot; Calculus II</span><span data-lang="zh">第B3单元 &middot; 微积分II</span></div>
+<h1 class="chapter-title"><span data-lang="en">Improper and Numerical Integration</span><span data-lang="zh">反常积分与数值积分</span></h1>
+<p class="chapter-sub"><span data-lang="en">University-Style Practice Problems</span><span data-lang="zh">大学风格练习题</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: Type I and II improper integrals, p-integrals, comparison and limit-comparison tests, trapezoidal rule, Simpson's rule, error bounds</span><span data-lang="zh">第 <b>1 至 7</b> 节：I型与II型反常积分、p-积分、比较判别法与极限比较判别法、梯形法则、辛普森法则、误差估计</span><span class="scope">CALC II</span></p>
+<hr class="thick"><hr class="thin">
+<div class="nameline"><span><span data-lang="en">Name:</span><span data-lang="zh">姓名：</span><span class="blank"></span></span><span><span data-lang="en">Date:</span><span data-lang="zh">日期：</span><span class="blank period"></span></span></div>
+<p class="draft-banner"><code>v1.0</code> &middot; 10 Qs &middot; 82 marks &middot; Parts CORE / PROOF / APPLIED &middot; MEDIUM to HARD &middot; Sections 1 to 7 &middot; <span data-lang="en">solutions:</span><span data-lang="zh">答案：</span> <code>Solutions/Unit_B3_Improper_and_Numerical_Integration_Solutions.html</code></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; <span data-lang="en">CORE TECHNIQUES</span><span data-lang="zh">核心技巧</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Improper Integrals and Numerical Rules</span><span data-lang="zh">反常积分与数值法则</span></h2>
+<p class="instructions"><span data-lang="en">Write every improper integral as an explicit limit before evaluating. State whether each integral converges or diverges, and give the value if it converges. For numerical rules, show the full sum with all terms before combining.</span><span data-lang="zh">在求值前将每个反常积分写成显式极限的形式。说明每个积分是收敛还是发散，若收敛则给出其值。对于数值法则，在合并之前写出含所有项的完整求和式。</span></p>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">Type I improper integrals: infinite limits of integration</span><span data-lang="zh">I型反常积分：无穷积分限</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate each improper integral, writing the integral as a limit first. State the value if convergent, or show divergence.</span><span data-lang="zh">将每个反常积分先写成极限形式，再求值。若收敛则给出结果，若发散则说明原因。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $\displaystyle\int_{1}^{\infty} \frac{3}{x^{2}}\,dx$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $\displaystyle\int_{0}^{\infty} e^{-3x}\,dx$ <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> $\displaystyle\int_{2}^{\infty} \frac{1}{x\ln x}\,dx$ <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">Type II improper integrals: unbounded integrands</span><span data-lang="zh">II型反常积分：无界被积函数</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate each improper integral. Identify the location of the singularity and write the integral as a one-sided limit before evaluating.</span><span data-lang="zh">求各反常积分的值。先指明奇点位置，再将积分写成单侧极限的形式后求值。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $\displaystyle\int_{0}^{1} \frac{1}{x^{1/3}}\,dx$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $\displaystyle\int_{0}^{4} \frac{1}{\sqrt{4-x}}\,dx$ <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> $\displaystyle\int_{0}^{1} \frac{\ln x}{\sqrt{x}}\,dx$ <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span><span class="pill hard">HARD</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">p-integral convergence and divergence</span><span data-lang="zh">p-积分的收敛与发散</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Determine whether each integral converges or diverges. Cite the relevant p-integral result and verify it applies directly. Do not use a comparison test.</span><span data-lang="zh">判断每个积分是收敛还是发散。引用相关p-积分结论并验证其直接适用。不得使用比较判别法。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $\displaystyle\int_{1}^{\infty} \frac{1}{x^{3/4}}\,dx$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $\displaystyle\int_{0}^{1} \frac{1}{x^{2/3}}\,dx$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> $\displaystyle\int_{1}^{\infty} \frac{1}{x^{5/4}}\,dx$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">trapezoidal rule and Simpson's rule</span><span data-lang="zh">梯形法则与辛普森法则</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Approximate $\displaystyle\int_{0}^{2} e^{-x^{2}}\,dx$ using the given rule and number of subintervals. Show the full sum before combining.</span><span data-lang="zh">用指定法则和子区间数近似计算 $\displaystyle\int_{0}^{2} e^{-x^{2}}\,dx$。合并前写出完整求和式。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Apply the trapezoidal rule with $n=4$ subintervals. Give your answer to four decimal places.</span><span data-lang="zh">用 $n=4$ 个子区间的梯形法则求近似值，结果保留四位小数。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Apply Simpson's rule with $n=4$ subintervals. Give your answer to four decimal places.</span><span data-lang="zh">用 $n=4$ 个子区间的辛普森法则求近似值，结果保留四位小数。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; <span data-lang="en">DEFINITIONS AND PROOF</span><span data-lang="zh">定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Convergence Theorems and p-Integral Derivation</span><span data-lang="zh">收敛定理与p-积分推导</span></h2>
+<p class="instructions"><span data-lang="en">These items are graded on the logic of the argument. State every hypothesis you invoke before drawing the conclusion. For a comparison proof, exhibit the inequality explicitly and verify it holds on the stated interval.</span><span data-lang="zh">本部分按论证逻辑评分。在得出结论前，须陈述所引用的每个假设。对于比较证明，须显式写出不等式并验证其在指定区间上成立。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">deriving the p-integral convergence threshold</span><span data-lang="zh">推导p-积分收敛阈值</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the p-integrals $\displaystyle I_{A}(p)=\int_{1}^{\infty} x^{-p}\,dx$ and $\displaystyle I_{B}(p)=\int_{0}^{1} x^{-p}\,dx$.</span><span data-lang="zh">考虑p-积分 $\displaystyle I_{A}(p)=\int_{1}^{\infty} x^{-p}\,dx$ 与 $\displaystyle I_{B}(p)=\int_{0}^{1} x^{-p}\,dx$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">For $p\ne 1$, compute $\displaystyle\int_{1}^{b} x^{-p}\,dx$ in closed form and then take $b\to\infty$ to show that $I_{A}(p)$ converges if and only if $p>1$, finding the value when it converges. Handle the case $p=1$ separately.</span><span data-lang="zh">对 $p\ne 1$，将 $\displaystyle\int_{1}^{b} x^{-p}\,dx$ 写成封闭形式，再令 $b\to\infty$，证明 $I_{A}(p)$ 收敛当且仅当 $p>1$，并给出收敛时的值。单独处理 $p=1$ 的情形。</span> <span class="marks-inline">[5]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">By a parallel argument, show that $I_{B}(p)=\int_{0}^{1} x^{-p}\,dx$ converges if and only if $p<1$, evaluating the integral when convergent.</span><span data-lang="zh">用类似的论证方法，证明 $I_{B}(p)=\int_{0}^{1} x^{-p}\,dx$ 收敛当且仅当 $p<1$，并在收敛时给出积分值。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">A student claims that the two results are "mirror images of each other, just with the sign of $p-1$ flipped." State precisely what the student means in terms of the antiderivative and the limit direction, and confirm or correct the claim.</span><span data-lang="zh">某学生声称这两个结论"互为镜像，只是 $p-1$ 的符号相反"。用原函数和极限方向精确阐述该学生的意思，并确认或纠正这一说法。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">direct and limit comparison tests for convergence</span><span data-lang="zh">收敛性的直接比较判别法与极限比较判别法</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">In each part, state the comparison function you use, exhibit the required inequality (or limit), and quote the convergence of the comparison integral from the p-integral result or a known fact.</span><span data-lang="zh">在每个小题中，说明所用的比较函数，写出所需的不等式（或极限），并引用p-积分结论或已知事实说明比较积分的收敛性。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Use the direct comparison test to prove that $\displaystyle\int_{1}^{\infty} \frac{1}{x^{2}+x}\,dx$ converges.</span><span data-lang="zh">用直接比较判别法证明 $\displaystyle\int_{1}^{\infty} \frac{1}{x^{2}+x}\,dx$ 收敛。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Use the limit comparison test to determine whether $\displaystyle\int_{1}^{\infty} \frac{\sqrt{x}}{x^{2}-x+1}\,dx$ converges or diverges.</span><span data-lang="zh">用极限比较判别法判断 $\displaystyle\int_{1}^{\infty} \frac{\sqrt{x}}{x^{2}-x+1}\,dx$ 是收敛还是发散。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Use the direct comparison test to prove that $\displaystyle\int_{0}^{1} \frac{1}{\sqrt{x+x^{2}}}\,dx$ converges.</span><span data-lang="zh">用直接比较判别法证明 $\displaystyle\int_{0}^{1} \frac{1}{\sqrt{x+x^{2}}}\,dx$ 收敛。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">doubly-improper integral: splitting at an interior singularity</span><span data-lang="zh">双重反常积分：在内部奇点处拆分</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider $\displaystyle J = \int_{-1}^{1} \frac{1}{x^{2/3}}\,dx$.</span><span data-lang="zh">考虑 $\displaystyle J = \int_{-1}^{1} \frac{1}{x^{2/3}}\,dx$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Explain why $J$ cannot be evaluated as a single Riemann integral, identify all improprieties, and show how to write $J$ as a sum of two proper limits.</span><span data-lang="zh">解释为何 $J$ 不能作为单一黎曼积分求值，指明所有反常之处，并说明如何将 $J$ 写成两个极限之和。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Evaluate each part separately to find the value of $J$, or show it diverges. State clearly what would happen if a student "naively" set $J=\Big[\frac{3}{5}x^{5/3}\Big]_{-1}^{1}$ without splitting.</span><span data-lang="zh">分别对每部分求值以得出 $J$ 的值，或证明其发散。清楚说明若学生"简单地"不拆分而直接令 $J=\Big[\frac{3}{5}x^{5/3}\Big]_{-1}^{1}$ 会出现什么问题。</span> <span class="marks-inline">[5]</span><div class="work l"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; <span data-lang="en">APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Applied Improper Integrals and Numerical Accuracy</span><span data-lang="zh">反常积分的应用与数值精度</span></h2>
+<p class="instructions"><span data-lang="en">Set up each problem cleanly before computing. Carry exact intermediate values and simplify at the end. For error bounds, state the formula and identify all quantities before substituting numbers.</span><span data-lang="zh">计算前先整洁地建立每道题的框架。保留精确的中间值，最后再化简。对于误差界，先写出公式并明确所有量，再代入数值。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">improper integral with both an infinite limit and an interior singularity</span><span data-lang="zh">同时具有无穷积分限和内部奇点的反常积分</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider $\displaystyle K = \int_{0}^{\infty} \frac{1}{x^{1/2}(1+x)}\,dx$.</span><span data-lang="zh">考虑 $\displaystyle K = \int_{0}^{\infty} \frac{1}{x^{1/2}(1+x)}\,dx$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Identify all improprieties of $K$ and split it into two convergent integrals at $x=1$. Verify that each piece converges using the p-integral result or a comparison.</span><span data-lang="zh">指出 $K$ 的所有反常之处，并在 $x=1$ 处将其拆分为两个收敛积分。用p-积分结论或比较法验证每部分均收敛。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Evaluate $K$ exactly by using the substitution $x=t^{2}$ and recognising the resulting standard integral. You may use the fact that $\displaystyle\int_{0}^{\infty}\frac{dt}{1+t^{2}}=\frac{\pi}{2}$ without proof.</span><span data-lang="zh">利用换元 $x=t^{2}$ 将 $K$ 化为标准积分，从而精确求值。可直接引用 $\displaystyle\int_{0}^{\infty}\frac{dt}{1+t^{2}}=\frac{\pi}{2}$ 而无需证明。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Confirm that your answer is reasonable by verifying, via the comparison $\dfrac{1}{x^{1/2}(1+x)}\le \dfrac{1}{x^{1/2}}$ on $(0,1]$ and $\dfrac{1}{x^{1/2}(1+x)}\le \dfrac{1}{x^{3/2}}$ on $[1,\infty)$, that the integral is finite.</span><span data-lang="zh">通过在 $(0,1]$ 上利用比较 $\dfrac{1}{x^{1/2}(1+x)}\le \dfrac{1}{x^{1/2}}$，以及在 $[1,\infty)$ 上利用 $\dfrac{1}{x^{1/2}(1+x)}\le \dfrac{1}{x^{3/2}}$，验证积分有限，从而确认结果合理。</span> <span class="marks-inline">[1]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">Simpson's rule with error bound to guarantee prescribed accuracy</span><span data-lang="zh">辛普森法则及保证指定精度的误差界</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\displaystyle I = \int_{1}^{3} \frac{1}{x}\,dx = \ln 3$.</span><span data-lang="zh">设 $\displaystyle I = \int_{1}^{3} \frac{1}{x}\,dx = \ln 3$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Apply Simpson's rule with $n=4$ to approximate $I$. Show each node, each function value, and the full weighted sum before combining. Give your answer to six decimal places.</span><span data-lang="zh">用 $n=4$ 的辛普森法则近似计算 $I$。写出每个节点、每个函数值及合并前的完整加权求和式，结果保留六位小数。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">The error bound for Simpson's rule on $[a,b]$ with $n$ subintervals is $|E_{S}|\le\dfrac{(b-a)^{5}}{180\,n^{4}}\,M_{4}$, where $M_{4}=\max_{[a,b]}|f^{(4)}(x)|$. Compute $f^{(4)}(x)$ for $f(x)=\tfrac{1}{x}$, find $M_{4}$ on $[1,3]$, and bound $|E_{S}|$ for $n=4$.</span><span data-lang="zh">辛普森法则在 $[a,b]$ 上用 $n$ 个子区间的误差界为 $|E_{S}|\le\dfrac{(b-a)^{5}}{180\,n^{4}}\,M_{4}$，其中 $M_{4}=\max_{[a,b]}|f^{(4)}(x)|$。对 $f(x)=\tfrac{1}{x}$ 求 $f^{(4)}(x)$，在 $[1,3]$ 上确定 $M_{4}$，并对 $n=4$ 给出 $|E_{S}|$ 的上界。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Find the minimum even integer $n$ such that Simpson's rule guarantees $|E_{S}|<10^{-6}$. You may leave your answer as the solution to an inequality in $n$.</span><span data-lang="zh">求最小偶数 $n$，使辛普森法则保证 $|E_{S}|<10^{-6}$。答案可以不等式关于 $n$ 的解的形式给出。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">applied improper integral: probability tail and Laplace transform</span><span data-lang="zh">反常积分的应用：概率尾部与拉普拉斯变换</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">An exponential random variable with rate $\lambda>0$ has probability density $f(x)=\lambda e^{-\lambda x}$ for $x\ge 0$.</span><span data-lang="zh">参数为 $\lambda>0$ 的指数型随机变量，其概率密度函数为 $f(x)=\lambda e^{-\lambda x}$，$x\ge 0$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Show, using an explicit limit, that $\displaystyle\int_{0}^{\infty} \lambda e^{-\lambda x}\,dx = 1$, confirming that $f$ is a valid probability density.</span><span data-lang="zh">用显式极限证明 $\displaystyle\int_{0}^{\infty} \lambda e^{-\lambda x}\,dx = 1$，从而确认 $f$ 是合法的概率密度函数。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Compute the mean (expected value) $\mu=\displaystyle\int_{0}^{\infty} x\cdot\lambda e^{-\lambda x}\,dx$ using integration by parts inside the limit definition. State the limit at each step.</span><span data-lang="zh">在极限定义内用分部积分法计算均值（期望值）$\mu=\displaystyle\int_{0}^{\infty} x\cdot\lambda e^{-\lambda x}\,dx$，每步均须写明极限。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Find the Laplace transform $\displaystyle\mathcal{L}\{e^{-\lambda x}\}(s)=\int_{0}^{\infty} e^{-\lambda x}e^{-sx}\,dx$ for $s>-\lambda$, and state the value of $s$ below which the integral diverges.</span><span data-lang="zh">求拉普拉斯变换 $\displaystyle\mathcal{L}\{e^{-\lambda x}\}(s)=\int_{0}^{\infty} e^{-\lambda x}e^{-sx}\,dx$（$s>-\lambda$），并说明当 $s$ 低于何值时积分发散。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大学一年级课程的本单元遇到困难了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约与鼎瑞学者导师的免费15分钟咨询，在下次期中或期末考试前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_b3_improper_and_numerical_integration__practice__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../Study%20Guides/Unit_B3_Improper_and_Numerical_Integration.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Practice</span><span data-lang="zh">练习</span></span>
+  <a href="Solutions/Unit_B3_Improper_and_Numerical_Integration_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit B3 Practice</span><span data-lang="zh">大学微积分 &middot; 第B3单元练习</span> <code style="color:#555;">v1.0</code></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第1至7节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

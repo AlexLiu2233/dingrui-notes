@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="University Calculus Unit B3: Improper Integrals and Numerical Integration. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="theme-color" content="#7A2E2E">
+<meta name="color-scheme" content="light dark">
+<title>University Calculus — Unit B3: Improper Integrals and Numerical Integration | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_B3_Improper_and_Numerical_Integration.html">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus — Unit B3: Improper Integrals and Numerical Integration | Dingrui Scholars">
+<meta property="og:description" content="University Calculus Unit B3: Improper Integrals and Numerical Integration. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_B3_Improper_and_Numerical_Integration.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="University Calculus — Unit B3: Improper Integrals and Numerical Integration | Dingrui Scholars">
+<meta name="twitter:description" content="University Calculus Unit B3: Improper Integrals and Numerical Integration. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+<style>
+:root {
+  --bg: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --bg-code: #0F0F0F;
+  --text: #0F0F0F;
+  --text-secondary: #585858;
+  --accent: #7A2E2E; --pop: #0099FF; --pop-light: #E8F4FF; --ink: #0F0F0F;
+  --accent-light: #F2E4E4;
+  --accent-dark: #5A1E1E;
+  --green: #2E6B4F;
+  --green-light: #DFF0E8;
+  --orange: #A65E1A;
+  --orange-light: #FBF0E0;
+  --red: #B03030;
+  --red-light: #FCEAEA;
+  --purple: #5E3D7A;
+  --purple-light: #EDE4F5;
+  --gold: #C4956A;
+  --gold-light: #FDF5EC;
+  --border: #E6E6E6;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.10);
+  --radius: 12px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-w: 860px;
+  --toc-w: 260px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F0F0F;
+  --bg-card: #1A1A1A;
+  --bg-code: #000000;
+  --text: #FAFAFA;
+  --text-secondary: #A0A0A0;
+  --accent: #C87070; --pop: #4DB2FF; --pop-light: #12283A; --ink: #FAFAFA;
+  --accent-light: #3A1818;
+  --accent-dark: #E08080;
+  --green: #5CB88A;
+  --green-light: #1A2E24;
+  --orange: #D4944A;
+  --orange-light: #2E2010;
+  --red: #E07070;
+  --red-light: #301515;
+  --purple: #A888C8;
+  --purple-light: #201828;
+  --gold: #D4A870;
+  --gold-light: #2A2018;
+  --border: #2A2A2A;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+
+/* ─── SCORE BADGE (top nav) ─── */
+.score-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--green);
+  background: var(--green-light);
+  border: 1px solid var(--green);
+  padding: 3px 10px; border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.score-badge.zero { color: var(--text-secondary); background: var(--bg); border-color: var(--border); }
+
+/* ─── PROGRESS BAR ─── */
+.progress-track {
+  position: fixed; top: 56px; left: 0; right: 0;
+  height: 3px; background: transparent; z-index: 99;
+}
+.progress-fill {
+  height: 100%; width: 0; background: var(--accent);
+  transition: width 0.15s;
+}
+
+/* ─── SIDEBAR TOC ─── */
+.sidebar {
+  position: fixed; top: 59px; left: 0; bottom: 0;
+  width: var(--toc-w); background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; scrollbar-width: none; padding: 20px 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, background 0.3s;
+  z-index: 90;
+}
+.sidebar::-webkit-scrollbar { display: none; }
+.sidebar.open { transform: translateX(0); box-shadow: var(--shadow-lg); }
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem; padding: 0 20px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.sidebar a {
+  display: block; padding: 8px 20px;
+  color: var(--text-secondary);
+  text-decoration: none; font-size: 0.88rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.sidebar a:hover { color: var(--accent); background: var(--accent-light); }
+.sidebar a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 600; background: linear-gradient(90deg, var(--accent-light), transparent); }
+
+/* ─── MAIN ─── */
+.main-wrap {
+  max-width: var(--max-w);
+  margin: 80px auto 120px;
+  padding: 0 24px;
+
+  transition: width 0.3s ease, margin-left 0.3s ease;}
+@media (min-width: 1100px) {
+  .sidebar { transform: translateX(0); box-shadow: none; }
+  .main-wrap {
+    max-width: none;
+    margin-left: calc(var(--toc-w) + 40px);
+    margin-right: 0;
+    padding: 0 48px;
+  }
+  body.sidebar-collapsed .sidebar { transform: translateX(-100%); }
+}
+
+/* ─── HERO ─── */
+.hero {
+  text-align: center; padding: 56px 24px 48px;
+  background: linear-gradient(180deg, #F4F4F4 0%, transparent 100%);
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(0,0,0,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+[data-theme="dark"] .hero { background: linear-gradient(180deg, rgba(0,0,0, 0.4) 0%, transparent 100%); }
+[data-theme="dark"] .hero::before { background: radial-gradient(ellipse at 70% 20%, rgba(255,255,255,0.04) 0%, transparent 70%); }
+
+.hero-overline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 12px;
+  position: relative;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15; margin-bottom: 16px;
+  position: relative;
+}
+.hero-sub {
+  color: var(--text-secondary); max-width: 650px; margin: 0 auto;
+  position: relative;
+}
+.hero-meta {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin-top: 24px; position: relative;
+}
+.hero-meta .chip {
+  font-size: 0.85rem; font-weight: 600;
+  padding: 6px 16px; border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.chip-maroon { background: var(--bg-card); border: 1px solid var(--accent); color: var(--accent); }
+.chip-green { background: var(--bg-card); border: 1px solid var(--green); color: var(--green); }
+.chip-purple { background: var(--bg-card); border: 1px solid var(--purple); color: var(--purple); }
+
+/* ─── MASTERY DASHBOARD ─── */
+.mastery-dash {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin: -16px 0 40px;
+}
+.mastery-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.mastery-card:hover { transform: translateY(-2px); }
+.mastery-val {
+  font-family: var(--font-mono);
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.mastery-label {
+  font-size: 0.82rem; color: var(--text-secondary);
+  margin-top: 4px; font-weight: 600;
+}
+.mastery-bar {
+  width: 100%; height: 4px; border-radius: 2px;
+  background: var(--border); margin-top: 10px;
+  overflow: hidden;
+}
+.mastery-bar-fill {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+@media (max-width: 600px) { .mastery-dash { grid-template-columns: 1fr; } }
+
+/* ─── SECTION ─── */
+.section { margin-bottom: 56px; scroll-margin-top: 80px; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem; margin-bottom: 16px;
+  line-height: 1.25; border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 8px; display: inline-block;
+}
+.section h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem; margin: 32px 0 12px;
+  line-height: 1.3; color: var(--text);
+}
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.card-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.card-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 700; flex-shrink: 0;
+}
+.icon-blue { background: var(--accent-light); color: var(--accent); }
+.icon-green { background: var(--green-light); color: var(--green); }
+.icon-orange { background: var(--orange-light); color: var(--orange); }
+.icon-red { background: var(--red-light); color: var(--red); }
+.icon-purple { background: var(--purple-light); color: var(--purple); }
+.card-title { font-weight: 700; font-size: 1.05rem; }
+
+/* ─── CODE/WORKED EXAMPLE BLOCKS ─── */
+pre {
+  background: var(--bg-code); color: #CDD6F4;
+  padding: 20px 24px; border-radius: var(--radius);
+  overflow-x: auto; font-family: var(--font-mono);
+  font-size: 0.88rem; line-height: 1.65; margin: 16px 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+code { font-family: var(--font-mono); font-size: 0.9em; }
+:not(pre) > code {
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 6px; border-radius: 4px; font-weight: 500;
+}
+pre .cm { color: #6C7086; }
+pre .num { color: #F9E2AF; font-weight: 600; }
+pre .str { color: #A6E3A1; font-weight: 600; }
+
+/* ─── KEY CONCEPT BOX ─── */
+.concept-box {
+  border-left: 5px solid var(--accent);
+  background: var(--bg-card);
+  padding: 20px 24px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+.concept-box.green { border-left-color: var(--green); }
+.concept-box.orange { border-left-color: var(--orange); }
+.concept-box.red { border-left-color: var(--red); }
+.concept-box.purple { border-left-color: var(--purple); }
+.concept-box > strong:first-child {
+  display: inline-block; margin-bottom: 8px;
+  font-family: var(--font-mono); text-transform: uppercase;
+  font-size: 0.8rem; letter-spacing: 0.5px;
+}
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--bg-card); }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: var(--accent-light); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.3px; text-transform: uppercase; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--accent-light); }
+
+/* ─── QUIZ ─── */
+.quiz { margin: 24px 0; background: var(--bg-card); padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); position: relative; }
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.quiz-q { font-weight: 600; font-size: 1.05rem; flex: 1; }
+.quiz-number {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 8px; border-radius: 6px;
+  flex-shrink: 0; margin-left: 12px;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 12px 18px; border: 2px solid var(--border);
+  border-radius: 8px; cursor: pointer;
+  font-size: 0.95rem; transition: all 0.2s;
+  background: var(--bg); font-weight: 500;
+  position: relative;
+}
+.quiz-opt:hover:not(.disabled) { border-color: var(--accent); background: var(--accent-light); }
+.quiz-opt.correct { border-color: var(--green); background: var(--green-light); color: var(--green); }
+.quiz-opt.wrong { border-color: var(--red); background: var(--red-light); color: var(--red); }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.8; }
+.quiz-opt.correct::after { content: '✓'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-opt.wrong::after { content: '✗'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-explain { margin-top: 16px; padding: 14px 18px; border-radius: 8px; font-size: 0.9rem; display: none; line-height: 1.6; }
+.quiz-explain.show { display: block; animation: fadeSlideIn 0.35s ease; }
+.quiz-explain.correct-exp { background: var(--green-light); color: #1a4030; border: 1px solid var(--green); }
+.quiz-explain.wrong-exp { background: var(--red-light); color: #6b1d1d; border: 1px solid var(--red); }
+[data-theme="dark"] .quiz-explain.correct-exp { color: var(--green); }
+[data-theme="dark"] .quiz-explain.wrong-exp { color: var(--red); }
+.quiz-retry {
+  display: none; margin-top: 12px;
+  padding: 8px 18px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.quiz-retry.show { display: inline-block; animation: fadeSlideIn 0.35s ease; }
+.quiz-retry:hover { background: var(--accent-light); border-color: var(--accent); }
+
+@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ─── ACCORDION / DETAILS ─── */
+details { margin: 16px 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); overflow: hidden; box-shadow: var(--shadow); }
+summary {
+  padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 0.95rem;
+  user-select: none; list-style: none; display: flex; align-items: center; gap: 10px;
+  background: var(--bg); transition: background 0.2s;
+}
+summary:hover { background: var(--accent-light); }
+summary::before { content: '▸'; transition: transform 0.2s; font-size: 1rem; color: var(--accent); }
+details[open] summary { border-bottom: 1px solid var(--border); }
+details[open] summary::before { transform: rotate(90deg); }
+details .detail-body { padding: 20px; font-size: 0.95rem; background: var(--bg-card); }
+
+/* ─── QUICK REF ─── */
+.qref { background: var(--bg-card); border: 2px dashed var(--accent); border-radius: var(--radius); padding: 24px; margin: 24px 0; }
+.qref-title { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; text-align: center; }
+
+/* ─── FLASHCARD ─── */
+
+/* ─── FLASHCARDS (unified: grid overlay, equalized, no scrollbars) ─── */
+.flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.flashcard {
+  perspective: 1000px;
+  cursor: pointer;
+  display: grid;
+}
+.flashcard-inner {
+  display: grid;
+  grid-template-areas: "card";
+  min-height: 200px;
+  height: 100%;
+  position: relative;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+.flashcard-front, .flashcard-back {
+  grid-area: card;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  word-break: break-word;
+  hyphens: auto;
+}
+.flashcard-front {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: clamp(0.92rem, 2.1vw, 1.05rem);
+  line-height: 1.45;
+  padding: 22px 20px 34px;
+  gap: 8px;
+}
+.flashcard-front::after {
+  content: 'TAP TO FLIP';
+  position: absolute; bottom: 10px; left: 0; right: 0;
+  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+  color: var(--text-secondary); opacity: 0.5; letter-spacing: 1.5px;
+}
+.flashcard-back {
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  color: var(--text);
+  transform: rotateY(180deg);
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.6;
+  padding: 26px 22px;
+  gap: 12px;
+  /* Cleaner prose wrapping: no mid-word splits, no auto-hyphens,
+     balanced lines so commas/periods don't orphan at line starts */
+  word-break: normal;
+  hyphens: manual;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+.flashcard-back .katex-display {
+  margin: 6px 0 !important;
+  font-size: 1.25em;
+  max-width: 100%;
+  overflow: hidden;
+}
+.flashcard-back .katex-display > .katex { max-width: 100%; }
+.flashcard-back .katex { font-size: 1em; }
+/* Give <br>-separated lines real breathing room (numbered lists etc.) */
+.flashcard-back br { content: ""; display: block; margin-bottom: 8px; }
+.flashcard-back > * { max-width: 100%; }
+@media (max-width: 600px) {
+  .flashcard-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ─── WORKED EXAMPLES (standardized) ─── */
+.worked-example {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 88%, var(--accent-light) 12%), var(--bg-card));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+[data-theme="dark"] .worked-example {
+  background: linear-gradient(180deg, rgba(58,32,32,0.32), rgba(30,24,24,0.98));
+}
+.worked-example h4,
+.worked-example .we-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin: 0 0 16px 0;
+}
+.worked-example .we-steps {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.worked-example .we-step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+[data-theme="dark"] .worked-example .we-step {
+  background: var(--bg-card);
+}
+.worked-example .we-step strong {
+  color: var(--accent);
+  font-size: 0.92rem;
+  display: block;
+  margin-bottom: 6px;
+}
+.worked-example .we-step .katex-display {
+  margin: 10px 0;
+}
+.worked-solution {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+.worked-solution .katex-display { margin: 0.65rem 0; }
+
+/* ─── FORMULA BOX ─── */
+.formula-box {
+  background: var(--bg-card);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  margin: 24px 0;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  overflow-x: auto;
+}
+.formula-box .formula-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--text-secondary); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 12px;
+}
+.formula-box .katex-display { margin: 10px 0 0 0; }
+
+/* ─── SEPARATOR ─── */
+.sep { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+/* ─── PRACTICE INPUT ─── */
+.practice-input-group { margin: 20px 0; }
+.practice-prompt { font-weight: 600; margin-bottom: 12px; font-size: 1.02rem; }
+.practice-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.practice-row input[type="text"] {
+  flex: 1; min-width: 160px; padding: 10px 16px;
+  border: 2px solid var(--border); border-radius: 8px;
+  font-family: var(--font-mono); font-size: 1rem;
+  background: var(--bg); color: var(--text);
+  transition: border-color 0.2s;
+}
+.practice-row input[type="text"]:focus { outline: none; border-color: var(--accent); }
+.practice-row button {
+  padding: 10px 24px; border: none; border-radius: 8px;
+  background: var(--accent); color: #fff; font-weight: 700;
+  font-family: var(--font-body); font-size: 0.95rem;
+  cursor: pointer; transition: all 0.2s;
+}
+.practice-row button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.practice-feedback {
+  margin-top: 10px; padding: 10px 16px; border-radius: 8px;
+  font-size: 0.92rem; display: none;
+}
+.practice-feedback.show { display: block; animation: fadeSlideIn 0.3s ease; }
+.practice-feedback.correct { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+.practice-feedback.wrong { background: var(--red-light); color: var(--red); border: 1px solid var(--red); }
+
+/* ─── CHECKLIST ─── */
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  padding: 12px 16px; border: 1px solid var(--border);
+  border-radius: 8px; margin-bottom: 8px;
+  cursor: pointer; font-size: 0.95rem;
+  background: var(--bg-card); transition: all 0.2s;
+  display: flex; align-items: center; gap: 12px;
+  user-select: none;
+}
+.checklist li:hover { border-color: var(--accent); }
+.checklist li .check-icon {
+  width: 24px; height: 24px; border-radius: 6px;
+  border: 2px solid var(--border); display: flex;
+  align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+  font-size: 0.8rem; color: transparent;
+}
+.checklist li.checked { background: var(--green-light); border-color: var(--green); }
+.checklist li.checked .check-icon { background: var(--green); border-color: var(--green); color: #fff; }
+
+/* ─── INTERACTIVE WIDGETS ─── */
+.interactive-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow-lg);
+}
+.widget-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 16px;
+  text-align: center;
+}
+.widget-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.widget-canvas-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.widget-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.widget-controls label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.widget-controls input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 220px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.widget-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-controls input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-readout {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 90px;
+  text-align: center;
+}
+.widget-sum-readout {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.widget-sum-readout .sum-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+/* ─── TWO COLUMNS ─── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ─── FOOTER ─── */
+.footer-wrap {
+  text-align: center; padding: 40px 24px;
+  color: var(--text-secondary); font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem; color: var(--text);
+  margin-bottom: 4px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 1100px) {
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .main-wrap { padding: 0 16px; margin-top: 60px; }
+  pre { font-size: 0.8rem; padding: 16px; }
+  
+  .formula-box { padding: 16px; }
+  .top-nav { padding: 0 16px; }
+  }
+
+/* Print */
+@media print {
+  .flashcard-inner { transform: none !important; }
+  .flashcard-back { transform: none !important; position: relative !important; backface-visibility: visible !important; }
+  .flashcard-front { display: none !important; }
+  .flashcard { height: auto !important; min-height: auto !important; }
+  .top-nav, .progress-track, .sidebar, .topnav-actions, .quiz-retry, .mastery-dash,
+  .flashcard-toolbar button, .score-badge { display: none !important; }
+  .main-wrap { margin: 0 auto; max-width: 100%; }
+  body { font-size: 11pt; background: white; color: black; }
+  pre { border: 1px solid #ccc; white-space: pre-wrap; }
+  .card, .formula-box, .concept-box, .quiz { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+  details { break-inside: avoid; }
+  .interactive-widget { display: none; }
+  
+  
+  
+  
+  a { color: inherit; text-decoration: none; }
+}
+
+/* ─── TOP-NAV (matching Units 2-6) ─── */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; height: 56px;
+  transition: background 0.3s, border 0.3s;
+}
+[data-theme="dark"] .top-nav { background: rgba(21, 16, 16, 0.92); }
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-logo { height: 36px; width: auto; border-radius: 0; object-fit: contain; }
+.nav-badge {
+  background: var(--accent); color: #fff;
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+  padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px;
+}
+.nav-btn {
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px;
+  padding: 6px 14px; font-size: 0.82rem;
+  cursor: pointer; font-family: var(--font-body); font-weight: 600;
+  transition: all 0.2s;
+}
+.nav-btn:hover { background: var(--accent-light); border-color: var(--accent); transform: translateY(-1px); }
+.nav-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ─── BILINGUAL TOGGLE ─── */
+body:not(.lang-zh) [data-lang="zh"] { display: none; }
+body.lang-zh [data-lang="en"] { display: none; }
+
+/* consult-cta: lead-gen conversion surface (Sprint A) */
+.consult-cta { background: linear-gradient(180deg, var(--accent-light, #F2E4E4) 0%, var(--bg-card, #fff) 100%); border: 2px solid var(--accent); border-radius: var(--radius, 12px); padding: 22px 26px; margin: 30px 0 8px; text-align: center; }
+.consult-cta__lead { font-family: var(--font-display); font-size: 1.25rem; color: var(--accent); margin: 0 0 6px; }
+.consult-cta__body { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; margin: 0 auto 16px; max-width: 48ch; }
+.consult-cta__btn { display: inline-block; background: var(--ink); color: var(--bg-card); font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 12px 22px; border-radius: 12px; transition: transform 0.15s, opacity 0.2s; }
+.consult-cta__btn:hover { opacity: 0.88; transform: translateY(-1px); }
+/* design-refresh links */ .card a:not(.feeder-link), .concept-box a, .going-deeper a, .section > p a { color: var(--pop); text-underline-offset: 2px; }
+@media print { .consult-cta { border: 1px solid #999; background: #fff; } .consult-cta__btn { background: #fff !important; color: #000 !important; border: 1px solid #999; } .consult-cta__btn[data-lang="en"]::after { content: " (dingruischolars.com/signup)"; font-weight: 400; } .consult-cta__btn[data-lang="zh"]::after { content: " (dingruischolars.com/signup-ch)"; font-weight: 400; } }
+
+/* __sg_mobile_spacing__ tighten phone layout + fix top-nav clip (injected by declutter_sg.py) */
+@media (max-width: 600px){
+  .main-wrap{ margin: 64px auto 56px !important; padding: 0 14px !important; }
+  .hero{ padding: 40px 18px 32px !important; margin-bottom: 26px !important; }
+  .hero-sub{ font-size: 0.96rem !important; }
+  .section{ margin-bottom: 36px !important; }
+  .section h2{ font-size: 1.45rem !important; }
+  .section h3{ margin: 24px 0 10px !important; }
+  .card{ padding: 18px 16px !important; }
+  .concept-box{ padding: 16px 16px !important; }
+  .quiz{ padding: 18px 14px !important; }
+  .formula-box{ padding: 16px 12px !important; }
+  .worked-solution{ padding: 16px 16px !important; }
+  .sep{ margin: 28px 0 !important; }
+  .detail-body{ padding: 16px !important; }
+  .top-nav{ padding: 0 10px !important; }
+  .nav-left{ gap: 6px !important; min-width: 0; }
+  .nav-right{ gap: 4px !important; }
+  .nav-btn{ padding: 6px 9px !important; font-size: 0.78rem !important; }
+  .score-badge{ display: none !important; }
+}
+@media (max-width: 430px){
+  .nav-left .nav-badge:nth-child(2){ display: none !important; }
+}
+/* __end_sg_mobile_spacing__ */
+
+  /* mobile-overflow-lock v1: lock to viewport width on phone/tablet, no horizontal pan (laptop sidebar layout >=1100px unaffected) */
+  @media (max-width: 1024px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .main-wrap, .hero, .hero-sub, .consult-cta, .sg-appendix { max-width: 100%; }
+    img, table, video, iframe, pre { max-width: 100%; }
+    .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+  }
+</style>
+<!-- BEGIN unit-nav-css -->
+<style data-section="unit-nav">
+.unit-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 980px;
+  margin: 64px auto 32px;
+  padding: 0 24px;
+}
+.unit-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  padding: 18px 20px;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border, #DDD0C8);
+  border-radius: 12px;
+  color: inherit;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.unit-nav__link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #7A2E2E);
+  box-shadow: 0 6px 16px -4px rgba(60, 20, 30, 0.12);
+}
+.unit-nav__link--next {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.unit-nav__arrow {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent, #7A2E2E);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.unit-nav__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.unit-nav__hint {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #6B5058);
+}
+.unit-nav__title {
+  font-family: var(--font-display, 'DM Serif Display', Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--text, #2C1B1F);
+}
+.unit-nav__placeholder {
+  border: 1px dashed var(--border, #DDD0C8);
+  border-radius: 12px;
+  background: transparent;
+  opacity: 0.6;
+}
+@media (max-width: 640px) {
+  .unit-nav { grid-template-columns: 1fr; gap: 10px; margin-top: 48px; }
+  .unit-nav__link--next { flex-direction: row; text-align: left; }
+}
+@media print { .unit-nav { display: none; } }
+</style>
+<!-- END unit-nav-css -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus — Unit B3: Improper Integrals and Numerical Integration",
+  "description": "University Calculus Unit B3: Improper Integrals and Numerical Integration. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_B3_Improper_and_Numerical_Integration.html",
+  "inLanguage": [
+    "en"
+  ],
+  "learningResourceType": "Study Guide",
+  "educationalLevel": "University",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFKAuoDASIAAhEBAxEB/8QAHAABAQADAQEBAQAAAAAAAAAAAAEGBwgFBAID/8QAaxAAAQMDAQUBCAcQCwwHBgcAAQACAwQFEQYHEiExQRMIFCIyUWFxgRUXN5GUsbMWIzM2QlJUYnJ0dZOhstLTJDRVVnOCkpW0w9ElNThFU1djg4SiwdQmJ0NERmV2KGSFhqTwGEhmo8Lh9f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgQDBf/EADQRAQACAgAEAwUHBAIDAAAAAAABAgMRBBIhMTJBURMzYXGBFCI0kaGx0SNSU/BCQ2PB4f/aAAwDAQACEQMRAD8A6jREWV1EREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARREFREKAiIgIomfMgqZRT8qBniqiICIiAiBEBERAREygJlTgqgZRAiAiic0FTKiIKinxK9UBFFUBFECCooqgIiICZU9SvqQEUVQEQogIiICIiAiKIKmfMiiCoonrQVMoiAiIgIoqgIiICIiAiIgJ6kRARPUiAiJ0QEREBERAREQEyoqgIiICIiAiIgIiICIiAiIgIiICKKoCKZRBUURBURRAVREBFOHmX4q54aSAz1c0dPEOb5XBrR6zwQf0RYzdNf6JtkZfVaotpxzZBL27v5Me8fyLF6vbhoyLPYQ3esxyMdM1gP4xzT+RNutcOS3astmotP0O3qzPqZG1unrlBB/2b4po5XH0tO6B/KKyC2bYtCVkojluNTQuOMd9UjwD62BzR6yo3C08NljvVsFReVQam03XvDKHUFqqnuOA2Ksjc4nyboOfyL13BzfGaR6QpcZiY7vyiqIhEREDoiJ6kFCnrT0IgqdVEKCqInqQOXFPOr05KIKinmVQRE9SflQVFEPRBUREBEU9aAUREBVREFUREFRFEDqicccU6ICqIgnRERBVFUQFDzQ8lUBREQVF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CIiqCZRE6IKiBRBUUwqgKJyRBVE6J1QEREFUToiCqBEKAqpkeVBxQVFEQOKInVBVEQIHNEVQQoqogIiYQVREQFeSiBBRlREQFVB5kQE69UKdED1omUwgIiICIiAqoiAr51MKoIUTogQMIhRBVFVEBERARMcUQPWiFEBECICqiIBRECAEKIgoQophACqZTKAiIgIiICIiAiIgiqIgiqKdEBE5qoJ5kRVBEVRBEVU9KCqIiC8UUTzoKor1UKAEREBVREBOKeVOqAiqiAgREF64UKKoJyRCFUETqhCo8qCIqp0QVFEQFVEQOqKqIBTmiICeZVTqgIivVBCiIgBERARVRA6IPIqogdVeaiqCInmRAREQERCgBERAREQMomEQEVUQEQKoCiIEDHBPSidEBAiIHpTqieYIKinJOKCphQKoCIiAiIgIiICFEQTor1REDqpw44VRBCqiIHVERAREQEREBQKogiqIgKKogdEREBERBFURBFURBFURBCnVVEERVEEVREBERAUKqIInDCqIIiqIInVVEERVEBERBFURAKiqICIiAp6lUQTgiqFBOqoROXVBOSKlMIIipQIIiqBBETCqCJyVQoIiuEwgiqhTCAiqYQFFR6EQFFUQEQqICvJROiBhVMIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAohVQAiKBBUUCpQEQckQRUlCoguEygU6oKiIgIgRBCqiICIp1QVCUU6oKhRCggVQclOqCoURA4oiJI/9k=" class="nav-logo" alt="DingRui Scholars logo">
+    <span class="nav-brand">Dingrui Scholars</span>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn" id="tocToggle" onclick="document.getElementById('sidebar').classList.toggle('open')" title="Contents"><span data-lang="en">Contents</span><span data-lang="zh">目录</span></button>
+    <button class="nav-btn" id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+    <button class="nav-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">Dark</button>
+  </div>
+</nav>
+<div class="progress-bar"><div id="progressFill"></div></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-title"><span data-lang="en">Table of Contents</span><span data-lang="zh">目录</span></div>
+  <a href="#hero"><span data-lang="en">Overview</span><span data-lang="zh">概览</span></a>
+  <a href="#s1"><span data-lang="en">1 &middot; Infinite Intervals</span><span data-lang="zh">1 &middot; 无穷区间</span></a>
+  <a href="#s2"><span data-lang="en">2 &middot; Discontinuous Integrands</span><span data-lang="zh">2 &middot; 不连续被积函数</span></a>
+  <a href="#s3"><span data-lang="en">3 &middot; The Comparison Test</span><span data-lang="zh">3 &middot; 比较判别法</span></a>
+  <a href="#s4"><span data-lang="en">4 &middot; The Trapezoidal Rule</span><span data-lang="zh">4 &middot; 梯形法则</span></a>
+  <a href="#s5"><span data-lang="en">5 &middot; Simpson&rsquo;s Rule</span><span data-lang="zh">5 &middot; 辛普森法则</span></a>
+  <a href="#s6"><span data-lang="en">6 &middot; Error Bounds</span><span data-lang="zh">6 &middot; 误差界</span></a>
+  <a href="#s7"><span data-lang="en">7 &middot; Going Deeper</span><span data-lang="zh">7 &middot; 深入探讨</span></a>
+  <a href="#flashcards"><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></a>
+  <a href="#unit-quiz"><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></a>
+  <a href="#checklist"><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握清单</span></a>
+</aside>
+
+<main class="main-wrap">
+<section class="hero" id="hero">
+  <div class="hero-overline"><span data-lang="en">University Calculus &middot; Calculus II</span><span data-lang="zh">大学微积分 &middot; 微积分 II</span></div>
+  <h1><span data-lang="en">Unit B3: Improper Integrals and Numerical Integration</span><span data-lang="zh">B3 单元：反常积分与数值积分</span></h1>
+  <p class="hero-sub"><span data-lang="en">When the interval runs to infinity, the integrand blows up, or no antiderivative exists, we still extract a number. This unit defines improper integrals as limits, tests their convergence, and approximates the rest with the trapezoidal and Simpson rules.</span><span data-lang="zh">当积分区间延伸至无穷，或被积函数在某点趋于无穷大，或原函数不存在时，我们仍然可以给积分赋予数值。本单元将反常积分（<code>improper integral</code>）定义为极限（<code>limit</code>），讨论其收敛（<code>convergence</code>）与发散（<code>divergence</code>），并在无法求出原函数（<code>antiderivative</code>）时用梯形法则（<code>trapezoidal rule</code>）与辛普森法则（<code>Simpson's rule</code>）进行数值逼近。</span></p>
+  <div class="hero-meta">
+    <span class="chip"><span data-lang="en">Calculus II</span><span data-lang="zh">微积分 II</span></span>
+    <span class="chip"><span data-lang="en">Single-Variable</span><span data-lang="zh">单变量</span></span>
+    <span class="chip"><span data-lang="en">Integrals & Series</span><span data-lang="zh">积分与级数</span></span>
+    <span class="chip">MIT 18.01 / GT 1552 / Princeton MAT 104</span>
+  </div>
+  <div class="concept-box">
+    <strong><span data-lang="en">Read me first.</span><span data-lang="zh">先读这里。</span></strong>
+    <span data-lang="en">Two ideas drive this unit. First, an integral can be improper because the interval is infinite or the integrand is unbounded; in either case we define it as a limit of ordinary integrals and ask whether that limit exists. Second, when an antiderivative is out of reach, we approximate the integral numerically and bound the error. The comparison tests connect the two: they decide convergence without evaluation, just as the error bounds certify accuracy without the true value.</span><span data-lang="zh">本单元围绕两个核心思想展开。第一，当积分区间无穷或被积函数无界时，积分称为反常积分（<code>improper integral</code>），其定义为常义积分的极限，核心问题是该极限是否存在（即是否收敛）。第二，当原函数（<code>antiderivative</code>）无法用初等函数表示时，转而用数值方法逼近积分并对误差进行估计。比较判别法将两者联系起来：无需计算积分值便能判断收敛性，正如误差界在不知道真实值的情况下保证数值精度。</span>
+  </div>
+</section>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">这部分在大一课程中卡住了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</span><span data-lang="zh">预约与 Dingrui Scholars 导师的免费 15 分钟咨询，在下次期中考前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_b3_improper_and_numerical_integration__sg__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+
+<section class="section" id="s1">
+  <div class="section-label"><span data-lang="en">Section 1</span><span data-lang="zh">第一节</span></div>
+  <h2><span data-lang="en">Infinite Intervals</span><span data-lang="zh">无穷区间</span></h2>
+  <p><span data-lang="en">An ordinary definite integral $\int_a^b f(x)\,dx$ presumes a finite interval and a bounded integrand. An <em>improper integral</em> relaxes one of these conditions. The first kind extends the interval of integration to infinity. We give such an integral meaning not by a single limit of Riemann sums but by integrating over a finite piece and then letting that piece grow without bound.</span><span data-lang="zh">普通定积分 $\int_a^b f(x)\,dx$ 要求区间有界且被积函数有界。反常积分（<code>improper integral</code>）放宽了其中一个条件。第一类反常积分将积分区间延伸至无穷。其含义不是通过对黎曼和（<code>Riemann sum</code>）直接取极限给出，而是先在有限区间上积分，再令区间端点趋向无穷。</span></p>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">An integral over an unbounded interval is <em>defined</em> as a limit of proper integrals. If the limit exists as a finite number the improper integral <em>converges</em> to that value; otherwise it <em>diverges</em>. Convergence is the assertion that the area, though spread over an infinite interval, accumulates to a finite total.</span><span data-lang="zh">无穷区间上的积分被<em>定义</em>为常义积分的极限。若极限存在且为有限数，则反常积分<em>收敛</em>（<code>converges</code>）到该值；否则<em>发散</em>（<code>diverges</code>）。收敛的含义是：面积虽然分布在无穷区间上，但最终累积到有限的总量。</span></p></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Definition: infinite interval</span><span data-lang="zh">定义：无穷区间</span></div>
+  $$\int_a^{\infty} f(x)\,dx = \lim_{t\to\infty}\int_a^{t} f(x)\,dx, \qquad \int_{-\infty}^{b} f(x)\,dx = \lim_{t\to-\infty}\int_{t}^{b} f(x)\,dx.$$
+  </div>
+  <p><span data-lang="en">For an integral over the whole line we split at any convenient point $c$ and require <em>both</em> halves to converge separately:</span><span data-lang="zh">对于整条数轴上的积分，在任意方便的点 $c$ 处拆分，要求<em>两段</em>各自独立收敛：</span></p>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Doubly infinite interval</span><span data-lang="zh">双向无穷区间</span></div>
+  $$\int_{-\infty}^{\infty} f(x)\,dx = \int_{-\infty}^{c} f(x)\,dx + \int_{c}^{\infty} f(x)\,dx.$$
+  </div>
+  <p><span data-lang="en">The doubly infinite integral diverges if either piece diverges. It is a common error to compute $\lim_{t\to\infty}\int_{-t}^{t} f$ instead; that symmetric limit (the Cauchy principal value) can exist even when the integral itself diverges, as for $f(x)=x$.</span><span data-lang="zh">若任意一段发散，则整个双向积分发散。常见错误是改用对称极限 $\lim_{t\to\infty}\int_{-t}^{t} f$；这个对称极限（柯西主值）即使在积分本身发散时也可能存在，例如 $f(x)=x$。</span></p>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">The $p$ test at infinity</span><span data-lang="zh">无穷处 $p$ 判别法</span></div>
+  $$\int_{1}^{\infty}\frac{dx}{x^{p}} \text{ converges if } p>1 \text{ and diverges if } p\le 1.$$
+  </div>
+  <details><summary><span data-lang="en">Worked Example 1.1: a convergent and a divergent case</span><span data-lang="zh">例题 1.1：收敛与发散的对比</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Evaluate $\int_{1}^{\infty}\dfrac{dx}{x^{2}}$. By definition,</p>
+  $$\int_{1}^{\infty}\frac{dx}{x^{2}}=\lim_{t\to\infty}\int_{1}^{t}x^{-2}\,dx=\lim_{t\to\infty}\Big[-\frac{1}{x}\Big]_{1}^{t}=\lim_{t\to\infty}\Big(1-\frac{1}{t}\Big)=1.$$
+  <p>The integral converges to $1$. Contrast $\int_{1}^{\infty}\dfrac{dx}{x}$:</p>
+  $$\lim_{t\to\infty}\int_{1}^{t}\frac{dx}{x}=\lim_{t\to\infty}\big[\ln x\big]_{1}^{t}=\lim_{t\to\infty}\ln t=\infty,$$
+  <p>so this one diverges. Both integrands tend to $0$, yet only the first encloses finite area. Decay must be fast enough, and $1/x$ is exactly on the boundary $p=1$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>计算 $\int_{1}^{\infty}\dfrac{dx}{x^{2}}$。按定义：</p>
+  $$\int_{1}^{\infty}\frac{dx}{x^{2}}=\lim_{t\to\infty}\int_{1}^{t}x^{-2}\,dx=\lim_{t\to\infty}\Big[-\frac{1}{x}\Big]_{1}^{t}=\lim_{t\to\infty}\Big(1-\frac{1}{t}\Big)=1.$$
+  <p>积分收敛到 $1$。与之对比，$\int_{1}^{\infty}\dfrac{dx}{x}$：</p>
+  $$\lim_{t\to\infty}\int_{1}^{t}\frac{dx}{x}=\lim_{t\to\infty}\big[\ln x\big]_{1}^{t}=\lim_{t\to\infty}\ln t=\infty,$$
+  <p>发散。两个被积函数都趋向 $0$，但只有第一个围出有限面积。衰减速度必须足够快，而 $1/x$ 恰好处于临界点 $p=1$ 处。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 1.2: an exponential tail</span><span data-lang="zh">例题 1.2：指数衰减的尾部</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Evaluate $\int_{0}^{\infty} e^{-x}\,dx$.</p>
+  $$\int_{0}^{\infty} e^{-x}\,dx=\lim_{t\to\infty}\big[-e^{-x}\big]_{0}^{t}=\lim_{t\to\infty}\big(1-e^{-t}\big)=1.$$
+  <p>Exponential decay always wins: $\int_{0}^{\infty}e^{-kx}\,dx=1/k$ for any $k>0$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>计算 $\int_{0}^{\infty} e^{-x}\,dx$：</p>
+  $$\int_{0}^{\infty} e^{-x}\,dx=\lim_{t\to\infty}\big[-e^{-x}\big]_{0}^{t}=\lim_{t\to\infty}\big(1-e^{-t}\big)=1.$$
+  <p>指数衰减总能保证收敛：对任意 $k>0$，$\int_{0}^{\infty}e^{-kx}\,dx=1/k$。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 1.3: a doubly infinite integral, done correctly</span><span data-lang="zh">例题 1.3：双向无穷积分的正确处理</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Evaluate $\int_{-\infty}^{\infty}\dfrac{dx}{1+x^{2}}$. Split at the convenient point $c=0$ and require each half to converge on its own:</p>
+  $$\int_{0}^{\infty}\frac{dx}{1+x^{2}}=\lim_{t\to\infty}\big[\arctan x\big]_{0}^{t}=\lim_{t\to\infty}\arctan t=\frac{\pi}{2}.$$
+  <p>By the evenness of the integrand the left half contributes the same amount,</p>
+  $$\int_{-\infty}^{0}\frac{dx}{1+x^{2}}=\lim_{t\to-\infty}\big[\arctan x\big]_{t}^{0}=0-\Big(-\frac{\pi}{2}\Big)=\frac{\pi}{2}.$$
+  <p>Both halves are finite, so the doubly infinite integral converges to $\tfrac{\pi}{2}+\tfrac{\pi}{2}=\pi$. The key discipline is that we evaluated two independent one-sided limits rather than a single symmetric limit.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>计算 $\int_{-\infty}^{\infty}\dfrac{dx}{1+x^{2}}$。在 $c=0$ 处拆分，要求各段独立收敛：</p>
+  $$\int_{0}^{\infty}\frac{dx}{1+x^{2}}=\lim_{t\to\infty}\big[\arctan x\big]_{0}^{t}=\lim_{t\to\infty}\arctan t=\frac{\pi}{2}.$$
+  <p>由被积函数的偶函数性，左侧贡献相同：</p>
+  $$\int_{-\infty}^{0}\frac{dx}{1+x^{2}}=\lim_{t\to-\infty}\big[\arctan x\big]_{t}^{0}=0-\Big(-\frac{\pi}{2}\Big)=\frac{\pi}{2}.$$
+  <p>两段均有限，故积分收敛到 $\tfrac{\pi}{2}+\tfrac{\pi}{2}=\pi$。关键在于：我们计算了两个独立的单侧极限，而非一个对称极限。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 1.4: a tail that decays yet still diverges</span><span data-lang="zh">例题 1.4：趋零但仍发散的尾部</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Test $\int_{2}^{\infty}\dfrac{dx}{x\ln x}$. The integrand tends to $0$, yet the substitution $u=\ln x$, $du=dx/x$ exposes the truth:</p>
+  $$\int_{2}^{\infty}\frac{dx}{x\ln x}=\lim_{t\to\infty}\int_{\ln 2}^{\ln t}\frac{du}{u}=\lim_{t\to\infty}\big[\ln u\big]_{\ln 2}^{\ln t}=\lim_{t\to\infty}\big(\ln\ln t-\ln\ln 2\big)=\infty.$$
+  <p>The integral diverges. The lesson of Example 1.1 generalizes: an integrand vanishing at infinity is necessary but never sufficient for convergence. Here the decay is slower than every $1/x^{p}$ with $p>1$, so the area still accumulates without bound.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>判断 $\int_{2}^{\infty}\dfrac{dx}{x\ln x}$。被积函数趋向 $0$，但换元 $u=\ln x$，$du=dx/x$ 揭示真相：</p>
+  $$\int_{2}^{\infty}\frac{dx}{x\ln x}=\lim_{t\to\infty}\int_{\ln 2}^{\ln t}\frac{du}{u}=\lim_{t\to\infty}\big[\ln u\big]_{\ln 2}^{\ln t}=\lim_{t\to\infty}\big(\ln\ln t-\ln\ln 2\big)=\infty.$$
+  <p>积分发散。这推广了例题 1.1 的结论：被积函数在无穷处趋零是收敛的必要条件，但远非充分条件。此处衰减比任何 $p>1$ 的 $1/x^p$ 都慢，故面积仍无限累积。</p>
+  </div></div></details>
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Students often "evaluate" $\int_{-\infty}^{\infty} x\,dx$ as $0$, reasoning that the integrand is odd. But $\int_{0}^{\infty} x\,dx=\lim_{t\to\infty}\tfrac{t^{2}}{2}=\infty$ diverges, so by the splitting rule the whole integral diverges and has no value. The symmetric limit $\lim_{t\to\infty}\int_{-t}^{t} x\,dx=0$ is the Cauchy principal value, a different and weaker notion. The correct procedure is always to split and demand each piece converge separately.</span><span data-lang="zh">学生常以被积函数为奇函数为由，"算出" $\int_{-\infty}^{\infty} x\,dx=0$。但 $\int_{0}^{\infty} x\,dx=\lim_{t\to\infty}\tfrac{t^{2}}{2}=\infty$ 发散，根据拆分规则，整个积分发散，没有值。对称极限 $\lim_{t\to\infty}\int_{-t}^{t} x\,dx=0$ 是柯西主值，是不同且更弱的概念。正确做法始终是拆分并要求每段各自收敛。</span></div>
+  <details><summary><span data-lang="en">Going deeper: a clean proof of the $p$ test at infinity</span><span data-lang="zh">深入探讨：无穷处 $p$ 判别法的严格证明</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>We prove that $\int_{1}^{\infty} x^{-p}\,dx$ converges if and only if $p>1$. For $p\ne 1$, the antiderivative of $x^{-p}$ is $\dfrac{x^{1-p}}{1-p}$, so</p>
+  $$\int_{1}^{t} x^{-p}\,dx=\frac{x^{1-p}}{1-p}\Big|_{1}^{t}=\frac{1}{1-p}\big(t^{1-p}-1\big).$$
+  <p>As $t\to\infty$, the term $t^{1-p}$ tends to $0$ when the exponent $1-p<0$, that is $p>1$, and tends to $\infty$ when $1-p>0$, that is $p<1$. Hence</p>
+  $$\int_{1}^{\infty} x^{-p}\,dx=\frac{1}{p-1}\quad(p>1),\qquad \text{and diverges for }p<1.$$
+  <p>The remaining case $p=1$ is exactly Example 1.1: the antiderivative is $\ln t$, which diverges. So convergence holds precisely for $p>1$, and the boundary case $p=1$ falls on the divergent side. The mirror test at $0$ in the next section is proved the same way, with the limit taken as $t\to 0^{+}$ instead, which is why the inequality flips.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>证明：$\int_{1}^{\infty} x^{-p}\,dx$ 收敛当且仅当 $p>1$。当 $p\ne 1$ 时，$x^{-p}$ 的原函数（<code>antiderivative</code>）为 $\dfrac{x^{1-p}}{1-p}$，故</p>
+  $$\int_{1}^{t} x^{-p}\,dx=\frac{x^{1-p}}{1-p}\Big|_{1}^{t}=\frac{1}{1-p}\big(t^{1-p}-1\big).$$
+  <p>令 $t\to\infty$：当指数 $1-p<0$（即 $p>1$）时，$t^{1-p}\to 0$；当 $1-p>0$（即 $p<1$）时，$t^{1-p}\to\infty$。故</p>
+  $$\int_{1}^{\infty} x^{-p}\,dx=\frac{1}{p-1}\quad(p>1),\qquad \text{当 }p<1\text{ 时发散。}$$
+  <p>剩余情形 $p=1$ 即例题 1.1：原函数为 $\ln t$，发散。因此收敛恰在 $p>1$ 时成立，临界情形 $p=1$ 属于发散一侧。下一节中零点处的镜像判别法采用完全相同的推导，只是极限方向改为 $t\to 0^{+}$，因此不等号方向翻转。</p>
+  </div></div></details>
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">For which values of $p$ does $\int_{1}^{\infty} x^{-p}\,dx$ converge?</span><span data-lang="zh">对哪些 $p$ 值，$\int_{1}^{\infty} x^{-p}\,dx$ 收敛？</span></div><span class="quiz-number">1.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$p>1$</div><div class="quiz-opt" data-idx="1">$p<1$</div><div class="quiz-opt" data-idx="2">$p\ge 1$</div><div class="quiz-opt" data-idx="3"><span data-lang="en">all $p$</span><span data-lang="zh">所有 $p$</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. The antiderivative is $x^{1-p}/(1-p)$ for $p\ne 1$, whose limit at infinity is finite exactly when $1-p<0$, that is $p>1$. At $p=1$ the antiderivative is $\ln x$, which diverges.</span><span data-lang="zh">正确。当 $p\ne 1$ 时原函数为 $x^{1-p}/(1-p)$，其在无穷处极限有限当且仅当 $1-p<0$，即 $p>1$。当 $p=1$ 时原函数为 $\ln x$，发散。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Recall the antiderivative $x^{1-p}/(1-p)$. Its limit as $x\to\infty$ is finite only when the exponent $1-p$ is negative, so $p>1$. The case $p=1$ gives $\ln x$, which diverges.</span><span data-lang="zh">原函数为 $x^{1-p}/(1-p)$，其在 $x\to\infty$ 时极限有限，要求指数 $1-p$ 为负，即 $p>1$。$p=1$ 时得 $\ln x$，发散。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="section-label"><span data-lang="en">Section 2</span><span data-lang="zh">第二节</span></div>
+  <h2><span data-lang="en">Discontinuous Integrands</span><span data-lang="zh">不连续被积函数</span></h2>
+  <p><span data-lang="en">The second kind of improper integral has a finite interval but an integrand that blows up at an endpoint or at an interior point. The Riemann integral is undefined there, so again we retreat to a proper integral that stops short of the singularity and take a one-sided limit.</span><span data-lang="zh">第二类反常积分的区间有限，但被积函数在端点或内部某点趋于无穷大。黎曼积分在该处无定义，因此仍退回到在奇点前截止的常义积分，再取单侧极限。</span></p>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">If $f$ has a vertical asymptote at an endpoint of $[a,b]$, integrate up to a point near it and let that point approach the singularity. If the bad point is interior, split the interval at it and treat the two halves independently; both must converge for the whole to converge.</span><span data-lang="zh">若 $f$ 在 $[a,b]$ 某端点处有铅直渐近线，则将积分上（下）限移近该点，再令其趋向奇点。若奇点在内部，在该点处拆分区间，分别处理两段；两段都收敛，整体才收敛。</span></p></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Singularity at an endpoint</span><span data-lang="zh">端点处的奇点</span></div>
+  $$\int_{a}^{b} f(x)\,dx=\lim_{t\to b^{-}}\int_{a}^{t} f(x)\,dx \quad(\text{bad point at }b),\qquad \int_{a}^{b} f(x)\,dx=\lim_{t\to a^{+}}\int_{t}^{b} f(x)\,dx \quad(\text{bad point at }a).$$
+  </div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">The $p$ test at $0$</span><span data-lang="zh">零点处 $p$ 判别法</span></div>
+  $$\int_{0}^{1}\frac{dx}{x^{p}} \text{ converges if } p<1 \text{ and diverges if } p\ge 1.$$
+  </div>
+  <p><span data-lang="en">Notice the inequality reverses relative to the test at infinity: near $0$ a mild singularity ($p<1$) is integrable, while near infinity mild decay ($p>1$) is needed. The two tests are mirror images.</span><span data-lang="zh">注意不等号方向与无穷处判别法相反：在 $0$ 处，较弱的奇性（$p<1$）可积；在无穷处，需要足够快的衰减（$p>1$）。两个判别法互为镜像。</span></p>
+  <details><summary><span data-lang="en">Worked Example 2.1: integrable endpoint singularity</span><span data-lang="zh">例题 2.1：端点处可积的奇性</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Evaluate $\int_{0}^{1}\dfrac{dx}{\sqrt{x}}$. The integrand is unbounded as $x\to 0^{+}$. Here $p=\tfrac12<1$, so we expect convergence.</p>
+  $$\int_{0}^{1}x^{-1/2}\,dx=\lim_{t\to 0^{+}}\big[2\sqrt{x}\big]_{t}^{1}=\lim_{t\to 0^{+}}\big(2-2\sqrt{t}\big)=2.$$
+  <p>The area is finite even though the curve climbs to infinity at the left edge.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>计算 $\int_{0}^{1}\dfrac{dx}{\sqrt{x}}$。被积函数在 $x\to 0^{+}$ 时无界，此处 $p=\tfrac12<1$，预期收敛。</p>
+  $$\int_{0}^{1}x^{-1/2}\,dx=\lim_{t\to 0^{+}}\big[2\sqrt{x}\big]_{t}^{1}=\lim_{t\to 0^{+}}\big(2-2\sqrt{t}\big)=2.$$
+  <p>尽管曲线在左端点趋向无穷大，面积仍然有限。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 2.2: an interior singularity that hides divergence</span><span data-lang="zh">例题 2.2：隐藏发散的内部奇点</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Consider $\int_{-1}^{1}\dfrac{dx}{x^{2}}$. The integrand blows up at the interior point $x=0$, so we must split:</p>
+  $$\int_{-1}^{1}\frac{dx}{x^{2}}=\int_{-1}^{0}\frac{dx}{x^{2}}+\int_{0}^{1}\frac{dx}{x^{2}}.$$
+  <p>Each half is a $p=2$ integral at $0$, hence diverges:</p>
+  $$\int_{0}^{1}x^{-2}\,dx=\lim_{t\to 0^{+}}\Big[-\frac{1}{x}\Big]_{t}^{1}=\lim_{t\to 0^{+}}\Big(-1+\frac{1}{t}\Big)=\infty.$$
+  <p>The integral diverges. Naively applying the power rule across $x=0$ gives the absurd answer $-2$; this is exactly the trap that the split is designed to expose.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>考虑 $\int_{-1}^{1}\dfrac{dx}{x^{2}}$。被积函数在内部点 $x=0$ 处爆炸，必须拆分：</p>
+  $$\int_{-1}^{1}\frac{dx}{x^{2}}=\int_{-1}^{0}\frac{dx}{x^{2}}+\int_{0}^{1}\frac{dx}{x^{2}}.$$
+  <p>每段都是零点处 $p=2$ 的反常积分（<code>improper integral</code>），故发散：</p>
+  $$\int_{0}^{1}x^{-2}\,dx=\lim_{t\to 0^{+}}\Big[-\frac{1}{x}\Big]_{t}^{1}=\lim_{t\to 0^{+}}\Big(-1+\frac{1}{t}\Big)=\infty.$$
+  <p>整个积分发散。直接跨越 $x=0$ 套用幂函数求导公式会得到荒谬答案 $-2$；拆分恰好是为了避开这一陷阱。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 2.3: a borderline logarithmic singularity</span><span data-lang="zh">例题 2.3：对数型临界奇性</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Evaluate $\int_{0}^{1}\ln x\,dx$. The integrand is unbounded as $x\to 0^{+}$ (it tends to $-\infty$), so this is improper at the left endpoint. Integrate by parts with $u=\ln x$, $dv=dx$:</p>
+  $$\int_{t}^{1}\ln x\,dx=\big[x\ln x-x\big]_{t}^{1}=(0-1)-(t\ln t-t)=-1-t\ln t+t.$$
+  <p>As $t\to 0^{+}$ the product $t\ln t\to 0$ (the linear factor beats the logarithm), so</p>
+  $$\int_{0}^{1}\ln x\,dx=\lim_{t\to 0^{+}}\big(-1-t\ln t+t\big)=-1.$$
+  <p>The integral converges even though the integrand is unbounded, because the singularity is only logarithmic, far milder than any power $x^{-p}$ with $p\ge 1$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>计算 $\int_{0}^{1}\ln x\,dx$。被积函数在 $x\to 0^{+}$ 时趋向 $-\infty$，故在左端点处为反常积分。用分部积分法，令 $u=\ln x$，$dv=dx$：</p>
+  $$\int_{t}^{1}\ln x\,dx=\big[x\ln x-x\big]_{t}^{1}=(0-1)-(t\ln t-t)=-1-t\ln t+t.$$
+  <p>当 $t\to 0^{+}$ 时，$t\ln t\to 0$（线性因子压过对数），故</p>
+  $$\int_{0}^{1}\ln x\,dx=\lim_{t\to 0^{+}}\big(-1-t\ln t+t\big)=-1.$$
+  <p>虽然被积函数无界，积分仍收敛，因为此处奇性仅为对数级，远弱于任何 $p\ge 1$ 的 $x^{-p}$。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 2.4: singular and infinite at once</span><span data-lang="zh">例题 2.4：同时含奇点与无穷区间</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Some integrals are improper for both reasons. Consider $\int_{0}^{\infty}\dfrac{dx}{\sqrt{x}\,(1+x)}$, unbounded at $x=0$ and over an infinite interval. Split at $x=1$ to isolate the two defects:</p>
+  $$\int_{0}^{\infty}\frac{dx}{\sqrt{x}\,(1+x)}=\int_{0}^{1}\frac{dx}{\sqrt{x}\,(1+x)}+\int_{1}^{\infty}\frac{dx}{\sqrt{x}\,(1+x)}.$$
+  <p>Near $0$ the integrand behaves like $x^{-1/2}$, an integrable singularity ($p=\tfrac12<1$); near infinity it behaves like $x^{-3/2}$, a convergent tail ($p=\tfrac32>1$). Both pieces converge, so the whole does. The substitution $x=u^{2}$, $dx=2u\,du$ even gives the exact value:</p>
+  $$\int_{0}^{\infty}\frac{2u\,du}{u\,(1+u^{2})}=2\int_{0}^{\infty}\frac{du}{1+u^{2}}=2\cdot\frac{\pi}{2}=\pi.$$
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>有些积分同时具有两种反常性。考虑 $\int_{0}^{\infty}\dfrac{dx}{\sqrt{x}\,(1+x)}$，在 $x=0$ 处无界且区间无穷。在 $x=1$ 处拆分，分离两处"缺陷"：</p>
+  $$\int_{0}^{\infty}\frac{dx}{\sqrt{x}\,(1+x)}=\int_{0}^{1}\frac{dx}{\sqrt{x}\,(1+x)}+\int_{1}^{\infty}\frac{dx}{\sqrt{x}\,(1+x)}.$$
+  <p>在 $0$ 附近被积函数行为如 $x^{-1/2}$，可积奇性（$p=\tfrac12<1$）；在无穷远处行为如 $x^{-3/2}$，收敛尾部（$p=\tfrac32>1$）。两段均收敛，整体收敛。令 $x=u^{2}$，$dx=2u\,du$ 还可得到精确值：</p>
+  $$\int_{0}^{\infty}\frac{2u\,du}{u\,(1+u^{2})}=2\int_{0}^{\infty}\frac{du}{1+u^{2}}=2\cdot\frac{\pi}{2}=\pi.$$
+  </div></div></details>
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Applying the Fundamental Theorem of Calculus across an interior singularity gives nonsense. For $\int_{-1}^{1} x^{-2}\,dx$, writing $[-x^{-1}]_{-1}^{1}=-1-1=-2$ ignores that the antiderivative is undefined at $x=0$; the integral in fact diverges. Always scan the interval for points where the integrand is unbounded before you antidifferentiate, and split there.</span><span data-lang="zh">跨越内部奇点直接套用微积分基本定理（<code>FTC</code>）会得到错误结果。对 $\int_{-1}^{1} x^{-2}\,dx$，写成 $[-x^{-1}]_{-1}^{1}=-1-1=-2$ 忽略了原函数在 $x=0$ 处无定义；实际上该积分发散。在求原函数之前，始终要扫查区间内被积函数无界的点，并在该处拆分。</span></div>
+  <details><summary><span data-lang="en">Going deeper: the $p$ test at $0$, and why the inequality flips</span><span data-lang="zh">深入探讨：零点处 $p$ 判别法与不等号翻转的原因</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>We show $\int_{0}^{1} x^{-p}\,dx$ converges if and only if $p<1$. For $p\ne 1$,</p>
+  $$\int_{t}^{1} x^{-p}\,dx=\frac{x^{1-p}}{1-p}\Big|_{t}^{1}=\frac{1}{1-p}\big(1-t^{1-p}\big).$$
+  <p>Now let $t\to 0^{+}$. The term $t^{1-p}$ tends to $0$ when the exponent $1-p>0$, that is $p<1$, and blows up when $1-p<0$, that is $p>1$. Therefore</p>
+  $$\int_{0}^{1} x^{-p}\,dx=\frac{1}{1-p}\quad(p<1),\qquad\text{and diverges for }p>1.$$
+  <p>The case $p=1$ gives $[\ln x]_{t}^{1}=-\ln t\to\infty$, divergent. Compare with the test at infinity: there we needed $t^{1-p}\to 0$ as $t\to\infty$, which forced $1-p<0$. Near $0$ we need $t^{1-p}\to 0$ as $t\to 0^{+}$, which forces $1-p>0$. The same algebra, evaluated at opposite ends of the real line, flips the inequality. This duality is worth memorizing: small $p$ tames a singularity at $0$, large $p$ tames a tail at infinity.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>证明：$\int_{0}^{1} x^{-p}\,dx$ 收敛当且仅当 $p<1$。当 $p\ne 1$ 时，</p>
+  $$\int_{t}^{1} x^{-p}\,dx=\frac{x^{1-p}}{1-p}\Big|_{t}^{1}=\frac{1}{1-p}\big(1-t^{1-p}\big).$$
+  <p>令 $t\to 0^{+}$：当 $1-p>0$（即 $p<1$）时，$t^{1-p}\to 0$；当 $1-p<0$（即 $p>1$）时，$t^{1-p}$ 爆炸。因此</p>
+  $$\int_{0}^{1} x^{-p}\,dx=\frac{1}{1-p}\quad(p<1),\qquad p>1\text{ 时发散。}$$
+  <p>$p=1$ 时得 $[\ln x]_{t}^{1}=-\ln t\to\infty$，发散。与无穷处判别法对比：在那里需要 $t^{1-p}\to 0$（$t\to\infty$），迫使 $1-p<0$；在零点处需要 $t^{1-p}\to 0$（$t\to 0^{+}$），迫使 $1-p>0$。同一套代数，在数轴两端求极限，不等号方向翻转。值得记住：小 $p$ 驯服零点处的奇性，大 $p$ 驯服无穷处的尾部。</p>
+  </div></div></details>
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The integral $\displaystyle\int_{-1}^{1}\frac{dx}{x^{2}}$:</span><span data-lang="zh">积分 $\displaystyle\int_{-1}^{1}\frac{dx}{x^{2}}$：</span></div><span class="quiz-number">2.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">equals $-2$</span><span data-lang="zh">等于 $-2$</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">equals $2$</span><span data-lang="zh">等于 $2$</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">equals $0$ by symmetry</span><span data-lang="zh">由对称性等于 $0$</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">diverges</span><span data-lang="zh">发散</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. The integrand is unbounded at the interior point $x=0$. Splitting there, each half is a $p=2$ integral at $0$ and diverges, so the whole integral diverges. Applying the power rule blindly gives the false value $-2$.</span><span data-lang="zh">正确。被积函数在内部点 $x=0$ 处无界。在该处拆分，每段都是零点处 $p=2$ 的反常积分，发散，故整个积分发散。盲目套用幂函数规则给出错误值 $-2$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The integrand has a singularity at the interior point $x=0$, so you must split the interval there before integrating. Each piece is a $p=2$ improper integral at $0$, which diverges, so the full integral diverges.</span><span data-lang="zh">被积函数在内部点 $x=0$ 处有奇点，必须在该处拆分区间再积分。每段都是零点处 $p=2$ 的反常积分，发散，故整个积分发散。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="section-label"><span data-lang="en">Section 3</span><span data-lang="zh">第三节</span></div>
+  <h2><span data-lang="en">The Comparison Test</span><span data-lang="zh">比较判别法</span></h2>
+  <p><span data-lang="en">Many improper integrals cannot be evaluated in closed form, yet we still wish to know whether they converge. The comparison test settles convergence by bounding the integrand between functions whose integrals we already understand. It is the integral analogue of the comparison test for series.</span><span data-lang="zh">许多反常积分无法用初等函数写出封闭表达式，但我们仍想知道它们是否收敛。比较判别法（<code>comparison test</code>）通过将被积函数夹在已知积分的函数之间来判断收敛性，是级数比较判别法在积分中的对应版本。</span></p>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">Convergence is governed by the size of the integrand near the trouble spot. If a nonnegative integrand is dominated by a convergent one, it converges; if it dominates a divergent one, it diverges. A smaller nonnegative area cannot escape to infinity, and a larger one cannot be tamed.</span><span data-lang="zh">收敛性由被积函数在"问题点"附近的大小决定。若一个非负被积函数被某个收敛积分的被积函数控制，则它收敛；若它控制某个发散积分的被积函数，则它发散。较小的非负面积不能逃至无穷，较大的面积也无法被约束。</span></p></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Direct Comparison Test</span><span data-lang="zh">直接比较判别法</span></div>
+  $$\text{If } 0\le f(x)\le g(x) \text{ on } [a,\infty): \quad \int_a^{\infty} g \text{ converges} \Rightarrow \int_a^{\infty} f \text{ converges}; \quad \int_a^{\infty} f \text{ diverges} \Rightarrow \int_a^{\infty} g \text{ diverges}.$$
+  </div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Limit Comparison Test</span><span data-lang="zh">极限比较判别法</span></div>
+  $$\text{If } f,g>0 \text{ and } \lim_{x\to\infty}\frac{f(x)}{g(x)}=L \text{ with } 0<L<\infty, \text{ then } \int_a^{\infty} f \text{ and } \int_a^{\infty} g \text{ both converge or both diverge}.$$
+  </div>
+  <p><span data-lang="en">The direct test needs a clean inequality; the limit test needs only matching growth rates, so it is often easier in practice. Pair either with the $p$ tests, which supply the standard yardsticks $1/x^p$.</span><span data-lang="zh">直接比较需要明确的不等式；极限比较只需要增长率相当，实践中往往更易操作。两者都可与 $p$ 判别法配合，后者提供标准参照 $1/x^p$。</span></p>
+  <details><summary><span data-lang="en">Worked Example 3.1: convergence by direct comparison</span><span data-lang="zh">例题 3.1：用直接比较证明收敛</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Show that $\int_{1}^{\infty}\dfrac{dx}{x^{2}+1}$ converges. For $x\ge 1$ we have $x^{2}+1>x^{2}$, so</p>
+  $$0<\frac{1}{x^{2}+1}<\frac{1}{x^{2}}.$$
+  <p>Since $\int_{1}^{\infty}x^{-2}\,dx$ converges (a $p=2$ integral), the smaller integral converges as well. We need not evaluate it, though in this case the exact value is $\arctan(\infty)-\arctan(1)=\tfrac{\pi}{2}-\tfrac{\pi}{4}=\tfrac{\pi}{4}$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>证明 $\int_{1}^{\infty}\dfrac{dx}{x^{2}+1}$ 收敛。对 $x\ge 1$ 有 $x^{2}+1>x^{2}$，故</p>
+  $$0<\frac{1}{x^{2}+1}<\frac{1}{x^{2}}.$$
+  <p>由于 $\int_{1}^{\infty}x^{-2}\,dx$ 收敛（$p=2$ 积分），较小的积分也收敛。无需求出其值，但此处精确值为 $\arctan(\infty)-\arctan(1)=\tfrac{\pi}{2}-\tfrac{\pi}{4}=\tfrac{\pi}{4}$。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 3.2: divergence by limit comparison</span><span data-lang="zh">例题 3.2：用极限比较证明发散</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Decide whether $\int_{2}^{\infty}\dfrac{x}{\sqrt{x^{4}-1}}\,dx$ converges. For large $x$ the integrand behaves like $x/\sqrt{x^{4}}=1/x$, so compare with $g(x)=1/x$:</p>
+  $$\lim_{x\to\infty}\frac{x/\sqrt{x^{4}-1}}{1/x}=\lim_{x\to\infty}\frac{x^{2}}{\sqrt{x^{4}-1}}=\lim_{x\to\infty}\frac{1}{\sqrt{1-x^{-4}}}=1.$$
+  <p>The limit is finite and positive, so the given integral behaves like $\int_2^{\infty}dx/x$, which diverges. Hence the given integral diverges.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>判断 $\int_{2}^{\infty}\dfrac{x}{\sqrt{x^{4}-1}}\,dx$ 是否收敛。对大 $x$，被积函数行为如 $x/\sqrt{x^{4}}=1/x$，取 $g(x)=1/x$ 进行极限比较：</p>
+  $$\lim_{x\to\infty}\frac{x/\sqrt{x^{4}-1}}{1/x}=\lim_{x\to\infty}\frac{x^{2}}{\sqrt{x^{4}-1}}=\lim_{x\to\infty}\frac{1}{\sqrt{1-x^{-4}}}=1.$$
+  <p>极限有限且为正，故所给积分与 $\int_2^{\infty}dx/x$ 同命运，后者发散，故所给积分发散。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 3.3: a trigonometric numerator bounded by comparison</span><span data-lang="zh">例题 3.3：用比较控制三角函数分子</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Show that $\int_{1}^{\infty}\dfrac{2+\sin x}{x^{2}}\,dx$ converges. The numerator oscillates but stays bounded: $1\le 2+\sin x\le 3$ for all $x$. Hence</p>
+  $$0<\frac{2+\sin x}{x^{2}}\le \frac{3}{x^{2}}.$$
+  <p>Since $\int_{1}^{\infty} 3x^{-2}\,dx=3$ converges, the direct comparison test forces the smaller integral to converge as well. Notice the integrand is not monotone and has no elementary antiderivative, yet comparison settles convergence cleanly without any evaluation.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>证明 $\int_{1}^{\infty}\dfrac{2+\sin x}{x^{2}}\,dx$ 收敛。分子振荡但有界：对所有 $x$，$1\le 2+\sin x\le 3$。故</p>
+  $$0<\frac{2+\sin x}{x^{2}}\le \frac{3}{x^{2}}.$$
+  <p>由于 $\int_{1}^{\infty} 3x^{-2}\,dx=3$ 收敛，直接比较判别法保证较小积分也收敛。注意被积函数不单调，也没有初等原函数，但比较法干净地解决了收敛问题，无需任何计算。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 3.4: comparison at a singular endpoint</span><span data-lang="zh">例题 3.4：奇异端点处的比较</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>The comparison test works equally well for integrands singular at a finite endpoint. Decide whether $\int_{0}^{1}\dfrac{dx}{\sqrt{x+x^{3}}}$ converges. Near $x=0$ the cube term is negligible, so the integrand behaves like $x^{-1/2}$. Use limit comparison with $g(x)=x^{-1/2}$:</p>
+  $$\lim_{x\to 0^{+}}\frac{1/\sqrt{x+x^{3}}}{1/\sqrt{x}}=\lim_{x\to 0^{+}}\sqrt{\frac{x}{x+x^{3}}}=\lim_{x\to 0^{+}}\frac{1}{\sqrt{1+x^{2}}}=1.$$
+  <p>The limit is finite and positive, and $\int_{0}^{1} x^{-1/2}\,dx$ converges ($p=\tfrac12<1$), so the given integral converges too. The limit comparison test reads off convergence from leading behavior at the trouble spot, whether that spot is $\infty$ or a finite singularity.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>比较判别法同样适用于有限端点处的奇点。判断 $\int_{0}^{1}\dfrac{dx}{\sqrt{x+x^{3}}}$ 是否收敛。在 $x=0$ 附近，三次项可忽略，被积函数行为如 $x^{-1/2}$。用 $g(x)=x^{-1/2}$ 做极限比较：</p>
+  $$\lim_{x\to 0^{+}}\frac{1/\sqrt{x+x^{3}}}{1/\sqrt{x}}=\lim_{x\to 0^{+}}\sqrt{\frac{x}{x+x^{3}}}=\lim_{x\to 0^{+}}\frac{1}{\sqrt{1+x^{2}}}=1.$$
+  <p>极限有限且为正，而 $\int_{0}^{1} x^{-1/2}\,dx$ 收敛（$p=\tfrac12<1$），故所给积分也收敛。极限比较判别法从"问题点"处的主项行为直接读出收敛性，无论该点在无穷处还是有限奇点处。</p>
+  </div></div></details>
+  <div class="concept-box orange"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">The comparison test for integrals requires the integrand to be nonnegative (or eventually of one sign). Applying direct comparison to a sign-changing integrand such as $\frac{\sin x}{x}$ is invalid: $\big|\frac{\sin x}{x}\big|\le\frac1x$ does not prove convergence because $\int_1^{\infty}\frac{dx}{x}$ diverges, and in fact $\int_1^{\infty}\frac{\sin x}{x}\,dx$ converges only conditionally. For signed integrands, test absolute convergence or use a sharper tool; a one-sided bound alone decides nothing.</span><span data-lang="zh">积分的比较判别法要求被积函数非负（或最终同号）。对变号被积函数如 $\frac{\sin x}{x}$ 直接套用比较法无效：$\big|\frac{\sin x}{x}\big|\le\frac1x$ 不能证明收敛，因为 $\int_1^{\infty}\frac{dx}{x}$ 发散，事实上 $\int_1^{\infty}\frac{\sin x}{x}\,dx$ 只是条件收敛。对有正有负的被积函数，应检验绝对收敛性或使用更精细的工具；单侧估计不足以作出任何判断。</span></div>
+  <details><summary><span data-lang="en">Going deeper: proof of the direct comparison test</span><span data-lang="zh">深入探讨：直接比较判别法的证明</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Suppose $0\le f(x)\le g(x)$ for $x\ge a$ and $\int_a^{\infty} g$ converges. Define the tail-area function $F(t)=\int_a^{t} f(x)\,dx$. Because $f\ge 0$, $F$ is nondecreasing in $t$. Because $f\le g$,</p>
+  $$F(t)=\int_a^{t} f\le \int_a^{t} g\le \int_a^{\infty} g=:M<\infty.$$
+  <p>So $F$ is nondecreasing and bounded above by $M$. A monotone function bounded above has a finite limit (the monotone convergence property of the real numbers), hence $\lim_{t\to\infty} F(t)$ exists and is at most $M$. That limit is exactly $\int_a^{\infty} f$, which therefore converges. The divergence half is the contrapositive: if $\int_a^{\infty} f$ diverged while $f\le g$, then $\int_a^{\infty} g$ would have to diverge as well. The argument is the integral twin of the comparison test for series, with "bounded monotone partial sums" replaced by "bounded monotone partial areas."</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>设对 $x\ge a$ 有 $0\le f(x)\le g(x)$，且 $\int_a^{\infty} g$ 收敛。定义尾部面积函数 $F(t)=\int_a^{t} f(x)\,dx$。因 $f\ge 0$，$F$ 关于 $t$ 单调不减。因 $f\le g$，</p>
+  $$F(t)=\int_a^{t} f\le \int_a^{t} g\le \int_a^{\infty} g=:M<\infty.$$
+  <p>故 $F$ 单调不减且有上界 $M$。有上界的单调函数有有限极限（实数的单调收敛性质），因此 $\lim_{t\to\infty} F(t)$ 存在且不超过 $M$。该极限即为 $\int_a^{\infty} f$，故其收敛。发散的部分为逆否命题：若 $\int_a^{\infty} f$ 发散而 $f\le g$，则 $\int_a^{\infty} g$ 也必然发散。这一论证是级数比较判别法在积分中的对应，只是将"有界单调部分和"换成了"有界单调部分面积"。</p>
+  </div></div></details>
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">To test $\displaystyle\int_{1}^{\infty}\frac{dx}{x^{3}+x}$ by limit comparison, the natural comparison function is:</span><span data-lang="zh">用极限比较判别法检验 $\displaystyle\int_{1}^{\infty}\frac{dx}{x^{3}+x}$，最自然的比较函数是：</span></div><span class="quiz-number">3.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$1/x$</div><div class="quiz-opt" data-idx="1">$1/x^{3}$</div><div class="quiz-opt" data-idx="2">$1/x^{2}$</div><div class="quiz-opt" data-idx="3">$e^{-x}$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. For large $x$ the dominant term in the denominator is $x^{3}$, so the integrand behaves like $1/x^{3}$. The limit of the ratio is $1$, and since $\int_1^{\infty}x^{-3}\,dx$ converges ($p=3$), so does the original.</span><span data-lang="zh">正确。对大 $x$，分母的主项为 $x^{3}$，故被积函数行为如 $1/x^{3}$。比值的极限为 $1$，由于 $\int_1^{\infty}x^{-3}\,dx$ 收敛（$p=3$），原积分也收敛。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Match the leading behavior of the denominator for large $x$. Here $x^{3}+x\approx x^{3}$, so the integrand is asymptotic to $1/x^{3}$, which is the right yardstick.</span><span data-lang="zh">匹配大 $x$ 时分母的主项：$x^{3}+x\approx x^{3}$，故被积函数渐近于 $1/x^{3}$，这才是正确的参照。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="section-label"><span data-lang="en">Section 4</span><span data-lang="zh">第四节</span></div>
+  <h2><span data-lang="en">The Trapezoidal Rule</span><span data-lang="zh">梯形法则</span></h2>
+  <p><span data-lang="en">When an antiderivative is unavailable or the integrand is known only at sample points, we approximate $\int_a^b f(x)\,dx$ numerically. Partition $[a,b]$ into $n$ subintervals of equal width $h=(b-a)/n$ with nodes $x_i=a+ih$. The trapezoidal rule replaces $f$ on each subinterval by the straight line through its endpoints and sums the resulting trapezoid areas.</span><span data-lang="zh">当原函数（<code>antiderivative</code>）无法求出，或被积函数只在离散采样点处已知时，我们对 $\int_a^b f(x)\,dx$ 进行数值逼近。将 $[a,b]$ 等分为 $n$ 段，步长 $h=(b-a)/n$，节点 $x_i=a+ih$。梯形法则（<code>trapezoidal rule</code>）用每段两端点确定的直线代替 $f$，累加所有梯形面积。</span></p>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">The trapezoidal rule approximates the curve by a piecewise linear interpolant. Each trapezoid has area $\tfrac{h}{2}(f(x_{i-1})+f(x_i))$; summing telescopes the interior weights to $2$, giving the familiar $1,2,2,\dots,2,1$ pattern.</span><span data-lang="zh">梯形法则用分段线性插值逼近曲线。每个梯形面积为 $\tfrac{h}{2}(f(x_{i-1})+f(x_i))$；求和后内部节点权重叠加为 $2$，形成熟悉的 $1,2,2,\dots,2,1$ 权重模式。</span></p></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Trapezoidal Rule</span><span data-lang="zh">梯形法则公式</span></div>
+  $$T_n=\frac{h}{2}\Big[f(x_0)+2f(x_1)+2f(x_2)+\cdots+2f(x_{n-1})+f(x_n)\Big],\qquad h=\frac{b-a}{n}.$$
+  </div>
+  <p><span data-lang="en">The endpoints carry weight $1$ because each contributes to a single trapezoid; every interior node is shared by two trapezoids and so carries weight $2$. For a concave-down integrand the chords lie below the curve, so $T_n$ underestimates; for concave-up, $T_n$ overestimates.</span><span data-lang="zh">端点权重为 $1$，因为各自只属于一个梯形；每个内部节点被两个梯形共享，故权重为 $2$。对凹（上凸）的被积函数，弦在曲线下方，$T_n$ 低估；对凸（下凸）函数，$T_n$ 高估。</span></p>
+  <details><summary><span data-lang="en">Worked Example 4.1: estimating $\int_0^1 e^{-x^2}\,dx$ with $n=4$</span><span data-lang="zh">例题 4.1：用 $n=4$ 估计 $\int_0^1 e^{-x^2}\,dx$</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>This integrand has no elementary antiderivative, so numerical methods are essential. With $n=4$, $h=0.25$ and nodes $0,0.25,0.5,0.75,1$:</p>
+  $$f(0)=1,\ f(0.25)=0.9394,\ f(0.5)=0.7788,\ f(0.75)=0.5698,\ f(1)=0.3679.$$
+  $$T_4=\frac{0.25}{2}\big[1+2(0.9394)+2(0.7788)+2(0.5698)+0.3679\big]=0.125\,(5.9439)=0.7430.$$
+  <p>The true value is about $0.7468$, so the error is roughly $0.0038$. Doubling $n$ would cut the error by about a factor of four.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>此被积函数无初等原函数，数值方法必不可少。取 $n=4$，$h=0.25$，节点 $0,0.25,0.5,0.75,1$：</p>
+  $$f(0)=1,\ f(0.25)=0.9394,\ f(0.5)=0.7788,\ f(0.75)=0.5698,\ f(1)=0.3679.$$
+  $$T_4=\frac{0.25}{2}\big[1+2(0.9394)+2(0.7788)+2(0.5698)+0.3679\big]=0.125\,(5.9439)=0.7430.$$
+  <p>真实值约为 $0.7468$，误差约 $0.0038$。将 $n$ 加倍，误差大约减小四倍。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 4.2: trapezoidal rule from a table of data</span><span data-lang="zh">例题 4.2：从数据表格应用梯形法则</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Numerical rules shine when $f$ is known only at sample points. A sensor reports a flow rate $f(t)$ (in liters per second) at five equally spaced times over $[0,4]$ seconds, $h=1$:</p>
+  $$f(0)=0,\ f(1)=3,\ f(2)=5,\ f(3)=4,\ f(4)=2.$$
+  <p>The total volume is $\int_0^4 f\,dt$, estimated by</p>
+  $$T_4=\frac{1}{2}\big[f(0)+2f(1)+2f(2)+2f(3)+f(4)\big]=\frac12\big[0+6+10+8+2\big]=\frac12(26)=13\ \text{liters}.$$
+  <p>No formula for $f$ is needed; the trapezoidal rule only consumes the sampled values, which is why it is the workhorse of experimental data reduction.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>当 $f$ 只在采样点处已知时，数值法大显身手。一个传感器在 $[0,4]$ 秒内五个等间距时刻报告流量 $f(t)$（升/秒），$h=1$：</p>
+  $$f(0)=0,\ f(1)=3,\ f(2)=5,\ f(3)=4,\ f(4)=2.$$
+  <p>总体积为 $\int_0^4 f\,dt$，估计为</p>
+  $$T_4=\frac{1}{2}\big[f(0)+2f(1)+2f(2)+2f(3)+f(4)\big]=\frac12\big[0+6+10+8+2\big]=\frac12(26)=13\ \text{升}.$$
+  <p>无需知道 $f$ 的解析式；梯形法则只消耗采样值，这正是它成为实验数据处理主力工具的原因。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 4.3: over- or under-estimate from concavity</span><span data-lang="zh">例题 4.3：由凹凸性判断高估或低估</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Estimate $\int_0^1 e^{x}\,dx$ with $n=2$, $h=0.5$, and decide whether the estimate is high or low. Nodes $0,0.5,1$ give $f=1,\ e^{0.5}\approx1.6487,\ e\approx2.7183$:</p>
+  $$T_2=\frac{0.5}{2}\big[1+2(1.6487)+2.7183\big]=0.25\,(7.0157)=1.7539.$$
+  <p>The exact value is $e-1\approx1.7183$, so $T_2$ overestimates. That is expected: $e^{x}$ is concave up, so each chord lies above the curve and every trapezoid overshoots. For a concave-up integrand the trapezoidal rule always overestimates, and for concave-down it always underestimates, a fact worth using as a sanity check.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>用 $n=2$，$h=0.5$ 估计 $\int_0^1 e^{x}\,dx$，并判断结果偏高还是偏低。节点 $0,0.5,1$ 给出 $f=1,\ e^{0.5}\approx1.6487,\ e\approx2.7183$：</p>
+  $$T_2=\frac{0.5}{2}\big[1+2(1.6487)+2.7183\big]=0.25\,(7.0157)=1.7539.$$
+  <p>精确值为 $e-1\approx1.7183$，$T_2$ 高估。这是预料之中的：$e^{x}$ 下凸（函数图像向上弯曲），每段弦在曲线上方，梯形偏大。对下凸函数，梯形法则总是高估；对上凸函数，总是低估，此规律可用于合理性验证。</p>
+  </div></div></details>
+  <div class="concept-box orange"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">A frequent slip is to multiply by $h/2$ but forget to double the interior values, computing $\frac{h}{2}[f(x_0)+f(x_1)+\cdots+f(x_n)]$. That formula is wrong: only the two endpoints carry weight $1$, while every interior node, shared by two trapezoids, carries weight $2$. A quick check is that the weights must sum to $2n$ before the $h/2$ factor, since $\frac{h}{2}\cdot 2n=nh=b-a$ reproduces the area of a constant function $f\equiv 1$.</span><span data-lang="zh">常见失误是乘以 $h/2$ 时忘记将内部值乘以 $2$，算成 $\frac{h}{2}[f(x_0)+f(x_1)+\cdots+f(x_n)]$。该公式错误：只有两个端点权重为 $1$，每个内部节点被两个梯形共享，权重为 $2$。快速验证：在乘以 $h/2$ 之前，权重之和必须为 $2n$，因为 $\frac{h}{2}\cdot 2n=nh=b-a$ 正好再现常值函数 $f\equiv 1$ 的面积。</span></div>
+  <details><summary><span data-lang="en">Going deeper: deriving the rule by summing trapezoid areas</span><span data-lang="zh">深入探讨：由梯形面积求和推导公式</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>On the subinterval $[x_{i-1},x_i]$, replace $f$ by the chord joining $(x_{i-1},f(x_{i-1}))$ and $(x_i,f(x_i))$. The region under that chord is a trapezoid of parallel sides $f(x_{i-1})$ and $f(x_i)$ and width $h$, so its area is $\tfrac{h}{2}\big(f(x_{i-1})+f(x_i)\big)$. Summing over all $n$ subintervals,</p>
+  $$T_n=\sum_{i=1}^{n}\frac{h}{2}\big(f(x_{i-1})+f(x_i)\big)=\frac{h}{2}\sum_{i=1}^{n}\big(f(x_{i-1})+f(x_i)\big).$$
+  <p>In this telescoped sum, $f(x_0)$ and $f(x_n)$ each appear once (only one trapezoid touches each endpoint), whereas every interior $f(x_k)$ appears twice (it is the right end of one trapezoid and the left end of the next). Collecting like terms,</p>
+  $$T_n=\frac{h}{2}\Big[f(x_0)+2f(x_1)+\cdots+2f(x_{n-1})+f(x_n)\Big],$$
+  <p>which is precisely the boxed formula. The $1,2,2,\dots,2,1$ weight pattern is not a convention to memorize; it is forced by how many trapezoids share each node.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>在子区间 $[x_{i-1},x_i]$ 上，用连接 $(x_{i-1},f(x_{i-1}))$ 和 $(x_i,f(x_i))$ 的弦替代 $f$。弦下方的区域是宽为 $h$、两平行边分别为 $f(x_{i-1})$ 和 $f(x_i)$ 的梯形，面积为 $\tfrac{h}{2}\big(f(x_{i-1})+f(x_i)\big)$。对所有 $n$ 段求和，</p>
+  $$T_n=\sum_{i=1}^{n}\frac{h}{2}\big(f(x_{i-1})+f(x_i)\big)=\frac{h}{2}\sum_{i=1}^{n}\big(f(x_{i-1})+f(x_i)\big).$$
+  <p>在这个叠缩求和中，$f(x_0)$ 和 $f(x_n)$ 各出现一次（各端点只属于一个梯形），而每个内部 $f(x_k)$ 出现两次（它既是一个梯形的右端，也是下一个梯形的左端）。合并同类项，</p>
+  $$T_n=\frac{h}{2}\Big[f(x_0)+2f(x_1)+\cdots+2f(x_{n-1})+f(x_n)\Big],$$
+  <p>正是方框中的公式。$1,2,2,\dots,2,1$ 权重模式不是需要记忆的约定，而是由每个节点被多少个梯形共享所决定的。</p>
+  </div></div></details>
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">In the trapezoidal rule, the interior nodes carry weight:</span><span data-lang="zh">在梯形法则中，内部节点的权重为：</span></div><span class="quiz-number">4.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$1$</div><div class="quiz-opt" data-idx="1">$4$</div><div class="quiz-opt" data-idx="2">$2$</div><div class="quiz-opt" data-idx="3"><span data-lang="en">alternating $1$ and $2$</span><span data-lang="zh">交替 $1$ 和 $2$</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Each interior node is shared by two adjacent trapezoids, so its contributions add to weight $2$. Only the two endpoints, belonging to a single trapezoid each, carry weight $1$.</span><span data-lang="zh">正确。每个内部节点被两个相邻梯形共享，权重叠加为 $2$。只有两个端点各属于一个梯形，权重为 $1$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Interior nodes are shared by two adjacent trapezoids, so their weights add to $2$. The alternating $1,4,2,4$ pattern belongs to Simpson's rule, not the trapezoidal rule.</span><span data-lang="zh">内部节点被两个相邻梯形共享，权重叠加为 $2$。交替 $1,4,2,4$ 模式属于辛普森法则，不属于梯形法则。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="section-label"><span data-lang="en">Section 5</span><span data-lang="zh">第五节</span></div>
+  <h2><span data-lang="en">Simpson's Rule</span><span data-lang="zh">辛普森法则</span></h2>
+  <p><span data-lang="en">Simpson's rule improves on the trapezoidal rule by fitting parabolas rather than lines. Over each pair of adjacent subintervals it interpolates $f$ at three nodes with a quadratic and integrates that quadratic exactly. Because two subintervals are consumed per parabola, $n$ must be even.</span><span data-lang="zh">辛普森法则（<code>Simpson's rule</code>）通过拟合抛物线（而非直线）改进梯形法则。在每两段相邻子区间上，用三个节点确定一条二次曲线，并对该二次曲线精确积分。由于每条抛物线覆盖两段子区间，$n$ 必须为偶数。</span></p>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">Simpson's rule replaces the curve by piecewise parabolas through consecutive triples of nodes. Integrating a parabola through $x_{i-1},x_i,x_{i+1}$ yields the weights $1,4,1$ scaled by $h/3$; assembling the pieces gives the global pattern $1,4,2,4,2,\dots,4,1$.</span><span data-lang="zh">辛普森法则用通过连续三节点的分段抛物线代替曲线。对过 $x_{i-1},x_i,x_{i+1}$ 的抛物线积分，得到权重 $1,4,1$，系数 $h/3$；将各段拼合，形成全局模式 $1,4,2,4,2,\dots,4,1$。</span></p></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Simpson's Rule ($n$ even)</span><span data-lang="zh">辛普森法则（$n$ 为偶数）</span></div>
+  $$S_n=\frac{h}{3}\Big[f(x_0)+4f(x_1)+2f(x_2)+4f(x_3)+\cdots+2f(x_{n-2})+4f(x_{n-1})+f(x_n)\Big].$$
+  </div>
+  <p><span data-lang="en">The weight $4$ falls on odd-indexed (interior) nodes and $2$ on even-indexed interior nodes; the endpoints keep weight $1$. A useful identity links the two rules: $S_{2n}=\tfrac{1}{3}(4T_{2n}-T_n)$, so Simpson's rule is a weighted average that cancels the leading trapezoidal error.</span><span data-lang="zh">奇数索引内部节点权重为 $4$，偶数索引内部节点权重为 $2$，端点权重为 $1$。两个法则有实用联系：$S_{2n}=\tfrac{1}{3}(4T_{2n}-T_n)$，辛普森法则是消去主要梯形误差的加权平均。</span></p>
+  <details><summary><span data-lang="en">Worked Example 5.1: Simpson on $\int_0^1 e^{-x^2}\,dx$ with $n=4$</span><span data-lang="zh">例题 5.1：辛普森法则估计 $\int_0^1 e^{-x^2}\,dx$，$n=4$</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Reusing the nodes from Example 4.1 with $h=0.25$:</p>
+  $$S_4=\frac{0.25}{3}\big[1+4(0.9394)+2(0.7788)+4(0.5698)+0.3679\big].$$
+  $$S_4=\frac{0.25}{3}\big[1+3.7576+1.5576+2.2792+0.3679\big]=\frac{0.25}{3}(8.9623)=0.74686.$$
+  <p>This matches the true value $0.74682$ to four decimals, far better than the trapezoidal estimate $0.7430$ at the same cost in function evaluations. Parabolic pieces capture the curvature that chords miss.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>复用例题 4.1 的节点，$h=0.25$：</p>
+  $$S_4=\frac{0.25}{3}\big[1+4(0.9394)+2(0.7788)+4(0.5698)+0.3679\big].$$
+  $$S_4=\frac{0.25}{3}\big[1+3.7576+1.5576+2.2792+0.3679\big]=\frac{0.25}{3}(8.9623)=0.74686.$$
+  <p>与真实值 $0.74682$ 吻合到四位小数，远优于相同函数评估代价下梯形估计的 $0.7430$。抛物线能捕捉到弦所忽略的曲率。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Going deeper: why Simpson's rule integrates cubics exactly</span><span data-lang="zh">深入探讨：辛普森法则对三次多项式精确的原因</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>On $[-h,h]$ Simpson's rule reads $\tfrac{h}{3}\big(f(-h)+4f(0)+f(h)\big)$. Test it on $f(x)=x^3$. The exact integral is $\int_{-h}^{h}x^3\,dx=0$ by oddness. The rule gives</p>
+  $$\frac{h}{3}\big((-h)^3+4\cdot 0+h^3\big)=\frac{h}{3}(0)=0,$$
+  <p>which is exact. More generally the rule is built to be exact on quadratics (three nodes determine a parabola), and the cubic term integrates to zero on the symmetric interval and is also reproduced exactly. This extra degree of exactness is why Simpson's error scales like $h^4$ rather than $h^2$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>在 $[-h,h]$ 上，辛普森法则为 $\tfrac{h}{3}\big(f(-h)+4f(0)+f(h)\big)$。用 $f(x)=x^3$ 验证。精确积分由奇函数性质得 $\int_{-h}^{h}x^3\,dx=0$。法则给出</p>
+  $$\frac{h}{3}\big((-h)^3+4\cdot 0+h^3\big)=\frac{h}{3}(0)=0,$$
+  <p>精确。更一般地，辛普森法则对二次多项式精确（三点确定一条抛物线），而三次项在对称区间上积分为零，同样被精确再现。这一额外精度的度是辛普森误差按 $h^4$ 而非 $h^2$ 缩减的原因。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 5.2: Simpson with $n=2$ on $\int_1^3 \tfrac1x\,dx$</span><span data-lang="zh">例题 5.2：$n=2$ 辛普森法则估计 $\int_1^3 \tfrac1x\,dx$</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Approximate $\int_1^3\dfrac{dx}{x}$, whose exact value is $\ln 3\approx1.0986$. With $n=2$, $h=1$, nodes $1,2,3$ and $f=1,\tfrac12,\tfrac13$:</p>
+  $$S_2=\frac{1}{3}\Big[f(1)+4f(2)+f(3)\Big]=\frac13\Big[1+4\cdot\tfrac12+\tfrac13\Big]=\frac13\Big[1+2+\tfrac13\Big]=\frac13\cdot\frac{10}{3}=\frac{10}{9}\approx1.1111.$$
+  <p>Even with a single parabola the estimate is within about $0.013$ of $\ln 3$. The trapezoidal rule at the same two nodes would give $\tfrac12[1+2\cdot\tfrac12+\tfrac13]\cdot\dots$ a coarser $1.1667$, so Simpson's curvature correction already buys an order of magnitude.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>近似 $\int_1^3\dfrac{dx}{x}$，精确值为 $\ln 3\approx1.0986$。取 $n=2$，$h=1$，节点 $1,2,3$，函数值 $f=1,\tfrac12,\tfrac13$：</p>
+  $$S_2=\frac{1}{3}\Big[f(1)+4f(2)+f(3)\Big]=\frac13\Big[1+4\cdot\tfrac12+\tfrac13\Big]=\frac13\Big[1+2+\tfrac13\Big]=\frac13\cdot\frac{10}{3}=\frac{10}{9}\approx1.1111.$$
+  <p>仅用一条抛物线，估计值与 $\ln 3$ 的误差约为 $0.013$。相同两段的梯形法则给出粗糙的 $1.1667$，辛普森的曲率修正已带来一个量级的改善。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 5.3: Simpson's rule is exact on a quadratic</span><span data-lang="zh">例题 5.3：辛普森法则对二次多项式精确</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Apply Simpson's rule to $\int_0^2 x^{2}\,dx$ with $n=2$, $h=1$. Nodes $0,1,2$ give $f=0,1,4$:</p>
+  $$S_2=\frac{1}{3}\big[0+4(1)+4\big]=\frac{1}{3}(8)=\frac{8}{3}.$$
+  <p>The exact value is $\int_0^2 x^2\,dx=\tfrac{8}{3}$, so Simpson's rule is exact, as it must be: the rule integrates the interpolating parabola exactly, and for a quadratic integrand the parabola is the function itself. This is the qualitative content of the error bound to come, whose $f^{(4)}$ factor vanishes for any cubic.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>用 $n=2$，$h=1$ 对 $\int_0^2 x^{2}\,dx$ 应用辛普森法则。节点 $0,1,2$ 给出 $f=0,1,4$：</p>
+  $$S_2=\frac{1}{3}\big[0+4(1)+4\big]=\frac{1}{3}(8)=\frac{8}{3}.$$
+  <p>精确值为 $\int_0^2 x^2\,dx=\tfrac{8}{3}$，辛普森法则精确，这是必然的：该法则对插值抛物线精确积分，对二次被积函数，抛物线就是函数本身。这是下文误差界的定性内容，其 $f^{(4)}$ 因子对任意三次多项式均为零。</p>
+  </div></div></details>
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">A common mistake is to apply Simpson's rule with an odd number of subintervals, or to scramble the weight pattern. The weights run $1,4,2,4,2,\dots,4,1$: a $4$ on every odd-indexed node and a $2$ on every even-indexed interior node, with $h/3$ (not $h/2$) out front. If $n$ is odd the parabolas cannot pair up the subintervals, and the formula simply does not apply; use $n$ even, or pair Simpson on the first $n-1$ pieces with a separate rule on the last one.</span><span data-lang="zh">常见错误是用奇数段应用辛普森法则，或将权重模式搞乱。权重序列为 $1,4,2,4,2,\dots,4,1$：奇数索引节点权重为 $4$，偶数索引内部节点权重为 $2$，前置系数为 $h/3$（不是 $h/2$）。若 $n$ 为奇数，抛物线无法成对覆盖所有子区间，公式根本不适用；请使用偶数 $n$，或对前 $n-1$ 段用辛普森，最后一段用别的方法。</span></div>
+  <details><summary><span data-lang="en">Going deeper: deriving the $1,4,1$ weights from a parabola</span><span data-lang="zh">深入探讨：从抛物线推导 $1,4,1$ 权重</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Fit a parabola $p(x)=Ax^{2}+Bx+C$ through three equally spaced nodes, taken as $-h,0,h$ for convenience. Then $p(-h)=Ah^{2}-Bh+C$, $p(0)=C$, $p(h)=Ah^{2}+Bh+C$. Integrate the parabola exactly:</p>
+  $$\int_{-h}^{h} p(x)\,dx=\Big[\frac{A}{3}x^{3}+\frac{B}{2}x^{2}+Cx\Big]_{-h}^{h}=\frac{2A}{3}h^{3}+2Ch.$$
+  <p>Now express this in terms of the three sampled values. A short computation gives</p>
+  $$\frac{h}{3}\big[p(-h)+4p(0)+p(h)\big]=\frac{h}{3}\big[(Ah^{2}-Bh+C)+4C+(Ah^{2}+Bh+C)\big]=\frac{h}{3}\big[2Ah^{2}+6C\big]=\frac{2A}{3}h^{3}+2Ch.$$
+  <p>The two expressions agree exactly, so $\tfrac{h}{3}(1,4,1)$ reproduces the integral of any parabola through the three nodes. Patching one such formula over each consecutive pair of subintervals and adding, the shared interior nodes (counted once on each side) acquire weight $2$, while the strictly interior odd nodes keep weight $4$. That assembly produces the global pattern $1,4,2,4,2,\dots,4,1$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>用三个等间距节点（取为 $-h,0,h$ 方便起见）拟合抛物线 $p(x)=Ax^{2}+Bx+C$。则 $p(-h)=Ah^{2}-Bh+C$，$p(0)=C$，$p(h)=Ah^{2}+Bh+C$。精确积分抛物线：</p>
+  $$\int_{-h}^{h} p(x)\,dx=\Big[\frac{A}{3}x^{3}+\frac{B}{2}x^{2}+Cx\Big]_{-h}^{h}=\frac{2A}{3}h^{3}+2Ch.$$
+  <p>用三个采样值表示这一结果，简单计算给出</p>
+  $$\frac{h}{3}\big[p(-h)+4p(0)+p(h)\big]=\frac{h}{3}\big[2Ah^{2}+6C\big]=\frac{2A}{3}h^{3}+2Ch.$$
+  <p>两式完全吻合，$\tfrac{h}{3}(1,4,1)$ 精确再现了三节点抛物线的积分。将该公式覆盖每两段连续子区间并求和，共享的内部节点（两侧各计一次）权重变为 $2$，而严格内部的奇数索引节点保持权重 $4$。组合后产生全局模式 $1,4,2,4,2,\dots,4,1$。</p>
+  </div></div></details>
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">Simpson's rule requires that the number of subintervals $n$ be:</span><span data-lang="zh">辛普森法则要求子区间数 $n$ 为：</span></div><span class="quiz-number">5.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">even</span><span data-lang="zh">偶数</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">odd</span><span data-lang="zh">奇数</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">a multiple of $3$</span><span data-lang="zh">$3$ 的倍数</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">prime</span><span data-lang="zh">质数</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Each parabola spans two adjacent subintervals, so the subintervals must pair up evenly. An odd $n$ would leave one subinterval without a partner, breaking the construction.</span><span data-lang="zh">正确。每条抛物线覆盖两段相邻子区间，所以子区间必须成对出现。奇数 $n$ 会留下一个无配对的子区间，破坏构造。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Each parabolic arc covers two subintervals at once, so they must pair up. That forces $n$ to be even; an odd $n$ would leave a leftover subinterval.</span><span data-lang="zh">每条抛物线弧覆盖两段子区间，它们必须成对出现，迫使 $n$ 为偶数；奇数 $n$ 会留下多余的子区间。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="section-label"><span data-lang="en">Section 6</span><span data-lang="zh">第六节</span></div>
+  <h2><span data-lang="en">Error Bounds</span><span data-lang="zh">误差界</span></h2>
+  <p><span data-lang="en">An approximation is only as useful as our control over its error. For both rules the error can be bounded a priori using a bound on a derivative of the integrand. These bounds tell us how many subintervals guarantee a target accuracy, without ever computing the true value.</span><span data-lang="zh">近似值的价值在于我们对误差的掌控。对两种法则，均可用被积函数某阶导数的上界对误差进行先验估计。这些误差界告诉我们：在不知道真实值的情况下，需要多少段才能保证达到目标精度。</span></p>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">The trapezoidal error is controlled by the second derivative and decays like $1/n^2$; Simpson's error is controlled by the fourth derivative and decays like $1/n^4$. Doubling $n$ cuts trapezoidal error by about $4$ and Simpson's by about $16$. Smoother integrands and finer partitions both shrink the error.</span><span data-lang="zh">梯形误差由二阶导数控制，按 $1/n^2$ 衰减；辛普森误差由四阶导数控制，按 $1/n^4$ 衰减。将 $n$ 翻倍，梯形误差减小约 $4$ 倍，辛普森误差减小约 $16$ 倍。被积函数越光滑、分割越细，误差越小。</span></p></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Trapezoidal error bound</span><span data-lang="zh">梯形误差界</span></div>
+  $$|E_T|\le \frac{K_2\,(b-a)^3}{12\,n^{2}},\qquad K_2=\max_{[a,b]}|f''(x)|.$$
+  </div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Simpson error bound</span><span data-lang="zh">辛普森误差界</span></div>
+  $$|E_S|\le \frac{K_4\,(b-a)^5}{180\,n^{4}},\qquad K_4=\max_{[a,b]}\big|f^{(4)}(x)\big|.$$
+  </div>
+  <p><span data-lang="en">Because $E_S$ depends on $f^{(4)}$, Simpson's rule is exact for any polynomial of degree three or less (its fourth derivative is zero). This is the quantitative version of the exactness observed in the previous section.</span><span data-lang="zh">由于 $E_S$ 依赖 $f^{(4)}$，辛普森法则对任意三次或更低次多项式精确（其四阶导数为零）。这是上一节精确性的定量版本。</span></p>
+  <details><summary><span data-lang="en">Worked Example 6.1: choosing $n$ for a target accuracy</span><span data-lang="zh">例题 6.1：为目标精度选择 $n$</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>How large must $n$ be so the trapezoidal rule approximates $\int_1^2 \tfrac{1}{x}\,dx$ within $0.0001$? Here $f(x)=1/x$, $f''(x)=2/x^3$, and on $[1,2]$ the maximum of $|f''|$ is at $x=1$, giving $K_2=2$. With $b-a=1$:</p>
+  $$|E_T|\le \frac{2\cdot 1}{12\,n^2}=\frac{1}{6n^2}\le 0.0001 \iff n^2\ge \frac{1}{0.0006}\approx 1666.7 \iff n\ge 41.$$
+  <p>So $n=41$ subintervals suffice (round up). Simpson's rule, with its $n^4$ denominator, would need only a handful of subintervals for the same accuracy.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>梯形法则估计 $\int_1^2 \tfrac{1}{x}\,dx$ 误差在 $0.0001$ 以内，$n$ 至少需要多大？$f(x)=1/x$，$f''(x)=2/x^3$，在 $[1,2]$ 上 $|f''|$ 的最大值在 $x=1$ 处取到，$K_2=2$。$b-a=1$：</p>
+  $$|E_T|\le \frac{2\cdot 1}{12\,n^2}=\frac{1}{6n^2}\le 0.0001 \iff n^2\ge \frac{1}{0.0006}\approx 1666.7 \iff n\ge 41.$$
+  <p>$n=41$ 段已足够（向上取整）。辛普森法则的误差界含 $n^4$，达到相同精度只需几段。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Going deeper: where the $1/12$ comes from</span><span data-lang="zh">深入探讨：$1/12$ 的来源</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>On a single subinterval $[x_{i-1},x_i]$ of width $h$, Taylor-expanding $f$ about the midpoint and integrating shows the local trapezoidal error is $-\tfrac{h^3}{12}f''(\xi_i)$ for some $\xi_i$ in the subinterval. Summing over the $n$ subintervals and using $nh=b-a$:</p>
+  $$E_T=-\frac{h^3}{12}\sum_{i=1}^{n} f''(\xi_i)=-\frac{h^2}{12}\,(b-a)\,\overline{f''},$$
+  <p>where $\overline{f''}$ is an average of second derivatives. Bounding $|\overline{f''}|\le K_2$ and writing $h=(b-a)/n$ gives the stated bound with its $1/12$ and $1/n^2$. The same Taylor bookkeeping, carried to fourth order with the cubic terms cancelling, produces Simpson's $1/180$ and $1/n^4$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>在宽度为 $h$ 的单段子区间 $[x_{i-1},x_i]$ 上，对 $f$ 在中点展开泰勒级数并积分，可得局部梯形误差为 $-\tfrac{h^3}{12}f''(\xi_i)$，其中 $\xi_i$ 在子区间内。对 $n$ 段求和，用 $nh=b-a$：</p>
+  $$E_T=-\frac{h^3}{12}\sum_{i=1}^{n} f''(\xi_i)=-\frac{h^2}{12}\,(b-a)\,\overline{f''},$$
+  <p>其中 $\overline{f''}$ 是二阶导数的平均值。用 $|\overline{f''}|\le K_2$ 估计，代入 $h=(b-a)/n$，即得含 $1/12$ 和 $1/n^2$ 的误差界。同样的泰勒计账法推至四阶（三次项相消），产生辛普森的 $1/180$ 和 $1/n^4$。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 6.2: a guaranteed Simpson error bound</span><span data-lang="zh">例题 6.2：辛普森法则的误差保证</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Bound the error of Simpson's rule with $n=4$ for $\int_0^1 e^{x}\,dx$. Here $f(x)=e^{x}$ so $f^{(4)}(x)=e^{x}$, and on $[0,1]$ the maximum is $K_4=e^{1}=e\approx2.7183$. With $b-a=1$,</p>
+  $$|E_S|\le\frac{K_4\,(b-a)^{5}}{180\,n^{4}}=\frac{e\cdot 1}{180\cdot 4^{4}}=\frac{2.7183}{180\cdot 256}=\frac{2.7183}{46080}\approx 5.9\times 10^{-5}.$$
+  <p>So Simpson's rule with just four subintervals is guaranteed accurate to within about $0.00006$. The actual error is even smaller; the bound is a worst-case guarantee, not the realized error.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>给出 $n=4$ 时辛普森法则估计 $\int_0^1 e^{x}\,dx$ 的误差界。$f(x)=e^{x}$，故 $f^{(4)}(x)=e^{x}$，在 $[0,1]$ 上最大值 $K_4=e\approx2.7183$。$b-a=1$，</p>
+  $$|E_S|\le\frac{K_4\,(b-a)^{5}}{180\,n^{4}}=\frac{e\cdot 1}{180\cdot 4^{4}}=\frac{2.7183}{46080}\approx 5.9\times 10^{-5}.$$
+  <p>仅四段的辛普森法则精度有保证，误差在约 $0.00006$ 以内。实际误差更小；该界是最坏情况的保证，不是实际误差。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 6.3: comparing the two rules at fixed cost</span><span data-lang="zh">例题 6.3：相同计算量下两种法则的比较</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>For $\int_0^{\pi} \sin x\,dx=2$, compare the worst-case errors of the two rules with $n=10$. Here $|f''|\le 1$ and $|f^{(4)}|\le 1$, with $b-a=\pi$. The trapezoidal bound is</p>
+  $$|E_T|\le\frac{1\cdot\pi^{3}}{12\cdot 10^{2}}=\frac{\pi^{3}}{1200}\approx 0.0258,$$
+  <p>while Simpson's bound is</p>
+  $$|E_S|\le\frac{1\cdot\pi^{5}}{180\cdot 10^{4}}=\frac{\pi^{5}}{1.8\times 10^{6}}\approx 1.70\times 10^{-4}.$$
+  <p>At identical cost (eleven function evaluations) Simpson's bound is roughly $150$ times smaller. The gap widens as $n$ grows, because the bounds scale like $1/n^{2}$ versus $1/n^{4}$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>对 $\int_0^{\pi} \sin x\,dx=2$，比较 $n=10$ 时两种法则的最坏误差界。$|f''|\le 1$，$|f^{(4)}|\le 1$，$b-a=\pi$。梯形误差界：</p>
+  $$|E_T|\le\frac{1\cdot\pi^{3}}{12\cdot 10^{2}}=\frac{\pi^{3}}{1200}\approx 0.0258,$$
+  <p>辛普森误差界：</p>
+  $$|E_S|\le\frac{1\cdot\pi^{5}}{180\cdot 10^{4}}=\frac{\pi^{5}}{1.8\times 10^{6}}\approx 1.70\times 10^{-4}.$$
+  <p>相同计算量（11 次函数求值）下，辛普森误差界约小 $150$ 倍。随着 $n$ 增大，差距继续扩大，因为两个界分别按 $1/n^{2}$ 和 $1/n^{4}$ 缩减。</p>
+  </div></div></details>
+  <div class="concept-box orange"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">The constant $K_2$ (or $K_4$) is the maximum of $|f''|$ (or $|f^{(4)}|$) over the whole interval, not its value at one endpoint or at the midpoint. Plugging in a single point can drastically understate the bound. Find the extreme value of the relevant derivative across all of $[a,b]$; if the derivative is monotone, that maximum sits at an endpoint, but in general you must check critical points too.</span><span data-lang="zh">常数 $K_2$（或 $K_4$）是 $|f''|$（或 $|f^{(4)}|$）在整个区间上的最大值，而非某一端点或中点处的值。在单点代入可能严重低估误差界。应在整个 $[a,b]$ 上求相关导数的极值；若该导数单调，最大值在端点取到，但一般情况下还需检查临界点。</span></div>
+  <details><summary><span data-lang="en">Going deeper: a local trapezoidal error term by Taylor expansion</span><span data-lang="zh">深入探讨：用泰勒展开推导局部梯形误差项</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>On one subinterval $[0,h]$, compare the exact integral with one trapezoid. Write the antiderivative $F$ with $F'=f$ and Taylor-expand about $0$. The exact integral is $\int_0^h f=F(h)-F(0)$. Expanding $F(h)=F(0)+hf(0)+\tfrac{h^{2}}{2}f'(0)+\tfrac{h^{3}}{6}f''(0)+O(h^{4})$ gives</p>
+  $$\int_0^h f=hf(0)+\frac{h^{2}}{2}f'(0)+\frac{h^{3}}{6}f''(0)+O(h^{4}).$$
+  <p>The trapezoid uses $\tfrac{h}{2}\big(f(0)+f(h)\big)$; expanding $f(h)=f(0)+hf'(0)+\tfrac{h^{2}}{2}f''(0)+O(h^{3})$,</p>
+  $$\frac{h}{2}\big(f(0)+f(h)\big)=hf(0)+\frac{h^{2}}{2}f'(0)+\frac{h^{3}}{4}f''(0)+O(h^{4}).$$
+  <p>Subtracting, the $f(0)$ and $f'(0)$ terms cancel and the local error is</p>
+  $$\int_0^h f-\frac{h}{2}\big(f(0)+f(h)\big)=\Big(\frac16-\frac14\Big)h^{3}f''(0)+O(h^{4})=-\frac{h^{3}}{12}f''(0)+O(h^{4}).$$
+  <p>So each subinterval contributes a local error of size $\tfrac{h^{3}}{12}|f''|$. Summing $n$ of these and using $nh=b-a$ converts the local $h^{3}$ into the global $\tfrac{(b-a)^{3}}{12n^{2}}K_2$ of the boxed bound. The factor $\tfrac16-\tfrac14=-\tfrac{1}{12}$ is the origin of the mysterious $1/12$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>在一段子区间 $[0,h]$ 上，比较精确积分与单个梯形。设原函数 $F$，$F'=f$，在 $0$ 处做泰勒展开。精确积分为 $\int_0^h f=F(h)-F(0)$。展开 $F(h)=F(0)+hf(0)+\tfrac{h^{2}}{2}f'(0)+\tfrac{h^{3}}{6}f''(0)+O(h^{4})$，得</p>
+  $$\int_0^h f=hf(0)+\frac{h^{2}}{2}f'(0)+\frac{h^{3}}{6}f''(0)+O(h^{4}).$$
+  <p>梯形使用 $\tfrac{h}{2}\big(f(0)+f(h)\big)$；展开 $f(h)=f(0)+hf'(0)+\tfrac{h^{2}}{2}f''(0)+O(h^{3})$，</p>
+  $$\frac{h}{2}\big(f(0)+f(h)\big)=hf(0)+\frac{h^{2}}{2}f'(0)+\frac{h^{3}}{4}f''(0)+O(h^{4}).$$
+  <p>相减，$f(0)$ 和 $f'(0)$ 项消去，局部误差为</p>
+  $$\int_0^h f-\frac{h}{2}\big(f(0)+f(h)\big)=\Big(\frac16-\frac14\Big)h^{3}f''(0)+O(h^{4})=-\frac{h^{3}}{12}f''(0)+O(h^{4}).$$
+  <p>每段子区间贡献局部误差 $\tfrac{h^{3}}{12}|f''|$。对 $n$ 段求和，用 $nh=b-a$，将局部 $h^{3}$ 转化为方框公式中全局的 $\tfrac{(b-a)^{3}}{12n^{2}}K_2$。因子 $\tfrac16-\tfrac14=-\tfrac{1}{12}$ 正是神秘 $1/12$ 的来源。</p>
+  </div></div></details>
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">If you double $n$ in Simpson's rule, the error bound is reduced by approximately a factor of:</span><span data-lang="zh">在辛普森法则中将 $n$ 翻倍，误差界约缩减：</span></div><span class="quiz-number">6.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$2$</div><div class="quiz-opt" data-idx="1">$4$</div><div class="quiz-opt" data-idx="2">$8$</div><div class="quiz-opt" data-idx="3">$16$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Simpson's error bound scales like $1/n^4$. Replacing $n$ by $2n$ multiplies the bound by $1/2^4=1/16$, so the error drops by about a factor of $16$.</span><span data-lang="zh">正确。辛普森误差界按 $1/n^4$ 缩放。将 $n$ 换成 $2n$，误差界乘以 $1/2^4=1/16$，故误差约缩减 $16$ 倍。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Simpson's bound carries $n^4$ in the denominator. Doubling $n$ multiplies the denominator by $2^4=16$, so the error falls by roughly that factor. The factor of $4$ is the trapezoidal rule, whose bound goes like $1/n^2$.</span><span data-lang="zh">辛普森误差界的分母含 $n^4$。将 $n$ 翻倍，分母乘以 $2^4=16$，误差约缩减该倍数。缩减 $4$ 倍的是梯形法则，其误差界按 $1/n^2$ 缩放。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="section-label"><span data-lang="en">Section 7</span><span data-lang="zh">第 7 节</span></div>
+  <h2><span data-lang="en">Going Deeper</span><span data-lang="zh">深入探讨</span></h2>
+  <div data-lang="en">
+  <p>Improper integrals and numerical integration meet in the real world: many integrals that matter in probability, physics, and engineering are improper, lack closed forms, or both. This closing section collects connections that reward a second look.</p>
+  </div>
+  <div data-lang="zh">
+  <p><code>反常积分</code>（improper integral）与数值积分在实际应用中相遇：概率、物理和工程中许多重要积分既是反常积分，又没有封闭形式。本节汇集了值得深入思考的联系。</p>
+  </div>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">A convergent improper integral assigns a finite number to an infinite process, and that number is often best obtained by combining a change of variables (to tame the infinite or singular part) with a numerical rule on the resulting finite, smooth piece. Theory tells us a value exists; computation delivers it.</span><span data-lang="zh">收敛的<code>反常积分</code>（improper integral）将一个无限过程对应到一个有限数值，而该数值通常最好通过换元（驯化无穷或奇异部分）与数值方法结合来求得。理论告诉我们值存在；计算将其算出。</span></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">A famous convergent integral</span><span data-lang="zh">一个著名的收敛积分</span></div>
+  $$\int_{0}^{\infty} e^{-x^{2}}\,dx=\frac{\sqrt{\pi}}{2}.$$
+  </div>
+  <div data-lang="en">
+  <p>This integral converges by comparison with $e^{-x}$ for $x\ge 1$, yet its value cannot be found by elementary antidifferentiation; it is computed by a clever double-integral trick or, in practice, numerically. It underlies the normalization of the normal distribution.</p>
+  </div>
+  <div data-lang="zh">
+  <p>这个积分通过与 $e^{-x}$（$x\ge 1$）比较可证其<code>收敛</code>（converges），但其值无法通过初等<code>原函数</code>（antiderivative）得出；实际上借助巧妙的二重积分技巧或数值方法来计算。它是正态分布归一化的基础。</p>
+  </div>
+  <details><summary><span data-lang="en">Worked Example 7.1: the gamma function at a half-integer</span><span data-lang="zh">例题 7.1：半整数处的伽玛函数</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>The gamma function $\Gamma(s)=\int_{0}^{\infty} x^{s-1}e^{-x}\,dx$ converges for $s>0$: near $0$ the factor $x^{s-1}$ is an integrable singularity when $s>0$, and at infinity $e^{-x}$ forces convergence. The substitution $x=u^2$ connects it to the Gaussian:</p>
+  $$\Gamma\!\Big(\tfrac12\Big)=\int_{0}^{\infty} x^{-1/2}e^{-x}\,dx=\int_{0}^{\infty}\frac{e^{-u^{2}}}{u}\,2u\,du=2\int_{0}^{\infty} e^{-u^{2}}\,du=\sqrt{\pi}.$$
+  <p>So a single substitution turns the half-integer gamma value into the Gaussian integral above.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>伽玛函数 $\Gamma(s)=\int_{0}^{\infty} x^{s-1}e^{-x}\,dx$ 在 $s>0$ 时收敛：当 $s>0$ 时，因子 $x^{s-1}$ 在 $0$ 附近是可积奇点，而在无穷远处 $e^{-x}$ 保证<code>收敛</code>（convergence）。换元 $x=u^2$ 将其与高斯积分联系起来：</p>
+  $$\Gamma\!\Big(\tfrac12\Big)=\int_{0}^{\infty} x^{-1/2}e^{-x}\,dx=\int_{0}^{\infty}\frac{e^{-u^{2}}}{u}\,2u\,du=2\int_{0}^{\infty} e^{-u^{2}}\,du=\sqrt{\pi}.$$
+  <p>一次换元即将半整数伽玛值转化为上述高斯积分。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Going deeper: when comparison fails and substitution saves the day</span><span data-lang="zh">深入探讨：比较法失效时换元法解围</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Consider $\int_{0}^{1}\dfrac{\ln x}{\sqrt{x}}\,dx$. The integrand is singular at $0$ and negative there, so a crude comparison is awkward. Substitute $x=t^2$, $dx=2t\,dt$:</p>
+  $$\int_{0}^{1}\frac{\ln x}{\sqrt{x}}\,dx=\int_{0}^{1}\frac{2\ln t}{t}\,(2t)\,dt=4\int_{0}^{1}\ln t\,dt.$$
+  <p>Now $\int_0^1 \ln t\,dt=\big[t\ln t-t\big]_0^1=-1$ (the boundary term $t\ln t\to 0$ as $t\to 0^+$), so the original integral equals $-4$. The substitution converted a singular integrand into one with a removable boundary term, after which an elementary antiderivative finished the job.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>考虑 $\int_{0}^{1}\dfrac{\ln x}{\sqrt{x}}\,dx$。被积函数在 $0$ 处奇异且为负，直接比较法不便操作。令 $x=t^2$，$dx=2t\,dt$：</p>
+  $$\int_{0}^{1}\frac{\ln x}{\sqrt{x}}\,dx=\int_{0}^{1}\frac{2\ln t}{t}\,(2t)\,dt=4\int_{0}^{1}\ln t\,dt.$$
+  <p>现在 $\int_0^1 \ln t\,dt=\big[t\ln t-t\big]_0^1=-1$（边界项 $t\ln t\to 0$，当 $t\to 0^+$），故原积分等于 $-4$。换元将奇异被积函数转化为只含可去边界项的形式，再用初等<code>原函数</code>（antiderivative）完成计算。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 7.2: a Laplace transform as an improper integral</span><span data-lang="zh">例题 7.2：作为反常积分的拉普拉斯变换</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>Many transforms used in engineering are improper integrals. Compute the Laplace transform of $f(t)=1$, namely $\int_0^{\infty} e^{-st}\,dt$ for $s>0$:</p>
+  $$\int_0^{\infty} e^{-st}\,dt=\lim_{b\to\infty}\Big[-\frac{1}{s}e^{-st}\Big]_0^{b}=\lim_{b\to\infty}\frac{1}{s}\big(1-e^{-sb}\big)=\frac{1}{s}.$$
+  <p>The integral converges precisely because $s>0$ makes the exponential decay; for $s\le 0$ it diverges. The convergence condition $s>0$ is exactly the region of definition of the transform, a recurring theme: an improper integral is a function of its parameters, defined only where it converges.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>工程中许多变换都是<code>反常积分</code>（improper integral）。计算 $f(t)=1$ 的拉普拉斯变换，即 $\int_0^{\infty} e^{-st}\,dt$（$s>0$）：</p>
+  $$\int_0^{\infty} e^{-st}\,dt=\lim_{b\to\infty}\Big[-\frac{1}{s}e^{-st}\Big]_0^{b}=\lim_{b\to\infty}\frac{1}{s}\big(1-e^{-sb}\big)=\frac{1}{s}.$$
+  <p>积分<code>收敛</code>（converges）恰因 $s>0$ 使指数衰减；$s\le 0$ 时<code>发散</code>（diverges）。收敛条件 $s>0$ 正是变换的定义域，这是一个反复出现的主题：反常积分是其参数的函数，仅在收敛之处有定义。</p>
+  </div></div></details>
+  <details><summary><span data-lang="en">Worked Example 7.3: substitution tames an infinite interval before quadrature</span><span data-lang="zh">例题 7.3：数值积分前用换元驯化无穷区间</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>To evaluate $\int_1^{\infty}\dfrac{dx}{x^{2}\sqrt{1+x}}$ numerically, the infinite interval is inconvenient. The substitution $x=1/u$, $dx=-u^{-2}\,du$ maps $[1,\infty)$ to the finite interval $(0,1]$:</p>
+  $$\int_1^{\infty}\frac{dx}{x^{2}\sqrt{1+x}}=\int_{1}^{0}\frac{-u^{-2}\,du}{u^{-2}\sqrt{1+1/u}}=\int_0^{1}\frac{du}{\sqrt{1+1/u}}=\int_0^{1}\frac{\sqrt{u}\,du}{\sqrt{u+1}}.$$
+  <p>The transformed integrand is bounded and smooth on $[0,1]$, so Simpson's rule converges rapidly on it. This is the standard recipe for numerical work with improper integrals: change variables so the infinite tail or the singularity becomes a tame finite interval, then apply a quadrature rule whose error bounds you can trust.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>对 $\int_1^{\infty}\dfrac{dx}{x^{2}\sqrt{1+x}}$ 进行数值计算时，无穷区间不便处理。换元 $x=1/u$，$dx=-u^{-2}\,du$ 将 $[1,\infty)$ 映射到有限区间 $(0,1]$：</p>
+  $$\int_1^{\infty}\frac{dx}{x^{2}\sqrt{1+x}}=\int_{1}^{0}\frac{-u^{-2}\,du}{u^{-2}\sqrt{1+1/u}}=\int_0^{1}\frac{du}{\sqrt{1+1/u}}=\int_0^{1}\frac{\sqrt{u}\,du}{\sqrt{u+1}}.$$
+  <p>变换后的被积函数在 $[0,1]$ 上有界光滑，辛普森法则快速收敛。这是处理<code>反常积分</code>（improper integral）数值计算的标准方法：换元使无穷尾部或奇异性变为可控的有限区间，再应用误差界可信赖的数值积分规则。</p>
+  </div></div></details>
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Do not hand a textbook error bound to a numerical rule applied directly to an improper integral. The trapezoidal and Simpson bounds assume $f$ (and its derivatives up to fourth order) are bounded on $[a,b]$. If the integrand is unbounded at an endpoint, or the interval is infinite, those derivatives are unbounded and the bounds are vacuous. First convert the improper integral into a proper one by a limit, a split, or a substitution; only then is numerical integration with its error estimates legitimate.</span><span data-lang="zh">不要将教材中的误差界直接用于针对<code>反常积分</code>（improper integral）的数值方法。梯形和辛普森误差界假设 $f$ 及其四阶以内导数在 $[a,b]$ 上有界。若被积函数在端点无界，或区间无穷，则相关导数无界，误差界失效。应先通过<code>极限</code>（limit）、分拆或换元将反常积分转化为正常积分，再进行数值积分及误差估计。</span></div>
+  <details><summary><span data-lang="en">Going deeper: the integral test, linking series and improper integrals</span><span data-lang="zh">深入探讨：积分判别法——级数与反常积分的桥梁</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+  <p>The same machinery decides convergence of series. Let $f$ be positive, continuous, and decreasing on $[1,\infty)$ with $a_n=f(n)$. Because $f$ decreases, on each subinterval $[n,n+1]$ we have $f(n+1)\le f(x)\le f(n)$, so integrating across $[n,n+1]$ traps the term:</p>
+  $$f(n+1)\le\int_n^{n+1} f(x)\,dx\le f(n).$$
+  <p>Summing the right inequality from $n=1$ to $N-1$ and the left from $n=1$ to $N-1$ gives</p>
+  $$\sum_{n=2}^{N} a_n\le\int_1^{N} f(x)\,dx\le\sum_{n=1}^{N-1} a_n.$$
+  <p>Letting $N\to\infty$, the partial sums and the improper integral are squeezed together: $\sum a_n$ converges if and only if $\int_1^{\infty} f$ converges. Applied to $f(x)=x^{-p}$ this recovers the $p$ series test from the $p$ integral test, the cleanest possible bridge between the two halves of this unit. The harmonic series $\sum 1/n$ diverges for exactly the reason $\int_1^{\infty}dx/x$ does.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+  <p>同样的机制也能判断级数<code>收敛</code>（convergence）。设 $f$ 在 $[1,\infty)$ 上正值、连续、递减，且 $a_n=f(n)$。由于 $f$ 递减，在每段 $[n,n+1]$ 上有 $f(n+1)\le f(x)\le f(n)$，对 $[n,n+1]$ 积分可夹住各项：</p>
+  $$f(n+1)\le\int_n^{n+1} f(x)\,dx\le f(n).$$
+  <p>将右侧不等式从 $n=1$ 到 $N-1$ 求和，左侧同理：</p>
+  $$\sum_{n=2}^{N} a_n\le\int_1^{N} f(x)\,dx\le\sum_{n=1}^{N-1} a_n.$$
+  <p>令 $N\to\infty$，部分和与反常积分被夹紧：$\sum a_n$ 收敛当且仅当 $\int_1^{\infty} f$ 收敛。对 $f(x)=x^{-p}$ 应用此结论，可从 $p$ 积分判别法导出 $p$ 级数判别法，这是本单元两个主题之间最简洁的桥梁。调和级数 $\sum 1/n$ 发散，恰因 $\int_1^{\infty}dx/x$ 发散。</p>
+  </div></div></details>
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The integral $\displaystyle\int_{0}^{\infty} e^{-x^{2}}\,dx$ converges because, for large $x$, the integrand is dominated by:</span><span data-lang="zh">积分 $\displaystyle\int_{0}^{\infty} e^{-x^{2}}\,dx$ 收敛，因为当 $x$ 很大时，被积函数被以下哪项控制：</span></div><span class="quiz-number">7.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$1/x^{2}$</div><div class="quiz-opt" data-idx="1">$e^{-x}$</div><div class="quiz-opt" data-idx="2">$1/x$</div><div class="quiz-opt" data-idx="3"><span data-lang="en">a constant</span><span data-lang="zh">一个常数</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. For $x\ge 1$ we have $x^2\ge x$, so $e^{-x^2}\le e^{-x}$. Since $\int_1^{\infty} e^{-x}\,dx$ converges, the direct comparison test gives convergence of the Gaussian integral.</span><span data-lang="zh">正确。当 $x\ge 1$ 时，$x^2\ge x$，故 $e^{-x^2}\le e^{-x}$。由于 $\int_1^{\infty} e^{-x}\,dx$ 收敛，直接比较判别法给出高斯积分的收敛性。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">For $x\ge 1$, $x^2\ge x$ forces $e^{-x^2}\le e^{-x}$, and $\int_1^{\infty}e^{-x}\,dx$ converges. That exponential bound, not a power of $x$, is what controls the tail.</span><span data-lang="zh">当 $x\ge 1$ 时，$x^2\ge x$ 迫使 $e^{-x^2}\le e^{-x}$，而 $\int_1^{\infty}e^{-x}\,dx$ 收敛。控制尾部的是指数上界，而非 $x$ 的幂次。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">这部分在大一课程中卡住了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</span><span data-lang="zh">预约与 Dingrui Scholars 导师的免费 15 分钟咨询，在下次期中考前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_b3_improper_and_numerical_integration__sg__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<section id="flashcards">
+  <h2><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></h2>
+  <div class="flashcard-toolbar">
+    <span class="fc-count" id="fcCount"><span data-lang="en">0 / 12 flipped</span><span data-lang="zh">已翻 0 / 12</span></span>
+    <div>
+      <button class="nav-btn" onclick="shuffleFlashcards()"><span data-lang="en">Shuffle</span><span data-lang="zh">随机排序</span></button>
+      <button class="nav-btn" onclick="resetFlashcards()"><span data-lang="en">Reset</span><span data-lang="zh">重置</span></button>
+    </div>
+  </div>
+  <div class="flashcard-grid" id="flashcardGrid">
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Definition of $\int_a^{\infty} f\,dx$</span><span data-lang="zh">$\int_a^{\infty} f\,dx$ 的定义</span></div><div class="flashcard-back"><span data-lang="en">$\displaystyle\lim_{t\to\infty}\int_a^{t} f(x)\,dx$, when this limit exists (finite).</span><span data-lang="zh">$\displaystyle\lim_{t\to\infty}\int_a^{t} f(x)\,dx$，当此<code>极限</code>（limit）存在（有限）时。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">$p$ test at infinity: $\int_1^{\infty} x^{-p}\,dx$</span><span data-lang="zh">无穷远处的 $p$ 判别法：$\int_1^{\infty} x^{-p}\,dx$</span></div><div class="flashcard-back"><span data-lang="en">Converges iff $p>1$; diverges iff $p\le 1$.</span><span data-lang="zh">当且仅当 $p>1$ 时<code>收敛</code>（converges）；$p\le 1$ 时<code>发散</code>（diverges）。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">$p$ test at $0$: $\int_0^1 x^{-p}\,dx$</span><span data-lang="zh">$0$ 处的 $p$ 判别法：$\int_0^1 x^{-p}\,dx$</span></div><div class="flashcard-back"><span data-lang="en">Converges iff $p<1$; diverges iff $p\ge 1$. The inequality is reversed from the test at infinity.</span><span data-lang="zh">当且仅当 $p<1$ 时收敛；$p\ge 1$ 时发散。不等号方向与无穷远处的判别法相反。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Singularity at endpoint $b$</span><span data-lang="zh">端点 $b$ 处的奇点</span></div><div class="flashcard-back"><span data-lang="en">$\displaystyle\int_a^b f\,dx=\lim_{t\to b^-}\int_a^t f\,dx$; for an interior singularity, split there and require both halves to converge.</span><span data-lang="zh">$\displaystyle\int_a^b f\,dx=\lim_{t\to b^-}\int_a^t f\,dx$；若奇点在内部，则在该处分拆，要求两半均<code>收敛</code>。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Direct comparison test</span><span data-lang="zh">直接比较判别法</span></div><div class="flashcard-back"><span data-lang="en">If $0\le f\le g$ and $\int g$ converges, then $\int f$ converges; if $\int f$ diverges, then $\int g$ diverges.</span><span data-lang="zh">若 $0\le f\le g$ 且 $\int g$ 收敛，则 $\int f$ 收敛；若 $\int f$ 发散，则 $\int g$ 发散。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Limit comparison test</span><span data-lang="zh">极限比较判别法</span></div><div class="flashcard-back"><span data-lang="en">If $f,g>0$ and $\lim f/g=L$ with $0<L<\infty$, then $\int f$ and $\int g$ share their fate.</span><span data-lang="zh">若 $f,g>0$ 且 $\lim f/g=L$，$0<L<\infty$，则 $\int f$ 与 $\int g$ 同敛散。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Trapezoidal rule</span><span data-lang="zh">梯形法则</span></div><div class="flashcard-back"><span data-lang="en">$\displaystyle T_n=\frac{h}{2}\big[f_0+2f_1+\cdots+2f_{n-1}+f_n\big]$, weights $1,2,\dots,2,1$.</span><span data-lang="zh">$\displaystyle T_n=\frac{h}{2}\big[f_0+2f_1+\cdots+2f_{n-1}+f_n\big]$，权重 $1,2,\dots,2,1$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Simpson's rule ($n$ even)</span><span data-lang="zh">辛普森法则（$n$ 为偶数）</span></div><div class="flashcard-back"><span data-lang="en">$\displaystyle S_n=\frac{h}{3}\big[f_0+4f_1+2f_2+\cdots+4f_{n-1}+f_n\big]$, weights $1,4,2,\dots,4,1$.</span><span data-lang="zh">$\displaystyle S_n=\frac{h}{3}\big[f_0+4f_1+2f_2+\cdots+4f_{n-1}+f_n\big]$，权重 $1,4,2,\dots,4,1$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Trapezoidal error bound</span><span data-lang="zh">梯形误差界</span></div><div class="flashcard-back"><span data-lang="en">$\displaystyle |E_T|\le \frac{K_2(b-a)^3}{12\,n^2}$, $K_2=\max|f''|$. Scales like $1/n^2$.</span><span data-lang="zh">$\displaystyle |E_T|\le \frac{K_2(b-a)^3}{12\,n^2}$，$K_2=\max|f''|$。按 $1/n^2$ 缩放。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Simpson error bound</span><span data-lang="zh">辛普森误差界</span></div><div class="flashcard-back"><span data-lang="en">$\displaystyle |E_S|\le \frac{K_4(b-a)^5}{180\,n^4}$, $K_4=\max|f^{(4)}|$. Scales like $1/n^4$; exact on cubics.</span><span data-lang="zh">$\displaystyle |E_S|\le \frac{K_4(b-a)^5}{180\,n^4}$，$K_4=\max|f^{(4)}|$。按 $1/n^4$ 缩放；对三次多项式精确。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Gaussian integral</span><span data-lang="zh">高斯积分</span></div><div class="flashcard-back"><span data-lang="en">$\displaystyle\int_0^{\infty} e^{-x^2}\,dx=\frac{\sqrt{\pi}}{2}$; convergent (compare $e^{-x}$) but has no elementary antiderivative.</span><span data-lang="zh">$\displaystyle\int_0^{\infty} e^{-x^2}\,dx=\frac{\sqrt{\pi}}{2}$；收敛（与 $e^{-x}$ 比较），但没有初等<code>原函数</code>（antiderivative）。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Cauchy principal value warning</span><span data-lang="zh">柯西主值警告</span></div><div class="flashcard-back"><span data-lang="en">$\int_{-\infty}^{\infty} f$ requires both halves to converge separately; the symmetric limit can exist even when the integral diverges.</span><span data-lang="zh">$\int_{-\infty}^{\infty} f$ 要求两半分别<code>收敛</code>；即使积分<code>发散</code>，对称<code>极限</code>也可能存在。</span></div></div></div>
+  </div>
+</section>
+
+
+<section class="section" id="unit-quiz">
+  <div class="section-label"><span data-lang="en">Check Yourself</span><span data-lang="zh">自我测验</span></div>
+  <h2><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></h2>
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The integral $\displaystyle\int_{1}^{\infty}\frac{dx}{x^{0.5}}$:</span><span data-lang="zh">积分 $\displaystyle\int_{1}^{\infty}\frac{dx}{x^{0.5}}$：</span></div><span class="quiz-number">Q1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">converges to $2$</span><span data-lang="zh">收敛到 $2$</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">converges to $1$</span><span data-lang="zh">收敛到 $1$</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">diverges</span><span data-lang="zh">发散</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">equals $0$</span><span data-lang="zh">等于 $0$</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. This is a $p$ integral at infinity with $p=0.5\le 1$, so it diverges. The antiderivative $2\sqrt{x}$ grows without bound.</span><span data-lang="zh">正确。这是无穷远处的 $p$ 积分，$p=0.5\le 1$，故<code>发散</code>。<code>原函数</code> $2\sqrt{x}$ 无界增长。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">At infinity, $\int_1^{\infty}x^{-p}\,dx$ converges only for $p>1$. Here $p=0.5$, so it diverges.</span><span data-lang="zh">在无穷远处，$\int_1^{\infty}x^{-p}\,dx$ 仅在 $p>1$ 时收敛。此处 $p=0.5$，故发散。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The integral $\displaystyle\int_{0}^{1}\frac{dx}{x^{0.5}}$:</span><span data-lang="zh">积分 $\displaystyle\int_{0}^{1}\frac{dx}{x^{0.5}}$：</span></div><span class="quiz-number">Q2</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">converges to $2$</span><span data-lang="zh">收敛到 $2$</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">diverges</span><span data-lang="zh">发散</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">converges to $1$</span><span data-lang="zh">收敛到 $1$</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">equals $0$</span><span data-lang="zh">等于 $0$</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. This is a $p$ integral at $0$ with $p=0.5<1$, so it converges; its value is $\big[2\sqrt{x}\big]_0^1=2$. Note the inequality is reversed relative to the test at infinity.</span><span data-lang="zh">正确。这是 $0$ 处的 $p$ 积分，$p=0.5<1$，故<code>收敛</code>；其值为 $\big[2\sqrt{x}\big]_0^1=2$。注意不等号方向与无穷远处判别法相反。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Near $0$, $\int_0^1 x^{-p}\,dx$ converges when $p<1$. Here $p=0.5<1$, and the value is $2\sqrt{x}$ evaluated from $0$ to $1$, namely $2$.</span><span data-lang="zh">在 $0$ 附近，$\int_0^1 x^{-p}\,dx$ 当 $p<1$ 时收敛。此处 $p=0.5<1$，值为 $2\sqrt{x}$ 在 $0$ 到 $1$ 处的计算，即 $2$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">By the limit comparison test, $\displaystyle\int_{1}^{\infty}\frac{2x+3}{x^{3}+5}\,dx$:</span><span data-lang="zh">用极限比较判别法，$\displaystyle\int_{1}^{\infty}\frac{2x+3}{x^{3}+5}\,dx$：</span></div><span class="quiz-number">Q3</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">diverges, like $1/x$</span><span data-lang="zh">发散，类比 $1/x$</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">cannot be decided by comparison</span><span data-lang="zh">比较法无法判断</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">diverges, like $1/x^{3}$</span><span data-lang="zh">发散，类比 $1/x^{3}$</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">converges, like $1/x^{2}$</span><span data-lang="zh">收敛，类比 $1/x^{2}$</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. For large $x$ the integrand behaves like $2x/x^3=2/x^2$, so compare with $1/x^2$. The ratio tends to $2$, a finite positive number, and $\int_1^{\infty}x^{-2}\,dx$ converges, so the integral converges.</span><span data-lang="zh">正确。当 $x$ 很大时，被积函数近似 $2x/x^3=2/x^2$，故与 $1/x^2$ 比较。比值趋近 $2$（有限正数），而 $\int_1^{\infty}x^{-2}\,dx$ 收敛，故积分收敛。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Match leading powers: $(2x+3)/(x^3+5)\approx 2x/x^3=2/x^2$. Comparison with the convergent $\int_1^{\infty}x^{-2}\,dx$ gives convergence.</span><span data-lang="zh">匹配主导幂次：$(2x+3)/(x^3+5)\approx 2x/x^3=2/x^2$。与收敛的 $\int_1^{\infty}x^{-2}\,dx$ 比较得出收敛性。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">For the trapezoidal rule on $[0,2]$ with $n=4$, the weight pattern on the five nodes is:</span><span data-lang="zh">对 $[0,2]$ 上 $n=4$ 的梯形法则，五个节点的权重模式为：</span></div><span class="quiz-number">Q4</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$1,4,2,4,1$</div><div class="quiz-opt" data-idx="1">$1,2,2,2,1$</div><div class="quiz-opt" data-idx="2">$1,1,1,1,1$</div><div class="quiz-opt" data-idx="3">$1,3,3,3,1$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. The trapezoidal rule weights endpoints by $1$ and all interior nodes by $2$, giving $1,2,2,2,1$ scaled by $h/2$. The $1,4,2,4,1$ pattern is Simpson's rule.</span><span data-lang="zh">正确。梯形法则端点权重为 $1$，内部节点权重均为 $2$，乘以 $h/2$ 后得 $1,2,2,2,1$。$1,4,2,4,1$ 的模式是辛普森法则。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The trapezoidal rule uses endpoint weights $1$ and interior weights $2$: $1,2,2,2,1$. The $1,4,2,4,1$ pattern is Simpson's rule.</span><span data-lang="zh">梯形法则端点权重为 $1$，内部权重为 $2$：$1,2,2,2,1$。$1,4,2,4,1$ 模式属于辛普森法则。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">Simpson's rule applied to a polynomial of degree $3$ gives:</span><span data-lang="zh">对三次多项式应用辛普森法则，结果为：</span></div><span class="quiz-number">Q5</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">an overestimate</span><span data-lang="zh">高估</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">an underestimate</span><span data-lang="zh">低估</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">the exact value</span><span data-lang="zh">精确值</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">a value off by $h^2$</span><span data-lang="zh">误差为 $h^2$ 量级的值</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Simpson's error depends on $f^{(4)}$, which is identically zero for any cubic. Hence the rule is exact on polynomials of degree three or less.</span><span data-lang="zh">正确。辛普森误差取决于 $f^{(4)}$，对任意三次多项式均恒为零。故法则对三次及以下多项式精确。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The Simpson error bound contains $f^{(4)}$. A cubic has $f^{(4)}=0$, so the error vanishes and the rule is exact.</span><span data-lang="zh">辛普森误差界包含 $f^{(4)}$。三次多项式的 $f^{(4)}=0$，故误差消失，法则精确。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">To halve the trapezoidal error bound on a fixed interval, you should multiply $n$ by about:</span><span data-lang="zh">要将固定区间上的梯形误差界减半，应将 $n$ 大约乘以：</span></div><span class="quiz-number">Q6</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\sqrt{2}$</div><div class="quiz-opt" data-idx="1">$2$</div><div class="quiz-opt" data-idx="2">$4$</div><div class="quiz-opt" data-idx="3">$\tfrac12$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. The bound scales like $1/n^2$. To halve it we need $n^2$ to double, so $n$ must be multiplied by $\sqrt{2}$.</span><span data-lang="zh">正确。误差界按 $1/n^2$ 缩放。要减半需 $n^2$ 翻倍，故 $n$ 须乘以 $\sqrt{2}$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Since the bound goes like $1/n^2$, halving it requires doubling $n^2$, which means scaling $n$ by $\sqrt{2}$, not $2$.</span><span data-lang="zh">误差界按 $1/n^2$ 变化，减半需 $n^2$ 翻倍，即 $n$ 乘以 $\sqrt{2}$ 而非 $2$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+
+<section class="section" id="checklist">
+  <div class="section-label"><span data-lang="en">Before You Move On</span><span data-lang="zh">继续之前</span></div>
+  <h2><span data-lang="en">Readiness Checklist</span><span data-lang="zh">准备清单</span></h2>
+  <p><span data-lang="en">Tap each item you can do without notes.</span><span data-lang="zh">点击每个无需笔记即可完成的项目。</span> <span id="checkProgress"><span data-lang="en">0 / 8 mastered</span><span data-lang="zh">已掌握 0 / 8</span></span></p>
+  <ul id="checklistUl" class="checklist">
+    <li onclick="toggleCheck(this)"><span data-lang="en">State the definition of an improper integral over an infinite interval as a limit, and decide convergence in basic cases.</span><span data-lang="zh">将无穷区间上<code>反常积分</code>（improper integral）的定义表述为<code>极限</code>（limit），并判断基本情形的<code>收敛</code>（convergence）性。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Handle an unbounded integrand at an endpoint or an interior point by taking the correct one-sided limit or splitting the interval.</span><span data-lang="zh">通过取正确的单侧<code>极限</code>或分拆区间，处理端点或内部奇点处的无界被积函数。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Apply both $p$ tests: $\int_1^{\infty} x^{-p}$ (converges for $p>1$) and $\int_0^1 x^{-p}$ (converges for $p<1$).</span><span data-lang="zh">应用两种 $p$ 判别法：$\int_1^{\infty} x^{-p}$（$p>1$ 时<code>收敛</code>）和 $\int_0^1 x^{-p}$（$p<1$ 时收敛）。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Use the direct and limit comparison tests to settle convergence without evaluating the integral.</span><span data-lang="zh">使用直接比较判别法和极限比较判别法，无需计算积分即可判断<code>收敛</code>性。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Write down and apply the trapezoidal rule with correct $1,2,\dots,2,1$ weights.</span><span data-lang="zh">写出并应用权重为 $1,2,\dots,2,1$ 的<code>梯形</code>（trapezoidal）法则。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Write down and apply Simpson's rule with correct $1,4,2,\dots,4,1$ weights, remembering $n$ must be even.</span><span data-lang="zh">写出并应用权重为 $1,4,2,\dots,4,1$ 的辛普森法则，记住 $n$ 必须为偶数。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Use the trapezoidal and Simpson error bounds to choose $n$ for a target accuracy.</span><span data-lang="zh">使用梯形和辛普森误差界，选取达到目标精度所需的 $n$。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Recognize that Simpson's rule is exact on cubics and explain why via the $f^{(4)}$ in its error bound.</span><span data-lang="zh">认识到辛普森法则对三次多项式精确，并通过误差界中的 $f^{(4)}$ 解释原因。</span></li>
+  </ul>
+</section>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span></span>
+  <a href="../Practice%20Questions/Unit_B3_Improper_and_Numerical_Integration_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <a href="../Practice%20Questions/Solutions/Unit_B3_Improper_and_Numerical_Integration_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+</main>
+<script>
+// SCORE TRACKING
+let quizScore = { correct: 0, total: 0 };
+
+function updateScoreBadge() {
+  const badge = document.getElementById('scoreBadge');
+  if (!badge) return;
+  if (quizScore.total === 0) {
+    badge.textContent = '0 / 0';
+    badge.classList.add('zero');
+  } else {
+    badge.textContent = quizScore.correct + ' / ' + quizScore.total;
+    badge.classList.remove('zero');
+  }
+}
+
+// THEME
+function setThemeBtnLabel(toLight) {
+  const tt = document.getElementById('themeToggle');
+  if (!tt) return;
+  const isZh = document.body.classList.contains('lang-zh');
+  tt.textContent = toLight ? (isZh ? '浅色' : 'Light') : (isZh ? '深色' : 'Dark');
+}
+function toggleLang(){
+  document.body.classList.toggle('lang-zh');
+  updateFlashcardCount();
+  const total2 = document.querySelectorAll('#checklistUl li').length;
+  const checked2 = document.querySelectorAll('#checklistUl li.checked').length;
+  const p2 = document.getElementById('checkProgress');
+  const isZh2 = document.body.classList.contains('lang-zh');
+  if (p2) p2.textContent = isZh2 ? checked2 + ' / ' + total2 + ' 已掌握' : checked2 + ' / ' + total2 + ' mastered';
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  setThemeBtnLabel(!isDark);
+}
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  setThemeBtnLabel(!isDark);
+}
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  setThemeBtnLabel(true);
+}
+
+// PROGRESS BAR
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+  const fill = document.getElementById('progressFill');
+  if (fill) fill.style.width = pct + '%';
+});
+
+// ACTIVE TOC
+const sections = document.querySelectorAll('.section, .hero');
+const tocLinks = document.querySelectorAll('.sidebar a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector('.sidebar a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-80px 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// QUIZZES
+document.querySelectorAll('.quiz').forEach(quiz => {
+  const answer = parseInt(quiz.dataset.answer);
+  const opts = quiz.querySelectorAll('.quiz-opt');
+  const expCorrect = quiz.querySelector('.quiz-explain.correct-exp');
+  const expWrong = quiz.querySelector('.quiz-explain.wrong-exp');
+  opts.forEach(opt => {
+    opt.addEventListener('click', () => {
+      if (opt.classList.contains('disabled')) return;
+      const idx = parseInt(opt.dataset.idx);
+      opts.forEach(o => o.classList.add('disabled'));
+      quizScore.total++;
+      if (idx === answer) {
+        opt.classList.add('correct');
+        quizScore.correct++;
+        if (expCorrect) expCorrect.classList.add('show');
+      } else {
+        opt.classList.add('wrong');
+        opts[answer].classList.add('correct');
+        if (expWrong) expWrong.classList.add('show');
+        const retry = quiz.querySelector('.quiz-retry');
+        if (retry) retry.classList.add('show');
+      }
+      updateScoreBadge();
+    });
+  });
+});
+
+function retryQuiz(btn) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('disabled', 'correct', 'wrong'));
+  quiz.querySelectorAll('.quiz-explain').forEach(e => e.classList.remove('show'));
+  btn.classList.remove('show');
+  quizScore.total--;
+  updateScoreBadge();
+}
+
+// FLASHCARDS
+function flipCard(el) {
+  el.classList.toggle('flipped');
+  updateFlashcardCount();
+}
+function updateFlashcardCount() {
+  const total = document.querySelectorAll('#flashcardGrid .flashcard').length;
+  const flipped = document.querySelectorAll('#flashcardGrid .flashcard.flipped').length;
+  const c = document.getElementById('fcCount');
+  if (c) {
+    const isZh = document.body.classList.contains('lang-zh');
+    c.textContent = isZh ? flipped + ' / ' + total + ' 已翻转' : flipped + ' / ' + total + ' flipped';
+  }
+}
+function resetFlashcards() {
+  document.querySelectorAll('#flashcardGrid .flashcard').forEach(c => c.classList.remove('flipped'));
+  updateFlashcardCount();
+}
+function shuffleFlashcards() {
+  const grid = document.getElementById('flashcardGrid');
+  const cards = [...grid.children];
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.appendChild(cards[j]);
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+}
+
+// CHECKLIST
+function toggleCheck(li) {
+  li.classList.toggle('checked');
+  const total = document.querySelectorAll('#checklistUl li').length;
+  const checked = document.querySelectorAll('#checklistUl li.checked').length;
+  const p = document.getElementById('checkProgress');
+  if (p) {
+    const isZh = document.body.classList.contains('lang-zh');
+    p.textContent = isZh ? checked + ' / ' + total + ' 已掌握' : checked + ' / ' + total + ' mastered';
+  }
+}
+</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

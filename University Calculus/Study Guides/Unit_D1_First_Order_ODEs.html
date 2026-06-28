@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="University Calculus Unit D1: First-Order ODEs: Separable and Linear. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="theme-color" content="#7A2E2E">
+<meta name="color-scheme" content="light dark">
+<title>University Calculus — Unit D1: First-Order ODEs: Separable and Linear | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_D1_First_Order_ODEs.html">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus — Unit D1: First-Order ODEs: Separable and Linear | Dingrui Scholars">
+<meta property="og:description" content="University Calculus Unit D1: First-Order ODEs: Separable and Linear. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_D1_First_Order_ODEs.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="University Calculus — Unit D1: First-Order ODEs: Separable and Linear | Dingrui Scholars">
+<meta name="twitter:description" content="University Calculus Unit D1: First-Order ODEs: Separable and Linear. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+<style>
+:root {
+  --bg: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --bg-code: #0F0F0F;
+  --text: #0F0F0F;
+  --text-secondary: #585858;
+  --accent: #7A2E2E; --pop: #0099FF; --pop-light: #E8F4FF; --ink: #0F0F0F;
+  --accent-light: #F2E4E4;
+  --accent-dark: #5A1E1E;
+  --green: #2E6B4F;
+  --green-light: #DFF0E8;
+  --orange: #A65E1A;
+  --orange-light: #FBF0E0;
+  --red: #B03030;
+  --red-light: #FCEAEA;
+  --purple: #5E3D7A;
+  --purple-light: #EDE4F5;
+  --gold: #C4956A;
+  --gold-light: #FDF5EC;
+  --border: #E6E6E6;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.10);
+  --radius: 12px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-w: 860px;
+  --toc-w: 260px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F0F0F;
+  --bg-card: #1A1A1A;
+  --bg-code: #000000;
+  --text: #FAFAFA;
+  --text-secondary: #A0A0A0;
+  --accent: #C87070; --pop: #4DB2FF; --pop-light: #12283A; --ink: #FAFAFA;
+  --accent-light: #3A1818;
+  --accent-dark: #E08080;
+  --green: #5CB88A;
+  --green-light: #1A2E24;
+  --orange: #D4944A;
+  --orange-light: #2E2010;
+  --red: #E07070;
+  --red-light: #301515;
+  --purple: #A888C8;
+  --purple-light: #201828;
+  --gold: #D4A870;
+  --gold-light: #2A2018;
+  --border: #2A2A2A;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+
+/* ─── SCORE BADGE (top nav) ─── */
+.score-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--green);
+  background: var(--green-light);
+  border: 1px solid var(--green);
+  padding: 3px 10px; border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.score-badge.zero { color: var(--text-secondary); background: var(--bg); border-color: var(--border); }
+
+/* ─── PROGRESS BAR ─── */
+.progress-track {
+  position: fixed; top: 56px; left: 0; right: 0;
+  height: 3px; background: transparent; z-index: 99;
+}
+.progress-fill {
+  height: 100%; width: 0; background: var(--accent);
+  transition: width 0.15s;
+}
+
+/* ─── SIDEBAR TOC ─── */
+.sidebar {
+  position: fixed; top: 59px; left: 0; bottom: 0;
+  width: var(--toc-w); background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; scrollbar-width: none; padding: 20px 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, background 0.3s;
+  z-index: 90;
+}
+.sidebar::-webkit-scrollbar { display: none; }
+.sidebar.open { transform: translateX(0); box-shadow: var(--shadow-lg); }
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem; padding: 0 20px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.sidebar a {
+  display: block; padding: 8px 20px;
+  color: var(--text-secondary);
+  text-decoration: none; font-size: 0.88rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.sidebar a:hover { color: var(--accent); background: var(--accent-light); }
+.sidebar a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 600; background: linear-gradient(90deg, var(--accent-light), transparent); }
+
+/* ─── MAIN ─── */
+.main-wrap {
+  max-width: var(--max-w);
+  margin: 80px auto 120px;
+  padding: 0 24px;
+
+  transition: width 0.3s ease, margin-left 0.3s ease;}
+@media (min-width: 1100px) {
+  .sidebar { transform: translateX(0); box-shadow: none; }
+  .main-wrap {
+    max-width: none;
+    margin-left: calc(var(--toc-w) + 40px);
+    margin-right: 0;
+    padding: 0 48px;
+  }
+  body.sidebar-collapsed .sidebar { transform: translateX(-100%); }
+}
+
+/* ─── HERO ─── */
+.hero {
+  text-align: center; padding: 56px 24px 48px;
+  background: linear-gradient(180deg, #F4F4F4 0%, transparent 100%);
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(0,0,0,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+[data-theme="dark"] .hero { background: linear-gradient(180deg, rgba(0,0,0, 0.4) 0%, transparent 100%); }
+[data-theme="dark"] .hero::before { background: radial-gradient(ellipse at 70% 20%, rgba(255,255,255,0.04) 0%, transparent 70%); }
+
+.hero-overline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 12px;
+  position: relative;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15; margin-bottom: 16px;
+  position: relative;
+}
+.hero-sub {
+  color: var(--text-secondary); max-width: 650px; margin: 0 auto;
+  position: relative;
+}
+.hero-meta {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin-top: 24px; position: relative;
+}
+.hero-meta .chip {
+  font-size: 0.85rem; font-weight: 600;
+  padding: 6px 16px; border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.chip-maroon { background: var(--bg-card); border: 1px solid var(--accent); color: var(--accent); }
+.chip-green { background: var(--bg-card); border: 1px solid var(--green); color: var(--green); }
+.chip-purple { background: var(--bg-card); border: 1px solid var(--purple); color: var(--purple); }
+
+/* ─── MASTERY DASHBOARD ─── */
+.mastery-dash {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin: -16px 0 40px;
+}
+.mastery-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.mastery-card:hover { transform: translateY(-2px); }
+.mastery-val {
+  font-family: var(--font-mono);
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.mastery-label {
+  font-size: 0.82rem; color: var(--text-secondary);
+  margin-top: 4px; font-weight: 600;
+}
+.mastery-bar {
+  width: 100%; height: 4px; border-radius: 2px;
+  background: var(--border); margin-top: 10px;
+  overflow: hidden;
+}
+.mastery-bar-fill {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+@media (max-width: 600px) { .mastery-dash { grid-template-columns: 1fr; } }
+
+/* ─── SECTION ─── */
+.section { margin-bottom: 56px; scroll-margin-top: 80px; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem; margin-bottom: 16px;
+  line-height: 1.25; border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 8px; display: inline-block;
+}
+.section h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem; margin: 32px 0 12px;
+  line-height: 1.3; color: var(--text);
+}
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.card-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.card-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 700; flex-shrink: 0;
+}
+.icon-blue { background: var(--accent-light); color: var(--accent); }
+.icon-green { background: var(--green-light); color: var(--green); }
+.icon-orange { background: var(--orange-light); color: var(--orange); }
+.icon-red { background: var(--red-light); color: var(--red); }
+.icon-purple { background: var(--purple-light); color: var(--purple); }
+.card-title { font-weight: 700; font-size: 1.05rem; }
+
+/* ─── CODE/WORKED EXAMPLE BLOCKS ─── */
+pre {
+  background: var(--bg-code); color: #CDD6F4;
+  padding: 20px 24px; border-radius: var(--radius);
+  overflow-x: auto; font-family: var(--font-mono);
+  font-size: 0.88rem; line-height: 1.65; margin: 16px 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+code { font-family: var(--font-mono); font-size: 0.9em; }
+:not(pre) > code {
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 6px; border-radius: 4px; font-weight: 500;
+}
+pre .cm { color: #6C7086; }
+pre .num { color: #F9E2AF; font-weight: 600; }
+pre .str { color: #A6E3A1; font-weight: 600; }
+
+/* ─── KEY CONCEPT BOX ─── */
+.concept-box {
+  border-left: 5px solid var(--accent);
+  background: var(--bg-card);
+  padding: 20px 24px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+.concept-box.green { border-left-color: var(--green); }
+.concept-box.orange { border-left-color: var(--orange); }
+.concept-box.red { border-left-color: var(--red); }
+.concept-box.purple { border-left-color: var(--purple); }
+.concept-box > strong:first-child {
+  display: inline-block; margin-bottom: 8px;
+  font-family: var(--font-mono); text-transform: uppercase;
+  font-size: 0.8rem; letter-spacing: 0.5px;
+}
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--bg-card); }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: var(--accent-light); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.3px; text-transform: uppercase; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--accent-light); }
+
+/* ─── QUIZ ─── */
+.quiz { margin: 24px 0; background: var(--bg-card); padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); position: relative; }
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.quiz-q { font-weight: 600; font-size: 1.05rem; flex: 1; }
+.quiz-number {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 8px; border-radius: 6px;
+  flex-shrink: 0; margin-left: 12px;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 12px 18px; border: 2px solid var(--border);
+  border-radius: 8px; cursor: pointer;
+  font-size: 0.95rem; transition: all 0.2s;
+  background: var(--bg); font-weight: 500;
+  position: relative;
+}
+.quiz-opt:hover:not(.disabled) { border-color: var(--accent); background: var(--accent-light); }
+.quiz-opt.correct { border-color: var(--green); background: var(--green-light); color: var(--green); }
+.quiz-opt.wrong { border-color: var(--red); background: var(--red-light); color: var(--red); }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.8; }
+.quiz-opt.correct::after { content: '✓'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-opt.wrong::after { content: '✗'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-explain { margin-top: 16px; padding: 14px 18px; border-radius: 8px; font-size: 0.9rem; display: none; line-height: 1.6; }
+.quiz-explain.show { display: block; animation: fadeSlideIn 0.35s ease; }
+.quiz-explain.correct-exp { background: var(--green-light); color: #1a4030; border: 1px solid var(--green); }
+.quiz-explain.wrong-exp { background: var(--red-light); color: #6b1d1d; border: 1px solid var(--red); }
+[data-theme="dark"] .quiz-explain.correct-exp { color: var(--green); }
+[data-theme="dark"] .quiz-explain.wrong-exp { color: var(--red); }
+.quiz-retry {
+  display: none; margin-top: 12px;
+  padding: 8px 18px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.quiz-retry.show { display: inline-block; animation: fadeSlideIn 0.35s ease; }
+.quiz-retry:hover { background: var(--accent-light); border-color: var(--accent); }
+
+@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ─── ACCORDION / DETAILS ─── */
+details { margin: 16px 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); overflow: hidden; box-shadow: var(--shadow); }
+summary {
+  padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 0.95rem;
+  user-select: none; list-style: none; display: flex; align-items: center; gap: 10px;
+  background: var(--bg); transition: background 0.2s;
+}
+summary:hover { background: var(--accent-light); }
+summary::before { content: '▸'; transition: transform 0.2s; font-size: 1rem; color: var(--accent); }
+details[open] summary { border-bottom: 1px solid var(--border); }
+details[open] summary::before { transform: rotate(90deg); }
+details .detail-body { padding: 20px; font-size: 0.95rem; background: var(--bg-card); }
+
+/* ─── QUICK REF ─── */
+.qref { background: var(--bg-card); border: 2px dashed var(--accent); border-radius: var(--radius); padding: 24px; margin: 24px 0; }
+.qref-title { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; text-align: center; }
+
+/* ─── FLASHCARD ─── */
+
+/* ─── FLASHCARDS (unified: grid overlay, equalized, no scrollbars) ─── */
+.flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.flashcard {
+  perspective: 1000px;
+  cursor: pointer;
+  display: grid;
+}
+.flashcard-inner {
+  display: grid;
+  grid-template-areas: "card";
+  min-height: 200px;
+  height: 100%;
+  position: relative;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+.flashcard-front, .flashcard-back {
+  grid-area: card;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  word-break: break-word;
+  hyphens: auto;
+}
+.flashcard-front {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: clamp(0.92rem, 2.1vw, 1.05rem);
+  line-height: 1.45;
+  padding: 22px 20px 34px;
+  gap: 8px;
+}
+.flashcard-front::after {
+  content: 'TAP TO FLIP';
+  position: absolute; bottom: 10px; left: 0; right: 0;
+  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+  color: var(--text-secondary); opacity: 0.5; letter-spacing: 1.5px;
+}
+.flashcard-back {
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  color: var(--text);
+  transform: rotateY(180deg);
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.6;
+  padding: 26px 22px;
+  gap: 12px;
+  /* Cleaner prose wrapping: no mid-word splits, no auto-hyphens,
+     balanced lines so commas/periods don't orphan at line starts */
+  word-break: normal;
+  hyphens: manual;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+.flashcard-back .katex-display {
+  margin: 6px 0 !important;
+  font-size: 1.25em;
+  max-width: 100%;
+  overflow: hidden;
+}
+.flashcard-back .katex-display > .katex { max-width: 100%; }
+.flashcard-back .katex { font-size: 1em; }
+/* Give <br>-separated lines real breathing room (numbered lists etc.) */
+.flashcard-back br { content: ""; display: block; margin-bottom: 8px; }
+.flashcard-back > * { max-width: 100%; }
+@media (max-width: 600px) {
+  .flashcard-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ─── WORKED EXAMPLES (standardized) ─── */
+.worked-example {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 88%, var(--accent-light) 12%), var(--bg-card));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+[data-theme="dark"] .worked-example {
+  background: linear-gradient(180deg, rgba(58,32,32,0.32), rgba(30,24,24,0.98));
+}
+.worked-example h4,
+.worked-example .we-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin: 0 0 16px 0;
+}
+.worked-example .we-steps {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.worked-example .we-step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+[data-theme="dark"] .worked-example .we-step {
+  background: var(--bg-card);
+}
+.worked-example .we-step strong {
+  color: var(--accent);
+  font-size: 0.92rem;
+  display: block;
+  margin-bottom: 6px;
+}
+.worked-example .we-step .katex-display {
+  margin: 10px 0;
+}
+.worked-solution {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+.worked-solution .katex-display { margin: 0.65rem 0; }
+
+/* ─── FORMULA BOX ─── */
+.formula-box {
+  background: var(--bg-card);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  margin: 24px 0;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  overflow-x: auto;
+}
+.formula-box .formula-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--text-secondary); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 12px;
+}
+.formula-box .katex-display { margin: 10px 0 0 0; }
+
+/* ─── SEPARATOR ─── */
+.sep { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+/* ─── PRACTICE INPUT ─── */
+.practice-input-group { margin: 20px 0; }
+.practice-prompt { font-weight: 600; margin-bottom: 12px; font-size: 1.02rem; }
+.practice-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.practice-row input[type="text"] {
+  flex: 1; min-width: 160px; padding: 10px 16px;
+  border: 2px solid var(--border); border-radius: 8px;
+  font-family: var(--font-mono); font-size: 1rem;
+  background: var(--bg); color: var(--text);
+  transition: border-color 0.2s;
+}
+.practice-row input[type="text"]:focus { outline: none; border-color: var(--accent); }
+.practice-row button {
+  padding: 10px 24px; border: none; border-radius: 8px;
+  background: var(--accent); color: #fff; font-weight: 700;
+  font-family: var(--font-body); font-size: 0.95rem;
+  cursor: pointer; transition: all 0.2s;
+}
+.practice-row button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.practice-feedback {
+  margin-top: 10px; padding: 10px 16px; border-radius: 8px;
+  font-size: 0.92rem; display: none;
+}
+.practice-feedback.show { display: block; animation: fadeSlideIn 0.3s ease; }
+.practice-feedback.correct { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+.practice-feedback.wrong { background: var(--red-light); color: var(--red); border: 1px solid var(--red); }
+
+/* ─── CHECKLIST ─── */
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  padding: 12px 16px; border: 1px solid var(--border);
+  border-radius: 8px; margin-bottom: 8px;
+  cursor: pointer; font-size: 0.95rem;
+  background: var(--bg-card); transition: all 0.2s;
+  display: flex; align-items: center; gap: 12px;
+  user-select: none;
+}
+.checklist li:hover { border-color: var(--accent); }
+.checklist li .check-icon {
+  width: 24px; height: 24px; border-radius: 6px;
+  border: 2px solid var(--border); display: flex;
+  align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+  font-size: 0.8rem; color: transparent;
+}
+.checklist li.checked { background: var(--green-light); border-color: var(--green); }
+.checklist li.checked .check-icon { background: var(--green); border-color: var(--green); color: #fff; }
+
+/* ─── INTERACTIVE WIDGETS ─── */
+.interactive-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow-lg);
+}
+.widget-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 16px;
+  text-align: center;
+}
+.widget-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.widget-canvas-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.widget-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.widget-controls label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.widget-controls input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 220px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.widget-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-controls input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-readout {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 90px;
+  text-align: center;
+}
+.widget-sum-readout {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.widget-sum-readout .sum-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+/* ─── TWO COLUMNS ─── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ─── FOOTER ─── */
+.footer-wrap {
+  text-align: center; padding: 40px 24px;
+  color: var(--text-secondary); font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem; color: var(--text);
+  margin-bottom: 4px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 1100px) {
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .main-wrap { padding: 0 16px; margin-top: 60px; }
+  pre { font-size: 0.8rem; padding: 16px; }
+  
+  .formula-box { padding: 16px; }
+  .top-nav { padding: 0 16px; }
+  }
+
+/* Print */
+@media print {
+  .flashcard-inner { transform: none !important; }
+  .flashcard-back { transform: none !important; position: relative !important; backface-visibility: visible !important; }
+  .flashcard-front { display: none !important; }
+  .flashcard { height: auto !important; min-height: auto !important; }
+  .top-nav, .progress-track, .sidebar, .topnav-actions, .quiz-retry, .mastery-dash,
+  .flashcard-toolbar button, .score-badge { display: none !important; }
+  .main-wrap { margin: 0 auto; max-width: 100%; }
+  body { font-size: 11pt; background: white; color: black; }
+  pre { border: 1px solid #ccc; white-space: pre-wrap; }
+  .card, .formula-box, .concept-box, .quiz { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+  details { break-inside: avoid; }
+  .interactive-widget { display: none; }
+  
+  
+  
+  
+  a { color: inherit; text-decoration: none; }
+}
+
+/* ─── TOP-NAV (matching Units 2-6) ─── */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; height: 56px;
+  transition: background 0.3s, border 0.3s;
+}
+[data-theme="dark"] .top-nav { background: rgba(21, 16, 16, 0.92); }
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-logo { height: 36px; width: auto; border-radius: 0; object-fit: contain; }
+.nav-badge {
+  background: var(--accent); color: #fff;
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+  padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px;
+}
+.nav-btn {
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px;
+  padding: 6px 14px; font-size: 0.82rem;
+  cursor: pointer; font-family: var(--font-body); font-weight: 600;
+  transition: all 0.2s;
+}
+.nav-btn:hover { background: var(--accent-light); border-color: var(--accent); transform: translateY(-1px); }
+.nav-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ─── BILINGUAL TOGGLE ─── */
+body:not(.lang-zh) [data-lang="zh"] { display: none; }
+body.lang-zh [data-lang="en"] { display: none; }
+
+/* consult-cta: lead-gen conversion surface (Sprint A) */
+.consult-cta { background: linear-gradient(180deg, var(--accent-light, #F2E4E4) 0%, var(--bg-card, #fff) 100%); border: 2px solid var(--accent); border-radius: var(--radius, 12px); padding: 22px 26px; margin: 30px 0 8px; text-align: center; }
+.consult-cta__lead { font-family: var(--font-display); font-size: 1.25rem; color: var(--accent); margin: 0 0 6px; }
+.consult-cta__body { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; margin: 0 auto 16px; max-width: 48ch; }
+.consult-cta__btn { display: inline-block; background: var(--ink); color: var(--bg-card); font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 12px 22px; border-radius: 12px; transition: transform 0.15s, opacity 0.2s; }
+.consult-cta__btn:hover { opacity: 0.88; transform: translateY(-1px); }
+/* design-refresh links */ .card a:not(.feeder-link), .concept-box a, .going-deeper a, .section > p a { color: var(--pop); text-underline-offset: 2px; }
+@media print { .consult-cta { border: 1px solid #999; background: #fff; } .consult-cta__btn { background: #fff !important; color: #000 !important; border: 1px solid #999; } .consult-cta__btn[data-lang="en"]::after { content: " (dingruischolars.com/signup)"; font-weight: 400; } .consult-cta__btn[data-lang="zh"]::after { content: " (dingruischolars.com/signup-ch)"; font-weight: 400; } }
+
+/* __sg_mobile_spacing__ tighten phone layout + fix top-nav clip (injected by declutter_sg.py) */
+@media (max-width: 600px){
+  .main-wrap{ margin: 64px auto 56px !important; padding: 0 14px !important; }
+  .hero{ padding: 40px 18px 32px !important; margin-bottom: 26px !important; }
+  .hero-sub{ font-size: 0.96rem !important; }
+  .section{ margin-bottom: 36px !important; }
+  .section h2{ font-size: 1.45rem !important; }
+  .section h3{ margin: 24px 0 10px !important; }
+  .card{ padding: 18px 16px !important; }
+  .concept-box{ padding: 16px 16px !important; }
+  .quiz{ padding: 18px 14px !important; }
+  .formula-box{ padding: 16px 12px !important; }
+  .worked-solution{ padding: 16px 16px !important; }
+  .sep{ margin: 28px 0 !important; }
+  .detail-body{ padding: 16px !important; }
+  .top-nav{ padding: 0 10px !important; }
+  .nav-left{ gap: 6px !important; min-width: 0; }
+  .nav-right{ gap: 4px !important; }
+  .nav-btn{ padding: 6px 9px !important; font-size: 0.78rem !important; }
+  .score-badge{ display: none !important; }
+}
+@media (max-width: 430px){
+  .nav-left .nav-badge:nth-child(2){ display: none !important; }
+}
+/* __end_sg_mobile_spacing__ */
+
+  /* mobile-overflow-lock v1: lock to viewport width on phone/tablet, no horizontal pan (laptop sidebar layout >=1100px unaffected) */
+  @media (max-width: 1024px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .main-wrap, .hero, .hero-sub, .consult-cta, .sg-appendix { max-width: 100%; }
+    img, table, video, iframe, pre { max-width: 100%; }
+    .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+  }
+</style>
+<!-- BEGIN unit-nav-css -->
+<style data-section="unit-nav">
+.unit-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 980px;
+  margin: 64px auto 32px;
+  padding: 0 24px;
+}
+.unit-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  padding: 18px 20px;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border, #DDD0C8);
+  border-radius: 12px;
+  color: inherit;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.unit-nav__link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #7A2E2E);
+  box-shadow: 0 6px 16px -4px rgba(60, 20, 30, 0.12);
+}
+.unit-nav__link--next {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.unit-nav__arrow {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent, #7A2E2E);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.unit-nav__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.unit-nav__hint {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #6B5058);
+}
+.unit-nav__title {
+  font-family: var(--font-display, 'DM Serif Display', Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--text, #2C1B1F);
+}
+.unit-nav__placeholder {
+  border: 1px dashed var(--border, #DDD0C8);
+  border-radius: 12px;
+  background: transparent;
+  opacity: 0.6;
+}
+@media (max-width: 640px) {
+  .unit-nav { grid-template-columns: 1fr; gap: 10px; margin-top: 48px; }
+  .unit-nav__link--next { flex-direction: row; text-align: left; }
+}
+@media print { .unit-nav { display: none; } }
+</style>
+<!-- END unit-nav-css -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus — Unit D1: First-Order ODEs: Separable and Linear",
+  "description": "University Calculus Unit D1: First-Order ODEs: Separable and Linear. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_D1_First_Order_ODEs.html",
+  "inLanguage": [
+    "en"
+  ],
+  "learningResourceType": "Study Guide",
+  "educationalLevel": "University",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFKAuoDASIAAhEBAxEB/8QAHAABAQADAQEBAQAAAAAAAAAAAAEGBwgFBAID/8QAaxAAAQMDAQUBCAcQCwwHBgcAAQACAwQFEQYHEiExQRMIFCIyUWFxgRUXN5GUsbMWIzM2QlJUYnJ0dZOhstLTJDRVVnOCkpW0w9ElNThFU1djg4SiwdQmJ0NERmV2KGSFhqTwGEhmo8Lh9f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgQDBf/EADQRAQACAgAEAwUHBAIDAAAAAAABAgMRBBIhMTJBURMzYXGBFCI0kaGx0SNSU/BCQ2PB4f/aAAwDAQACEQMRAD8A6jREWV1EREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARREFREKAiIgIomfMgqZRT8qBniqiICIiAiBEBERAREygJlTgqgZRAiAiic0FTKiIKinxK9UBFFUBFECCooqgIiICZU9SvqQEUVQEQogIiICIiAiKIKmfMiiCoonrQVMoiAiIgIoqgIiICIiAiIgJ6kRARPUiAiJ0QEREBERAREQEyoqgIiICIiAiIgIiICIiAiIgIiICKKoCKZRBUURBURRAVREBFOHmX4q54aSAz1c0dPEOb5XBrR6zwQf0RYzdNf6JtkZfVaotpxzZBL27v5Me8fyLF6vbhoyLPYQ3esxyMdM1gP4xzT+RNutcOS3astmotP0O3qzPqZG1unrlBB/2b4po5XH0tO6B/KKyC2bYtCVkojluNTQuOMd9UjwD62BzR6yo3C08NljvVsFReVQam03XvDKHUFqqnuOA2Ksjc4nyboOfyL13BzfGaR6QpcZiY7vyiqIhEREDoiJ6kFCnrT0IgqdVEKCqInqQOXFPOr05KIKinmVQRE9SflQVFEPRBUREBEU9aAUREBVREFUREFRFEDqicccU6ICqIgnRERBVFUQFDzQ8lUBREQVF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CIiqCZRE6IKiBRBUUwqgKJyRBVE6J1QEREFUToiCqBEKAqpkeVBxQVFEQOKInVBVEQIHNEVQQoqogIiYQVREQFeSiBBRlREQFVB5kQE69UKdED1omUwgIiICIiAqoiAr51MKoIUTogQMIhRBVFVEBERARMcUQPWiFEBECICqiIBRECAEKIgoQophACqZTKAiIgIiICIiAiIgiqIgiqKdEBE5qoJ5kRVBEVRBEVU9KCqIiC8UUTzoKor1UKAEREBVREBOKeVOqAiqiAgREF64UKKoJyRCFUETqhCo8qCIqp0QVFEQFVEQOqKqIBTmiICeZVTqgIivVBCiIgBERARVRA6IPIqogdVeaiqCInmRAREQERCgBERAREQMomEQEVUQEQKoCiIEDHBPSidEBAiIHpTqieYIKinJOKCphQKoCIiAiIgIiICFEQTor1REDqpw44VRBCqiIHVERAREQEREBQKogiqIgKKogdEREBERBFURBFURBFURBCnVVEERVEEVREBERAUKqIInDCqIIiqIInVVEERVEBERBFURAKiqICIiAp6lUQTgiqFBOqoROXVBOSKlMIIipQIIiqBBETCqCJyVQoIiuEwgiqhTCAiqYQFFR6EQFFUQEQqICvJROiBhVMIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAohVQAiKBBUUCpQEQckQRUlCoguEygU6oKiIgIgRBCqiICIp1QVCUU6oKhRCggVQclOqCoURA4oiJI/9k=" class="nav-logo" alt="DingRui Scholars logo">
+    <span class="nav-brand">Dingrui Scholars</span>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn" id="tocToggle" onclick="document.getElementById('sidebar').classList.toggle('open')" title="Contents"><span data-lang="en">Contents</span><span data-lang="zh">目录</span></button>
+    <button class="nav-btn" id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+    <button class="nav-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode"><span data-lang="en">Dark</span><span data-lang="zh">深色</span></button>
+  </div>
+</nav>
+<div class="progress-bar"><div id="progressFill"></div></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-title"><span data-lang="en">Table of Contents</span><span data-lang="zh">目录</span></div>
+  <a href="#hero"><span data-lang="en">Overview</span><span data-lang="zh">概览</span></a>
+  <a href="#s1"><span data-lang="en">1 · Differential Equations and Direction Fields</span><span data-lang="zh">1 · 微分方程与方向场</span></a>
+  <a href="#s2"><span data-lang="en">2 · Separable Equations</span><span data-lang="zh">2 · 可分离变量方程</span></a>
+  <a href="#s3"><span data-lang="en">3 · Linear First-Order Equations</span><span data-lang="zh">3 · 一阶线性方程</span></a>
+  <a href="#s4"><span data-lang="en">4 · Initial Value Problems</span><span data-lang="zh">4 · 初值问题</span></a>
+  <a href="#s5"><span data-lang="en">5 · Existence and Uniqueness</span><span data-lang="zh">5 · 存在唯一性</span></a>
+  <a href="#s6"><span data-lang="en">6 · Applications</span><span data-lang="zh">6 · 应用</span></a>
+  <a href="#s7"><span data-lang="en">7 · Going Deeper</span><span data-lang="zh">7 · 深入探讨</span></a>
+  <a href="#flashcards"><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></a>
+  <a href="#unit-quiz"><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></a>
+  <a href="#checklist"><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握度清单</span></a>
+</aside>
+
+<main class="main-wrap">
+<section class="hero" id="hero">
+  <div class="hero-overline"><span data-lang="en">University Calculus IV</span><span data-lang="zh">大学微积分 IV</span></div>
+  <h1><span data-lang="en">Unit D1: First-Order ODEs: Separable and Linear</span><span data-lang="zh">单元 D1：一阶常微分方程：可分离与线性方程</span></h1>
+  <p class="hero-sub" data-lang="en">From direction fields to integrating factors, this unit builds the two workhorse methods for first-order equations and the existence theorem that tells you when a solution is the solution.</p>
+  <p class="hero-sub" data-lang="zh">从方向场到积分因子，本单元建立求解一阶方程的两种核心方法，以及判断解是否唯一的存在性定理。</p>
+  <div class="hero-meta">
+    <span class="chip"><span data-lang="en">Calculus IV</span><span data-lang="zh">微积分 IV</span></span>
+    <span class="chip"><span data-lang="en">ODEs</span><span data-lang="zh">常微分方程</span></span>
+    <span class="chip"><span data-lang="en">Differential Equations</span><span data-lang="zh">微分方程</span></span>
+    <span class="chip">MIT 18.03 / GT 2552</span>
+  </div>
+  <div class="concept-box">
+    <strong><span data-lang="en">Read me first.</span><span data-lang="zh">请先阅读。</span></strong>
+    <p data-lang="en">This guide assumes single-variable calculus through integration techniques. We start with the geometry of direction fields, develop separation of variables and the integrating factor for linear equations, then study initial value problems, the Picard existence and uniqueness theorem, and standard applications. The final section reduces Bernoulli and homogeneous equations to the two core methods.</p>
+    <p data-lang="zh">本指南假设读者已掌握通过积分技巧的单变量微积分。我们从方向场的几何出发，逐步建立分离变量法（<code>separable</code>）和一阶线性方程（<code>linear first-order</code>）的积分因子（<code>integrating factor</code>）法，再学习初值问题（<code>IVP</code>）、Picard 存在唯一性（<code>existence and uniqueness</code>）定理，以及典型应用。最后一节将 Bernoulli 方程和齐次方程化归为两种核心方法。</p>
+  </div>
+</section>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">大一课程卡住了？</span></p>
+  <p class="consult-cta__body" data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</p>
+  <p class="consult-cta__body" data-lang="zh">预约 Dingrui Scholars 导师 15 分钟免费咨询。我们帮你在下次期中考前突破难关。</p>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_d1_first_order_odes__sg__en" target="_blank" rel="noopener">Book a free consult &rarr;</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_d1_first_order_odes__sg__zh" target="_blank" rel="noopener">预约免费咨询 &rarr;</a>
+</aside>
+
+
+<section class="section" id="s1">
+  <div class="section-label"><span data-lang="en">Section 1</span><span data-lang="zh">第一节</span></div>
+  <h2><span data-lang="en">Differential Equations and Direction Fields</span><span data-lang="zh">微分方程与方向场</span></h2>
+
+  <div class="concept-box"><strong>Key idea.</strong> <p data-lang="en">A first-order ordinary differential equation relates an unknown function $y(x)$ to its first derivative. Written in normal form it reads $y' = f(x,y)$. A solution is any differentiable function that satisfies the equation on an interval. Before solving anything in closed form, the direction field of $f$ already shows the qualitative shape of every solution curve.</p><p data-lang="zh">一阶常微分方程（<code>ODE</code>）将未知函数 $y(x)$ 与其一阶导数联系起来。写成标准形式（normal form）为 $y' = f(x,y)$。满足方程的任意可微函数都是其解。在求任何解析解之前，$f$ 的方向场（<code>slope field</code>）已能从图形上展示所有解曲线的定性形状。</p></div>
+
+  <p data-lang="en">An <em>ordinary differential equation</em> (ODE) involves derivatives of a function of a single variable. Its <em>order</em> is the order of the highest derivative present; this unit treats order one. We say the equation is in <em>normal form</em> when it is solved for the highest derivative, $y' = f(x,y)$, and in <em>differential form</em> when written as $M(x,y)\,dx + N(x,y)\,dy = 0$.</p>
+  <p data-lang="zh">常微分方程（<code>ODE</code>）涉及单变量函数的导数。方程中出现的最高阶导数的阶数称为方程的阶（order）；本单元讨论一阶方程。当方程被整理成最高阶导数已孤立在左侧时，称为标准形式（normal form）$y' = f(x,y)$；写成 $M(x,y)\,dx + N(x,y)\,dy = 0$ 的形式称为微分形式（differential form）。</p>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Normal form of a first-order ODE</span><span data-lang="zh">一阶 ODE 的标准形式</span></div>
+  $$ \frac{dy}{dx} = f(x,y) $$
+  </div>
+
+  <p data-lang="en">The <em>direction field</em> (or slope field) of $y' = f(x,y)$ assigns to each point $(x,y)$ a short segment of slope $f(x,y)$. A solution curve must be tangent to the field at every point it passes through, so the field lets us sketch solutions and read off equilibrium behavior without integrating. A constant solution $y \equiv c$ with $f(x,c)=0$ is called an <em>equilibrium solution</em>.</p>
+  <p data-lang="zh">方程 $y' = f(x,y)$ 的方向场（<code>slope field</code>）在每一点 $(x,y)$ 处画出斜率为 $f(x,y)$ 的短线段。解曲线在经过的每一点必须与方向场相切，因此方向场让我们无需积分便可描绘解的形状，并读出平衡行为。满足 $f(x,c)=0$ 的常数解 $y \equiv c$ 称为平衡解（<code>equilibrium</code>）。</p>
+
+  <div class="concept-box"><strong><span data-lang="en">Remark.</span><span data-lang="zh">注。</span></strong> <p data-lang="en">A function $y(x)$ is a solution on an open interval $I$ if it is differentiable on $I$ and the equation holds for every $x \in I$. The same formula can define different solutions on different intervals, so the interval of definition is part of the answer.</p><p data-lang="zh">若 $y(x)$ 在开区间 $I$ 上可微且方程在 $I$ 上每点成立，则称它为该区间上的解。同一公式在不同区间上可定义不同的解，因此定义区间是答案的一部分。</p></div>
+
+  <details><summary><span data-lang="en">Worked Example 1.1: reading a direction field</span><span data-lang="zh">例 1.1：读取方向场</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Consider $y' = y(1-y)$. The slope depends only on $y$ (the equation is autonomous), so segments are constant along horizontal lines. Setting $f=0$ gives equilibria $y=0$ and $y=1$.</p>
+    $$ y' = y(1-y), \qquad y'=0 \iff y \in \{0,1\}. $$
+    <p>For $0 < y < 1$ we have $y' > 0$, so solutions increase toward $y=1$. For $y > 1$ we have $y' < 0$, so they decrease toward $y=1$. Thus $y=1$ is stable and $y=0$ is unstable. The field predicts the logistic S-curve before any integration.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>考虑 $y' = y(1-y)$。斜率只依赖于 $y$（方程是自治的，<code>autonomous</code>），因此沿水平线段斜率不变。令 $f=0$ 得平衡解（<code>equilibrium</code>）$y=0$ 和 $y=1$。</p>$$f = y(1-y), \quad f = 0 \implies y = 0,\; y = 1.$$<p>在 $0 &lt; y &lt; 1$ 时 $y' &gt; 0$，解向 $y=1$ 递增；在 $y &gt; 1$ 时 $y' &lt; 0$，解向 $y=1$ 递减。因此 $y=1$ 是稳定的，$y=0$ 是不稳定的。方向场在任何积分之前就预测了 logistic S 形曲线。</p></div></div></details>
+
+  <p data-lang="en">Reading stability off the sign of $f$ is the heart of the qualitative theory. For an autonomous equation $y'=f(y)$, plot $f$ against $y$ on a number line and mark its zeros. On each interval between consecutive zeros the sign of $f$ is constant, so it tells you whether trajectories rise or fall. An equilibrium $y=c$ is <em>stable</em> when $f$ changes from positive to negative as $y$ increases through $c$ (arrows point inward) and <em>unstable</em> when the sign change runs the other way. This is the phase-line picture, and it works even when no closed-form solution exists.</p>
+  <p data-lang="zh">从 $f$ 的符号判断稳定性（stability）是定性理论的核心。对自治方程（<code>autonomous</code>）$y'=f(y)$，画出 $f$ 关于 $y$ 的图像并标记零点。相邻零点之间 $f$ 符号恒定，告诉我们轨迹上升还是下降。平衡解 $y=c$ 是稳定的（<code>stable</code>），当 $f$ 在 $y$ 经过 $c$ 时由正变负（箭头指向内）；若符号变化方向相反则不稳定（<code>unstable</code>）。这就是相线图（phase-line picture），即使不存在解析解也适用。</p>
+
+  <div class="concept-box green"><strong><span data-lang="en">Stability test.</span><span data-lang="zh">稳定性判据。</span></strong> <p data-lang="en">For $y'=f(y)$ with $f(c)=0$: if $f'(c) < 0$ the equilibrium $y=c$ is stable, and if $f'(c) > 0$ it is unstable. This is the linearization criterion: near $c$, $f(y)\approx f'(c)(y-c)$, so small deviations decay when $f'(c)<0$ and grow when $f'(c)>0$.</p><p data-lang="zh">对 $y'=f(y)$，$f(c)=0$：若 $f'(c) < 0$ 则 $y=c$ 稳定，若 $f'(c) > 0$ 则不稳定。这是线性化准则：在 $c$ 附近 $f(y)\approx f'(c)(y-c)$，因此当 $f'(c)&lt;0$ 时扰动衰减，当 $f'(c)&gt;0$ 时扰动增长。</p></div>
+
+  <details><summary><span data-lang="en">Worked Example 1.2: classifying every equilibrium</span><span data-lang="zh">例 1.2：对所有平衡解分类</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Classify the equilibria of $y' = (y-1)(y-3)^2$. The zeros of $f(y)=(y-1)(y-3)^2$ are $y=1$ and $y=3$. Test the sign of $f$ on each interval. For $y<1$, take $y=0$: $f=(-1)(9)=-9<0$. For $1<y<3$, take $y=2$: $f=(1)(1)=1>0$. For $y>3$, take $y=4$: $f=(3)(1)=3>0$.</p>
+    $$ \underbrace{(-\infty,1)}_{f<0}\ \big|\ y=1\ \big|\ \underbrace{(1,3)}_{f>0}\ \big|\ y=3\ \big|\ \underbrace{(3,\infty)}_{f>0}. $$
+    <p>At $y=1$ the sign goes from negative to positive, so arrows point away on both sides: $y=1$ is unstable. At $y=3$ the sign stays positive on both sides, so trajectories approach from below but leave from above: $y=3$ is <em>semistable</em>. The squared factor is exactly why $y=3$ is one-sided rather than fully stable, a subtlety the sign chart exposes that the linearization $f'(3)=0$ alone cannot.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>对 $y' = (y-1)(y-3)^2$ 的平衡解分类。$f(y)=(y-1)(y-3)^2$ 的零点为 $y=1$ 和 $y=3$。逐区间检验 $f$ 的符号：$y&lt;1$ 时取 $y=0$，得 $f=(-1)(9)=-9&lt;0$；$1&lt;y&lt;3$ 时取 $y=2$，得 $f=(1)(1)=1&gt;0$；$y&gt;3$ 时取 $y=4$，得 $f=(3)(1)=3&gt;0$。</p>$$f(y) = (y-1)(y-3)^2, \quad \text{zeros: } y=1,\; y=3.$$<p>在 $y=1$ 处符号由负变正，箭头向外：$y=1$ 不稳定。在 $y=3$ 处符号始终为正，轨迹从下方趋近但从上方离开：$y=3$ 是半稳定的（semistable）。二次因子正是 $y=3$ 只具有单侧稳定的原因——这是符号图所揭示的微妙之处，线性化 $f'(3)=0$ 单独无法给出此信息。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 1.3: verifying a proposed solution</span><span data-lang="zh">例 1.3：验证一个候选解</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Verify that $y = \tan(x + C)$ solves $y' = 1 + y^2$, and find the interval of definition through $(0,0)$. Differentiate: $y' = \sec^2(x+C)$. The Pythagorean identity gives $\sec^2\theta = 1 + \tan^2\theta$, so $y' = 1 + \tan^2(x+C) = 1 + y^2$, which confirms the equation.</p>
+    <p>The data $y(0)=0$ forces $\tan(C)=0$, so $C=0$ and $y=\tan x$. Tangent is differentiable only between consecutive vertical asymptotes, so the solution through the origin lives on $\left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right)$. The same formula $\tan(x+C)$ describes a different solution on a different interval for each value of $C$, which is the point of the earlier remark that the interval of definition is part of the answer.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>验证 $y = \tan(x + C)$ 满足 $y' = 1 + y^2$，并求过 $(0,0)$ 的解的定义区间。对其求导：$y' = \sec^2(x+C)$。利用勾股恒等式 $\sec^2\theta = 1 + \tan^2\theta$，得 $y' = 1 + \tan^2(x+C) = 1 + y^2$，确认方程成立。</p><p>初始条件 $y(0)=0$ 要求 $\tan(C)=0$，即 $C=0$，$y=\tan x$。正切函数仅在相邻垂直渐近线之间可微，因此过原点的解存在于 $\left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right)$。对每一个 $C$ 值，公式 $\tan(x+C)$ 在不同区间描述不同的解，这正说明了定义区间是答案的一部分。</p></div></div></details>
+
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <p data-lang="en">Students often call any constant $y\equiv c$ an equilibrium. A constant is an equilibrium only when it makes the right-hand side vanish, that is $f(x,c)=0$ for all $x$ in play. For a non-autonomous equation like $y' = x - y$, the line $y=x$ is <em>not</em> a solution and there is no horizontal equilibrium at all, even though $f$ is zero along that line, because $y=x$ has slope $1$, not $0$. Only horizontal lines on which $f$ stays zero are equilibria.</p><p data-lang="zh">学生常将任意常数 $y\equiv c$ 称为平衡解（<code>equilibrium</code>）。但常数仅在使右端恒为零时才是平衡解，即对相关区间上所有 $x$ 满足 $f(x,c)=0$。对非自治方程如 $y' = x - y$，直线 $y=x$ 不是解，也不存在水平平衡解，尽管 $f$ 沿该直线为零——因为 $y=x$ 的斜率为 $1$ 而非 $0$。只有使 $f$ 恒为零的水平线才是平衡解。</p></div>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q" data-lang="en">Which statement about the autonomous equation $y' = (y-2)(y+3)$ is correct?</div><div class="quiz-q" data-lang="zh">关于自治方程 $y' = (y-2)(y+3)$，以下哪项正确？</div><span class="quiz-number">1.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">It has no equilibrium solutions</span><span data-lang="zh">没有平衡解</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">$y \equiv 2$ and $y \equiv -3$ are equilibrium solutions</span><span data-lang="zh">$y \equiv 2$ 和 $y \equiv -3$ 都是平衡解</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">$y \equiv 0$ is the only equilibrium</span><span data-lang="zh">$y \equiv 0$ 是唯一的平衡解</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">The slope depends on $x$</span><span data-lang="zh">斜率依赖于 $x$</span></div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. Equilibria are the roots of $f(y)=0$, namely $y=2$ and $y=-3$. Because $f$ has no $x$ dependence the field is horizontally constant.</p><p data-lang="zh">正确。平衡解（<code>equilibrium</code>）是 $f(y)=0$ 的根，即 $y=2$ 和 $y=-3$。由于 $f$ 不含 $x$，方向场沿水平方向不变。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">Set $f(y)=(y-2)(y+3)=0$. The constant solutions are exactly the roots $y=2$ and $y=-3$, and the slope is independent of $x$.</p><p data-lang="zh">令 $f(y)=(y-2)(y+3)=0$，常数解恰好是根 $y=2$ 和 $y=-3$，且斜率与 $x$ 无关。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="section-label"><span data-lang="en">Section 2</span><span data-lang="zh">第二节</span></div>
+  <h2><span data-lang="en">Separable Equations</span><span data-lang="zh">可分离变量方程</span></h2>
+
+  <div class="concept-box"><strong>Key idea.</strong> <p data-lang="en">A first-order ODE is separable when the right-hand side factors as a function of $x$ times a function of $y$, that is $y' = g(x)\,h(y)$. Dividing by $h(y)$ and integrating both sides reduces the problem to two ordinary integrals.</p><p data-lang="zh">若一阶 ODE 的右端可分解为关于 $x$ 的函数与关于 $y$ 的函数之积，即 $y' = g(x)\,h(y)$，则称其为可分离变量方程（<code>separable</code>）。除以 $h(y)$ 后两端积分，问题化为两个普通积分。</p></div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Method of Separation of Variables</span><span data-lang="zh">分离变量法</span></div>
+  $$ \frac{dy}{dx} = g(x)\,h(y) \;\Longrightarrow\; \int \frac{dy}{h(y)} = \int g(x)\,dx + C. $$
+  </div>
+
+  <p data-lang="en">The manipulation $\dfrac{dy}{h(y)} = g(x)\,dx$ is justified by the chain rule: if $H'(y) = 1/h(y)$ then $\frac{d}{dx}H(y(x)) = g(x)$, so $H(y) = \int g\,dx + C$. Wherever $h(y_0)=0$, the constant function $y \equiv y_0$ is an extra <em>singular solution</em> lost in the division; check it separately.</p>
+  <p data-lang="zh">将 $\dfrac{dy}{h(y)} = g(x)\,dx$ 的操作由链式法则严格支撑：若 $H'(y)=1/h(y)$，则 $\frac{d}{dx}H(y(x))=g(x)$，从而 $H(y)=\int g\,dx+C$。在 $h(y_0)=0$ 处，常数函数 $y\equiv y_0$ 是被除法丢失的奇异解（singular solution），需单独检验。</p>
+
+  <details><summary><span data-lang="en">Worked Example 2.1: a separable initial value problem</span><span data-lang="zh">例 2.1：一个可分离的初值问题</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' = x\,y$ with $y(0)=3$. Separate and integrate:</p>
+    $$ \frac{dy}{y} = x\,dx \;\Longrightarrow\; \ln|y| = \frac{x^2}{2} + C \;\Longrightarrow\; y = A\,e^{x^2/2}. $$
+    <p>Apply $y(0)=3$: $A = 3$. Hence $y = 3\,e^{x^2/2}$, valid for all $x$. The discarded case $y\equiv 0$ does not meet the data.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $y' = x\,y$，$y(0)=3$。分离并积分：</p>$$\int \frac{dy}{y} = \int x\,dx \implies \ln|y| = \frac{x^2}{2} + c \implies y = A e^{x^2/2}.$$<p>代入 $y(0)=3$：$A=3$，故 $y = 3\,e^{x^2/2}$，对所有 $x$ 成立。被舍去的情况 $y\equiv 0$ 不满足初始条件。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Going deeper: why separation is exactly the chain rule</span><span data-lang="zh">深入：分离变量恰好是链式法则</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Suppose $h(y)\neq 0$ on the range of interest and let $H$ be an antiderivative of $1/h$, so $H'(y)=1/h(y)$. Define $G$ with $G'(x)=g(x)$. If $y(x)$ solves $y'=g(x)h(y)$, then</p>
+    $$ \frac{d}{dx}\,H(y(x)) = H'(y)\,y' = \frac{1}{h(y)}\,g(x)\,h(y) = g(x) = G'(x). $$
+    <p>Two functions with equal derivatives on an interval differ by a constant, so $H(y(x)) = G(x) + C$. This is precisely the implicit relation produced by separating and integrating, which proves the method rather than merely justifying the formal symbol pushing.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>设 $h(y)\neq 0$ 且 $H$ 是 $1/h$ 的原函数，$G'(x)=g(x)$。若 $y(x)$ 满足 $y'=g(x)h(y)$，则</p>$$\frac{d}{dx}H(y(x)) = H'(y)\cdot y' = \frac{1}{h(y)}\cdot g(x)h(y) = g(x) = G'(x).$$<p>同一区间上导数相等的两个函数相差常数，因此 $H(y(x)) = G(x)+C$，这正是分离积分后得到的隐式关系，从而证明了该方法，而不仅仅是对形式操作的合理化。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 2.2: an implicit solution and a singular solution</span><span data-lang="zh">例 2.2：隐式解与奇异解</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' = \dfrac{x(y^2-1)}{1}$, that is $y' = x(y^2-1)$, with $y(0)=2$. The right side factors, so separate for $y\neq\pm 1$:</p>
+    $$ \frac{dy}{y^2-1} = x\,dx. $$
+    <p>Partial fractions give $\dfrac{1}{y^2-1} = \dfrac{1}{2}\left(\dfrac{1}{y-1} - \dfrac{1}{y+1}\right)$, so integrating both sides,</p>
+    $$ \frac{1}{2}\ln\left|\frac{y-1}{y+1}\right| = \frac{x^2}{2} + C_1 \;\Longrightarrow\; \frac{y-1}{y+1} = A\,e^{x^2}. $$
+    <p>Apply $y(0)=2$: $\dfrac{1}{3}=A$, so $\dfrac{y-1}{y+1} = \dfrac{1}{3}e^{x^2}$. Solving for $y$ gives $y = \dfrac{3+e^{x^2}}{3-e^{x^2}}$. The division by $y^2-1$ discarded the constants $y\equiv 1$ and $y\equiv -1$; these are singular solutions of the ODE but neither meets the data, so they are recorded and set aside.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $y' = x(y^2-1)$，$y(0)=2$。右端可分解，对 $y\neq\pm 1$ 分离变量：</p>$$\frac{dy}{y^2-1} = x\,dx.$$<p>部分分式得 $\dfrac{1}{y^2-1} = \dfrac{1}{2}\left(\dfrac{1}{y-1}-\dfrac{1}{y+1}\right)$，两端积分，</p>$$\frac{1}{2}\ln\left|\frac{y-1}{y+1}\right| = \frac{x^2}{2}+c \implies \frac{y-1}{y+1} = A e^{x^2}.$$<p>代入 $y(0)=2$：$\dfrac{1}{3}=A$，故 $\dfrac{y-1}{y+1}=\dfrac{1}{3}e^{x^2}$，解出 $y=\dfrac{3+e^{x^2}}{3-e^{x^2}}$。对 $y^2-1$ 的除法丢失了奇异解 $y\equiv 1$ 和 $y\equiv -1$；两者均不满足初始条件，记录后排除。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 2.3: separable but not obviously so</span><span data-lang="zh">例 2.3：不那么显然的可分离方程</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $\dfrac{dy}{dx} = e^{x-y}$. The exponent splits as $e^{x-y}=e^x e^{-y}$, which is exactly the product form $g(x)h(y)$ with $g(x)=e^x$ and $h(y)=e^{-y}$. Separate:</p>
+    $$ e^{y}\,dy = e^{x}\,dx \;\Longrightarrow\; e^{y} = e^{x} + C. $$
+    <p>Hence $y = \ln(e^{x} + C)$, valid wherever $e^x + C > 0$. If $C \ge 0$ the solution exists for all $x$; if $C < 0$ it exists only for $x > \ln(-C)$, where the logarithm's argument is positive. Recognizing the hidden product structure is the whole difficulty, since nothing about $e^{x-y}$ looks separable until the exponent is split.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $\dfrac{dy}{dx} = e^{x-y}$。指数拆分为 $e^{x-y}=e^x e^{-y}$，恰好是乘积形式 $g(x)h(y)$，其中 $g(x)=e^x$，$h(y)=e^{-y}$。分离变量：</p>$$e^y\,dy = e^x\,dx \implies e^y = e^x + C.$$<p>故 $y = \ln(e^{x}+C)$，在 $e^x+C&gt;0$ 处成立。若 $C\ge 0$ 解对所有 $x$ 存在；若 $C&lt;0$ 解仅在 $x&gt;\ln(-C)$ 处存在。识别隐藏的乘积结构是全部难点，因为 $e^{x-y}$ 在指数未分拆时看起来并不可分离。</p></div></div></details>
+
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <p data-lang="en">A frequent mistake is to forget the absolute value when integrating $\int dy/y = \ln|y|$, and an even more common one is to drop the singular solutions lost in the division by $h(y)$. When you divide by $h(y)$ you assume $h(y)\neq 0$; every root $y_0$ of $h$ gives a constant solution $y\equiv y_0$ that the general formula may miss. Always list those constants and check whether the initial data selects one of them. A second error is writing $\ln|y| = \tfrac{x^2}{2}+C$ and then exponentiating to $y = e^{x^2/2}+e^{C}$ instead of $y = e^{C}e^{x^2/2}$; the constant multiplies, it does not add.</p><p data-lang="zh">一个频繁错误是积分 $\int dy/y = \ln|y|$ 时忘记绝对值；更常见的错误是遗漏对 $h(y)$ 求导时丢失的奇异解。对 $h(y)$ 除法假设了 $h(y)\neq 0$；$h$ 的每个零点 $y_0$ 给出一个常数解 $y\equiv y_0$，通用公式可能遗漏。始终列出这些常数并检验初始条件是否选中了其中之一。另一个错误是将 $\ln|y|=\tfrac{x^2}{2}+C$ 指数化后写成 $y=e^{x^2/2}+e^C$，而非 $y=e^C e^{x^2/2}$；常数是乘因子，不是相加项。</p></div>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q" data-lang="en">The general solution of $y' = \dfrac{2x}{y}$ (for $y \neq 0$) is</div><div class="quiz-q" data-lang="zh">$y' = \dfrac{2x}{y}$（$y\neq 0$）的通解（<code>separable</code>）为</div><span class="quiz-number">2.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$y = x^2 + C$</div><div class="quiz-opt" data-idx="1">$y = e^{x^2}+C$</div><div class="quiz-opt" data-idx="2">$y^2 = 2x^2 + C$</div><div class="quiz-opt" data-idx="3">$y = 2x^2 + C$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. Separating gives $y\,dy = 2x\,dx$, so $\tfrac{1}{2}y^2 = x^2 + c$, that is $y^2 = 2x^2 + C$.</p><p data-lang="zh">正确。分离变量得 $y\,dy = 2x\,dx$，积分得 $\tfrac{1}{2}y^2 = x^2+c$，即 $y^2 = 2x^2+C$。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">Write $y\,dy = 2x\,dx$ and integrate both sides: $\tfrac12 y^2 = x^2 + c$, hence $y^2 = 2x^2 + C$.</p><p data-lang="zh">写出 $y\,dy = 2x\,dx$ 后两端积分：$\tfrac12 y^2 = x^2+c$，故 $y^2 = 2x^2+C$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q" data-lang="en">For $y' = (1+y^2)\cos x$, which substitution-free step separates the variables?</div><div class="quiz-q" data-lang="zh">对 $y' = (1+y^2)\cos x$，无需换元直接分离变量的步骤是</div><span class="quiz-number">2.2</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\dfrac{dy}{1+y^2} = \cos x\,dx$</div><div class="quiz-opt" data-idx="1">$\dfrac{dy}{\cos x} = (1+y^2)\,dx$</div><div class="quiz-opt" data-idx="2">$(1+y^2)\,dy = \cos x\,dx$</div><div class="quiz-opt" data-idx="3">$y\,dy = \cos x\,dx$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. Divide by $1+y^2$ and multiply by $dx$, giving $\arctan y = \sin x + C$ after integrating.</p><p data-lang="zh">正确。将 $1+y^2$ 移到左端分母后积分，得 $\arctan y = \sin x+C$。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">The $y$ factor multiplying $y'$ is $1+y^2$, so it must move to the denominator on the left: $\dfrac{dy}{1+y^2}=\cos x\,dx$.</p><p data-lang="zh">$y'$ 的系数是 $1+y^2$，须移到左端分母：$\dfrac{dy}{1+y^2}=\cos x\,dx$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="section-label"><span data-lang="en">Section 3</span><span data-lang="zh">第三节</span></div>
+  <h2><span data-lang="en">Linear First-Order Equations</span><span data-lang="zh">一阶线性方程</span></h2>
+
+  <div class="concept-box"><strong>Key idea.</strong> <p data-lang="en">A first-order ODE is linear when it can be written $y' + p(x)\,y = q(x)$. Multiplying by the integrating factor $\mu(x) = e^{\int p\,dx}$ turns the left side into the exact derivative $(\mu y)'$, after which a single integration solves the equation.</p><p data-lang="zh">当一阶 ODE 能写成 $y' + p(x)\,y = q(x)$ 时，称其为一阶线性方程（<code>linear first-order</code>）。乘以积分因子（<code>integrating factor</code>）$\mu(x) = e^{\int p\,dx}$ 后，左端恰好化为 $(\mu y)'$ 的精确导数，再积分一次即可求解。</p></div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Integrating Factor Method</span><span data-lang="zh">积分因子解法</span></div>
+  $$ y' + p(x)y = q(x), \quad \mu = e^{\int p\,dx}, \quad y = \frac{1}{\mu}\left( \int \mu(x)\,q(x)\,dx + C \right). $$
+  </div>
+
+  <p data-lang="en">The choice of $\mu$ is engineered so that $\mu' = p\,\mu$. Then $(\mu y)' = \mu y' + \mu' y = \mu(y' + py) = \mu q$, so the whole left side collapses to a derivative. Note that linear equations have no singular solutions: every solution comes from the single formula above, and the constant $C$ sweeps out all of them.</p>
+  <p data-lang="zh">选取 $\mu$ 使得 $\mu' = p\,\mu$。则 $(\mu y)' = \mu y' + \mu' y = \mu(y'+py) = \mu q$，左端整体化为一个导数。注意线性方程没有奇异解：所有解均由上述公式给出，常数 $C$ 扫遍全部解族。</p>
+
+  <details><summary><span data-lang="en">Worked Example 3.1: integrating factor in action</span><span data-lang="zh">例 3.1：积分因子实战</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' + \dfrac{1}{x}\,y = x$ for $x > 0$. Here $p = 1/x$, so $\mu = e^{\int dx/x} = e^{\ln x} = x$. Multiply through by $x$:</p>
+    $$ x y' + y = x^2 \;\Longrightarrow\; (x y)' = x^2 \;\Longrightarrow\; x y = \frac{x^3}{3} + C. $$
+    <p>Therefore $y = \dfrac{x^2}{3} + \dfrac{C}{x}$. The term $C/x$ is the general solution of the associated homogeneous equation, and $x^2/3$ is one particular solution.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $y' + \dfrac{1}{x}\,y = x$（$x&gt;0$）。此处 $p=1/x$，故 $\mu = e^{\int dx/x} = e^{\ln x} = x$。全式乘以 $x$：</p>$$(xy)' = x^2 \implies xy = \frac{x^3}{3}+C.$$<p>因此 $y = \dfrac{x^2}{3} + \dfrac{C}{x}$。其中 $C/x$ 是对应齐次方程的通解（<code>general solution</code>），$x^2/3$ 是一个特解（<code>particular solution</code>）。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Going deeper: deriving the integrating factor</span><span data-lang="zh">深入：推导积分因子</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>We seek $\mu(x)$ so that $\mu(y'+py)$ is the derivative of $\mu y$. Expanding, $(\mu y)' = \mu y' + \mu' y$, which equals $\mu y' + \mu p y$ exactly when $\mu' = p\,\mu$. This is itself a separable equation:</p>
+    $$ \frac{d\mu}{\mu} = p\,dx \;\Longrightarrow\; \ln|\mu| = \int p\,dx \;\Longrightarrow\; \mu = e^{\int p\,dx}. $$
+    <p>Any nonzero constant multiple of this $\mu$ works, so we take the simplest representative. Multiplying the original equation by $\mu$ and integrating $(\mu y)' = \mu q$ gives the boxed formula, which shows the method is forced rather than guessed.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>寻求 $\mu(x)$ 使 $\mu(y'+py)$ 成为 $\mu y$ 的导数。展开，$(\mu y)' = \mu y' + \mu' y$ 在 $\mu' = p\,\mu$ 时恰好等于 $\mu y' + \mu p y$。$\mu' = p\mu$ 本身就是可分离方程（<code>separable</code>）：</p>$$\frac{d\mu}{\mu} = p\,dx \implies \mu = e^{\int p\,dx}.$$<p>此 $\mu$ 的任意非零常数倍均可，取最简代表即可。将原方程乘以 $\mu$ 后积分 $(\mu y)'=\mu q$，得到框内公式，说明该方法是被迫的而非猜测的。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 3.2: a trigonometric coefficient</span><span data-lang="zh">例 3.2：三角函数系数</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' + (\tan x)\,y = \sec x$ on $\left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right)$. Here $p = \tan x$, so</p>
+    $$ \int \tan x\,dx = -\ln|\cos x| = \ln|\sec x|, \qquad \mu = e^{\ln|\sec x|} = \sec x. $$
+    <p>Multiply through by $\sec x$. The left side collapses to a derivative and the right side becomes $\sec^2 x$:</p>
+    $$ (\,y\sec x\,)' = \sec^2 x \;\Longrightarrow\; y\sec x = \tan x + C \;\Longrightarrow\; y = \sin x + C\cos x. $$
+    <p>The integrating factor turns a messy coefficient into a clean single integration. Note that $\mu=\sec x$ is positive on the chosen interval, so no absolute value survives into the final answer.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>在 $\left(-\tfrac{\pi}{2},\tfrac{\pi}{2}\right)$ 上求解 $y' + (\tan x)\,y = \sec x$。这里 $p=\tan x$，</p>$$\mu = e^{\int \tan x\,dx} = e^{-\ln|\cos x|} = \sec x.$$<p>全式乘以 $\sec x$，左端化为导数，右端为 $\sec^2 x$：</p>$$(\sec x\cdot y)' = \sec^2 x \implies \sec x\cdot y = \tan x + C \implies y = \sin x + C\cos x.$$<p>积分因子将系数复杂的方程转化为干净的单次积分。注意 $\mu=\sec x$ 在所选区间上为正，因此绝对值不出现在最终答案中。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 3.3: a piecewise forcing term</span><span data-lang="zh">例 3.3：分段强迫项</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' + y = q(x)$, $y(0)=0$, where $q(x)=1$ for $0\le x \le 1$ and $q(x)=0$ for $x>1$. The integrating factor is $\mu = e^{x}$ throughout, since $p=1$. On $[0,1]$, $(e^x y)' = e^x$, so $e^x y = e^x - 1$ using $y(0)=0$, giving $y = 1 - e^{-x}$.</p>
+    <p>At $x=1$ this reaches $y(1) = 1 - e^{-1}$. For $x>1$ the forcing is zero, so $(e^x y)' = 0$ and $e^x y = K$. Continuity at $x=1$ requires $e\cdot(1-e^{-1}) = K$, so $K = e - 1$ and $y = (e-1)e^{-x}$ for $x>1$.</p>
+    $$ y(x) = \begin{cases} 1 - e^{-x}, & 0 \le x \le 1,\\[4pt] (e-1)e^{-x}, & x > 1.\end{cases} $$
+    <p>The solution is continuous but its derivative jumps at $x=1$ because $q$ is discontinuous there. Solving on each piece and matching values at the breakpoint is the standard recipe for piecewise forcing, and it previews the step-function machinery of the Laplace transform.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $y' + y = q(x)$，$y(0)=0$，其中 $q(x)=1$（$0\le x\le 1$），$q(x)=0$（$x&gt;1$）。积分因子始终为 $\mu=e^x$。在 $[0,1]$ 上，$(e^x y)'=e^x$，利用 $y(0)=0$ 得 $e^x y=e^x-1$，即 $y=1-e^{-x}$。</p><p>在 $x=1$ 时值为 $y(1)=1-e^{-1}$。当 $x&gt;1$ 时强迫项为零，$(e^x y)'=0$，$e^x y=K$。连续性要求 $e\cdot(1-e^{-1})=K$，所以 $K=e-1$，$y=(e-1)e^{-x}$（$x&gt;1$）。</p>$$y(x) = \begin{cases} 1-e^{-x}, &amp; 0 \le x \le 1 \\ (e-1)e^{-x}, &amp; x &gt; 1. \end{cases}$$<p>解是连续的，但导数在 $x=1$ 处有跳跃，因为 $q$ 在此不连续。逐段求解然后在断点匹配值是处理分段强迫项的标准方法，也预示了 Laplace 变换中阶跃函数的机理。</p></div></div></details>
+
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <p data-lang="en">The integrating factor formula applies only after the equation is in <em>standard form</em> $y' + p(x)y = q(x)$, with coefficient $1$ on $y'$. If you start from $x y' + 2y = x^3$ and read off $p=2$, you get the wrong factor. Divide by $x$ first to reach $y' + \tfrac{2}{x}y = x^2$, so $p = 2/x$ and $\mu = e^{\int 2\,dx/x} = e^{2\ln|x|} = x^2$. Forgetting to normalize the leading coefficient is the single most common linear-ODE mistake; always isolate $y'$ before computing $\mu$.</p><p data-lang="zh">积分因子公式仅适用于标准形式（standard form）$y' + p(x)y = q(x)$，即 $y'$ 的系数为 $1$。若从 $x y' + 2y = x^3$ 读出 $p=2$，得到的因子是错误的。应先除以 $x$ 化为 $y' + \tfrac{2}{x}y = x^2$，此时 $p=2/x$，$\mu = e^{\int 2\,dx/x} = e^{2\ln|x|} = x^2$。忘记将首项系数化为 $1$ 是线性 ODE 中最常见的错误；务必先孤立 $y'$ 再计算 $\mu$。</p></div>
+
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q" data-lang="en">The integrating factor for $y' + 3y = e^{2x}$ is</div><div class="quiz-q" data-lang="zh">$y' + 3y = e^{2x}$ 的积分因子（<code>integrating factor</code>）为</div><span class="quiz-number">3.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$e^{2x}$</div><div class="quiz-opt" data-idx="1">$e^{-3x}$</div><div class="quiz-opt" data-idx="2">$3x$</div><div class="quiz-opt" data-idx="3">$e^{3x}$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. With $p=3$ constant, $\mu = e^{\int 3\,dx} = e^{3x}$.</p><p data-lang="zh">正确。$p=3$ 为常数，$\mu = e^{\int 3\,dx} = e^{3x}$。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">The integrating factor is $e^{\int p\,dx}$ with $p=3$, giving $\mu = e^{3x}$, not the forcing term $e^{2x}$.</p><p data-lang="zh">积分因子为 $e^{\int p\,dx}$，$p=3$，故 $\mu=e^{3x}$，而非强迫项 $e^{2x}$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="section-label"><span data-lang="en">Section 4</span><span data-lang="zh">第四节</span></div>
+  <h2><span data-lang="en">Initial Value Problems</span><span data-lang="zh">初值问题</span></h2>
+
+  <div class="concept-box"><strong>Key idea.</strong> <p data-lang="en">An initial value problem (IVP) pairs an ODE with a side condition $y(x_0)=y_0$. The condition selects one curve from the one-parameter family of general solutions by pinning down the constant $C$. The interval of definition is the largest interval containing $x_0$ on which the chosen solution exists and stays differentiable.</p><p data-lang="zh">初值问题（<code>IVP</code>）将 ODE 与附加条件 $y(x_0)=y_0$ 配对。该条件通过确定常数 $C$ 从通解（<code>general solution</code>）的单参数族中选取一条曲线。定义区间是包含 $x_0$ 且所选解在其上存在并可微的最大区间。</p></div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">First-Order IVP</span><span data-lang="zh">一阶初值问题</span></div>
+  $$ y' = f(x,y), \qquad y(x_0) = y_0. $$
+  </div>
+
+  <p data-lang="en">The procedure is: find the general solution, then substitute the initial data to solve for $C$. For linear IVPs the work is mechanical because the integrating factor formula already contains $C$. For separable IVPs one may either solve for $C$ at the end or carry the data through definite integrals from $x_0$ to $x$.</p>
+  <p data-lang="zh">求解步骤：先求通解，再代入初始数据解出 $C$。对线性 IVP，积分因子公式已含 $C$，操作是机械性的。对可分离 IVP，既可在最后解 $C$，也可从 $x_0$ 到 $x$ 用定积分形式来携带初始条件。</p>
+
+  <details><summary><span data-lang="en">Worked Example 4.1: a linear IVP with its interval</span><span data-lang="zh">例 4.1：带定义区间的线性初值问题</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' + 2y = 4x$, $y(0) = 1$. With $p=2$, $\mu = e^{2x}$, so $(e^{2x}y)' = 4x e^{2x}$. Integrating by parts,</p>
+    $$ e^{2x}y = \int 4x e^{2x}\,dx = 2x e^{2x} - e^{2x} + C. $$
+    <p>Thus $y = 2x - 1 + Ce^{-2x}$. The data $y(0)=1$ gives $1 = -1 + C$, so $C = 2$ and $y = 2x - 1 + 2e^{-2x}$, valid for all real $x$.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $y' + 2y = 4x$，$y(0)=1$。$p=2$，$\mu=e^{2x}$，故 $(e^{2x}y)'=4x e^{2x}$。分部积分，</p>$$e^{2x}y = \int 4x e^{2x}\,dx = 2xe^{2x} - e^{2x} + C.$$<p>故 $y = 2x-1+Ce^{-2x}$。由 $y(0)=1$：$1=-1+C$，即 $C=2$，$y=2x-1+2e^{-2x}$，对所有实数 $x$ 成立。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 4.2: a separable IVP with a finite interval</span><span data-lang="zh">例 4.2：有限定义区间的可分离初值问题</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' = \dfrac{x}{y}$, $y(1)=2$, and state the interval of definition. Separate and integrate:</p>
+    $$ y\,dy = x\,dx \;\Longrightarrow\; \frac{y^2}{2} = \frac{x^2}{2} + C \;\Longrightarrow\; y^2 = x^2 + K. $$
+    <p>Apply $y(1)=2$: $4 = 1 + K$, so $K=3$ and $y^2 = x^2 + 3$. The initial value is positive, so take the positive root: $y = \sqrt{x^2+3}$. The radicand $x^2+3$ is always positive, so this solution is differentiable for all real $x$. Choosing the correct branch of the square root is the step students miss; the sign of $y_0$ dictates it.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $y'=\dfrac{x}{y}$，$y(1)=2$，并指明定义区间。分离并积分：</p>$$y\,dy = x\,dx \implies \frac{y^2}{2} = \frac{x^2}{2}+K \implies y^2 = x^2 + K'.$$<p>代入 $y(1)=2$：$4=1+K$，故 $K=3$，$y^2=x^2+3$。初始值为正，取正根：$y=\sqrt{x^2+3}$。被开方数 $x^2+3$ 恒正，解对所有实数 $x$ 可微。选取平方根的正确分支是学生常遗漏的步骤；$y_0$ 的符号决定了分支。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 4.3: definite-integral form when the antiderivative is not elementary</span><span data-lang="zh">例 4.3：原函数非初等时的定积分形式</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' + 2xy = 1$, $y(0)=0$. The integrating factor is $\mu = e^{\int 2x\,dx} = e^{x^2}$, so $(e^{x^2}y)' = e^{x^2}$. The antiderivative of $e^{x^2}$ is not elementary, so write the answer with a definite integral anchored at the initial point:</p>
+    $$ e^{x^2}y - e^{0}\cdot 0 = \int_0^{x} e^{t^2}\,dt \;\Longrightarrow\; y = e^{-x^2}\int_0^{x} e^{t^2}\,dt. $$
+    <p>This is a perfectly valid closed-form solution; the definite integral from $x_0=0$ automatically encodes the initial condition, since at $x=0$ the integral is zero and so is $y$. When the integrating-factor integral has no elementary antiderivative, the definite-integral form is the answer, not a failure to solve.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $y' + 2xy = 1$，$y(0)=0$。积分因子为 $\mu=e^{x^2}$，故 $(e^{x^2}y)'=e^{x^2}$。$e^{x^2}$ 的原函数不是初等函数，因此以锚定在初始点的定积分写出答案：</p>$$e^{x^2}\,y(x) = \int_0^x e^{t^2}\,dt \implies y(x) = e^{-x^2}\int_0^x e^{t^2}\,dt.$$<p>这是完全合法的解析解；从 $x_0=0$ 开始的定积分自动编码了初始条件，因为 $x=0$ 时积分为零，$y$ 也为零。当积分因子积分没有初等原函数时，定积分形式就是答案，而非求解失败。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Going deeper: why a linear IVP has exactly one solution on the whole coefficient interval</span><span data-lang="zh">深入：线性初值问题在系数区间上有唯一解</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>For the linear problem $y' + p(x)y = q(x)$, $y(x_0)=y_0$, suppose $p$ and $q$ are continuous on an open interval $I$ containing $x_0$. The integrating factor $\mu(x) = \exp\!\left(\int_{x_0}^{x} p(s)\,ds\right)$ is defined, positive, and differentiable on all of $I$. Multiplying and integrating from $x_0$ to $x$ gives</p>
+    $$ y(x) = \frac{1}{\mu(x)}\left( y_0 + \int_{x_0}^{x} \mu(t)\,q(t)\,dt \right). $$
+    <p>Existence is immediate: this formula defines a differentiable function on the entire interval $I$ and satisfies both the equation and the data. Uniqueness follows because any solution $z$ must satisfy $(\mu z)' = \mu q$, so $\mu z$ is determined up to its value at $x_0$, which the data fixes. Therefore $\mu z$ equals $\mu y$, and dividing by the nonzero $\mu$ gives $z = y$. Unlike the nonlinear case, where existence is only local, a linear IVP is solvable on the full interval where $p$ and $q$ are continuous; no finite-time blow-up can occur inside that interval.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>对线性问题 $y'+p(x)y=q(x)$，$y(x_0)=y_0$，设 $p$ 和 $q$ 在含 $x_0$ 的开区间 $I$ 上连续。积分因子 $\mu(x)=\exp\!\left(\int_{x_0}^{x}p(s)\,ds\right)$ 在整个 $I$ 上有定义、为正且可微。从 $x_0$ 到 $x$ 乘以并积分得</p>$$y(x) = \frac{1}{\mu(x)}\left(y_0 + \int_{x_0}^x \mu(t)q(t)\,dt\right).$$<p>存在性显然：此公式在整个区间 $I$ 上定义了一个可微函数，同时满足方程与初始条件。唯一性成立，因为任意解 $z$ 必须满足 $(\mu z)'=\mu q$，故 $\mu z$ 由其在 $x_0$ 处的值唯一确定，而数据固定了这个值。与非线性情形不同，线性 IVP 可在 $p$ 和 $q$ 连续的整个区间上求解；在该区间内不会发生有限时间爆破。</p></div></div></details>
+
+  <div class="concept-box orange"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <p data-lang="en">When a separable IVP leads to a relation like $y^2 = x^2 + 3$, students often write $y = \pm\sqrt{x^2+3}$ and stop. The implicit relation describes two solution curves, but the initial condition selects exactly one branch. With $y(1)=2>0$ you must take the positive root for all $x$ in the interval; switching branches at any point would create a corner where $y$ is not differentiable, which is illegal for a solution. One IVP, one branch.</p><p data-lang="zh">当可分离 IVP 给出 $y^2=x^2+3$ 之类的关系时，学生常写 $y=\pm\sqrt{x^2+3}$ 后停止。隐式关系描述两条解曲线，但初始条件恰好选中了一个分支。$y(1)=2&gt;0$ 时必须对所有 $x$ 取正根；在任何一点切换分支都会产生角点，使 $y$ 不可微，这对解是非法的。一个初值问题，一个分支。</p></div>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q" data-lang="en">Given the general solution $y = Ce^{x} - 1$, the solution of the IVP with $y(0) = 4$ is</div><div class="quiz-q" data-lang="zh">已知通解 $y = Ce^{x} - 1$，初值问题 $y(0) = 4$ 的解为</div><span class="quiz-number">4.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$y = 4e^{x} - 1$</div><div class="quiz-opt" data-idx="1">$y = 5e^{x} - 1$</div><div class="quiz-opt" data-idx="2">$y = 3e^{x} - 1$</div><div class="quiz-opt" data-idx="3">$y = 4e^{x}$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. At $x=0$, $y = C - 1 = 4$, so $C = 5$ and $y = 5e^{x} - 1$.</p><p data-lang="zh">正确。$x=0$ 时，$y=C-1=4$，故 $C=5$，$y=5e^x-1$。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">Substitute $x=0$: $C\cdot 1 - 1 = 4$ forces $C = 5$, giving $y = 5e^{x} - 1$.</p><p data-lang="zh">代入 $x=0$：$C\cdot 1-1=4$ 得 $C=5$，故 $y=5e^x-1$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="section-label"><span data-lang="en">Section 5</span><span data-lang="zh">第五节</span></div>
+  <h2><span data-lang="en">Existence and Uniqueness</span><span data-lang="zh">存在唯一性</span></h2>
+
+  <div class="concept-box"><strong>Key idea.</strong> <p data-lang="en">The Picard existence and uniqueness theorem guarantees that if $f$ and $\partial f/\partial y$ are continuous on a rectangle around $(x_0,y_0)$, then the IVP $y'=f(x,y),\,y(x_0)=y_0$ has exactly one solution on some open interval around $x_0$. Continuity of $f$ alone gives existence (Peano), but uniqueness needs the Lipschitz condition that $\partial f/\partial y$ supplies.</p><p data-lang="zh">Picard 存在唯一性（<code>existence and uniqueness</code>）定理保证：若 $f$ 和 $\partial f/\partial y$ 在 $(x_0,y_0)$ 附近的矩形上连续，则初值问题 $y'=f(x,y),\,y(x_0)=y_0$ 在 $x_0$ 附近某个开区间上有唯一解。仅 $f$ 连续给出存在性（Peano 定理），而唯一性还需要 $\partial f/\partial y$ 所提供的 Lipschitz 条件。</p></div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Picard Existence and Uniqueness Theorem</span><span data-lang="zh">Picard 存在唯一性定理</span></div>
+  $$ f,\ \frac{\partial f}{\partial y}\ \text{continuous near }(x_0,y_0) \;\Longrightarrow\; \exists!\, y(x)\ \text{solving}\ y'=f(x,y),\ y(x_0)=y_0. $$
+  </div>
+
+  <p data-lang="en">The theorem is local: it promises a solution on some interval, not on all of $\mathbb{R}$. Solutions can blow up in finite time even when $f$ is smooth everywhere. When the hypotheses fail, uniqueness can fail too: distinct solutions may pass through the same point.</p>
+  <p data-lang="zh">定理是局部的：它保证在某个区间上存在解，而非在整个 $\mathbb{R}$ 上。即使 $f$ 处处光滑，解也可能在有限时间内爆破。当假设不满足时，唯一性也可能失败：不同的解可以通过同一点。</p>
+
+  <details><summary><span data-lang="en">Worked Example 5.1: where uniqueness breaks</span><span data-lang="zh">例 5.1：唯一性失效的情形</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Consider $y' = y^{1/3}$ with $y(0) = 0$. Here $f = y^{1/3}$ is continuous, but $\partial f/\partial y = \tfrac13 y^{-2/3}$ blows up at $y=0$, so the Lipschitz condition fails there. Separating for $y>0$,</p>
+    $$ \int y^{-1/3}\,dy = \int dx \;\Longrightarrow\; \frac{3}{2}y^{2/3} = x + c \;\Longrightarrow\; y = \left(\tfrac{2}{3}x\right)^{3/2}. $$
+    <p>Both this curve and the constant $y \equiv 0$ satisfy the IVP, so uniqueness fails exactly because $\partial f/\partial y$ is not continuous at the initial point.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>考虑 $y' = y^{1/3}$，$y(0)=0$。$f=y^{1/3}$ 连续，但 $\partial f/\partial y = \tfrac13 y^{-2/3}$ 在 $y=0$ 处爆破，Lipschitz 条件在此失效。对 $y&gt;0$ 分离变量，</p>$$y^{-1/3}\,dy = dx \implies \tfrac{3}{2}y^{2/3} = x + c \implies y = \left(\tfrac{2(x-a)}{3}\right)^{3/2}, \quad x \ge a.$$<p>此曲线与常数解 $y\equiv 0$ 均满足初值问题，唯一性正是因为 $\partial f/\partial y$ 在初始点不连续而失效。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Going deeper: finite-time blow up</span><span data-lang="zh">深入：有限时间爆破</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Take $y' = y^2$, $y(0)=1$. Both $f=y^2$ and $\partial f/\partial y = 2y$ are continuous everywhere, so a unique solution exists near $x=0$. Separating,</p>
+    $$ \int \frac{dy}{y^2} = \int dx \;\Longrightarrow\; -\frac{1}{y} = x - 1 \;\Longrightarrow\; y = \frac{1}{1-x}. $$
+    <p>The solution exists only on $(-\infty, 1)$ and diverges as $x \to 1^-$. This shows the interval of existence is genuinely local: smoothness of $f$ does not extend the solution past the singularity, illustrating why the theorem only claims existence on some interval.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>取 $y'=y^2$，$y(0)=1$。$f=y^2$ 和 $\partial f/\partial y=2y$ 处处连续，故 $x=0$ 附近存在唯一解。分离变量，</p>$$-y^{-1} = x + c \implies y = \frac{1}{1-x}.$$<p>解仅在 $(-\infty,1)$ 上存在，当 $x\to 1^-$ 时发散。这表明存在区间确实是局部的：$f$ 的光滑性不能将解延伸过奇点，说明了为什么定理只断言在某个区间上存在解。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 5.2: how many solutions pass through a point</span><span data-lang="zh">例 5.2：过一点有多少个解</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>For $y' = 2\sqrt{|y|}$, count the solutions through $(0,0)$. Here $f = 2\sqrt{|y|}$ is continuous, but $\partial f/\partial y = 1/\sqrt{|y|}$ (for $y>0$) is unbounded as $y\to 0$, so Picard's hypothesis fails at the origin and uniqueness is in doubt. The constant $y\equiv 0$ is one solution. Separating for $y>0$ gives $\sqrt{y}=x+c$, so $y=(x+c)^2$ for $x\ge -c$.</p>
+    <p>For any $a\ge 0$ we can glue: $y=0$ on $(-\infty,a]$ and $y=(x-a)^2$ on $[a,\infty)$ is differentiable everywhere, including at $x=a$ where both pieces have value and slope zero, and it solves the IVP. Since $a$ is arbitrary, there are <em>infinitely many</em> solutions through the origin. This is the dramatic failure mode the Lipschitz condition rules out.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>对 $y'=2\sqrt{|y|}$，计算过 $(0,0)$ 的解的个数。$f=2\sqrt{|y|}$ 连续，但 $\partial f/\partial y=1/\sqrt{|y|}$（$y&gt;0$）在 $y\to 0$ 时无界，Picard 假设在原点失效，唯一性存疑。常数解 $y\equiv 0$ 是一个。对 $y&gt;0$ 分离变量得 $\sqrt{y}=x+c$，即 $y=(x+c)^2$（$x\ge -c$）。</p><p>对任意 $a\ge 0$，可拼接：$y=0$（$x\le a$），$y=(x-a)^2$（$x\ge a$）处处可微，包括 $x=a$ 处两段值和斜率均为零，且满足初值问题。由于 $a$ 任意，过原点有无穷多个解。这是 Lipschitz 条件所排除的剧烈失效模式。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Going deeper: Picard iteration constructs the solution</span><span data-lang="zh">深入：Picard 迭代构造解</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>The existence half of the theorem is not magic; it is a fixed-point construction. Integrating $y'=f(x,y)$ from $x_0$ to $x$ turns the IVP into the equivalent integral equation</p>
+    $$ y(x) = y_0 + \int_{x_0}^{x} f\big(t, y(t)\big)\,dt. $$
+    <p>Define the Picard iterates by $y_0(x)=y_0$ and $y_{n+1}(x) = y_0 + \int_{x_0}^{x} f(t,y_n(t))\,dt$. When $f$ is continuous and Lipschitz in $y$ with constant $L$ on a rectangle, one shows by induction that the successive differences satisfy $|y_{n+1}(x)-y_n(x)| \le \dfrac{M L^{n}|x-x_0|^{n+1}}{(n+1)!}$, where $M$ bounds $|f|$. Because $\sum \dfrac{L^n h^{n+1}}{(n+1)!}$ converges (it is dominated by $\tfrac{1}{L}e^{Lh}$), the iterates form a uniformly Cauchy sequence and converge to a limit $y$ that satisfies the integral equation, hence the IVP.</p>
+    <p>Concretely, take $y'=y$, $y(0)=1$. Then $y_0=1$, $y_1 = 1+\int_0^x 1\,dt = 1+x$, $y_2 = 1+\int_0^x(1+t)\,dt = 1+x+\tfrac{x^2}{2}$, and in general $y_n = \sum_{k=0}^{n}\tfrac{x^k}{k!}$. The iterates are exactly the partial sums of $e^x$, so Picard iteration reproduces the known solution and shows where the exponential series comes from. The Lipschitz constant controls the rate, which is why continuity of $\partial f/\partial y$ (a Lipschitz supply) is the precise hypothesis that buys uniqueness.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>存在性定理并非魔法，而是不动点构造。将 $y'=f(x,y)$ 从 $x_0$ 到 $x$ 积分，把初值问题化为等价的积分方程</p>$$y(x) = y_0 + \int_{x_0}^{x} f(t,y(t))\,dt.$$<p>定义 Picard 迭代：$y_0(x)=y_0$，$y_{n+1}(x)=y_0+\int_{x_0}^{x}f(t,y_n(t))\,dt$。当 $f$ 在矩形上连续且对 $y$ 满足 Lipschitz 常数为 $L$ 的条件时，可归纳证明相邻迭代的差满足 $|y_{n+1}(x)-y_n(x)|\le\dfrac{ML^n|x-x_0|^{n+1}}{(n+1)!}$，其中 $M$ 是 $|f|$ 的上界。因为 $\sum\dfrac{L^n h^{n+1}}{(n+1)!}$ 收敛（由 $\tfrac{1}{L}e^{Lh}$ 控制），迭代序列一致 Cauchy，收敛到满足积分方程的极限 $y$，从而满足初值问题。</p><p>具体地，取 $y'=y$，$y(0)=1$：$y_0=1$，$y_1=1+x$，$y_2=1+x+\tfrac{x^2}{2}$，$y_n=\sum_{k=0}^{n}\tfrac{x^k}{k!}$。迭代恰好是 $e^x$ 的部分和，Picard 迭代重现了已知解，并揭示了指数级数的来源。Lipschitz 常数控制收敛速率，这正是 $\partial f/\partial y$ 连续（提供 Lipschitz 条件）是保证唯一性的精确假设的原因。</p></div></div></details>
+
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <p data-lang="en">A widespread misreading is that failure of Picard's hypotheses <em>implies</em> non-uniqueness. The theorem is one-directional: continuity of $f$ and $\partial f/\partial y$ is <em>sufficient</em> for uniqueness, not necessary. Plenty of IVPs with a non-Lipschitz right side still have a unique solution. Failure of the hypothesis only means the theorem is silent; you must then check by hand whether multiple solutions actually exist, as in the $y'=y^{1/3}$ and $y'=2\sqrt{|y|}$ examples. Absence of a guarantee is not a guarantee of absence.</p><p data-lang="zh">一个普遍的误读是认为 Picard 假设不满足就一定导致唯一性失效。定理是单向的：$f$ 和 $\partial f/\partial y$ 的连续性是唯一性的充分条件，而非必要条件。大量右端不满足 Lipschitz 条件的初值问题仍有唯一解。假设不满足只是定理失声，你必须手动检验是否实际存在多个解，如 $y'=y^{1/3}$ 和 $y'=2\sqrt{|y|}$ 的例子所示。缺少保证不等于缺少结论。</p></div>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q" data-lang="en">For the IVP $y' = \sqrt{y},\ y(0)=0$, uniqueness fails because</div><div class="quiz-q" data-lang="zh">初值问题 $y'=\sqrt{y},\,y(0)=0$ 的唯一性失效，原因是</div><span class="quiz-number">5.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">$f=\sqrt{y}$ is discontinuous at the origin</span><span data-lang="zh">$f=\sqrt{y}$ 在原点不连续</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">the equation is nonlinear</span><span data-lang="zh">方程是非线性的</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">$\partial f/\partial y = \tfrac{1}{2\sqrt{y}}$ is not continuous at $y=0$</span><span data-lang="zh">$\partial f/\partial y = \tfrac{1}{2\sqrt{y}}$ 在 $y=0$ 处不连续</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">there is no solution at all</span><span data-lang="zh">根本没有解</span></div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. $f$ is continuous, but $\partial f/\partial y$ blows up at $y=0$, so the Lipschitz hypothesis fails and both $y\equiv 0$ and $y = x^2/4$ solve the IVP.</p><p data-lang="zh">正确。$f$ 连续，但 $\partial f/\partial y$ 在 $y=0$ 处爆破，Lipschitz 假设失效，$y\equiv 0$ 与 $y=x^2/4$ 均满足初值问题。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">$f=\sqrt{y}$ is continuous; what fails is continuity of $\partial f/\partial y = 1/(2\sqrt y)$ at $y=0$, which is exactly the uniqueness hypothesis.</p><p data-lang="zh">$f=\sqrt{y}$ 连续；失效的是 $\partial f/\partial y=1/(2\sqrt{y})$ 在 $y=0$ 处的连续性，这正是唯一性假设。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="section-label"><span data-lang="en">Section 6</span><span data-lang="zh">第六节</span></div>
+  <h2><span data-lang="en">Applications</span><span data-lang="zh">应用</span></h2>
+
+  <div class="concept-box"><strong>Key idea.</strong> <p data-lang="en">First-order separable and linear ODEs model any process whose rate of change is governed by the current state: exponential growth and decay, Newton's law of cooling, and mixing problems. Translating the verbal rate law into $y' = f(x,y)$ is the modeling step; the methods of Sections 2 and 3 then solve it.</p><p data-lang="zh">一阶可分离和线性 ODE 能为任何变化速率由当前状态决定的过程建模：指数增长与衰减、Newton 冷却定律以及混合问题。将文字描述的速率关系转化为 $y'=f(x,y)$ 是建模步骤；第二、三节的方法随后求解。</p></div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Newton's Law of Cooling</span><span data-lang="zh">Newton 冷却定律</span></div>
+  $$ \frac{dT}{dt} = -k\,(T - T_{\text{env}}), \qquad k > 0. $$
+  </div>
+
+  <p data-lang="en">Exponential decay $y' = -ky$ has solution $y = y_0 e^{-kt}$ and underlies radioactive decay and RC circuits. The cooling law is linear with constant coefficients, so the integrating factor $e^{kt}$ solves it. Mixing problems track a quantity in a tank: rate in minus rate out gives a linear ODE in the amount of solute.</p>
+  <p data-lang="zh">指数衰减 $y'=-ky$ 的解为 $y=y_0 e^{-kt}$，是放射性衰变和 RC 电路的基础。冷却定律是常系数线性方程，积分因子 $e^{kt}$ 求解之。混合问题追踪容器中的量：流入速率减去流出速率给出关于溶质量的线性 ODE。</p>
+
+  <details><summary><span data-lang="en">Worked Example 6.1: a mixing tank</span><span data-lang="zh">例 6.1：混合槽</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>A tank holds $100$ liters of water with $5$ kg of dissolved salt. Brine at $2$ kg per liter enters at $3$ liters per minute, and the well-mixed solution leaves at $3$ liters per minute. Let $A(t)$ be the kilograms of salt. The volume is constant at $100$, so</p>
+    $$ \frac{dA}{dt} = (2)(3) - \left(\frac{A}{100}\right)(3) = 6 - \frac{3A}{100}. $$
+    <p>This is linear: $A' + 0.03A = 6$, with $\mu = e^{0.03t}$. The general solution is $A = 200 + Ce^{-0.03t}$. Using $A(0)=5$ gives $C = -195$, so $A(t) = 200 - 195e^{-0.03t}$, approaching the steady state $200$ kg.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>一个容器装有 $100$ 升水，溶有 $5$ 千克盐。浓度为 $2$ 千克/升的盐水以 $3$ 升/分钟流入，充分混合后的溶液以 $3$ 升/分钟流出。设 $A(t)$ 为盐的千克数。体积恒为 $100$，故</p>$$A' = (\text{rate in}) - (\text{rate out}) = 3\cdot 2 - 3\cdot\frac{A}{100} = 6 - 0.03A.$$<p>这是线性方程（<code>linear first-order</code>）：$A' + 0.03A = 6$，$\mu=e^{0.03t}$。通解（<code>general solution</code>）为 $A=200+Ce^{-0.03t}$。由 $A(0)=5$ 得 $C=-195$，故 $A(t)=200-195e^{-0.03t}$，趋向稳态 $200$ 千克。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 6.2: Newton's law of cooling</span><span data-lang="zh">例 6.2：Newton 冷却定律</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>A cup of coffee at $90^\circ\mathrm{C}$ sits in a $20^\circ\mathrm{C}$ room. After $5$ minutes it has cooled to $60^\circ\mathrm{C}$. Find its temperature after $15$ minutes. With $T_{\text{env}}=20$, the law is $T' = -k(T-20)$. Let $u = T-20$, so $u' = -ku$ and $u = u_0 e^{-kt}$. Here $u_0 = 90-20 = 70$, giving $T = 20 + 70e^{-kt}$.</p>
+    <p>Use the $5$-minute data: $60 = 20 + 70e^{-5k}$, so $e^{-5k} = \tfrac{40}{70} = \tfrac47$ and $k = \tfrac15\ln\tfrac74$. Then</p>
+    $$ T(15) = 20 + 70\,e^{-15k} = 20 + 70\left(e^{-5k}\right)^3 = 20 + 70\left(\tfrac47\right)^3 \approx 20 + 70(0.1866) \approx 33.1^\circ\mathrm{C}. $$
+    <p>Substituting $u=T-T_{\text{env}}$ to reduce the cooling law to pure exponential decay is the move that makes the arithmetic clean. Notice we never needed the numerical value of $k$ on its own; the ratio $e^{-5k}=\tfrac47$ raised to the third power did all the work.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>一杯 $90^\circ\mathrm{C}$ 的咖啡放在 $20^\circ\mathrm{C}$ 的房间里。$5$ 分钟后冷却至 $60^\circ\mathrm{C}$。求 $15$ 分钟后的温度。$T_\mathrm{env}=20$，方程为 $T'=-k(T-20)$。令 $u=T-20$，则 $u'=-ku$，$u=u_0 e^{-kt}$，$u_0=70$，故 $T=20+70e^{-kt}$。</p><p>利用 $5$ 分钟的数据：$60=20+70e^{-5k}$，故 $e^{-5k}=\tfrac{40}{70}=\tfrac47$，$k=\tfrac15\ln\tfrac74$。则</p>$$T(15) = 20+70\left(\frac{4}{7}\right)^3 = 20+70\cdot\frac{64}{343} \approx 33.1^\circ\mathrm{C}.$$<p>令 $u=T-T_\mathrm{env}$ 将冷却定律化为纯指数衰减，使计算简洁。注意我们无需单独求出 $k$ 的数值；比值 $e^{-5k}=\tfrac47$ 的三次方完成了所有工作。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 6.3: logistic population growth</span><span data-lang="zh">例 6.3：Logistic 人口增长</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>A population grows by $P' = 0.5\,P\!\left(1 - \dfrac{P}{1000}\right)$ with $P(0)=100$. This is separable. Using partial fractions on $\dfrac{1}{P(1-P/1000)}$,</p>
+    $$ \int \frac{dP}{P(1-P/1000)} = \int 0.5\,dt \;\Longrightarrow\; \ln\left|\frac{P}{1000-P}\right| = 0.5t + C_1. $$
+    <p>Exponentiating, $\dfrac{P}{1000-P} = A e^{0.5t}$. The data $P(0)=100$ gives $\dfrac{100}{900} = A$, so $A=\tfrac19$. Solving for $P$,</p>
+    $$ P(t) = \frac{1000}{1 + 9e^{-0.5t}}. $$
+    <p>As $t\to\infty$, $P\to 1000$, the carrying capacity, matching the stable equilibrium found from the phase line in Section 1. The S-shaped curve rises fastest when $P=500$, exactly half the capacity, which is where $P'$ is maximal.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>种群按 $P'=0.5\,P\!\left(1-\dfrac{P}{1000}\right)$，$P(0)=100$ 增长。这是可分离方程（<code>separable</code>）。对 $\dfrac{1}{P(1-P/1000)}$ 部分分式分解，</p>$$\int\frac{dP}{P(1-P/1000)} = \int 0.5\,dt.$$<p>指数化，$\dfrac{P}{1000-P}=Ae^{0.5t}$。由 $P(0)=100$ 得 $\dfrac{100}{900}=A$，即 $A=\tfrac19$，解出 $P$：</p>$$P(t) = \frac{1000}{1+9e^{-0.5t}}.$$<p>当 $t\to\infty$ 时，$P\to 1000$，即环境容纳量，与第一节相线分析给出的稳定平衡一致。S 形曲线在 $P=500$ 时增长最快，恰好是容纳量的一半，即 $P'$ 最大的位置。</p></div></div></details>
+
+  <div class="concept-box orange"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <p data-lang="en">In a mixing problem, the outflow concentration is the <em>current</em> amount divided by the <em>current</em> volume, not the inflow concentration. Writing the salt leaving as a fixed number, or using the inflow concentration $2$ kg/L for the outflow, is the classic blunder. The outflow rate is $\left(\dfrac{A(t)}{V(t)}\right)\times(\text{flow out})$. When inflow and outflow rates differ, the volume $V(t)=V_0 + (\text{rate in}-\text{rate out})\,t$ changes with time and must be tracked, which makes the coefficient of $A$ time-dependent rather than constant.</p><p data-lang="zh">混合问题中，流出浓度是当前量除以当前体积，而非流入浓度。将流出的盐写成固定数，或将流入浓度 $2$ 千克/升用于流出，是经典错误。流出速率为 $\left(\dfrac{A(t)}{V(t)}\right)\times\text{流出量}$。当流入量与流出量不等时，体积 $V(t)=V_0+(\text{流入}-\text{流出})\,t$ 随时间变化，使 $A$ 的系数变为时变，而非常数。</p></div>
+
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q" data-lang="en">A sample decays by $y' = -ky$ with half-life $T$. The constant $k$ equals</div><div class="quiz-q" data-lang="zh">样品按 $y'=-ky$ 衰变，半衰期为 $T$，则常数 $k$ 为</div><span class="quiz-number">6.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\dfrac{\ln 2}{T}$</div><div class="quiz-opt" data-idx="1">$\dfrac{T}{\ln 2}$</div><div class="quiz-opt" data-idx="2">$\dfrac{1}{2T}$</div><div class="quiz-opt" data-idx="3">$\ln(2T)$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. From $y = y_0 e^{-kt}$, the half-life satisfies $\tfrac12 = e^{-kT}$, so $kT = \ln 2$ and $k = (\ln 2)/T$.</p><p data-lang="zh">正确。由 $y=y_0 e^{-kt}$，半衰期满足 $\tfrac12=e^{-kT}$，故 $kT=\ln 2$，$k=(\ln 2)/T$。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">Solve $y_0/2 = y_0 e^{-kT}$: taking logs gives $-\ln 2 = -kT$, hence $k = (\ln 2)/T$.</p><p data-lang="zh">解 $y_0/2=y_0 e^{-kT}$：取对数得 $-\ln 2=-kT$，故 $k=(\ln 2)/T$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="section-label"><span data-lang="en">Section 7</span><span data-lang="zh">第七节</span></div>
+  <h2><span data-lang="en">Going Deeper</span><span data-lang="zh">深入探讨</span></h2>
+
+  <div class="concept-box"><strong>Key idea.</strong> <p data-lang="en">Several nonlinear first-order equations reduce to linear or separable ones by a substitution. The Bernoulli equation $y' + p(x)y = q(x)y^n$ becomes linear under $v = y^{1-n}$, and any equation whose right side depends only on the ratio $y/x$ (a homogeneous equation) becomes separable under $v = y/x$.</p><p data-lang="zh">若干非线性一阶方程可经换元化归为线性或可分离方程。Bernoulli 方程 $y'+p(x)y=q(x)y^n$ 在 $v=y^{1-n}$ 下化为线性方程；任何右端仅依赖比值 $y/x$（齐次方程）的方程在 $v=y/x$ 下化为可分离方程。</p></div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Bernoulli Substitution</span><span data-lang="zh">Bernoulli 换元</span></div>
+  $$ y' + p(x)y = q(x)y^n, \quad v = y^{1-n} \;\Longrightarrow\; v' + (1-n)p(x)\,v = (1-n)q(x). $$
+  </div>
+
+  <p data-lang="en">These reductions extend the reach of the two core methods without new integration theory. Recognizing the structure is the skill: a power of $y$ on the right signals Bernoulli, and a right side that is constant along rays through the origin signals a homogeneous equation.</p>
+  <p data-lang="zh">这些化归在不引入新积分理论的情况下扩展了两种核心方法的适用范围。识别结构是关键：右端含 $y$ 的幂次提示 Bernoulli，右端沿过原点射线为常数提示齐次方程。</p>
+
+  <details><summary><span data-lang="en">Worked Example 7.1: a Bernoulli equation</span><span data-lang="zh">例 7.1：一个 Bernoulli 方程</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' + y = y^2$. Here $n=2$, so let $v = y^{1-2} = y^{-1}$, giving $v' = -y^{-2}y'$. Dividing the equation by $y^2$,</p>
+    $$ y^{-2}y' + y^{-1} = 1 \;\Longrightarrow\; -v' + v = 1 \;\Longrightarrow\; v' - v = -1. $$
+    <p>This linear equation has $\mu = e^{-x}$, so $(e^{-x}v)' = -e^{-x}$, giving $e^{-x}v = e^{-x} + C$, hence $v = 1 + Ce^{x}$. Returning to $y = 1/v$ yields $y = \dfrac{1}{1 + Ce^{x}}$.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>求解 $y'+y=y^2$。$n=2$，令 $v=y^{1-2}=y^{-1}$，则 $v'=-y^{-2}y'$。将方程除以 $y^2$，</p>$$y^{-2}y' + y^{-1} = 1 \implies -v' + v = 1 \implies v' - v = -1.$$<p>此线性方程 $\mu=e^{-x}$，$(e^{-x}v)'=-e^{-x}$，得 $e^{-x}v=e^{-x}+C$，故 $v=1+Ce^x$。回代 $y=1/v$，得 $y=\dfrac{1}{1+Ce^x}$。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Going deeper: homogeneous equations and the substitution $v=y/x$</span><span data-lang="zh">深入：齐次方程与换元 $v=y/x$</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Suppose $y' = F(y/x)$. Let $v = y/x$, so $y = vx$ and $y' = v + x v'$. Substituting,</p>
+    $$ v + x\frac{dv}{dx} = F(v) \;\Longrightarrow\; \frac{dv}{F(v) - v} = \frac{dx}{x}, $$
+    <p>which is separable. For example $y' = (x+y)/x = 1 + y/x$ gives $F(v) = 1 + v$, so $F(v)-v = 1$ and $dv = dx/x$, hence $v = \ln|x| + C$ and $y = x\ln|x| + Cx$. The substitution converts the ratio structure into pure separation.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>设 $y'=F(y/x)$。令 $v=y/x$，则 $y=vx$，$y'=v+xv'$。代入，</p>$$v + xv' = F(v) \implies xv' = F(v)-v \implies \frac{dv}{F(v)-v} = \frac{dx}{x}.$$<p>这是可分离方程（<code>separable</code>）。例如 $y'=(x+y)/x=1+y/x$ 给出 $F(v)=1+v$，$F(v)-v=1$，$dv=dx/x$，故 $v=\ln|x|+C$，$y=x\ln|x|+Cx$。换元将比值结构转化为纯分离变量。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 7.2: a Bernoulli equation with an initial condition</span><span data-lang="zh">例 7.2：带初始条件的 Bernoulli 方程</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' + \dfrac{2}{x}\,y = \dfrac{y^3}{x^2}$ for $x>0$, with $y(1)=1$. This is Bernoulli with $n=3$, $p=2/x$, $q=1/x^2$. Let $v = y^{1-3} = y^{-2}$, so $v' = -2y^{-3}y'$. Dividing the equation by $y^3$ and multiplying by $-2$,</p>
+    $$ -2y^{-3}y' - \frac{4}{x}y^{-2} = -\frac{2}{x^2} \;\Longrightarrow\; v' - \frac{4}{x}v = -\frac{2}{x^2}. $$
+    <p>This is linear with $\mu = e^{\int -4\,dx/x} = e^{-4\ln x} = x^{-4}$. Then $(x^{-4}v)' = -2x^{-6}$, so $x^{-4}v = \tfrac{2}{5}x^{-5} + C$, giving $v = \tfrac{2}{5x} + Cx^4$. Since $v=y^{-2}$, the data $y(1)=1$ gives $v(1)=1 = \tfrac25 + C$, so $C=\tfrac35$ and</p>
+    $$ y^{-2} = \frac{2}{5x} + \frac{3}{5}x^4 \;\Longrightarrow\; y = \left(\frac{2}{5x} + \frac{3x^4}{5}\right)^{-1/2}. $$
+    <p>The branch is positive because $y(1)=1>0$. The Bernoulli substitution converts a nonlinear equation into the routine linear machinery of Section 3.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>在 $x&gt;0$ 上求解 $y'+\dfrac{2}{x}\,y=\dfrac{y^3}{x^2}$，$y(1)=1$。Bernoulli 方程，$n=3$，$p=2/x$，$q=1/x^2$。令 $v=y^{-2}$，$v'=-2y^{-3}y'$。将方程除以 $y^3$ 再乘以 $-2$，</p>$$v' - \frac{4}{x}v = -\frac{2}{x^2}.$$<p>线性方程，$\mu=e^{\int -4\,dx/x}=x^{-4}$。$(x^{-4}v)'=-2x^{-6}$，故 $x^{-4}v=\tfrac25 x^{-5}+C$，$v=\tfrac{2}{5x}+Cx^4$。由 $y(1)=1$ 得 $v(1)=1=\tfrac25+C$，$C=\tfrac35$，</p>$$y = \frac{1}{\sqrt{v}} = \frac{1}{\sqrt{\tfrac{2}{5x}+\tfrac{3}{5}x^4}}.$$<p>分支取正是因为 $y(1)=1&gt;0$。Bernoulli 换元将非线性方程转化为第三节的标准线性机制。</p></div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 7.3: a fully homogeneous equation</span><span data-lang="zh">例 7.3：完整的齐次方程</span></summary><div class="detail-body"><div class="worked-solution" data-lang="en">
+    <p>Solve $y' = \dfrac{x^2 + y^2}{xy}$ for $x>0$. The right side is constant along rays through the origin: dividing top and bottom by $x^2$ gives $y' = \dfrac{1 + (y/x)^2}{y/x} = F(v)$ with $v=y/x$. Using $y' = v + xv'$,</p>
+    $$ v + x v' = \frac{1+v^2}{v} = \frac{1}{v} + v \;\Longrightarrow\; x v' = \frac{1}{v} \;\Longrightarrow\; v\,dv = \frac{dx}{x}. $$
+    <p>Integrating, $\tfrac12 v^2 = \ln|x| + C_1$, so $v^2 = 2\ln x + C$. Returning to $v = y/x$ gives $\dfrac{y^2}{x^2} = 2\ln x + C$, that is $y^2 = x^2(2\ln x + C)$. The cancellation $\tfrac{1+v^2}{v}-v = \tfrac1v$ is the small algebra step that makes the equation separable; without it the substitution would look stuck.</p>
+  </div><div class="worked-solution" data-lang="zh"><p>在 $x&gt;0$ 上求解 $y'=\dfrac{x^2+y^2}{xy}$。右端沿过原点的射线为常数：分子分母均除以 $x^2$ 得 $y'=\dfrac{1+(y/x)^2}{y/x}=F(v)$，$v=y/x$。利用 $y'=v+xv'$，</p>$$v+xv' = \frac{1+v^2}{v} \implies xv' = \frac{1}{v} \implies v\,dv = \frac{dx}{x}.$$<p>积分得 $\tfrac12 v^2=\ln|x|+C_1$，$v^2=2\ln x+C$。回代 $v=y/x$ 得 $\dfrac{y^2}{x^2}=2\ln x+C$，即 $y^2=x^2(2\ln x+C)$。消去步骤 $\tfrac{1+v^2}{v}-v=\tfrac1v$ 是使方程可分离的小代数技巧；若未做此化简，换元后的方程看似无法继续。</p></div></div></details>
+
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <p data-lang="en">After the substitution $v = y/x$ you must replace $y'$ with $v + xv'$, not with $v'$ alone. Because $y = vx$ is a product, the product rule gives $\dfrac{dy}{dx} = v + x\dfrac{dv}{dx}$. Dropping the $v$ term is the most common homogeneous-equation mistake and produces a wrong, non-separable equation. The analogous trap in Bernoulli problems is forgetting the factor $(1-n)$ that appears when you differentiate $v = y^{1-n}$; track it carefully or the linear equation you build will have the wrong coefficient.</p><p data-lang="zh">令 $v=y/x$ 后，必须将 $y'$ 替换为 $v+xv'$，而非单独的 $v'$。因为 $y=vx$ 是乘积，乘积法则给出 $\dfrac{dy}{dx}=v+x\dfrac{dv}{dx}$。遗漏 $v$ 项是齐次方程中最常见的错误，会产生错误的不可分离方程。Bernoulli 问题中类似的陷阱是微分 $v=y^{1-n}$ 时忘记因子 $(1-n)$；应仔细跟踪，否则建立的线性方程系数有误。</p></div>
+
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q" data-lang="en">To linearize the Bernoulli equation $y' + p(x)y = q(x)y^3$, the correct substitution is</div><div class="quiz-q" data-lang="zh">将 Bernoulli 方程 $y'+p(x)y=q(x)y^3$ 线性化的正确换元为</div><span class="quiz-number">7.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$v = y^3$</div><div class="quiz-opt" data-idx="1">$v = y$</div><div class="quiz-opt" data-idx="2">$v = y/x$</div><div class="quiz-opt" data-idx="3">$v = y^{-2}$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. With $n=3$, $v = y^{1-n} = y^{-2}$ converts the equation to a linear one in $v$.</p><p data-lang="zh">正确。$n=3$，$v=y^{1-n}=y^{-2}$ 将方程转化为关于 $v$ 的线性方程。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">For a Bernoulli equation with exponent $n$, use $v = y^{1-n}$. Here $n=3$, so $v = y^{-2}$.</p><p data-lang="zh">Bernoulli 方程用 $v=y^{1-n}$。此处 $n=3$，故 $v=y^{-2}$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+</section>
+
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">大一课程卡住了？</span></p>
+  <p class="consult-cta__body" data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</p>
+  <p class="consult-cta__body" data-lang="zh">预约 Dingrui Scholars 导师 15 分钟免费咨询。我们帮你在下次期中考前突破难关。</p>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_d1_first_order_odes__sg__en" target="_blank" rel="noopener">Book a free consult &rarr;</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_d1_first_order_odes__sg__zh" target="_blank" rel="noopener">预约免费咨询 &rarr;</a>
+</aside>
+
+<section id="flashcards">
+  <h2><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></h2>
+  <div class="flashcard-toolbar">
+    <span class="fc-count" id="fcCount">0 / 12 flipped</span>
+    <div>
+      <button class="nav-btn" onclick="shuffleFlashcards()"><span data-lang="en">Shuffle</span><span data-lang="zh">洗牌</span></button>
+      <button class="nav-btn" onclick="resetFlashcards()"><span data-lang="en">Reset</span><span data-lang="zh">重置</span></button>
+    </div>
+  </div>
+  <div class="flashcard-grid" id="flashcardGrid">
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Normal form of a first-order ODE</span><span data-lang="zh">一阶 ODE 的标准形式</span></div><div class="flashcard-back"><span data-lang="en">$y' = f(x,y)$: the equation solved for the highest derivative.</span><span data-lang="zh">$y' = f(x,y)$：方程对最高阶导数已求解的形式。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Separable equation: steps</span><span data-lang="zh">可分离方程：步骤</span></div><div class="flashcard-back"><span data-lang="en">$y' = g(x)h(y)$, then $\int \frac{dy}{h(y)} = \int g(x)\,dx + C$.</span><span data-lang="zh">$y' = g(x)h(y)$，则 $\int \frac{dy}{h(y)} = \int g(x)\,dx + C$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Linear first-order equation: standard form</span><span data-lang="zh">一阶线性方程：标准形式</span></div><div class="flashcard-back"><span data-lang="en">$y' + p(x)y = q(x)$, first degree in $y$ and $y'$.</span><span data-lang="zh">$y' + p(x)y = q(x)$，关于 $y$ 和 $y'$ 均为一次。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Integrating factor</span><span data-lang="zh">积分因子</span></div><div class="flashcard-back"><span data-lang="en">$\mu(x) = e^{\int p(x)\,dx}$, chosen so $(\mu y)' = \mu q$.</span><span data-lang="zh">$\mu(x) = e^{\int p(x)\,dx}$，使 $(\mu y)' = \mu q$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Linear equation solution formula</span><span data-lang="zh">线性方程解公式</span></div><div class="flashcard-back"><span data-lang="en">$y = \frac{1}{\mu}\left(\int \mu q\,dx + C\right)$.</span><span data-lang="zh">$y = \frac{1}{\mu}\left(\int \mu q\,dx + C\right)$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Equilibrium solution</span><span data-lang="zh">平衡解</span></div><div class="flashcard-back"><span data-lang="en">A constant $y\equiv c$ with $f(x,c)=0$; horizontal in the direction field.</span><span data-lang="zh">满足 $f(x,c)=0$ 的常数 $y\equiv c$；在方向场中水平。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Initial value problem</span><span data-lang="zh">初值问题</span></div><div class="flashcard-back"><span data-lang="en">$y'=f(x,y)$ with $y(x_0)=y_0$; the data pins down $C$.</span><span data-lang="zh">$y'=f(x,y)$，$y(x_0)=y_0$；数据确定常数 $C$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Picard existence and uniqueness</span><span data-lang="zh">Picard 存在唯一性</span></div><div class="flashcard-back"><span data-lang="en">If $f$ and $\partial f/\partial y$ are continuous near $(x_0,y_0)$, a unique local solution exists.</span><span data-lang="zh">若 $f$ 和 $\partial f/\partial y$ 在 $(x_0,y_0)$ 附近连续，则局部唯一解存在。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Why uniqueness can fail</span><span data-lang="zh">唯一性为何失效</span></div><div class="flashcard-back"><span data-lang="en">When $\partial f/\partial y$ is not continuous, e.g. $y' = y^{1/3}$, $y(0)=0$ has two solutions.</span><span data-lang="zh">当 $\partial f/\partial y$ 不连续时，例如 $y'=y^{1/3}$，$y(0)=0$ 有两个解。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Newton's law of cooling</span><span data-lang="zh">Newton 冷却定律</span></div><div class="flashcard-back"><span data-lang="en">$T' = -k(T - T_{\text{env}})$, so $T \to T_{\text{env}}$ as $t\to\infty$.</span><span data-lang="zh">$T'=-k(T-T_\mathrm{env})$，故当 $t\to\infty$ 时 $T\to T_\mathrm{env}$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Bernoulli substitution</span><span data-lang="zh">Bernoulli 换元</span></div><div class="flashcard-back"><span data-lang="en">$y' + py = qy^n$ becomes linear under $v = y^{1-n}$.</span><span data-lang="zh">$y'+py=qy^n$ 在 $v=y^{1-n}$ 下化为线性方程。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Homogeneous equation substitution</span><span data-lang="zh">齐次方程换元</span></div><div class="flashcard-back"><span data-lang="en">$y' = F(y/x)$ becomes separable under $v = y/x$, $y = vx$.</span><span data-lang="zh">$y'=F(y/x)$ 在 $v=y/x$，$y=vx$ 下化为可分离方程。</span></div></div></div>
+  </div>
+</section>
+
+
+<section class="section" id="unit-quiz">
+  <div class="section-label"><span data-lang="en">Check Yourself</span><span data-lang="zh">综合检测</span></div>
+  <h2><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></h2>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q" data-lang="en">Which equation is separable but not linear?</div><div class="quiz-q" data-lang="zh">哪个方程是可分离的（<code>separable</code>）但不是线性的？</div><span class="quiz-number">Q1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$y' + 2y = x$</div><div class="quiz-opt" data-idx="1">$y' = 3y$</div><div class="quiz-opt" data-idx="2">$y' = x\,y^2$</div><div class="quiz-opt" data-idx="3">$y' + \tfrac{1}{x}y = e^x$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. $y' = x y^2$ separates as $y^{-2}\,dy = x\,dx$ but the $y^2$ term makes it nonlinear.</p><p data-lang="zh">正确。$y'=xy^2$ 可分离为 $y^{-2}\,dy=x\,dx$，但 $y^2$ 项使其非线性。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">A linear equation is first degree in $y$ and $y'$. The choice $y' = x y^2$ separates yet is nonlinear because of $y^2$.</p><p data-lang="zh">线性方程对 $y$ 和 $y'$ 均为一次。$y'=xy^2$ 可分离但因 $y^2$ 而非线性。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q" data-lang="en">The integrating factor for $y' + (\tan x)\,y = \cos x$ is</div><div class="quiz-q" data-lang="zh">$y' + (\tan x)\,y = \cos x$ 的积分因子（<code>integrating factor</code>）为</div><span class="quiz-number">Q2</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\cos x$</div><div class="quiz-opt" data-idx="1">$\sec x$</div><div class="quiz-opt" data-idx="2">$\sin x$</div><div class="quiz-opt" data-idx="3">$\tan x$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. $\int \tan x\,dx = -\ln|\cos x|$, so $\mu = e^{-\ln|\cos x|} = 1/\cos x = \sec x$.</p><p data-lang="zh">正确。$\int\tan x\,dx = -\ln|\cos x|$，故 $\mu=e^{-\ln|\cos x|}=1/\cos x=\sec x$。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">With $p=\tan x$, $\int p\,dx = -\ln|\cos x|$, giving $\mu = e^{-\ln|\cos x|} = \sec x$.</p><p data-lang="zh">$p=\tan x$，$\int p\,dx=-\ln|\cos x|$，得 $\mu=e^{-\ln|\cos x|}=\sec x$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q" data-lang="en">The solution of $y' = 2xy$, $y(0)=1$ is</div><div class="quiz-q" data-lang="zh">$y'=2xy$，$y(0)=1$ 的解为</div><span class="quiz-number">Q3</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$y = e^{x^2}$</div><div class="quiz-opt" data-idx="1">$y = e^{2x}$</div><div class="quiz-opt" data-idx="2">$y = x^2 + 1$</div><div class="quiz-opt" data-idx="3">$y = 1 + 2x$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. Separating, $dy/y = 2x\,dx$ gives $\ln y = x^2 + C$; the data $y(0)=1$ forces $C=0$, so $y=e^{x^2}$.</p><p data-lang="zh">正确。分离变量，$dy/y=2x\,dx$ 得 $\ln y=x^2+C$；$y(0)=1$ 迫使 $C=0$，故 $y=e^{x^2}$。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">Separate: $\ln y = x^2 + C$, and $y(0)=1$ gives $C=0$, hence $y = e^{x^2}$.</p><p data-lang="zh">分离：$\ln y=x^2+C$，$y(0)=1$ 给出 $C=0$，故 $y=e^{x^2}$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q" data-lang="en">Which hypothesis guarantees a unique solution to $y'=f(x,y),\,y(x_0)=y_0$ near $(x_0,y_0)$?</div><div class="quiz-q" data-lang="zh">以下哪个假设保证 $y'=f(x,y),\,y(x_0)=y_0$ 在 $(x_0,y_0)$ 附近有唯一解？</div><span class="quiz-number">Q4</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">$f$ is bounded</span><span data-lang="zh">$f$ 有界</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">$f$ is a polynomial in $x$</span><span data-lang="zh">$f$ 是关于 $x$ 的多项式</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">$f$ is continuous only</span><span data-lang="zh">仅 $f$ 连续</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">$f$ and $\partial f/\partial y$ are continuous near $(x_0,y_0)$</span><span data-lang="zh">$f$ 和 $\partial f/\partial y$ 在 $(x_0,y_0)$ 附近连续</span></div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. Continuity of both $f$ and $\partial f/\partial y$ is the Picard hypothesis giving existence and uniqueness.</p><p data-lang="zh">正确。$f$ 和 $\partial f/\partial y$ 同时连续是 Picard 定理给出存在唯一性的假设。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">Continuity of $f$ alone yields existence (Peano). Uniqueness needs $\partial f/\partial y$ continuous as well.</p><p data-lang="zh">仅 $f$ 连续给出存在性（Peano 定理），唯一性还需 $\partial f/\partial y$ 连续。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q" data-lang="en">For Newton's cooling $T' = -k(T-T_{\text{env}})$ with $k>0$, as $t \to \infty$ the temperature</div><div class="quiz-q" data-lang="zh">对 Newton 冷却 $T'=-k(T-T_\mathrm{env})$（$k>0$），当 $t\to\infty$ 时温度</div><span class="quiz-number">Q5</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">grows without bound</span><span data-lang="zh">无界增长</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">approaches $T_{\text{env}}$</span><span data-lang="zh">趋近 $T_\mathrm{env}$</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">oscillates about $T_{\text{env}}$</span><span data-lang="zh">在 $T_\mathrm{env}$ 附近振荡</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">approaches $0$</span><span data-lang="zh">趋近 $0$</span></div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. The solution is $T = T_{\text{env}} + (T_0 - T_{\text{env}})e^{-kt}$, and the exponential decays to $0$, leaving $T \to T_{\text{env}}$.</p><p data-lang="zh">正确。解为 $T=T_\mathrm{env}+(T_0-T_\mathrm{env})e^{-kt}$，指数衰减至 $0$，故 $T\to T_\mathrm{env}$。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">Since $T = T_{\text{env}} + (T_0 - T_{\text{env}})e^{-kt}$ and $k>0$, the transient decays and $T \to T_{\text{env}}$.</p><p data-lang="zh">由 $T=T_\mathrm{env}+(T_0-T_\mathrm{env})e^{-kt}$ 且 $k>0$，瞬态衰减，$T\to T_\mathrm{env}$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q" data-lang="en">The Bernoulli equation $y' + y = xy^2$ linearizes under which substitution?</div><div class="quiz-q" data-lang="zh">Bernoulli 方程 $y'+y=xy^2$ 在哪个换元下线性化？</div><span class="quiz-number">Q6</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$v = y^2$</div><div class="quiz-opt" data-idx="1">$v = xy$</div><div class="quiz-opt" data-idx="2">$v = y^{-1}$</div><div class="quiz-opt" data-idx="3">$v = e^y$</div></div><div class="quiz-explain correct-exp"><p data-lang="en">Correct. With $n=2$, $v = y^{1-n} = y^{-1}$ produces a linear equation in $v$.</p><p data-lang="zh">正确。$n=2$，$v=y^{1-n}=y^{-1}$ 给出关于 $v$ 的线性方程。</p></div><div class="quiz-explain wrong-exp"><p data-lang="en">For a Bernoulli equation use $v = y^{1-n}$. Here $n=2$, so $v = y^{-1}$.</p><p data-lang="zh">Bernoulli 方程用 $v=y^{1-n}$，此处 $n=2$，故 $v=y^{-1}$。</p></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">重试</span></button></div>
+</section>
+
+
+<section class="section" id="checklist">
+  <div class="section-label"><span data-lang="en">Before you move on</span><span data-lang="zh">继续前请确认</span></div>
+  <h2><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握度清单</span></h2>
+  <p data-lang="en">Tap each item you can do without notes. <span id="checkProgress">0 / 8 mastered</span></p>
+  <p data-lang="zh">点击每项你无需笔记即可完成的任务。</p>
+  <ul id="checklistUl" class="checklist">
+    <li onclick="toggleCheck(this)"><span data-lang="en">Sketch a direction field and locate equilibrium solutions of an autonomous equation.</span><span data-lang="zh">无需笔记即可绘制方向场（<code>slope field</code>），并定位自治方程（<code>autonomous</code>）的平衡解（<code>equilibrium</code>）。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Solve a separable equation and identify any singular solutions lost in dividing by $h(y)$.</span><span data-lang="zh">求解可分离方程（<code>separable</code>），并识别对 $h(y)$ 除法时丢失的奇异解。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Put a linear equation in standard form and compute its integrating factor.</span><span data-lang="zh">将线性方程化为标准形式并计算其积分因子（<code>integrating factor</code>）。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Solve a linear first-order equation and split the answer into particular and homogeneous parts.</span><span data-lang="zh">求解一阶线性方程，并将答案拆分为特解（<code>particular solution</code>）和齐次部分（通解 <code>general solution</code>）。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Solve a first-order initial value problem and state its interval of definition.</span><span data-lang="zh">求解一阶初值问题（<code>IVP</code>），并指明其定义区间。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">State the Picard theorem and explain why $y' = y^{1/3}$ fails uniqueness at the origin.</span><span data-lang="zh">陈述 Picard 定理，并解释为何 $y'=y^{1/3}$ 在原点处唯一性失效。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Model exponential decay, Newton's cooling, and a mixing tank as first-order ODEs.</span><span data-lang="zh">将指数衰减、Newton 冷却以及混合槽问题建模为一阶 ODE。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Recognize and reduce a Bernoulli or homogeneous equation to a core method.</span><span data-lang="zh">识别并将 Bernoulli 方程或齐次方程化归为核心方法。</span></li>
+  </ul>
+</section>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span></span>
+  <a href="../Practice%20Questions/Unit_D1_First_Order_ODEs_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <a href="../Practice%20Questions/Solutions/Unit_D1_First_Order_ODEs_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+</main>
+<script>
+// ─── LANGUAGE (default English; toggle persists only within the page) ───
+function toggleLang() {
+  document.body.classList.toggle('lang-zh');
+}
+
+// SCORE TRACKING
+let quizScore = { correct: 0, total: 0 };
+
+function updateScoreBadge() {
+  const badge = document.getElementById('scoreBadge');
+  if (!badge) return;
+  if (quizScore.total === 0) {
+    badge.textContent = '0 / 0';
+    badge.classList.add('zero');
+  } else {
+    badge.textContent = quizScore.correct + ' / ' + quizScore.total;
+    badge.classList.remove('zero');
+  }
+}
+
+// THEME
+function setThemeBtnLabel(toLight) {
+  const tt = document.getElementById('themeToggle');
+  if (!tt) return;
+  tt.innerHTML = toLight ? '<span data-lang="en">Light</span><span data-lang="zh">浅色</span>' : '<span data-lang="en">Dark</span><span data-lang="zh">深色</span>';
+}
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  setThemeBtnLabel(!isDark);
+}
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  setThemeBtnLabel(true);
+}
+
+// PROGRESS BAR
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+  const fill = document.getElementById('progressFill');
+  if (fill) fill.style.width = pct + '%';
+});
+
+// ACTIVE TOC
+const sections = document.querySelectorAll('.section, .hero');
+const tocLinks = document.querySelectorAll('.sidebar a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector('.sidebar a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-80px 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// QUIZZES
+document.querySelectorAll('.quiz').forEach(quiz => {
+  const answer = parseInt(quiz.dataset.answer);
+  const opts = quiz.querySelectorAll('.quiz-opt');
+  const expCorrect = quiz.querySelector('.quiz-explain.correct-exp');
+  const expWrong = quiz.querySelector('.quiz-explain.wrong-exp');
+  opts.forEach(opt => {
+    opt.addEventListener('click', () => {
+      if (opt.classList.contains('disabled')) return;
+      const idx = parseInt(opt.dataset.idx);
+      opts.forEach(o => o.classList.add('disabled'));
+      quizScore.total++;
+      if (idx === answer) {
+        opt.classList.add('correct');
+        quizScore.correct++;
+        if (expCorrect) expCorrect.classList.add('show');
+      } else {
+        opt.classList.add('wrong');
+        opts[answer].classList.add('correct');
+        if (expWrong) expWrong.classList.add('show');
+        const retry = quiz.querySelector('.quiz-retry');
+        if (retry) retry.classList.add('show');
+      }
+      updateScoreBadge();
+    });
+  });
+});
+
+function retryQuiz(btn) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('disabled', 'correct', 'wrong'));
+  quiz.querySelectorAll('.quiz-explain').forEach(e => e.classList.remove('show'));
+  btn.classList.remove('show');
+  quizScore.total--;
+  updateScoreBadge();
+}
+
+// FLASHCARDS
+function flipCard(el) {
+  el.classList.toggle('flipped');
+  updateFlashcardCount();
+}
+function updateFlashcardCount() {
+  const total = document.querySelectorAll('#flashcardGrid .flashcard').length;
+  const flipped = document.querySelectorAll('#flashcardGrid .flashcard.flipped').length;
+  const c = document.getElementById('fcCount');
+  if (c) c.innerHTML = '<span data-lang="en">' + flipped + ' / ' + total + ' flipped</span><span data-lang="zh">' + flipped + ' / ' + total + ' 已翻转</span>';
+}
+function resetFlashcards() {
+  document.querySelectorAll('#flashcardGrid .flashcard').forEach(c => c.classList.remove('flipped'));
+  updateFlashcardCount();
+}
+function shuffleFlashcards() {
+  const grid = document.getElementById('flashcardGrid');
+  const cards = [...grid.children];
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.appendChild(cards[j]);
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+}
+
+// CHECKLIST
+function toggleCheck(li) {
+  li.classList.toggle('checked');
+  const total = document.querySelectorAll('#checklistUl li').length;
+  const checked = document.querySelectorAll('#checklistUl li.checked').length;
+  const p = document.getElementById('checkProgress');
+  if (p) p.innerHTML = '<span data-lang="en">' + checked + ' / ' + total + ' mastered</span><span data-lang="zh">' + checked + ' / ' + total + ' 已掌握</span>';
+}
+</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

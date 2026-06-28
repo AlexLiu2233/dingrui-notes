@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit A1: Limits and Continuity | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-A1  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A1_Limits_and_Continuity_Solutions.html">
+<meta name="description" content="Worked solutions for Unit A1: Limits and Continuity in University Calculus. Step by step epsilon-delta proofs, IVT arguments, and limit techniques from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit A1: Limits and Continuity | Solutions">
+<meta property="og:description" content="Worked solutions for Unit A1: Limits and Continuity in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A1_Limits_and_Continuity_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit A1: Limits and Continuity | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit A1: Limits and Continuity in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit A1: Limits and Continuity | Solutions",
+  "description": "Worked solutions for Unit A1: Limits and Continuity in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A1_Limits_and_Continuity_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag">Unit A1 &middot; <span data-lang="en">Solutions</span><span data-lang="zh">解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">Limits and Continuity &middot; Solutions</span><span data-lang="zh">极限与连续 &middot; 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题配套解答</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 6</b>: limit laws, the squeeze theorem, limits at infinity, the epsilon-delta definition, continuity and the IVT</span><span data-lang="zh">第 <b>1 至 6</b> 节：极限法则、夹逼定理、无穷极限、epsilon-delta 定义、连续性与介值定理</span><span class="scope">CALC I</span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to</span><span data-lang="zh">配套</span> <code style="font-style:normal;">Unit_A1_Limits_and_Continuity_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; <span data-lang="en">method walk with</span><span data-lang="zh">评分标注含</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method /</span><span data-lang="zh">方法 /</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer /</span><span data-lang="zh">答案 /</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning mark callouts</span><span data-lang="zh">推理评分标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; <span data-lang="en">CORE TECHNIQUES</span><span data-lang="zh">核心技法</span></span><span class="part-meta"><span data-lang="en">Computational fluency</span><span data-lang="zh">计算熟练度</span> &middot; 28 <span data-lang="en">marks</span><span data-lang="zh">分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">indeterminate forms: factor and conjugate</span><span data-lang="zh">不定式：因式分解与共轭有理化</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate (a) $\lim_{x\to 3}\frac{x^{2}-x-6}{x-3}$; (b) $\lim_{x\to 0}\frac{\sqrt{x+4}-2}{x}$; (c) $\lim_{x\to 2}\frac{|x-2|}{x-2}$.</span><span data-lang="zh">计算 (a) $\lim_{x\to 3}\frac{x^{2}-x-6}{x-3}$；(b) $\lim_{x\to 0}\frac{\sqrt{x+4}-2}{x}$；(c) $\lim_{x\to 2}\frac{|x-2|}{x-2}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $5$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\tfrac{1}{4}$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">does not exist</span><span data-lang="zh">不存在</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Factor the indeterminate quotient</span><span data-lang="zh">(a) 因式分解不定商</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Direct substitution gives $\tfrac{0}{0}$, so factor. The numerator factors as $x^{2}-x-6=(x-3)(x+2)$. (M1)</span><span data-lang="zh">直接代入得 $\tfrac{0}{0}$ 不定式，故进行因式分解。分子 $x^{2}-x-6=(x-3)(x+2)$。(M1)</span></p>
+      $$ \lim_{x\to 3}\frac{(x-3)(x+2)}{x-3}=\lim_{x\to 3}(x+2)=5. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Rationalise with the conjugate</span><span data-lang="zh">(b) 乘以共轭表达式有理化</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Multiply numerator and denominator by $\sqrt{x+4}+2$: (M1)</span><span data-lang="zh">分子分母同乘 $\sqrt{x+4}+2$：(M1)</span></p>
+      $$ \frac{\sqrt{x+4}-2}{x}\cdot\frac{\sqrt{x+4}+2}{\sqrt{x+4}+2}=\frac{(x+4)-4}{x\left(\sqrt{x+4}+2\right)}=\frac{1}{\sqrt{x+4}+2}. $$
+      <p><span data-lang="en">Hence the limit is $\dfrac{1}{\sqrt{4}+2}=\dfrac{1}{4}$. (A1)</span><span data-lang="zh">故极限为 $\dfrac{1}{\sqrt{4}+2}=\dfrac{1}{4}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) One-sided limits disagree</span><span data-lang="zh">(c) 单侧极限不相等</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">For $x>2$, $|x-2|=x-2$, so the quotient is $+1$; for $x<2$, $|x-2|=-(x-2)$, so the quotient is $-1$. (M1)</span><span data-lang="zh">当 $x>2$ 时，$|x-2|=x-2$，商为 $+1$；当 $x<2$ 时，$|x-2|=-(x-2)$，商为 $-1$。(M1)</span></p>
+      <p><span data-lang="en">The right-hand limit is $1$ and the left-hand limit is $-1$. Since they differ, the two-sided limit does not exist. (A1)</span><span data-lang="zh">右侧极限为 $1$，左侧极限为 $-1$。两者不相等，故双侧极限不存在。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">Every "$0/0$" limit is a hidden cancellation: polynomials want factoring, surds want the conjugate. The absolute-value trap is different in kind, not difficulty: whenever a definition splits at the target point, test both sides before claiming a value. A two-sided limit exists only when the one-sided limits agree.</span><span data-lang="zh">每一个"$0/0$"极限都隐含着消去：多项式用因式分解，根式用共轭有理化。绝对值的陷阱在性质上有所不同：只要定义在目标点处分段，就须先检验两侧极限再断言极限值。双侧极限存在当且仅当两个单侧极限相等。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">limits at infinity, leading-term ratio</span><span data-lang="zh">无穷极限，最高次项比较</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate (a) $\lim_{x\to\infty}\frac{3x^{2}-5x+1}{2x^{2}+7}$; (b) $\lim_{x\to\infty}\frac{\sqrt{4x^{2}+x}}{x+1}$; (c) $\lim_{x\to-\infty}\frac{2x}{\sqrt{x^{2}+1}}$.</span><span data-lang="zh">计算 (a) $\lim_{x\to\infty}\frac{3x^{2}-5x+1}{2x^{2}+7}$；(b) $\lim_{x\to\infty}\frac{\sqrt{4x^{2}+x}}{x+1}$；(c) $\lim_{x\to-\infty}\frac{2x}{\sqrt{x^{2}+1}}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\tfrac{3}{2}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $2$ &nbsp;·&nbsp; <span class="ans">(c)</span> $-2$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Divide by the highest power</span><span data-lang="zh">(a) 除以最高次幂</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Divide top and bottom by $x^{2}$: $\dfrac{3-5/x+1/x^{2}}{2+7/x^{2}}$. (M1) As $x\to\infty$ the $1/x$ terms vanish, leaving $\dfrac{3}{2}$. (A1)</span><span data-lang="zh">分子分母同除以 $x^{2}$，得 $\dfrac{3-5/x+1/x^{2}}{2+7/x^{2}}$。(M1) 当 $x\to\infty$ 时，含 $1/x$ 的项趋于零，结果为 $\dfrac{3}{2}$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Pull $x$ out of the root (with $x>0$)</span><span data-lang="zh">(b) 从根号中提出 $x$（$x>0$）</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">For $x\to\infty$, $\sqrt{4x^{2}+x}=x\sqrt{4+1/x}$ since $x>0$. Dividing by $x$: (M1)</span><span data-lang="zh">当 $x\to\infty$ 时，因 $x>0$，有 $\sqrt{4x^{2}+x}=x\sqrt{4+1/x}$。除以 $x$：(M1)</span></p>
+      $$ \frac{\sqrt{4+1/x}}{1+1/x}\longrightarrow \frac{\sqrt{4}}{1}=2. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(c) Mind the sign of the root as $x\to-\infty$</span><span data-lang="zh">(c) 注意 $x\to-\infty$ 时根式的符号</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Here $\sqrt{x^{2}+1}=|x|\sqrt{1+1/x^{2}}$, and for $x\to-\infty$ we have $|x|=-x$. (M1)</span><span data-lang="zh">此处 $\sqrt{x^{2}+1}=|x|\sqrt{1+1/x^{2}}$，当 $x\to-\infty$ 时 $|x|=-x$。(M1)</span></p>
+      $$ \frac{2x}{-x\sqrt{1+1/x^{2}}}=\frac{2}{-\sqrt{1+1/x^{2}}}\longrightarrow \frac{2}{-1}=-2. $$
+      <p>(A1)</p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The leading-term ratio handles rational limits at infinity instantly, but a square root hides a sign: $\sqrt{x^{2}}=|x|$, not $x$. Forgetting this is the single most common error on (c). On the side $x\to+\infty$ the answer would be $+2$; the function $\tfrac{2x}{\sqrt{x^{2}+1}}$ has two different horizontal asymptotes, $y=2$ and $y=-2$.</span><span data-lang="zh">最高次项比较法可以立即处理有理函数在无穷处的极限，但根号隐藏了符号：$\sqrt{x^{2}}=|x|$，而非 $x$。忽略这一点是 (c) 中最常见的错误。在 $x\to+\infty$ 方向答案为 $+2$；函数 $\tfrac{2x}{\sqrt{x^{2}+1}}$ 有两条不同的水平渐近线 $y=2$ 与 $y=-2$。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">squeeze theorem and the standard trig limits</span><span data-lang="zh">夹逼定理与标准三角极限</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate (a) $\lim_{x\to 0}\frac{\sin 5x}{3x}$; (b) $\lim_{x\to 0} x^{2}\cos(1/x)$ by the squeeze theorem; (c) $\lim_{x\to 0}\frac{1-\cos x}{x^{2}}$.</span><span data-lang="zh">计算 (a) $\lim_{x\to 0}\frac{\sin 5x}{3x}$；(b) 用夹逼定理求 $\lim_{x\to 0} x^{2}\cos(1/x)$；(c) $\lim_{x\to 0}\frac{1-\cos x}{x^{2}}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\tfrac{5}{3}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $0$ &nbsp;·&nbsp; <span class="ans">(c)</span> $\tfrac{1}{2}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Engineer the standard form</span><span data-lang="zh">(a) 凑标准形式</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Write the quotient so the argument of $\sin$ matches the denominator inside it: (M1)</span><span data-lang="zh">改写商式，使 $\sin$ 的参数与分母内的因子一致：(M1)</span></p>
+      $$ \frac{\sin 5x}{3x}=\frac{5}{3}\cdot\frac{\sin 5x}{5x}\longrightarrow \frac{5}{3}\cdot 1=\frac{5}{3}. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Bound, then squeeze</span><span data-lang="zh">(b) 建立界，再夹逼</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">For all $x\ne 0$, $-1\le\cos(1/x)\le 1$, so multiplying by $x^{2}\ge 0$: (M1)</span><span data-lang="zh">对所有 $x\ne 0$，$-1\le\cos(1/x)\le 1$，乘以 $x^{2}\ge 0$：(M1)</span></p>
+      $$ -x^{2}\le x^{2}\cos(1/x)\le x^{2}. $$
+      <p><span data-lang="en">(M1) Both $-x^{2}\to 0$ and $x^{2}\to 0$ as $x\to 0$, so by the squeeze theorem the middle expression also tends to $0$. (A1)</span><span data-lang="zh">(M1) 当 $x\to 0$ 时，$-x^{2}\to 0$ 且 $x^{2}\to 0$，由夹逼定理，中间表达式也趋于 $0$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Conjugate to a known limit</span><span data-lang="zh">(c) 共轭化归已知极限</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Multiply by $\dfrac{1+\cos x}{1+\cos x}$: (M1)</span><span data-lang="zh">乘以 $\dfrac{1+\cos x}{1+\cos x}$：(M1)</span></p>
+      $$ \frac{1-\cos x}{x^{2}}=\frac{1-\cos^{2}x}{x^{2}(1+\cos x)}=\frac{\sin^{2}x}{x^{2}(1+\cos x)}=\left(\frac{\sin x}{x}\right)^{2}\frac{1}{1+\cos x}. $$
+      <p><span data-lang="en">As $x\to 0$ this is $1^{2}\cdot\dfrac{1}{1+1}=\dfrac{1}{2}$. (A1)</span><span data-lang="zh">当 $x\to 0$ 时，结果为 $1^{2}\cdot\dfrac{1}{1+1}=\dfrac{1}{2}$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The squeeze theorem is the tool for "small times bounded": $x^{2}\cos(1/x)$ oscillates wildly, but the envelope $\pm x^{2}$ crushes it to zero. Note the multiplier $x^{2}\ge 0$ preserves the inequality direction; if you ever multiply a squeeze inequality by something that can be negative, the bounds flip. The $\tfrac{1}{2}$ in (c) is worth memorising: it is exactly the second-order Taylor coefficient of $\cos$.</span><span data-lang="zh">夹逼定理适用于"小量乘有界量"的情形：$x^{2}\cos(1/x)$ 剧烈振荡，但包络 $\pm x^{2}$ 将其压至零。注意乘子 $x^{2}\ge 0$ 保持不等式方向；若乘以可能为负的量，不等号方向会翻转。(c) 中的 $\tfrac{1}{2}$ 值得记忆：它恰好是 $\cos$ 的二阶 Taylor 系数。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">continuity of a piecewise function</span><span data-lang="zh">分段函数的连续性</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $f(x)=\frac{x^{2}-4}{x-2}$ ($x<2$), $a$ ($x=2$), $bx+1$ ($x>2$): (a) the left limit; (b) values of $a,b$ for continuity at $2$; (c) classify the discontinuity of $\frac{x^{2}-4}{x-2}$.</span><span data-lang="zh">对于 $f(x)=\frac{x^{2}-4}{x-2}$（$x<2$），$a$（$x=2$），$bx+1$（$x>2$）：(a) 求左极限；(b) 求使 $f$ 在 $x=2$ 处连续的 $a,b$ 值；(c) 分类 $\frac{x^{2}-4}{x-2}$ 的间断类型。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $4$ &nbsp;·&nbsp; <span class="ans">(b)</span> $a=4,\ b=\tfrac{3}{2}$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">removable</span><span data-lang="zh">可去间断点</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Left limit by factoring</span><span data-lang="zh">(a) 因式分解求左极限</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">For $x<2$, $\dfrac{x^{2}-4}{x-2}=\dfrac{(x-2)(x+2)}{x-2}=x+2$. (M1) So $\lim_{x\to 2^{-}}f(x)=2+2=4$. (A1)</span><span data-lang="zh">当 $x<2$ 时，$\dfrac{x^{2}-4}{x-2}=\dfrac{(x-2)(x+2)}{x-2}=x+2$。(M1) 故 $\lim_{x\to 2^{-}}f(x)=2+2=4$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Match value and both one-sided limits</span><span data-lang="zh">(b) 使函数值与两个单侧极限一致</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Continuity at $2$ requires $\lim_{x\to 2^{-}}f=\lim_{x\to 2^{+}}f=f(2)$. (M1) The left limit is $4$ and $f(2)=a$, so $a=4$. (A1)</span><span data-lang="zh">$f$ 在 $x=2$ 处连续要求 $\lim_{x\to 2^{-}}f=\lim_{x\to 2^{+}}f=f(2)$。(M1) 左极限为 $4$，$f(2)=a$，故 $a=4$。(A1)</span></p>
+      <p><span data-lang="en">The right limit is $\lim_{x\to 2^{+}}(bx+1)=2b+1$. (M1) Setting $2b+1=4$ gives $b=\tfrac{3}{2}$. (A1)</span><span data-lang="zh">右极限为 $\lim_{x\to 2^{+}}(bx+1)=2b+1$。(M1) 令 $2b+1=4$，得 $b=\tfrac{3}{2}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Type of discontinuity</span><span data-lang="zh">(c) 间断类型</span> <span class="marks-call">A1·R1</span></h4>
+      <p><span data-lang="en">The bare expression $\dfrac{x^{2}-4}{x-2}$ is undefined at $x=2$ but its two-sided limit exists and equals $4$. (A1)</span><span data-lang="zh">表达式 $\dfrac{x^{2}-4}{x-2}$ 在 $x=2$ 处无定义，但其双侧极限存在且等于 $4$。(A1)</span></p>
+      <p><span data-lang="en">Because the limit exists finitely, the gap is a single missing point: a removable discontinuity, repaired by defining the value to be $4$. (R1)</span><span data-lang="zh">因为极限有限存在，缺陷只是单个缺失点，即可去间断点，通过定义函数值为 $4$ 即可修复。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">"Removable" means the only thing wrong is the value at one point, because the limit already exists. Contrast this with a jump (one-sided limits exist but differ, as in Q1c) or an infinite discontinuity (a vertical asymptote). The piecewise junction is continuous precisely when the value the function is assigned equals the common one-sided limit, which is why this is a single equation $2b+1=4$, not an inequality.</span><span data-lang="zh">"可去"意味着唯一的问题是某一点处的函数值，因为极限已经存在。与之对比：跳跃间断点（单侧极限存在但不相等，如 Q1c）以及无穷间断点（铅直渐近线）。分段函数在接合处连续，当且仅当赋予该点的函数值等于公共单侧极限，这正是为何此处仅需解一个方程 $2b+1=4$，而非不等式。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; <span data-lang="en">DEFINITIONS AND PROOF</span><span data-lang="zh">定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments</span><span data-lang="zh">严格论证</span> &middot; 26 <span data-lang="en">marks</span><span data-lang="zh">分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">epsilon-delta definition of a limit</span><span data-lang="zh">极限的 epsilon-delta 定义</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Prove by $\varepsilon$-$\delta$: (a) $\lim_{x\to 4}(2x+3)=11$; (b) $\lim_{x\to 3}x^{2}=9$.</span><span data-lang="zh">用 $\varepsilon$-$\delta$ 方法证明：(a) $\lim_{x\to 4}(2x+3)=11$；(b) $\lim_{x\to 3}x^{2}=9$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">take</span><span data-lang="zh">取</span> $\delta=\tfrac{\varepsilon}{2}$ &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">take</span><span data-lang="zh">取</span> $\delta=\min\!\left(1,\tfrac{\varepsilon}{7}\right)$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Linear limit</span><span data-lang="zh">(a) 线性极限</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $\varepsilon>0$. We analyse the target inequality to find $\delta$: $|(2x+3)-11|=|2x-8|=2|x-4|$. (M1)</span><span data-lang="zh">设 $\varepsilon>0$。分析目标不等式以确定 $\delta$：$|(2x+3)-11|=|2x-8|=2|x-4|$。(M1)</span></p>
+      <p><span data-lang="en">This is less than $\varepsilon$ exactly when $|x-4|<\tfrac{\varepsilon}{2}$, so choose $\delta=\tfrac{\varepsilon}{2}$. (A1)</span><span data-lang="zh">当且仅当 $|x-4|<\tfrac{\varepsilon}{2}$ 时上式小于 $\varepsilon$，故取 $\delta=\tfrac{\varepsilon}{2}$。(A1)</span></p>
+      <p><span data-lang="en">Verification: if $0<|x-4|<\delta$ then $|(2x+3)-11|=2|x-4|<2\delta=\varepsilon$. Hence the limit is $11$. (R1)</span><span data-lang="zh">验证：若 $0<|x-4|<\delta$，则 $|(2x+3)-11|=2|x-4|<2\delta=\varepsilon$。故极限为 $11$。(R1)</span></p>
+      <h4><span data-lang="en">(b) Quadratic limit: bound the extra factor</span><span data-lang="zh">(b) 二次极限：控制额外因子</span> <span class="marks-call">M1·M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $\varepsilon>0$. Then $|x^{2}-9|=|x-3|\,|x+3|$. The factor $|x+3|$ is not constant, so we first cap it by restricting $\delta\le 1$. (M1)</span><span data-lang="zh">设 $\varepsilon>0$。则 $|x^{2}-9|=|x-3|\,|x+3|$。因子 $|x+3|$ 非常数，故先限制 $\delta\le 1$ 以控制其大小。(M1)</span></p>
+      <p><span data-lang="en">If $|x-3|<1$ then $2<x<4$, so $5<x+3<7$ and thus $|x+3|<7$. (M1) Therefore $|x^{2}-9|<7|x-3|$.</span><span data-lang="zh">若 $|x-3|<1$，则 $2<x<4$，故 $5<x+3<7$，从而 $|x+3|<7$。(M1) 因此 $|x^{2}-9|<7|x-3|$。</span></p>
+      <p><span data-lang="en">To force $7|x-3|<\varepsilon$ we need $|x-3|<\tfrac{\varepsilon}{7}$. Choose $\delta=\min\!\left(1,\tfrac{\varepsilon}{7}\right)$. (A1)</span><span data-lang="zh">为使 $7|x-3|<\varepsilon$，需 $|x-3|<\tfrac{\varepsilon}{7}$。取 $\delta=\min\!\left(1,\tfrac{\varepsilon}{7}\right)$。(A1)</span></p>
+      <p><span data-lang="en">Verification: if $0<|x-3|<\delta$ then both $|x+3|<7$ (from $\delta\le 1$) and $|x-3|<\tfrac{\varepsilon}{7}$, so $|x^{2}-9|<7\cdot\tfrac{\varepsilon}{7}=\varepsilon$. (R1)</span><span data-lang="zh">验证：若 $0<|x-3|<\delta$，则 $|x+3|<7$（由 $\delta\le 1$）且 $|x-3|<\tfrac{\varepsilon}{7}$，故 $|x^{2}-9|<7\cdot\tfrac{\varepsilon}{7}=\varepsilon$。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The whole craft of $\varepsilon$-$\delta$ is reverse-engineering $\delta$ from the target $|f(x)-L|<\varepsilon$, then presenting it forwards as a clean implication. For non-linear $f$, the multiplier ($|x+3|$ here) varies, so you cap it with a preliminary restriction ($\delta\le 1$) and then take the minimum. The "$\min$" is not optional: it guarantees both constraints hold at once.</span><span data-lang="zh">$\varepsilon$-$\delta$ 证明的全部技艺在于从目标不等式 $|f(x)-L|<\varepsilon$ 反推 $\delta$，再顺向呈现为清晰的蕴含关系。对于非线性 $f$，乘子（此处为 $|x+3|$）会变化，故先用预置限制（$\delta\le 1$）加以控制，再取最小值。"$\min$"不可省略：它同时保证两个约束成立。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">Intermediate Value Theorem and fixed points</span><span data-lang="zh">介值定理与不动点</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) $x^{3}-4x+1=0$ has a root in $(0,1)$; (b) $\cos x=x$ has a solution in $(0,\tfrac{\pi}{2})$; (c) every continuous $f:[0,1]\to[0,1]$ has a fixed point.</span><span data-lang="zh">(a) $x^{3}-4x+1=0$ 在 $(0,1)$ 内有实根；(b) $\cos x=x$ 在 $(0,\tfrac{\pi}{2})$ 内有解；(c) 每个连续映射 $f:[0,1]\to[0,1]$ 都有不动点。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">sign change $f(0)=1$, $f(1)=-2$</span><span data-lang="zh">符号变化 $f(0)=1$，$f(1)=-2$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $g(0)=1$, $g(\tfrac{\pi}{2})=-\tfrac{\pi}{2}$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">apply IVT to $h(x)=f(x)-x$</span><span data-lang="zh">对 $h(x)=f(x)-x$ 应用介值定理</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) IVT on a polynomial</span><span data-lang="zh">(a) 对多项式应用介值定理</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $f(x)=x^{3}-4x+1$. It is a polynomial, hence continuous on $[0,1]$. (M1) Evaluate the endpoints: $f(0)=1>0$ and $f(1)=1-4+1=-2<0$. (A1)</span><span data-lang="zh">令 $f(x)=x^{3}-4x+1$。$f$ 为多项式，故在 $[0,1]$ 上连续。(M1) 计算端点值：$f(0)=1>0$，$f(1)=1-4+1=-2<0$。(A1)</span></p>
+      <p><span data-lang="en">Since $f$ is continuous and changes sign, the IVT guarantees a $c\in(0,1)$ with $f(c)=0$. (R1)</span><span data-lang="zh">因 $f$ 连续且变号，由介值定理保证存在 $c\in(0,1)$ 使得 $f(c)=0$。(R1)</span></p>
+      <h4><span data-lang="en">(b) Move everything to one side</span><span data-lang="zh">(b) 将所有项移至同侧</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $g(x)=\cos x-x$, continuous everywhere. (M1) Then $g(0)=\cos 0-0=1>0$ and $g\!\left(\tfrac{\pi}{2}\right)=\cos\tfrac{\pi}{2}-\tfrac{\pi}{2}=0-\tfrac{\pi}{2}=-\tfrac{\pi}{2}<0$. (A1)</span><span data-lang="zh">令 $g(x)=\cos x-x$，处处连续。(M1) 则 $g(0)=\cos 0-0=1>0$，$g\!\left(\tfrac{\pi}{2}\right)=\cos\tfrac{\pi}{2}-\tfrac{\pi}{2}=0-\tfrac{\pi}{2}=-\tfrac{\pi}{2}<0$。(A1)</span></p>
+      <p><span data-lang="en">By the IVT there is a $c\in\left(0,\tfrac{\pi}{2}\right)$ with $g(c)=0$, i.e. $\cos c=c$. (R1)</span><span data-lang="zh">由介值定理，存在 $c\in\left(0,\tfrac{\pi}{2}\right)$ 使得 $g(c)=0$，即 $\cos c=c$。(R1)</span></p>
+      <h4><span data-lang="en">(c) The fixed-point argument</span><span data-lang="zh">(c) 不动点论证</span> <span class="marks-call">M1·M1·A1·R1</span></h4>
+      <p><span data-lang="en">Define $h(x)=f(x)-x$ on $[0,1]$; it is continuous as a difference of continuous functions. (M1)</span><span data-lang="zh">定义 $h(x)=f(x)-x$ 在 $[0,1]$ 上，作为连续函数之差，$h$ 连续。(M1)</span></p>
+      <p><span data-lang="en">Because $f$ maps into $[0,1]$: $h(0)=f(0)-0=f(0)\ge 0$ and $h(1)=f(1)-1\le 0$. (M1)</span><span data-lang="zh">因 $f$ 映射至 $[0,1]$：$h(0)=f(0)-0=f(0)\ge 0$，$h(1)=f(1)-1\le 0$。(M1)</span></p>
+      <p><span data-lang="en">If $h(0)=0$ then $c=0$ is a fixed point; if $h(1)=0$ then $c=1$ is. Otherwise $h(0)>0$ and $h(1)<0$, so the IVT gives $c\in(0,1)$ with $h(c)=0$. (A1) In every case $f(c)=c$. (R1)</span><span data-lang="zh">若 $h(0)=0$，则 $c=0$ 为不动点；若 $h(1)=0$，则 $c=1$ 为不动点。否则 $h(0)>0$ 且 $h(1)<0$，由介值定理存在 $c\in(0,1)$ 使 $h(c)=0$。(A1) 三种情形下均有 $f(c)=c$。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The IVT is an existence theorem: it certifies a root but never locates it. The recurring move in (b) and (c) is to recast the question as "this auxiliary function has a zero," which converts an equation into a sign-change check. The fixed-point result is the one-dimensional shadow of Brouwer's theorem and the engine behind many "a solution must exist" arguments; the only subtlety is handling the endpoints where the inequalities are not strict.</span><span data-lang="zh">介值定理是一个存在性定理：它保证根的存在，但不定位根的位置。(b) 和 (c) 中反复使用的技巧是将问题转化为"某辅助函数有零点"，把方程问题变为变号检验。不动点结论是 Brouwer 定理的一维情形，也是许多"解必存在"论证的基础；唯一细节在于处理端点处不等号非严格的情况。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">deriving the fundamental trig limit</span><span data-lang="zh">推导基本三角极限</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">From $\cos x\le\frac{\sin x}{x}\le 1$ on $0<|x|<\tfrac{\pi}{2}$: (a) prove $\lim_{x\to 0}\frac{\sin x}{x}=1$; (b) hence evaluate $\lim_{x\to 0}\frac{1-\cos x}{x}$.</span><span data-lang="zh">由 $0<|x|<\tfrac{\pi}{2}$ 时的 $\cos x\le\frac{\sin x}{x}\le 1$：(a) 证明 $\lim_{x\to 0}\frac{\sin x}{x}=1$；(b) 由此计算 $\lim_{x\to 0}\frac{1-\cos x}{x}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $1$ (<span data-lang="en">by squeeze</span><span data-lang="zh">由夹逼定理</span>) &nbsp;·&nbsp; <span class="ans">(b)</span> $0$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Squeeze between $\cos x$ and $1$</span><span data-lang="zh">(a) 在 $\cos x$ 与 $1$ 之间夹逼</span> <span class="marks-call">M1·A1·R1·A1</span></h4>
+      <p><span data-lang="en">The given inequality $\cos x\le\dfrac{\sin x}{x}\le 1$ holds for $0<|x|<\tfrac{\pi}{2}$. (M1)</span><span data-lang="zh">已知不等式 $\cos x\le\dfrac{\sin x}{x}\le 1$ 在 $0<|x|<\tfrac{\pi}{2}$ 时成立。(M1)</span></p>
+      <p><span data-lang="en">As $x\to 0$, the lower bound $\cos x\to\cos 0=1$ and the upper bound is the constant $1$. (A1)</span><span data-lang="zh">当 $x\to 0$ 时，下界 $\cos x\to\cos 0=1$，上界为常数 $1$。(A1)</span></p>
+      <p><span data-lang="en">Both bounds tend to the same value $1$, so by the squeeze theorem the trapped quantity satisfies $\displaystyle\lim_{x\to 0}\frac{\sin x}{x}=1$. (R1) The two-sided conclusion is valid because $\tfrac{\sin x}{x}$ is even, so the left and right behaviour match. (A1)</span><span data-lang="zh">两个界趋向同一值 $1$，由夹逼定理，被夹量满足 $\displaystyle\lim_{x\to 0}\frac{\sin x}{x}=1$。(R1) 双侧结论成立，因为 $\tfrac{\sin x}{x}$ 是偶函数，左右行为一致。(A1)</span></p>
+      <h4><span data-lang="en">(b) Conjugate, then use part (a)</span><span data-lang="zh">(b) 共轭化，再用 (a) 的结论</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Multiply by $\dfrac{1+\cos x}{1+\cos x}$: (M1)</span><span data-lang="zh">乘以 $\dfrac{1+\cos x}{1+\cos x}$：(M1)</span></p>
+      $$ \frac{1-\cos x}{x}=\frac{1-\cos^{2}x}{x(1+\cos x)}=\frac{\sin^{2}x}{x(1+\cos x)}=\frac{\sin x}{x}\cdot\frac{\sin x}{1+\cos x}. $$
+      <p><span data-lang="en">(M1) As $x\to 0$, the first factor tends to $1$ by part (a), while the second tends to $\dfrac{0}{1+1}=0$. (A1) The product tends to $1\cdot 0=0$.</span><span data-lang="zh">(M1) 当 $x\to 0$ 时，第一因子由 (a) 趋于 $1$，第二因子趋于 $\dfrac{0}{1+1}=0$。(A1) 乘积趋于 $1\cdot 0=0$。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">This is the limit on which the derivatives of $\sin$ and $\cos$ ultimately rest, so deriving it from the geometric squeeze (rather than quoting it) is the rigorous foundation. Part (b) shows the standard factoring trick: a $1-\cos x$ practically always wants the conjugate, turning it into $\sin^{2}x$ where part (a) can act. Note $\frac{1-\cos x}{x}\to 0$ but $\frac{1-\cos x}{x^{2}}\to\tfrac12$ (Q3c): the rate matters.</span><span data-lang="zh">$\sin$ 和 $\cos$ 的导数最终依赖于此极限，因此从几何夹逼出发推导（而非直接引用）才是严格的基础。(b) 展示了标准因式分解技巧：含 $1-\cos x$ 的式子几乎总是要用共轭有理化，将其变为 $\sin^{2}x$，从而可应用 (a)。注意 $\frac{1-\cos x}{x}\to 0$，但 $\frac{1-\cos x}{x^{2}}\to\tfrac12$（见 Q3c）：趋近速率至关重要。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; <span data-lang="en">APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems</span><span data-lang="zh">综合题</span> &middot; 28 <span data-lang="en">marks</span><span data-lang="zh">分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">full asymptotic analysis of a rational function</span><span data-lang="zh">有理函数的完整渐近线分析</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $f(x)=\frac{2x^{2}-2}{x^{2}-x-2}$: (a) factor and state the domain; (b) the removable discontinuity and its hole; (c) the vertical asymptote and one-sided behaviour; (d) the horizontal asymptote.</span><span data-lang="zh">对于 $f(x)=\frac{2x^{2}-2}{x^{2}-x-2}$：(a) 因式分解并写出定义域；(b) 可去间断点及空洞坐标；(c) 铅直渐近线及单侧行为；(d) 水平渐近线。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $f=\tfrac{2(x-1)(x+1)}{(x-2)(x+1)}$, <span data-lang="en">domain $x\ne 2,\,x\ne -1$</span><span data-lang="zh">定义域 $x\ne 2,\,x\ne -1$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">hole at $\left(-1,\tfrac{4}{3}\right)$</span><span data-lang="zh">空洞在 $\left(-1,\tfrac{4}{3}\right)$</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $x=2$<span data-lang="en">: $f\to+\infty$ from the right, $-\infty$ from the left</span><span data-lang="zh">：右侧 $f\to+\infty$，左侧 $f\to-\infty$</span> &nbsp;·&nbsp; <span class="ans">(d)</span> $y=2$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Factor and domain</span><span data-lang="zh">(a) 因式分解与定义域</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$2x^{2}-2=2(x-1)(x+1)$ and $x^{2}-x-2=(x-2)(x+1)$. (M1) The denominator is zero at $x=2$ and $x=-1$, so the domain is all reals except $x=2$ and $x=-1$. (A1)</span><span data-lang="zh">$2x^{2}-2=2(x-1)(x+1)$，$x^{2}-x-2=(x-2)(x+1)$。(M1) 分母在 $x=2$ 和 $x=-1$ 处为零，故定义域为除 $x=2$ 和 $x=-1$ 外的所有实数。(A1)</span></p>
+      <h4><span data-lang="en">(b) Removable discontinuity</span><span data-lang="zh">(b) 可去间断点</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">The factor $(x+1)$ cancels, so for $x\ne -1$, $f(x)=\dfrac{2(x-1)}{x-2}$. (M1) Because the factor cancels, the discontinuity at $x=-1$ is removable. The hole sits at the limiting height (M1)</span><span data-lang="zh">因子 $(x+1)$ 可以消去，故当 $x\ne -1$ 时 $f(x)=\dfrac{2(x-1)}{x-2}$。(M1) 因因子消去，$x=-1$ 处的间断为可去间断点。空洞位于极限高度处：(M1)</span></p>
+      $$ \lim_{x\to -1}\frac{2(x-1)}{x-2}=\frac{2(-2)}{-3}=\frac{-4}{-3}=\frac{4}{3}. $$
+      <p><span data-lang="en">So there is a hole at $\left(-1,\tfrac{4}{3}\right)$. (A1)</span><span data-lang="zh">故空洞在 $\left(-1,\tfrac{4}{3}\right)$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Vertical asymptote and sides</span><span data-lang="zh">(c) 铅直渐近线与两侧行为</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">The factor $(x-2)$ does not cancel, so $x=2$ is a vertical asymptote. Use the reduced form $\dfrac{2(x-1)}{x-2}$, whose numerator at $x=2$ is $2(1)=2>0$. (M1)</span><span data-lang="zh">因子 $(x-2)$ 不消去，故 $x=2$ 为铅直渐近线。用约简后的形式 $\dfrac{2(x-1)}{x-2}$，其分子在 $x=2$ 处为 $2(1)=2>0$。(M1)</span></p>
+      <p><span data-lang="en">As $x\to 2^{+}$, the denominator $\to 0^{+}$, so $f\to+\infty$. (A1) As $x\to 2^{-}$, the denominator $\to 0^{-}$, so $f\to-\infty$. (A1)</span><span data-lang="zh">当 $x\to 2^{+}$ 时，分母 $\to 0^{+}$，故 $f\to+\infty$。(A1) 当 $x\to 2^{-}$ 时，分母 $\to 0^{-}$，故 $f\to-\infty$。(A1)</span></p>
+      <h4><span data-lang="en">(d) Horizontal asymptote</span><span data-lang="zh">(d) 水平渐近线</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Degrees of numerator and denominator are equal, so the limit at infinity is the ratio of leading coefficients: (M1)</span><span data-lang="zh">分子与分母次数相同，故无穷处的极限为最高次系数之比：(M1)</span></p>
+      $$ \lim_{x\to\pm\infty}\frac{2x^{2}-2}{x^{2}-x-2}=\frac{2}{1}=2. $$
+      <p><span data-lang="en">The horizontal asymptote is $y=2$. (A1)</span><span data-lang="zh">水平渐近线为 $y=2$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">Factor first, always: a cancelling factor is a hole, a surviving factor is a vertical asymptote, and the two look identical before you factor. The sign analysis at the asymptote is cleanest on the reduced form, tracking only whether the surviving denominator approaches zero from above or below. Equal degrees give a horizontal asymptote at the leading-coefficient ratio; a numerator one degree higher would instead give a slant asymptote found by long division.</span><span data-lang="zh">始终先因式分解：可消去的因子对应空洞，不可消去的因子对应铅直渐近线，两者在因式分解前看起来相同。在渐近线处的符号分析在约简形式下最为清晰，只需判断保留的分母从正侧还是负侧趋于零。分子分母次数相同时，水平渐近线为最高次系数之比；若分子次数高一次，则产生斜渐近线，需用多项式长除法求得。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">the derivative as a limit of difference quotients</span><span data-lang="zh">导数作为差商的极限</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $f(x)=\sqrt{x}$: (a) show $f'(a)=\frac{1}{2\sqrt{a}}$ from the limit definition; (b) the tangent line at $a=9$; (c) confirm $f'(9)$ with the $x\to a$ form.</span><span data-lang="zh">对于 $f(x)=\sqrt{x}$：(a) 由极限定义证明 $f'(a)=\frac{1}{2\sqrt{a}}$；(b) 在 $a=9$ 处的切线方程；(c) 用 $x\to a$ 形式确认 $f'(9)$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $f'(a)=\tfrac{1}{2\sqrt{a}}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $y=\tfrac{1}{6}x+\tfrac{3}{2}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $f'(9)=\tfrac{1}{6}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Difference quotient with the conjugate</span><span data-lang="zh">(a) 差商配共轭有理化</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">$f'(a)=\displaystyle\lim_{h\to 0}\frac{\sqrt{a+h}-\sqrt{a}}{h}$. Multiply by the conjugate $\dfrac{\sqrt{a+h}+\sqrt{a}}{\sqrt{a+h}+\sqrt{a}}$: (M1)</span><span data-lang="zh">$f'(a)=\displaystyle\lim_{h\to 0}\frac{\sqrt{a+h}-\sqrt{a}}{h}$。乘以共轭 $\dfrac{\sqrt{a+h}+\sqrt{a}}{\sqrt{a+h}+\sqrt{a}}$：(M1)</span></p>
+      $$ \frac{(a+h)-a}{h\left(\sqrt{a+h}+\sqrt{a}\right)}=\frac{h}{h\left(\sqrt{a+h}+\sqrt{a}\right)}=\frac{1}{\sqrt{a+h}+\sqrt{a}}. $$
+      <p><span data-lang="en">(M1·A1 for the cancellation of $h$) Letting $h\to 0$ gives $\dfrac{1}{\sqrt{a}+\sqrt{a}}=\dfrac{1}{2\sqrt{a}}$. (A1)</span><span data-lang="zh">（$h$ 消去得 M1·A1）令 $h\to 0$ 得 $\dfrac{1}{\sqrt{a}+\sqrt{a}}=\dfrac{1}{2\sqrt{a}}$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Tangent at $a=9$</span><span data-lang="zh">(b) $a=9$ 处的切线</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$f(9)=3$ and $f'(9)=\dfrac{1}{2\sqrt{9}}=\dfrac{1}{6}$. (M1) Point-slope form: $y-3=\tfrac{1}{6}(x-9)$. (A1)</span><span data-lang="zh">$f(9)=3$，$f'(9)=\dfrac{1}{2\sqrt{9}}=\dfrac{1}{6}$。(M1) 点斜式：$y-3=\tfrac{1}{6}(x-9)$。(A1)</span></p>
+      <p><span data-lang="en">Simplify: $y=\tfrac{1}{6}x-\tfrac{9}{6}+3=\tfrac{1}{6}x-\tfrac{3}{2}+3=\tfrac{1}{6}x+\tfrac{3}{2}$. (A1)</span><span data-lang="zh">化简：$y=\tfrac{1}{6}x-\tfrac{9}{6}+3=\tfrac{1}{6}x-\tfrac{3}{2}+3=\tfrac{1}{6}x+\tfrac{3}{2}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Alternative limit form</span><span data-lang="zh">(c) 另一种极限形式</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$f'(9)=\displaystyle\lim_{x\to 9}\frac{\sqrt{x}-3}{x-9}$. Factor the denominator as a difference of squares: $x-9=(\sqrt{x}-3)(\sqrt{x}+3)$. (M1)</span><span data-lang="zh">$f'(9)=\displaystyle\lim_{x\to 9}\frac{\sqrt{x}-3}{x-9}$。将分母因式分解为平方差：$x-9=(\sqrt{x}-3)(\sqrt{x}+3)$。(M1)</span></p>
+      $$ \frac{\sqrt{x}-3}{(\sqrt{x}-3)(\sqrt{x}+3)}=\frac{1}{\sqrt{x}+3}\longrightarrow\frac{1}{3+3}=\frac{1}{6}. $$
+      <p><span data-lang="en">(M1·A1) This matches part (b). (A1)</span><span data-lang="zh">（M1·A1）与 (b) 一致。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The two limit forms are interchangeable: $h\to 0$ vs. $x\to a$ are the same statement with $x=a+h$. The conjugate trick in (a) and the difference-of-squares factoring in (c) are the same algebra wearing different clothes, both clearing the $0/0$. Computing $\tfrac{d}{dx}\sqrt{x}$ from the definition once is worth more than memorising the power rule, because it shows where $\tfrac{1}{2\sqrt{x}}$ comes from.</span><span data-lang="zh">两种极限形式等价：$h\to 0$ 与 $x\to a$ 是同一命题，令 $x=a+h$ 即可互换。(a) 中的共轭技巧与 (c) 中的平方差分解是同一代数变换的不同形式，都在消去 $0/0$。从定义出发推导一次 $\tfrac{d}{dx}\sqrt{x}$ 比死记幂次法则更有价值，因为它揭示了 $\tfrac{1}{2\sqrt{x}}$ 的来源。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">parameter selection for a finite limit</span><span data-lang="zh">使极限有限的参数选取</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $g(x)=\frac{\sqrt{x+c}-3}{x-4}$: (a) find $c$ giving a finite limit at $x=4$; (b) evaluate it; (c) the value $g(4)$ for continuity.</span><span data-lang="zh">对于 $g(x)=\frac{\sqrt{x+c}-3}{x-4}$：(a) 求使 $x=4$ 处极限有限的 $c$；(b) 计算该极限；(c) 求使 $g$ 在 $x=4$ 连续的 $g(4)$ 值。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $c=5$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\tfrac{1}{6}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $g(4)=\tfrac{1}{6}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Force the numerator to vanish</span><span data-lang="zh">(a) 迫使分子趋于零</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">As $x\to 4$ the denominator $x-4\to 0$. For a finite limit the numerator must also tend to $0$ (otherwise the quotient is a nonzero number over zero, which diverges). (M1)</span><span data-lang="zh">当 $x\to 4$ 时，分母 $x-4\to 0$。为使极限有限，分子也必须趋于 $0$（否则商为非零数除以零，发散）。(M1)</span></p>
+      <p><span data-lang="en">Require $\sqrt{4+c}-3=0$, i.e. $\sqrt{4+c}=3$, so $4+c=9$ and $c=5$. (A1) Any other $c$ leaves a nonzero numerator at $x=4$, forcing an infinite (or non-existent) limit. (R1)</span><span data-lang="zh">令 $\sqrt{4+c}-3=0$，即 $\sqrt{4+c}=3$，故 $4+c=9$，$c=5$。(A1) 其他 $c$ 值均使分子在 $x=4$ 处非零，导致极限无穷大（或不存在）。(R1)</span></p>
+      <h4><span data-lang="en">(b) Evaluate via the conjugate</span><span data-lang="zh">(b) 用共轭有理化计算极限</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">With $c=5$, multiply by $\dfrac{\sqrt{x+5}+3}{\sqrt{x+5}+3}$: (M1)</span><span data-lang="zh">取 $c=5$，乘以 $\dfrac{\sqrt{x+5}+3}{\sqrt{x+5}+3}$：(M1)</span></p>
+      $$ \frac{\sqrt{x+5}-3}{x-4}=\frac{(x+5)-9}{(x-4)\left(\sqrt{x+5}+3\right)}=\frac{x-4}{(x-4)\left(\sqrt{x+5}+3\right)}=\frac{1}{\sqrt{x+5}+3}. $$
+      <p><span data-lang="en">(M1) As $x\to 4$ this is $\dfrac{1}{\sqrt{9}+3}=\dfrac{1}{6}$. (A1)</span><span data-lang="zh">(M1) 当 $x\to 4$ 时，结果为 $\dfrac{1}{\sqrt{9}+3}=\dfrac{1}{6}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Value for continuity</span><span data-lang="zh">(c) 使函数连续的赋值</span> <span class="marks-call">A1</span></h4>
+      <p><span data-lang="en">A function is continuous at a point when its value equals its limit there, so set $g(4)=\dfrac{1}{6}$. (A1)</span><span data-lang="zh">函数在某点连续当且仅当函数值等于该点处的极限，故令 $g(4)=\dfrac{1}{6}$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">This problem reverses the usual logic: instead of computing a limit, you choose a parameter so the limit behaves. The key principle is that "finite divided by zero" diverges, so a finite quotient at a zero of the denominator forces the numerator to vanish too, producing the $0/0$ form that the conjugate then resolves. Parts (a)-(c) together are exactly the recipe for removing a removable discontinuity: make the limit exist, compute it, and assign it as the value.</span><span data-lang="zh">本题逆转了通常的逻辑：不是计算极限，而是选取参数使极限具有良好性质。关键原理是"有限数除以零"发散，因此分母零点处的商要有限，分子也必须趋于零，从而产生 $0/0$ 不定式，再由共轭有理化解决。(a)-(c) 合在一起恰好是消除可去间断点的完整步骤：使极限存在、计算极限、将其赋为函数值。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程的本单元遇到困难了吗？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约鼎瑞学者导师的免费 15 分钟咨询，在期中或期末考试前帮你解开难题。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_a1_limits_and_continuity__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_A1_Limits_and_Continuity.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_A1_Limits_and_Continuity_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit A1 Solutions</span><span data-lang="zh">大学微积分 &middot; 第 A1 单元解答</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">配套练习题 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 6 &middot; 82 marks total</span><span data-lang="zh">第 1 至 6 节 &middot; 共 82 分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

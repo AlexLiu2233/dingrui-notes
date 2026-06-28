@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High School Computer Science — Computational Thinking and Algorithms — Solutions | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/High%20School%20Computer%20Science/Practice%20Questions/Solutions/Unit_1_Computational_Thinking_and_Algorithms_Solutions.html">
+<meta name="description" content="Worked solutions for Computational Thinking and Algorithms in High School Computer Science. Bilingual EN/ZH with insight blocks from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="High School Computer Science — Computational Thinking and Algorithms — Solutions | Dingrui Scholars">
+<meta property="og:description" content="Worked solutions for Computational Thinking and Algorithms in High School Computer Science. Bilingual EN/ZH with insight blocks from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/High%20School%20Computer%20Science/Practice%20Questions/Solutions/Unit_1_Computational_Thinking_and_Algorithms_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="High School Computer Science — Computational Thinking and Algorithms — Solutions | Dingrui Scholars">
+<meta name="twitter:description" content="Worked solutions for Computational Thinking and Algorithms in High School Computer Science. Bilingual EN/ZH with insight blocks from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<!-- dingrui:version v1  dingrui:pair-key HS-CS-1  dingrui:doc-type solutions -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --easy-bg:#E7F2E3; --easy-ink:#2F6B2F; --easy-rule:#79A977;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --region-bg:#F5F2EE; --region-ink:#3A322B; --region-rule:#B5A68F;
+    --paper-bg:#FBE9E9;  --paper-ink:#7A2E2E;  --paper-rule:#C97A7A;
+    --honors-bg:#FDF5EC; --honors-ink:#7A5618; --honors-rule:#C4956A;
+    --insight-bg:#EAF4F4; --insight-ink:#1A4A4A; --insight-rule:#5BA3A3;
+    --font-body:'Times New Roman', Times, Georgia, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', serif;
+    --font-sans:'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:var(--font-body);font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:var(--font-sans);font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:var(--font-sans);text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:var(--font-sans);font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:var(--font-sans);font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.easy{background:var(--easy-bg);color:var(--easy-ink);border-color:var(--easy-rule);}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .pill.region{background:var(--region-bg);color:var(--region-ink);border-color:var(--region-rule);letter-spacing:.08em;}
+  .pill.paper {background:var(--paper-bg); color:var(--paper-ink); border-color:var(--paper-rule);}
+  .pill.honors{background:var(--honors-bg);color:var(--honors-ink);border-color:var(--honors-rule);text-transform:uppercase;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .draft-banner{font-family:var(--font-sans);font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-sans);border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .solution{border:1px solid #c9c4bd;border-left:3px solid #1E3F75;border-radius:6px;padding:12px 18px 14px;margin-bottom:16px;background:#f9f8ff;break-inside:avoid;page-break-inside:avoid;}
+  .solution.app{border-left-color:#C4956A;background:#fdfaf5;}
+  .s-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:10px;font-family:var(--font-sans);}
+  .s-body{font-size:11pt;line-height:1.55;}
+  .s-body p{margin:6px 0;}
+  .s-body pre{font-family:var(--font-mono);font-size:10pt;background:#f4f1ee;border:1px solid #d8cdb8;border-radius:5px;padding:10px 14px;margin:8px 0;overflow-x:auto;line-height:1.4;}
+  .s-body code{font-family:var(--font-mono);font-size:10pt;background:#f4f1ee;padding:1px 5px;border-radius:3px;border:1px solid #d8cdb8;}
+  .ans-parts{margin-top:6px;}
+  .ans-parts .part-item{margin:8px 0 4px;padding:6px 0 6px 4px;border-top:1px dotted #c9c4bd;}
+  .ans-parts .part-item > .tag{font-family:var(--font-sans);font-weight:700;margin-right:6px;color:var(--maroon);}
+  .ans-parts .part-item .marks-inline{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;font-weight:700;float:right;letter-spacing:.05em;}
+  .marks-call{font-family:'JetBrains Mono',monospace;font-size:8.5pt;color:#888;letter-spacing:.04em;margin-left:6px;}
+  .insight{background:var(--insight-bg);border-left:3px solid var(--insight-rule);border-radius:0 6px 6px 0;padding:10px 14px;margin-top:10px;font-family:var(--font-sans);font-size:10pt;color:var(--insight-ink);line-height:1.55;}
+  .insight::before{content:'INSIGHT  ';font-family:'JetBrains Mono',monospace;font-size:8pt;font-weight:700;letter-spacing:.12em;color:var(--insight-rule);display:block;margin-bottom:4px;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:var(--font-sans);font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  .lang-bar{display:flex;justify-content:center;margin:6px 0 10px;}
+  .lang-btn{font-family:var(--font-sans);font-weight:700;font-size:9pt;letter-spacing:.1em;padding:4px 14px;border:1px solid var(--maroon);background:#fff;color:var(--maroon);border-radius:999px;cursor:pointer;transition:all 0.2s;}
+  .lang-btn:hover{background:var(--maroon);color:#fff;}
+  body:not(.lang-zh) [data-lang="zh"] { display: none; }
+  body.lang-zh       [data-lang="en"] { display: none; }
+  body.lang-zh{font-family:var(--font-sans);}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  .consult-cta{border:1.5px solid var(--maroon);border-radius:8px;padding:12px 16px;margin:22px 0 6px;text-align:center;background:var(--paper-bg);break-inside:avoid;}
+  .consult-cta__lead{display:block;font-family:var(--font-sans);font-weight:700;font-size:11pt;color:var(--maroon);}
+  .consult-cta__body{display:block;font-family:var(--font-sans);font-size:9.5pt;color:var(--muted);margin:3px 0 6px;}
+  .consult-cta__btn{display:inline-block;font-family:var(--font-sans);font-weight:700;font-size:10pt;color:var(--maroon);text-decoration:underline;}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.solution{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.draft-banner{display:none;}.lang-bar{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+</div>
+
+<div class="brand">H&nbsp;I&nbsp;G&nbsp;H&nbsp;&nbsp;S&nbsp;C&nbsp;H&nbsp;O&nbsp;O&nbsp;L&nbsp;&nbsp;C&nbsp;O&nbsp;M&nbsp;P&nbsp;U&nbsp;T&nbsp;E&nbsp;R&nbsp;&nbsp;S&nbsp;C&nbsp;I&nbsp;E&nbsp;N&nbsp;C&nbsp;E</div>
+<div class="chapter-tag"><span data-lang="en">Solutions</span><span data-lang="zh">答案与解析</span></div>
+<h1 class="chapter-title"><span data-lang="en">Computational Thinking and Algorithms</span><span data-lang="zh">计算思维与算法</span></h1>
+<p class="chapter-sub"><span data-lang="en">Worked Solutions &middot; AP CSP-Feeder &middot; US / ON / BC / AB Styles</span><span data-lang="zh">解题答案 &middot; AP CSP 衔接 &middot; 美 / 安 / 卑 / 阿省风格</span></p>
+
+<hr class="thick"><hr class="thin">
+<p class="draft-banner"><code>v1</code> &middot; <span data-lang="en">12 solutions &middot; 80 marks &middot; .insight on every solution &middot; companion: <code>../Unit_1_Computational_Thinking_and_Algorithms_Practice.html</code></span><span data-lang="zh">共 12 题解析 &middot; 80 分 &middot; 每题含 insight 洞察 &middot; 配套练习：<code>../Unit_1_Computational_Thinking_and_Algorithms_Practice.html</code></span></p>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART I  SOLUTIONS  5 Qs  25 marks
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART I &nbsp;&middot;&nbsp; SHORT RESPONSE</span><span data-lang="zh">第一部分 &nbsp;&middot;&nbsp; 短答题</span></span><span class="part-meta"><span data-lang="en">Solutions &middot; 25 marks</span><span data-lang="zh">答案 &middot; 共 25 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Section A &middot; Short Response Solutions</span><span data-lang="zh">A 部分 &middot; 短答题答案</span></h2>
+
+<!-- S1 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S1</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill topic">&sect;1 <span data-lang="en">Computational Thinking Pillars</span><span data-lang="zh">计算思维支柱</span></span>
+    <span class="pill marks"><span data-lang="en">[3 marks]</span><span data-lang="zh">[3 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <p><strong><span data-lang="en">Answer: (C) Abstraction</span><span data-lang="zh">答案：(C) 抽象</span></strong> <span class="marks-call">A1</span></p>
+        <p><span data-lang="en">Abstraction means stripping away irrelevant detail and keeping only what matters for the problem at hand. The student is choosing to store only temperature and precipitation because those are the only fields relevant to her forecasts. Wind speed, humidity, and UV index are real data, but they are not needed for this program's purpose, so they are abstracted away.</span><span data-lang="zh">抽象意味着去除无关细节，只保留解决当前问题所需的内容。该学生选择只存储温度和降水量，因为这些是对她的天气预报唯一相关的字段。风速、湿度和紫外线指数是真实数据，但对此程序的目的不需要，因此被抽象掉。</span></p>
+        <p><span data-lang="en">Distractors: Decomposition (A) breaks a problem into sub-problems, not data selection. Pattern recognition (B) identifies repeated structures. Algorithmic thinking (D) writes step sequences.</span><span data-lang="zh">干扰项：分解 (A) 将问题拆分为子问题，而非选择数据。模式识别 (B) 识别重复结构。算法思维 (D) 编写步骤序列。</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">Abstraction is the pillar most commonly confused with decomposition on exams. The key distinguisher: decomposition is about splitting a problem into parts; abstraction is about filtering data or detail to only what matters. A map is the canonical example: it abstracts a city by keeping roads and landmarks but dropping building interiors. Whenever a question says "ignore X because it is not needed," that is abstraction.</span><span data-lang="zh">抽象是考试中最常与分解混淆的支柱。关键区别：分解是将问题拆分为部分；抽象是过滤数据或细节，只保留重要的内容。地图是经典例子：它通过保留道路和地标但去除建筑内部来抽象城市。每当题目说"忽略 X 因为它不需要"，那就是抽象。</span></div>
+  </div>
+</div>
+
+<!-- S2 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S2</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill topic">&sect;2 <span data-lang="en">Algorithm Properties</span><span data-lang="zh">算法属性</span></span>
+    <span class="pill marks"><span data-lang="en">[3 marks]</span><span data-lang="zh">[3 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <p><strong><span data-lang="en">Answer: (C) It violates the finiteness property because it never terminates</span><span data-lang="zh">答案：(C) 它违反了有限性属性，因为它永远不会终止</span></strong> <span class="marks-call">A1</span></p>
+        <p><span data-lang="en">A valid algorithm must satisfy three properties: finiteness (terminates after a finite number of steps), definiteness (every step is precisely defined), and effectiveness (every step can actually be executed). <code>WHILE TRUE: OUTPUT "Hello"</code> loops forever because the condition is always true and there is no break or exit mechanism. It produces output (so B is wrong) and uses valid pseudocode syntax (so A is wrong). Finiteness is the violated property.</span><span data-lang="zh">有效算法必须满足三个属性：有限性（经过有限步骤后终止）、确定性（每个步骤都精确定义）和有效性（每个步骤都可以实际执行）。<code>WHILE TRUE: OUTPUT "Hello"</code> 永远循环，因为条件始终为真且没有 break 或退出机制。它产生输出（所以 B 错误）并使用有效的伪代码语法（所以 A 错误）。有限性是被违反的属性。</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">The three algorithm properties (finiteness, definiteness, effectiveness) are a reliable exam target. An infinite loop is the classic finiteness violation. AB CSE1110 outcome 1.6 requires students to write algorithms in "acceptable format" -- but regardless of format, an infinite loop is never acceptable as an algorithm because it can never produce a final result. When writing a loop in pseudocode or code, always ask: what condition guarantees this terminates?</span><span data-lang="zh">算法的三个属性（有限性、确定性、有效性）是可靠的考试考点。无限循环是经典的有限性违规。AB CSE1110 结果 1.6 要求学生以"可接受的格式"编写算法——但无论格式如何，无限循环永远不能作为算法被接受，因为它永远无法产生最终结果。编写循环时，始终问自己：什么条件保证它终止？</span></div>
+  </div>
+</div>
+
+<!-- S3 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S3</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill topic">&sect;3 <span data-lang="en">Flowcharts</span><span data-lang="zh">流程图</span></span>
+    <span class="pill marks"><span data-lang="en">[7 marks]</span><span data-lang="zh">[7 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[4]</span>
+        <p><span data-lang="en">The four standard flowchart shapes:</span><span data-lang="zh">四种标准流程图形状：</span></p>
+        <ul style="margin:6px 0 4px 20px;font-size:10.5pt;">
+          <li><span data-lang="en"><strong>Oval / Rounded rectangle</strong> (Terminal) -- represents Start or End. Every flowchart has exactly one Start and at least one End.</span><span data-lang="zh"><strong>椭圆 / 圆角矩形</strong>（终端）-- 代表开始或结束。每个流程图有且仅有一个开始，至少一个结束。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en"><strong>Rectangle</strong> (Process) -- represents an action, calculation, or assignment step.</span><span data-lang="zh"><strong>矩形</strong>（处理）-- 代表操作、计算或赋值步骤。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en"><strong>Parallelogram</strong> (Input/Output) -- represents reading data in or writing data out.</span><span data-lang="zh"><strong>平行四边形</strong>（输入/输出）-- 代表读取数据或写出数据。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en"><strong>Diamond</strong> (Decision) -- represents a yes/no question. Exactly two arrows exit: one for YES, one for NO.</span><span data-lang="zh"><strong>菱形</strong>（判断）-- 代表是/否问题。恰好两条出口箭头：一条为"是"，一条为"否"。</span> <span class="marks-call">B1</span></li>
+        </ul>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[2]</span>
+        <p><strong><span data-lang="en">Two decision diamonds.</span><span data-lang="zh">两个判断菱形。</span></strong> <span class="marks-call">B1</span> <span data-lang="en">The first diamond asks "is the number greater than 0?" and the second asks "does the number equal 0?". Each condition is a separate yes/no branch requiring its own diamond.</span><span data-lang="zh">第一个菱形问"数字是否大于 0？"，第二个问"数字是否等于 0？"。每个条件是独立的是/否分支，需要各自的菱形。</span> <span class="marks-call">B1</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[1]</span>
+        <p><strong><span data-lang="en">Output: "Zero"</span><span data-lang="zh">输出："Zero"</span></strong> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en">When the input is 0: the first diamond ("number > 0?") evaluates to NO, so we proceed to the second diamond ("number == 0?") which evaluates to YES, sending us to the "Output Zero" parallelogram.</span><span data-lang="zh">当输入为 0 时：第一个菱形（"数字 > 0？"）评估为否，因此进入第二个菱形（"数字 == 0？"）评估为是，导向"输出 Zero"平行四边形。</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">A common exam error is drawing only one diamond for an if/else-if chain. The rule is simple: one diamond per decision point. A three-outcome classification (positive / zero / negative) always needs exactly two diamonds because the first question eliminates one outcome and the second question splits the remaining two. Count the number of branching points in your pseudocode -- that is the number of diamonds you need.</span><span data-lang="zh">考试中常见错误是对 if/else-if 链只画一个菱形。规则很简单：每个决策点一个菱形。三结果分类（正/零/负）始终需要恰好两个菱形，因为第一个问题排除一个结果，第二个问题分割剩余两个。数一数你的伪代码中有多少个分支点——那就是你需要的菱形数量。</span></div>
+  </div>
+</div>
+
+<!-- S4 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S4</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">AB</span><span data-lang="zh">阿</span></span>
+    <span class="pill topic">&sect;4 <span data-lang="en">Sequencing and IPO</span><span data-lang="zh">顺序结构与 IPO</span></span>
+    <span class="pill marks"><span data-lang="en">[6 marks]</span><span data-lang="zh">[6 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[4]</span>
+        <p><span data-lang="en">Completed trace table (1 mark per correctly completed row, up to 4):</span><span data-lang="zh">完整追踪表（每行正确得 1 分，最多 4 分）：</span></p>
+        <table style="font-family:'JetBrains Mono',monospace;font-size:10pt;border-collapse:collapse;margin:8px 0;width:auto;">
+          <tr style="background:#EFE9E4;"><th style="border:1px solid #c9c4bd;padding:5px 14px;"><span data-lang="en">Line</span><span data-lang="zh">行</span></th><th style="border:1px solid #c9c4bd;padding:5px 20px;">a</th><th style="border:1px solid #c9c4bd;padding:5px 20px;">b</th><th style="border:1px solid #c9c4bd;padding:5px 20px;">c</th></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;"><span data-lang="en">Start</span><span data-lang="zh">初始</span></td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">-</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">-</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">-</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;"><strong>3</strong></td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">-</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">-</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">2</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;"><strong>5</strong></td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">-</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">5</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;"><strong>15</strong></td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">4</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;"><strong>10</strong></td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">5</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">15</td></tr>
+        </table>
+        <p style="font-size:10pt;color:#555;"><span data-lang="en">Working: Line 1: a = 3. Line 2: b = a + 2 = 3 + 2 = 5. Line 3: c = b * a = 5 * 3 = 15. Line 4: a = c - b = 15 - 5 = 10.</span><span data-lang="zh">过程：行 1：a = 3。行 2：b = a + 2 = 3 + 2 = 5。行 3：c = b * a = 5 * 3 = 15。行 4：a = c - b = 15 - 5 = 10。</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[1]</span>
+        <p><strong><span data-lang="en">Output: 10</span><span data-lang="zh">输出：10</span></strong> <span class="marks-call">B1</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[1]</span>
+        <p><span data-lang="en"><strong>Input:</strong> none (values are hardcoded). <strong>Process:</strong> the four assignment statements that compute b, c, then the final value of a. <strong>Output:</strong> the value of a (10).</span><span data-lang="zh"><strong>输入：</strong>无（值已硬编码）。<strong>处理：</strong>计算 b、c 以及 a 最终值的四条赋值语句。<strong>输出：</strong>a 的值（10）。</span> <span class="marks-call">B1</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">Notice that variable a is used on both the right and left sides of the assignment in line 4 (SET a TO c - b). The right side (c - b = 10) is evaluated first using the current values of c and b, then the result is written back into a. This overwrites the previous value of a (3). Students who try to read left-to-right as simultaneous will get the wrong answer. Always evaluate the right side completely before writing to the left side.</span><span data-lang="zh">注意变量 a 在第 4 行赋值的右侧和左侧都出现（SET a TO c - b）。右侧（c - b = 10）首先使用 c 和 b 的当前值求值，然后结果写回 a。这会覆盖 a 的前一个值（3）。试图从左到右同时读取的学生会得到错误答案。始终在写左侧之前完整求值右侧。</span></div>
+  </div>
+</div>
+
+<!-- S5 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S5</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill topic">&sect;7 <span data-lang="en">Tracing and Debugging</span><span data-lang="zh">追踪与调试</span></span>
+    <span class="pill marks"><span data-lang="en">[6 marks]</span><span data-lang="zh">[6 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[3]</span>
+        <p><span data-lang="en">Trace table (1 mark per 2 correct rows, up to 3):</span><span data-lang="zh">追踪表（每 2 行正确得 1 分，最多 3 分）：</span></p>
+        <table style="font-family:'JetBrains Mono',monospace;font-size:10pt;border-collapse:collapse;margin:8px 0;width:auto;">
+          <tr style="background:#EFE9E4;"><th style="border:1px solid #c9c4bd;padding:5px 14px;"><span data-lang="en">Iter</span><span data-lang="zh">迭代</span></th><th style="border:1px solid #c9c4bd;padding:5px 20px;">i <span data-lang="en">(before body)</span><span data-lang="zh">（循环体前）</span></th><th style="border:1px solid #c9c4bd;padding:5px 20px;"><span data-lang="en">i &lt; 4?</span><span data-lang="zh">i &lt; 4？</span></th><th style="border:1px solid #c9c4bd;padding:5px 20px;">total <span data-lang="en">(after body)</span><span data-lang="zh">（循环体后）</span></th><th style="border:1px solid #c9c4bd;padding:5px 20px;">i <span data-lang="en">(after body)</span><span data-lang="zh">（循环体后）</span></th></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">TRUE</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">2</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">2</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">2</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">TRUE</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">3</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">TRUE</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">6</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">4</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;"><span data-lang="en">Check</span><span data-lang="zh">检查</span></td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">4</td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;"><strong>FALSE</strong></td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;"><span data-lang="en">exits</span><span data-lang="zh">退出</span></td><td style="border:1px solid #c9c4bd;padding:5px 20px;text-align:center;">4</td></tr>
+        </table>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[1]</span>
+        <p><strong><span data-lang="en">Actual output: 6</span><span data-lang="zh">实际输出：6</span></strong> <span class="marks-call">B1</span> <span data-lang="en">(only 1 + 2 + 3 = 6 were summed; 4 was never added)</span><span data-lang="zh">（只计算了 1 + 2 + 3 = 6；4 从未被加入）</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[2]</span>
+        <p><strong><span data-lang="en">Error type: Logic error</span><span data-lang="zh">错误类型：逻辑错误</span></strong> <span class="marks-call">B1</span> <span data-lang="en">-- the code runs without crashing but produces the wrong answer (6 instead of 10).</span><span data-lang="zh">-- 代码运行不崩溃但产生错误答案（6 而非 10）。</span></p>
+        <p><strong><span data-lang="en">Fix: change <code>WHILE i &lt; 4</code> to <code>WHILE i &lt;= 4</code></span><span data-lang="zh">修复：将 <code>WHILE i &lt; 4</code> 改为 <code>WHILE i &lt;= 4</code></span></strong> <span class="marks-call">B1</span> <span data-lang="en">(or equivalently <code>WHILE i &lt; 5</code>). This is a classic off-by-one error.</span><span data-lang="zh">（或等价地 <code>WHILE i &lt; 5</code>）。这是经典的"差一"错误。</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">The off-by-one error (using &lt; instead of &lt;=, or stopping one iteration early) is the single most common logic error in loop-based algorithms. The diagnostic method: always check the boundary value manually. Ask "what happens when i = 4?" With i &lt; 4, the condition is FALSE so 4 is never added. With i &lt;= 4, the condition is TRUE so 4 is added then i becomes 5 and the loop correctly exits. AB CSE1110 outcome 1.7 requires testing "for failure as well as success" -- boundary values like 4 (the last intended value) are exactly what must be tested.</span><span data-lang="zh">"差一"错误（使用 &lt; 而非 &lt;=，或提前一次迭代停止）是基于循环的算法中最常见的逻辑错误。诊断方法：始终手动检查边界值。问"当 i = 4 时会发生什么？"使用 i &lt; 4 时，条件为 FALSE，所以 4 永远不会被加。使用 i &lt;= 4 时，条件为 TRUE，所以 4 被加入，然后 i 变为 5，循环正确退出。AB CSE1110 结果 1.7 要求"测试失败情况和成功情况"——像 4（最后一个预期值）这样的边界值正是必须测试的。</span></div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART II  SOLUTIONS  4 Qs  30 marks
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART II &nbsp;&middot;&nbsp; EXTENDED RESPONSE</span><span data-lang="zh">第二部分 &nbsp;&middot;&nbsp; 简答题</span></span><span class="part-meta"><span data-lang="en">Solutions &middot; 30 marks</span><span data-lang="zh">答案 &middot; 共 30 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Section B &middot; Extended Response Solutions</span><span data-lang="zh">B 部分 &middot; 简答题答案</span></h2>
+
+<!-- S6 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S6</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill topic">&sect;1 + &sect;6 <span data-lang="en">Decomposition applied</span><span data-lang="zh">分解应用</span></span>
+    <span class="pill marks"><span data-lang="en">[5 marks]</span><span data-lang="zh">[5 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[3]</span>
+        <p><span data-lang="en">Accept any three of the following sub-problems (1 mark each, max 3):</span><span data-lang="zh">接受以下任意三个子问题（每个 1 分，最多 3 分）：</span></p>
+        <ul style="margin:6px 0 4px 20px;font-size:10.5pt;">
+          <li><span data-lang="en"><strong>Read five scores</strong> from the user (Input phase).</span><span data-lang="zh"><strong>从用户读取五个成绩</strong>（输入阶段）。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en"><strong>Compute the sum</strong> of the five scores (Process phase).</span><span data-lang="zh"><strong>计算五个成绩的总和</strong>（处理阶段）。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en"><strong>Compute the average</strong> (divide sum by 5) (Process phase).</span><span data-lang="zh"><strong>计算平均分</strong>（总和除以 5）（处理阶段）。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en"><strong>Determine the letter grade</strong> by comparing average to thresholds (Process phase).</span><span data-lang="zh"><strong>通过比较平均分与阈值确定字母等级</strong>（处理阶段）。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en"><strong>Output</strong> the grade (Output phase).</span><span data-lang="zh"><strong>输出等级</strong>（输出阶段）。</span> <span class="marks-call">B1</span></li>
+        </ul>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en"><strong>Data the program needs</strong> (accept any two):</span><span data-lang="zh"><strong>程序需要的数据</strong>（接受任意两个）：</span></p>
+        <ul style="margin:4px 0 8px 20px;font-size:10.5pt;">
+          <li><span data-lang="en">The five exam scores (numeric values).</span><span data-lang="zh">五个考试成绩（数值）。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en">The number of scores (5, a constant used in the average formula).</span><span data-lang="zh">成绩数量（5，用于平均公式的常数）。</span> <span class="marks-call">B1</span></li>
+        </ul>
+        <p><span data-lang="en"><strong>Data the program does NOT need</strong> (accept any two):</span><span data-lang="zh"><strong>程序不需要的数据</strong>（接受任意两个）：</span></p>
+        <ul style="margin:4px 0 4px 20px;font-size:10.5pt;">
+          <li><span data-lang="en">Student name (irrelevant to computing an average).</span><span data-lang="zh">学生姓名（与计算平均分无关）。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en">Student ID number.</span><span data-lang="zh">学生 ID 编号。</span></li>
+          <li><span data-lang="en">Date of the exams.</span><span data-lang="zh">考试日期。</span></li>
+          <li><span data-lang="en">Teacher name or class section.</span><span data-lang="zh">教师姓名或班级。</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">Notice that parts (a) and (b) test two different pillars: (a) tests decomposition (breaking the problem into sub-problems) and (b) tests abstraction (identifying which data is relevant). A well-decomposed program has each sub-problem corresponding to a small, testable function or block of code. If you find one sub-problem is too complex, decompose it further -- the level to stop at is when each piece is small enough to write in 5-10 lines of pseudocode.</span><span data-lang="zh">注意 (a) 和 (b) 测试两个不同的支柱：(a) 测试分解（将问题拆分为子问题），(b) 测试抽象（识别哪些数据是相关的）。分解良好的程序中，每个子问题对应一个小的、可测试的函数或代码块。如果发现某个子问题太复杂，进一步分解——停止分解的级别是每个部分小到可以用 5-10 行伪代码写出。</span></div>
+  </div>
+</div>
+
+<!-- S7 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S7</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill topic">&sect;2 <span data-lang="en">Pseudocode authoring</span><span data-lang="zh">伪代码编写</span></span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en"><strong>Input:</strong> a positive integer n.</span><span data-lang="zh"><strong>输入：</strong>正整数 n。</span> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en"><strong>Process:</strong> iterate through integers from 1 to n; for each odd integer, add it to a running total.</span><span data-lang="zh"><strong>处理：</strong>遍历从 1 到 n 的整数；对每个奇数，将其加到累计总和中。</span> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en"><strong>Output:</strong> the sum of all odd integers from 1 to n inclusive.</span><span data-lang="zh"><strong>输出：</strong>1 到 n（含）所有奇数之和。</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[4]</span>
+        <p><span data-lang="en">Model answer (other correct pseudocode accepted). Award: 1 mark INPUT/OUTPUT present; 1 mark accumulator initialised to 0; 1 mark correct loop range; 1 mark correct odd check or step-by-2 logic.</span><span data-lang="zh">参考答案（接受其他正确伪代码）。评分：1 分 INPUT/OUTPUT 存在；1 分累加器初始化为 0；1 分正确循环范围；1 分正确奇数检查或步长为 2 逻辑。</span></p>
+        <p><span data-lang="en"><strong>Version A -- using modulo to check odd:</strong></span><span data-lang="zh"><strong>版本 A -- 用取模检查奇数：</strong></span></p>
+        <pre><code>INPUT n
+SET sum TO 0
+SET i TO 1
+WHILE i &lt;= n:
+    IF i % 2 != 0 THEN
+        SET sum TO sum + i
+    END IF
+    SET i TO i + 1
+END WHILE
+OUTPUT sum</code></pre>
+        <p><span data-lang="en"><strong>Version B -- stepping by 2 (more efficient):</strong></span><span data-lang="zh"><strong>版本 B -- 步长为 2（更高效）：</strong></span></p>
+        <pre><code>INPUT n
+SET sum TO 0
+SET i TO 1
+WHILE i &lt;= n:
+    SET sum TO sum + i
+    SET i TO i + 2
+END WHILE
+OUTPUT sum</code></pre>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en">Trace with n = 5 (using Version B for clarity). 1 mark for correct sequence of accumulator values; 1 mark for correct final answer.</span><span data-lang="zh">以 n = 5 追踪（使用版本 B）。1 分正确的累加器值序列；1 分正确最终答案。</span></p>
+        <table style="font-family:'JetBrains Mono',monospace;font-size:10pt;border-collapse:collapse;margin:8px 0;width:auto;">
+          <tr style="background:#EFE9E4;"><th style="border:1px solid #c9c4bd;padding:5px 14px;">i</th><th style="border:1px solid #c9c4bd;padding:5px 14px;"><span data-lang="en">i &lt;= 5?</span><span data-lang="zh">i &lt;= 5？</span></th><th style="border:1px solid #c9c4bd;padding:5px 14px;">sum</th></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;"><span data-lang="en">Init</span><span data-lang="zh">初始</span></td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">-</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">0</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">TRUE</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;"><strong>1</strong></td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">TRUE</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;"><strong>4</strong></td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">5</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">TRUE</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;"><strong>9</strong></td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">7</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;">FALSE</td><td style="border:1px solid #c9c4bd;padding:5px 14px;text-align:center;"><span data-lang="en">exits</span><span data-lang="zh">退出</span></td></tr>
+        </table>
+        <p><span data-lang="en">Output: 9. (Odd numbers from 1 to 5: 1 + 3 + 5 = 9.)</span><span data-lang="zh">输出：9。（1 到 5 的奇数：1 + 3 + 5 = 9。）</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">Both versions are correct, but Version B is more efficient: it only visits odd values, making the loop run ceil(n/2) times instead of n times. This is a small example of the algorithmic thinking pillar at work -- recognising that stepping by 2 encodes the "odd" constraint directly into the loop structure, eliminating the need for a conditional check inside the loop. When writing pseudocode on exams, always verify your answer by tracing with a small concrete example (here n = 5) before moving on.</span><span data-lang="zh">两个版本都正确，但版本 B 更高效：它只访问奇数值，使循环运行 ceil(n/2) 次而非 n 次。这是算法思维支柱的一个小示例——认识到步长为 2 将"奇数"约束直接编码到循环结构中，消除了在循环内部进行条件检查的需要。在考试中编写伪代码时，在继续之前始终用一个小的具体例子（这里是 n = 5）追踪你的答案来验证。</span></div>
+  </div>
+</div>
+
+<!-- S8 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S8</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill topic">&sect;5 <span data-lang="en">Algorithm Efficiency</span><span data-lang="zh">算法效率</span></span>
+    <span class="pill marks"><span data-lang="en">[9 marks]</span><span data-lang="zh">[9 分]</span></span>
+  </div>
+  <div class="s-body">
+    <p style="font-size:10pt;color:#555;"><span data-lang="en">List: [3, 9, 15, 22, 31, 44, 57, 71, 83, 96] (indices 0-9), target = 71.</span><span data-lang="zh">列表：[3, 9, 15, 22, 31, 44, 57, 71, 83, 96]（索引 0-9），目标 = 71。</span></p>
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[3]</span>
+        <p><span data-lang="en"><strong>Linear search trace</strong> (1 mark per 3 correct rows, up to 3):</span><span data-lang="zh"><strong>线性搜索追踪</strong>（每 3 行正确得 1 分，最多 3 分）：</span></p>
+        <table style="font-family:'JetBrains Mono',monospace;font-size:10pt;border-collapse:collapse;margin:8px 0;width:auto;">
+          <tr style="background:#EFE9E4;"><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">Step</span><span data-lang="zh">步骤</span></th><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">Index</span><span data-lang="zh">索引</span></th><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">Value</span><span data-lang="zh">值</span></th><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">== 71?</span><span data-lang="zh">== 71？</span></th></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">0</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">No</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">2</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">9</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">No</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">2</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">15</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">No</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">4</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">3</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">22</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">No</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">5</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">4</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">31</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">No</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">6</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">5</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">44</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">No</td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">7</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">6</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">57</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">No</td></tr>
+          <tr style="background:#E7F2E3;"><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>8</strong></td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>7</strong></td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>71</strong></td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>YES</strong></td></tr>
+        </table>
+        <p><span data-lang="en">Total steps: <strong>8</strong>.</span><span data-lang="zh">总步数：<strong>8</strong>。</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[3]</span>
+        <p><span data-lang="en"><strong>Binary search trace</strong> (1 mark per correct step, up to 3):</span><span data-lang="zh"><strong>二分搜索追踪</strong>（每步正确得 1 分，最多 3 分）：</span></p>
+        <table style="font-family:'JetBrains Mono',monospace;font-size:10pt;border-collapse:collapse;margin:8px 0;width:auto;">
+          <tr style="background:#EFE9E4;"><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">Step</span><span data-lang="zh">步骤</span></th><th style="border:1px solid #c9c4bd;padding:4px 10px;">low</th><th style="border:1px solid #c9c4bd;padding:4px 10px;">high</th><th style="border:1px solid #c9c4bd;padding:4px 10px;">mid</th><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">list[mid]</span><span data-lang="zh">list[mid]</span></th><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">Action</span><span data-lang="zh">操作</span></th></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">0</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">9</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">4</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">31</td><td style="border:1px solid #c9c4bd;padding:4px 10px;">71 &gt; 31, <span data-lang="en">search right</span><span data-lang="zh">向右</span></td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">2</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">5</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">9</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">7</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">71</td><td style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en"><strong>FOUND</strong></span><span data-lang="zh"><strong>找到</strong></span></td></tr>
+        </table>
+        <p><span data-lang="en">Total steps: <strong>2</strong>. (Step 1: mid = floor((0+9)/2) = 4, list[4] = 31. Step 2: low = 5, mid = floor((5+9)/2) = 7, list[7] = 71. Found.)</span><span data-lang="zh">总步数：<strong>2</strong>。（步骤 1：mid = floor((0+9)/2) = 4，list[4] = 31。步骤 2：low = 5，mid = floor((5+9)/2) = 7，list[7] = 71。找到。）</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[1]</span>
+        <p><span data-lang="en"><strong>Pre-condition: the list must be sorted</strong> (in ascending or descending order).</span><span data-lang="zh"><strong>前提条件：列表必须已排序</strong>（按升序或降序）。</span> <span class="marks-call">B1</span> <span data-lang="en">Without sorting, eliminating half the list based on a midpoint comparison is meaningless.</span><span data-lang="zh">没有排序，基于中点比较来排除一半列表是没有意义的。</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(d)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en">(i) Linear search worst case: <strong>1,000 steps</strong> (must check every element). (ii) Binary search worst case: <strong>10 steps</strong> (log<sub>2</sub>(1000) &lt; 10; since 2<sup>10</sup> = 1024 &gt; 1000, at most 10 halvings).</span><span data-lang="zh">（i）线性搜索最坏情况：<strong>1,000 步</strong>（必须检查每个元素）。（ii）二分搜索最坏情况：<strong>10 步</strong>（log<sub>2</sub>(1000) &lt; 10；由于 2<sup>10</sup> = 1024 &gt; 1000，最多 10 次减半）。</span> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en">Binary search is far more efficient because it eliminates half the remaining search space on each step, reducing 1,000 elements to 1 in only 10 steps instead of up to 1,000.</span><span data-lang="zh">二分搜索效率远高于线性搜索，因为它每步排除一半剩余搜索空间，只需 10 步就能将 1,000 个元素缩减到 1 个，而非最多 1,000 步。</span> <span class="marks-call">B1</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">On this 10-item list, binary search found the target in 2 steps vs 8 for linear -- a 4x speedup. On 1,000 items it is 100x faster (10 vs 1,000 steps). On 1,000,000 items it is 50,000x faster (20 vs 1,000,000 steps). The efficiency gap grows dramatically with list size. This is why AP CSP's Big Idea 3.17 (AAP-4.A) calls out "reasonable time" vs "unreasonable time" algorithms -- on very large inputs only logarithmic algorithms remain practical.</span><span data-lang="zh">在这个 10 项列表中，二分搜索用 2 步找到目标，而线性搜索用 8 步——快 4 倍。在 1,000 项中快 100 倍（10 对比 1,000 步）。在 1,000,000 项中快 50,000 倍（20 对比 1,000,000 步）。效率差距随列表大小急剧增长。这就是为什么 AP CSP 大概念 3.17（AAP-4.A）区分"合理时间"与"不合理时间"算法——对于非常大的输入，只有对数算法仍然实用。</span></div>
+  </div>
+</div>
+
+<!-- S9 -->
+<div class="solution">
+  <div class="s-head">
+    <span class="pill qnum">S9</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill honors"><span data-lang="en">Honors</span><span data-lang="zh">荣誉级</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill topic">&sect;5 <span data-lang="en">Big-O Efficiency Reasoning</span><span data-lang="zh">大 O 效率推理</span></span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en"><strong>Linear search: O(n)</strong> -- in the worst case it checks all n items, so the step count grows linearly with n.</span><span data-lang="zh"><strong>线性搜索：O(n)</strong> -- 在最坏情况下检查所有 n 项，因此步骤数随 n 线性增长。</span> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en"><strong>Binary search: O(log n)</strong> -- each step halves the search space, so the step count grows logarithmically with n.</span><span data-lang="zh"><strong>二分搜索：O(log n)</strong> -- 每步将搜索空间减半，因此步骤数随 n 对数增长。</span> <span class="marks-call">B1</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en">n = 1,048,576 = 2<sup>20</sup>. Binary search worst case = log<sub>2</sub>(n) = log<sub>2</sub>(2<sup>20</sup>) = <strong>20 steps</strong>.</span><span data-lang="zh">n = 1,048,576 = 2<sup>20</sup>。二分搜索最坏情况 = log<sub>2</sub>(n) = log<sub>2</sub>(2<sup>20</sup>) = <strong>20 步</strong>。</span> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en">Working: since 2<sup>20</sup> = 1,048,576, each halving reduces the space by a factor of 2. After 20 halvings: 2<sup>20</sup> / 2<sup>20</sup> = 1 item remains, so at most 20 comparisons are needed.</span><span data-lang="zh">过程：由于 2<sup>20</sup> = 1,048,576，每次减半将空间缩小 2 倍。20 次减半后：2<sup>20</sup> / 2<sup>20</sup> = 1 项剩余，因此最多需要 20 次比较。</span> <span class="marks-call">B1</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en">Linear search worst case on 1,048,576 items: 1,048,576 steps. Binary search worst case: 20 steps.</span><span data-lang="zh">1,048,576 项的线性搜索最坏情况：1,048,576 步。二分搜索最坏情况：20 步。</span></p>
+        <p><span data-lang="en">Ratio: 1,048,576 / 20 = <strong>52,429 times</strong> more steps for linear search.</span><span data-lang="zh">比率：1,048,576 / 20 = <strong>52,429 倍</strong>线性搜索所需步骤更多。</span> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en">Practically: if binary search takes 1 millisecond, linear search would take over 52 seconds on the same list -- an unusable user experience for a search feature.</span><span data-lang="zh">实际意义：如果二分搜索需要 1 毫秒，线性搜索在同一列表上将需要超过 52 秒——对搜索功能来说是不可接受的用户体验。</span> <span class="marks-call">B1</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(d)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en">A programmer would choose linear search when the list is <strong>not sorted</strong>, because binary search requires a pre-sorted list and sorting itself takes time.</span><span data-lang="zh">当列表<strong>未排序</strong>时，程序员会选择线性搜索，因为二分搜索需要预排序的列表，而排序本身也需要时间。</span> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en">Example scenario: searching an unsorted email inbox for a message containing a specific word -- the emails arrive in random order and sorting them before each search would not be worth the cost for a small inbox.</span><span data-lang="zh">场景示例：在未排序的电子邮件收件箱中搜索包含特定词的邮件——邮件以随机顺序到达，对于小收件箱而言，每次搜索前排序不值得付出这个代价。</span> <span class="marks-call">B1</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">Big-O is about growth rate, not absolute speed. O(log n) does not mean "fast" in all cases; it means that doubling n only adds one more step. O(n) means doubling n doubles the steps. The ratio 52,429x shows why this matters at scale. The practical takeaway for exams: always state the pre-condition (sorted list) alongside the Big-O classification of binary search, because without it, binary search gives wrong answers, not just slower answers.</span><span data-lang="zh">大 O 是关于增长率，而不是绝对速度。O(log n) 并不意味着在所有情况下都"快"；它意味着 n 加倍只增加一步。O(n) 意味着 n 加倍使步骤数加倍。52,429 倍的比率显示了这在规模上的重要性。考试的实际要点：始终在二分搜索的大 O 分类旁边说明前提条件（已排序列表），因为没有它，二分搜索给出错误答案，而不只是更慢的答案。</span></div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART III  SOLUTIONS  3 Qs  25 marks
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART III &nbsp;&middot;&nbsp; MODELING / APPLIED</span><span data-lang="zh">第三部分 &nbsp;&middot;&nbsp; 建模与应用</span></span><span class="part-meta"><span data-lang="en">Solutions &middot; 25 marks</span><span data-lang="zh">答案 &middot; 共 25 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Section C &middot; Modeling and Applications Solutions</span><span data-lang="zh">C 部分 &middot; 建模与应用答案</span></h2>
+
+<!-- S10 -->
+<div class="solution app">
+  <div class="s-head">
+    <span class="pill qnum">S10</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill topic">&sect;2 + &sect;4 + &sect;7 <span data-lang="en">Greedy algorithm trace</span><span data-lang="zh">贪心算法追踪</span></span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[4]</span>
+        <p><span data-lang="en">Trace with amount = 41 (1 mark per correct denomination group, up to 4):</span><span data-lang="zh">以 amount = 41 追踪（每个面值组正确得 1 分，最多 4 分）：</span></p>
+        <table style="font-family:'JetBrains Mono',monospace;font-size:10pt;border-collapse:collapse;margin:8px 0;width:auto;">
+          <tr style="background:#EFE9E4;"><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">coin</span><span data-lang="zh">面值</span></th><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">amount before</span><span data-lang="zh">扣除前金额</span></th><th style="border:1px solid #c9c4bd;padding:4px 10px;"><span data-lang="en">amount after</span><span data-lang="zh">扣除后金额</span></th><th style="border:1px solid #c9c4bd;padding:4px 10px;">count</th></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">25</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">41</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>16</strong></td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>1</strong></td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">10</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">16</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>6</strong></td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>2</strong></td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">5</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">6</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>1</strong></td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>3</strong></td></tr>
+          <tr><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;">1</td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>0</strong></td><td style="border:1px solid #c9c4bd;padding:4px 10px;text-align:center;"><strong>4</strong></td></tr>
+        </table>
+        <p style="font-size:10pt;color:#555;"><span data-lang="en">Note: the FOR EACH coin loop advances once per denomination. The WHILE loop inside runs until the denomination no longer fits. For coins 25 and 10 and 5 the WHILE body each executes once; for coin 1 it executes once (amount 1 to 0). Total WHILE executions = 4.</span><span data-lang="zh">注意：FOR EACH coin 循环每个面值推进一次。内部的 WHILE 循环运行直到该面值不再合适。对于面值 25、10 和 5，WHILE 循环体各执行一次；对于面值 1，执行一次（金额从 1 到 0）。WHILE 总执行次数 = 4。</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[2]</span>
+        <p><strong><span data-lang="en">Final count: 4</span><span data-lang="zh">最终 count：4</span></strong> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en">Coins used: <strong>25 + 10 + 5 + 1 = 41</strong> cents. One coin of each denomination.</span><span data-lang="zh">使用的硬币：<strong>25 + 10 + 5 + 1 = 41</strong> 分。每种面值各一枚。</span> <span class="marks-call">B1</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[2]</span>
+        <p><strong><span data-lang="en">Pillar: Algorithmic thinking</span><span data-lang="zh">支柱：算法思维</span></strong> <span class="marks-call">B1</span> <span data-lang="en">-- the greedy strategy is a precise, unambiguous, step-by-step procedure: "at each stage, take the largest coin that does not exceed the remaining amount." This step sequence is repeatable and produces a definite result, which is the definition of an algorithm.</span><span data-lang="zh">-- 贪心策略是一个精确、无歧义的逐步程序："在每个阶段，取不超过剩余金额的最大面值硬币。"这个步骤序列可重复并产生确定结果，这正是算法的定义。</span> <span class="marks-call">B1</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">The greedy coin algorithm works optimally for standard coin denominations (1, 5, 10, 25) but fails for unusual denominations. For example, with coins [1, 3, 4] and amount 6, greedy picks 4 + 1 + 1 = 3 coins, but the optimal solution is 3 + 3 = 2 coins. This is a preview of why algorithm choice matters -- the right algorithm depends on the structure of the problem, not just the goal.</span><span data-lang="zh">贪心找零算法对标准硬币面值（1、5、10、25）效果最优，但对非常规面值会失败。例如，对于硬币 [1, 3, 4] 和金额 6，贪心选择 4 + 1 + 1 = 3 枚硬币，但最优解是 3 + 3 = 2 枚硬币。这预示了为什么算法选择很重要——正确的算法取决于问题的结构，而不仅仅是目标。</span></div>
+  </div>
+</div>
+
+<!-- S11 -->
+<div class="solution app">
+  <div class="s-head">
+    <span class="pill qnum">S11</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill topic">&sect;3 + &sect;6 + &sect;7 <span data-lang="en">Flowchart, decomposition, debugging</span><span data-lang="zh">流程图、分解、调试</span></span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[4]</span>
+        <p><span data-lang="en">Model pseudocode (1 mark per structural element: INPUT line; outer IF/ELSE; inner IF/ELSE; correct END IF nesting):</span><span data-lang="zh">参考伪代码（每个结构元素 1 分：INPUT 行；外层 IF/ELSE；内层 IF/ELSE；正确的 END IF 嵌套）：</span></p>
+        <pre><code>INPUT password
+IF LENGTH(password) >= 8 THEN
+    IF CONTAINS_DIGIT(password) THEN
+        OUTPUT "Strong"
+    ELSE
+        OUTPUT "Add a digit"
+    END IF
+ELSE
+    OUTPUT "Too short"
+END IF</code></pre>
+        <p style="font-size:10pt;color:#555;"><span data-lang="en">Accept equivalent pseudocode. The key requirements: INPUT first, outer condition on length, inner condition on digit presence, correct branch outputs.</span><span data-lang="zh">接受等价伪代码。关键要求：INPUT 在第一行，外层条件检查长度，内层条件检查是否含数字，正确的分支输出。</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en">Updated sub-problems (accept any three, 1 mark per sub-problem, max 2 since only 2 marks available):</span><span data-lang="zh">更新后的子问题（接受任意三个，每个子问题 1 分，由于只有 2 分，最多 2 分）：</span></p>
+        <ul style="margin:6px 0 4px 20px;font-size:10.5pt;">
+          <li><span data-lang="en">Check that the password has at least 8 characters (minimum length).</span><span data-lang="zh">检查密码至少有 8 个字符（最小长度）。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en">Check that the password does not exceed 20 characters (maximum length).</span><span data-lang="zh">检查密码不超过 20 个字符（最大长度）。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en">Check that the password contains at least one digit.</span><span data-lang="zh">检查密码包含至少一个数字。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en">Output an appropriate message for each outcome (Strong, Too short, Too long, Add a digit).</span><span data-lang="zh">为每种结果输出适当的消息（Strong、Too short、Too long、Add a digit）。</span></li>
+        </ul>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[2]</span>
+        <p><strong><span data-lang="en">Output: "Too short"</span><span data-lang="zh">输出："Too short"</span></strong> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en">Path: START &rarr; Read password ("hello") &rarr; Diamond "length &ge; 8?" (5 &ge; 8 is FALSE) &rarr; NO branch &rarr; Output "Too short" &rarr; END.</span><span data-lang="zh">路径：START &rarr; 读取密码（"hello"）&rarr; 菱形"长度 &ge; 8？"（5 &ge; 8 为否）&rarr; 否分支 &rarr; 输出"Too short" &rarr; END。</span> <span class="marks-call">B1</span> <span data-lang="en">The digit check is never reached because the length check fails first.</span><span data-lang="zh">数字检查从未到达，因为长度检查首先失败。</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">The nested structure here is critical: the digit check is only reached if the length check passes. This is deliberate -- it avoids giving misleading feedback ("Add a digit") to a password that is also too short. On exams, when converting a flowchart to pseudocode, first identify the flowchart's diamond hierarchy (which diamond is checked first, which is nested inside a YES branch), then write the pseudocode with matching IF nesting. The nesting order in the pseudocode must exactly mirror the conditional sequence in the flowchart.</span><span data-lang="zh">这里的嵌套结构至关重要：只有在长度检查通过后才会到达数字检查。这是刻意设计的——它避免给同样太短的密码提供误导性反馈（"Add a digit"）。在考试中，将流程图转换为伪代码时，首先识别流程图的菱形层次结构（哪个菱形首先被检查，哪个嵌套在是分支内），然后用匹配的 IF 嵌套编写伪代码。伪代码中的嵌套顺序必须与流程图中的条件序列完全镜像。</span></div>
+  </div>
+</div>
+
+<!-- S12 -->
+<div class="solution app">
+  <div class="s-head">
+    <span class="pill qnum">S12</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill topic"><span data-lang="en">All sections &middot; Full design + trace</span><span data-lang="zh">全节综合 &middot; 完整设计与追踪</span></span>
+    <span class="pill marks"><span data-lang="en">[9 marks]</span><span data-lang="zh">[9 分]</span></span>
+  </div>
+  <div class="s-body">
+    <div class="ans-parts">
+      <div class="part-item">
+        <span class="tag">(a)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en">Three high-level sub-problems (1 mark per correct sub-problem, max 2 since only 2 marks available):</span><span data-lang="zh">三个高层子问题（每个正确子问题 1 分，由于只有 2 分，最多 2 分）：</span></p>
+        <ul style="margin:6px 0 4px 20px;font-size:10.5pt;">
+          <li><span data-lang="en">Accept the student's requested book title as input.</span><span data-lang="zh">接受学生请求的书名作为输入。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en">Search the sorted catalogue for the requested title.</span><span data-lang="zh">在已排序目录中搜索请求的书名。</span> <span class="marks-call">B1</span></li>
+          <li><span data-lang="en">Return or display whether the title was found (available / not available).</span><span data-lang="zh">返回或显示书名是否找到（可用/不可用）。</span> <span class="marks-call">B1</span></li>
+        </ul>
+      </div>
+      <div class="part-item">
+        <span class="tag">(b)</span> <span class="marks-inline">[2]</span>
+        <p><span data-lang="en"><strong>Binary search is more appropriate.</strong></span><span data-lang="zh"><strong>二分搜索更合适。</strong></span> <span class="marks-call">B1</span></p>
+        <p><span data-lang="en">Binary search on a 5,000-title sorted catalogue needs at most log<sub>2</sub>(5000) &lt; 13 steps to find any title. Linear search needs up to 5,000 steps in the worst case. Since the catalogue is already sorted (a required pre-condition that holds here), binary search is 5000/13 &asymp; 385 times more efficient.</span><span data-lang="zh">在 5,000 个书名的已排序目录上，二分搜索最多需要 log<sub>2</sub>(5000) &lt; 13 步找到任何书名。线性搜索最坏情况下需要最多 5,000 步。由于目录已排序（此处满足的必要前提条件），二分搜索效率约高 5000/13 &asymp; 385 倍。</span> <span class="marks-call">B1</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(c)</span> <span class="marks-inline">[4]</span>
+        <p><span data-lang="en">Model pseudocode procedure (1 mark per structural element: correct variable initialisation; correct WHILE condition; correct mid computation; correct return logic):</span><span data-lang="zh">参考伪代码过程（每个结构元素 1 分：正确的变量初始化；正确的 WHILE 条件；正确的 mid 计算；正确的返回逻辑）：</span></p>
+        <pre><code>PROCEDURE SEARCH(catalogue, target):
+    SET low TO 0
+    SET high TO LENGTH(catalogue) - 1
+    WHILE low <= high:
+        SET mid TO FLOOR((low + high) / 2)
+        IF catalogue[mid] == target THEN
+            RETURN TRUE
+        ELSE IF catalogue[mid] < target THEN
+            SET low TO mid + 1
+        ELSE
+            SET high TO mid - 1
+        END IF
+    END WHILE
+    RETURN FALSE
+END PROCEDURE</code></pre>
+        <p style="font-size:10pt;color:#555;"><span data-lang="en">Award marks: [B1] low=0, high=LENGTH-1 initialised. [B1] WHILE low &lt;= high (loop terminates correctly). [B1] mid = FLOOR((low+high)/2). [B1] Returns TRUE when found, adjusts low or high correctly, returns FALSE after loop.</span><span data-lang="zh">评分：[B1] low=0，high=LENGTH-1 初始化。[B1] WHILE low &lt;= high（循环正确终止）。[B1] mid = FLOOR((low+high)/2)。[B1] 找到时返回 TRUE，正确调整 low 或 high，循环后返回 FALSE。</span></p>
+      </div>
+      <div class="part-item">
+        <span class="tag">(d)</span> <span class="marks-inline">[1]</span>
+        <p><strong><span data-lang="en">Logic error.</span><span data-lang="zh">逻辑错误。</span></strong> <span class="marks-call">B1</span> <span data-lang="en">The procedure would not crash (no syntax error, no runtime crash for most inputs), but it would produce wrong answers: when the mid element is compared to the target on an unsorted list, the decision to search left or right is based on a false assumption that smaller values are to the left and larger values to the right. The procedure may report FALSE (not found) for a title that actually exists, or TRUE for a wrong position.</span><span data-lang="zh">该过程不会崩溃（无语法错误，对大多数输入无运行时崩溃），但会产生错误答案：当在未排序列表上将中间元素与目标比较时，向左或向右搜索的决策基于错误假设——较小值在左边，较大值在右边。该过程可能为实际存在的书名报告 FALSE（未找到），或在错误位置报告 TRUE。</span></p>
+      </div>
+    </div>
+    <div class="insight"><span data-lang="en">Q12 integrates all four computational thinking pillars in one scenario: Decomposition (sub-problems in part a), Algorithmic thinking (writing the procedure in part c), Abstraction (the procedure hides low/mid/high bookkeeping behind a clean SEARCH interface), and implicitly Pattern recognition (recognising that halving the space is the same pattern as all binary search problems). This integration is what AP CSP and ICS3U assess at the highest level. When you write any search/sort procedure on an exam, always verify it by tracing with a tiny list (3-4 items) before moving on.</span><span data-lang="zh">Q12 在一个场景中整合了全部四个计算思维支柱：分解（(a) 部分的子问题）、算法思维（(c) 部分编写过程）、抽象（该过程将 low/mid/high 记账操作隐藏在简洁的 SEARCH 接口后面），以及隐含的模式识别（认识到将空间减半是所有二分搜索问题的相同模式）。这种整合是 AP CSP 和 ICS3U 在最高水平评估的内容。在考试中编写任何搜索/排序过程时，始终用一个小列表（3-4 项）追踪来验证，然后再继续。</span></div>
+  </div>
+</div>
+
+<!-- consult-cta -->
+<aside class="consult-cta">
+  <span class="consult-cta__lead"><span data-lang="en">Want to review your answers with a tutor?</span><span data-lang="zh">想与导师一起回顾你的答案？</span></span>
+  <span class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor:</span><span data-lang="zh">预约 Dingrui Scholars 导师的 15 分钟免费咨询：</span></span>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&amp;utm_medium=cta&amp;utm_campaign=high_school_computer_science&amp;utm_content=Unit_1_Computational_Thinking_and_Algorithms__solutions__en" target="_blank" rel="noopener">dingruischolars.com/signup</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&amp;utm_medium=cta&amp;utm_campaign=high_school_computer_science&amp;utm_content=Unit_1_Computational_Thinking_and_Algorithms__solutions__zh" target="_blank" rel="noopener">dingruischolars.com/signup-ch</a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_1_Computational_Thinking_and_Algorithms.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_1_Computational_Thinking_and_Algorithms_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">High School Computer Science &middot; Solutions</span><span data-lang="zh">高中计算机科学 &middot; 答案与解析</span> &middot; <code style="color:#555;">v1</code></span>
+  <span><span data-lang="en">Computational Thinking and Algorithms Solutions v1 &middot; 12 Qs &middot; 80 marks &middot; US / ON / BC / AB &middot; HS-CS-1</span><span data-lang="zh">计算思维与算法 答案 v1 &middot; 共 12 题 &middot; 80 分 &middot; 美 / 安 / 卑 / 阿 &middot; HS-CS-1</span></span>
+</footer>
+
+<script>
+function toggleLang() { const isZh = document.body.classList.toggle('lang-zh'); try { localStorage.setItem('lang', isZh ? 'zh' : 'en'); } catch (e) {} }
+try { if (localStorage.getItem('lang') === 'zh') document.body.classList.add('lang-zh'); } catch (e) {}
+</script>
+
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

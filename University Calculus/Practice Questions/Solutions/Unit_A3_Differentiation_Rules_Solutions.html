@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit A3: Differentiation Rules | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-A3  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A3_Differentiation_Rules_Solutions.html">
+<meta name="description" content="Worked solutions for Unit A3: Differentiation Rules in University Calculus. Power, product, quotient, and chain rules with first-principles proofs and M1/A1 mark callouts from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit A3: Differentiation Rules | Solutions">
+<meta property="og:description" content="Worked solutions for Unit A3: Differentiation Rules in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A3_Differentiation_Rules_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit A3: Differentiation Rules | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit A3: Differentiation Rules in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit A3: Differentiation Rules | Solutions",
+  "description": "Worked solutions for Unit A3: Differentiation Rules in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A3_Differentiation_Rules_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag">Unit A3 &middot; <span data-lang="en">Solutions</span><span data-lang="zh">解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">Differentiation Rules &middot; Solutions</span><span data-lang="zh">微分法则 &middot; 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题的配套解答</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: power/sum/constant-multiple rules, product rule, quotient rule, chain rule, combining rules, polynomials and rational functions, pitfalls</span><span data-lang="zh">第 <b>1 至 7</b> 节：幂法则/求和法则/常数倍法则、乘积法则、商法则、链式法则、综合运用、多项式与有理函数、常见错误</span><span class="scope">CALC I</span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; companion to <code style="font-style:normal;">Unit_A3_Differentiation_Rules_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; <span data-lang="en">method walk with</span><span data-lang="zh">方法详解，含</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method</span><span data-lang="zh">方法分</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer</span><span data-lang="zh">答案分</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning mark callouts</span><span data-lang="zh">推理分标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span data-lang="zh">第一部分 &nbsp;·&nbsp; 核心技巧</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">power, constant-multiple, and sum rules</span><span data-lang="zh">幂法则、常数倍法则与求和法则</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">Differentiate: (a) $f(x)=4x^{5}-\frac{3}{2}x^{4}+7x-9$; (b) $g(x)=\frac{5}{x^{3}}-\frac{2}{\sqrt{x}}+6x^{2/3}$; (c) $h(x)=\pi x^{4}-e\,x^{2}+\sqrt{3}$.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $20x^{4}-6x^{3}+7$ &nbsp;·&nbsp; <span class="ans">(b)</span> $-15x^{-4}+x^{-3/2}+4x^{-1/3}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $4\pi x^{3}-2ex$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Polynomial: power rule term by term</span><span data-lang="zh">(a) 多项式：逐项应用幂法则</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Apply the constant-multiple and power rules to each term, and the sum rule to add them. The constant $-9$ differentiates to $0$. (M1)</span><span data-lang="zh">对每一项应用常数倍法则和幂法则，用求和法则将各项相加。常数项 $-9$ 的导数为 $0$。(M1)</span></p>
+      $$ f'(x)=4\cdot 5x^{4}-\tfrac{3}{2}\cdot 4x^{3}+7\cdot 1-0=20x^{4}-6x^{3}+7. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Rewrite negative and fractional exponents first</span><span data-lang="zh">(b) 先将负指数和分数指数改写</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Rewrite as $g(x)=5x^{-3}-2x^{-1/2}+6x^{2/3}$ and apply the power rule to each term. (M1)</span><span data-lang="zh">将其改写为 $g(x)=5x^{-3}-2x^{-1/2}+6x^{2/3}$，再对每项应用幂法则。(M1)</span></p>
+      $$ g'(x)=5\cdot(-3)x^{-4}-2\cdot\left(-\tfrac{1}{2}\right)x^{-3/2}+6\cdot\tfrac{2}{3}x^{-1/3}=-15x^{-4}+x^{-3/2}+4x^{-1/3}. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(c) Treat $\pi$, $e$, and $\sqrt{3}$ as constants</span><span data-lang="zh">(c) 将 $\pi$、$e$ 与 $\sqrt{3}$ 视为常数</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$\pi$ and $e$ are constants, so the constant-multiple rule applies exactly as for any real number coefficient. The term $\sqrt{3}$ is a constant, so its derivative is $0$. (M1)</span><span data-lang="zh">$\pi$ 与 $e$ 均为常数，因此常数倍法则的应用方式与任何实数系数完全相同。$\sqrt{3}$ 也是常数，其导数为 $0$。(M1)</span></p>
+      $$ h'(x)=\pi\cdot 4x^{3}-e\cdot 2x+0=4\pi x^{3}-2ex. $$
+      <p>(A1)</p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">The single most common error in (b) is treating $\frac{5}{x^3}$ as $5x^3$ and $\frac{2}{\sqrt{x}}$ as $2x^{1/2}$, losing the negative sign on the exponent. Always convert to $5x^{-3}$ and $2x^{-1/2}$ before differentiating. In (c), note that $\pi$ and $e$ are transcendental constants: they behave identically to $2$ or $7$ as coefficients. The derivative of a constant term is zero regardless of how complicated the constant is.</span><span data-lang="zh">(b) 中最常见的错误是将 $\frac{5}{x^3}$ 当作 $5x^3$、将 $\frac{2}{\sqrt{x}}$ 当作 $2x^{1/2}$，从而丢失指数上的负号。求导前务必将其转化为 $5x^{-3}$ 和 $2x^{-1/2}$。在 (c) 中，注意 $\pi$ 与 $e$ 是超越常数：作为系数时，它们与 $2$ 或 $7$ 的作用完全相同。无论常数多么复杂，常数项的导数均为零。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">product rule</span><span data-lang="zh">乘积法则</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">Differentiate without expanding first: (a) $f(x)=(3x^{2}+1)(x^{3}-2x)$; (b) $g(x)=x^{4}(2x^{2}-5)^{3}$; (c) $h(x)=(x^{2}+3)(x^{2}-3)$ by the product rule and then by expanding; verify they agree.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $15x^{4}-15x^{2}-2$ &nbsp;·&nbsp; <span class="ans">(b)</span> $4x^{3}(2x^{2}-5)^{2}(5x^{2}-5)$ &nbsp;·&nbsp; <span class="ans">(c)</span> $4x^{3}$ (<span data-lang="en">both methods</span><span data-lang="zh">两种方法</span>)</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Standard product rule</span><span data-lang="zh">(a) 标准乘积法则</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Let $u=3x^{2}+1$ and $v=x^{3}-2x$, so $u'=6x$ and $v'=3x^{2}-2$. The product rule gives $(uv)'=u'v+uv'$. (M1)</span><span data-lang="zh">令 $u=3x^{2}+1$，$v=x^{3}-2x$，则 $u'=6x$，$v'=3x^{2}-2$。乘积法则给出 $(uv)'=u'v+uv'$。(M1)</span></p>
+      $$ f'(x)=6x\left(x^{3}-2x\right)+\left(3x^{2}+1\right)\!\left(3x^{2}-2\right). $$
+      <p><span data-lang="en">Expand term by term: $6x^{4}-12x^{2}$ and $9x^{4}-6x^{2}+3x^{2}-2=9x^{4}-3x^{2}-2$. (A1)</span><span data-lang="zh">逐项展开：$6x^{4}-12x^{2}$ 与 $9x^{4}-6x^{2}+3x^{2}-2=9x^{4}-3x^{2}-2$。(A1)</span></p>
+      $$ f'(x)=6x^{4}-12x^{2}+9x^{4}-3x^{2}-2=15x^{4}-15x^{2}-2. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Product rule with the chain rule on the second factor</span><span data-lang="zh">(b) 对第二因子运用链式法则的乘积法则</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Let $u=x^{4}$ (so $u'=4x^{3}$) and $v=(2x^{2}-5)^{3}$ (chain rule: $v'=3(2x^{2}-5)^{2}\cdot 4x=12x(2x^{2}-5)^{2}$). (M1)</span><span data-lang="zh">令 $u=x^{4}$（则 $u'=4x^{3}$），$v=(2x^{2}-5)^{3}$（链式法则：$v'=3(2x^{2}-5)^{2}\cdot 4x=12x(2x^{2}-5)^{2}$）。(M1)</span></p>
+      $$ g'(x)=4x^{3}\!\left(2x^{2}-5\right)^{3}+x^{4}\cdot 12x\!\left(2x^{2}-5\right)^{2}=4x^{3}\!\left(2x^{2}-5\right)^{3}+12x^{5}\!\left(2x^{2}-5\right)^{2}. $$
+      <p><span data-lang="en">Factor out $4x^{3}(2x^{2}-5)^{2}$: (A1)</span><span data-lang="zh">提取公因子 $4x^{3}(2x^{2}-5)^{2}$：(A1)</span></p>
+      $$ g'(x)=4x^{3}\!\left(2x^{2}-5\right)^{2}\!\left[\left(2x^{2}-5\right)+3x^{2}\right]=4x^{3}\!\left(2x^{2}-5\right)^{2}\!\left(5x^{2}-5\right). $$
+      <p><span data-lang="en">(A1) This can also be written as $20x^{3}(x^{2}-1)(2x^{2}-5)^{2}$.</span><span data-lang="zh">(A1) 也可写作 $20x^{3}(x^{2}-1)(2x^{2}-5)^{2}$。</span></p>
+      <h4><span data-lang="en">(c) Product rule, then verify</span><span data-lang="zh">(c) 乘积法则，然后验证</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Product rule with $u=x^{2}+3$, $v=x^{2}-3$: $h'(x)=2x(x^{2}-3)+(x^{2}+3)(2x)=2x^{3}-6x+2x^{3}+6x=4x^{3}$. (M1)</span><span data-lang="zh">取 $u=x^{2}+3$，$v=x^{2}-3$，用乘积法则：$h'(x)=2x(x^{2}-3)+(x^{2}+3)(2x)=2x^{3}-6x+2x^{3}+6x=4x^{3}$。(M1)</span></p>
+      <p><span data-lang="en">Verification by expansion: $h(x)=(x^{2}+3)(x^{2}-3)=x^{4}-9$, so $h'(x)=4x^{3}$. Both give the same answer. (A1)</span><span data-lang="zh">展开验证：$h(x)=(x^{2}+3)(x^{2}-3)=x^{4}-9$，故 $h'(x)=4x^{3}$。两种方法结果一致。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">Part (b) illustrates the key skill of combining two rules without expanding: treat $(2x^{2}-5)^{3}$ as a single entity, differentiate it by the chain rule to get its contribution to $g'$, and then factor the result to the simplest form. Expanding $(2x^{2}-5)^{3}$ first would produce 8 terms and create far more room for error. Part (c) confirms that the product rule is not just a formula but an identity: the answer must match no matter which method you use.</span><span data-lang="zh">(b) 展示了不展开便综合运用两条法则的核心技巧：将 $(2x^{2}-5)^{3}$ 视为一个整体，用链式法则求其对 $g'$ 的贡献，再将结果因式分解到最简形式。若先展开 $(2x^{2}-5)^{3}$，将产生8项，出错概率大幅增加。(c) 证实乘积法则不只是一个公式，而是一个恒等式：无论用哪种方法，答案都必须一致。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">chain rule, including nested chains</span><span data-lang="zh">链式法则，含嵌套链式</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">Differentiate: (a) $f(x)=(3x^{4}-2x+1)^{6}$; (b) $g(x)=\sqrt{5x^{3}+\sqrt{x}}$ (nested chain); (c) $h(x)=\left(\frac{x^{2}+1}{x-1}\right)^{4}$ (chain with inner quotient).</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $6(12x^{3}-2)(3x^{4}-2x+1)^{5}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\dfrac{15x^{2}+\frac{1}{2}x^{-1/2}}{2\sqrt{5x^{3}+\sqrt{x}}}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $\dfrac{4(x^{2}+1)^{3}(x^{2}-2x-1)}{(x-1)^{5}}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) One-layer chain rule</span><span data-lang="zh">(a) 单层链式法则</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Outer function: $u^{6}$ with $u=3x^{4}-2x+1$. Inner derivative: $u'=12x^{3}-2$. Chain rule: (M1)</span><span data-lang="zh">外层函数为 $u^{6}$，其中 $u=3x^{4}-2x+1$。内层导数：$u'=12x^{3}-2$。链式法则：(M1)</span></p>
+      $$ f'(x)=6\!\left(3x^{4}-2x+1\right)^{5}\cdot\!\left(12x^{3}-2\right). $$
+      <p><span data-lang="en">(A1) This is fully simplified.</span><span data-lang="zh">(A1) 此为最简形式。</span></p>
+      <h4><span data-lang="en">(b) Nested chain: outer square root, inner sum, innermost square root</span><span data-lang="zh">(b) 嵌套链式：外层平方根、内层求和、最内层平方根</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Write $g(x)=\left(5x^{3}+x^{1/2}\right)^{1/2}$. The outermost function is $(\cdot)^{1/2}$; its argument is $5x^{3}+x^{1/2}$, which itself contains the inner chain $x^{1/2}$. (M1)</span><span data-lang="zh">将其写为 $g(x)=\left(5x^{3}+x^{1/2}\right)^{1/2}$。最外层函数为 $(\cdot)^{1/2}$；其自变量为 $5x^{3}+x^{1/2}$，其中又含内层链式 $x^{1/2}$。(M1)</span></p>
+      <p><span data-lang="en">Differentiate the outer function and multiply by the derivative of its argument: (M1)</span><span data-lang="zh">对外层函数求导，再乘以自变量的导数：(M1)</span></p>
+      $$ g'(x)=\frac{1}{2}\!\left(5x^{3}+x^{1/2}\right)^{-1/2}\cdot\!\left(15x^{2}+\tfrac{1}{2}x^{-1/2}\right). $$
+      <p><span data-lang="en">This can be written as $\dfrac{15x^{2}+\frac{1}{2}x^{-1/2}}{2\sqrt{5x^{3}+\sqrt{x}}}$. (A1)</span><span data-lang="zh">可写为 $\dfrac{15x^{2}+\frac{1}{2}x^{-1/2}}{2\sqrt{5x^{3}+\sqrt{x}}}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Chain rule with quotient rule inside</span><span data-lang="zh">(c) 内层含商法则的链式法则</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Let $u=\dfrac{x^{2}+1}{x-1}$. Chain rule gives $h'(x)=4u^{3}\cdot u'$. (M1)</span><span data-lang="zh">令 $u=\dfrac{x^{2}+1}{x-1}$。链式法则给出 $h'(x)=4u^{3}\cdot u'$。(M1)</span></p>
+      <p><span data-lang="en">Compute $u'$ by the quotient rule: $u'=\dfrac{2x(x-1)-(x^{2}+1)(1)}{(x-1)^{2}}=\dfrac{2x^{2}-2x-x^{2}-1}{(x-1)^{2}}=\dfrac{x^{2}-2x-1}{(x-1)^{2}}$. (M1)</span><span data-lang="zh">用商法则计算 $u'$：$u'=\dfrac{2x(x-1)-(x^{2}+1)(1)}{(x-1)^{2}}=\dfrac{2x^{2}-2x-x^{2}-1}{(x-1)^{2}}=\dfrac{x^{2}-2x-1}{(x-1)^{2}}$。(M1)</span></p>
+      <p><span data-lang="en">Therefore</span><span data-lang="zh">因此</span></p>
+      $$ h'(x)=4\!\left(\frac{x^{2}+1}{x-1}\right)^{3}\cdot\frac{x^{2}-2x-1}{(x-1)^{2}}=\frac{4(x^{2}+1)^{3}(x^{2}-2x-1)}{(x-1)^{5}}. $$
+      <p>(A1)</p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">In (b), always strip away the layers from the outside inward: the outermost $(\cdot)^{1/2}$ gives $\frac{1}{2}(\cdot)^{-1/2}$, and then the derivative of the argument $5x^{3}+\sqrt{x}$ must include the chain for the $\sqrt{x}$ sub-layer. Forgetting the innermost layer ($\frac{1}{2}x^{-1/2}$ term) is the most common error. In (c), the denominator exponent grows: the outer chain raises the denominator power by 3, and the quotient rule contributes another factor of $(x-1)^{2}$, giving $(x-1)^{5}$ total. Tracking exponents in the denominator carefully is essential.</span><span data-lang="zh">在 (b) 中，始终从外到内逐层剥离：最外层 $(\cdot)^{1/2}$ 给出 $\frac{1}{2}(\cdot)^{-1/2}$，然后自变量 $5x^{3}+\sqrt{x}$ 的导数必须包含 $\sqrt{x}$ 子层的链式部分。忘记最内层（$\frac{1}{2}x^{-1/2}$ 项）是最常见的错误。在 (c) 中，分母指数累积增长：外层链式将分母幂次提升3，商法则又贡献一个 $(x-1)^{2}$ 因子，总计给出 $(x-1)^{5}$。仔细追踪分母中的指数至关重要。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">quotient rule</span><span data-lang="zh">商法则</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">Differentiate using the quotient rule: (a) $f(x)=\frac{x^{3}-3x}{x^{2}+1}$; (b) $g(x)=\frac{x^{2}-4x+4}{(x+1)^{2}}$; (c) $h(x)=\frac{x^{3}}{x^{2}+3}$, and find all $x$ with $h'(x)=0$.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\dfrac{x^{4}+6x^{2}-3}{(x^{2}+1)^{2}}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\dfrac{6(x-2)}{(x+1)^{3}}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $h'(x)=\dfrac{x^{2}(x^{2}+9)}{(x^{2}+3)^{2}}$; <span data-lang="en">zero at $x=0$ only</span><span data-lang="zh">仅 $x=0$ 处为零</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Quotient rule: polynomial numerator</span><span data-lang="zh">(a) 商法则：多项式分子</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">With $N=x^{3}-3x$ and $D=x^{2}+1$: $N'=3x^{2}-3$, $D'=2x$. Quotient rule $\frac{N'D-ND'}{D^{2}}$: (M1)</span><span data-lang="zh">取 $N=x^{3}-3x$，$D=x^{2}+1$：$N'=3x^{2}-3$，$D'=2x$。商法则 $\frac{N'D-ND'}{D^{2}}$：(M1)</span></p>
+      $$ f'(x)=\frac{(3x^{2}-3)(x^{2}+1)-(x^{3}-3x)(2x)}{(x^{2}+1)^{2}}. $$
+      <p><span data-lang="en">Expand the numerator: $(3x^{4}+3x^{2}-3x^{2}-3)-(2x^{4}-6x^{2})=3x^{4}-3-2x^{4}+6x^{2}=x^{4}+6x^{2}-3$. (A1)</span><span data-lang="zh">展开分子：$(3x^{4}+3x^{2}-3x^{2}-3)-(2x^{4}-6x^{2})=3x^{4}-3-2x^{4}+6x^{2}=x^{4}+6x^{2}-3$。(A1)</span></p>
+      $$ f'(x)=\frac{x^{4}+6x^{2}-3}{(x^{2}+1)^{2}}. $$
+      <h4><span data-lang="en">(b) Recognise the structure before differentiating</span><span data-lang="zh">(b) 求导前先识别结构</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Note $x^{2}-4x+4=(x-2)^{2}$, so $g(x)=\dfrac{(x-2)^{2}}{(x+1)^{2}}$. With $N=(x-2)^{2}$, $D=(x+1)^{2}$: $N'=2(x-2)$, $D'=2(x+1)$. (M1)</span><span data-lang="zh">注意 $x^{2}-4x+4=(x-2)^{2}$，故 $g(x)=\dfrac{(x-2)^{2}}{(x+1)^{2}}$。取 $N=(x-2)^{2}$，$D=(x+1)^{2}$：$N'=2(x-2)$，$D'=2(x+1)$。(M1)</span></p>
+      $$ g'(x)=\frac{2(x-2)(x+1)^{2}-(x-2)^{2}\cdot 2(x+1)}{(x+1)^{4}}=\frac{2(x-2)(x+1)\!\left[(x+1)-(x-2)\right]}{(x+1)^{4}}. $$
+      <p><span data-lang="en">The bracket simplifies to $3$, giving $g'(x)=\dfrac{6(x-2)}{(x+1)^{3}}$. (A1)</span><span data-lang="zh">括号化简为 $3$，得 $g'(x)=\dfrac{6(x-2)}{(x+1)^{3}}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Quotient rule and setting $h'=0$</span><span data-lang="zh">(c) 商法则与令 $h'=0$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">With $N=x^{3}$, $D=x^{2}+3$: $N'=3x^{2}$, $D'=2x$. (M1)</span><span data-lang="zh">取 $N=x^{3}$，$D=x^{2}+3$：$N'=3x^{2}$，$D'=2x$。(M1)</span></p>
+      $$ h'(x)=\frac{3x^{2}(x^{2}+3)-x^{3}(2x)}{(x^{2}+3)^{2}}=\frac{3x^{4}+9x^{2}-2x^{4}}{(x^{2}+3)^{2}}=\frac{x^{4}+9x^{2}}{(x^{2}+3)^{2}}=\frac{x^{2}(x^{2}+9)}{(x^{2}+3)^{2}}. $$
+      <p><span data-lang="en">Since $x^{2}+9\ge 9>0$ and $(x^{2}+3)^{2}>0$ for all real $x$, the only zero of $h'$ is $x^{2}=0$, i.e. $x=0$. (A1)</span><span data-lang="zh">由于对所有实数 $x$ 均有 $x^{2}+9\ge 9>0$ 且 $(x^{2}+3)^{2}>0$，$h'$ 的唯一零点为 $x^{2}=0$，即 $x=0$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">In (b), factoring the numerator before applying the quotient rule lets you cancel common factors much more easily. In (c), notice that after simplification $h'(x)=\frac{x^{2}(x^{2}+9)}{(x^{2}+3)^{2}}\ge 0$ for all real $x$, which means $h$ is non-decreasing everywhere. The only point where $h'=0$ is $x=0$, yet $h$ does not have a local maximum or minimum there (the derivative merely touches zero). This is a situation where the second-derivative test or sign analysis tells you the tangent is horizontal but the function keeps going up.</span><span data-lang="zh">在 (b) 中，应用商法则前先对分子因式分解，可更轻松地约去公因子。在 (c) 中，注意化简后对所有实数 $x$ 有 $h'(x)=\frac{x^{2}(x^{2}+9)}{(x^{2}+3)^{2}}\ge 0$，这意味着 $h$ 处处单调不减。$h'=0$ 的唯一点为 $x=0$，但 $h$ 在该点既非极大值也非极小值（导数仅在此处接触零）。这是二阶导数判别法或符号分析告知切线水平但函数仍持续递增的典型情形。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span data-lang="zh">第二部分 &nbsp;·&nbsp; 定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">product rule from the limit definition</span><span data-lang="zh">由极限定义推导乘积法则</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">Prove $(fg)'(x)=f'(x)g(x)+f(x)g'(x)$ using the limit definition, via the add-subtract trick. Then differentiate $p(x)=(x^{3}+1)(2x^{2}-3x)$.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">see proof</span><span data-lang="zh">见证明</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $(fg)'=f'(x)g(x)+f(x)g'(x)$ &nbsp;·&nbsp; <span class="ans">(c)</span> $p'(x)=10x^{4}-12x^{3}+4x-3$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Set up the difference quotient and add-subtract</span><span data-lang="zh">(a) 建立差商并运用加减技巧</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">By definition, $(fg)'(x)=\displaystyle\lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h}$. (M1)</span><span data-lang="zh">由定义，$(fg)'(x)=\displaystyle\lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h}$。(M1)</span></p>
+      <p><span data-lang="en">Add and subtract $f(x+h)g(x)$ in the numerator (this is the key algebraic trick): (M1)</span><span data-lang="zh">在分子中加减 $f(x+h)g(x)$（这是关键的代数技巧）：(M1)</span></p>
+      $$\frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}.$$
+      <p><span data-lang="en">Group and factor: (A1)</span><span data-lang="zh">分组并提取公因子：(A1)</span></p>
+      $$=f(x+h)\cdot\frac{g(x+h)-g(x)}{h}+\frac{f(x+h)-f(x)}{h}\cdot g(x).$$
+      <p><span data-lang="en">(A1) This expresses the single difference quotient as two separate difference quotients, each recognisable as a derivative.</span><span data-lang="zh">(A1) 这将单一差商表示为两个独立差商之和，每个都可识别为某个导数。</span></p>
+      <h4><span data-lang="en">(b) Take the limit; explain continuity</span><span data-lang="zh">(b) 取极限；解释连续性</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Take the limit as $h\to 0$. (M1) The second difference quotient $\dfrac{f(x+h)-f(x)}{h}\to f'(x)$ by definition. The first difference quotient $\dfrac{g(x+h)-g(x)}{h}\to g'(x)$ by definition.</span><span data-lang="zh">令 $h\to 0$ 取极限。(M1) 第二个差商 $\dfrac{f(x+h)-f(x)}{h}\to f'(x)$（由定义）。第一个差商 $\dfrac{g(x+h)-g(x)}{h}\to g'(x)$（由定义）。</span></p>
+      <p><span data-lang="en">The factor $f(x+h)$ in the first term needs care: because $f$ is differentiable at $x$, it is also continuous there, so $f(x+h)\to f(x)$ as $h\to 0$. (R1)</span><span data-lang="zh">第一项中的因子 $f(x+h)$ 需要特别注意：由于 $f$ 在 $x$ 处可微，故在该点也连续，从而当 $h\to 0$ 时 $f(x+h)\to f(x)$。(R1)</span></p>
+      $$(fg)'(x)=f(x)\cdot g'(x)+f'(x)\cdot g(x)=f'(x)g(x)+f(x)g'(x). \quad\square$$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(c) Apply the product rule to $p(x)$</span><span data-lang="zh">(c) 将乘积法则应用于 $p(x)$</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Let $u=x^{3}+1$ and $v=2x^{2}-3x$, so $u'=3x^{2}$ and $v'=4x-3$. (M1)</span><span data-lang="zh">令 $u=x^{3}+1$，$v=2x^{2}-3x$，则 $u'=3x^{2}$，$v'=4x-3$。(M1)</span></p>
+      $$p'(x)=3x^{2}\!\left(2x^{2}-3x\right)+\left(x^{3}+1\right)\!\left(4x-3\right).$$
+      <p><span data-lang="en">Expand: $6x^{4}-9x^{3}$ and $4x^{4}-3x^{3}+4x-3$. (A1)</span><span data-lang="zh">展开：$6x^{4}-9x^{3}$ 与 $4x^{4}-3x^{3}+4x-3$。(A1)</span></p>
+      $$p'(x)=6x^{4}-9x^{3}+4x^{4}-3x^{3}+4x-3=10x^{4}-12x^{3}+4x-3.$$
+      <p>(A1)</p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">The add-subtract trick is the engine of the product rule proof. The number $f(x+h)g(x)$ is "bridging" between $f(x+h)g(x+h)$ and $f(x)g(x)$: it shares the new $x+h$ argument with the first term and the old $g(x)$ with the second. The continuity argument ($f(x+h)\to f(x)$) is often glossed over but is logically necessary: without it, the first term would not simplify to $f(x)g'(x)$. A function can have a derivative at a point without being continuous there only if we redefine derivative, which standard calculus does not do.</span><span data-lang="zh">加减技巧是乘积法则证明的核心。$f(x+h)g(x)$ 起到"桥接"作用，连接 $f(x+h)g(x+h)$ 与 $f(x)g(x)$：它与第一项共享新的 $x+h$ 自变量，与第二项共享旧的 $g(x)$。连续性论证（$f(x+h)\to f(x)$）常被一笔带过，但在逻辑上不可或缺：若无此论证，第一项将无法化简为 $f(x)g'(x)$。若重新定义导数，函数可以在某点有导数而不连续，但标准微积分不做此定义。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">power rule for integer n by mathematical induction</span><span data-lang="zh">用数学归纳法证明整数次幂法则</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">Prove $\frac{d}{dx}(x^{n})=nx^{n-1}$ for all positive integers $n$ by induction. Then find $f''(x)$ and $f'''(x)$ for $f(x)=x^{5}-3x^{3}+2x$.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">base case confirmed</span><span data-lang="zh">基础情形已证</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">inductive step complete</span><span data-lang="zh">归纳步骤已完成</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $f''(x)=20x^{3}-18x$; $f'''(x)=60x^{2}-18$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Base case $n=1$ from the definition</span><span data-lang="zh">(a) 由定义证明基础情形 $n=1$</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $f(x)=x^{1}=x$. By the limit definition: (M1)</span><span data-lang="zh">令 $f(x)=x^{1}=x$。由极限定义：(M1)</span></p>
+      $$f'(x)=\lim_{h\to 0}\frac{(x+h)-x}{h}=\lim_{h\to 0}\frac{h}{h}=\lim_{h\to 0}1=1.$$
+      <p><span data-lang="en">Since $1=1\cdot x^{0}$, the formula $nx^{n-1}$ holds for $n=1$. (A1) The base case is established. (R1)</span><span data-lang="zh">由于 $1=1\cdot x^{0}$，公式 $nx^{n-1}$ 对 $n=1$ 成立。(A1) 基础情形已证。(R1)</span></p>
+      <h4><span data-lang="en">(b) Inductive step: from $n=k$ to $n=k+1$</span><span data-lang="zh">(b) 归纳步骤：从 $n=k$ 到 $n=k+1$</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Assume $\dfrac{d}{dx}(x^{k})=kx^{k-1}$ for some positive integer $k$. (M1) Write $x^{k+1}=x\cdot x^{k}$ and apply the product rule (proved in Q5):</span><span data-lang="zh">假设对某正整数 $k$ 有 $\dfrac{d}{dx}(x^{k})=kx^{k-1}$。(M1) 将 $x^{k+1}=x\cdot x^{k}$，并应用（Q5 中已证的）乘积法则：</span></p>
+      $$\frac{d}{dx}\!\left(x^{k+1}\right)=\frac{d}{dx}\!\left(x\cdot x^{k}\right)=1\cdot x^{k}+x\cdot kx^{k-1}=x^{k}+kx^{k}=(k+1)x^{k}.$$
+      <p><span data-lang="en">(A1) This is exactly the formula $nx^{n-1}$ evaluated at $n=k+1$. (R1)</span><span data-lang="zh">(A1) 这正是公式 $nx^{n-1}$ 在 $n=k+1$ 处的结果。(R1)</span></p>
+      <p><span data-lang="en">By the principle of mathematical induction, $\dfrac{d}{dx}(x^{n})=nx^{n-1}$ holds for all positive integers $n$.</span><span data-lang="zh">由数学归纳法原理，$\dfrac{d}{dx}(x^{n})=nx^{n-1}$ 对所有正整数 $n$ 成立。</span></p>
+      <h4><span data-lang="en">(c) Higher-order derivatives of $f(x)=x^{5}-3x^{3}+2x$</span><span data-lang="zh">(c) $f(x)=x^{5}-3x^{3}+2x$ 的高阶导数</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$f'(x)=5x^{4}-9x^{2}+2$ (power rule on each term). Differentiate again: (M1)</span><span data-lang="zh">$f'(x)=5x^{4}-9x^{2}+2$（对每项应用幂法则）。再次求导：(M1)</span></p>
+      $$f''(x)=20x^{3}-18x.$$
+      <p><span data-lang="en">Differentiate once more: $f'''(x)=60x^{2}-18$. (A1)</span><span data-lang="zh">再求导一次：$f'''(x)=60x^{2}-18$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">Mathematical induction is the natural vehicle for the power rule on positive integers because the inductive step requires a rule already proved (here the product rule), and the argument builds the tower $n=1,2,3,\ldots$ one rung at a time. Note that the induction only directly proves the rule for positive integers; extending to negative integers requires the quotient rule, and to rational exponents requires implicit differentiation. Each extension is a separate theorem, not a "free" consequence of the induction.</span><span data-lang="zh">数学归纳法是证明正整数幂法则的自然工具，因为归纳步骤需要一条已证的法则（此处为乘积法则），论证过程逐步建立 $n=1,2,3,\ldots$ 的阶梯。注意，归纳法仅直接证明正整数情形；推广到负整数需要商法则，推广到有理数指数需要隐式求导。每次推广都是一个独立的定理，而非归纳的"免费"推论。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill med">MEDIUM</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">quotient rule derived from the product rule</span><span data-lang="zh">由乘积法则推导商法则</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">Derive $Q'(x)=\frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^{2}}$ from $f=Q\cdot g$ and the product rule. Then differentiate $r(x)=\frac{x^{4}-1}{x^{2}+1}$.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $Q'=\frac{f'g-fg'}{g^{2}}$ <span data-lang="en">via rearrangement</span><span data-lang="zh">通过整理得到</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">minus sign in the numerator</span><span data-lang="zh">分子中的负号</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $r'(x)=2x$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Derive $Q'$ by rearranging $f=Qg$</span><span data-lang="zh">(a) 通过整理 $f=Qg$ 推导 $Q'$</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Since $f(x)=Q(x)\cdot g(x)$, differentiate both sides using the product rule: $f'(x)=Q'(x)g(x)+Q(x)g'(x)$. (M1)</span><span data-lang="zh">由 $f(x)=Q(x)\cdot g(x)$，对两边用乘积法则求导：$f'(x)=Q'(x)g(x)+Q(x)g'(x)$。(M1)</span></p>
+      <p><span data-lang="en">Rearrange to isolate $Q'(x)$: $Q'(x)g(x)=f'(x)-Q(x)g'(x)$, so</span><span data-lang="zh">整理以分离 $Q'(x)$：$Q'(x)g(x)=f'(x)-Q(x)g'(x)$，故</span></p>
+      $$Q'(x)=\frac{f'(x)-Q(x)g'(x)}{g(x)}=\frac{f'(x)}{g(x)}-\frac{f(x)}{g(x)}\cdot\frac{g'(x)}{g(x)}$$
+      <p><span data-lang="en">(using $Q=f/g$). (M1) Combine over the common denominator $[g(x)]^{2}$:</span><span data-lang="zh">（利用 $Q=f/g$）。(M1) 通分，公分母为 $[g(x)]^{2}$：</span></p>
+      $$Q'(x)=\frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^{2}}.\quad\square$$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Sign structure of the quotient rule</span><span data-lang="zh">(b) 商法则的符号结构</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Rewrite: $Q'=\dfrac{f'g-fg'}{g^{2}}$. Compare with the product rule $(fg)'=f'g+fg'$. (M1)</span><span data-lang="zh">改写为：$Q'=\dfrac{f'g-fg'}{g^{2}}$。与乘积法则 $(fg)'=f'g+fg'$ 对比。(M1)</span></p>
+      <p><span data-lang="en">The numerator of the quotient rule carries a minus sign before $fg'$, whereas the product rule carries a plus. (A1) The minus arises because differentiating $1/g$ produces $-g'/g^{2}$ (chain rule on the reciprocal), reversing the sign. (R1) A correct mnemonic: "top-prime times bottom, minus top times bottom-prime, over bottom-squared."</span><span data-lang="zh">商法则的分子在 $fg'$ 前有一个负号，而乘积法则有正号。(A1) 负号来源于对 $1/g$ 求导得 $-g'/g^{2}$（对倒数应用链式法则），从而改变了符号。(R1) 正确的记忆口诀：「分子导数乘分母，减去分子乘分母导数，除以分母的平方。」</span></p>
+      <h4><span data-lang="en">(c) Apply to $r(x)=\frac{x^{4}-1}{x^{2}+1}$</span><span data-lang="zh">(c) 应用于 $r(x)=\frac{x^{4}-1}{x^{2}+1}$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$N=x^{4}-1$, $D=x^{2}+1$, $N'=4x^{3}$, $D'=2x$. (M1)</span><span data-lang="zh">$N=x^{4}-1$，$D=x^{2}+1$，$N'=4x^{3}$，$D'=2x$。(M1)</span></p>
+      $$r'(x)=\frac{4x^{3}(x^{2}+1)-(x^{4}-1)(2x)}{(x^{2}+1)^{2}}=\frac{4x^{5}+4x^{3}-2x^{5}+2x}{(x^{2}+1)^{2}}=\frac{2x^{5}+4x^{3}+2x}{(x^{2}+1)^{2}}.$$
+      <p><span data-lang="en">Factor: $\dfrac{2x(x^{4}+2x^{2}+1)}{(x^{2}+1)^{2}}=\dfrac{2x(x^{2}+1)^{2}}{(x^{2}+1)^{2}}=2x$. (A1)</span><span data-lang="zh">因式分解：$\dfrac{2x(x^{4}+2x^{2}+1)}{(x^{2}+1)^{2}}=\dfrac{2x(x^{2}+1)^{2}}{(x^{2}+1)^{2}}=2x$。(A1)</span></p>
+      <p><span data-lang="en">This agrees with differentiating $r(x)=(x^{2}-1)(x^{2}+1)/(x^{2}+1)=x^{2}-1$ directly.</span><span data-lang="zh">这与直接对 $r(x)=(x^{2}-1)(x^{2}+1)/(x^{2}+1)=x^{2}-1$ 求导结果一致。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">The derivation in (a) shows that the quotient rule is not a new axiom but a consequence of the product rule together with the derivative of a reciprocal. Part (c) has a beautiful check: $r(x)=\frac{x^{4}-1}{x^{2}+1}=\frac{(x^{2}-1)(x^{2}+1)}{x^{2}+1}=x^{2}-1$ on the reals (the denominator is never zero), so $r'=2x$ is immediate. The quotient rule recovers exactly the same answer after cancellation, which confirms both the rule and the algebra. Always look for such simplifications before (or after) differentiating a rational function.</span><span data-lang="zh">(a) 中的推导表明，商法则不是新的公理，而是乘积法则与倒数导数的推论。(c) 有一个漂亮的验证：在实数域上（分母永不为零），$r(x)=\frac{x^{4}-1}{x^{2}+1}=\frac{(x^{2}-1)(x^{2}+1)}{x^{2}+1}=x^{2}-1$，因此 $r'=2x$ 可直接得出。商法则在约分后恢复完全相同的答案，既验证了法则本身，也验证了代数运算。对有理函数求导前（或求导后）应始终寻找此类化简机会。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">第三部分 &nbsp;·&nbsp; 应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合应用题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">chain rule combined with product rule</span><span data-lang="zh">链式法则与乘积法则的综合运用</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">For $F(x)=x^{3}(x^{2}+4)^{5}$: (a) differentiate; (b) factor to the form $x^{2}(x^{2}+4)^{4}(Ax^{2}+B)$; (c) find zeros of $F'$ and classify each.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $3x^{2}(x^{2}+4)^{5}+10x^{4}(x^{2}+4)^{4}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $A=13$, $B=12$ &nbsp;·&nbsp; <span class="ans">(c)</span> $x=0$ <span data-lang="en">only; neither a max nor a min</span><span data-lang="zh">唯一；既非极大值也非极小值</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Product rule with chain rule on the second factor</span><span data-lang="zh">(a) 对第二因子运用链式法则的乘积法则</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Let $u=x^{3}$ and $v=(x^{2}+4)^{5}$. Then $u'=3x^{2}$ and, by the chain rule, $v'=5(x^{2}+4)^{4}\cdot 2x=10x(x^{2}+4)^{4}$. (M1)</span><span data-lang="zh">令 $u=x^{3}$，$v=(x^{2}+4)^{5}$。则 $u'=3x^{2}$，由链式法则 $v'=5(x^{2}+4)^{4}\cdot 2x=10x(x^{2}+4)^{4}$。(M1)</span></p>
+      $$F'(x)=3x^{2}\!\left(x^{2}+4\right)^{5}+x^{3}\cdot 10x\!\left(x^{2}+4\right)^{4}=3x^{2}\!\left(x^{2}+4\right)^{5}+10x^{4}\!\left(x^{2}+4\right)^{4}.$$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Factor out the common term</span><span data-lang="zh">(b) 提取公因子</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Both terms share the factor $x^{2}(x^{2}+4)^{4}$. Extract it: (M1)</span><span data-lang="zh">两项共有公因子 $x^{2}(x^{2}+4)^{4}$，提取之：(M1)</span></p>
+      $$F'(x)=x^{2}\!\left(x^{2}+4\right)^{4}\!\left[3(x^{2}+4)+10x^{2}\right]=x^{2}\!\left(x^{2}+4\right)^{4}\!\left(3x^{2}+12+10x^{2}\right).$$
+      <p><span data-lang="en">(A1) Combine like terms in the bracket:</span><span data-lang="zh">(A1) 合并括号内的同类项：</span></p>
+      $$F'(x)=x^{2}\!\left(x^{2}+4\right)^{4}\!\left(13x^{2}+12\right).$$
+      <p><span data-lang="en">So $A=13$ and $B=12$. (A1)</span><span data-lang="zh">故 $A=13$，$B=12$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Sign analysis of $F'$</span><span data-lang="zh">(c) $F'$ 的符号分析</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Set $F'(x)=0$: the three factors are $x^{2}$, $(x^{2}+4)^{4}$, and $13x^{2}+12$. (M1)</span><span data-lang="zh">令 $F'(x)=0$：三个因子为 $x^{2}$、$(x^{2}+4)^{4}$ 和 $13x^{2}+12$。(M1)</span></p>
+      <ul>
+        <li><span data-lang="en">$x^{2}=0$ gives $x=0$.</span><span data-lang="zh">$x^{2}=0$ 给出 $x=0$。</span></li>
+        <li><span data-lang="en">$(x^{2}+4)^{4}=0$ requires $x^{2}=-4$, which has no real solution.</span><span data-lang="zh">$(x^{2}+4)^{4}=0$ 要求 $x^{2}=-4$，无实数解。</span></li>
+        <li><span data-lang="en">$13x^{2}+12=0$ requires $x^{2}=-12/13$, which has no real solution.</span><span data-lang="zh">$13x^{2}+12=0$ 要求 $x^{2}=-12/13$，无实数解。</span></li>
+      </ul>
+      <p><span data-lang="en">So the only zero of $F'$ on $\mathbb{R}$ is $x=0$. (A1) For $x\ne 0$: $x^{2}>0$, $(x^{2}+4)^{4}>0$, and $13x^{2}+12>0$, so $F'(x)>0$. Hence $F$ is strictly increasing on $(-\infty,0)$ and on $(0,\infty)$, and $F'$ does not change sign at $x=0$. The point $(0,F(0))=(0,0)$ is neither a local maximum nor a local minimum. (R1)</span><span data-lang="zh">故 $F'$ 在 $\mathbb{R}$ 上的唯一零点为 $x=0$。(A1) 当 $x\ne 0$ 时：$x^{2}>0$，$(x^{2}+4)^{4}>0$，$13x^{2}+12>0$，故 $F'(x)>0$。因此 $F$ 在 $(-\infty,0)$ 和 $(0,\infty)$ 上均严格递增，$F'$ 在 $x=0$ 处不变号。点 $(0,F(0))=(0,0)$ 既非极大值点也非极小值点。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">Factoring $F'$ completely before setting it to zero is far more efficient than using the quadratic formula on an expanded expression. Here the factored form reveals immediately that $(x^{2}+4)^{4}$ and $13x^{2}+12$ are always positive, reducing the zero-finding to $x^{2}=0$. The sign analysis also shows that $F$ is monotonically increasing (except at $x=0$, where the derivative merely touches zero): this is an example of a critical point that is not an extremum, sometimes called a terrace point or inflection with horizontal tangent.</span><span data-lang="zh">令 $F'$ 等于零前先将其完全因式分解，比对展开表达式使用求根公式高效得多。此处的因式分解形式立即揭示 $(x^{2}+4)^{4}$ 和 $13x^{2}+12$ 恒为正，从而将求零点简化为 $x^{2}=0$。符号分析还表明 $F$ 单调递增（除 $x=0$ 处导数仅触零外）：这是一个临界点不是极值点的例子，有时称为平台点或水平切线拐点。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">horizontal tangents of a rational function</span><span data-lang="zh">有理函数的水平切线</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">For $f(x)=\frac{x^{2}-4}{x^{2}+4}$: (a) domain; (b) $f'(x)=\frac{16x}{(x^{2}+4)^{2}}$; (c) horizontal tangent point(s); (d) horizontal asymptotes.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">all reals</span><span data-lang="zh">全体实数</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $\frac{16x}{(x^{2}+4)^{2}}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $(0,-1)$ &nbsp;·&nbsp; <span class="ans">(d)</span> $y=1$; <span data-lang="en">not attained</span><span data-lang="zh">不可取到</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Domain</span><span data-lang="zh">(a) 定义域</span> <span class="marks-call">A1·R1</span></h4>
+      <p><span data-lang="en">The denominator is $x^{2}+4\ge 4>0$ for all real $x$ (since $x^{2}\ge 0$), so it is never zero. (A1) The domain of $f$ is all of $\mathbb{R}$. (R1)</span><span data-lang="zh">对所有实数 $x$，分母 $x^{2}+4\ge 4>0$（因为 $x^{2}\ge 0$），故分母永不为零。(A1) $f$ 的定义域为全体实数 $\mathbb{R}$。(R1)</span></p>
+      <h4><span data-lang="en">(b) Quotient rule and simplification</span><span data-lang="zh">(b) 商法则与化简</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$N=x^{2}-4$, $D=x^{2}+4$, $N'=2x$, $D'=2x$. Quotient rule: (M1)</span><span data-lang="zh">$N=x^{2}-4$，$D=x^{2}+4$，$N'=2x$，$D'=2x$。商法则：(M1)</span></p>
+      $$f'(x)=\frac{2x(x^{2}+4)-(x^{2}-4)(2x)}{(x^{2}+4)^{2}}.$$
+      <p><span data-lang="en">Unsimplified numerator: $2x^{3}+8x-2x^{3}+8x=16x$. (A1)</span><span data-lang="zh">未化简的分子：$2x^{3}+8x-2x^{3}+8x=16x$。(A1)</span></p>
+      $$f'(x)=\frac{16x}{(x^{2}+4)^{2}}.$$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(c) Horizontal tangent: set $f'=0$</span><span data-lang="zh">(c) 水平切线：令 $f'=0$</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$f'(x)=0$ if and only if the numerator $16x=0$, i.e. $x=0$ (the denominator is always positive). (M1)</span><span data-lang="zh">$f'(x)=0$ 当且仅当分子 $16x=0$，即 $x=0$（分母恒为正）。(M1)</span></p>
+      <p><span data-lang="en">At $x=0$: $f(0)=\dfrac{0-4}{0+4}=\dfrac{-4}{4}=-1$. (A1) The only point with a horizontal tangent is $(0,-1)$. (A1)</span><span data-lang="zh">在 $x=0$ 处：$f(0)=\dfrac{0-4}{0+4}=\dfrac{-4}{4}=-1$。(A1) 唯一的水平切线点为 $(0,-1)$。(A1)</span></p>
+      <h4><span data-lang="en">(d) Horizontal asymptotes</span><span data-lang="zh">(d) 水平渐近线</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">As $x\to\pm\infty$, the highest-power terms dominate: (M1)</span><span data-lang="zh">当 $x\to\pm\infty$ 时，最高次项占主导：(M1)</span></p>
+      $$f(x)=\frac{x^{2}-4}{x^{2}+4}=\frac{1-4/x^{2}}{1+4/x^{2}}\longrightarrow\frac{1}{1}=1.$$
+      <p><span data-lang="en">The horizontal asymptote is $y=1$. (A1) To confirm $f$ never equals $1$: set $\dfrac{x^{2}-4}{x^{2}+4}=1$ gives $x^{2}-4=x^{2}+4$, i.e. $-4=4$, a contradiction. So $f(x)<1$ for all $x$, and $f$ only approaches $y=1$.</span><span data-lang="zh">水平渐近线为 $y=1$。(A1) 验证 $f$ 从不等于 $1$：令 $\dfrac{x^{2}-4}{x^{2}+4}=1$ 得 $x^{2}-4=x^{2}+4$，即 $-4=4$，矛盾。故对所有 $x$ 有 $f(x)<1$，$f$ 仅趋近于 $y=1$。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">The denominator $x^{2}+4$ is a prototype for "never zero": adding a positive constant to $x^{2}$ ensures positivity on all of $\mathbb{R}$, which means the quotient rule can be applied without worrying about domain restrictions. The derivative $\frac{16x}{(x^{2}+4)^{2}}$ also shows that $f$ is decreasing on $(-\infty,0)$ and increasing on $(0,\infty)$, so $(0,-1)$ is a global minimum. The function rises toward $y=1$ from below as $x\to\pm\infty$ but never reaches it: this is a strict inequality asymptote.</span><span data-lang="zh">分母 $x^{2}+4$ 是「永不为零」的典型：在 $x^{2}$ 上加一个正常数，可确保其在全体 $\mathbb{R}$ 上为正，因此可直接应用商法则而无需担心定义域限制。导数 $\frac{16x}{(x^{2}+4)^{2}}$ 还表明 $f$ 在 $(-\infty,0)$ 上递减，在 $(0,\infty)$ 上递增，故 $(0,-1)$ 是全局最小值点。函数从下方趋向 $y=1$，但永远不能到达：这是严格不等式型渐近线。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">combining all rules: tangent line and common pitfalls</span><span data-lang="zh">综合所有法则：切线与常见错误</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt">For $G(x)=\frac{(x^{2}+1)^{3}}{x^{3}-8}$ ($x\ne 2$): (a) find $G'(x)$; (b) find $G(3)$, $G'(3)$, and the tangent line at $x=3$; (c) refute the claim that $G'$ can never be negative; (d) identify the two rules misapplied in $G'(x)=\frac{3(x^{2}+1)^{2}}{3x^{2}}$.</p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $G'(x)=\dfrac{3x(x^{2}+1)^{2}(x^{3}-x-16)}{(x^{3}-8)^{2}}$ &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">tangent:</span><span data-lang="zh">切线：</span> $y=\dfrac{7200}{361}x-\dfrac{2600}{361}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $G'(1)<0$ &nbsp;·&nbsp; <span class="ans">(d)</span> <span data-lang="en">quotient rule omitted; chain rule applied only to numerator</span><span data-lang="zh">商法则被省略；链式法则仅用于分子</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Quotient rule with chain rule on the numerator</span><span data-lang="zh">(a) 分子使用链式法则的商法则</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Let $N=(x^{2}+1)^{3}$ and $D=x^{3}-8$. Chain rule on $N$: $N'=3(x^{2}+1)^{2}\cdot 2x=6x(x^{2}+1)^{2}$. $D'=3x^{2}$. (M1)</span><span data-lang="zh">令 $N=(x^{2}+1)^{3}$，$D=x^{3}-8$。对 $N$ 应用链式法则：$N'=3(x^{2}+1)^{2}\cdot 2x=6x(x^{2}+1)^{2}$。$D'=3x^{2}$。(M1)</span></p>
+      <p><span data-lang="en">Quotient rule: (M1)</span><span data-lang="zh">商法则：(M1)</span></p>
+      $$G'(x)=\frac{6x(x^{2}+1)^{2}(x^{3}-8)-(x^{2}+1)^{3}\cdot 3x^{2}}{(x^{3}-8)^{2}}.$$
+      <p><span data-lang="en">Factor $(x^{2}+1)^{2}$ from the numerator:</span><span data-lang="zh">从分子中提取 $(x^{2}+1)^{2}$：</span></p>
+      $$G'(x)=\frac{(x^{2}+1)^{2}\!\left[6x(x^{3}-8)-3x^{2}(x^{2}+1)\right]}{(x^{3}-8)^{2}}.$$
+      <p><span data-lang="en">Expand the bracket: $6x^{4}-48x-3x^{4}-3x^{2}=3x^{4}-3x^{2}-48x=3x(x^{3}-x-16)$. (A1)</span><span data-lang="zh">展开括号：$6x^{4}-48x-3x^{4}-3x^{2}=3x^{4}-3x^{2}-48x=3x(x^{3}-x-16)$。(A1)</span></p>
+      $$G'(x)=\frac{3x(x^{2}+1)^{2}(x^{3}-x-16)}{(x^{3}-8)^{2}}.$$
+      <h4><span data-lang="en">(b) Point and tangent line at $x=3$</span><span data-lang="zh">(b) $x=3$ 处的点与切线</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$G(3)=\dfrac{(9+1)^{3}}{27-8}=\dfrac{1000}{19}$. For $G'(3)$: numerator factors at $x=3$: (M1)</span><span data-lang="zh">$G(3)=\dfrac{(9+1)^{3}}{27-8}=\dfrac{1000}{19}$。计算 $G'(3)$：$x=3$ 处分子的各因子：(M1)</span></p>
+      <ul>
+        <li><span data-lang="en">$3x=9$</span><span data-lang="zh">$3x=9$</span></li>
+        <li><span data-lang="en">$(x^{2}+1)^{2}=(10)^{2}=100$</span><span data-lang="zh">$(x^{2}+1)^{2}=(10)^{2}=100$</span></li>
+        <li><span data-lang="en">$x^{3}-x-16=27-3-16=8$</span><span data-lang="zh">$x^{3}-x-16=27-3-16=8$</span></li>
+        <li><span data-lang="en">$(x^{3}-8)^{2}=(19)^{2}=361$</span><span data-lang="zh">$(x^{3}-8)^{2}=(19)^{2}=361$</span></li>
+      </ul>
+      $$G'(3)=\frac{9\cdot 100\cdot 8}{361}=\frac{7200}{361}. $$
+      <p><span data-lang="en">(A1) The tangent line through $\!\left(3,\dfrac{1000}{19}\right)$ with slope $\dfrac{7200}{361}$:</span><span data-lang="zh">(A1) 过点 $\!\left(3,\dfrac{1000}{19}\right)$、斜率为 $\dfrac{7200}{361}$ 的切线：</span></p>
+      $$y-\frac{1000}{19}=\frac{7200}{361}(x-3).$$
+      <p><span data-lang="en">Since $\dfrac{1000}{19}=\dfrac{19000}{361}$, this gives $y=\dfrac{7200}{361}x-\dfrac{21600}{361}+\dfrac{19000}{361}=\dfrac{7200}{361}x-\dfrac{2600}{361}$. (A1)</span><span data-lang="zh">由于 $\dfrac{1000}{19}=\dfrac{19000}{361}$，得 $y=\dfrac{7200}{361}x-\dfrac{21600}{361}+\dfrac{19000}{361}=\dfrac{7200}{361}x-\dfrac{2600}{361}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Counterexample showing $G'$ can be negative</span><span data-lang="zh">(c) 说明 $G'$ 可以为负的反例</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The sign of $G'$ is determined by the factor $3x(x^{3}-x-16)$, since $(x^{2}+1)^{2}>0$ and $(x^{3}-8)^{2}>0$ always. (M1) At $x=1$: $x^{3}-x-16=1-1-16=-16<0$, and $3x=3>0$, so $3x(x^{3}-x-16)=3\cdot(-16)=-48<0$. Therefore $G'(1)<0$. (A1) The student's error is that a positive numerator of $G$ does not imply a positive derivative of $G$; the denominator and its derivative both contribute.</span><span data-lang="zh">$G'$ 的符号由因子 $3x(x^{3}-x-16)$ 决定，因为 $(x^{2}+1)^{2}>0$ 且 $(x^{3}-8)^{2}>0$ 恒成立。(M1) 在 $x=1$ 处：$x^{3}-x-16=1-1-16=-16<0$，而 $3x=3>0$，故 $3x(x^{3}-x-16)=3\cdot(-16)=-48<0$。因此 $G'(1)<0$。(A1) 该学生的错误在于：$G$ 的分子为正并不意味着 $G$ 的导数为正；分母及其导数均参与影响导数的符号。</span></p>
+      <h4><span data-lang="en">(d) Two misapplied rules</span><span data-lang="zh">(d) 两条被误用的法则</span> <span class="marks-call">A1·A1</span></h4>
+      <p><span data-lang="en">Error 1: The student did not apply the quotient rule. They differentiated only the numerator and placed the result over the derivative of the denominator, which is not the quotient rule formula $\frac{N'D-ND'}{D^{2}}$. (A1)</span><span data-lang="zh">错误1：该学生未应用商法则。他们只对分子求导，将结果置于分母导数之上，这不是商法则公式 $\frac{N'D-ND'}{D^{2}}$。(A1)</span></p>
+      <p><span data-lang="en">Error 2: Even if the student had intended some version of "differentiate numerator over derivative of denominator," they placed $3x^{2}$ (the derivative of $x^{3}-8$) in the denominator rather than the denominator itself squared. The correct formula requires $(D)^{2}=(x^{3}-8)^{2}$ in the denominator, not $D'=3x^{2}$. (A1)</span><span data-lang="zh">错误2：即使该学生想用「分子导数除以分母导数」这种形式，他们也将 $3x^{2}$（即 $x^{3}-8$ 的导数）放在了分母，而非分母本身的平方。正确公式要求分母为 $(D)^{2}=(x^{3}-8)^{2}$，而非 $D'=3x^{2}$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">洞察。</span></strong> <span data-lang="en">Q10 combines every rule covered in the unit: chain rule inside the quotient rule, with factoring to simplify $G'$, followed by exact numerical evaluation and tangent-line geometry. Part (c) is a reminder that the sign of a function and the sign of its derivative are independent: $G$ is positive for $x>2$ (numerator always positive, denominator positive), but $G'$ can be negative there because the quotient rule mixes the function's value with both the numerator's and denominator's rates of change. Part (d) captures the two most frequent errors students make when differentiating a ratio: omitting the $-ND'$ term and confusing $D$ with $D'$ in the denominator.</span><span data-lang="zh">第10题综合了本单元所有法则：商法则中嵌套链式法则，因式分解化简 $G'$，再进行精确数值计算和切线几何。(c) 提醒我们：函数的符号与其导数的符号彼此独立。$G$ 在 $x>2$ 时为正（分子恒正，分母也正），但 $G'$ 在该范围内可以为负，因为商法则将函数值与分子和分母的变化率混合在一起。(d) 抓住了学生对商式求导时最常犯的两种错误：遗漏 $-ND'$ 项，以及在分母中混淆 $D$ 与 $D'$。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在一年级课程中遇到这一单元的难题？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约一次与鼎睿学者导师的15分钟免费咨询。我们帮助您在下次期中或期末考试前扫清障碍。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_a3_differentiation_rules__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_A3_Differentiation_Rules.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_A3_Differentiation_Rules_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit A3 Solutions</span><span data-lang="zh">大学微积分 &middot; 第A3单元解答</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">练习题 v1.0 配套解答</span></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第1至7节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

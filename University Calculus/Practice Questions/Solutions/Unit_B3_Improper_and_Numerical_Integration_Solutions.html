@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit B3: Improper and Numerical Integration | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-B3  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B3_Improper_and_Numerical_Integration_Solutions.html">
+<meta name="description" content="Worked solutions for Unit B3: Improper and Numerical Integration in University Calculus. Step-by-step limit evaluations, comparison proofs, p-integral derivations, and Simpson error bounds from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit B3: Improper and Numerical Integration | Solutions">
+<meta property="og:description" content="Worked solutions for Unit B3: Improper and Numerical Integration in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B3_Improper_and_Numerical_Integration_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit B3: Improper and Numerical Integration | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit B3: Improper and Numerical Integration in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,serif,'PingFang SC','Microsoft YaHei';font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit B3: Improper and Numerical Integration | Solutions",
+  "description": "Worked solutions for Unit B3: Improper and Numerical Integration in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B3_Improper_and_Numerical_Integration_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit B3 &middot; Solutions</span><span data-lang="zh">第B3单元 &middot; 详解</span></div>
+<h1 class="chapter-title"><span data-lang="en">Improper and Numerical Integration &middot; Solutions</span><span data-lang="zh">反常积分与数值积分 &middot; 详解</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题配套详解</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: Type I and II improper integrals, p-integrals, comparison and limit-comparison tests, trapezoidal rule, Simpson's rule, error bounds</span><span data-lang="zh">第 <b>1 至 7</b> 节：I型与II型反常积分、p-积分、比较判别法与极限比较判别法、梯形法则、辛普森法则、误差估计</span><span class="scope">CALC II</span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to</span><span data-lang="zh">配套练习：</span> <code style="font-style:normal;">Unit_B3_Improper_and_Numerical_Integration_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; <span data-lang="en">method walk with</span><span data-lang="zh">评分标注：</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method</span><span data-lang="zh">方法</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer</span><span data-lang="zh">答案</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning</span><span data-lang="zh">推理</span> / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">B1</span> <span data-lang="en">independent mark callouts</span><span data-lang="zh">独立得分标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; <span data-lang="en">CORE TECHNIQUES</span><span data-lang="zh">核心技巧</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">Type I improper integrals: infinite limits of integration</span><span data-lang="zh">I型反常积分：无穷积分限</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate (a) $\int_{1}^{\infty}\frac{3}{x^{2}}\,dx$; (b) $\int_{0}^{\infty}e^{-3x}\,dx$; (c) $\int_{2}^{\infty}\frac{1}{x\ln x}\,dx$.</span><span data-lang="zh">求值：(a) $\int_{1}^{\infty}\frac{3}{x^{2}}\,dx$；(b) $\int_{0}^{\infty}e^{-3x}\,dx$；(c) $\int_{2}^{\infty}\frac{1}{x\ln x}\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $3$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\tfrac{1}{3}$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">diverges</span><span data-lang="zh">发散</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Type I with a power integrand</span><span data-lang="zh">(a) I型：幂函数被积函数</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Write as a limit, antidifferentiate, then evaluate: (M1)</span><span data-lang="zh">先写成极限，求原函数，再求值：(M1)</span></p>
+      $$ \int_{1}^{\infty}\frac{3}{x^{2}}\,dx = \lim_{b\to\infty}\int_{1}^{b}3x^{-2}\,dx = \lim_{b\to\infty}\Big[-\frac{3}{x}\Big]_{1}^{b} = \lim_{b\to\infty}\!\left(-\frac{3}{b}+3\right)=3. $$
+      <p><span data-lang="en">The integral converges to $3$. (A1)</span><span data-lang="zh">积分收敛，值为 $3$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Type I with an exponential integrand</span><span data-lang="zh">(b) I型：指数函数被积函数</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Introduce the upper limit $b$ and antidifferentiate $e^{-3x}$: (M1)</span><span data-lang="zh">引入上限 $b$，对 $e^{-3x}$ 求原函数：(M1)</span></p>
+      $$ \int_{0}^{\infty}e^{-3x}\,dx = \lim_{b\to\infty}\Big[-\frac{1}{3}e^{-3x}\Big]_{0}^{b} = \lim_{b\to\infty}\!\left(-\frac{1}{3}e^{-3b}+\frac{1}{3}\right). $$
+      <p><span data-lang="en">(M1) Since $e^{-3b}\to 0$ as $b\to\infty$, the limit is $\dfrac{1}{3}$. (A1)</span><span data-lang="zh">(M1) 因为 $b\to\infty$ 时 $e^{-3b}\to 0$，极限为 $\dfrac{1}{3}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Type I: substitution reveals divergence</span><span data-lang="zh">(c) I型：换元法揭示发散</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Let $u=\ln x$, $du=dx/x$. When $x=2$, $u=\ln 2$; as $x\to\infty$, $u\to\infty$. (M1)</span><span data-lang="zh">令 $u=\ln x$，$du=dx/x$。当 $x=2$ 时 $u=\ln 2$；当 $x\to\infty$ 时 $u\to\infty$。(M1)</span></p>
+      $$ \int_{2}^{\infty}\frac{dx}{x\ln x} = \lim_{b\to\infty}\int_{\ln 2}^{\ln b}\frac{du}{u} = \lim_{b\to\infty}\Big[\ln u\Big]_{\ln 2}^{\ln b} = \lim_{b\to\infty}\!\big(\ln(\ln b)-\ln(\ln 2)\big). $$
+      <p><span data-lang="en">(M1) Since $\ln(\ln b)\to\infty$, the integral diverges. (A1) The result mirrors $\int_1^\infty x^{-1}\,dx$: the factor $\ln x$ grows too slowly to restore convergence.</span><span data-lang="zh">(M1) 因为 $\ln(\ln b)\to\infty$，积分发散。(A1) 结果与 $\int_1^\infty x^{-1}\,dx$ 类似：因子 $\ln x$ 增长太慢，不足以恢复收敛性。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">Always write the limit explicitly before evaluating, even when the answer seems obvious. In (b), checking $e^{-3b}\to 0$ is the entire convergence argument: a positive exponent in $e^{-\alpha b}$ ($\alpha>0$) is what drives the exponential to zero, so convergence depends on the sign of $\alpha$. In (c), the substitution $u=\ln x$ converts the integral into $\int du/u$, whose divergence is already known from the standard $p=1$ case.</span><span data-lang="zh">即使答案看似显然，也要在求值前明确写出极限。在(b)中，验证 $e^{-3b}\to 0$ 就是完整的收敛论证：$e^{-\alpha b}$（$\alpha>0$）中正指数驱使指数函数趋于零，故收敛性取决于 $\alpha$ 的符号。在(c)中，换元 $u=\ln x$ 将积分转化为 $\int du/u$，其发散性已由标准 $p=1$ 情形所知。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">Type II improper integrals: unbounded integrands</span><span data-lang="zh">II型反常积分：无界被积函数</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate (a) $\int_{0}^{1}x^{-1/3}\,dx$; (b) $\int_{0}^{4}(4-x)^{-1/2}\,dx$; (c) $\int_{0}^{1}\frac{\ln x}{\sqrt{x}}\,dx$.</span><span data-lang="zh">求值：(a) $\int_{0}^{1}x^{-1/3}\,dx$；(b) $\int_{0}^{4}(4-x)^{-1/2}\,dx$；(c) $\int_{0}^{1}\frac{\ln x}{\sqrt{x}}\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\tfrac{3}{2}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $4$ &nbsp;·&nbsp; <span class="ans">(c)</span> $-4$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Singularity at the lower endpoint</span><span data-lang="zh">(a) 下端点处的奇点</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The integrand $x^{-1/3}$ is unbounded as $x\to 0^{+}$; replace the lower limit by $t\to 0^{+}$: (M1)</span><span data-lang="zh">被积函数 $x^{-1/3}$ 在 $x\to 0^{+}$ 时无界，将下限替换为 $t\to 0^{+}$：(M1)</span></p>
+      $$ \int_{0}^{1}x^{-1/3}\,dx = \lim_{t\to 0^{+}}\Big[\frac{3}{2}x^{2/3}\Big]_{t}^{1} = \lim_{t\to 0^{+}}\!\left(\frac{3}{2}-\frac{3}{2}t^{2/3}\right)=\frac{3}{2}. $$
+      <p><span data-lang="en">Converges to $\tfrac{3}{2}$. (A1) This is the $p=\tfrac{1}{3}<1$ case: the singularity is mild enough.</span><span data-lang="zh">收敛，值为 $\tfrac{3}{2}$。(A1) 这是 $p=\tfrac{1}{3}<1$ 的情形：奇点足够温和。</span></p>
+      <h4><span data-lang="en">(b) Singularity at the upper endpoint</span><span data-lang="zh">(b) 上端点处的奇点</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">The integrand $(4-x)^{-1/2}$ is unbounded as $x\to 4^{-}$; introduce $t\to 4^{-}$: (M1)</span><span data-lang="zh">被积函数 $(4-x)^{-1/2}$ 在 $x\to 4^{-}$ 时无界，引入 $t\to 4^{-}$：(M1)</span></p>
+      $$ \int_{0}^{4}(4-x)^{-1/2}\,dx = \lim_{t\to 4^{-}}\Big[-2\sqrt{4-x}\Big]_{0}^{t} = \lim_{t\to 4^{-}}\!\left(-2\sqrt{4-t}+2\sqrt{4}\right). $$
+      <p><span data-lang="en">(M1) As $t\to 4^{-}$, $\sqrt{4-t}\to 0$, so the limit is $0+4=4$. (A1)</span><span data-lang="zh">(M1) 当 $t\to 4^{-}$ 时，$\sqrt{4-t}\to 0$，故极限为 $0+4=4$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Singularity at the lower endpoint: integration by parts</span><span data-lang="zh">(c) 下端点处的奇点：分部积分法</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Both $\ln x\to -\infty$ and $x^{-1/2}\to\infty$ as $x\to 0^{+}$, so the singularity is at $x=0$. Write the integral as $\lim_{t\to 0^{+}}\int_t^1 x^{-1/2}\ln x\,dx$, then integrate by parts with $u=\ln x$, $dv=x^{-1/2}\,dx$, giving $du=dx/x$ and $v=2x^{1/2}$: (M1)</span><span data-lang="zh">当 $x\to 0^{+}$ 时 $\ln x\to -\infty$ 且 $x^{-1/2}\to\infty$，故奇点在 $x=0$。将积分写为 $\lim_{t\to 0^{+}}\int_t^1 x^{-1/2}\ln x\,dx$，然后用分部积分法，令 $u=\ln x$，$dv=x^{-1/2}\,dx$，得 $du=dx/x$，$v=2x^{1/2}$：(M1)</span></p>
+      $$ \int_{t}^{1}x^{-1/2}\ln x\,dx = \Big[2x^{1/2}\ln x\Big]_{t}^{1}-\int_{t}^{1}2x^{1/2}\cdot\frac{1}{x}\,dx = \Big(0-2t^{1/2}\ln t\Big)-\Big[4x^{1/2}\Big]_{t}^{1}. $$
+      <p><span data-lang="en">(M1) As $t\to 0^{+}$: $t^{1/2}\ln t\to 0$ (apply L'Hopital: $\ln t/(t^{-1/2})\to 0$) and $4t^{1/2}\to 0$. So the limit is</span><span data-lang="zh">(M1) 当 $t\to 0^{+}$ 时：$t^{1/2}\ln t\to 0$（用洛必达法则：$\ln t/(t^{-1/2})\to 0$）且 $4t^{1/2}\to 0$。故极限为</span></p>
+      $$ \lim_{t\to 0^{+}}\!\big(-2t^{1/2}\ln t - 4 + 4t^{1/2}\big) = 0 - 4 + 0 = -4. $$
+      <p><span data-lang="en">Converges to $-4$. (A1) The negative value is expected: $\ln x<0$ on $(0,1)$.</span><span data-lang="zh">收敛，值为 $-4$。(A1) 负值在意料之中：$\ln x<0$ 在 $(0,1)$ 上成立。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">For Type II integrals the protocol is identical to Type I: replace the problematic endpoint by a variable, antidifferentiate, then take the one-sided limit. In (c) a product singularity ($\ln x$ times a power) calls for integration by parts first, reducing it to the boundary term $t^{1/2}\ln t$, which vanishes because the power $t^{1/2}$ beats the logarithm.</span><span data-lang="zh">II型反常积分的处理方法与I型完全相同：将有问题的端点替换为变量，求原函数，再取单侧极限。在(c)中，乘积型奇点（$\ln x$ 乘以幂函数）需要先用分部积分法，将其化为边界项 $t^{1/2}\ln t$，该项趋于零是因为幂函数 $t^{1/2}$ 比对数函数收敛更快。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">p-integral convergence and divergence</span><span data-lang="zh">p-积分的收敛与发散</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Determine whether (a) $\int_{1}^{\infty}x^{-3/4}\,dx$; (b) $\int_{0}^{1}x^{-2/3}\,dx$; (c) $\int_{1}^{\infty}x^{-5/4}\,dx$ converge or diverge.</span><span data-lang="zh">判断以下各积分是收敛还是发散：(a) $\int_{1}^{\infty}x^{-3/4}\,dx$；(b) $\int_{0}^{1}x^{-2/3}\,dx$；(c) $\int_{1}^{\infty}x^{-5/4}\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">diverges</span><span data-lang="zh">发散</span> ($p=\tfrac{3}{4}<1$) &nbsp;·&nbsp; <span class="ans">(b)</span> $3$ ($p=\tfrac{2}{3}<1$) &nbsp;·&nbsp; <span class="ans">(c)</span> $4$ ($p=\tfrac{5}{4}>1$)</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Type I p-integral, $p=\tfrac{3}{4}$</span><span data-lang="zh">(a) I型p-积分，$p=\tfrac{3}{4}$</span> <span class="marks-call">A1·R1</span></h4>
+      <p><span data-lang="en">The p-integral $\int_{1}^{\infty}x^{-p}\,dx$ converges if and only if $p>1$. Here $p=\tfrac{3}{4}<1$, so the integral <em>diverges</em>. (A1) This can be confirmed by computing $\lim_{b\to\infty}[x^{1/4}/(1/4)]_1^b = \lim_{b\to\infty} 4b^{1/4}-4 = \infty$. (R1)</span><span data-lang="zh">p-积分 $\int_{1}^{\infty}x^{-p}\,dx$ 收敛当且仅当 $p>1$。此处 $p=\tfrac{3}{4}<1$，故积分<em>发散</em>。(A1) 可通过计算 $\lim_{b\to\infty}[x^{1/4}/(1/4)]_1^b = \lim_{b\to\infty} 4b^{1/4}-4 = \infty$ 加以验证。(R1)</span></p>
+      <h4><span data-lang="en">(b) Type II p-integral at $x=0$, $p=\tfrac{2}{3}$</span><span data-lang="zh">(b) $x=0$ 处的II型p-积分，$p=\tfrac{2}{3}$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The integral $\int_{0}^{1}x^{-p}\,dx$ (singularity at $x=0$) converges if and only if $p<1$. Here $p=\tfrac{2}{3}<1$, so it converges. (M1) The value is</span><span data-lang="zh">积分 $\int_{0}^{1}x^{-p}\,dx$（奇点在 $x=0$）收敛当且仅当 $p<1$。此处 $p=\tfrac{2}{3}<1$，故收敛。(M1) 其值为</span></p>
+      $$ \int_{0}^{1}x^{-2/3}\,dx = \lim_{t\to 0^{+}}\Big[3x^{1/3}\Big]_{t}^{1} = 3 - \lim_{t\to 0^{+}}3t^{1/3} = 3. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(c) Type I p-integral, $p=\tfrac{5}{4}$</span><span data-lang="zh">(c) I型p-积分，$p=\tfrac{5}{4}$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Since $p=\tfrac{5}{4}>1$, the integral converges. (M1) The value is $\dfrac{1}{p-1}=\dfrac{1}{1/4}=4$:</span><span data-lang="zh">因为 $p=\tfrac{5}{4}>1$，积分收敛。(M1) 其值为 $\dfrac{1}{p-1}=\dfrac{1}{1/4}=4$：</span></p>
+      $$ \int_{1}^{\infty}x^{-5/4}\,dx = \lim_{b\to\infty}\Big[\frac{x^{-1/4}}{-1/4}\Big]_{1}^{b} = \lim_{b\to\infty}\!\left(-4b^{-1/4}+4\right)=4. $$
+      <p>(A1)</p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">The p-integral threshold is $p=1$ for both flavours. For $\int_1^\infty x^{-p}$, the power must beat the linear growth rate ($p>1$); for $\int_0^1 x^{-p}$, the singularity must be mild enough ($p<1$). The value $\frac{1}{p-1}$ for convergent Type I and $\frac{1}{1-p}$ for convergent Type II are not separate formulas: both come from the same antiderivative $x^{1-p}/(1-p)$, evaluated in the appropriate direction.</span><span data-lang="zh">两种类型的p-积分临界值均为 $p=1$。对于 $\int_1^\infty x^{-p}$，幂次必须大于线性增长率（$p>1$）；对于 $\int_0^1 x^{-p}$，奇点必须足够温和（$p<1$）。收敛的I型值 $\frac{1}{p-1}$ 与收敛的II型值 $\frac{1}{1-p}$ 并非两个独立公式：二者均来自同一原函数 $x^{1-p}/(1-p)$，只是在不同方向求值。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">trapezoidal rule and Simpson's rule</span><span data-lang="zh">梯形法则与辛普森法则</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Approximate $\int_{0}^{2}e^{-x^{2}}\,dx$ using (a) the trapezoidal rule with $n=4$; (b) Simpson's rule with $n=4$.</span><span data-lang="zh">用以下方法近似计算 $\int_{0}^{2}e^{-x^{2}}\,dx$：(a) $n=4$ 的梯形法则；(b) $n=4$ 的辛普森法则。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $T_{4}\approx 0.8806$ &nbsp;·&nbsp; <span class="ans">(b)</span> $S_{4}\approx 0.8818$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Trapezoidal rule, $n=4$</span><span data-lang="zh">(a) 梯形法则，$n=4$</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Step size $h=\frac{2-0}{4}=0.5$. Nodes and function values ($f(x)=e^{-x^{2}}$): (M1)</span><span data-lang="zh">步长 $h=\frac{2-0}{4}=0.5$。节点及函数值（$f(x)=e^{-x^{2}}$）：(M1)</span></p>
+      <p>$x_{0}=0$: $f_{0}=e^{0}=1.0000$; $\ x_{1}=0.5$: $f_{1}=e^{-0.25}\approx 0.7788$; $\ x_{2}=1$: $f_{2}=e^{-1}\approx 0.3679$; $\ x_{3}=1.5$: $f_{3}=e^{-2.25}\approx 0.1054$; $\ x_{4}=2$: $f_{4}=e^{-4}\approx 0.0183$.</p>
+      $$ T_{4}=\frac{h}{2}\big[f_{0}+2f_{1}+2f_{2}+2f_{3}+f_{4}\big] = \frac{0.5}{2}\big[1.0000+2(0.7788)+2(0.3679)+2(0.1054)+0.0183\big]. $$
+      <p>(M1)</p>
+      $$ = 0.25\times\big[1.0000+1.5576+0.7358+0.2108+0.0183\big] = 0.25\times 3.5225 \approx 0.8806. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(b) Simpson's rule, $n=4$</span><span data-lang="zh">(b) 辛普森法则，$n=4$</span> <span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Same nodes and function values as above. Simpson's rule weights: $1,4,2,4,1$. (M1)</span><span data-lang="zh">节点和函数值同上。辛普森法则权重：$1,4,2,4,1$。(M1)</span></p>
+      $$ S_{4}=\frac{h}{3}\big[f_{0}+4f_{1}+2f_{2}+4f_{3}+f_{4}\big] = \frac{0.5}{3}\big[1.0000+4(0.7788)+2(0.3679)+4(0.1054)+0.0183\big]. $$
+      <p>(M1)</p>
+      $$ = \frac{1}{6}\big[1.0000+3.1152+0.7358+0.4216+0.0183\big] = \frac{1}{6}\times 5.2909 \approx 0.8818. $$
+      <p><span data-lang="en">(A1) The true value is $\approx 0.8821$, so Simpson's rule is closer despite using the same five evaluations.</span><span data-lang="zh">(A1) 真实值约为 $0.8821$，故辛普森法则在使用相同五个函数值的情况下更接近真值。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">Both rules use the same $n+1$ function evaluations; they differ only in the weights. Trapezoidal weights are $1,2,2,\ldots,2,1$ (endpoints halved); Simpson weights are $1,4,2,4,2,\ldots,4,1$ (alternating 4 and 2 in the interior). The extra accuracy of Simpson's rule comes from fitting parabolas rather than line segments, which captures the curvature of $e^{-x^2}$ much better at the cost of requiring $n$ to be even.</span><span data-lang="zh">两种法则使用相同的 $n+1$ 个函数值，区别仅在于权重。梯形法则权重为 $1,2,2,\ldots,2,1$（端点权重减半）；辛普森法则权重为 $1,4,2,4,2,\ldots,4,1$（内部交替取4和2）。辛普森法则精度更高，原因在于用抛物线而非线段拟合，能更好地捕捉 $e^{-x^2}$ 的曲率，代价是要求 $n$ 为偶数。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; <span data-lang="en">DEFINITIONS AND PROOF</span><span data-lang="zh">定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">deriving the p-integral convergence threshold</span><span data-lang="zh">推导p-积分收敛阈值</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Show $I_{A}(p)=\int_{1}^{\infty}x^{-p}\,dx$ converges iff $p>1$; (b) show $I_{B}(p)=\int_{0}^{1}x^{-p}\,dx$ converges iff $p<1$; (c) confirm or correct the claim that the two results are "mirror images with the sign of $p-1$ flipped."</span><span data-lang="zh">(a) 证明 $I_{A}(p)=\int_{1}^{\infty}x^{-p}\,dx$ 收敛当且仅当 $p>1$；(b) 证明 $I_{B}(p)=\int_{0}^{1}x^{-p}\,dx$ 收敛当且仅当 $p<1$；(c) 确认或纠正"两个结论互为镜像，只是 $p-1$ 的符号相反"这一说法。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $I_{A}=\tfrac{1}{p-1}$ <span data-lang="en">for $p>1$; diverges otherwise</span><span data-lang="zh">当 $p>1$ 时成立；否则发散</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $I_{B}=\tfrac{1}{1-p}$ <span data-lang="en">for $p<1$; diverges otherwise</span><span data-lang="zh">当 $p<1$ 时成立；否则发散</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">the claim is correct</span><span data-lang="zh">说法正确</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Type I p-integral: three cases</span><span data-lang="zh">(a) I型p-积分：三种情形</span> <span class="marks-call">M1·M1·A1·M1·A1</span></h4>
+      <p><em><span data-lang="en">Case $p\ne 1$.</span><span data-lang="zh">情形 $p\ne 1$。</span></em> <span data-lang="en">Compute the finite-upper-limit integral first, then take $b\to\infty$: (M1)</span><span data-lang="zh">先计算有限上限的积分，再令 $b\to\infty$：(M1)</span></p>
+      $$ \int_{1}^{b}x^{-p}\,dx = \left[\frac{x^{1-p}}{1-p}\right]_{1}^{b} = \frac{b^{1-p}-1}{1-p}. $$
+      <p><span data-lang="en">If $p>1$: then $1-p<0$, so $b^{1-p}=b^{-(p-1)}\to 0$ as $b\to\infty$. (M1) Therefore</span><span data-lang="zh">若 $p>1$：则 $1-p<0$，故 $b\to\infty$ 时 $b^{1-p}=b^{-(p-1)}\to 0$。(M1) 因此</span></p>
+      $$ I_{A}(p) = \lim_{b\to\infty}\frac{b^{1-p}-1}{1-p} = \frac{0-1}{1-p} = \frac{1}{p-1}. \quad\text{Converges.} $$
+      <p><span data-lang="en">(A1) If $p<1$: then $1-p>0$, so $b^{1-p}\to\infty$ and the limit is $+\infty$. (M1) Diverges.</span><span data-lang="zh">(A1) 若 $p<1$：则 $1-p>0$，故 $b^{1-p}\to\infty$，极限为 $+\infty$。(M1) 发散。</span></p>
+      <p><em><span data-lang="en">Case $p=1$.</span><span data-lang="zh">情形 $p=1$。</span></em> $\int_1^b x^{-1}\,dx = \ln b \to\infty$. <span data-lang="en">Diverges. (A1)</span><span data-lang="zh">发散。(A1)</span></p>
+      <p><span data-lang="en">Conclusion: $I_{A}(p)$ converges if and only if $p>1$, with value $\tfrac{1}{p-1}$.</span><span data-lang="zh">结论：$I_{A}(p)$ 收敛当且仅当 $p>1$，其值为 $\tfrac{1}{p-1}$。</span></p>
+      <h4><span data-lang="en">(b) Type II p-integral at $x=0$: parallel argument</span><span data-lang="zh">(b) $x=0$ 处的II型p-积分：类似论证</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">The integrand $x^{-p}$ is unbounded at $x=0$; replace the lower limit by $t\to 0^{+}$: (M1)</span><span data-lang="zh">被积函数 $x^{-p}$ 在 $x=0$ 处无界，将下限替换为 $t\to 0^{+}$：(M1)</span></p>
+      $$ \int_{t}^{1}x^{-p}\,dx = \left[\frac{x^{1-p}}{1-p}\right]_{t}^{1} = \frac{1-t^{1-p}}{1-p} \quad (p\ne 1). $$
+      <p><span data-lang="en">If $p<1$: $1-p>0$, so $t^{1-p}\to 0^{+}$ as $t\to 0^{+}$. Limit $= \tfrac{1}{1-p}$. Converges. (A1)</span><span data-lang="zh">若 $p<1$：$1-p>0$，故 $t\to 0^{+}$ 时 $t^{1-p}\to 0^{+}$。极限 $= \tfrac{1}{1-p}$。收敛。(A1)</span></p>
+      <p><span data-lang="en">If $p>1$: $1-p<0$, so $t^{1-p}=t^{-(p-1)}\to\infty$. Diverges. If $p=1$: $\int_t^1 x^{-1}\,dx=-\ln t\to\infty$. Diverges. (R1)</span><span data-lang="zh">若 $p>1$：$1-p<0$，故 $t^{1-p}=t^{-(p-1)}\to\infty$。发散。若 $p=1$：$\int_t^1 x^{-1}\,dx=-\ln t\to\infty$。发散。(R1)</span></p>
+      <p><span data-lang="en">Conclusion: $I_{B}(p)$ converges if and only if $p<1$, with value $\tfrac{1}{1-p}$.</span><span data-lang="zh">结论：$I_{B}(p)$ 收敛当且仅当 $p<1$，其值为 $\tfrac{1}{1-p}$。</span></p>
+      <h4><span data-lang="en">(c) Confirming the mirror-image claim</span><span data-lang="zh">(c) 确认镜像关系说法</span> <span class="marks-call">A1·R1</span></h4>
+      <p><span data-lang="en">The antiderivative is $x^{1-p}/(1-p)$ in both cases, so the algebra is identical. What differs is the direction of the limit: (A1)</span><span data-lang="zh">两种情形的原函数均为 $x^{1-p}/(1-p)$，代数运算完全相同。不同之处在于极限方向：(A1)</span></p>
+      <ul>
+        <li><span data-lang="en">For $I_A$: take $b\to\infty$; convergence requires $b^{1-p}\to 0$, i.e. $1-p<0$, i.e. $p>1$.</span><span data-lang="zh">对于 $I_A$：令 $b\to\infty$；收敛要求 $b^{1-p}\to 0$，即 $1-p<0$，即 $p>1$。</span></li>
+        <li><span data-lang="en">For $I_B$: take $t\to 0^{+}$; convergence requires $t^{1-p}\to 0$, i.e. $1-p>0$, i.e. $p<1$.</span><span data-lang="zh">对于 $I_B$：令 $t\to 0^{+}$；收敛要求 $t^{1-p}\to 0$，即 $1-p>0$，即 $p<1$。</span></li>
+      </ul>
+      <p><span data-lang="en">The two conditions $p>1$ and $p<1$ are indeed mirror images across $p=1$; equivalently, one requires $p-1>0$ and the other $p-1<0$, confirming the student's claim. (R1)</span><span data-lang="zh">条件 $p>1$ 与 $p<1$ 关于 $p=1$ 确实互为镜像；等价地，一个要求 $p-1>0$，另一个要求 $p-1<0$，从而确认了该学生的说法。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">The critical value $p=1$ is the boundary that governs both the harmonic integral and the harmonic series. The power law $x^{1-p}$ either vanishes or explodes depending on the sign of $1-p$; which endpoint you evaluate it at determines which inequality on $p$ produces convergence. Remembering that the antiderivative is the same $x^{1-p}/(1-p)$ makes both results transparent.</span><span data-lang="zh">临界值 $p=1$ 是同时支配调和积分与调和级数的分界。幂次 $x^{1-p}$ 趋于零还是趋于无穷，取决于 $1-p$ 的符号；在哪个端点求值，决定了哪个关于 $p$ 的不等式产生收敛。记住原函数均为 $x^{1-p}/(1-p)$，两个结论便一目了然。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">direct and limit comparison tests for convergence</span><span data-lang="zh">收敛性的直接比较判别法与极限比较判别法</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Direct comparison: prove $\int_{1}^{\infty}\frac{dx}{x^{2}+x}$ converges; (b) limit comparison: determine whether $\int_{1}^{\infty}\frac{\sqrt{x}}{x^{2}-x+1}\,dx$ converges; (c) direct comparison: prove $\int_{0}^{1}\frac{dx}{\sqrt{x+x^{2}}}$ converges.</span><span data-lang="zh">(a) 直接比较法：证明 $\int_{1}^{\infty}\frac{dx}{x^{2}+x}$ 收敛；(b) 极限比较法：判断 $\int_{1}^{\infty}\frac{\sqrt{x}}{x^{2}-x+1}\,dx$ 是否收敛；(c) 直接比较法：证明 $\int_{0}^{1}\frac{dx}{\sqrt{x+x^{2}}}$ 收敛。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">converges (compare with $x^{-2}$)</span><span data-lang="zh">收敛（与 $x^{-2}$ 比较）</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">converges (compare with $x^{-3/2}$)</span><span data-lang="zh">收敛（与 $x^{-3/2}$ 比较）</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">converges (compare with $x^{-1/2}$)</span><span data-lang="zh">收敛（与 $x^{-1/2}$ 比较）</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Direct comparison with $x^{-2}$</span><span data-lang="zh">(a) 与 $x^{-2}$ 的直接比较</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">For all $x\ge 1$: $x^{2}+x\ge x^{2}$, so (M1)</span><span data-lang="zh">对所有 $x\ge 1$：$x^{2}+x\ge x^{2}$，故 (M1)</span></p>
+      $$ 0\le\frac{1}{x^{2}+x}\le\frac{1}{x^{2}}. $$
+      <p><span data-lang="en">The comparison integral $\int_{1}^{\infty}x^{-2}\,dx = 1$ converges (p-integral, $p=2>1$). (A1) By the direct comparison test, the smaller integral $\int_{1}^{\infty}\frac{dx}{x^{2}+x}$ also converges. (R1)</span><span data-lang="zh">比较积分 $\int_{1}^{\infty}x^{-2}\,dx = 1$ 收敛（p-积分，$p=2>1$）。(A1) 由直接比较判别法，更小的积分 $\int_{1}^{\infty}\frac{dx}{x^{2}+x}$ 也收敛。(R1)</span></p>
+      <h4><span data-lang="en">(b) Limit comparison with $x^{-3/2}$</span><span data-lang="zh">(b) 与 $x^{-3/2}$ 的极限比较</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">For large $x$, $\frac{\sqrt{x}}{x^{2}-x+1}\sim\frac{x^{1/2}}{x^{2}}=x^{-3/2}$. Compute the limit ratio with $g(x)=x^{-3/2}$: (M1)</span><span data-lang="zh">当 $x$ 较大时，$\frac{\sqrt{x}}{x^{2}-x+1}\sim\frac{x^{1/2}}{x^{2}}=x^{-3/2}$。取 $g(x)=x^{-3/2}$，计算极限比值：(M1)</span></p>
+      $$ L = \lim_{x\to\infty}\frac{\sqrt{x}/(x^{2}-x+1)}{x^{-3/2}} = \lim_{x\to\infty}\frac{x^{1/2}\cdot x^{3/2}}{x^{2}-x+1} = \lim_{x\to\infty}\frac{x^{2}}{x^{2}-x+1} = 1. $$
+      <p><span data-lang="en">(A1) Since $L=1\in(0,\infty)$ and $\int_{1}^{\infty}x^{-3/2}\,dx$ converges ($p=\tfrac{3}{2}>1$), the limit-comparison test gives convergence of the original integral. (R1)</span><span data-lang="zh">(A1) 因为 $L=1\in(0,\infty)$ 且 $\int_{1}^{\infty}x^{-3/2}\,dx$ 收敛（$p=\tfrac{3}{2}>1$），由极限比较判别法，原积分收敛。(R1)</span></p>
+      <h4><span data-lang="en">(c) Direct comparison at a finite singularity</span><span data-lang="zh">(c) 有限奇点处的直接比较</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">For $x\in(0,1]$: $x+x^{2}=x(1+x)\ge x\cdot 1 = x$, so $\sqrt{x+x^{2}}\ge\sqrt{x}$, hence (M1)</span><span data-lang="zh">对 $x\in(0,1]$：$x+x^{2}=x(1+x)\ge x\cdot 1 = x$，故 $\sqrt{x+x^{2}}\ge\sqrt{x}$，从而 (M1)</span></p>
+      $$ 0\le\frac{1}{\sqrt{x+x^{2}}}\le\frac{1}{\sqrt{x}}=x^{-1/2}. $$
+      <p><span data-lang="en">The integral $\int_{0}^{1}x^{-1/2}\,dx=2$ converges ($p=\tfrac{1}{2}<1$). By the direct comparison test, $\int_{0}^{1}\frac{dx}{\sqrt{x+x^{2}}}$ converges. (A1)</span><span data-lang="zh">积分 $\int_{0}^{1}x^{-1/2}\,dx=2$ 收敛（$p=\tfrac{1}{2}<1$）。由直接比较判别法，$\int_{0}^{1}\frac{dx}{\sqrt{x+x^{2}}}$ 收敛。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">Direct comparison requires an explicit inequality that you can verify on the whole interval. Limit comparison is more flexible: you only need to match the leading-order behavior near the trouble spot (here, $x\to\infty$). The key step in (b) is identifying the leading power $x^{-3/2}$ correctly (numerator degree $\tfrac{1}{2}$ minus denominator degree $2$ gives exponent $\tfrac{1}{2}-2=-\tfrac{3}{2}$), then confirming the ratio limit is finite and positive.</span><span data-lang="zh">直接比较法要求给出可在整个区间上验证的显式不等式。极限比较法更灵活：只需在问题点（此处为 $x\to\infty$）附近匹配主项行为。(b) 的关键步骤是正确识别主项幂次 $x^{-3/2}$（分子次数 $\tfrac{1}{2}$ 减分母次数 $2$ 得指数 $\tfrac{1}{2}-2=-\tfrac{3}{2}$），再确认比值极限有限且为正。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">doubly-improper integral: splitting at an interior singularity</span><span data-lang="zh">双重反常积分：在内部奇点处拆分</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider $J=\int_{-1}^{1}x^{-2/3}\,dx$: (a) explain why $J$ cannot be a single Riemann integral and write it as a sum of limits; (b) evaluate each part and discuss the naive evaluation.</span><span data-lang="zh">考虑 $J=\int_{-1}^{1}x^{-2/3}\,dx$：(a) 解释为何 $J$ 不能作为单一黎曼积分求值，并将其写成两个极限之和；(b) 分别求各部分的值，并讨论简单直接求值的问题。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">singularity at $x=0$ (interior); split at $0$</span><span data-lang="zh">内部奇点在 $x=0$，在 $0$ 处拆分</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $J=6$; <span data-lang="en">naive formula accidentally gives $6$ but is not a valid argument</span><span data-lang="zh">简单代入公式碰巧得 $6$，但论证无效</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Identifying and splitting the impropriety</span><span data-lang="zh">(a) 识别并拆分反常之处</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">The integrand $x^{-2/3}=(x^{2})^{-1/3}$ is defined (and positive) for all $x\ne 0$, but it is unbounded as $x\to 0$: $x^{-2/3}\to\infty$. Since $x=0$ lies in the interior of $[-1,1]$, the integrand is not bounded on the integration interval, so $J$ is not a Riemann integral. (M1)</span><span data-lang="zh">被积函数 $x^{-2/3}=(x^{2})^{-1/3}$ 对所有 $x\ne 0$ 有定义（且为正），但当 $x\to 0$ 时无界：$x^{-2/3}\to\infty$。由于 $x=0$ 位于 $[-1,1]$ 的内部，被积函数在积分区间上无界，故 $J$ 不是黎曼积分。(M1)</span></p>
+      <p><span data-lang="en">We split at the singularity: (A1)</span><span data-lang="zh">在奇点处拆分：(A1)</span></p>
+      $$ J = \lim_{s\to 0^{-}}\int_{-1}^{s}x^{-2/3}\,dx + \lim_{t\to 0^{+}}\int_{t}^{1}x^{-2/3}\,dx. $$
+      <p><span data-lang="en">Both limits must exist independently; if either diverges, $J$ is undefined. (R1)</span><span data-lang="zh">两个极限必须独立存在；若任一发散，则 $J$ 无定义。(R1)</span></p>
+      <h4><span data-lang="en">(b) Evaluating each part and the naive trap</span><span data-lang="zh">(b) 分别求各部分及简单求值的陷阱</span> <span class="marks-call">M1·M1·A1·M1·A1</span></h4>
+      <p><em><span data-lang="en">Right piece.</span><span data-lang="zh">右段。</span></em> <span data-lang="en">Antiderivative of $x^{-2/3}$ is $3x^{1/3}$. (M1)</span><span data-lang="zh">$x^{-2/3}$ 的原函数为 $3x^{1/3}$。(M1)</span></p>
+      $$ \lim_{t\to 0^{+}}\Big[3x^{1/3}\Big]_{t}^{1} = 3(1)-\lim_{t\to 0^{+}}3t^{1/3} = 3-0 = 3. $$
+      <p><em><span data-lang="en">Left piece.</span><span data-lang="zh">左段。</span></em> <span data-lang="en">For $x\in(-1,0)$, use the real cube-root interpretation: $x^{2/3}=(x^2)^{1/3}$, and the antiderivative remains $3x^{1/3}$ (real cube root). (M1) Substitute $u=-x$ to confirm: $\int_{-1}^s x^{-2/3}\,dx = \int_1^{-s} u^{-2/3}\,du = [3u^{1/3}]_{-s}^1$... alternatively, evaluate directly:</span><span data-lang="zh">对 $x\in(-1,0)$，使用实数立方根诠释：$x^{2/3}=(x^2)^{1/3}$，原函数仍为 $3x^{1/3}$（实数立方根）。(M1) 令 $u=-x$ 验证：$\int_{-1}^s x^{-2/3}\,dx = \int_1^{-s} u^{-2/3}\,du = [3u^{1/3}]_{-s}^1$...亦可直接求值：</span></p>
+      $$ \lim_{s\to 0^{-}}\Big[3x^{1/3}\Big]_{-1}^{s} = \lim_{s\to 0^{-}}\!\big(3s^{1/3}-3(-1)^{1/3}\big) = 0-3(-1)=3. $$
+      <p><span data-lang="en">(A1) Therefore $J=3+3=6$.</span><span data-lang="zh">(A1) 故 $J=3+3=6$。</span></p>
+      <p><em><span data-lang="en">Naive evaluation.</span><span data-lang="zh">简单求值的问题。</span></em> <span data-lang="en">If a student writes $[3x^{1/3}]_{-1}^{1}=3(1)-3(-1)=6$ without splitting, the answer happens to agree here because $x^{-2/3}$ is an even function and both pieces converge. (M1) But this is a coincidence, not a valid argument. For the integral $\int_{-1}^{1}x^{-2}\,dx$ (a similar interior singularity), the integrand is also positive and even, but $\int_0^1 x^{-2}\,dx$ diverges ($p=2>1$), so the integral is undefined; the naive formula $[-x^{-1}]_{-1}^{1}=(-1)-(1)=-2$ produces a nonsensical negative answer for a positive integrand. (A1)</span><span data-lang="zh">若学生不拆分而直接写 $[3x^{1/3}]_{-1}^{1}=3(1)-3(-1)=6$，此处答案碰巧一致，原因在于 $x^{-2/3}$ 是偶函数且两段均收敛。(M1) 但这只是巧合，并非有效论证。对于积分 $\int_{-1}^{1}x^{-2}\,dx$（类似的内部奇点），被积函数同样是正的偶函数，但 $\int_0^1 x^{-2}\,dx$ 发散（$p=2>1$），故积分无定义；简单代入公式 $[-x^{-1}]_{-1}^{1}=(-1)-(1)=-2$ 对正的被积函数给出了荒谬的负值答案。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">Whenever the integration interval contains a point where the integrand is undefined or unbounded, you must split the integral at that point and take independent one-sided limits. A single antiderivative evaluated naively at the endpoints is not valid: convergence of each half must be checked separately. The comparison with $\int_{-1}^1 x^{-2}\,dx$ illustrates that the naive formula can give a finite answer even when the integral diverges, making this error silent and dangerous.</span><span data-lang="zh">只要积分区间内存在被积函数无定义或无界的点，就必须在该点拆分积分，独立取单侧极限。简单地将原函数代入端点是无效的：每段的收敛性必须分别验证。与 $\int_{-1}^1 x^{-2}\,dx$ 的对比说明，简单代入公式即使在积分发散时也可能给出有限答案，使这一错误隐蔽而危险。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; <span data-lang="en">APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详解</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">improper integral with both an infinite limit and an interior singularity</span><span data-lang="zh">同时具有无穷积分限和内部奇点的反常积分</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $K=\int_{0}^{\infty}\frac{dx}{x^{1/2}(1+x)}$: (a) identify improprieties and verify convergence; (b) evaluate $K$ exactly via $x=t^{2}$; (c) confirm $K$ is finite via comparison inequalities.</span><span data-lang="zh">对于 $K=\int_{0}^{\infty}\frac{dx}{x^{1/2}(1+x)}$：(a) 指出反常之处并验证收敛性；(b) 利用 $x=t^{2}$ 精确求 $K$；(c) 通过比较不等式确认 $K$ 有限。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">singularity at $x=0$ and infinite upper limit; both pieces converge</span><span data-lang="zh">$x=0$ 处奇点和无穷上限；两段均收敛</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $K=\pi$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">confirmed by comparison</span><span data-lang="zh">由比较法确认</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Improprieties and verification</span><span data-lang="zh">(a) 反常之处与验证</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">There are two improprieties: the integrand is unbounded at $x=0$ (since $x^{-1/2}\to\infty$), and the interval is infinite. Split at $x=1$: (M1)</span><span data-lang="zh">存在两处反常：被积函数在 $x=0$ 处无界（因为 $x^{-1/2}\to\infty$），且积分区间无界。在 $x=1$ 处拆分：(M1)</span></p>
+      $$ K = \int_{0}^{1}\frac{dx}{x^{1/2}(1+x)}+\int_{1}^{\infty}\frac{dx}{x^{1/2}(1+x)}. $$
+      <p><span data-lang="en">Near $x=0$: $\frac{1}{x^{1/2}(1+x)}\le\frac{1}{x^{1/2}}$ and $\int_{0}^{1}x^{-1/2}\,dx=2$ converges ($p=\tfrac{1}{2}<1$), so the first piece converges by direct comparison. (A1)</span><span data-lang="zh">在 $x=0$ 附近：$\frac{1}{x^{1/2}(1+x)}\le\frac{1}{x^{1/2}}$，且 $\int_{0}^{1}x^{-1/2}\,dx=2$ 收敛（$p=\tfrac{1}{2}<1$），故第一段由直接比较法收敛。(A1)</span></p>
+      <p><span data-lang="en">For large $x$: $\frac{1}{x^{1/2}(1+x)}\le\frac{1}{x^{3/2}}$ and $\int_{1}^{\infty}x^{-3/2}\,dx=2$ converges ($p=\tfrac{3}{2}>1$), so the second piece converges. (R1)</span><span data-lang="zh">当 $x$ 较大时：$\frac{1}{x^{1/2}(1+x)}\le\frac{1}{x^{3/2}}$，且 $\int_{1}^{\infty}x^{-3/2}\,dx=2$ 收敛（$p=\tfrac{3}{2}>1$），故第二段收敛。(R1)</span></p>
+      <h4><span data-lang="en">(b) Exact evaluation via $x=t^{2}$</span><span data-lang="zh">(b) 利用 $x=t^{2}$ 精确求值</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Let $x=t^{2}$, $dx=2t\,dt$. When $x=0$, $t=0$; as $x\to\infty$, $t\to\infty$. Then $x^{1/2}=t$ (for $t\ge 0$): (M1)</span><span data-lang="zh">令 $x=t^{2}$，$dx=2t\,dt$。当 $x=0$ 时 $t=0$；当 $x\to\infty$ 时 $t\to\infty$。对 $t\ge 0$ 有 $x^{1/2}=t$：(M1)</span></p>
+      $$ K = \int_{0}^{\infty}\frac{2t\,dt}{t(1+t^{2})} = \int_{0}^{\infty}\frac{2\,dt}{1+t^{2}}. $$
+      <p><span data-lang="en">(M1) This is a standard integral: $\int_0^\infty \frac{dt}{1+t^2} = \lim_{b\to\infty}[\arctan t]_0^b = \frac{\pi}{2}-0=\frac{\pi}{2}$. (A1) Therefore</span><span data-lang="zh">(M1) 这是标准积分：$\int_0^\infty \frac{dt}{1+t^2} = \lim_{b\to\infty}[\arctan t]_0^b = \frac{\pi}{2}-0=\frac{\pi}{2}$。(A1) 因此</span></p>
+      $$ K = 2\cdot\frac{\pi}{2} = \pi. $$
+      <p>(A1)</p>
+      <h4><span data-lang="en">(c) Comparison confirmation</span><span data-lang="zh">(c) 比较法确认</span> <span class="marks-call">B1</span></h4>
+      <p><span data-lang="en">On $(0,1]$: $\frac{1}{x^{1/2}(1+x)}\le\frac{1}{x^{1/2}}$, so the left piece is bounded above by $\int_0^1 x^{-1/2}\,dx=2<\infty$. On $[1,\infty)$: $\frac{1}{x^{1/2}(1+x)}\le\frac{1}{x^{3/2}}$, so the right piece is bounded above by $\int_1^\infty x^{-3/2}\,dx=2<\infty$. Hence $K\le 4<\infty$, confirming finiteness. (B1) The exact value $\pi\approx 3.14$ lies comfortably below the rough bound $4$.</span><span data-lang="zh">在 $(0,1]$ 上：$\frac{1}{x^{1/2}(1+x)}\le\frac{1}{x^{1/2}}$，故左段上界为 $\int_0^1 x^{-1/2}\,dx=2<\infty$。在 $[1,\infty)$ 上：$\frac{1}{x^{1/2}(1+x)}\le\frac{1}{x^{3/2}}$，故右段上界为 $\int_1^\infty x^{-3/2}\,dx=2<\infty$。因此 $K\le 4<\infty$，确认有限。(B1) 精确值 $\pi\approx 3.14$ 远在粗略上界 $4$ 之内。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">The substitution $x=t^2$ transforms the square-root factor $x^{1/2}=t$ in the denominator into the numerator differential $dx=2t\,dt$, and these cancel, turning a non-standard improper integral into the familiar $2\int_0^\infty \frac{dt}{1+t^2}=\pi$. The value $K=\pi$ is the Beta function $B(\tfrac{1}{2},\tfrac{1}{2})=\pi$; this integral appears throughout probability and complex analysis. Splitting at an interior point before applying a substitution is the rigorous way to handle the two separate improprieties.</span><span data-lang="zh">换元 $x=t^2$ 将分母中的平方根因子 $x^{1/2}=t$ 与分子微元 $dx=2t\,dt$ 相消，从而将非标准反常积分转化为熟悉的 $2\int_0^\infty \frac{dt}{1+t^2}=\pi$。$K=\pi$ 的值正是 Beta 函数 $B(\tfrac{1}{2},\tfrac{1}{2})=\pi$，该积分在概率论和复分析中广泛出现。在换元之前先在内部点拆分，是处理两处独立反常的严格方法。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">Simpson's rule with error bound to guarantee prescribed accuracy</span><span data-lang="zh">辛普森法则及保证指定精度的误差界</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $I=\int_{1}^{3}\frac{dx}{x}=\ln 3$: (a) apply Simpson's rule with $n=4$; (b) bound $|E_S|$ for $n=4$; (c) find minimum even $n$ with $|E_S|<10^{-6}$.</span><span data-lang="zh">设 $I=\int_{1}^{3}\frac{dx}{x}=\ln 3$：(a) 用 $n=4$ 的辛普森法则近似；(b) 对 $n=4$ 给出 $|E_S|$ 的上界；(c) 求最小偶数 $n$ 使 $|E_S|<10^{-6}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $S_{4}=\tfrac{11}{10}=1.100\,000$ &nbsp;·&nbsp; <span class="ans">(b)</span> $|E_{S}|\le\tfrac{1}{60}\approx 0.0167$ &nbsp;·&nbsp; <span class="ans">(c)</span> $n\ge 46$ (<span data-lang="en">i.e.</span><span data-lang="zh">即</span> $n=46$)</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Simpson's rule with $n=4$ on $[1,3]$</span><span data-lang="zh">(a) 在 $[1,3]$ 上用 $n=4$ 的辛普森法则</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Step size $h=\frac{3-1}{4}=0.5$. Nodes and values of $f(x)=1/x$: (M1)</span><span data-lang="zh">步长 $h=\frac{3-1}{4}=0.5$。节点及 $f(x)=1/x$ 的函数值：(M1)</span></p>
+      <p>$x_{0}=1$: $f_{0}=1$; $\ x_{1}=1.5$: $f_{1}=\tfrac{2}{3}$; $\ x_{2}=2$: $f_{2}=\tfrac{1}{2}$; $\ x_{3}=2.5$: $f_{3}=\tfrac{2}{5}$; $\ x_{4}=3$: $f_{4}=\tfrac{1}{3}$.</p>
+      $$ S_{4}=\frac{h}{3}\big[f_{0}+4f_{1}+2f_{2}+4f_{3}+f_{4}\big] = \frac{0.5}{3}\!\left[1+4\!\cdot\!\tfrac{2}{3}+2\!\cdot\!\tfrac{1}{2}+4\!\cdot\!\tfrac{2}{5}+\tfrac{1}{3}\right]. $$
+      <p><span data-lang="en">(M1) Compute the bracket exactly using a common denominator of 15:</span><span data-lang="zh">(M1) 用公分母 15 精确计算括号内的值：</span></p>
+      $$ 1+\frac{8}{3}+1+\frac{8}{5}+\frac{1}{3} = \frac{15+40+15+24+5}{15} = \frac{99}{15} = \frac{33}{5}. \quad\text{(A1)} $$
+      $$ S_{4}=\frac{1}{6}\cdot\frac{33}{5}=\frac{33}{30}=\frac{11}{10}=1.100000. $$
+      <p><span data-lang="en">(A1) Note: $\ln 3\approx 1.098612$, so $|E_S|\approx 0.00139$, consistent with the bound computed below.</span><span data-lang="zh">(A1) 注意：$\ln 3\approx 1.098612$，故 $|E_S|\approx 0.00139$，与下面计算的上界一致。</span></p>
+      <h4><span data-lang="en">(b) Error bound for $n=4$</span><span data-lang="zh">(b) $n=4$ 时的误差界</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">The Simpson error bound is $|E_{S}|\le\dfrac{(b-a)^{5}}{180\,n^{4}}\,M_{4}$, where $M_{4}=\max_{[1,3]}|f^{(4)}(x)|$. (M1)</span><span data-lang="zh">辛普森法则的误差界为 $|E_{S}|\le\dfrac{(b-a)^{5}}{180\,n^{4}}\,M_{4}$，其中 $M_{4}=\max_{[1,3]}|f^{(4)}(x)|$。(M1)</span></p>
+      <p><span data-lang="en">Compute derivatives of $f(x)=x^{-1}$: $f'=-x^{-2}$, $f''=2x^{-3}$, $f'''=-6x^{-4}$, $f^{(4)}=24x^{-5}$. (M1)</span><span data-lang="zh">计算 $f(x)=x^{-1}$ 的各阶导数：$f'=-x^{-2}$，$f''=2x^{-3}$，$f'''=-6x^{-4}$，$f^{(4)}=24x^{-5}$。(M1)</span></p>
+      <p><span data-lang="en">On $[1,3]$, $x^{-5}$ is decreasing, so its maximum is at $x=1$: $M_{4}=24\cdot 1^{-5}=24$. (A1)</span><span data-lang="zh">在 $[1,3]$ 上 $x^{-5}$ 单调递减，故最大值在 $x=1$ 处取到：$M_{4}=24\cdot 1^{-5}=24$。(A1)</span></p>
+      $$ |E_{S}|\le\frac{(3-1)^{5}}{180\cdot 4^{4}}\cdot 24 = \frac{32}{180\cdot 256}\cdot 24 = \frac{32\cdot 24}{46080} = \frac{768}{46080} = \frac{1}{60}\approx 0.0167. $$
+      <p><span data-lang="en">(A1) So $|E_S|\le \tfrac{1}{60}\approx 0.0167$. The actual error is $|1.1-\ln 3|\approx 0.00139$, well within the bound.</span><span data-lang="zh">(A1) 故 $|E_S|\le \tfrac{1}{60}\approx 0.0167$。实际误差为 $|1.1-\ln 3|\approx 0.00139$，远在上界之内。</span></p>
+      <h4><span data-lang="en">(c) Minimum $n$ for $|E_{S}|<10^{-6}$</span><span data-lang="zh">(c) 使 $|E_{S}|<10^{-6}$ 的最小 $n$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Require $\dfrac{(2)^{5}}{180\,n^{4}}\cdot 24 < 10^{-6}$, i.e. $\dfrac{32\cdot 24}{180\,n^{4}} < 10^{-6}$. (M1)</span><span data-lang="zh">要求 $\dfrac{(2)^{5}}{180\,n^{4}}\cdot 24 < 10^{-6}$，即 $\dfrac{32\cdot 24}{180\,n^{4}} < 10^{-6}$。(M1)</span></p>
+      $$ n^{4} > \frac{768}{180\times 10^{-6}} = \frac{768}{0.00018} = 4266\overline{6}. $$
+      <p><span data-lang="en">$n^{4}>4{,}266{,}667$, so $n>\sqrt[4]{4266667}\approx 45.5$. The minimum even integer is $n=46$. (A1)</span><span data-lang="zh">$n^{4}>4{,}266{,}667$，故 $n>\sqrt[4]{4266667}\approx 45.5$。最小偶数为 $n=46$。(A1)</span></p>
+      <p><em><span data-lang="en">Check:</span><span data-lang="zh">验证：</span></em> $46^4 = 4477456 > 4266667$. <span data-lang="en">So $n=46$ works.</span><span data-lang="zh">故 $n=46$ 满足条件。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">The error bound $\frac{(b-a)^5}{180n^4}M_4$ decays as $n^{-4}$, so doubling $n$ cuts the error by a factor of $16$. This fourth-power decay (versus $n^{-2}$ for the trapezoidal rule) is the quantitative reason Simpson's rule converges much faster. The key steps are: (1) differentiate $f$ four times to find $f^{(4)}$; (2) find its maximum on $[a,b]$ (always at an endpoint for $f^{(4)}=24/x^5$ on $[1,3]$); (3) solve the bound inequality for $n$.</span><span data-lang="zh">误差界 $\frac{(b-a)^5}{180n^4}M_4$ 按 $n^{-4}$ 衰减，故 $n$ 加倍时误差减少16倍。这种四次幂衰减（相比梯形法则的 $n^{-2}$）是辛普森法则收敛快得多的定量原因。关键步骤：(1) 对 $f$ 求四阶导 $f^{(4)}$；(2) 在 $[a,b]$ 上求其最大值（对 $[1,3]$ 上的 $f^{(4)}=24/x^5$ 总在端点取到）；(3) 对 $n$ 解不等式。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">applied improper integral: probability tail and Laplace transform</span><span data-lang="zh">反常积分的应用：概率尾部与拉普拉斯变换</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For the exponential density $f(x)=\lambda e^{-\lambda x}$ ($x\ge 0$, $\lambda>0$): (a) show $\int_0^\infty \lambda e^{-\lambda x}\,dx=1$; (b) compute the mean $\mu=\int_0^\infty x\lambda e^{-\lambda x}\,dx$; (c) find the Laplace transform $\mathcal{L}\{e^{-\lambda x}\}(s)$ and its domain.</span><span data-lang="zh">对于指数密度 $f(x)=\lambda e^{-\lambda x}$（$x\ge 0$，$\lambda>0$）：(a) 证明 $\int_0^\infty \lambda e^{-\lambda x}\,dx=1$；(b) 计算均值 $\mu=\int_0^\infty x\lambda e^{-\lambda x}\,dx$；(c) 求拉普拉斯变换 $\mathcal{L}\{e^{-\lambda x}\}(s)$ 及其定义域。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $1$ (<span data-lang="en">valid density</span><span data-lang="zh">合法概率密度</span>) &nbsp;·&nbsp; <span class="ans">(b)</span> $\mu=\tfrac{1}{\lambda}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $\tfrac{1}{\lambda+s}$ <span data-lang="en">for $s>-\lambda$; diverges for $s\le -\lambda$</span><span data-lang="zh">当 $s>-\lambda$ 时；$s\le -\lambda$ 时发散</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Normalisation via explicit limit</span><span data-lang="zh">(a) 用显式极限进行归一化</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Replace the upper limit by $b$ and evaluate: (M1)</span><span data-lang="zh">将上限替换为 $b$ 后求值：(M1)</span></p>
+      $$ \int_{0}^{\infty}\lambda e^{-\lambda x}\,dx = \lim_{b\to\infty}\Big[-e^{-\lambda x}\Big]_{0}^{b} = \lim_{b\to\infty}\!\big(-e^{-\lambda b}+1\big). $$
+      <p><span data-lang="en">(A1) Since $\lambda>0$, $e^{-\lambda b}\to 0$, so the limit is $1$. (R1) Therefore $\int_0^\infty f(x)\,dx=1$, confirming $f$ is a valid probability density.</span><span data-lang="zh">(A1) 因为 $\lambda>0$，$e^{-\lambda b}\to 0$，极限为 $1$。(R1) 故 $\int_0^\infty f(x)\,dx=1$，确认 $f$ 是合法的概率密度函数。</span></p>
+      <h4><span data-lang="en">(b) Mean by integration by parts inside the limit</span><span data-lang="zh">(b) 在极限内用分部积分法求均值</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Write the mean as a limit, then integrate by parts with $u=x$, $dv=\lambda e^{-\lambda x}\,dx$, so $du=dx$, $v=-e^{-\lambda x}$: (M1)</span><span data-lang="zh">将均值写成极限，再用分部积分法，令 $u=x$，$dv=\lambda e^{-\lambda x}\,dx$，故 $du=dx$，$v=-e^{-\lambda x}$：(M1)</span></p>
+      $$ \int_{0}^{b}x\lambda e^{-\lambda x}\,dx = \Big[-xe^{-\lambda x}\Big]_{0}^{b}+\int_{0}^{b}e^{-\lambda x}\,dx = -be^{-\lambda b}+0+\Big[-\frac{1}{\lambda}e^{-\lambda x}\Big]_{0}^{b}. $$
+      <p><span data-lang="en">(M1) As $b\to\infty$: the term $be^{-\lambda b}\to 0$ (exponential beats linear; apply L'Hopital: $b/e^{\lambda b}\to 0$), and $\frac{1}{\lambda}e^{-\lambda b}\to 0$. (A1) Therefore</span><span data-lang="zh">(M1) 当 $b\to\infty$ 时：项 $be^{-\lambda b}\to 0$（指数函数胜过线性函数；用洛必达法则：$b/e^{\lambda b}\to 0$），且 $\frac{1}{\lambda}e^{-\lambda b}\to 0$。(A1) 故</span></p>
+      $$ \mu = \lim_{b\to\infty}\!\left(-be^{-\lambda b}-\frac{1}{\lambda}e^{-\lambda b}+\frac{1}{\lambda}\right) = 0-0+\frac{1}{\lambda} = \frac{1}{\lambda}. $$
+      <p><span data-lang="en">(A1) The mean of an exponential random variable is the reciprocal of its rate.</span><span data-lang="zh">(A1) 指数型随机变量的均值是其参数的倒数。</span></p>
+      <h4><span data-lang="en">(c) Laplace transform and its domain</span><span data-lang="zh">(c) 拉普拉斯变换及其定义域</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">The integrand is $e^{-\lambda x}\cdot e^{-sx}=e^{-(\lambda+s)x}$. Introduce the upper limit $b$: (M1)</span><span data-lang="zh">被积函数为 $e^{-\lambda x}\cdot e^{-sx}=e^{-(\lambda+s)x}$。引入上限 $b$：(M1)</span></p>
+      $$ \mathcal{L}\{e^{-\lambda x}\}(s) = \lim_{b\to\infty}\Big[-\frac{1}{\lambda+s}e^{-(\lambda+s)x}\Big]_{0}^{b} = \lim_{b\to\infty}\!\left(-\frac{e^{-(\lambda+s)b}}{\lambda+s}+\frac{1}{\lambda+s}\right). $$
+      <p><span data-lang="en">(A1) The limit exists if and only if $e^{-(\lambda+s)b}\to 0$, which requires $\lambda+s>0$, i.e. $s>-\lambda$. In that case $\mathcal{L}\{e^{-\lambda x}\}(s)=\dfrac{1}{\lambda+s}$. (R1) For $s\le-\lambda$, the exponent $-(\lambda+s)\ge 0$, so $e^{-(\lambda+s)b}$ does not decay and the integral diverges.</span><span data-lang="zh">(A1) 极限存在当且仅当 $e^{-(\lambda+s)b}\to 0$，这要求 $\lambda+s>0$，即 $s>-\lambda$。此时 $\mathcal{L}\{e^{-\lambda x}\}(s)=\dfrac{1}{\lambda+s}$。(R1) 当 $s\le-\lambda$ 时，指数 $-(\lambda+s)\ge 0$，故 $e^{-(\lambda+s)b}$ 不趋于零，积分发散。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">点评。</span></strong> <span data-lang="en">The Laplace transform is itself an improper integral that is a function of the parameter $s$; its domain is exactly the set of $s$ for which the integral converges, here $s>-\lambda$. Parts (a) and (b) are really the same integral in disguise: (a) is the Laplace transform at $s=0$, and (b) is $-\frac{d}{ds}\mathcal{L}\{e^{-\lambda x}\}$ evaluated at $s=0$. The key technique throughout is writing the integral with an explicit upper limit $b$, evaluating the finite integral, and only then taking $b\to\infty$, checking the sign condition that drives the exponential to zero.</span><span data-lang="zh">拉普拉斯变换本身是一个以参数 $s$ 为变量的反常积分，其定义域恰好是使积分收敛的 $s$ 的集合，这里为 $s>-\lambda$。(a) 和 (b) 实质上是同一个积分的不同形式：(a) 是 $s=0$ 时的拉普拉斯变换，(b) 是 $-\frac{d}{ds}\mathcal{L}\{e^{-\lambda x}\}$ 在 $s=0$ 处的值。全程的关键技巧是：写出含显式上限 $b$ 的积分，对有限积分求值，最后再令 $b\to\infty$，验证驱使指数趋于零的符号条件。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大学一年级课程的本单元遇到困难了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约与鼎瑞学者导师的免费15分钟咨询，在下次期中或期末考试前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_b3_improper_and_numerical_integration__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_B3_Improper_and_Numerical_Integration.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_B3_Improper_and_Numerical_Integration_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit B3 Solutions</span><span data-lang="zh">大学微积分 &middot; 第B3单元详解</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">配套练习题 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第1至7节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

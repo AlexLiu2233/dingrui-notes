@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit A3: Differentiation Rules | Practice</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-A3  dingrui:doc-type practice -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_A3_Differentiation_Rules_Practice.html">
+<meta name="description" content="University-level practice problems for Unit A3: Differentiation Rules. Power, product, quotient, and chain rules, higher-order derivatives, and first-principles proofs, with full worked solutions from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit A3: Differentiation Rules | Practice">
+<meta property="og:description" content="University-level practice problems for Unit A3: Differentiation Rules, with full worked solutions from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_A3_Differentiation_Rules_Practice.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit A3: Differentiation Rules | Practice">
+<meta name="twitter:description" content="University-level practice problems for Unit A3: Differentiation Rules, with full worked solutions from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{
+    font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;
+    font-size:11pt;line-height:1.45;
+    max-width:8.5in;margin:0 auto;
+    padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);
+  }
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .nameline{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:10.5pt;margin:4px 0 22px;color:#222;}
+  .nameline .blank{display:inline-block;border-bottom:1px solid #555;min-width:240px;margin-left:6px;}
+  .nameline .blank.period{min-width:90px;}
+  .draft-banner{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .draft-banner code{font-family:'JetBrains Mono',monospace;font-style:normal;}
+
+  .part{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:'Source Sans 3',sans-serif;
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:6px 2px;margin:18px 0 8px;
+  }
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+
+  .q{
+    border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;
+    padding:12px 18px 14px;margin-bottom:16px;background:#fff;
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:10px;font-family:'Source Sans 3',sans-serif;}
+  .q-head .title{margin-left:auto;font-size:9.5pt;color:#666;font-style:italic;}
+  .q-body{font-size:11.5pt;line-height:1.5;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;}
+
+  .work{min-height:90px;border-top:1px dashed #c9c4bd;margin-top:8px;}
+  .work.s{min-height:50px;} .work.m{min-height:120px;} .work.l{min-height:170px;} .work.xl{min-height:240px;}
+
+  .frq-parts{margin-top:6px;}
+  .frq-parts .part-item{margin:6px 0 4px;}
+  .frq-parts .part-item > .tag{font-family:'Source Sans 3',sans-serif;font-weight:700;margin-right:6px;}
+  .frq-parts .part-item .marks-inline{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;font-weight:700;float:right;letter-spacing:.05em;}
+  .frq-parts .part-item .sub-part{margin:4px 0 4px 18px;}
+
+  table.data{border-collapse:collapse;margin:8px auto;font-size:10.5pt;}
+  table.data th, table.data td{border:1px solid #444;padding:4px 14px;text-align:center;font-family:'Source Sans 3',sans-serif;}
+  table.data th{background:#f1ece4;font-weight:700;}
+
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+
+  .page-break{page-break-after:always;break-after:page;height:0;}
+
+  @media (max-width: 600px){
+    body{font-size:10.5pt;}
+    .nameline{flex-direction:column;align-items:flex-start;gap:6px;}
+    .nameline .blank{min-width:200px;}
+  }
+  @media print{
+    @page { size: letter; margin: 0.6in 0.65in; }
+    html,body{background:#fff;}
+    body{padding:0;max-width:none;font-size:11pt;}
+    .q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}
+    .draft-banner{display:none;}
+  }
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit A3: Differentiation Rules | Practice",
+  "description": "University-level practice problems for Unit A3: Differentiation Rules. Power, product, quotient, and chain rules with first-principles proofs, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_A3_Differentiation_Rules_Practice.html",
+  "inLanguage": "en",
+  "learningResourceType": "Practice problems",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag">Unit A3 &middot; Calculus I</div>
+<h1 class="chapter-title"><span data-lang="en">Differentiation Rules</span><span data-lang="zh">微分法则</span></h1>
+<p class="chapter-sub"><span data-lang="en">University-Style Practice Problems</span><span data-lang="zh">大学风格练习题</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: power/sum/constant-multiple rules, product rule, quotient rule, chain rule, combining rules, polynomials and rational functions, pitfalls</span><span data-lang="zh">第 <b>1 至 7</b> 节：幂法则/求和法则/常数倍法则、乘积法则、商法则、链式法则、综合运用、多项式与有理函数、常见错误</span><span class="scope">CALC I</span></p>
+<hr class="thick"><hr class="thin">
+<div class="nameline"><span><span data-lang="en">Name:</span><span data-lang="zh">姓名：</span><span class="blank"></span></span><span><span data-lang="en">Date:</span><span data-lang="zh">日期：</span><span class="blank period"></span></span></div>
+<p class="draft-banner"><code>v1.0</code> &middot; 10 Qs &middot; 82 marks &middot; Parts CORE / PROOF / APPLIED &middot; MEDIUM to HARD &middot; Sections 1 to 7 &middot; <span data-lang="en">solutions:</span><span data-lang="zh">解答：</span> <code>Solutions/Unit_A3_Differentiation_Rules_Solutions.html</code></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span data-lang="zh">第一部分 &nbsp;·&nbsp; 核心技巧</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Applying the Differentiation Rules</span><span data-lang="zh">运用微分法则</span></h2>
+<p class="instructions"><span data-lang="en">Show all working. Identify the rule(s) you are applying at each step. Simplify your answer fully unless the question says otherwise.</span><span data-lang="zh">展示完整解题过程。在每一步中注明所使用的法则。除非题目另有说明，否则将答案化简到最简形式。</span></p>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">power, constant-multiple, and sum rules</span><span data-lang="zh">幂法则、常数倍法则与求和法则</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Differentiate each function. State the rule applied at each step and simplify fully.</span><span data-lang="zh">对每个函数求导。在每一步中注明所用法则，并将结果化简到最简形式。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $f(x)=4x^{5}-\dfrac{3}{2}x^{4}+7x-9$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $g(x)=\dfrac{5}{x^{3}}-\dfrac{2}{\sqrt{x}}+6x^{2/3}$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> $h(x)=\pi x^{4}-e\,x^{2}+\sqrt{3}$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">product rule</span><span data-lang="zh">乘积法则</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Differentiate each function using the product rule. Do not expand before differentiating.</span><span data-lang="zh">用乘积法则对每个函数求导。求导前不得展开因式。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $f(x)=\left(3x^{2}+1\right)\!\left(x^{3}-2x\right)$ <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $g(x)=x^{4}\!\left(2x^{2}-5\right)^{3}$ <span data-lang="en">(treat $\left(2x^{2}-5\right)^{3}$ as a single factor; do not expand the cube)</span><span data-lang="zh">（将 $\left(2x^{2}-5\right)^{3}$ 视为一个整体因子，不得展开立方）</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> $h(x)=\left(x^{2}+3\right)\!\left(x^{2}-3\right)$ <span data-lang="en">using the product rule, then verify by expanding first and differentiating directly.</span><span data-lang="zh">用乘积法则求导，再通过先展开后直接求导的方式验证结果。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span><span class="pill hard">HARD</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">chain rule, including nested chains</span><span data-lang="zh">链式法则，含嵌套链式</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Differentiate each composite function. Identify the outer and inner functions explicitly before applying the chain rule.</span><span data-lang="zh">对每个复合函数求导。在运用链式法则之前，明确指出外层函数与内层函数。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $f(x)=\left(3x^{4}-2x+1\right)^{6}$ <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $g(x)=\sqrt{5x^{3}+\sqrt{x}}$ <span data-lang="en">(a chain within a chain: identify all layers)</span><span data-lang="zh">（链中套链：请逐层指出所有层次）</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> $h(x)=\left(\dfrac{x^{2}+1}{x-1}\right)^{4}$ <span data-lang="en">(chain rule with an inner quotient; do not expand)</span><span data-lang="zh">（内层含商式的链式法则，不得展开）</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span><span class="pill hard">HARD</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">quotient rule</span><span data-lang="zh">商法则</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Differentiate using the quotient rule. Simplify numerators fully but leave denominators in factored form.</span><span data-lang="zh">用商法则求导。将分子化简到最简形式，分母保持因式分解的形式。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $f(x)=\dfrac{x^{3}-3x}{x^{2}+1}$ <span class="marks-inline">[2]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $g(x)=\dfrac{x^{2}-4x+4}{\left(x+1\right)^{2}}$ <span class="marks-inline">[2]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> $h(x)=\dfrac{x^{3}}{x^{2}+3}$, <span data-lang="en">and find all values of $x$ at which $h'(x)=0$.</span><span data-lang="zh">并求所有使 $h'(x)=0$ 成立的 $x$ 值。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span data-lang="zh">第二部分 &nbsp;·&nbsp; 定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Deriving the Rules from First Principles</span><span data-lang="zh">从第一性原理推导法则</span></h2>
+<p class="instructions"><span data-lang="en">These items are graded on the logic of the argument, not just the final line. Every proof must start from the limit definition of the derivative and proceed by named algebraic steps. Quoting a rule you are asked to prove earns zero marks.</span><span data-lang="zh">这些题目按论证逻辑评分，而非仅看最终结论。每项证明必须从导数的极限定义出发，并逐步注明代数步骤的名称。直接引用所求证法则者不得分。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">product rule from the limit definition</span><span data-lang="zh">由极限定义推导乘积法则</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $f$ and $g$ be differentiable at $x$. The goal is to prove that $(fg)'(x)=f'(x)g(x)+f(x)g'(x)$.</span><span data-lang="zh">设 $f$ 与 $g$ 在 $x$ 处可微。目标是证明 $(fg)'(x)=f'(x)g(x)+f(x)g'(x)$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Write down the difference quotient $\dfrac{(fg)(x+h)-(fg)(x)}{h}$ and then add and subtract the quantity $f(x+h)g(x)$ in the numerator. Factor the result into two separate difference quotients.</span><span data-lang="zh">写出差商 $\dfrac{(fg)(x+h)-(fg)(x)}{h}$，然后在分子中加减量 $f(x+h)g(x)$，并将结果整理为两个独立差商之和。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Take the limit as $h\to 0$. Identify which standard limits give $f'(x)$ and $g'(x)$, and explain why $f(x+h)\to f(x)$ is needed. Write the conclusion as $(fg)'(x)=f'(x)g(x)+f(x)g'(x)$.</span><span data-lang="zh">令 $h\to 0$ 取极限。指出哪些标准极限给出 $f'(x)$ 和 $g'(x)$，并解释为何需要 $f(x+h)\to f(x)$。写出结论 $(fg)'(x)=f'(x)g(x)+f(x)g'(x)$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Use the product rule you just proved to differentiate $p(x)=\left(x^{3}+1\right)\!\left(2x^{2}-3x\right)$ without expanding, and simplify.</span><span data-lang="zh">用刚刚证明的乘积法则对 $p(x)=\left(x^{3}+1\right)\!\left(2x^{2}-3x\right)$ 求导，不得展开，并化简结果。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">power rule for integer n by mathematical induction</span><span data-lang="zh">用数学归纳法证明整数次幂法则</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">The power rule states: for any positive integer $n$, $\dfrac{d}{dx}\!\left(x^{n}\right)=nx^{n-1}$.</span><span data-lang="zh">幂法则：对任意正整数 $n$，有 $\dfrac{d}{dx}\!\left(x^{n}\right)=nx^{n-1}$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Prove the base case $n=1$ directly from the limit definition $f'(x)=\displaystyle\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h}$.</span><span data-lang="zh">直接由极限定义 $f'(x)=\displaystyle\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h}$ 证明基础情形 $n=1$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Assume the rule holds for $n=k$, i.e. $\dfrac{d}{dx}\!\left(x^{k}\right)=kx^{k-1}$. Write $x^{k+1}=x\cdot x^{k}$, apply the product rule (proved in Q5), and the inductive hypothesis to obtain $\dfrac{d}{dx}\!\left(x^{k+1}\right)=(k+1)x^{k}$.</span><span data-lang="zh">假设法则对 $n=k$ 成立，即 $\dfrac{d}{dx}\!\left(x^{k}\right)=kx^{k-1}$。将 $x^{k+1}=x\cdot x^{k}$，利用（Q5 中已证的）乘积法则及归纳假设，推导出 $\dfrac{d}{dx}\!\left(x^{k+1}\right)=(k+1)x^{k}$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">State the conclusion of the induction, and then use the power rule to find the second derivative $f''(x)$ and third derivative $f'''(x)$ of $f(x)=x^{5}-3x^{3}+2x$.</span><span data-lang="zh">写出归纳的结论，然后用幂法则求 $f(x)=x^{5}-3x^{3}+2x$ 的二阶导数 $f''(x)$ 与三阶导数 $f'''(x)$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span><span class="pill med">MEDIUM</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">quotient rule derived from the product rule</span><span data-lang="zh">由乘积法则推导商法则</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $f$ and $g$ be differentiable at $x$ with $g(x)\ne 0$. Denote $Q(x)=\dfrac{f(x)}{g(x)}$.</span><span data-lang="zh">设 $f$ 与 $g$ 在 $x$ 处可微且 $g(x)\ne 0$。记 $Q(x)=\dfrac{f(x)}{g(x)}$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Write $f(x)=Q(x)\cdot g(x)$ and differentiate both sides using the product rule. Rearrange to isolate $Q'(x)$. You may use the fact that if $g$ is differentiable and nonzero then $\dfrac{d}{dx}\!\left(\dfrac{1}{g(x)}\right)=-\dfrac{g'(x)}{[g(x)]^{2}}$.</span><span data-lang="zh">写出 $f(x)=Q(x)\cdot g(x)$，对两边用乘积法则求导，再整理以分离出 $Q'(x)$。可以使用以下事实：若 $g$ 可微且不为零，则 $\dfrac{d}{dx}\!\left(\dfrac{1}{g(x)}\right)=-\dfrac{g'(x)}{[g(x)]^{2}}$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Write the result in the standard form $Q'(x)=\dfrac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^{2}}$ and identify which sign in the numerator distinguishes the quotient rule from the product rule.</span><span data-lang="zh">将结果写成标准形式 $Q'(x)=\dfrac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^{2}}$，并指出分子中哪个符号将商法则与乘积法则区分开来。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Use the quotient rule to differentiate $r(x)=\dfrac{x^{4}-1}{x^{2}+1}$ and factor the numerator of $r'(x)$ completely.</span><span data-lang="zh">用商法则对 $r(x)=\dfrac{x^{4}-1}{x^{2}+1}$ 求导，并将 $r'(x)$ 的分子完全因式分解。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">第三部分 &nbsp;·&nbsp; 应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合应用题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Combining Rules, Tangent Lines, and Analysis</span><span data-lang="zh">综合运用法则、切线与分析</span></h2>
+<p class="instructions"><span data-lang="en">Set up each problem cleanly. Where a derivative is used to find a geometric quantity, state the connection explicitly. Carry exact values through intermediate steps.</span><span data-lang="zh">清晰地建立每道题的解题框架。若用导数求几何量，需明确说明二者的联系。中间步骤保留精确值。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">chain rule combined with product rule</span><span data-lang="zh">链式法则与乘积法则的综合运用</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $F(x)=x^{3}\!\left(x^{2}+4\right)^{5}$.</span><span data-lang="zh">设 $F(x)=x^{3}\!\left(x^{2}+4\right)^{5}$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Identify the two factors and state which rule(s) are needed. Then differentiate $F(x)$ using the product rule together with the chain rule on the second factor. Do not expand $\left(x^{2}+4\right)^{5}$.</span><span data-lang="zh">指出两个因子，并说明需要哪些法则。然后对第二个因子运用链式法则，结合乘积法则对 $F(x)$ 求导。不得展开 $\left(x^{2}+4\right)^{5}$。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Factor $F'(x)$ completely by extracting the common factor $x^{2}\!\left(x^{2}+4\right)^{4}$. Write the result in the form $F'(x)=x^{2}\!\left(x^{2}+4\right)^{4}\!\left(Ax^{2}+B\right)$ and identify $A$ and $B$.</span><span data-lang="zh">提取公因子 $x^{2}\!\left(x^{2}+4\right)^{4}$，对 $F'(x)$ 完全因式分解。将结果写成 $F'(x)=x^{2}\!\left(x^{2}+4\right)^{4}\!\left(Ax^{2}+B\right)$ 的形式，并确定 $A$ 与 $B$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Determine all values of $x$ at which $F'(x)=0$ and, for each, classify whether the corresponding point on the graph of $F$ is a local maximum, local minimum, or neither (use sign analysis of $F'$, not a second-derivative test).</span><span data-lang="zh">求所有使 $F'(x)=0$ 成立的 $x$ 值，并对每个值判断 $F$ 图像上对应点是极大值点、极小值点还是两者均非（用 $F'$ 的符号分析，不得用二阶导数判别法）。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">horizontal tangents of a rational function</span><span data-lang="zh">有理函数的水平切线</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider $\displaystyle f(x)=\frac{x^{2}-4}{x^{2}+4}$.</span><span data-lang="zh">考虑 $\displaystyle f(x)=\frac{x^{2}-4}{x^{2}+4}$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">State the domain of $f$ and explain why the denominator is never zero.</span><span data-lang="zh">写出 $f$ 的定义域，并解释分母为何永不为零。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Use the quotient rule to find $f'(x)$ and simplify it to the form $\dfrac{16x}{(x^{2}+4)^{2}}$. Show the unsimplified numerator before cancelling.</span><span data-lang="zh">用商法则求 $f'(x)$，将其化简为 $\dfrac{16x}{(x^{2}+4)^{2}}$ 的形式。在约分之前，展示未化简的分子。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Find all points on the graph of $f$ where the tangent line is horizontal. Give coordinates.</span><span data-lang="zh">求 $f$ 图像上所有切线水平的点，给出坐标。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">The function $f$ has horizontal asymptotes as $x\to\pm\infty$. Find them and state whether $f$ actually reaches these values or only approaches them.</span><span data-lang="zh">函数 $f$ 在 $x\to\pm\infty$ 时有水平渐近线。求出渐近线，并说明 $f$ 是否真正取到这些值，或仅趋近于它们。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">combining all rules: tangent line and common pitfalls</span><span data-lang="zh">综合所有法则：切线与常见错误</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\displaystyle G(x)=\frac{\left(x^{2}+1\right)^{3}}{x^{3}-8}$, defined for $x\ne 2$.</span><span data-lang="zh">设 $\displaystyle G(x)=\frac{\left(x^{2}+1\right)^{3}}{x^{3}-8}$，定义域为 $x\ne 2$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Differentiate $G(x)$ using the quotient rule, with the chain rule applied to the numerator. Leave your answer in unsimplified form after cancelling any common factor of $h$.</span><span data-lang="zh">用商法则对 $G(x)$ 求导，分子部分使用链式法则。约去公因子 $h$ 后，将答案保留为未化简形式。</span> <span class="marks-inline">[3]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Evaluate $G(3)$ and $G'(3)$. Hence write the equation of the tangent line to $y=G(x)$ at $x=3$.</span><span data-lang="zh">计算 $G(3)$ 与 $G'(3)$，由此写出 $y=G(x)$ 在 $x=3$ 处的切线方程。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">A student claims: "Since $\left(x^{2}+1\right)^{3}$ is always positive, $G'(x)$ can never be negative." Identify the error in this reasoning and give a specific value of $x$ for which $G'(x)<0$.</span><span data-lang="zh">某学生声称："由于 $\left(x^{2}+1\right)^{3}$ 恒为正，$G'(x)$ 不可能为负。"指出该推理中的错误，并给出一个使 $G'(x)<0$ 的具体 $x$ 值。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">A second student differentiates $G$ incorrectly as $G'(x)=\dfrac{3(x^{2}+1)^{2}}{3x^{2}}=\dfrac{(x^{2}+1)^{2}}{x^{2}}$. State the two rules that were misapplied and correct both errors.</span><span data-lang="zh">另一学生将 $G$ 错误地求导为 $G'(x)=\dfrac{3(x^{2}+1)^{2}}{3x^{2}}=\dfrac{(x^{2}+1)^{2}}{x^{2}}$。指出被误用的两条法则，并分别纠正错误。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在一年级课程中遇到这一单元的难题？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约一次与鼎睿学者导师的15分钟免费咨询。我们帮助您在下次期中或期末考试前扫清障碍。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_a3_differentiation_rules__practice__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../Study%20Guides/Unit_A3_Differentiation_Rules.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Practice</span><span data-lang="zh">练习</span></span>
+  <a href="Solutions/Unit_A3_Differentiation_Rules_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit A3 Practice</span><span data-lang="zh">大学微积分 &middot; 第A3单元练习题</span> <code style="color:#555;">v1.0</code></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第1至7节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit C1: Vectors and the Geometry of Space | Practice</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-C1  dingrui:doc-type practice -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C1_Vectors_and_the_Geometry_of_Space_Practice.html">
+<meta name="description" content="University-level practice problems for Unit C1: Vectors and the Geometry of Space. Dot and cross products, lines and planes in 3-space, quadric surfaces, and distance formulas, with full worked solutions from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit C1: Vectors and the Geometry of Space | Practice">
+<meta property="og:description" content="University-level practice problems for Unit C1: Vectors and the Geometry of Space, with full worked solutions from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C1_Vectors_and_the_Geometry_of_Space_Practice.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit C1: Vectors and the Geometry of Space | Practice">
+<meta name="twitter:description" content="University-level practice problems for Unit C1: Vectors and the Geometry of Space, with full worked solutions from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{
+    font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;
+    font-size:11pt;line-height:1.45;
+    max-width:8.5in;margin:0 auto;
+    padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);
+  }
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .nameline{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:10.5pt;margin:4px 0 22px;color:#222;}
+  .nameline .blank{display:inline-block;border-bottom:1px solid #555;min-width:240px;margin-left:6px;}
+  .nameline .blank.period{min-width:90px;}
+  .draft-banner{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .draft-banner code{font-family:'JetBrains Mono',monospace;font-style:normal;}
+
+  .part{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:'Source Sans 3',sans-serif;
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:6px 2px;margin:18px 0 8px;
+  }
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+
+  .q{
+    border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;
+    padding:12px 18px 14px;margin-bottom:16px;background:#fff;
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:10px;font-family:'Source Sans 3',sans-serif;}
+  .q-head .title{margin-left:auto;font-size:9.5pt;color:#666;font-style:italic;}
+  .q-body{font-size:11.5pt;line-height:1.5;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;}
+
+  .work{min-height:90px;border-top:1px dashed #c9c4bd;margin-top:8px;}
+  .work.s{min-height:50px;} .work.m{min-height:120px;} .work.l{min-height:170px;} .work.xl{min-height:240px;}
+
+  .frq-parts{margin-top:6px;}
+  .frq-parts .part-item{margin:6px 0 4px;}
+  .frq-parts .part-item > .tag{font-family:'Source Sans 3',sans-serif;font-weight:700;margin-right:6px;}
+  .frq-parts .part-item .marks-inline{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;font-weight:700;float:right;letter-spacing:.05em;}
+  .frq-parts .part-item .sub-part{margin:4px 0 4px 18px;}
+
+  table.data{border-collapse:collapse;margin:8px auto;font-size:10.5pt;}
+  table.data th, table.data td{border:1px solid #444;padding:4px 14px;text-align:center;font-family:'Source Sans 3',sans-serif;}
+  table.data th{background:#f1ece4;font-weight:700;}
+
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+
+  .page-break{page-break-after:always;break-after:page;height:0;}
+
+  @media (max-width: 600px){
+    body{font-size:10.5pt;}
+    .nameline{flex-direction:column;align-items:flex-start;gap:6px;}
+    .nameline .blank{min-width:200px;}
+  }
+  @media print{
+    @page { size: letter; margin: 0.6in 0.65in; }
+    html,body{background:#fff;}
+    body{padding:0;max-width:none;font-size:11pt;}
+    .q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}
+    .draft-banner{display:none;}
+  }
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit C1: Vectors and the Geometry of Space | Practice",
+  "description": "University-level practice problems for Unit C1: Vectors and the Geometry of Space, with full worked solutions from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C1_Vectors_and_the_Geometry_of_Space_Practice.html",
+  "inLanguage": "en",
+  "learningResourceType": "Practice problems",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit C1 &middot; Calculus III</span><span data-lang="zh">第C1单元 &middot; 微积分三</span></div>
+<h1 class="chapter-title"><span data-lang="en">Vectors and the Geometry of Space</span><span data-lang="zh">向量与空间解析几何</span></h1>
+<p class="chapter-sub"><span data-lang="en">University-Style Practice Problems</span><span data-lang="zh">大学风格练习题</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: 3-D coordinates, vectors, dot product, cross product, lines, planes, quadric surfaces</span><span data-lang="zh">第 <b>1 至 7</b> 节：三维坐标、向量、点积、叉积、直线、平面、二次曲面</span><span class="scope">CALC III</span></p>
+<hr class="thick"><hr class="thin">
+<div class="nameline"><span><span data-lang="en">Name:</span><span data-lang="zh">姓名：</span><span class="blank"></span></span><span><span data-lang="en">Date:</span><span data-lang="zh">日期：</span><span class="blank period"></span></span></div>
+<p class="draft-banner"><code>v1.0</code> &middot; <span data-lang="en">10 Qs &middot; 82 marks &middot; Parts CORE / PROOF / APPLIED &middot; MEDIUM to HARD &middot; Sections 1 to 7 &middot; solutions: </span><span data-lang="zh">共10题 &middot; 82分 &middot; 题型 CORE / PROOF / APPLIED &middot; MEDIUM 至 HARD &middot; 第1至7节 &middot; 解答：</span><code>Solutions/Unit_C1_Vectors_and_the_Geometry_of_Space_Solutions.html</code></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算流畅度 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Vectors, the Dot Product, and the Cross Product</span><span data-lang="zh">向量、点积与叉积</span></h2>
+<p class="instructions"><span data-lang="en">Show all component-level working. Express magnitudes in exact simplified radical form. State which formula you are using at each key step (dot product, cross product, etc.).</span><span data-lang="zh">展示所有分量级别的计算过程。用精确化简的根式形式表示模长。在每个关键步骤说明所用公式（点积、叉积等）。</span></p>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">vectors: components, magnitude, unit vector</span><span data-lang="zh">向量：分量、模长、单位向量</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{u} = \langle 2, -1, 3 \rangle$ and $\mathbf{v} = \langle -1, 4, -2 \rangle$.</span><span data-lang="zh">设 $\mathbf{u} = \langle 2, -1, 3 \rangle$，$\mathbf{v} = \langle -1, 4, -2 \rangle$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute $|\mathbf{u}|$ and find the unit vector $\hat{\mathbf{u}}$ in the direction of $\mathbf{u}$.</span><span data-lang="zh">计算 $|\mathbf{u}|$，并求 $\mathbf{u}$ 方向上的单位向量 $\hat{\mathbf{u}}$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Compute the vector $3\mathbf{u} - 2\mathbf{v}$ and find its magnitude.</span><span data-lang="zh">计算向量 $3\mathbf{u} - 2\mathbf{v}$，并求其模长。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">A vector $\mathbf{w}$ has initial point $P = (1, -2, 4)$ and terminal point $Q = (3, 0, 1)$. Write $\mathbf{w}$ in component form and verify that $|\mathbf{w}| \ne |\mathbf{u}|$.</span><span data-lang="zh">向量 $\mathbf{w}$ 的起点为 $P = (1, -2, 4)$，终点为 $Q = (3, 0, 1)$。写出 $\mathbf{w}$ 的分量形式，并验证 $|\mathbf{w}| \ne |\mathbf{u}|$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">dot product: angle, scalar projection, work</span><span data-lang="zh">点积：夹角、标量投影、功</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{a} = \langle 1, 2, -2 \rangle$ and $\mathbf{b} = \langle 3, -1, 2 \rangle$.</span><span data-lang="zh">设 $\mathbf{a} = \langle 1, 2, -2 \rangle$，$\mathbf{b} = \langle 3, -1, 2 \rangle$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute $\mathbf{a} \cdot \mathbf{b}$.</span><span data-lang="zh">计算 $\mathbf{a} \cdot \mathbf{b}$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Find the angle $\theta$ between $\mathbf{a}$ and $\mathbf{b}$. Leave your answer as an exact inverse-cosine expression and state whether the angle is acute, right, or obtuse.</span><span data-lang="zh">求 $\mathbf{a}$ 与 $\mathbf{b}$ 之间的夹角 $\theta$。将答案保留为精确的反余弦表达式，并判断该角是锐角、直角还是钝角。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Compute the scalar projection of $\mathbf{a}$ onto $\mathbf{b}$, and then the vector projection $\operatorname{proj}_{\mathbf{b}} \mathbf{a}$.</span><span data-lang="zh">计算 $\mathbf{a}$ 在 $\mathbf{b}$ 上的标量投影，以及向量投影 $\operatorname{proj}_{\mathbf{b}} \mathbf{a}$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">A constant force $\mathbf{F} = \langle 2, 3, -1 \rangle$ N moves a particle along the straight path from $A = (0,0,0)$ to $B = (4,-1,2)$ (distances in metres). Compute the work done.</span><span data-lang="zh">恒力 $\mathbf{F} = \langle 2, 3, -1 \rangle$ N 将质点沿直线从 $A = (0,0,0)$ 移动到 $B = (4,-1,2)$（距离单位为米）。计算所做的功。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span><span class="pill hard">HARD</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">cross product: area, orthogonality, scalar triple product</span><span data-lang="zh">叉积：面积、正交性、混合积</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{p} = \langle 1, 3, -2 \rangle$ and $\mathbf{q} = \langle -2, 1, 4 \rangle$.</span><span data-lang="zh">设 $\mathbf{p} = \langle 1, 3, -2 \rangle$，$\mathbf{q} = \langle -2, 1, 4 \rangle$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute $\mathbf{p} \times \mathbf{q}$ using the $3 \times 3$ determinant formula.</span><span data-lang="zh">用 $3 \times 3$ 行列式公式计算 $\mathbf{p} \times \mathbf{q}$。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Verify, by direct computation, that $\mathbf{p} \times \mathbf{q}$ is orthogonal to both $\mathbf{p}$ and $\mathbf{q}$.</span><span data-lang="zh">通过直接计算，验证 $\mathbf{p} \times \mathbf{q}$ 与 $\mathbf{p}$ 和 $\mathbf{q}$ 均正交。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Find the area of the parallelogram with adjacent sides $\mathbf{p}$ and $\mathbf{q}$, and hence find the area of the triangle with the same two sides.</span><span data-lang="zh">求以 $\mathbf{p}$ 和 $\mathbf{q}$ 为邻边的平行四边形的面积，进而求以这两边为边的三角形面积。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">Let $\mathbf{r} = \langle 0, 2, 1 \rangle$. Compute the scalar triple product $\mathbf{p} \cdot (\mathbf{q} \times \mathbf{r})$ and hence find the volume of the parallelepiped with edge vectors $\mathbf{p}$, $\mathbf{q}$, $\mathbf{r}$.</span><span data-lang="zh">设 $\mathbf{r} = \langle 0, 2, 1 \rangle$。计算混合积 $\mathbf{p} \cdot (\mathbf{q} \times \mathbf{r})$，进而求以 $\mathbf{p}$、$\mathbf{q}$、$\mathbf{r}$ 为棱向量的平行六面体的体积。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严谨论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Orthogonality, Projections, and the Triple Product</span><span data-lang="zh">正交性、投影与混合积</span></h2>
+<p class="instructions"><span data-lang="en">These items are graded on logical completeness. Write each proof as a sequence of equalities or inequalities with explicit reasons. Do not skip steps that rely on definition. A correct geometric argument supplemented by coordinate algebra is acceptable for the proof questions.</span><span data-lang="zh">本部分按逻辑完整性评分。将每个证明写成带有明确理由的等式或不等式序列。不要跳过依赖定义的步骤。对于证明题，辅以坐标代数的正确几何论证亦可接受。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">cross product is orthogonal to both factors</span><span data-lang="zh">叉积与两个因子均正交</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{u} = \langle u_1, u_2, u_3 \rangle$ and $\mathbf{v} = \langle v_1, v_2, v_3 \rangle$ be vectors in $\mathbb{R}^3$, and let $\mathbf{w} = \mathbf{u} \times \mathbf{v}$.</span><span data-lang="zh">设 $\mathbf{u} = \langle u_1, u_2, u_3 \rangle$，$\mathbf{v} = \langle v_1, v_2, v_3 \rangle$ 为 $\mathbb{R}^3$ 中的向量，令 $\mathbf{w} = \mathbf{u} \times \mathbf{v}$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Write out $\mathbf{w}$ in full component form using the determinant definition.</span><span data-lang="zh">用行列式定义写出 $\mathbf{w}$ 的完整分量形式。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Prove that $\mathbf{u} \cdot \mathbf{w} = 0$, justifying each algebraic step.</span><span data-lang="zh">证明 $\mathbf{u} \cdot \mathbf{w} = 0$，并对每个代数步骤给出理由。</span> <span class="marks-inline">[3]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">By an analogous argument, explain (without fully repeating the algebra) why $\mathbf{v} \cdot \mathbf{w} = 0$, and state what geometric conclusion follows about the direction of $\mathbf{u} \times \mathbf{v}$.</span><span data-lang="zh">用类似的论证（无需完全重复代数过程）解释为何 $\mathbf{v} \cdot \mathbf{w} = 0$，并说明由此可得出关于 $\mathbf{u} \times \mathbf{v}$ 方向的几何结论。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">vector projection formula and distance from a point to a line</span><span data-lang="zh">向量投影公式与点到直线距离</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\ell$ be the line in $\mathbb{R}^3$ passing through point $A$ with direction vector $\mathbf{d}$ (where $\mathbf{d} \ne \mathbf{0}$), and let $P$ be a point not on $\ell$. Write $\overrightarrow{AP} = \mathbf{v}$.</span><span data-lang="zh">设 $\ell$ 为 $\mathbb{R}^3$ 中过点 $A$、方向向量为 $\mathbf{d}$（$\mathbf{d} \ne \mathbf{0}$）的直线，$P$ 为不在 $\ell$ 上的点，记 $\overrightarrow{AP} = \mathbf{v}$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">The foot of the perpendicular from $P$ to $\ell$ is the point $F$ on $\ell$ minimising $|PF|$. By decomposing $\mathbf{v}$ into its component along $\mathbf{d}$ and its component orthogonal to $\mathbf{d}$, prove that the distance from $P$ to $\ell$ is</span><span data-lang="zh">从 $P$ 到 $\ell$ 的垂足是 $\ell$ 上使 $|PF|$ 最小的点 $F$。将 $\mathbf{v}$ 分解为沿 $\mathbf{d}$ 方向的分量与垂直于 $\mathbf{d}$ 的分量，证明 $P$ 到 $\ell$ 的距离为</span>
+      $$ d(P,\ell) = \frac{|\mathbf{v} \times \mathbf{d}|}{|\mathbf{d}|}. $$
+      <span class="marks-inline">[5]</span><div class="work xl"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Apply the formula to find the distance from the point $P = (2, 1, -1)$ to the line through $A = (0, 0, 0)$ with direction $\mathbf{d} = \langle 1, 2, 2 \rangle$.</span><span data-lang="zh">应用该公式，求点 $P = (2, 1, -1)$ 到过 $A = (0, 0, 0)$、方向为 $\mathbf{d} = \langle 1, 2, 2 \rangle$ 的直线的距离。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Confirm your answer to (b) by independently computing the vector $\overrightarrow{FP}$ (the perpendicular component) and finding its magnitude.</span><span data-lang="zh">通过独立计算向量 $\overrightarrow{FP}$（垂直分量）并求其模长，验证 (b) 的答案。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">scalar triple product volume formula and coplanarity</span><span data-lang="zh">混合积体积公式与共面性</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{a}$, $\mathbf{b}$, $\mathbf{c}$ be vectors in $\mathbb{R}^3$ forming the three edge-vectors of a parallelepiped from a common vertex.</span><span data-lang="zh">设 $\mathbf{a}$、$\mathbf{b}$、$\mathbf{c}$ 为 $\mathbb{R}^3$ 中的向量，构成平行六面体从公共顶点出发的三条棱向量。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">The base of the parallelepiped is the parallelogram spanned by $\mathbf{b}$ and $\mathbf{c}$. Its area is $|\mathbf{b} \times \mathbf{c}|$. The height is the absolute value of the component of $\mathbf{a}$ in the direction of $\mathbf{b} \times \mathbf{c}$. Using these facts, prove that the volume of the parallelepiped equals $|{\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})}|$.</span><span data-lang="zh">平行六面体的底面是由 $\mathbf{b}$ 和 $\mathbf{c}$ 张成的平行四边形，面积为 $|\mathbf{b} \times \mathbf{c}|$。高为 $\mathbf{a}$ 在 $\mathbf{b} \times \mathbf{c}$ 方向上的分量的绝对值。利用这些事实，证明平行六面体的体积等于 $|{\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})}|$。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">State and prove the criterion: three vectors $\mathbf{a}$, $\mathbf{b}$, $\mathbf{c}$ are coplanar if and only if $\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = 0$.</span><span data-lang="zh">陈述并证明以下判定准则：三个向量 $\mathbf{a}$、$\mathbf{b}$、$\mathbf{c}$ 共面，当且仅当 $\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = 0$。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Test whether $\mathbf{a} = \langle 1, 2, 3 \rangle$, $\mathbf{b} = \langle 0, 1, -1 \rangle$, $\mathbf{c} = \langle 2, 3, 7 \rangle$ are coplanar. Justify your answer using part (b).</span><span data-lang="zh">检验 $\mathbf{a} = \langle 1, 2, 3 \rangle$、$\mathbf{b} = \langle 0, 1, -1 \rangle$、$\mathbf{c} = \langle 2, 3, 7 \rangle$ 是否共面。用 (b) 部分的结论给出理由。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合应用题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Lines, Planes, Distance, and Quadric Surfaces</span><span data-lang="zh">直线、平面、距离与二次曲面</span></h2>
+<p class="instructions"><span data-lang="en">Set up each problem cleanly. For lines and planes, state the formula you are using (vector, parametric, or scalar form) before substituting values. Check final answers for geometric consistency.</span><span data-lang="zh">整洁地建立每道题的框架。对于直线和平面，在代入数值前说明所用公式（向量式、参数式或标量式）。检查最终答案的几何一致性。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span><span class="pill med">MEDIUM</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">lines in space: vector, parametric, symmetric equations</span><span data-lang="zh">空间直线：向量式、参数式、对称式方程</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the line $\ell$ passing through $P_0 = (1, -2, 3)$ with direction vector $\mathbf{d} = \langle 2, 1, -1 \rangle$.</span><span data-lang="zh">考虑过点 $P_0 = (1, -2, 3)$、方向向量为 $\mathbf{d} = \langle 2, 1, -1 \rangle$ 的直线 $\ell$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Write the vector equation and the parametric equations of $\ell$.</span><span data-lang="zh">写出直线 $\ell$ 的向量方程和参数方程。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Write the symmetric equations of $\ell$.</span><span data-lang="zh">写出直线 $\ell$ 的对称式方程。</span> <span class="marks-inline">[1]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Determine whether the point $Q = (5, 0, 1)$ lies on $\ell$. Justify your answer by solving the parametric equations simultaneously.</span><span data-lang="zh">判断点 $Q = (5, 0, 1)$ 是否在直线 $\ell$ 上。通过联立参数方程给出理由。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">Find the line $m$ through the point $R = (0, 1, -1)$ that is parallel to $\ell$. Write $m$ in parametric form and confirm that $m$ and $\ell$ are distinct (i.e. not the same line).</span><span data-lang="zh">求过点 $R = (0, 1, -1)$ 且与 $\ell$ 平行的直线 $m$。用参数形式写出 $m$，并确认 $m$ 与 $\ell$ 是不同的直线。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">planes: equation from three points, distance from a point</span><span data-lang="zh">平面：由三点确定方程、点到平面距离</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Three points $A = (1, 0, 0)$, $B = (0, 2, 0)$, $C = (0, 0, 3)$ determine a plane $\Pi$.</span><span data-lang="zh">三点 $A = (1, 0, 0)$、$B = (0, 2, 0)$、$C = (0, 0, 3)$ 确定一个平面 $\Pi$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Find two vectors lying in $\Pi$ and compute their cross product to obtain a normal vector $\mathbf{n}$ to $\Pi$.</span><span data-lang="zh">求平面 $\Pi$ 内的两个向量，并计算其叉积以得到 $\Pi$ 的法向量 $\mathbf{n}$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Write the scalar equation of $\Pi$ in the form $ax + by + cz = d$.</span><span data-lang="zh">写出平面 $\Pi$ 的标量方程，形式为 $ax + by + cz = d$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Find the distance from the origin $O = (0,0,0)$ to the plane $\Pi$ using the point-to-plane distance formula. Leave the answer in exact form.</span><span data-lang="zh">用点到平面距离公式求原点 $O = (0,0,0)$ 到平面 $\Pi$ 的距离。答案保留精确形式。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">A second plane $\Pi'$ has equation $6x + 3y + 2z = 0$. Determine whether $\Pi$ and $\Pi'$ are parallel, perpendicular, or neither. Justify using the dot product of their normals.</span><span data-lang="zh">第二个平面 $\Pi'$ 的方程为 $6x + 3y + 2z = 0$。判断 $\Pi$ 与 $\Pi'$ 是平行、垂直还是既不平行也不垂直，并用两法向量的点积给出理由。</span> <span class="marks-inline">[1]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">distance between skew lines; line-plane intersection; intersection of two planes</span><span data-lang="zh">异面直线距离；直线与平面交点；两平面的交线</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Answer all three parts. Each is self-contained.</span><span data-lang="zh">回答全部三个小题。每小题相互独立。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Lines $L_1$ and $L_2$ are given by</span><span data-lang="zh">直线 $L_1$ 和 $L_2$ 分别为</span>
+      $$ L_1: \; \mathbf{r}_1 = \langle 1,0,0 \rangle + t\langle 1,1,0 \rangle, \quad L_2: \; \mathbf{r}_2 = \langle 0,1,0 \rangle + s\langle 0,1,1 \rangle. $$
+      <span data-lang="en">Show that $L_1$ and $L_2$ are skew, and find the distance between them.</span><span data-lang="zh">证明 $L_1$ 与 $L_2$ 是异面直线，并求它们之间的距离。</span>
+      <span class="marks-inline">[4]</span><div class="work xl"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">The line $\mathbf{r} = \langle 2, 0, -1 \rangle + t\langle 1, -1, 3 \rangle$ meets the plane $x + 2y + z = 7$. Find the point of intersection.</span><span data-lang="zh">直线 $\mathbf{r} = \langle 2, 0, -1 \rangle + t\langle 1, -1, 3 \rangle$ 与平面 $x + 2y + z = 7$ 相交。求交点坐标。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">torque via cross product; intersection line of two planes; quadric surface classification</span><span data-lang="zh">叉积求力矩；两平面交线；二次曲面分类</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Answer all three parts. Each is self-contained.</span><span data-lang="zh">回答全部三个小题。每小题相互独立。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">A wrench applies a force $\mathbf{F} = \langle 0, 4, -2 \rangle$ N at the point whose position vector from the pivot is $\mathbf{r} = \langle 2, -1, 3 \rangle$ m. Compute the torque vector $\boldsymbol{\tau} = \mathbf{r} \times \mathbf{F}$ and find its magnitude, interpreting the direction geometrically.</span><span data-lang="zh">扳手在位置向量（从转轴量起）为 $\mathbf{r} = \langle 2, -1, 3 \rangle$ m 的点处施加力 $\mathbf{F} = \langle 0, 4, -2 \rangle$ N。计算力矩向量 $\boldsymbol{\tau} = \mathbf{r} \times \mathbf{F}$，求其模长，并从几何上解释其方向。</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Find the parametric equations of the line of intersection of the planes $x + y + z = 6$ and $2x - y + z = 3$. (Hint: the direction of the intersection line is $\mathbf{n}_1 \times \mathbf{n}_2$.)</span><span data-lang="zh">求平面 $x + y + z = 6$ 与 $2x - y + z = 3$ 交线的参数方程。（提示：交线方向为 $\mathbf{n}_1 \times \mathbf{n}_2$。）</span> <span class="marks-inline">[2]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Identify the type of quadric surface for each equation, naming the surface and, where relevant, the axis of symmetry.</span><span data-lang="zh">判断下列各方程对应的二次曲面类型，说明曲面名称，并在适用时给出对称轴。</span>
+      <div class="sub-part">(i) $\;\dfrac{x^2}{4} + \dfrac{y^2}{9} + z^2 = 1$</div>
+      <div class="sub-part">(ii) $\;z = x^2 + \dfrac{y^2}{4}$</div>
+      <div class="sub-part">(iii) $\;x^2 + y^2 - z^2 = 1$</div>
+      <span class="marks-inline">[2]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中遇到这个单元的难题了吗？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约丁睿学者导师的15分钟免费咨询，在下次期中或期末考试前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c1_vectors_and_the_geometry_of_space__practice__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">免费预约咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../Study%20Guides/Unit_C1_Vectors_and_the_Geometry_of_Space.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Practice</span><span data-lang="zh">练习</span></span>
+  <a href="Solutions/Unit_C1_Vectors_and_the_Geometry_of_Space_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit C1 Practice</span><span data-lang="zh">大学微积分 &middot; 第C1单元练习题</span> <code style="color:#555;">v1.0</code></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第1至7节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High School Computer Science — Programming Fundamentals — Solutions | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/High%20School%20Computer%20Science/Practice%20Questions/Solutions/Unit_2_Programming_Fundamentals_Solutions.html">
+<meta name="description" content="Worked solutions for Programming Fundamentals in High School Computer Science. Bilingual EN/ZH fully worked answers with insights from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="High School Computer Science — Programming Fundamentals — Solutions | Dingrui Scholars">
+<meta property="og:description" content="Worked solutions for Programming Fundamentals in High School Computer Science. Bilingual EN/ZH fully worked answers with insights from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/High%20School%20Computer%20Science/Practice%20Questions/Solutions/Unit_2_Programming_Fundamentals_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="High School Computer Science — Programming Fundamentals — Solutions | Dingrui Scholars">
+<meta name="twitter:description" content="Worked solutions for Programming Fundamentals in High School Computer Science. Bilingual EN/ZH fully worked answers with insights from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<!-- dingrui:version v1  dingrui:pair-key HS-CS-2  dingrui:doc-type solutions -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style>
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --easy-bg:#E7F2E3; --easy-ink:#2F6B2F; --easy-rule:#79A977;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --region-bg:#F5F2EE; --region-ink:#3A322B; --region-rule:#B5A68F;
+    --paper-bg:#FBE9E9;  --paper-ink:#7A2E2E;  --paper-rule:#C97A7A;
+    --honors-bg:#FDF5EC; --honors-ink:#7A5618; --honors-rule:#C4956A;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+    --font-body:'Times New Roman', Times, Georgia, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', serif;
+    --font-sans:'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:var(--font-body);font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:var(--font-sans);font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:var(--font-sans);text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:var(--font-sans);font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:var(--font-sans);font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.easy{background:var(--easy-bg);color:var(--easy-ink);border-color:var(--easy-rule);}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .pill.region{background:var(--region-bg);color:var(--region-ink);border-color:var(--region-rule);letter-spacing:.08em;}
+  .pill.paper {background:var(--paper-bg); color:var(--paper-ink); border-color:var(--paper-rule);}
+  .pill.honors{background:var(--honors-bg);color:var(--honors-ink);border-color:var(--honors-rule);text-transform:uppercase;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .draft-banner{font-family:var(--font-sans);font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-sans);border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:var(--font-sans);font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q.app{border-left-color:#C4956A;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:var(--font-sans);}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .q-body pre{font-family:var(--font-mono);font-size:10pt;background:#f4f1ee;border:1px solid #d8cdb8;border-radius:5px;padding:10px 14px;margin:8px 0;overflow-x:auto;line-height:1.4;}
+  .q-body code{font-family:var(--font-mono);font-size:10pt;background:#f4f1ee;padding:1px 5px;border-radius:3px;border:1px solid #d8cdb8;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:var(--font-sans);font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:var(--font-sans);font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul,.solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution pre{font-family:var(--font-mono);font-size:10pt;background:#e8f4e0;border:1px solid #9BBD7A;border-radius:5px;padding:10px 14px;margin:8px 0;overflow-x:auto;line-height:1.4;}
+  .solution code{font-family:var(--font-mono);font-size:10pt;background:#e8f4e0;padding:1px 5px;border-radius:3px;border:1px solid #9BBD7A;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:var(--font-sans);font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  .lang-bar{display:flex;justify-content:center;margin:6px 0 10px;}
+  .lang-btn{font-family:var(--font-sans);font-weight:700;font-size:9pt;letter-spacing:.1em;padding:4px 14px;border:1px solid var(--maroon);background:#fff;color:var(--maroon);border-radius:999px;cursor:pointer;transition:all 0.2s;}
+  .lang-btn:hover{background:var(--maroon);color:#fff;}
+  body:not(.lang-zh) [data-lang="zh"] { display: none; }
+  body.lang-zh       [data-lang="en"] { display: none; }
+  body.lang-zh{font-family:var(--font-sans);}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  .consult-cta{border:1.5px solid var(--maroon);border-radius:8px;padding:12px 16px;margin:22px 0 6px;text-align:center;background:var(--paper-bg);break-inside:avoid;}
+  .consult-cta__lead{display:block;font-family:var(--font-sans);font-weight:700;font-size:11pt;color:var(--maroon);}
+  .consult-cta__body{display:block;font-family:var(--font-sans);font-size:9.5pt;color:var(--muted);margin:3px 0 6px;}
+  .consult-cta__btn{display:inline-block;font-family:var(--font-sans);font-weight:700;font-size:10pt;color:var(--maroon);text-decoration:underline;}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}.draft-banner{display:none;}.lang-bar{display:none;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "High School Computer Science — Programming Fundamentals — Solutions",
+  "description": "Worked solutions for Programming Fundamentals in High School Computer Science. Bilingual EN/ZH fully worked answers with insights from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/High%20School%20Computer%20Science/Practice%20Questions/Solutions/Unit_2_Programming_Fundamentals_Solutions.html",
+  "inLanguage": ["en", "zh"],
+  "learningResourceType": "Practice problems",
+  "educationalLevel": "High School",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+</div>
+
+<div class="brand">H&nbsp;I&nbsp;G&nbsp;H&nbsp;&nbsp;S&nbsp;C&nbsp;H&nbsp;O&nbsp;O&nbsp;L&nbsp;&nbsp;C&nbsp;O&nbsp;M&nbsp;P&nbsp;U&nbsp;T&nbsp;E&nbsp;R&nbsp;&nbsp;S&nbsp;C&nbsp;I&nbsp;E&nbsp;N&nbsp;C&nbsp;E</div>
+<div class="chapter-tag"><span data-lang="en">Solutions</span><span data-lang="zh">答案与解析</span></div>
+<h1 class="chapter-title"><span data-lang="en">Programming Fundamentals</span><span data-lang="zh">编程基础</span></h1>
+<p class="chapter-sub"><span data-lang="en">Full Worked Solutions &middot; AP CSP-Feeder &middot; US / ON / BC / AB Styles</span><span data-lang="zh">完整解析答案集 &middot; AP CSP 衔接 &middot; 美 / 安 / 卑 / 阿省风格</span></p>
+
+<div class="legend">
+  <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+  <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+  <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+  <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+  <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+  <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+  <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">AB</span><span data-lang="zh">阿</span></span>
+  <span class="pill paper"><span data-lang="en">AP CSP-style MCQ</span><span data-lang="zh">AP CSP 风格选择题</span></span>
+  <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+  <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+  <span class="pill paper"><span data-lang="en">BC Provincial-style</span><span data-lang="zh">卑诗省考风格</span></span>
+  <span class="pill paper"><span data-lang="en">AB/Universal Applied</span><span data-lang="zh">阿省/通用应用题</span></span>
+  <span class="pill honors"><span data-lang="en">Honors</span><span data-lang="zh">荣誉级</span></span>
+</div>
+
+<hr class="thick"><hr class="thin">
+<p class="draft-banner"><code>v1</code> &middot; <span data-lang="en">12 solutions &middot; ~80 marks &middot; .insight block on every question &middot; companion: <code>../Unit_2_Programming_Fundamentals_Practice.html</code></span><span data-lang="zh">共 12 题解析 &middot; 约 80 分 &middot; 每题含洞察说明 &middot; 配套练习：<code>../Unit_2_Programming_Fundamentals_Practice.html</code></span></p>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART I  SHORT RESPONSE   5 Qs  25 marks
+     AP CSP-style MCQ + ON/BC provincial short answer
+     EASY openers, MED middle
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART I &nbsp;&middot;&nbsp; SHORT RESPONSE &nbsp;&middot;&nbsp; SOLUTIONS</span><span data-lang="zh">第一部分 &nbsp;&middot;&nbsp; 短答题 &nbsp;&middot;&nbsp; 答案</span></span><span class="part-meta"><span data-lang="en">AP CSP-style MCQ + ON/BC short answer &middot; 25 marks</span><span data-lang="zh">AP CSP 风格选择题 + 安/卑省考短答 &middot; 共 25 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Section A &middot; Worked Solutions</span><span data-lang="zh">A 部分 &middot; 解析</span></h2>
+<p class="instructions"><span data-lang="en">Each solution card shows the answer, sub-part marks (M1 method, A1 answer), and an insight block connecting the result to a broader principle. Mark allocations follow the companion Practice file.</span><span data-lang="zh">每张解答卡显示答案、每小问得分（M1 方法分，A1 答案分）以及将结论与更广泛原理联系的洞察块。分值分配与配套练习题一致。</span></p>
+
+<!-- Q1 ── EASY, US, AP CSP MCQ, S1 Variables and Assignment -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-style MCQ</span><span data-lang="zh">AP CSP 风格选择题</span></span>
+    <span class="pill topic">&sect;1 <span data-lang="en">Variables and Assignment</span><span data-lang="zh">变量与赋值</span> &middot; AP CSP AAP-1.B</span>
+    <span class="pill marks"><span data-lang="en">[3 marks]</span><span data-lang="zh">[3 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">After the following three lines execute, what is the value of <code>y</code>?</span><span data-lang="zh">以下三行执行后，<code>y</code> 的值是什么？</span></p>
+    <pre><code>x = 4
+y = x + 3
+x = 10</code></pre>
+    <ol class="mcq">
+      <li><span class="lab">(A)</span> <code>10</code></li>
+      <li><span class="lab">(B)</span> <code>13</code></li>
+      <li><span class="lab">(C)</span> <code>7</code></li>
+      <li><span class="lab">(D)</span> <code>4</code></li>
+    </ol>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(C) 7</span></div>
+      <div class="rationale">
+        <p><span data-lang="en">When line 2 executes, <code>x</code> holds <code>4</code>, so Python evaluates <code>4 + 3 = 7</code> and stores that value in <code>y</code>.</span><span data-lang="zh">第 2 行执行时，<code>x</code> 为 <code>4</code>，Python 计算 <code>4 + 3 = 7</code> 并将该值存入 <code>y</code>。</span> <span class="marks-call">A1</span></p>
+        <p><span data-lang="en">Line 3 (<code>x = 10</code>) reassigns <code>x</code> but does NOT retroactively change <code>y</code>. Assignment captures the value at the moment of execution.</span><span data-lang="zh">第 3 行 (<code>x = 10</code>) 重新赋值 <code>x</code>，但不会追溯修改 <code>y</code>。赋值在执行时刻捕获值。</span> <span class="marks-call">A1</span></p>
+        <p><span data-lang="en">Distractors: (A) 10 confuses x's final value with y; (B) 13 assumes y "updates" when x changes; (D) 4 mistakes x's initial value for y.</span><span data-lang="zh">干扰项：(A) 10 将 x 的最终值混淆为 y；(B) 13 误以为 x 变化时 y 会同步更新；(D) 4 将 x 的初始值误作 y。</span> <span class="marks-call">M1</span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">Python variables store <em>values</em>, not references to other variables. Once <code>y = x + 3</code> is evaluated, <code>y</code> is independent of <code>x</code>. This is a fundamental distinction between assignment and aliasing.</span><span data-lang="zh">Python 变量存储的是<em>值</em>，而非对其他变量的引用。一旦 <code>y = x + 3</code> 被求值，<code>y</code> 就独立于 <code>x</code> 了。这是赋值与别名的根本区别。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 ── EASY, US, AP CSP MCQ, S2 Data Types -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-style MCQ</span><span data-lang="zh">AP CSP 风格选择题</span></span>
+    <span class="pill topic">&sect;2 <span data-lang="en">Data Types</span><span data-lang="zh">数据类型</span> &middot; AP CSP 2.1 / ON ICS3U A1.1</span>
+    <span class="pill marks"><span data-lang="en">[3 marks]</span><span data-lang="zh">[3 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Which of the following is the correct data type for the value <code>"3.14"</code> (with quotes) in Python?</span><span data-lang="zh">以下哪项是 Python 中 <code>"3.14"</code>（带引号）的正确数据类型？</span></p>
+    <ol class="mcq">
+      <li><span class="lab">(A)</span> <span data-lang="en">int</span><span data-lang="zh">整数 (int)</span></li>
+      <li><span class="lab">(B)</span> <span data-lang="en">float</span><span data-lang="zh">浮点数 (float)</span></li>
+      <li><span class="lab">(C)</span> <span data-lang="en">str</span><span data-lang="zh">字符串 (str)</span></li>
+      <li><span class="lab">(D)</span> <span data-lang="en">bool</span><span data-lang="zh">布尔 (bool)</span></li>
+    </ol>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answer:</span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(C) str</span></div>
+      <div class="rationale">
+        <p><span data-lang="en">Quotation marks always create a string in Python. Even though the <em>content</em> looks like a number, the type is determined by the syntax, not the content.</span><span data-lang="zh">引号在 Python 中始终创建字符串。即使<em>内容</em>看起来像数字，类型由语法决定，而非内容。</span> <span class="marks-call">A1</span></p>
+        <p><span data-lang="en">Verify: <code>type("3.14")</code> returns <code>&lt;class 'str'&gt;</code>. The numeric value <code>3.14</code> (no quotes) would be a <code>float</code>.</span><span data-lang="zh">验证：<code>type("3.14")</code> 返回 <code>&lt;class 'str'&gt;</code>。数值 <code>3.14</code>（无引号）才是 <code>float</code>。</span> <span class="marks-call">M1</span></p>
+        <p><span data-lang="en">Distractors: (A) int requires no decimal; (B) float is the unquoted literal; (D) bool only holds True/False.</span><span data-lang="zh">干扰项：(A) int 无小数点；(B) float 是不带引号的字面量；(D) bool 仅存储 True/False。</span> <span class="marks-call">A1</span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">Data type is determined by the <em>delimiter</em> in source code, not by what the value looks like. Quotes always mean <code>str</code>. This distinction matters deeply when doing arithmetic: <code>"3.14" + 1</code> raises a <code>TypeError</code>.</span><span data-lang="zh">数据类型由源代码中的<em>定界符</em>决定，而非值的外观。引号始终意味着 <code>str</code>。这一区别在做算术时至关重要：<code>"3.14" + 1</code> 会引发 <code>TypeError</code>。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 ── MED, ON, ON Provincial-style, S3 Input/Output trace -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+    <span class="pill topic">&sect;3 <span data-lang="en">Input and Output</span><span data-lang="zh">输入与输出</span> &middot; ICS3U A2.1 / AB CSE1110 2.4.5</span>
+    <span class="pill marks"><span data-lang="en">[7 marks]</span><span data-lang="zh">[7 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A student writes the following program. The user types <code>5</code> at the prompt.</span><span data-lang="zh">一名学生编写了以下程序。用户在提示符处输入 <code>5</code>。</span></p>
+    <pre><code>n = input("Enter a number: ")
+result = n * 2
+print(result)</code></pre>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">State the data type of <code>n</code> after line 1 executes. Explain why.</span><span data-lang="zh">写出第 1 行执行后 <code>n</code> 的数据类型。解释原因。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">State the exact value that <code>result</code> holds after line 2 executes. State its data type too.</span><span data-lang="zh">写出第 2 行执行后 <code>result</code> 保存的精确值。同时写出其数据类型。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">The student wants <code>result</code> to be <code>10</code> (integer). Write the corrected line 1 that fixes the bug.</span><span data-lang="zh">学生希望 <code>result</code> 为 <code>10</code>（整数）。写出修正后的第 1 行以修复该错误。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">State the Python function used to display output on the screen.</span><span data-lang="zh">写出 Python 中用于在屏幕上显示输出的函数。</span> <span class="marks-inline">[1]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) str &nbsp;|&nbsp; (b) "55", str &nbsp;|&nbsp; (c) n = int(input(...)) &nbsp;|&nbsp; (d) print()</span><span data-lang="zh">答案：(a) str &nbsp;|&nbsp; (b) "55"，str &nbsp;|&nbsp; (c) n = int(input(...)) &nbsp;|&nbsp; (d) print()</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">A1+M1</span></h4>
+        <p><span data-lang="en"><code>n</code> is of type <code>str</code>. The built-in <code>input()</code> function <em>always</em> returns a string, regardless of what the user types. When the user types <code>5</code>, Python stores the character sequence <code>"5"</code>, not the integer <code>5</code>.</span><span data-lang="zh"><code>n</code> 的类型是 <code>str</code>。内置函数 <code>input()</code> <em>始终</em>返回字符串，无论用户输入什么。当用户输入 <code>5</code> 时，Python 存储字符序列 <code>"5"</code>，而非整数 <code>5</code>。</span></p>
+        <h4>(b) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en">Value: <code>"55"</code> (a two-character string). Type: <code>str</code>. Because <code>n</code> is a string, the <code>*</code> operator performs string repetition: <code>"5" * 2 = "55"</code>.</span><span data-lang="zh">值：<code>"55"</code>（两字符字符串）。类型：<code>str</code>。因为 <code>n</code> 是字符串，<code>*</code> 运算符执行字符串重复：<code>"5" * 2 = "55"</code>。</span></p>
+        <h4>(c) <span class="marks-call">A1+A1</span></h4>
+        <pre><code>n = int(input("Enter a number: "))</code></pre>
+        <p><span data-lang="en">Wrapping <code>input()</code> in <code>int()</code> converts the returned string to an integer before assignment. Now <code>n = 5</code> (int), and <code>n * 2 = 10</code>.</span><span data-lang="zh">将 <code>input()</code> 包裹在 <code>int()</code> 中，在赋值前将返回的字符串转换为整数。现在 <code>n = 5</code> (int)，<code>n * 2 = 10</code>。</span></p>
+        <h4>(d) <span class="marks-call">A1</span></h4>
+        <p><code>print()</code></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">The <code>input()</code>-always-returns-str rule is the single most common source of bugs for beginners. The fix is always to wrap with the target type conversion: <code>int(input(...))</code>, <code>float(input(...))</code>, etc. Never assume a number from input without explicitly converting.</span><span data-lang="zh"><code>input()</code> 始终返回字符串这一规则是初学者最常见的错误来源。修复方法始终是将其包裹在目标类型转换中：<code>int(input(...))</code>、<code>float(input(...))</code> 等。切勿假定从 input 获得的是数字，而不显式转换。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 ── MED, BC+AB, AB/Universal, S4 Operators expression evaluation -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">AB</span><span data-lang="zh">阿</span></span>
+    <span class="pill paper"><span data-lang="en">AB/Universal Applied</span><span data-lang="zh">阿省/通用应用题</span></span>
+    <span class="pill topic">&sect;4 <span data-lang="en">Operators</span><span data-lang="zh">运算符</span> &middot; BC CS10 / AB CSE1110 2.4.6</span>
+    <span class="pill marks"><span data-lang="en">[6 marks]</span><span data-lang="zh">[6 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Given <code>a = 17</code> and <code>b = 5</code>, evaluate each expression below.</span><span data-lang="zh">给定 <code>a = 17</code>，<code>b = 5</code>，计算以下每个表达式。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">State the value of <code>a // b</code> and its data type.</span><span data-lang="zh">写出 <code>a // b</code> 的值及其数据类型。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">State the value of <code>a % b</code> and explain what it represents.</span><span data-lang="zh">写出 <code>a % b</code> 的值，并解释它代表什么。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Evaluate the expression <code>a &gt; 10 and b == 5</code> and state whether the result is <code>True</code> or <code>False</code>. Show your reasoning.</span><span data-lang="zh">计算表达式 <code>a &gt; 10 and b == 5</code>，写出结果是 <code>True</code> 还是 <code>False</code>。写出推理过程。</span> <span class="marks-inline">[2]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) 3, int &nbsp;|&nbsp; (b) 2, remainder &nbsp;|&nbsp; (c) True</span><span data-lang="zh">答案：(a) 3，int &nbsp;|&nbsp; (b) 2，余数 &nbsp;|&nbsp; (c) True</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en"><code>17 // 5 = 3</code>. Floor division discards the remainder. Data type: <code>int</code> (integer // integer returns integer).</span><span data-lang="zh"><code>17 // 5 = 3</code>。整除运算舍弃余数。数据类型：<code>int</code>（整数整除整数返回整数）。</span></p>
+        <h4>(b) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en"><code>17 % 5 = 2</code>. The modulo operator returns the <em>remainder</em> after division: <code>17 = 5 * 3 + 2</code>. It represents how much is left over after evenly dividing 17 by 5.</span><span data-lang="zh"><code>17 % 5 = 2</code>。取模运算符返回除法后的<em>余数</em>：<code>17 = 5 * 3 + 2</code>。它表示将 17 均分为 5 份后剩余的量。</span></p>
+        <h4>(c) <span class="marks-call">M1+A1</span></h4>
+        <p><span data-lang="en"><code>a &gt; 10</code> evaluates to <code>17 &gt; 10 = True</code>. <code>b == 5</code> evaluates to <code>5 == 5 = True</code>. <code>True and True = True</code>. The overall expression is <code>True</code>.</span><span data-lang="zh"><code>a &gt; 10</code> 计算结果为 <code>17 &gt; 10 = True</code>。<code>b == 5</code> 计算结果为 <code>5 == 5 = True</code>。<code>True and True = True</code>。整个表达式为 <code>True</code>。</span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en"><code>//</code> and <code>%</code> are complementary operators: <code>a = (a//b)*b + (a%b)</code> always holds. This pair is used everywhere: converting seconds to minutes/seconds, checking even/odd (<code>n % 2</code>), cycling indices, and more. Mastering them removes the need for division in many integer contexts.</span><span data-lang="zh"><code>//</code> 和 <code>%</code> 是互补运算符：<code>a = (a//b)*b + (a%b)</code> 恒成立。这对运算随处可见：将秒转换为分钟/秒、判断奇偶（<code>n % 2</code>）、循环索引等。掌握它们可以在许多整数场景中避免使用除法。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 ── MED, ON, ON Provincial-style, S5 Type Conversion -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+    <span class="pill topic">&sect;5 <span data-lang="en">Type Conversion and Casting</span><span data-lang="zh">类型转换</span> &middot; ICS3U A1.3 / AB CSE1110 2.4.3</span>
+    <span class="pill marks"><span data-lang="en">[6 marks]</span><span data-lang="zh">[6 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For each line of Python below, state the result and its data type. If the line raises an error, name the error.</span><span data-lang="zh">对以下每行 Python，写出结果及其数据类型。若该行引发错误，请说明错误名称。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <code>int(7.9)</code> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <code>str(42) + " points"</code> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <code>int("3.9")</code> <span class="marks-inline">[2]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) 7, int &nbsp;|&nbsp; (b) "42 points", str &nbsp;|&nbsp; (c) ValueError</span><span data-lang="zh">答案：(a) 7，int &nbsp;|&nbsp; (b) "42 points"，str &nbsp;|&nbsp; (c) ValueError</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en"><code>int(7.9)</code> returns <code>7</code>, type <code>int</code>. Python's <code>int()</code> <em>truncates</em> (discards the fractional part) rather than rounding. <code>int(7.9)</code> and <code>int(7.1)</code> both return <code>7</code>.</span><span data-lang="zh"><code>int(7.9)</code> 返回 <code>7</code>，类型 <code>int</code>。Python 的 <code>int()</code> <em>截断</em>（丢弃小数部分）而非四舍五入。<code>int(7.9)</code> 和 <code>int(7.1)</code> 都返回 <code>7</code>。</span></p>
+        <h4>(b) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en"><code>str(42)</code> converts the integer to the string <code>"42"</code>. Concatenating <code>"42" + " points"</code> gives <code>"42 points"</code>, type <code>str</code>.</span><span data-lang="zh"><code>str(42)</code> 将整数转换为字符串 <code>"42"</code>。拼接 <code>"42" + " points"</code> 得到 <code>"42 points"</code>，类型 <code>str</code>。</span></p>
+        <h4>(c) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en"><code>int("3.9")</code> raises a <code>ValueError</code>. Python's <code>int()</code> can parse integer strings like <code>"3"</code>, but not decimal strings like <code>"3.9"</code>. To convert <code>"3.9"</code> to an integer, first use <code>float("3.9")</code> then <code>int()</code>: <code>int(float("3.9")) = 3</code>.</span><span data-lang="zh"><code>int("3.9")</code> 引发 <code>ValueError</code>。Python 的 <code>int()</code> 可以解析整数字符串（如 <code>"3"</code>），但无法解析小数字符串（如 <code>"3.9"</code>）。若要将 <code>"3.9"</code> 转换为整数，需先用 <code>float("3.9")</code> 再用 <code>int()</code>：<code>int(float("3.9")) = 3</code>。</span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">Type conversion is not a free operation: it can fail at runtime. <code>int()</code> rejects strings with a decimal point. The safe pattern for reading a decimal from the user is <code>float(input(...))</code>, then cast to <code>int</code> only if needed. Never assume a string is numeric without validation.</span><span data-lang="zh">类型转换不是免费操作：它可能在运行时失败。<code>int()</code> 拒绝含小数点的字符串。从用户处读取小数的安全模式是 <code>float(input(...))</code>，再仅在需要时转换为 <code>int</code>。切勿在未验证的情况下假设字符串是数值。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART II  EXTENDED RESPONSE   4 Qs  30 marks
+     AP CSP-feeder FRQ + Honors
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART II &nbsp;&middot;&nbsp; EXTENDED RESPONSE &nbsp;&middot;&nbsp; SOLUTIONS</span><span data-lang="zh">第二部分 &nbsp;&middot;&nbsp; 简答题 &nbsp;&middot;&nbsp; 答案</span></span><span class="part-meta"><span data-lang="en">AP CSP-feeder FRQ + Honors &middot; 30 marks</span><span data-lang="zh">AP CSP 衔接简答题 + 荣誉级 &middot; 共 30 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Section B &middot; Worked Solutions</span><span data-lang="zh">B 部分 &middot; 解析</span></h2>
+<p class="instructions"><span data-lang="en">Each solution shows sub-part mark breakdowns with M1 (method) and A1 (answer) marks. Full credit requires showing trace steps, data types, and reasoning, not just a final answer.</span><span data-lang="zh">每道解析均显示小问分值明细，含 M1（方法分）和 A1（答案分）。满分须写出追踪步骤、数据类型及推理过程，而非仅给出最终答案。</span></p>
+
+<!-- Q6 ── EASY, US, AP CSP MCQ, S6 Constants and Naming -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span>
+    <span class="pill easy"><span data-lang="en">EASY</span><span data-lang="zh">易</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-style MCQ</span><span data-lang="zh">AP CSP 风格选择题</span></span>
+    <span class="pill topic">&sect;6 <span data-lang="en">Constants and Naming Conventions</span><span data-lang="zh">常量与命名规范</span> &middot; ON ICS3U A1.1 / AB CSE1110 2.4.4</span>
+    <span class="pill marks"><span data-lang="en">[5 marks]</span><span data-lang="zh">[5 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Answer each naming question below.</span><span data-lang="zh">回答以下每道命名问题。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Which variable name follows Python's <code>snake_case</code> convention for a variable storing a student's total score?</span><span data-lang="zh">哪个变量名遵循 Python 的 <code>snake_case</code> 规范，用于存储学生的总分？</span> <span class="marks-inline">[1]</span>
+        <ol class="mcq">
+          <li><span class="lab">(A)</span> <code>TotalScore</code></li>
+          <li><span class="lab">(B)</span> <code>total_score</code></li>
+          <li><span class="lab">(C)</span> <code>TOTAL_SCORE</code></li>
+          <li><span class="lab">(D)</span> <code>ts</code></li>
+        </ol>
+      </div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">A tax-rate value of <code>0.13</code> should not change during the program. Write the correctly named Python line that declares it as a constant.</span><span data-lang="zh">税率值 <code>0.13</code> 在程序运行中不应改变。写出将其声明为常量的正确命名 Python 语句。</span> <span class="marks-inline">[1]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Explain in two sentences why using <code>TAX_RATE = 0.13</code> instead of the literal <code>0.13</code> throughout the code is better practice.</span><span data-lang="zh">用两句话解释为什么在代码中使用 <code>TAX_RATE = 0.13</code> 而不是字面值 <code>0.13</code> 是更好的实践。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">State the naming convention for Python class names (not variables, not constants).</span><span data-lang="zh">写出 Python 类名（非变量、非常量）的命名规范。</span> <span class="marks-inline">[1]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) (B) total_score &nbsp;|&nbsp; (b) TAX_RATE = 0.13 &nbsp;|&nbsp; (c) readability + maintainability &nbsp;|&nbsp; (d) PascalCase</span><span data-lang="zh">答案：(a) (B) total_score &nbsp;|&nbsp; (b) TAX_RATE = 0.13 &nbsp;|&nbsp; (c) 可读性 + 可维护性 &nbsp;|&nbsp; (d) PascalCase 大驼峰</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">A1</span></h4>
+        <p><span data-lang="en">(B) <code>total_score</code>. Python's PEP 8 style guide specifies lowercase words separated by underscores for variable names. (A) is PascalCase (used for classes); (C) is SCREAMING_SNAKE_CASE (used for constants); (D) is too abbreviated.</span><span data-lang="zh">(B) <code>total_score</code>。Python 的 PEP 8 风格指南规定变量名使用下划线分隔的小写单词。(A) 是 PascalCase（用于类）；(C) 是全大写蛇形（用于常量）；(D) 缩写过短。</span></p>
+        <h4>(b) <span class="marks-call">A1</span></h4>
+        <pre><code>TAX_RATE = 0.13</code></pre>
+        <p><span data-lang="en">Constants are named in SCREAMING_SNAKE_CASE (all uppercase with underscores). Note: Python does not enforce immutability, but the naming convention signals to other programmers that this value should not be changed.</span><span data-lang="zh">常量以全大写蛇形命名（SCREAMING_SNAKE_CASE）。注意：Python 不强制不可变性，但命名规范向其他程序员表明该值不应被修改。</span></p>
+        <h4>(c) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en">Using a named constant improves <em>readability</em>: <code>TAX_RATE</code> clearly communicates the purpose of the value. It also improves <em>maintainability</em>: if the tax rate changes, you update only one line instead of searching for every occurrence of <code>0.13</code> in the code.</span><span data-lang="zh">使用具名常量提高了<em>可读性</em>：<code>TAX_RATE</code> 清晰传达了值的用途。它还提高了<em>可维护性</em>：若税率变化，只需更新一行，而非搜索代码中每处 <code>0.13</code>。</span></p>
+        <h4>(d) <span class="marks-call">A1</span></h4>
+        <p><span data-lang="en">PascalCase (also called UpperCamelCase): each word starts with a capital letter, no underscores. Example: <code>StudentRecord</code>, <code>BankAccount</code>.</span><span data-lang="zh">PascalCase（也称大驼峰命名法）：每个单词首字母大写，无下划线。示例：<code>StudentRecord</code>、<code>BankAccount</code>。</span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">Naming conventions (snake_case for variables, SCREAMING_SNAKE_CASE for constants, PascalCase for classes) are enforced by community convention (PEP 8) rather than the Python interpreter. Violating them does not cause errors, but it signals poor craft and makes code harder to maintain at scale. Professional code always follows these conventions.</span><span data-lang="zh">命名规范（变量用 snake_case，常量用 SCREAMING_SNAKE_CASE，类用 PascalCase）由社区约定（PEP 8）而非 Python 解释器强制执行。违反它们不会导致错误，但表明工艺不佳，且使大规模代码难以维护。专业代码始终遵循这些规范。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q7 ── MED, ON, FRQ, S1+S3 Variables+I/O assignment trace -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+    <span class="pill topic">&sect;1 + &sect;3 <span data-lang="en">Variables, Assignment, and I/O</span><span data-lang="zh">变量、赋值与输入输出</span> &middot; ICS3U A1.3 / A2.1</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A student writes a program to swap two variables and then print the result. Assume the user types <code>10</code> for the first prompt and <code>20</code> for the second.</span><span data-lang="zh">一名学生编写程序来交换两个变量并打印结果。假设用户第一个提示符输入 <code>10</code>，第二个输入 <code>20</code>。</span></p>
+    <pre><code>a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+temp = a
+a = b
+b = temp
+print(a, b)</code></pre>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Trace the program line by line. For each of lines 3-5, state the value of <code>a</code>, <code>b</code>, and <code>temp</code> after that line executes.</span><span data-lang="zh">逐行追踪程序。对第 3-5 行，写出该行执行后 <code>a</code>、<code>b</code>、<code>temp</code> 的值。</span> <span class="marks-inline">[3]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">State the output of line 6.</span><span data-lang="zh">写出第 6 行的输出。</span> <span class="marks-inline">[1]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Explain why a <code>temp</code> variable is required for the swap. What would happen if you wrote <code>a = b</code> followed directly by <code>b = a</code> without using <code>temp</code>?</span><span data-lang="zh">解释为什么交换时需要 <code>temp</code> 变量。若直接写 <code>a = b</code> 然后 <code>b = a</code> 而不使用 <code>temp</code>，会发生什么？</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">Rewrite the swap as a single Python line using tuple unpacking. State the line.</span><span data-lang="zh">用元组解包将交换改写为一行 Python。写出该行。</span> <span class="marks-inline">[2]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) trace table below &nbsp;|&nbsp; (b) 20 10 &nbsp;|&nbsp; (c) a's original value is lost &nbsp;|&nbsp; (d) a, b = b, a</span><span data-lang="zh">答案：(a) 见追踪表 &nbsp;|&nbsp; (b) 20 10 &nbsp;|&nbsp; (c) a 的原始值丢失 &nbsp;|&nbsp; (d) a, b = b, a</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">M1+M1+A1</span></h4>
+        <p><span data-lang="en">After lines 1-2: <code>a = 10, b = 20</code>.</span><span data-lang="zh">第 1-2 行后：<code>a = 10, b = 20</code>。</span></p>
+        <ul>
+          <li><span data-lang="en">Line 3: <code>temp = a</code> -- a = 10, b = 20, temp = 10</span><span data-lang="zh">第 3 行：<code>temp = a</code> -- a = 10, b = 20, temp = 10</span></li>
+          <li><span data-lang="en">Line 4: <code>a = b</code> -- a = 20, b = 20, temp = 10</span><span data-lang="zh">第 4 行：<code>a = b</code> -- a = 20, b = 20, temp = 10</span></li>
+          <li><span data-lang="en">Line 5: <code>b = temp</code> -- a = 20, b = 10, temp = 10</span><span data-lang="zh">第 5 行：<code>b = temp</code> -- a = 20, b = 10, temp = 10</span></li>
+        </ul>
+        <h4>(b) <span class="marks-call">A1</span></h4>
+        <p><span data-lang="en">Output: <code>20 10</code>. Python's <code>print(a, b)</code> prints values separated by a space.</span><span data-lang="zh">输出：<code>20 10</code>。Python 的 <code>print(a, b)</code> 用空格分隔打印各值。</span></p>
+        <h4>(c) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en">Without <code>temp</code>: <code>a = b</code> overwrites <code>a</code> (value 10) with b's value (20). Then <code>b = a</code> copies 20 back into b. Both variables end up holding 20 -- the original value of <code>a</code> (10) is permanently lost. <code>temp</code> preserves a's original value before it is overwritten.</span><span data-lang="zh">若没有 <code>temp</code>：<code>a = b</code> 用 b 的值 (20) 覆盖了 <code>a</code>（值 10）。然后 <code>b = a</code> 将 20 复制回 b。两个变量最终都保存 20 -- <code>a</code> 的原始值 (10) 永久丢失。<code>temp</code> 在 a 被覆盖之前保存了其原始值。</span></p>
+        <h4>(d) <span class="marks-call">A1+A1</span></h4>
+        <pre><code>a, b = b, a</code></pre>
+        <p><span data-lang="en">Python evaluates the right side <code>(b, a)</code> as a tuple <code>(20, 10)</code> first, then unpacks it into <code>a</code> and <code>b</code> simultaneously. No temporary variable is needed.</span><span data-lang="zh">Python 先将右侧 <code>(b, a)</code> 求值为元组 <code>(20, 10)</code>，再同时解包到 <code>a</code> 和 <code>b</code> 中。无需临时变量。</span></p>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">The three-variable swap is a classic algorithm pattern that appears in sorting (bubble sort swaps adjacent elements) and many other contexts. The tuple-unpacking idiom <code>a, b = b, a</code> is Pythonic and more elegant, but understanding the temp-variable version teaches a transferable pattern that works in every language.</span><span data-lang="zh">三变量交换是出现在排序（冒泡排序交换相邻元素）等许多场景中的经典算法模式。元组解包写法 <code>a, b = b, a</code> 是 Python 风格的优雅写法，但理解临时变量版本可学到在每种语言中都通用的可迁移模式。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q8 ── HARD, BC+US, FRQ, S4+S5 Operators+TypeConversion debugging -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic">&sect;4 + &sect;5 <span data-lang="en">Operators and Type Conversion — Debugging</span><span data-lang="zh">运算符与类型转换——调试</span> &middot; BC CS10 / AB CSE1110 2.4.3 / 2.4.6</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Each buggy program below contains one or more errors. Identify the error(s) and write the corrected code.</span><span data-lang="zh">以下每个有问题的程序包含一个或多个错误。识别错误，并写出更正后的代码。</span></p>
+    <p><strong><span data-lang="en">Program A:</span><span data-lang="zh">程序 A：</span></strong></p>
+    <pre><code>score = input("Enter score: ")
+bonus = score + 10
+print("Final score:", bonus)</code></pre>
+    <p><strong><span data-lang="en">Program B:</span><span data-lang="zh">程序 B：</span></strong></p>
+    <pre><code>price = float(input("Enter price: "))
+message = "Total is " + price
+print(message)</code></pre>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Identify the error in Program A. Name the Python exception it raises and explain why.</span><span data-lang="zh">识别程序 A 中的错误。说明它引发的 Python 异常名称及原因。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Write the corrected Program A. The corrected version should output <code>Final score: 95</code> when the user enters <code>85</code>.</span><span data-lang="zh">写出更正后的程序 A。当用户输入 <code>85</code> 时，更正版应输出 <code>Final score: 95</code>。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Identify the error in Program B. Name the exception and explain the fix needed.</span><span data-lang="zh">识别程序 B 中的错误。说明异常名称，并解释所需修复。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">Write the corrected Program B line that builds the message string. You may use either <code>str()</code> concatenation or an f-string.</span><span data-lang="zh">写出更正后的程序 B 中构建消息字符串的那一行。可以使用 <code>str()</code> 拼接或 f 字符串。</span> <span class="marks-inline">[2]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) TypeError, str + int &nbsp;|&nbsp; (b) score = int(input(...)); bonus = score + 10 &nbsp;|&nbsp; (c) TypeError, str + float &nbsp;|&nbsp; (d) see corrected line</span><span data-lang="zh">答案：(a) TypeError，str + int &nbsp;|&nbsp; (b) score = int(input(...)); bonus = score + 10 &nbsp;|&nbsp; (c) TypeError，str + float &nbsp;|&nbsp; (d) 见更正行</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en">Program A raises a <code>TypeError</code>. <code>score = input(...)</code> returns a <code>str</code>. The expression <code>score + 10</code> attempts to add a string to an integer, which Python does not allow. Error message: <em>can only concatenate str (not "int") to str</em>.</span><span data-lang="zh">程序 A 引发 <code>TypeError</code>。<code>score = input(...)</code> 返回 <code>str</code>。表达式 <code>score + 10</code> 尝试将字符串与整数相加，Python 不允许此操作。错误信息：<em>can only concatenate str (not "int") to str</em>。</span></p>
+        <h4>(b) <span class="marks-call">A1+A1</span></h4>
+        <pre><code>score = int(input("Enter score: "))
+bonus = score + 10
+print("Final score:", bonus)</code></pre>
+        <p><span data-lang="en">Converting the input to <code>int</code> first fixes the type mismatch. For input 85: <code>bonus = 85 + 10 = 95</code>. Output: <code>Final score: 95</code>.</span><span data-lang="zh">先将输入转换为 <code>int</code> 修复了类型不匹配。对于输入 85：<code>bonus = 85 + 10 = 95</code>。输出：<code>Final score: 95</code>。</span></p>
+        <h4>(c) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en">Program B raises a <code>TypeError</code>. <code>price</code> is a <code>float</code> (correctly converted). The expression <code>"Total is " + price</code> attempts to concatenate a string and a float, which Python does not allow. The fix is to convert <code>price</code> to a string before concatenating.</span><span data-lang="zh">程序 B 引发 <code>TypeError</code>。<code>price</code> 是 <code>float</code>（已正确转换）。表达式 <code>"Total is " + price</code> 尝试拼接字符串与浮点数，Python 不允许。修复方法是拼接前将 <code>price</code> 转换为字符串。</span></p>
+        <h4>(d) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en">Using <code>str()</code> concatenation:</span><span data-lang="zh">使用 <code>str()</code> 拼接：</span></p>
+        <pre><code>message = "Total is " + str(price)</code></pre>
+        <p><span data-lang="en">Or using an f-string:</span><span data-lang="zh">或使用 f 字符串：</span></p>
+        <pre><code>message = f"Total is {price}"</code></pre>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">TypeError in Python almost always means a type mismatch in an expression. The two most common forms are: (1) numeric-string arithmetic (<code>str + int</code>) and (2) string concatenation with a non-string (<code>str + float</code>). The fix is always explicit conversion. F-strings avoid this entirely by handling the conversion internally.</span><span data-lang="zh">Python 中的 TypeError 几乎总意味着表达式中的类型不匹配。最常见的两种形式：(1) 数字-字符串算术（<code>str + int</code>）；(2) 字符串与非字符串拼接（<code>str + float</code>）。修复方法始终是显式转换。F 字符串通过内部处理转换完全避免了这一问题。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 ── HARD Honors, US, FRQ, S7 First Program IPO pipeline -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill honors"><span data-lang="en">Honors</span><span data-lang="zh">荣誉级</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic">&sect;7 <span data-lang="en">First Program — IPO design and edge cases</span><span data-lang="zh">编写第一个程序——IPO 设计与边界情况</span> &middot; AB CSE1110 2.4.1 / ON ICS3U A2.1</span>
+    <span class="pill marks"><span data-lang="en">[9 marks]</span><span data-lang="zh">[9 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A student must write a program that reads a weight in kilograms and a height in metres from the user, computes the Body Mass Index (BMI = weight / height squared), and prints the BMI rounded to one decimal place.</span><span data-lang="zh">一名学生须编写一个程序：从用户读取体重（千克）和身高（米），计算体重指数（BMI = 体重 / 身高平方），并打印保留一位小数的 BMI。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">State the IPO (Input, Process, Output) for this program. List each input, the process formula, and the output.</span><span data-lang="zh">写出该程序的 IPO（输入、处理、输出）。列出每个输入、处理公式和输出。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Write the complete Python program using the five-step pipeline. Use <code>float(input(...))</code> for reading inputs and an f-string with <code>:.1f</code> for the output.</span><span data-lang="zh">用五步流程编写完整 Python 程序。使用 <code>float(input(...))</code> 读取输入，用带 <code>:.1f</code> 的 f 字符串输出。</span> <span class="marks-inline">[3]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Trace your program with <code>weight = 70</code> and <code>height = 1.75</code>. Show the calculation and state the printed output.</span><span data-lang="zh">用 <code>weight = 70</code>、<code>height = 1.75</code> 追踪你的程序。写出计算过程，并写出打印的输出。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">Identify two edge-case inputs that could cause your program to behave unexpectedly. For each, name the Python error (if any) that would occur.</span><span data-lang="zh">识别两种可能导致程序意外行为的边界情况输入。对每种情况，说明会发生的 Python 错误名称（如果有）。</span> <span class="marks-inline">[2]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) IPO listed &nbsp;|&nbsp; (b) complete program &nbsp;|&nbsp; (c) BMI = 22.9 &nbsp;|&nbsp; (d) height=0 ZeroDivisionError; non-numeric ValueError</span><span data-lang="zh">答案：(a) IPO 如下 &nbsp;|&nbsp; (b) 完整程序 &nbsp;|&nbsp; (c) BMI = 22.9 &nbsp;|&nbsp; (d) height=0 引发 ZeroDivisionError；非数值引发 ValueError</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">A1+A1</span></h4>
+        <ul>
+          <li><span data-lang="en"><strong>Input:</strong> weight_kg (float, kilograms), height_m (float, metres)</span><span data-lang="zh"><strong>输入：</strong>weight_kg（float，千克），height_m（float，米）</span></li>
+          <li><span data-lang="en"><strong>Process:</strong> bmi = weight_kg / (height_m ** 2)</span><span data-lang="zh"><strong>处理：</strong>bmi = weight_kg / (height_m ** 2)</span></li>
+          <li><span data-lang="en"><strong>Output:</strong> BMI rounded to 1 decimal place (e.g., "BMI = 22.9")</span><span data-lang="zh"><strong>输出：</strong>保留 1 位小数的 BMI（如"BMI = 22.9"）</span></li>
+        </ul>
+        <h4>(b) <span class="marks-call">M1+A1+A1</span></h4>
+        <pre><code>weight_kg = float(input("Enter weight in kg: "))
+height_m = float(input("Enter height in m: "))
+bmi = weight_kg / (height_m ** 2)
+print(f"BMI = {bmi:.1f}")</code></pre>
+        <p><span data-lang="en"><code>float(input(...))</code> handles decimal inputs. <code>:.1f</code> in the f-string formats to one decimal place.</span><span data-lang="zh"><code>float(input(...))</code> 处理小数输入。f 字符串中的 <code>:.1f</code> 格式化为一位小数。</span></p>
+        <h4>(c) <span class="marks-call">M1+A1</span></h4>
+        <p><span data-lang="en">Calculation: <code>bmi = 70 / (1.75 ** 2) = 70 / 3.0625 = 22.857...</code></span><span data-lang="zh">计算：<code>bmi = 70 / (1.75 ** 2) = 70 / 3.0625 = 22.857...</code></span></p>
+        <p><span data-lang="en">Printed output: <code>BMI = 22.9</code> (rounded to 1 decimal place by <code>:.1f</code>).</span><span data-lang="zh">打印输出：<code>BMI = 22.9</code>（由 <code>:.1f</code> 四舍五入为 1 位小数）。</span></p>
+        <h4>(d) <span class="marks-call">A1+A1</span></h4>
+        <ul>
+          <li><span data-lang="en"><strong>height = 0:</strong> Division by zero raises <code>ZeroDivisionError</code> (cannot divide by 0 in Python).</span><span data-lang="zh"><strong>height = 0：</strong>除以零引发 <code>ZeroDivisionError</code>（Python 中不能除以 0）。</span></li>
+          <li><span data-lang="en"><strong>Non-numeric input (e.g., "abc"):</strong> <code>float("abc")</code> raises <code>ValueError</code> because "abc" cannot be converted to a float.</span><span data-lang="zh"><strong>非数值输入（如 "abc"）：</strong><code>float("abc")</code> 引发 <code>ValueError</code>，因为 "abc" 无法转换为浮点数。</span></li>
+        </ul>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">The IPO model (Input - Process - Output) is the foundational design pattern for any program. Identifying it before writing code ensures you understand what data flows in, what transformation occurs, and what result leaves. Edge cases always come from the Process step: what values make the formula undefined? (Division by zero, square root of negative, log of non-positive.)</span><span data-lang="zh">IPO 模型（输入-处理-输出）是任何程序的基础设计模式。编写代码前先识别它，确保你理解什么数据流入、发生什么转换、输出什么结果。边界情况始终来自处理步骤：什么值使公式无定义？（除以零、负数开方、非正数取对数。）</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PART III  MODELING / APPLIED   3 Qs  25 marks
+     Universal / multi-region applied problems
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART III &nbsp;&middot;&nbsp; MODELING / APPLIED &nbsp;&middot;&nbsp; SOLUTIONS</span><span data-lang="zh">第三部分 &nbsp;&middot;&nbsp; 建模与应用 &nbsp;&middot;&nbsp; 答案</span></span><span class="part-meta"><span data-lang="en">Universal / multi-region applied &middot; 25 marks</span><span data-lang="zh">通用/多地区应用题 &middot; 共 25 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Section C &middot; Worked Solutions</span><span data-lang="zh">C 部分 &middot; 解析</span></h2>
+<p class="instructions"><span data-lang="en">Full solutions show complete traces, pseudocode, and Python programs. Mark breakdowns are shown per sub-part. An insight block connects each scenario to broader programming principles.</span><span data-lang="zh">完整解析包含完整追踪、伪代码和 Python 程序。分值明细按小问显示。洞察块将每个场景与更广泛的编程原理相连。</span></p>
+
+<!-- Q10 ── MED, US/ON, S2+S3+S4, type identification + operator use -->
+<div class="q app">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic">&sect;2 + &sect;3 + &sect;4 <span data-lang="en">Data types, I/O, and operators — applied</span><span data-lang="zh">数据类型、输入输出与运算符——应用</span> &middot; ICS3U A1.1 / A2.1 / AB CSE1110 2.4.6</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A program reads the number of minutes a student studied and converts it to hours and leftover minutes. For example, 200 minutes = 3 hours and 20 minutes.</span><span data-lang="zh">一个程序读取学生学习的分钟数，并将其转换为小时数和剩余分钟数。例如，200 分钟 = 3 小时 20 分钟。</span></p>
+    <pre><code>minutes = int(input("Enter total minutes studied: "))
+hours = minutes // 60
+leftover = minutes % 60
+print(hours, "hours and", leftover, "minutes")</code></pre>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Trace the program for the input <code>200</code>. State the values of <code>hours</code> and <code>leftover</code> after lines 2 and 3 execute. Show your arithmetic.</span><span data-lang="zh">用输入 <code>200</code> 追踪程序。写出第 2、3 行执行后 <code>hours</code> 和 <code>leftover</code> 的值。写出算术过程。</span> <span class="marks-inline">[3]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">State the exact output of the program when the input is <code>200</code>.</span><span data-lang="zh">写出输入为 <code>200</code> 时程序的精确输出。</span> <span class="marks-inline">[1]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Why is the <code>int()</code> conversion on line 1 necessary? What error would occur without it when the user types <code>200</code>?</span><span data-lang="zh">为什么第 1 行的 <code>int()</code> 转换是必要的？若没有它，用户输入 <code>200</code> 时会发生什么错误？</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">Write the pseudocode for this program using the standard block format (INPUT, SET, OUTPUT).</span><span data-lang="zh">使用标准块格式（INPUT、SET、OUTPUT）为该程序编写伪代码。</span> <span class="marks-inline">[2]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) hours=3, leftover=20 &nbsp;|&nbsp; (b) "3 hours and 20 minutes" &nbsp;|&nbsp; (c) TypeError on // with str &nbsp;|&nbsp; (d) pseudocode below</span><span data-lang="zh">答案：(a) hours=3，leftover=20 &nbsp;|&nbsp; (b) "3 hours and 20 minutes" &nbsp;|&nbsp; (c) str 上使用 // 引发 TypeError &nbsp;|&nbsp; (d) 伪代码如下</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">M1+A1+A1</span></h4>
+        <p><span data-lang="en">Line 2: <code>hours = 200 // 60</code>. 200 / 60 = 3.33..., so 200 // 60 = 3. hours = 3.</span><span data-lang="zh">第 2 行：<code>hours = 200 // 60</code>。200 / 60 = 3.33...，所以 200 // 60 = 3。hours = 3。</span></p>
+        <p><span data-lang="en">Line 3: <code>leftover = 200 % 60</code>. 200 = 60 * 3 + 20, so 200 % 60 = 20. leftover = 20.</span><span data-lang="zh">第 3 行：<code>leftover = 200 % 60</code>。200 = 60 * 3 + 20，所以 200 % 60 = 20。leftover = 20。</span></p>
+        <h4>(b) <span class="marks-call">A1</span></h4>
+        <p><span data-lang="en">Exact output: <code>3 hours and 20 minutes</code></span><span data-lang="zh">精确输出：<code>3 hours and 20 minutes</code></span></p>
+        <h4>(c) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en">Without <code>int()</code>, <code>minutes</code> is a <code>str</code>. The <code>//</code> operator cannot be applied to a string, so Python raises a <code>TypeError</code>: unsupported operand type(s) for //: 'str' and 'int'. The conversion to <code>int</code> is necessary because arithmetic operators require numeric types.</span><span data-lang="zh">若没有 <code>int()</code>，<code>minutes</code> 是 <code>str</code>。<code>//</code> 运算符不能用于字符串，Python 引发 <code>TypeError</code>：unsupported operand type(s) for //: 'str' and 'int'。转换为 <code>int</code> 是必要的，因为算术运算符需要数值类型。</span></p>
+        <h4>(d) <span class="marks-call">A1+A1</span></h4>
+        <pre><code>INPUT minutes
+SET hours TO minutes // 60
+SET leftover TO minutes % 60
+OUTPUT hours, "hours and", leftover, "minutes"</code></pre>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">The floor-division + modulo pair (<code>//</code> and <code>%</code>) is the canonical way to decompose a quantity into a larger unit and a remainder. Time (seconds to minutes/seconds), distance (cm to m/cm), money (cents to dollars/cents) all follow the same pattern. Recognising this pattern makes you a faster problem-solver across many domains.</span><span data-lang="zh">整除 + 取模组合（<code>//</code> 和 <code>%</code>）是将数量分解为更大单位和余数的标准方法。时间（秒转分钟/秒）、距离（厘米转米/厘米）、金钱（分转元/分）都遵循相同模式。认识这一模式使你能在许多领域更快地解决问题。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q11 ── MED, ON/BC, S5+S6+S7, type conversion + naming + IPO design -->
+<div class="q app">
+  <div class="q-head">
+    <span class="pill qnum">Q11</span>
+    <span class="pill med"><span data-lang="en">MEDIUM</span><span data-lang="zh">中</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill paper"><span data-lang="en">ON Provincial-style</span><span data-lang="zh">安大略省考风格</span></span>
+    <span class="pill topic">&sect;5 + &sect;6 + &sect;7 <span data-lang="en">Type conversion, naming, and IPO design</span><span data-lang="zh">类型转换、命名与 IPO 设计</span> &middot; ICS3U A1.3 / A2.1 / AB CSE1110 2.4.1</span>
+    <span class="pill marks"><span data-lang="en">[8 marks]</span><span data-lang="zh">[8 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A student is writing a program to compute an HST-inclusive price. Ontario HST rate is 13%. The program should read a pre-tax price, compute the tax, and display the final price with two decimal places. The student's first draft is shown below.</span><span data-lang="zh">一名学生正在编写一个程序，计算含 HST 的价格。安大略省 HST 税率为 13%。程序应读取含税前价格，计算税额，并以两位小数显示最终价格。学生的初稿如下。</span></p>
+    <pre><code># Draft 1
+p = input("Enter price: ")
+t = p * 0.13
+f = p + t
+print("Final:", f)</code></pre>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Identify two errors in Draft 1 and explain each in one sentence.</span><span data-lang="zh">识别初稿 1 中的两处错误，每处用一句话解释。</span> <span class="marks-inline">[2]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Rewrite the program using descriptive names and a named constant for the tax rate. Use an f-string with <code>:.2f</code> for the output line. The corrected version should handle decimal inputs correctly.</span><span data-lang="zh">用描述性名称和税率具名常量重写程序。输出行使用带 <code>:.2f</code> 的 f 字符串。更正版应正确处理小数输入。</span> <span class="marks-inline">[4]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Trace your corrected program with an input of <code>100.00</code>. State the values of each variable and the printed output.</span><span data-lang="zh">用输入 <code>100.00</code> 追踪你的更正程序。写出每个变量的值以及打印的输出。</span> <span class="marks-inline">[2]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) missing float() + cryptic names &nbsp;|&nbsp; (b) corrected program &nbsp;|&nbsp; (c) tax=13.0, final=113.0, "Final: 113.00"</span><span data-lang="zh">答案：(a) 缺少 float() 转换 + 命名不清 &nbsp;|&nbsp; (b) 更正程序 &nbsp;|&nbsp; (c) tax=13.0，final=113.0，"Final: 113.00"</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">A1+A1</span></h4>
+        <ul>
+          <li><span data-lang="en"><strong>Error 1 (type):</strong> <code>p = input(...)</code> returns a <code>str</code>, so <code>p * 0.13</code> raises a <code>TypeError</code> (cannot multiply str by float). Fix: wrap with <code>float()</code>.</span><span data-lang="zh"><strong>错误 1（类型）：</strong><code>p = input(...)</code> 返回 <code>str</code>，所以 <code>p * 0.13</code> 引发 <code>TypeError</code>（不能将 str 与 float 相乘）。修复：包裹在 <code>float()</code> 中。</span></li>
+          <li><span data-lang="en"><strong>Error 2 (naming):</strong> Single-letter variable names <code>p</code>, <code>t</code>, <code>f</code> are not descriptive; they violate naming conventions and reduce readability/maintainability.</span><span data-lang="zh"><strong>错误 2（命名）：</strong>单字母变量名 <code>p</code>、<code>t</code>、<code>f</code> 不具描述性；违反命名规范，降低可读性/可维护性。</span></li>
+        </ul>
+        <h4>(b) <span class="marks-call">M1+A1+A1+A1</span></h4>
+        <pre><code>TAX_RATE = 0.13
+price_before_tax = float(input("Enter price: "))
+tax_amount = price_before_tax * TAX_RATE
+final_price = price_before_tax + tax_amount
+print(f"Final: {final_price:.2f}")</code></pre>
+        <h4>(c) <span class="marks-call">A1+A1</span></h4>
+        <p><span data-lang="en">Trace for input <code>100.00</code>:</span><span data-lang="zh">输入 <code>100.00</code> 的追踪：</span></p>
+        <ul>
+          <li><code>TAX_RATE = 0.13</code></li>
+          <li><code>price_before_tax = 100.0</code></li>
+          <li><code>tax_amount = 100.0 * 0.13 = 13.0</code></li>
+          <li><code>final_price = 100.0 + 13.0 = 113.0</code></li>
+          <li><span data-lang="en">Printed output: <code>Final: 113.00</code></span><span data-lang="zh">打印输出：<code>Final: 113.00</code></span></li>
+        </ul>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">This question combines three quality dimensions of beginner code: correct types (<code>float</code> not <code>str</code>), meaningful names (not single letters), and formatted output (<code>:.2f</code> for currency). Professional code achieves all three simultaneously. The named constant <code>TAX_RATE</code> also signals intent to future readers of the code.</span><span data-lang="zh">此题综合了初学者代码的三个质量维度：正确类型（<code>float</code> 而非 <code>str</code>）、有意义的命名（非单字母）、格式化输出（货币用 <code>:.2f</code>）。专业代码同时实现三者。具名常量 <code>TAX_RATE</code> 也向代码未来的读者传达了意图。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q12 ── HARD, US/ON/BC, S1-S7 comprehensive IPO + all fundamentals -->
+<div class="q app">
+  <div class="q-head">
+    <span class="pill qnum">Q12</span>
+    <span class="pill hard"><span data-lang="en">HARD</span><span data-lang="zh">难</span></span>
+    <span class="pill region">&#x1F1FA;&#x1F1F8; <span data-lang="en">US</span><span data-lang="zh">美</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">ON</span><span data-lang="zh">安</span></span>
+    <span class="pill region">&#x1F1E8;&#x1F1E6; <span data-lang="en">BC</span><span data-lang="zh">卑</span></span>
+    <span class="pill paper"><span data-lang="en">AP CSP-feeder FRQ</span><span data-lang="zh">AP CSP 衔接简答题</span></span>
+    <span class="pill topic"><span data-lang="en">All sections &middot; Full program design and debugging</span><span data-lang="zh">全节综合 &middot; 完整程序设计与调试</span> &middot; AP CSP AAP-1 / AB CSE1110 2.4.1-2.4.7</span>
+    <span class="pill marks"><span data-lang="en">[9 marks]</span><span data-lang="zh">[9 分]</span></span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A student is writing a program that asks the user for their first name and birth year, then prints a personalised message with their age. Today's year is 2026. The student's buggy version is shown below.</span><span data-lang="zh">一名学生正在编写一个程序，询问用户的名字和出生年份，然后打印带有年龄的个性化消息。今年是 2026 年。学生的有错误版本如下。</span></p>
+    <pre><code>CURRENT_YEAR = 2026
+name = input("Enter your first name: ")
+birth_year = input("Enter your birth year: ")
+age = CURRENT_YEAR - birth_year
+message = "Hello " + name + "! You are " + age + " years old."
+print(message)</code></pre>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Identify the two errors in this program. For each error, name the Python exception it would raise and explain why.</span><span data-lang="zh">识别该程序中的两处错误。对每处错误，说明它会引发的 Python 异常名称及原因。</span> <span class="marks-inline">[4]</span></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Write the corrected complete program. The naming convention for the constant should be preserved.</span><span data-lang="zh">写出更正后的完整程序。应保留常量的命名规范。</span> <span class="marks-inline">[3]</span></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Trace your corrected program for name <code>"Li"</code> and birth year <code>2010</code>. State the exact printed output.</span><span data-lang="zh">用名字 <code>"Li"</code>、出生年份 <code>2010</code> 追踪你的更正程序。写出精确的打印输出。</span> <span class="marks-inline">[2]</span></div>
+    </div>
+    <div class="solution">
+      <div class="answer-line"><span data-lang="en">Answers: (a) TypeError on int-str subtraction + TypeError on str+int concatenation &nbsp;|&nbsp; (b) corrected program &nbsp;|&nbsp; (c) "Hello Li! You are 16 years old."</span><span data-lang="zh">答案：(a) int-str 相减的 TypeError + str+int 拼接的 TypeError &nbsp;|&nbsp; (b) 更正程序 &nbsp;|&nbsp; (c) "Hello Li! You are 16 years old."</span></div>
+      <div class="rationale">
+        <h4>(a) <span class="marks-call">M1+A1+M1+A1</span></h4>
+        <ul>
+          <li><span data-lang="en"><strong>Error 1 (line 4):</strong> <code>birth_year = input(...)</code> returns a <code>str</code>. The expression <code>CURRENT_YEAR - birth_year</code> subtracts a string from an integer, raising a <code>TypeError</code>: unsupported operand type(s) for -: 'int' and 'str'.</span><span data-lang="zh"><strong>错误 1（第 4 行）：</strong><code>birth_year = input(...)</code> 返回 <code>str</code>。表达式 <code>CURRENT_YEAR - birth_year</code> 从整数中减去字符串，引发 <code>TypeError</code>：unsupported operand type(s) for -: 'int' and 'str'。</span></li>
+          <li><span data-lang="en"><strong>Error 2 (line 5):</strong> After fixing Error 1, <code>age</code> is an <code>int</code>. The expression <code>"Hello " + name + "! You are " + age + " years old."</code> attempts string + int concatenation, raising a <code>TypeError</code>: can only concatenate str (not "int") to str.</span><span data-lang="zh"><strong>错误 2（第 5 行）：</strong>修复错误 1 后，<code>age</code> 是 <code>int</code>。表达式 <code>"Hello " + name + "! You are " + age + " years old."</code> 尝试字符串 + 整数拼接，引发 <code>TypeError</code>：can only concatenate str (not "int") to str。</span></li>
+        </ul>
+        <h4>(b) <span class="marks-call">M1+A1+A1</span></h4>
+        <pre><code>CURRENT_YEAR = 2026
+name = input("Enter your first name: ")
+birth_year = int(input("Enter your birth year: "))
+age = CURRENT_YEAR - birth_year
+message = f"Hello {name}! You are {age} years old."
+print(message)</code></pre>
+        <p><span data-lang="en">Fixes: <code>int(input(...))</code> for birth_year; f-string avoids str+int TypeError.</span><span data-lang="zh">修复：对 birth_year 使用 <code>int(input(...))</code>；f 字符串避免了 str+int 的 TypeError。</span></p>
+        <h4>(c) <span class="marks-call">M1+A1</span></h4>
+        <ul>
+          <li><code>CURRENT_YEAR = 2026</code></li>
+          <li><code>name = "Li"</code></li>
+          <li><code>birth_year = 2010</code></li>
+          <li><code>age = 2026 - 2010 = 16</code></li>
+          <li><span data-lang="en">Printed output: <code>Hello Li! You are 16 years old.</code></span><span data-lang="zh">打印输出：<code>Hello Li! You are 16 years old.</code></span></li>
+        </ul>
+        <div class="insight"><strong><span data-lang="en">Insight:</span><span data-lang="zh">洞察：</span></strong> <span data-lang="en">This question tests systematic debugging: there are two independent errors, each in a different expression. Beginners often fix only the first error they see. Professional debugging traces each line and checks whether every operation is type-compatible. F-strings are the modern, idiomatic Python way to embed variables in strings without explicit type conversion.</span><span data-lang="zh">此题测试系统性调试：有两处独立错误，分别位于不同表达式中。初学者常常只修复他们看到的第一处错误。专业调试逐行追踪，检查每个操作是否类型兼容。F 字符串是现代、惯用的 Python 方式，无需显式类型转换即可将变量嵌入字符串。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- consult-cta -->
+<aside class="consult-cta">
+  <span class="consult-cta__lead"><span data-lang="en">Stuck, or want to go further?</span><span data-lang="zh">遇到困难，或想更进一步？</span></span>
+  <span class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor:</span><span data-lang="zh">预约 Dingrui Scholars 导师的 15 分钟免费咨询：</span></span>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&amp;utm_medium=cta&amp;utm_campaign=high_school_computer_science&amp;utm_content=Unit_2_Programming_Fundamentals__solutions__en" target="_blank" rel="noopener">dingruischolars.com/signup</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&amp;utm_medium=cta&amp;utm_campaign=high_school_computer_science&amp;utm_content=Unit_2_Programming_Fundamentals__solutions__zh" target="_blank" rel="noopener">dingruischolars.com/signup-ch</a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_2_Programming_Fundamentals.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_2_Programming_Fundamentals_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">High School Computer Science &middot; Solutions</span><span data-lang="zh">高中计算机科学 &middot; 答案与解析</span> &middot; <code style="color:#555;">v1</code></span>
+  <span><span data-lang="en">Programming Fundamentals Solutions v1 &middot; 12 solutions &middot; ~80 marks &middot; US / ON / BC / AB &middot; HS-CS-2</span><span data-lang="zh">编程基础 答案与解析 v1 &middot; 共 12 题解析 &middot; 约 80 分 &middot; 美 / 安 / 卑 / 阿 &middot; HS-CS-2</span></span>
+</footer>
+
+<script>
+function toggleLang() { const isZh = document.body.classList.toggle('lang-zh'); try { localStorage.setItem('lang', isZh ? 'zh' : 'en'); } catch (e) {} }
+try { if (localStorage.getItem('lang') === 'zh') document.body.classList.add('lang-zh'); } catch (e) {}
+</script>
+
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

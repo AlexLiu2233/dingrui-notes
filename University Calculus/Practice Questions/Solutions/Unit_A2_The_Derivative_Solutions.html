@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit A2: The Derivative | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-A2  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A2_The_Derivative_Solutions.html">
+<meta name="description" content="Worked solutions for Unit A2: The Derivative in University Calculus. Limit-definition derivatives, differentiability vs continuity proofs, tangent lines, and higher-order derivatives from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit A2: The Derivative | Solutions">
+<meta property="og:description" content="Worked solutions for Unit A2: The Derivative in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A2_The_Derivative_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit A2: The Derivative | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit A2: The Derivative in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit A2: The Derivative | Solutions",
+  "description": "Worked solutions for Unit A2: The Derivative in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_A2_The_Derivative_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit A2 · Solutions</span><span data-lang="zh">A2单元 · 解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">The Derivative · Solutions</span><span data-lang="zh">导数 · 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题配套解答</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: the limit definition, the derivative as a function, slope and rate interpretations, differentiability vs continuity, first-principles computation, higher-order derivatives, where differentiability fails</span><span data-lang="zh">第<b>1至7</b>节：极限定义，导函数，斜率与变化率解释，可微性与连续性，第一性原理计算，高阶导数，可微性失效之处</span><span class="scope">CALC I</span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code><span data-lang="en"> · companion to </span><span data-lang="zh">· 配套</span><code style="font-style:normal;">Unit_A2_The_Derivative_Practice.html</code><span data-lang="en"> · 10 Qs · 82 marks · method walk with </span><span data-lang="zh">· 10题 · 82分 · 方法详解：</span><span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span><span data-lang="en"> method / </span><span data-lang="zh">方法标 / </span><span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span><span data-lang="en"> answer / </span><span data-lang="zh">答案标 / </span><span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span><span data-lang="en"> reasoning mark callouts</span><span data-lang="zh">推理标</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART I · CORE TECHNIQUES</span><span data-lang="zh">第一部分 · 核心技巧</span></span><span class="part-meta"><span data-lang="en">Computational fluency · 28 marks</span><span data-lang="zh">计算流畅度 · 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">limit definition at a point, both forms</span><span data-lang="zh">极限定义求一点处导数，两种形式</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Find $f'(2)$ for $f(x)=x^{2}-3x$ via the $h\to 0$ form. (b) Find $f'(1)$ for $f(x)=\frac{1}{x}$ via the $x\to a$ form.</span><span data-lang="zh">(a) 用 $h\to 0$ 形式求 $f(x)=x^{2}-3x$ 在 $f'(2)$。(b) 用 $x\to a$ 形式求 $f(x)=\frac{1}{x}$ 在 $f'(1)$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> $f'(2)=1$ &nbsp;·&nbsp; <span class="ans">(b)</span> $f'(1)=-1$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Difference quotient, $h\to 0$ form </span><span data-lang="zh">(a) 差商，$h\to 0$ 形式 </span><span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Form the difference quotient: (M1)</span><span data-lang="zh">建立差商：(M1)</span></p>
+      $$ \frac{f(2+h)-f(2)}{h} = \frac{\bigl[(2+h)^{2}-3(2+h)\bigr]-\bigl[4-6\bigr]}{h}. $$
+      <p><span data-lang="en">Expand the numerator: $(2+h)^{2}-3(2+h) = 4+4h+h^{2}-6-3h = -2+h+h^{2}$. So:</span><span data-lang="zh">展开分子：$(2+h)^{2}-3(2+h) = 4+4h+h^{2}-6-3h = -2+h+h^{2}$。于是：</span></p>
+      $$ \frac{(-2+h+h^{2})-(-2)}{h} = \frac{h+h^{2}}{h} = 1+h. $$
+      <p><span data-lang="en">(M1) Taking the limit: $f'(2)=\lim_{h\to 0}(1+h)=1$. (A1)</span><span data-lang="zh">(M1) 取极限：$f'(2)=\lim_{h\to 0}(1+h)=1$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Alternative limit form, $x\to a$ </span><span data-lang="zh">(b) 另一种极限形式，$x\to a$ </span><span class="marks-call">M1·M1·A1</span></h4>
+      <p><span data-lang="en">Form the quotient with $a=1$: (M1)</span><span data-lang="zh">以 $a=1$ 建立商式：(M1)</span></p>
+      $$ \frac{f(x)-f(1)}{x-1} = \frac{\frac{1}{x}-1}{x-1} = \frac{\frac{1-x}{x}}{x-1} = \frac{-(x-1)}{x(x-1)} = \frac{-1}{x}. $$
+      <p><span data-lang="en">(M1) Taking the limit: $f'(1)=\lim_{x\to 1}\frac{-1}{x}=-1$. (A1)</span><span data-lang="zh">(M1) 取极限：$f'(1)=\lim_{x\to 1}\frac{-1}{x}=-1$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The two forms $\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$ and $\lim_{x\to a}\frac{f(x)-f(a)}{x-a}$ are equivalent via the substitution $x=a+h$. Choose whichever clears the indeterminate form more easily: the $h\to 0$ form is natural for polynomials (expand in $h$); the $x\to a$ form suits rational functions (factor $x-a$ in the numerator). In part (b) the key step is combining the fractions over the common denominator $x$ before cancelling $x-1$.</span><span data-lang="zh">两种形式 $\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$ 与 $\lim_{x\to a}\frac{f(x)-f(a)}{x-a}$ 通过代换 $x=a+h$ 等价。选择更容易消去不定式的形式：$h\to 0$ 形式适合多项式（对 $h$ 展开）；$x\to a$ 形式适合有理函数（在分子中提取因子 $x-a$）。(b) 部分的关键步骤是先通分（公分母为 $x$），再约去 $x-1$。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">derivative as a function, piecewise and one-sided derivatives</span><span data-lang="zh">导函数，分段函数与单侧导数</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $g(x)=|2x-4|$: (a) write as piecewise-linear; (b) compute $g'_{-}(2)$ and $g'_{+}(2)$ from the definition; (c) is $g$ differentiable at $x=2$?</span><span data-lang="zh">对于 $g(x)=|2x-4|$：(a) 写成分段线性形式；(b) 从定义计算 $g'_{-}(2)$ 和 $g'_{+}(2)$；(c) $g$ 在 $x=2$ 处可微吗？</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> $g(x)=-(2x-4)$ for $x<2$, $g(x)=2x-4$ for $x\ge 2$ &nbsp;·&nbsp; <span class="ans">(b)</span> $g'_{-}(2)=-2$, $g'_{+}(2)=2$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">not differentiable at $x=2$</span><span data-lang="zh">在 $x=2$ 处不可微</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Piecewise form </span><span data-lang="zh">(a) 分段形式 </span><span class="marks-call">B1</span></h4>
+      <p><span data-lang="en">$2x-4<0$ when $x<2$, so $g(x)=-(2x-4)=4-2x$ for $x<2$, and $g(x)=2x-4$ for $x\ge 2$. (B1)</span><span data-lang="zh">当 $x<2$ 时 $2x-4<0$，故 $x<2$ 时 $g(x)=-(2x-4)=4-2x$，$x\ge 2$ 时 $g(x)=2x-4$。(B1)</span></p>
+      <h4><span data-lang="en">(b) One-sided derivatives from the limit definition </span><span data-lang="zh">(b) 从极限定义求单侧导数 </span><span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Left-hand derivative at $x=2$ (using the branch $g(x)=4-2x$ for $h<0$): (M1)</span><span data-lang="zh">$x=2$ 处的左导数（当 $h<0$ 时使用分支 $g(x)=4-2x$）：(M1)</span></p>
+      $$ g'_{-}(2)=\lim_{h\to 0^{-}}\frac{g(2+h)-g(2)}{h}=\lim_{h\to 0^{-}}\frac{(4-2(2+h))-0}{h}=\lim_{h\to 0^{-}}\frac{-2h}{h}=-2. $$
+      <p><span data-lang="en">(A1) Right-hand derivative at $x=2$ (using the branch $g(x)=2x-4$ for $h>0$): (M1)</span><span data-lang="zh">(A1) $x=2$ 处的右导数（当 $h>0$ 时使用分支 $g(x)=2x-4$）：(M1)</span></p>
+      $$ g'_{+}(2)=\lim_{h\to 0^{+}}\frac{g(2+h)-g(2)}{h}=\lim_{h\to 0^{+}}\frac{(2(2+h)-4)-0}{h}=\lim_{h\to 0^{+}}\frac{2h}{h}=2. $$
+      <p><span data-lang="en">(A1)</span><span data-lang="zh">(A1)</span></p>
+      <h4><span data-lang="en">(c) Conclusion </span><span data-lang="zh">(c) 结论 </span><span class="marks-call">R1</span></h4>
+      <p><span data-lang="en">Since $g'_{-}(2)=-2\ne 2=g'_{+}(2)$, the two-sided limit $\lim_{h\to 0}\frac{g(2+h)-g(2)}{h}$ does not exist. Therefore $g$ is not differentiable at $x=2$. (R1) The failure is a corner.</span><span data-lang="zh">由于 $g'_{-}(2)=-2\ne 2=g'_{+}(2)$，双侧极限 $\lim_{h\to 0}\frac{g(2+h)-g(2)}{h}$ 不存在。因此 $g$ 在 $x=2$ 处不可微。(R1) 失效类型为角点。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">An absolute value creates a corner wherever its argument is zero, because the slope jumps discontinuously. The one-sided derivatives both exist as finite numbers, but they are not equal. This is the canonical corner: the graph arrives from the left with slope $-2$ and leaves to the right with slope $+2$, meeting at a sharp point. Differentiability is a stronger condition than continuity: $g$ is perfectly continuous at $x=2$ (both one-sided function values agree at $0$), but the slopes do not agree.</span><span data-lang="zh">绝对值函数在其自变量为零之处产生角点，因为斜率在此处不连续地跳变。两个单侧导数均作为有限数存在，但它们不相等。这是典型角点：图像从左侧以斜率 $-2$ 到达，从右侧以斜率 $+2$ 离去，在尖角处相交。可微性比连续性要求更强：$g$ 在 $x=2$ 处完全连续（两侧函数值均等于 $0$），但斜率不相等。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">differentiability of a piecewise function, parameter matching</span><span data-lang="zh">分段函数的可微性，参数匹配</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $h(x)=ax^{2}+b$ ($x\le 1$), $h(x)=3x-2$ ($x>1$): (a) state the two differentiability conditions; (b) match derivatives to find $a$; (c) use continuity to find $b$.</span><span data-lang="zh">对于 $h(x)=ax^{2}+b$（$x\le 1$），$h(x)=3x-2$（$x>1$）：(a) 陈述两个可微性条件；(b) 匹配导数以求 $a$；(c) 利用连续性求 $b$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> <span data-lang="en">continuity at $1$: $a+b=1$; equal derivatives: $2a=3$</span><span data-lang="zh">在 $1$ 处连续：$a+b=1$；导数相等：$2a=3$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $a=\tfrac{3}{2}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $b=-\tfrac{1}{2}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) The two conditions </span><span data-lang="zh">(a) 两个条件 </span><span class="marks-call">R1·R1</span></h4>
+      <p><span data-lang="en">Differentiability at $x=1$ requires first that $h$ be continuous there (necessary, by the theorem of Q6), and second that the one-sided derivatives agree. (R1)</span><span data-lang="zh">在 $x=1$ 处可微首先要求 $h$ 在该点连续（Q6定理的必要条件），其次要求单侧导数相等。(R1)</span></p>
+      <p><span data-lang="en">Continuity: $\lim_{x\to 1^{-}}h(x)=a(1)^{2}+b=a+b$ and $\lim_{x\to 1^{+}}h(x)=3(1)-2=1$, so $a+b=1$. (R1)</span><span data-lang="zh">连续性：$\lim_{x\to 1^{-}}h(x)=a(1)^{2}+b=a+b$，$\lim_{x\to 1^{+}}h(x)=3(1)-2=1$，故 $a+b=1$。(R1)</span></p>
+      <h4><span data-lang="en">(b) Match derivative values to find $a$ </span><span data-lang="zh">(b) 匹配导数值以求 $a$ </span><span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Left derivative at $x=1$: for $x\le 1$, $h(x)=ax^{2}+b$, so $h'_{-}(1)=2a(1)=2a$. (M1)</span><span data-lang="zh">$x=1$ 处的左导数：当 $x\le 1$ 时，$h(x)=ax^{2}+b$，故 $h'_{-}(1)=2a(1)=2a$。(M1)</span></p>
+      <p><span data-lang="en">Right derivative at $x=1$: for $x>1$, $h(x)=3x-2$, so $h'_{+}(1)=3$. (A1)</span><span data-lang="zh">$x=1$ 处的右导数：当 $x>1$ 时，$h(x)=3x-2$，故 $h'_{+}(1)=3$。(A1)</span></p>
+      <p><span data-lang="en">Setting $h'_{-}(1)=h'_{+}(1)$: $2a=3$, giving $a=\dfrac{3}{2}$. (A1)</span><span data-lang="zh">令 $h'_{-}(1)=h'_{+}(1)$：$2a=3$，得 $a=\dfrac{3}{2}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Find $b$ from continuity </span><span data-lang="zh">(c) 从连续性求 $b$ </span><span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Substitute $a=\dfrac{3}{2}$ into $a+b=1$: $\dfrac{3}{2}+b=1$, so $b=-\dfrac{1}{2}$. (M1·A1)</span><span data-lang="zh">将 $a=\dfrac{3}{2}$ 代入 $a+b=1$：$\dfrac{3}{2}+b=1$，故 $b=-\dfrac{1}{2}$。(M1·A1)</span></p>
+      <p><span data-lang="en">The complete function is $h(x)=\tfrac{3}{2}x^{2}-\tfrac{1}{2}$ for $x\le 1$ and $h(x)=3x-2$ for $x>1$. One can verify: $h(1)=\tfrac{3}{2}-\tfrac{1}{2}=1$ and $3(1)-2=1$; $h'_{-}(1)=3$ and $h'_{+}(1)=3$. (A1)</span><span data-lang="zh">完整函数为：$x\le 1$ 时 $h(x)=\tfrac{3}{2}x^{2}-\tfrac{1}{2}$，$x>1$ 时 $h(x)=3x-2$。验证：$h(1)=\tfrac{3}{2}-\tfrac{1}{2}=1$ 且 $3(1)-2=1$；$h'_{-}(1)=3$ 且 $h'_{+}(1)=3$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">Differentiability at a junction imposes two separate constraints: one from the function values (continuity), one from the slopes (equal derivatives). Neither alone is sufficient. Matching the derivatives first (because it gives one equation in one unknown, $a$) and then substituting into the continuity equation (which then gives $b$) is the cleanest order of attack. Check your answer by plugging back into both conditions.</span><span data-lang="zh">在连接处的可微性施加了两个独立约束：一个来自函数值（连续性），一个来自斜率（导数相等）。仅满足其中一个是不够的。先匹配导数（因为可得关于 $a$ 的一元方程），再代入连续性方程（进而求 $b$），是最简洁的解题顺序。验证时将结果代回两个条件。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">higher-order derivatives, velocity and acceleration</span><span data-lang="zh">高阶导数，速度与加速度</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $s(t)=t^{3}-6t^{2}+9t+2$: (a) compute $s'(t)$ from the limit definition; (b) find $s''(t)$; (c) find when the particle is at rest and classify acceleration.</span><span data-lang="zh">对于 $s(t)=t^{3}-6t^{2}+9t+2$：(a) 从极限定义计算 $s'(t)$；(b) 求 $s''(t)$；(c) 求质点静止时刻并判断加速度方向。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> $s'(t)=3t^{2}-12t+9$ &nbsp;·&nbsp; <span class="ans">(b)</span> $s''(t)=6t-12$ &nbsp;·&nbsp; <span class="ans">(c)</span> $t=1$ (<span data-lang="en">decelerating</span><span data-lang="zh">减速</span>), $t=3$ (<span data-lang="en">accelerating</span><span data-lang="zh">加速</span>)</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Limit definition: expand and collect </span><span data-lang="zh">(a) 极限定义：展开与整理 </span><span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Form the difference quotient: (M1)</span><span data-lang="zh">建立差商：(M1)</span></p>
+      $$ \frac{s(t+h)-s(t)}{h}. $$
+      <p><span data-lang="en">Expand $s(t+h)=(t+h)^{3}-6(t+h)^{2}+9(t+h)+2$:</span><span data-lang="zh">展开 $s(t+h)=(t+h)^{3}-6(t+h)^{2}+9(t+h)+2$：</span></p>
+      $$ (t+h)^{3}=t^{3}+3t^{2}h+3th^{2}+h^{3}, $$
+      $$ (t+h)^{2}=t^{2}+2th+h^{2}. $$
+      <p><span data-lang="en">So $s(t+h)=t^{3}+3t^{2}h+3th^{2}+h^{3}-6t^{2}-12th-6h^{2}+9t+9h+2$.</span><span data-lang="zh">故 $s(t+h)=t^{3}+3t^{2}h+3th^{2}+h^{3}-6t^{2}-12th-6h^{2}+9t+9h+2$。</span></p>
+      <p><span data-lang="en">Subtract $s(t)=t^{3}-6t^{2}+9t+2$: (M1)</span><span data-lang="zh">减去 $s(t)=t^{3}-6t^{2}+9t+2$：(M1)</span></p>
+      $$ s(t+h)-s(t)=3t^{2}h+3th^{2}+h^{3}-12th-6h^{2}+9h. $$
+      <p><span data-lang="en">Divide by $h$:</span><span data-lang="zh">除以 $h$：</span></p>
+      $$ \frac{s(t+h)-s(t)}{h}=3t^{2}+3th+h^{2}-12t-6h+9. $$
+      <p><span data-lang="en">(A1) Take the limit as $h\to 0$: $s'(t)=3t^{2}-12t+9$. (A1)</span><span data-lang="zh">(A1) 令 $h\to 0$ 取极限：$s'(t)=3t^{2}-12t+9$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Second derivative </span><span data-lang="zh">(b) 二阶导数 </span><span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Differentiate $s'(t)=3t^{2}-12t+9$ using the power rule: (M1)</span><span data-lang="zh">用幂法则对 $s'(t)=3t^{2}-12t+9$ 求导：(M1)</span></p>
+      $$ s''(t)=6t-12. $$
+      <p><span data-lang="en">(A1)</span><span data-lang="zh">(A1)</span></p>
+      <h4><span data-lang="en">(c) Rest times and acceleration sign </span><span data-lang="zh">(c) 静止时刻与加速度符号 </span><span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The particle is at rest when $s'(t)=0$: $3t^{2}-12t+9=3(t-1)(t-3)=0$, giving $t=1$ and $t=3$. (M1)</span><span data-lang="zh">质点静止时 $s'(t)=0$：$3t^{2}-12t+9=3(t-1)(t-3)=0$，得 $t=1$ 和 $t=3$。(M1)</span></p>
+      <p><span data-lang="en">At $t=1$: $s''(1)=6(1)-12=-6<0$, so the particle is decelerating. At $t=3$: $s''(3)=6(3)-12=6>0$, so the particle is accelerating. (A1)</span><span data-lang="zh">当 $t=1$ 时：$s''(1)=6(1)-12=-6<0$，质点在减速。当 $t=3$ 时：$s''(3)=6(3)-12=6>0$，质点在加速。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The key to the limit-definition computation of a polynomial derivative is expanding $(t+h)^{n}$ via the binomial theorem, then noting that every surviving term in $s(t+h)-s(t)$ carries at least one factor of $h$: after dividing by $h$ and sending $h\to 0$, all remaining $h$-terms vanish. This is why the power rule $\frac{d}{dt}[t^{n}]=nt^{n-1}$ works: the coefficient of $h$ in $(t+h)^{n}-t^{n}$ is exactly $nt^{n-1}$. The sign of $s''$ at a rest time tells you whether the particle is about to speed up (same sign) or slow down (opposite sign).</span><span data-lang="zh">用极限定义计算多项式导数的关键，是用二项式定理展开 $(t+h)^{n}$，然后注意 $s(t+h)-s(t)$ 中每个留存项均含有因子 $h$：除以 $h$ 并令 $h\to 0$ 后，所有含 $h$ 的项均消失。这正是幂法则 $\frac{d}{dt}[t^{n}]=nt^{n-1}$ 成立的原因：$(t+h)^{n}-t^{n}$ 中 $h$ 的系数恰好是 $nt^{n-1}$。$s''$ 在静止时刻的符号告诉我们质点即将加速（符号相同）还是减速（符号相反）。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART II · DEFINITIONS AND PROOF</span><span data-lang="zh">第二部分 · 定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments · 26 marks</span><span data-lang="zh">严格论证 · 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">first-principles derivative: non-trivial rational function</span><span data-lang="zh">第一性原理导数：非平凡有理函数</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $f(x)=\frac{1}{x^{2}}$: (a) derive $f'(x)$ from the limit definition; (b) verify against the power rule; (c) find tangent and normal lines at $x=-1$.</span><span data-lang="zh">对于 $f(x)=\frac{1}{x^{2}}$：(a) 从极限定义推导 $f'(x)$；(b) 对照幂法则验证；(c) 在 $x=-1$ 处求切线和法线。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> $f'(x)=-\dfrac{2}{x^{3}}$ &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">agrees with $-2x^{-3}$</span><span data-lang="zh">与 $-2x^{-3}$ 一致</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">tangent: $y=2x+3$; normal: $y=-\tfrac{1}{2}x+\tfrac{1}{2}$</span><span data-lang="zh">切线：$y=2x+3$；法线：$y=-\tfrac{1}{2}x+\tfrac{1}{2}$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) First-principles derivation </span><span data-lang="zh">(a) 第一性原理推导 </span><span class="marks-call">M1·M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Set up the difference quotient: (M1)</span><span data-lang="zh">建立差商：(M1)</span></p>
+      $$ \frac{f(x+h)-f(x)}{h}=\frac{\dfrac{1}{(x+h)^{2}}-\dfrac{1}{x^{2}}}{h}. $$
+      <p><span data-lang="en">Combine the two fractions over the common denominator $x^{2}(x+h)^{2}$: (M1)</span><span data-lang="zh">以公分母 $x^{2}(x+h)^{2}$ 通分：(M1)</span></p>
+      $$ =\frac{x^{2}-(x+h)^{2}}{h\cdot x^{2}(x+h)^{2}}. $$
+      <p><span data-lang="en">Expand the numerator: $x^{2}-(x+h)^{2}=x^{2}-(x^{2}+2xh+h^{2})=-2xh-h^{2}=h(-2x-h)$. (M1)</span><span data-lang="zh">展开分子：$x^{2}-(x+h)^{2}=x^{2}-(x^{2}+2xh+h^{2})=-2xh-h^{2}=h(-2x-h)$。(M1)</span></p>
+      $$ \frac{h(-2x-h)}{h\cdot x^{2}(x+h)^{2}}=\frac{-2x-h}{x^{2}(x+h)^{2}}. $$
+      <p><span data-lang="en">(A1) Take the limit as $h\to 0$: (A1)</span><span data-lang="zh">(A1) 令 $h\to 0$ 取极限：(A1)</span></p>
+      $$ f'(x)=\lim_{h\to 0}\frac{-2x-h}{x^{2}(x+h)^{2}}=\frac{-2x}{x^{2}\cdot x^{2}}=\frac{-2}{x^{3}}. $$
+      <h4><span data-lang="en">(b) Power rule check </span><span data-lang="zh">(b) 幂法则验证 </span><span class="marks-call">B1</span></h4>
+      <p><span data-lang="en">Writing $f(x)=x^{-2}$, the power rule gives $f'(x)=-2x^{-3}=-\dfrac{2}{x^{3}}$. This matches part (a). (B1)</span><span data-lang="zh">将 $f(x)$ 写为 $x^{-2}$，幂法则给出 $f'(x)=-2x^{-3}=-\dfrac{2}{x^{3}}$，与 (a) 部分一致。(B1)</span></p>
+      <h4><span data-lang="en">(c) Tangent and normal at $x=-1$ </span><span data-lang="zh">(c) $x=-1$ 处的切线与法线 </span><span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">At $x=-1$: $f(-1)=\dfrac{1}{(-1)^{2}}=1$ and $f'(-1)=-\dfrac{2}{(-1)^{3}}=2$. (M1)</span><span data-lang="zh">在 $x=-1$ 处：$f(-1)=\dfrac{1}{(-1)^{2}}=1$，$f'(-1)=-\dfrac{2}{(-1)^{3}}=2$。(M1)</span></p>
+      <p><span data-lang="en">Tangent line: $y-1=2(x-(-1))$, i.e. $y=2x+3$.</span><span data-lang="zh">切线：$y-1=2(x-(-1))$，即 $y=2x+3$。</span></p>
+      <p><span data-lang="en">The normal line has slope $-\dfrac{1}{2}$ (negative reciprocal): $y-1=-\tfrac{1}{2}(x+1)$, i.e. $y=-\tfrac{1}{2}x+\tfrac{1}{2}$. (A1)</span><span data-lang="zh">法线斜率为 $-\dfrac{1}{2}$（负倒数）：$y-1=-\tfrac{1}{2}(x+1)$，即 $y=-\tfrac{1}{2}x+\tfrac{1}{2}$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The critical algebraic move for any rational $f$ is combining fractions over a common denominator so that the numerator acquires a factor of $h$ that cancels the $h$ in the denominator. Every step before the limit is pure algebra; the limit is only taken after $h$ has been cancelled. Notice that the derivative $-2/x^{3}$ has the opposite sign from $x$ when $x>0$: the function is decreasing there, which is geometrically evident since $1/x^{2}$ falls as $x$ moves away from zero. At $x=-1$ the slope is $+2$: the function is increasing as $x$ increases through negative values.</span><span data-lang="zh">对任何有理函数 $f$，关键代数步骤是通分，使分子产生因子 $h$，从而与分母中的 $h$ 约去。取极限之前的每一步都是纯代数运算，只有在约去 $h$ 之后才取极限。注意当 $x>0$ 时，导数 $-2/x^{3}$ 与 $x$ 符号相反：函数在此处递减，这在几何上显而易见，因为 $1/x^{2}$ 随 $x$ 远离零而减小。在 $x=-1$ 处斜率为 $+2$：当 $x$ 沿负数方向增大时，函数递增。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">differentiability implies continuity: rigorous proof</span><span data-lang="zh">可微性蕴含连续性：严格证明</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Prove: differentiability at $a$ implies continuity at $a$. (b) Give a specific counterexample showing continuity does not imply differentiability.</span><span data-lang="zh">(a) 证明：在 $a$ 处可微蕴含在 $a$ 处连续。(b) 给出一个具体反例，说明连续不蕴含可微。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> <span data-lang="en">write $f(a+h)-f(a)=\frac{f(a+h)-f(a)}{h}\cdot h$, take limit</span><span data-lang="zh">将 $f(a+h)-f(a)$ 写成含差商与 $h$ 的乘积，取极限</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $f(x)=|x|$ at $x=0$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Proof: differentiability implies continuity </span><span data-lang="zh">(a) 证明：可微性蕴含连续性 </span><span class="marks-call">M1·M1·M1·R1·A1</span></h4>
+      <p><span data-lang="en">Assume $f$ is differentiable at $x=a$, so $f'(a)=\displaystyle\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$ exists as a finite number. (M1)</span><span data-lang="zh">设 $f$ 在 $x=a$ 处可微，即 $f'(a)=\displaystyle\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$ 作为有限数存在。(M1)</span></p>
+      <p><span data-lang="en">We want to show $\lim_{h\to 0}f(a+h)=f(a)$, i.e. $\lim_{h\to 0}[f(a+h)-f(a)]=0$.</span><span data-lang="zh">我们需要证明 $\lim_{h\to 0}f(a+h)=f(a)$，即 $\lim_{h\to 0}[f(a+h)-f(a)]=0$。</span></p>
+      <p><span data-lang="en">Write the identity: (M1)</span><span data-lang="zh">写出恒等式：(M1)</span></p>
+      $$ f(a+h)-f(a)=\frac{f(a+h)-f(a)}{h}\cdot h. $$
+      <p><span data-lang="en">(This requires $h\ne 0$, which is fine since we are taking a limit.) (M1)</span><span data-lang="zh">（此式要求 $h\ne 0$，这在取极限时是允许的。）(M1)</span></p>
+      <p><span data-lang="en">Take the limit of both sides as $h\to 0$. The product rule for limits applies because both factors have limits: (R1)</span><span data-lang="zh">对两边令 $h\to 0$ 取极限。由于两个因子均有极限，可用极限的乘积法则：(R1)</span></p>
+      $$ \lim_{h\to 0}[f(a+h)-f(a)]=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\cdot\lim_{h\to 0}h=f'(a)\cdot 0=0. $$
+      <p><span data-lang="en">Therefore $\lim_{h\to 0}f(a+h)=f(a)$, which is exactly the definition of continuity of $f$ at $a$. (A1)</span><span data-lang="zh">因此 $\lim_{h\to 0}f(a+h)=f(a)$，这正是 $f$ 在 $a$ 处连续的定义。(A1)</span></p>
+      <h4><span data-lang="en">(b) Converse is false: $f(x)=|x|$ at $x=0$ </span><span data-lang="zh">(b) 逆命题为假：$f(x)=|x|$ 在 $x=0$ 处 </span><span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $f(x)=|x|$. Then $f(0)=0$ and $\lim_{x\to 0}|x|=0=f(0)$, so $f$ is continuous at $x=0$. (M1)</span><span data-lang="zh">设 $f(x)=|x|$。则 $f(0)=0$ 且 $\lim_{x\to 0}|x|=0=f(0)$，故 $f$ 在 $x=0$ 处连续。(M1)</span></p>
+      <p><span data-lang="en">Check differentiability: (A1)</span><span data-lang="zh">检验可微性：(A1)</span></p>
+      $$ \lim_{h\to 0^{+}}\frac{|h|-0}{h}=\lim_{h\to 0^{+}}\frac{h}{h}=1, \qquad \lim_{h\to 0^{-}}\frac{|h|-0}{h}=\lim_{h\to 0^{-}}\frac{-h}{h}=-1. $$
+      <p><span data-lang="en">Since the one-sided limits of the difference quotient are $+1\ne -1$, the limit does not exist: $f$ is not differentiable at $x=0$. (R1)</span><span data-lang="zh">由于差商的两个单侧极限为 $+1\ne -1$，极限不存在，故 $f$ 在 $x=0$ 处不可微。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The proof in (a) is one of the most elegant tricks in first-year calculus: multiply and divide by $h$ simultaneously to isolate the difference quotient, then use the fact that $h\to 0$ to kill the $h$ factor. The converse is false in the most common way: a corner. Continuity means the function values match at the point; differentiability means the slopes also match when you approach from both sides. The absolute value function is the simplest example where values match but slopes do not.</span><span data-lang="zh">(a) 中的证明是大一微积分中最优雅的技巧之一：同时乘以和除以 $h$ 以分离差商，再利用 $h\to 0$ 的事实消去 $h$ 因子。逆命题以最常见的方式为假：角点。连续性意味着函数值在该点吻合；可微性意味着从两侧趋近时斜率也吻合。绝对值函数是函数值吻合但斜率不吻合的最简单例子。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">first-principles derivative: $f(x)=x^{3}$, interpreting slope</span><span data-lang="zh">第一性原理导数：$f(x)=x^{3}$，解释斜率</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $f(x)=x^{3}$: (a) prove $f'(a)=3a^{2}$ from the limit definition; (b) interpret the secant slope and its limit; (c) where is the tangent horizontal?</span><span data-lang="zh">对于 $f(x)=x^{3}$：(a) 从极限定义证明 $f'(a)=3a^{2}$；(b) 解释割线斜率及其极限；(c) 切线在哪里水平？</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> $f'(a)=3a^{2}$ &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">secant slope $=3a^{2}+3ah+h^{2}\to 3a^{2}$</span><span data-lang="zh">割线斜率 $=3a^{2}+3ah+h^{2}\to 3a^{2}$</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">only at $(0,0)$</span><span data-lang="zh">仅在 $(0,0)$ 处</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) First-principles proof </span><span data-lang="zh">(a) 第一性原理证明 </span><span class="marks-call">M1·M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Form the difference quotient: (M1)</span><span data-lang="zh">建立差商：(M1)</span></p>
+      $$ \frac{(a+h)^{3}-a^{3}}{h}. $$
+      <p><span data-lang="en">Expand $(a+h)^{3}=a^{3}+3a^{2}h+3ah^{2}+h^{3}$. (M1) Subtract $a^{3}$:</span><span data-lang="zh">展开 $(a+h)^{3}=a^{3}+3a^{2}h+3ah^{2}+h^{3}$。(M1) 减去 $a^{3}$：</span></p>
+      $$ \frac{3a^{2}h+3ah^{2}+h^{3}}{h}=3a^{2}+3ah+h^{2}. $$
+      <p><span data-lang="en">(M1·A1) Take the limit: (A1)</span><span data-lang="zh">(M1·A1) 取极限：(A1)</span></p>
+      $$ f'(a)=\lim_{h\to 0}(3a^{2}+3ah+h^{2})=3a^{2}. $$
+      <h4><span data-lang="en">(b) Secant slope and its limit </span><span data-lang="zh">(b) 割线斜率及其极限 </span><span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">The slope of the secant joining $(a, a^{3})$ to $(a+h, (a+h)^{3})$ is (M1)</span><span data-lang="zh">连接 $(a, a^{3})$ 与 $(a+h, (a+h)^{3})$ 的割线斜率为 (M1)</span></p>
+      $$ m_{\text{sec}}=\frac{(a+h)^{3}-a^{3}}{(a+h)-a}=3a^{2}+3ah+h^{2}. $$
+      <p><span data-lang="en">(A1) As $h\to 0$, the two points approach each other and the secant becomes the tangent. The secant slope $3a^{2}+3ah+h^{2}$ approaches $3a^{2}$, which is the instantaneous slope $f'(a)$. (R1) The two extra terms $3ah+h^{2}$ represent the error in approximating the tangent by a secant: they vanish when $h\to 0$.</span><span data-lang="zh">(A1) 当 $h\to 0$ 时，两点相互趋近，割线趋于切线。割线斜率 $3a^{2}+3ah+h^{2}$ 趋于 $3a^{2}$，即瞬时斜率 $f'(a)$。(R1) 额外两项 $3ah+h^{2}$ 代表用割线近似切线的误差，当 $h\to 0$ 时消失。</span></p>
+      <h4><span data-lang="en">(c) Horizontal tangent </span><span data-lang="zh">(c) 水平切线 </span><span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The tangent is horizontal when $f'(a)=0$: $3a^{2}=0$, so $a=0$. (M1) The only point with a horizontal tangent is $(0, 0^{3})=(0,0)$. (A1)</span><span data-lang="zh">切线水平时 $f'(a)=0$：$3a^{2}=0$，故 $a=0$。(M1) 唯一具有水平切线的点为 $(0, 0^{3})=(0,0)$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">Expanding $(a+h)^{3}$ is a controlled computation: there are exactly four terms, and three of them have $h$ as a factor. After dividing by $h$, two terms still carry $h$, and those are precisely the terms that vanish in the limit, leaving $3a^{2}$. This is the general mechanism behind the power rule for any positive integer $n$: the binomial expansion of $(a+h)^{n}$ yields $na^{n-1}h$ as the first-order term plus higher-order terms in $h$, all of which die in the limit. The $x^{3}$ curve has a horizontal tangent only at the origin, but the tangent there is not a local extremum: it is an inflection point.</span><span data-lang="zh">展开 $(a+h)^{3}$ 是一个有章可循的计算：共有四项，其中三项含因子 $h$。除以 $h$ 后，仍有两项含 $h$，这些项在取极限时恰好消失，留下 $3a^{2}$。这是正整数 $n$ 情形下幂法则成立的一般机制：$(a+h)^{n}$ 的二项式展开中，一阶项为 $na^{n-1}h$，其余均为 $h$ 的高阶项，取极限后全部消失。$x^{3}$ 曲线仅在原点有水平切线，但该处切线对应的不是局部极值，而是拐点。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART III · APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">第三部分 · 应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems · 28 marks</span><span data-lang="zh">综合题 · 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">详细解答</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">tangent and normal lines, slope as instantaneous rate</span><span data-lang="zh">切线与法线，斜率作为瞬时变化率</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $y=\sqrt{2x+1}$: (a) derive $\frac{d}{dx}[\sqrt{2x+1}]=\frac{1}{\sqrt{2x+1}}$ from the definition; (b) find the tangent at $x=4$; (c) find the normal at $x=4$ and confirm perpendicularity.</span><span data-lang="zh">对于 $y=\sqrt{2x+1}$：(a) 从定义推导 $\frac{d}{dx}[\sqrt{2x+1}]=\frac{1}{\sqrt{2x+1}}$；(b) 求 $x=4$ 处的切线；(c) 求 $x=4$ 处的法线并验证垂直性。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> $\dfrac{1}{\sqrt{2x+1}}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $y=\tfrac{1}{3}x+\tfrac{5}{3}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $y=-3x+15$; <span data-lang="en">slopes are $\tfrac{1}{3}$ and $-3$, product $=-1$</span><span data-lang="zh">斜率分别为 $\tfrac{1}{3}$ 和 $-3$，乘积 $=-1$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Limit definition with rationalisation </span><span data-lang="zh">(a) 有理化的极限定义法 </span><span class="marks-call">M1·M1·M1·A1</span></h4>
+      <p><span data-lang="en">Let $f(x)=\sqrt{2x+1}$. Form the difference quotient: (M1)</span><span data-lang="zh">设 $f(x)=\sqrt{2x+1}$，建立差商：(M1)</span></p>
+      $$ \frac{f(x+h)-f(x)}{h}=\frac{\sqrt{2(x+h)+1}-\sqrt{2x+1}}{h}=\frac{\sqrt{2x+2h+1}-\sqrt{2x+1}}{h}. $$
+      <p><span data-lang="en">Rationalise by multiplying numerator and denominator by the conjugate $\sqrt{2x+2h+1}+\sqrt{2x+1}$: (M1)</span><span data-lang="zh">乘以共轭因子 $\sqrt{2x+2h+1}+\sqrt{2x+1}$ 进行有理化：(M1)</span></p>
+      $$ =\frac{(2x+2h+1)-(2x+1)}{h\left(\sqrt{2x+2h+1}+\sqrt{2x+1}\right)}=\frac{2h}{h\left(\sqrt{2x+2h+1}+\sqrt{2x+1}\right)}=\frac{2}{\sqrt{2x+2h+1}+\sqrt{2x+1}}. $$
+      <p><span data-lang="en">(M1) Take the limit as $h\to 0$: (A1)</span><span data-lang="zh">(M1) 令 $h\to 0$ 取极限：(A1)</span></p>
+      $$ \frac{d}{dx}\!\left[\sqrt{2x+1}\right]=\lim_{h\to 0}\frac{2}{\sqrt{2x+2h+1}+\sqrt{2x+1}}=\frac{2}{2\sqrt{2x+1}}=\frac{1}{\sqrt{2x+1}}. $$
+      <h4><span data-lang="en">(b) Tangent line at $x=4$ </span><span data-lang="zh">(b) $x=4$ 处的切线 </span><span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">At $x=4$: $f(4)=\sqrt{9}=3$ and $f'(4)=\dfrac{1}{\sqrt{9}}=\dfrac{1}{3}$. (M1)</span><span data-lang="zh">在 $x=4$ 处：$f(4)=\sqrt{9}=3$，$f'(4)=\dfrac{1}{\sqrt{9}}=\dfrac{1}{3}$。(M1)</span></p>
+      <p><span data-lang="en">Point-slope form: $y-3=\dfrac{1}{3}(x-4)$. (A1) Simplify: $y=\dfrac{1}{3}x-\dfrac{4}{3}+3=\dfrac{1}{3}x+\dfrac{5}{3}$. (A1)</span><span data-lang="zh">点斜式：$y-3=\dfrac{1}{3}(x-4)$。(A1) 化简：$y=\dfrac{1}{3}x-\dfrac{4}{3}+3=\dfrac{1}{3}x+\dfrac{5}{3}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Normal line and perpendicularity </span><span data-lang="zh">(c) 法线与垂直性 </span><span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">The normal has slope $-\dfrac{1}{1/3}=-3$. (M1) Normal line through $(4, 3)$: $y-3=-3(x-4)$, i.e. $y=-3x+15$. (A1)</span><span data-lang="zh">法线斜率为 $-\dfrac{1}{1/3}=-3$。(M1) 过 $(4, 3)$ 的法线：$y-3=-3(x-4)$，即 $y=-3x+15$。(A1)</span></p>
+      <p><span data-lang="en">Product of slopes: $\dfrac{1}{3}\cdot(-3)=-1$. Since the product of slopes equals $-1$, the tangent and normal are perpendicular. (R1)</span><span data-lang="zh">斜率之积：$\dfrac{1}{3}\cdot(-3)=-1$。由于斜率之积等于 $-1$，切线与法线相互垂直。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">Rationalising the numerator (conjugate in the numerator) is the surd version of the conjugate trick from limits: it converts $\sqrt{A}-\sqrt{B}$ into $\frac{A-B}{\sqrt{A}+\sqrt{B}}$, which is exactly what clears the $0/0$ form. The factor of $2$ in the numerator (from differentiating the inner function $2x+1$) is the chain-rule preview: the derivative of $\sqrt{u}$ is $\frac{1}{2\sqrt{u}}$, and $\frac{d}{dx}[2x+1]=2$, giving $\frac{2}{2\sqrt{2x+1}}=\frac{1}{\sqrt{2x+1}}$. The perpendicularity check $m_{T}\cdot m_{N}=-1$ always works for tangent-normal pairs at smooth points.</span><span data-lang="zh">对分子有理化（分子中的共轭因子）是极限中共轭技巧的根式版本：它将 $\sqrt{A}-\sqrt{B}$ 转化为 $\frac{A-B}{\sqrt{A}+\sqrt{B}}$，恰好消去了 $0/0$ 不定式。分子中的因子 $2$（来自对内函数 $2x+1$ 求导）是链式法则的预告：$\sqrt{u}$ 的导数为 $\frac{1}{2\sqrt{u}}$，而 $\frac{d}{dx}[2x+1]=2$，给出 $\frac{2}{2\sqrt{2x+1}}=\frac{1}{\sqrt{2x+1}}$。垂直性验证 $m_{T}\cdot m_{N}=-1$ 对光滑点处的切线和法线始终成立。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">instantaneous rate of change, average rate, velocity interpretation</span><span data-lang="zh">瞬时变化率，平均变化率，速度解释</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $V(r)=\frac{4}{3}\pi r^{3}$: (a) average rate over $[2, 2+h]$; (b) instantaneous rate $V'(r)$ and its geometric meaning; (c) rate of volume increase at $r=3$ when $\dot{r}=0.5$ cm/s; (d) geometric meaning of the average rate on the graph.</span><span data-lang="zh">对于 $V(r)=\frac{4}{3}\pi r^{3}$：(a) $[2, 2+h]$ 上的平均变化率；(b) 瞬时变化率 $V'(r)$ 及其几何意义；(c) 当 $\dot{r}=0.5$ cm/s 时 $r=3$ 处体积的变化率；(d) 平均变化率在图像上的几何意义。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> $\tfrac{4}{3}\pi(12+6h+h^{2})$ &nbsp;·&nbsp; <span class="ans">(b)</span> $V'(r)=4\pi r^{2}$, <span data-lang="en">the surface area</span><span data-lang="zh">表面积</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $18\pi$ cm$^{3}$/s &nbsp;·&nbsp; <span class="ans">(d)</span> <span data-lang="en">slope of the secant on the $V$-vs-$r$ graph</span><span data-lang="zh">$V$ 关于 $r$ 图像上的割线斜率</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Average rate of change over $[2, 2+h]$ </span><span data-lang="zh">(a) $[2, 2+h]$ 上的平均变化率 </span><span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Compute $V(2+h)-V(2)$: (M1)</span><span data-lang="zh">计算 $V(2+h)-V(2)$：(M1)</span></p>
+      $$ V(2+h)=\tfrac{4}{3}\pi(2+h)^{3}=\tfrac{4}{3}\pi(8+12h+6h^{2}+h^{3}), \quad V(2)=\tfrac{4}{3}\pi(8). $$
+      $$ V(2+h)-V(2)=\tfrac{4}{3}\pi(12h+6h^{2}+h^{3}). $$
+      <p><span data-lang="en">Divide by $h$: (A1)</span><span data-lang="zh">除以 $h$：(A1)</span></p>
+      $$ \frac{V(2+h)-V(2)}{h}=\tfrac{4}{3}\pi(12+6h+h^{2}). $$
+      <p><span data-lang="en">(A1)</span><span data-lang="zh">(A1)</span></p>
+      <h4><span data-lang="en">(b) Instantaneous rate and geometric interpretation </span><span data-lang="zh">(b) 瞬时变化率与几何解释 </span><span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">At general $r$, the difference quotient for $V(r)=\tfrac{4}{3}\pi r^{3}$ is (M1)</span><span data-lang="zh">对一般的 $r$，$V(r)=\tfrac{4}{3}\pi r^{3}$ 的差商为 (M1)</span></p>
+      $$ \frac{V(r+h)-V(r)}{h}=\tfrac{4}{3}\pi\frac{(r+h)^{3}-r^{3}}{h}=\tfrac{4}{3}\pi(3r^{2}+3rh+h^{2}). $$
+      <p><span data-lang="en">Taking the limit: $V'(r)=\tfrac{4}{3}\pi\cdot 3r^{2}=4\pi r^{2}$. (A1)</span><span data-lang="zh">取极限：$V'(r)=\tfrac{4}{3}\pi\cdot 3r^{2}=4\pi r^{2}$。(A1)</span></p>
+      <p><span data-lang="en">The formula $4\pi r^{2}$ is the surface area of a sphere of radius $r$. Geometrically: a thin shell of thickness $\Delta r$ has volume $\approx 4\pi r^{2}\Delta r$, so the rate of change of volume with respect to radius equals the surface area. (R1)</span><span data-lang="zh">公式 $4\pi r^{2}$ 是半径为 $r$ 的球的表面积。几何上：厚度为 $\Delta r$ 的薄球壳体积约为 $4\pi r^{2}\Delta r$，因此体积关于半径的变化率等于表面积。(R1)</span></p>
+      <h4><span data-lang="en">(c) Rate of volume increase at $r=3$, $\dot{r}=0.5$ cm/s </span><span data-lang="zh">(c) $r=3$，$\dot{r}=0.5$ cm/s 时体积增加率 </span><span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$V'(3)=4\pi(3)^{2}=36\pi$ cm$^{3}$/cm. If the radius increases at $0.5$ cm/s, the volume increases at: (M1)</span><span data-lang="zh">$V'(3)=4\pi(3)^{2}=36\pi$ cm$^{3}$/cm。若半径以 $0.5$ cm/s 增大，则体积的增加率为：(M1)</span></p>
+      $$ \dot{V}\approx V'(3)\cdot\dot{r}=36\pi\times 0.5=18\pi\approx 56.5\text{ cm}^{3}\text{/s}. $$
+      <p><span data-lang="en">(A1) Units: cm$^{3}$/s.</span><span data-lang="zh">(A1) 单位：cm$^{3}$/s。</span></p>
+      <h4><span data-lang="en">(d) Geometric meaning of average rate </span><span data-lang="zh">(d) 平均变化率的几何意义 </span><span class="marks-call">B1</span></h4>
+      <p><span data-lang="en">The average rate of change $\frac{V(r_{0}+h)-V(r_{0})}{h}$ is the slope of the secant line on the graph of $V$ versus $r$ joining the points $(r_{0}, V(r_{0}))$ and $(r_{0}+h, V(r_{0}+h))$. (B1)</span><span data-lang="zh">平均变化率 $\frac{V(r_{0}+h)-V(r_{0})}{h}$ 是 $V$ 关于 $r$ 的图像上连接点 $(r_{0}, V(r_{0}))$ 与 $(r_{0}+h, V(r_{0}+h))$ 的割线斜率。(B1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">The result $V'(r)=4\pi r^{2}$ is not a coincidence: it is the geometric statement that volume and surface area are related by $\frac{dV}{dr}=A(r)$, which holds for any convex solid where the volume is expressed as an integral of concentric shells. Part (c) previews the chain rule: $\frac{dV}{dt}=\frac{dV}{dr}\cdot\frac{dr}{dt}$. The product $V'(r)\cdot\dot{r}$ is an approximation that becomes exact in the limit, meaning the instantaneous rate of volume change equals the surface area times the rate of radius change.</span><span data-lang="zh">$V'(r)=4\pi r^{2}$ 的结果并非巧合：它是体积与表面积满足 $\frac{dV}{dr}=A(r)$ 的几何陈述，对任何可将体积表示为同心球壳积分的凸体均成立。(c) 部分预告了链式法则：$\frac{dV}{dt}=\frac{dV}{dr}\cdot\frac{dr}{dt}$。乘积 $V'(r)\cdot\dot{r}$ 是一个在极限下精确成立的近似，意味着体积的瞬时变化率等于表面积乘以半径的变化率。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill med">MEDIUM</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">where differentiability fails: corner, cusp, vertical tangent</span><span data-lang="zh">可微性失效之处：角点，尖点，竖直切线</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) $f(x)=|x^{2}-1|$ at $x=1$: classify the failure. (b) $g(x)=x^{2/3}$ at $x=0$: classify the failure. (c) Sketch qualitative behaviour near the respective points.</span><span data-lang="zh">(a) $f(x)=|x^{2}-1|$ 在 $x=1$ 处：分类失效类型。(b) $g(x)=x^{2/3}$ 在 $x=0$ 处：分类失效类型。(c) 在相应点附近画出定性图形。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers: </span><span data-lang="zh">答案：</span>&nbsp;<span class="ans">(a)</span> <span data-lang="en">corner: left derivative $-2$, right derivative $2$</span><span data-lang="zh">角点：左导数为 $-2$，右导数为 $2$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">cusp: both one-sided limits of the difference quotient are infinite (opposite signs)</span><span data-lang="zh">尖点：差商的两个单侧极限均为无穷大（符号相反）</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">sharp corner for $f$; symmetric cusp for $g$</span><span data-lang="zh">$f$ 为尖角点；$g$ 为对称尖点</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) $f(x)=|x^{2}-1|$ at $x=1$: corner </span><span data-lang="zh">(a) $f(x)=|x^{2}-1|$ 在 $x=1$ 处：角点 </span><span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Near $x=1$: $x^{2}-1=(x-1)(x+1)$, which is negative for $x\in(-1,1)$ and positive for $|x|>1$. So just left of $x=1$, $f(x)=-(x^{2}-1)=1-x^{2}$, and just right of $x=1$, $f(x)=x^{2}-1$. Compute the one-sided derivatives: (M1)</span><span data-lang="zh">在 $x=1$ 附近：$x^{2}-1=(x-1)(x+1)$，当 $x\in(-1,1)$ 时为负，当 $|x|>1$ 时为正。因此在 $x=1$ 稍左处 $f(x)=-(x^{2}-1)=1-x^{2}$，在 $x=1$ 稍右处 $f(x)=x^{2}-1$。计算单侧导数：(M1)</span></p>
+      $$ f'_{-}(1)=\lim_{h\to 0^{-}}\frac{f(1+h)-f(1)}{h}=\lim_{h\to 0^{-}}\frac{(1-(1+h)^{2})-0}{h}=\lim_{h\to 0^{-}}\frac{-2h-h^{2}}{h}=-2. $$
+      $$ f'_{+}(1)=\lim_{h\to 0^{+}}\frac{(1+h)^{2}-1-0}{h}=\lim_{h\to 0^{+}}\frac{2h+h^{2}}{h}=2. $$
+      <p><span data-lang="en">(A1) Since $f'_{-}(1)=-2\ne 2=f'_{+}(1)$, the derivative does not exist at $x=1$. The failure is a corner: both one-sided derivatives exist as finite numbers but are unequal. (R1)</span><span data-lang="zh">(A1) 由于 $f'_{-}(1)=-2\ne 2=f'_{+}(1)$，导数在 $x=1$ 处不存在。失效类型为角点：两个单侧导数均作为有限数存在，但不相等。(R1)</span></p>
+      <h4><span data-lang="en">(b) $g(x)=x^{2/3}$ at $x=0$: cusp </span><span data-lang="zh">(b) $g(x)=x^{2/3}$ 在 $x=0$ 处：尖点 </span><span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Compute the one-sided limits of the difference quotient at $x=0$: (M1)</span><span data-lang="zh">计算 $x=0$ 处差商的单侧极限：(M1)</span></p>
+      $$ \lim_{h\to 0^{+}}\frac{h^{2/3}-0}{h}=\lim_{h\to 0^{+}}h^{-1/3}=+\infty. $$
+      $$ \lim_{h\to 0^{-}}\frac{h^{2/3}-0}{h}=\lim_{h\to 0^{-}}h^{-1/3}=-\infty. $$
+      <p><span data-lang="en">(A1) Both one-sided limits of the difference quotient are infinite (and have opposite signs). This is a cusp: the tangent line approaches vertical from both sides, but on opposite sides. (R1) The function is continuous at $x=0$ (since $0^{2/3}=0$) but not differentiable there.</span><span data-lang="zh">(A1) 差商的两个单侧极限均为无穷大（且符号相反）。这是一个尖点：切线从两侧趋向竖直，但在相反方向。(R1) 函数在 $x=0$ 处连续（因为 $0^{2/3}=0$），但在该处不可微。</span></p>
+      <h4><span data-lang="en">(c) Qualitative sketches </span><span data-lang="zh">(c) 定性图形 </span><span class="marks-call">B1·B1</span></h4>
+      <p><span data-lang="en">For $f(x)=|x^{2}-1|$ near $x=1$: the graph comes from above-left with slope $-2$ and leaves to the right with slope $+2$, creating a sharp corner at $(1,0)$. Label: "corner". (B1)</span><span data-lang="zh">对于 $x=1$ 附近的 $f(x)=|x^{2}-1|$：图像从左上方以斜率 $-2$ 到达，从右侧以斜率 $+2$ 离去，在 $(1,0)$ 处形成尖锐的角点。标注："角点"。(B1)</span></p>
+      <p><span data-lang="en">For $g(x)=x^{2/3}$ near $x=0$: the graph is symmetric about the $y$-axis, concave down near $0$, and comes to a sharp point (like a rounded vee) at the origin with the two arms nearly vertical. Label: "cusp". (B1)</span><span data-lang="zh">对于 $x=0$ 附近的 $g(x)=x^{2/3}$：图像关于 $y$ 轴对称，在 $0$ 附近下凹，在原点处形成尖锐的点（像一个圆润的V形），两条臂几乎竖直。标注："尖点"。(B1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">要点。</span></strong> <span data-lang="en">There are three canonical ways differentiability fails at an isolated point: (1) a corner, where both one-sided derivatives are finite but unequal; (2) a cusp, where both one-sided limits of the difference quotient are infinite (with opposite signs); (3) a vertical tangent, where both one-sided limits are infinite with the same sign. Continuity is the same in all three cases: the function value matches the limit. The key diagnostic is the one-sided difference quotient: finite-and-unequal gives a corner, infinite gives a cusp or vertical tangent. A horizontal tangent at $x=a$ simply means $f'(a)=0$ and is completely benign.</span><span data-lang="zh">可微性在孤立点失效有三种典型方式：(1) 角点，两个单侧导数均为有限数但不相等；(2) 尖点，差商的两个单侧极限均为无穷大（符号相反）；(3) 竖直切线，两个单侧极限均为无穷大且符号相同。三种情况下连续性均相同：函数值与极限相等。关键诊断是单侧差商：有限且不相等给出角点，无穷大给出尖点或竖直切线。$x=a$ 处的水平切线仅意味着 $f'(a)=0$，完全正常。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中卡在这个单元了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约与鼎锐学者导师的15分钟免费咨询。我们将在您的期中或期末考试前帮您解决困难。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_a2_the_derivative__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult </span><span data-lang="zh">预约免费咨询 </span>&rarr;</a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_A2_The_Derivative.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_A2_The_Derivative_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span><span data-lang="en"> · University Calculus · Unit A2 Solutions </span><span data-lang="zh">· 大学微积分 · A2单元解答 </span><code style="color:#555;">v1.0</code><span data-lang="en"> · Companion to Practice v1.0</span><span data-lang="zh">· 配套练习题 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 7 · 82 marks total</span><span data-lang="zh">第1至7节 · 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

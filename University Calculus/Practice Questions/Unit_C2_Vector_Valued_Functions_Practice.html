@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit C2: Vector-Valued Functions | Practice</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-C2  dingrui:doc-type practice -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C2_Vector_Valued_Functions_Practice.html">
+<meta name="description" content="University-level practice problems for Unit C2: Vector-Valued Functions. Space curves, TNB frame, curvature, arc length, and motion in space, with full worked solutions from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit C2: Vector-Valued Functions | Practice">
+<meta property="og:description" content="University-level practice problems for Unit C2: Vector-Valued Functions, with full worked solutions from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C2_Vector_Valued_Functions_Practice.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit C2: Vector-Valued Functions | Practice">
+<meta name="twitter:description" content="University-level practice problems for Unit C2: Vector-Valued Functions, with full worked solutions from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{
+    font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;
+    font-size:11pt;line-height:1.45;
+    max-width:8.5in;margin:0 auto;
+    padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);
+  }
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .nameline{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:10.5pt;margin:4px 0 22px;color:#222;}
+  .nameline .blank{display:inline-block;border-bottom:1px solid #555;min-width:240px;margin-left:6px;}
+  .nameline .blank.period{min-width:90px;}
+  .draft-banner{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .draft-banner code{font-family:'JetBrains Mono',monospace;font-style:normal;}
+
+  .part{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:'Source Sans 3',sans-serif;
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:6px 2px;margin:18px 0 8px;
+  }
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+
+  .q{
+    border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;
+    padding:12px 18px 14px;margin-bottom:16px;background:#fff;
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:10px;font-family:'Source Sans 3',sans-serif;}
+  .q-head .title{margin-left:auto;font-size:9.5pt;color:#666;font-style:italic;}
+  .q-body{font-size:11.5pt;line-height:1.5;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;}
+
+  .work{min-height:90px;border-top:1px dashed #c9c4bd;margin-top:8px;}
+  .work.s{min-height:50px;} .work.m{min-height:120px;} .work.l{min-height:170px;} .work.xl{min-height:240px;}
+
+  .frq-parts{margin-top:6px;}
+  .frq-parts .part-item{margin:6px 0 4px;}
+  .frq-parts .part-item > .tag{font-family:'Source Sans 3',sans-serif;font-weight:700;margin-right:6px;}
+  .frq-parts .part-item .marks-inline{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;font-weight:700;float:right;letter-spacing:.05em;}
+  .frq-parts .part-item .sub-part{margin:4px 0 4px 18px;}
+
+  table.data{border-collapse:collapse;margin:8px auto;font-size:10.5pt;}
+  table.data th, table.data td{border:1px solid #444;padding:4px 14px;text-align:center;font-family:'Source Sans 3',sans-serif;}
+  table.data th{background:#f1ece4;font-weight:700;}
+
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+
+  .page-break{page-break-after:always;break-after:page;height:0;}
+
+  @media (max-width: 600px){
+    body{font-size:10.5pt;}
+    .nameline{flex-direction:column;align-items:flex-start;gap:6px;}
+    .nameline .blank{min-width:200px;}
+  }
+  @media print{
+    @page { size: letter; margin: 0.6in 0.65in; }
+    html,body{background:#fff;}
+    body{padding:0;max-width:none;font-size:11pt;}
+    .q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}
+    .draft-banner{display:none;}
+  }
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit C2: Vector-Valued Functions | Practice",
+  "description": "University-level practice problems for Unit C2: Vector-Valued Functions, with full worked solutions from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_C2_Vector_Valued_Functions_Practice.html",
+  "inLanguage": "en",
+  "learningResourceType": "Practice problems",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit C2 &middot; Calculus III</span><span data-lang="zh">第C2单元 &middot; 微积分III</span></div>
+<h1 class="chapter-title"><span data-lang="en">Vector-Valued Functions</span><span data-lang="zh">向量值函数</span></h1>
+<p class="chapter-sub"><span data-lang="en">University-Style Practice Problems</span><span data-lang="zh">大学风格练习题</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 7</b>: vector functions and space curves, derivatives and integrals, arc length and reparametrization, curvature, the TNB frame ($\mathbf{T}$, $\mathbf{N}$, $\mathbf{B}$), velocity and acceleration, tangential and normal components<span class="scope">CALC III</span></span><span data-lang="zh">第<b>1至7</b>节：向量函数与空间曲线、导数与积分、弧长与重参数化、曲率、TNB标架（$\mathbf{T}$、$\mathbf{N}$、$\mathbf{B}$）、速度与加速度、切向与法向分量<span class="scope">CALC III</span></span></p>
+<hr class="thick"><hr class="thin">
+<div class="nameline"><span><span data-lang="en">Name:<span class="blank"></span></span><span data-lang="zh">姓名：<span class="blank"></span></span></span><span><span data-lang="en">Date:<span class="blank period"></span></span><span data-lang="zh">日期：<span class="blank period"></span></span></span></div>
+<p class="draft-banner"><code>v1.0</code> &middot; 10 Qs &middot; 82 marks &middot; Parts CORE / PROOF / APPLIED &middot; MEDIUM to HARD &middot; Sections 1 to 7 &middot; <span data-lang="en">solutions:</span><span data-lang="zh">答案：</span> <code>Solutions/Unit_C2_Vector_Valued_Functions_Solutions.html</code></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span data-lang="zh">第I部分 &nbsp;·&nbsp; 核心技巧</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Derivatives, Integrals, and the TNB Frame</span><span data-lang="zh">导数、积分与TNB标架</span></h2>
+<p class="instructions"><span data-lang="en">Show all componentwise working. Normalize correctly when computing unit vectors: verify $|\mathbf{T}|=1$ and $|\mathbf{N}|=1$ before moving on. Where a result is a vector, state each component explicitly.</span><span data-lang="zh">写出所有分量计算过程。计算单位向量时须正确规范化：继续解题前验证 $|\mathbf{T}|=1$ 且 $|\mathbf{N}|=1$。若结果为向量，请逐一写出每个分量。</span></p>
+
+<!-- Q1 -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">derivatives, integrals, and limits of vector functions</span><span data-lang="zh">向量函数的导数、积分与极限</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt">Let $\mathbf{r}(t)=\langle t^{2},\, e^{2t},\, \ln(t+1)\rangle$.</p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Find $\mathbf{r}'(t)$ and $\mathbf{r}''(t)$.</span><span data-lang="zh">求 $\mathbf{r}'(t)$ 与 $\mathbf{r}''(t)$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Evaluate $\displaystyle\int_{0}^{1}\mathbf{r}(t)\,dt$ as a single constant vector.</span><span data-lang="zh">将 $\displaystyle\int_{0}^{1}\mathbf{r}(t)\,dt$ 化为一个常数向量。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">State the natural domain of $\mathbf{r}(t)$ and evaluate $\displaystyle\lim_{t\to 0}\mathbf{r}(t)$.</span><span data-lang="zh">写出 $\mathbf{r}(t)$ 的自然定义域，并求 $\displaystyle\lim_{t\to 0}\mathbf{r}(t)$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">unit tangent vector and tangent line to a space curve</span><span data-lang="zh">空间曲线的单位切向量与切线</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt">Let $\mathbf{r}(t)=\langle 3\cos t,\, 3\sin t,\, 4t\rangle$.</p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute $\mathbf{r}'(t)$ and $|\mathbf{r}'(t)|$.</span><span data-lang="zh">计算 $\mathbf{r}'(t)$ 与 $|\mathbf{r}'(t)|$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Find the unit tangent vector $\mathbf{T}(t)$.</span><span data-lang="zh">求单位切向量 $\mathbf{T}(t)$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Write a parametric equation for the tangent line to the curve at $t=0$.</span><span data-lang="zh">写出曲线在 $t=0$ 处切线的参数方程。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">Find the arc length of one full turn of this helix (from $t=0$ to $t=2\pi$).</span><span data-lang="zh">求该螺旋线转一整圈（从 $t=0$ 到 $t=2\pi$）的弧长。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span><span class="pill hard">HARD</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">unit normal vector $\mathbf{N}$ and binormal vector $\mathbf{B}$</span><span data-lang="zh">主法向量 $\mathbf{N}$ 与副法向量 $\mathbf{B}$</span></span>
+    <span class="pill marks">[12 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For the circular helix $\mathbf{r}(t)=\langle \cos t,\, \sin t,\, t\rangle$, use the unit tangent found from $\mathbf{T}=\mathbf{r}'/|\mathbf{r}'|$.</span><span data-lang="zh">对于圆柱螺旋线 $\mathbf{r}(t)=\langle \cos t,\, \sin t,\, t\rangle$，利用 $\mathbf{T}=\mathbf{r}'/|\mathbf{r}'|$ 求单位切向量。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Find $\mathbf{T}(t)$ explicitly.</span><span data-lang="zh">显式求出 $\mathbf{T}(t)$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Compute $\mathbf{T}'(t)$ and $|\mathbf{T}'(t)|$, then write the principal unit normal $\mathbf{N}(t)=\mathbf{T}'(t)/|\mathbf{T}'(t)|$. Verify that $|\mathbf{N}|=1$ and $\mathbf{N}\cdot\mathbf{T}=0$.</span><span data-lang="zh">计算 $\mathbf{T}'(t)$ 与 $|\mathbf{T}'(t)|$，再写出主单位法向量 $\mathbf{N}(t)=\mathbf{T}'(t)/|\mathbf{T}'(t)|$，并验证 $|\mathbf{N}|=1$ 且 $\mathbf{N}\cdot\mathbf{T}=0$。</span> <span class="marks-inline">[5]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Compute the binormal vector $\mathbf{B}(t)=\mathbf{T}(t)\times\mathbf{N}(t)$ and verify $|\mathbf{B}|=1$.</span><span data-lang="zh">计算副法向量 $\mathbf{B}(t)=\mathbf{T}(t)\times\mathbf{N}(t)$，并验证 $|\mathbf{B}|=1$。</span> <span class="marks-inline">[5]</span><div class="work l"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span data-lang="zh">第II部分 &nbsp;·&nbsp; 定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Proofs and Derivations</span><span data-lang="zh">证明与推导</span></h2>
+<p class="instructions"><span data-lang="en">Supply complete proofs. Every claim about perpendicularity or magnitude must be established by computation, not just asserted. Mark calls (M1/A1/R1/B1) indicate the intended structure.</span><span data-lang="zh">给出完整证明。关于垂直性或模长的每项论断必须通过计算来建立，不能仅凭断言。评分标记（M1/A1/R1/B1）说明预期结构。</span></p>
+
+<!-- Q4 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">constant-magnitude vector perpendicular to its derivative</span><span data-lang="zh">模长恒定的向量与其导数垂直</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Throughout this question, $\mathbf{r}(t)$ is a differentiable vector function.</span><span data-lang="zh">本题中，$\mathbf{r}(t)$ 为可微向量函数。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Prove that if $|\mathbf{r}(t)|=c$ is constant, then $\mathbf{r}(t)\cdot\mathbf{r}'(t)=0$ for all $t$. Your proof must use the product rule for the dot product; do not assume the result.</span><span data-lang="zh">证明：若 $|\mathbf{r}(t)|=c$ 为常数，则对所有 $t$ 有 $\mathbf{r}(t)\cdot\mathbf{r}'(t)=0$。证明必须使用点积的乘积法则，不得直接援引结论。</span> <span class="marks-inline">[4]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">State the converse and prove it.</span><span data-lang="zh">写出逆命题并加以证明。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Deduce that the unit tangent vector $\mathbf{T}(t)$ is always perpendicular to $\mathbf{T}'(t)$, and explain in one sentence why this is the geometric basis for defining $\mathbf{N}=\mathbf{T}'/|\mathbf{T}'|$.</span><span data-lang="zh">由此推断单位切向量 $\mathbf{T}(t)$ 始终与 $\mathbf{T}'(t)$ 垂直，并用一句话解释这为何是定义 $\mathbf{N}=\mathbf{T}'/|\mathbf{T}'|$ 的几何依据。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">product rules for dot and cross products of vector functions</span><span data-lang="zh">向量函数点积与叉积的乘积法则</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $\mathbf{u}(t)$ and $\mathbf{v}(t)$ be differentiable vector functions in $\mathbb{R}^{3}$, and write their components $\mathbf{u}=\langle u_{1},u_{2},u_{3}\rangle$, $\mathbf{v}=\langle v_{1},v_{2},v_{3}\rangle$.</span><span data-lang="zh">设 $\mathbf{u}(t)$ 与 $\mathbf{v}(t)$ 为 $\mathbb{R}^{3}$ 中的可微向量函数，分量写作 $\mathbf{u}=\langle u_{1},u_{2},u_{3}\rangle$，$\mathbf{v}=\langle v_{1},v_{2},v_{3}\rangle$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Using only the componentwise definition of the dot product, prove the product rule $\dfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]=\mathbf{u}'\cdot\mathbf{v}+\mathbf{u}\cdot\mathbf{v}'$.</span><span data-lang="zh">仅使用点积的分量定义，证明乘积法则 $\dfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]=\mathbf{u}'\cdot\mathbf{v}+\mathbf{u}\cdot\mathbf{v}'$。</span> <span class="marks-inline">[4]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">State (but do not prove) the product rule for $\dfrac{d}{dt}[\mathbf{u}\times\mathbf{v}]$ and give one example showing that the order of the factors in the first term cannot be reversed.</span><span data-lang="zh">写出（但无需证明） $\dfrac{d}{dt}[\mathbf{u}\times\mathbf{v}]$ 的乘积法则，并举一例说明第一项中因子的顺序不可对调。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Let $\mathbf{u}(t)=\langle t,\, t^{2},\, 0\rangle$ and $\mathbf{v}(t)=\langle \sin t,\, 0,\, 1\rangle$. Verify the product rule for $\dfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]$ by computing both sides independently at $t=0$.</span><span data-lang="zh">设 $\mathbf{u}(t)=\langle t,\, t^{2},\, 0\rangle$，$\mathbf{v}(t)=\langle \sin t,\, 0,\, 1\rangle$。在 $t=0$ 处独立计算两侧，验证 $\dfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]$ 的乘积法则。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">decomposition of acceleration into tangential and normal components</span><span data-lang="zh">加速度的切向与法向分量分解</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A particle moves along a smooth curve $\mathbf{r}(t)$. Let $v=|\mathbf{r}'(t)|$ denote the speed, $\mathbf{T}$ the unit tangent, and $\mathbf{N}$ the principal unit normal.</span><span data-lang="zh">一质点沿光滑曲线 $\mathbf{r}(t)$ 运动。设 $v=|\mathbf{r}'(t)|$ 为速率，$\mathbf{T}$ 为单位切向量，$\mathbf{N}$ 为主单位法向量。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Starting from $\mathbf{v}=v\mathbf{T}$, differentiate to show that the acceleration decomposes as
+      $$\mathbf{a}=a_{T}\mathbf{T}+a_{N}\mathbf{N},\qquad a_{T}=\frac{dv}{dt},\quad a_{N}=\kappa v^{2},$$
+      where $\kappa=|\mathbf{T}'|/v$ is the curvature. Clearly justify each step.</span><span data-lang="zh">从 $\mathbf{v}=v\mathbf{T}$ 出发，对其微分，证明加速度可分解为
+      $$\mathbf{a}=a_{T}\mathbf{T}+a_{N}\mathbf{N},\qquad a_{T}=\frac{dv}{dt},\quad a_{N}=\kappa v^{2},$$
+      其中曲率 $\kappa=|\mathbf{T}'|/v$。每一步须清晰说明理由。</span> <span class="marks-inline">[6]</span><div class="work xl"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Using the result of part (a), express $a_{T}$ and $a_{N}$ in terms of $\mathbf{r}'$ and $\mathbf{r}''$ only (no $\mathbf{T}$ or $\mathbf{N}$):
+      $$a_{T}=\frac{\mathbf{r}'\cdot\mathbf{r}''}{|\mathbf{r}'|},\qquad a_{N}=\frac{|\mathbf{r}'\times\mathbf{r}''|}{|\mathbf{r}'|}.$$
+      You may use $\mathbf{a}=a_{T}\mathbf{T}+a_{N}\mathbf{N}$ and properties of the dot and cross products.</span><span data-lang="zh">利用(a)的结论，仅用 $\mathbf{r}'$ 与 $\mathbf{r}''$ 表达 $a_{T}$ 与 $a_{N}$（不得含 $\mathbf{T}$ 或 $\mathbf{N}$）：
+      $$a_{T}=\frac{\mathbf{r}'\cdot\mathbf{r}''}{|\mathbf{r}'|},\qquad a_{N}=\frac{|\mathbf{r}'\times\mathbf{r}''|}{|\mathbf{r}'|}.$$
+      可使用 $\mathbf{a}=a_{T}\mathbf{T}+a_{N}\mathbf{N}$ 及点积与叉积的性质。</span> <span class="marks-inline">[4]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">第III部分 &nbsp;·&nbsp; 应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Curvature, Motion in Space, and Arc-Length Reparametrization</span><span data-lang="zh">曲率、空间运动与弧长重参数化</span></h2>
+<p class="instructions"><span data-lang="en">Carry exact forms throughout; simplify only at the final step. For curvature problems, state which formula you use and show the cross product or magnitude computation in full.</span><span data-lang="zh">全程保持精确形式，仅在最后一步化简。对于曲率题，须注明所用公式，并完整写出叉积或模长的计算过程。</span></p>
+
+<!-- Q7 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span><span class="pill med">MEDIUM</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">curvature of a plane curve and a space curve</span><span data-lang="zh">平面曲线与空间曲线的曲率</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Recall the curvature formulas: for a space curve, $\kappa=|\mathbf{r}'\times\mathbf{r}''|/|\mathbf{r}'|^{3}$; for a plane curve $y=f(x)$, $\kappa=|y''|/(1+y'^{2})^{3/2}$.</span><span data-lang="zh">回顾曲率公式：对于空间曲线，$\kappa=|\mathbf{r}'\times\mathbf{r}''|/|\mathbf{r}'|^{3}$；对于平面曲线 $y=f(x)$，$\kappa=|y''|/(1+y'^{2})^{3/2}$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Find the curvature $\kappa$ of the parabola $y=x^{2}$ at the vertex $x=0$ and at $x=1$.</span><span data-lang="zh">求抛物线 $y=x^{2}$ 在顶点 $x=0$ 及 $x=1$ 处的曲率 $\kappa$。</span> <span class="marks-inline">[4]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Find the curvature of the circular helix $\mathbf{r}(t)=\langle a\cos t,\, a\sin t,\, bt\rangle$ (with $a,b>0$) using the cross-product formula. Show the cross product $\mathbf{r}'\times\mathbf{r}''$ in full and simplify to a closed form in $a$ and $b$.</span><span data-lang="zh">用叉积公式求圆柱螺旋线 $\mathbf{r}(t)=\langle a\cos t,\, a\sin t,\, bt\rangle$（$a,b>0$）的曲率。完整写出叉积 $\mathbf{r}'\times\mathbf{r}''$，并化简为关于 $a$ 与 $b$ 的封闭表达式。</span> <span class="marks-inline">[4]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">curvature via the cross-product formula for a polynomial space curve</span><span data-lang="zh">用叉积公式求多项式空间曲线的曲率</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the space curve $\mathbf{r}(t)=\langle t,\, t^{2},\, \tfrac{2}{3}t^{3}\rangle$.</span><span data-lang="zh">考虑空间曲线 $\mathbf{r}(t)=\langle t,\, t^{2},\, \tfrac{2}{3}t^{3}\rangle$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Compute $\mathbf{r}'(t)$ and $\mathbf{r}''(t)$.</span><span data-lang="zh">计算 $\mathbf{r}'(t)$ 与 $\mathbf{r}''(t)$。</span> <span class="marks-inline">[1]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Compute the cross product $\mathbf{r}'(t)\times\mathbf{r}''(t)$ explicitly.</span><span data-lang="zh">显式计算叉积 $\mathbf{r}'(t)\times\mathbf{r}''(t)$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Compute $|\mathbf{r}'(t)\times\mathbf{r}''(t)|$ and $|\mathbf{r}'(t)|$. Hence find the curvature $\kappa(t)$.</span><span data-lang="zh">计算 $|\mathbf{r}'(t)\times\mathbf{r}''(t)|$ 与 $|\mathbf{r}'(t)|$，进而求曲率 $\kappa(t)$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">Evaluate $\kappa(0)$ and interpret geometrically.</span><span data-lang="zh">求 $\kappa(0)$ 并给出几何解释。</span> <span class="marks-inline">[1]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">arc-length reparametrization of a helix</span><span data-lang="zh">螺旋线的弧长重参数化</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the helix $\mathbf{r}(t)=\langle 3\cos t,\, 3\sin t,\, 4t\rangle$ from Question 2.</span><span data-lang="zh">考虑第2题中的螺旋线 $\mathbf{r}(t)=\langle 3\cos t,\, 3\sin t,\, 4t\rangle$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Using $|\mathbf{r}'(t)|$ from Question 2, write the arc length function $s(t)=\int_{0}^{t}|\mathbf{r}'(u)|\,du$ and solve for $t$ in terms of $s$.</span><span data-lang="zh">利用第2题中的 $|\mathbf{r}'(t)|$，写出弧长函数 $s(t)=\int_{0}^{t}|\mathbf{r}'(u)|\,du$，并将 $t$ 用 $s$ 表示。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Write out $\mathbf{r}(s)$, the arc-length parametrization of the helix.</span><span data-lang="zh">写出螺旋线的弧长参数化 $\mathbf{r}(s)$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Verify that $\left|\dfrac{d\mathbf{r}}{ds}\right|=1$.</span><span data-lang="zh">验证 $\left|\dfrac{d\mathbf{r}}{ds}\right|=1$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">motion in space: velocity, acceleration, and $a_T$/$a_N$ components</span><span data-lang="zh">空间运动：速度、加速度与 $a_T$/$a_N$ 分量</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A particle has position $\mathbf{r}(t)=\langle t^{2}-1,\; 2t,\; t^{2}\rangle$ at time $t\ge 0$.</span><span data-lang="zh">一质点在时刻 $t\ge 0$ 的位置为 $\mathbf{r}(t)=\langle t^{2}-1,\; 2t,\; t^{2}\rangle$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Find the velocity $\mathbf{v}(t)$, acceleration $\mathbf{a}(t)$, and speed $v(t)=|\mathbf{v}(t)|$.</span><span data-lang="zh">求速度 $\mathbf{v}(t)$、加速度 $\mathbf{a}(t)$ 及速率 $v(t)=|\mathbf{v}(t)|$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">At $t=1$, compute $a_{T}=\mathbf{v}\cdot\mathbf{a}/|\mathbf{v}|$ and $a_{N}=|\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|$.</span><span data-lang="zh">在 $t=1$ 处，计算 $a_{T}=\mathbf{v}\cdot\mathbf{a}/|\mathbf{v}|$ 与 $a_{N}=|\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Verify the identity $|\mathbf{a}|^{2}=a_{T}^{2}+a_{N}^{2}$ at $t=1$.</span><span data-lang="zh">在 $t=1$ 处验证恒等式 $|\mathbf{a}|^{2}=a_{T}^{2}+a_{N}^{2}$。</span> <span class="marks-inline">[1]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中被本单元难住了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约与Dingrui Scholars导师的免费15分钟咨询。我们将在你的下次期中或期末考试前帮你解决困惑。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c2_vector_valued_functions__practice__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../Study%20Guides/Unit_C2_Vector_Valued_Functions.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Practice</span><span data-lang="zh">练习</span></span>
+  <a href="Solutions/Unit_C2_Vector_Valued_Functions_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit C2 Practice</span><span data-lang="zh">大学微积分 &middot; 第C2单元练习</span> <code style="color:#555;">v1.0</code></span>
+  <span><span data-lang="en">Sections 1 to 7 &middot; 82 marks total</span><span data-lang="zh">第1至7节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

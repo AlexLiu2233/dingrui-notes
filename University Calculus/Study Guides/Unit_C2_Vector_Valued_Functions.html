@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="University Calculus Unit C2: Vector-Valued Functions and Curves. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="theme-color" content="#7A2E2E">
+<meta name="color-scheme" content="light dark">
+<title>University Calculus — Unit C2: Vector-Valued Functions and Curves | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_C2_Vector_Valued_Functions.html">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus — Unit C2: Vector-Valued Functions and Curves | Dingrui Scholars">
+<meta property="og:description" content="University Calculus Unit C2: Vector-Valued Functions and Curves. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_C2_Vector_Valued_Functions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="University Calculus — Unit C2: Vector-Valued Functions and Curves | Dingrui Scholars">
+<meta name="twitter:description" content="University Calculus Unit C2: Vector-Valued Functions and Curves. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+<style>
+:root {
+  --bg: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --bg-code: #0F0F0F;
+  --text: #0F0F0F;
+  --text-secondary: #585858;
+  --accent: #7A2E2E; --pop: #0099FF; --pop-light: #E8F4FF; --ink: #0F0F0F;
+  --accent-light: #F2E4E4;
+  --accent-dark: #5A1E1E;
+  --green: #2E6B4F;
+  --green-light: #DFF0E8;
+  --orange: #A65E1A;
+  --orange-light: #FBF0E0;
+  --red: #B03030;
+  --red-light: #FCEAEA;
+  --purple: #5E3D7A;
+  --purple-light: #EDE4F5;
+  --gold: #C4956A;
+  --gold-light: #FDF5EC;
+  --border: #E6E6E6;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.10);
+  --radius: 12px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-w: 860px;
+  --toc-w: 260px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F0F0F;
+  --bg-card: #1A1A1A;
+  --bg-code: #000000;
+  --text: #FAFAFA;
+  --text-secondary: #A0A0A0;
+  --accent: #C87070; --pop: #4DB2FF; --pop-light: #12283A; --ink: #FAFAFA;
+  --accent-light: #3A1818;
+  --accent-dark: #E08080;
+  --green: #5CB88A;
+  --green-light: #1A2E24;
+  --orange: #D4944A;
+  --orange-light: #2E2010;
+  --red: #E07070;
+  --red-light: #301515;
+  --purple: #A888C8;
+  --purple-light: #201828;
+  --gold: #D4A870;
+  --gold-light: #2A2018;
+  --border: #2A2A2A;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+
+/* ─── SCORE BADGE (top nav) ─── */
+.score-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--green);
+  background: var(--green-light);
+  border: 1px solid var(--green);
+  padding: 3px 10px; border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.score-badge.zero { color: var(--text-secondary); background: var(--bg); border-color: var(--border); }
+
+/* ─── PROGRESS BAR ─── */
+.progress-track {
+  position: fixed; top: 56px; left: 0; right: 0;
+  height: 3px; background: transparent; z-index: 99;
+}
+.progress-fill {
+  height: 100%; width: 0; background: var(--accent);
+  transition: width 0.15s;
+}
+
+/* ─── SIDEBAR TOC ─── */
+.sidebar {
+  position: fixed; top: 59px; left: 0; bottom: 0;
+  width: var(--toc-w); background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; scrollbar-width: none; padding: 20px 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, background 0.3s;
+  z-index: 90;
+}
+.sidebar::-webkit-scrollbar { display: none; }
+.sidebar.open { transform: translateX(0); box-shadow: var(--shadow-lg); }
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem; padding: 0 20px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.sidebar a {
+  display: block; padding: 8px 20px;
+  color: var(--text-secondary);
+  text-decoration: none; font-size: 0.88rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.sidebar a:hover { color: var(--accent); background: var(--accent-light); }
+.sidebar a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 600; background: linear-gradient(90deg, var(--accent-light), transparent); }
+
+/* ─── MAIN ─── */
+.main-wrap {
+  max-width: var(--max-w);
+  margin: 80px auto 120px;
+  padding: 0 24px;
+
+  transition: width 0.3s ease, margin-left 0.3s ease;}
+@media (min-width: 1100px) {
+  .sidebar { transform: translateX(0); box-shadow: none; }
+  .main-wrap {
+    max-width: none;
+    margin-left: calc(var(--toc-w) + 40px);
+    margin-right: 0;
+    padding: 0 48px;
+  }
+  body.sidebar-collapsed .sidebar { transform: translateX(-100%); }
+}
+
+/* ─── HERO ─── */
+.hero {
+  text-align: center; padding: 56px 24px 48px;
+  background: linear-gradient(180deg, #F4F4F4 0%, transparent 100%);
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(0,0,0,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+[data-theme="dark"] .hero { background: linear-gradient(180deg, rgba(0,0,0, 0.4) 0%, transparent 100%); }
+[data-theme="dark"] .hero::before { background: radial-gradient(ellipse at 70% 20%, rgba(255,255,255,0.04) 0%, transparent 70%); }
+
+.hero-overline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 12px;
+  position: relative;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15; margin-bottom: 16px;
+  position: relative;
+}
+.hero-sub {
+  color: var(--text-secondary); max-width: 650px; margin: 0 auto;
+  position: relative;
+}
+.hero-meta {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin-top: 24px; position: relative;
+}
+.hero-meta .chip {
+  font-size: 0.85rem; font-weight: 600;
+  padding: 6px 16px; border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.chip-maroon { background: var(--bg-card); border: 1px solid var(--accent); color: var(--accent); }
+.chip-green { background: var(--bg-card); border: 1px solid var(--green); color: var(--green); }
+.chip-purple { background: var(--bg-card); border: 1px solid var(--purple); color: var(--purple); }
+
+/* ─── MASTERY DASHBOARD ─── */
+.mastery-dash {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin: -16px 0 40px;
+}
+.mastery-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.mastery-card:hover { transform: translateY(-2px); }
+.mastery-val {
+  font-family: var(--font-mono);
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.mastery-label {
+  font-size: 0.82rem; color: var(--text-secondary);
+  margin-top: 4px; font-weight: 600;
+}
+.mastery-bar {
+  width: 100%; height: 4px; border-radius: 2px;
+  background: var(--border); margin-top: 10px;
+  overflow: hidden;
+}
+.mastery-bar-fill {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+@media (max-width: 600px) { .mastery-dash { grid-template-columns: 1fr; } }
+
+/* ─── SECTION ─── */
+.section { margin-bottom: 56px; scroll-margin-top: 80px; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem; margin-bottom: 16px;
+  line-height: 1.25; border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 8px; display: inline-block;
+}
+.section h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem; margin: 32px 0 12px;
+  line-height: 1.3; color: var(--text);
+}
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.card-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.card-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 700; flex-shrink: 0;
+}
+.icon-blue { background: var(--accent-light); color: var(--accent); }
+.icon-green { background: var(--green-light); color: var(--green); }
+.icon-orange { background: var(--orange-light); color: var(--orange); }
+.icon-red { background: var(--red-light); color: var(--red); }
+.icon-purple { background: var(--purple-light); color: var(--purple); }
+.card-title { font-weight: 700; font-size: 1.05rem; }
+
+/* ─── CODE/WORKED EXAMPLE BLOCKS ─── */
+pre {
+  background: var(--bg-code); color: #CDD6F4;
+  padding: 20px 24px; border-radius: var(--radius);
+  overflow-x: auto; font-family: var(--font-mono);
+  font-size: 0.88rem; line-height: 1.65; margin: 16px 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+code { font-family: var(--font-mono); font-size: 0.9em; }
+:not(pre) > code {
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 6px; border-radius: 4px; font-weight: 500;
+}
+pre .cm { color: #6C7086; }
+pre .num { color: #F9E2AF; font-weight: 600; }
+pre .str { color: #A6E3A1; font-weight: 600; }
+
+/* ─── KEY CONCEPT BOX ─── */
+.concept-box {
+  border-left: 5px solid var(--accent);
+  background: var(--bg-card);
+  padding: 20px 24px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+.concept-box.green { border-left-color: var(--green); }
+.concept-box.orange { border-left-color: var(--orange); }
+.concept-box.red { border-left-color: var(--red); }
+.concept-box.purple { border-left-color: var(--purple); }
+.concept-box > strong:first-child {
+  display: inline-block; margin-bottom: 8px;
+  font-family: var(--font-mono); text-transform: uppercase;
+  font-size: 0.8rem; letter-spacing: 0.5px;
+}
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--bg-card); }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: var(--accent-light); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.3px; text-transform: uppercase; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--accent-light); }
+
+/* ─── QUIZ ─── */
+.quiz { margin: 24px 0; background: var(--bg-card); padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); position: relative; }
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.quiz-q { font-weight: 600; font-size: 1.05rem; flex: 1; }
+.quiz-number {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 8px; border-radius: 6px;
+  flex-shrink: 0; margin-left: 12px;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 12px 18px; border: 2px solid var(--border);
+  border-radius: 8px; cursor: pointer;
+  font-size: 0.95rem; transition: all 0.2s;
+  background: var(--bg); font-weight: 500;
+  position: relative;
+}
+.quiz-opt:hover:not(.disabled) { border-color: var(--accent); background: var(--accent-light); }
+.quiz-opt.correct { border-color: var(--green); background: var(--green-light); color: var(--green); }
+.quiz-opt.wrong { border-color: var(--red); background: var(--red-light); color: var(--red); }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.8; }
+.quiz-opt.correct::after { content: '✓'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-opt.wrong::after { content: '✗'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-explain { margin-top: 16px; padding: 14px 18px; border-radius: 8px; font-size: 0.9rem; display: none; line-height: 1.6; }
+.quiz-explain.show { display: block; animation: fadeSlideIn 0.35s ease; }
+.quiz-explain.correct-exp { background: var(--green-light); color: #1a4030; border: 1px solid var(--green); }
+.quiz-explain.wrong-exp { background: var(--red-light); color: #6b1d1d; border: 1px solid var(--red); }
+[data-theme="dark"] .quiz-explain.correct-exp { color: var(--green); }
+[data-theme="dark"] .quiz-explain.wrong-exp { color: var(--red); }
+.quiz-retry {
+  display: none; margin-top: 12px;
+  padding: 8px 18px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.quiz-retry.show { display: inline-block; animation: fadeSlideIn 0.35s ease; }
+.quiz-retry:hover { background: var(--accent-light); border-color: var(--accent); }
+
+@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ─── ACCORDION / DETAILS ─── */
+details { margin: 16px 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); overflow: hidden; box-shadow: var(--shadow); }
+summary {
+  padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 0.95rem;
+  user-select: none; list-style: none; display: flex; align-items: center; gap: 10px;
+  background: var(--bg); transition: background 0.2s;
+}
+summary:hover { background: var(--accent-light); }
+summary::before { content: '▸'; transition: transform 0.2s; font-size: 1rem; color: var(--accent); }
+details[open] summary { border-bottom: 1px solid var(--border); }
+details[open] summary::before { transform: rotate(90deg); }
+details .detail-body { padding: 20px; font-size: 0.95rem; background: var(--bg-card); }
+
+/* ─── QUICK REF ─── */
+.qref { background: var(--bg-card); border: 2px dashed var(--accent); border-radius: var(--radius); padding: 24px; margin: 24px 0; }
+.qref-title { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; text-align: center; }
+
+/* ─── FLASHCARD ─── */
+
+/* ─── FLASHCARDS (unified: grid overlay, equalized, no scrollbars) ─── */
+.flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.flashcard {
+  perspective: 1000px;
+  cursor: pointer;
+  display: grid;
+}
+.flashcard-inner {
+  display: grid;
+  grid-template-areas: "card";
+  min-height: 200px;
+  height: 100%;
+  position: relative;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+.flashcard-front, .flashcard-back {
+  grid-area: card;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  word-break: break-word;
+  hyphens: auto;
+}
+.flashcard-front {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: clamp(0.92rem, 2.1vw, 1.05rem);
+  line-height: 1.45;
+  padding: 22px 20px 34px;
+  gap: 8px;
+}
+.flashcard-front::after {
+  content: 'TAP TO FLIP';
+  position: absolute; bottom: 10px; left: 0; right: 0;
+  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+  color: var(--text-secondary); opacity: 0.5; letter-spacing: 1.5px;
+}
+.flashcard-back {
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  color: var(--text);
+  transform: rotateY(180deg);
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.6;
+  padding: 26px 22px;
+  gap: 12px;
+  /* Cleaner prose wrapping: no mid-word splits, no auto-hyphens,
+     balanced lines so commas/periods don't orphan at line starts */
+  word-break: normal;
+  hyphens: manual;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+.flashcard-back .katex-display {
+  margin: 6px 0 !important;
+  font-size: 1.25em;
+  max-width: 100%;
+  overflow: hidden;
+}
+.flashcard-back .katex-display > .katex { max-width: 100%; }
+.flashcard-back .katex { font-size: 1em; }
+/* Give <br>-separated lines real breathing room (numbered lists etc.) */
+.flashcard-back br { content: ""; display: block; margin-bottom: 8px; }
+.flashcard-back > * { max-width: 100%; }
+@media (max-width: 600px) {
+  .flashcard-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ─── WORKED EXAMPLES (standardized) ─── */
+.worked-example {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 88%, var(--accent-light) 12%), var(--bg-card));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+[data-theme="dark"] .worked-example {
+  background: linear-gradient(180deg, rgba(58,32,32,0.32), rgba(30,24,24,0.98));
+}
+.worked-example h4,
+.worked-example .we-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin: 0 0 16px 0;
+}
+.worked-example .we-steps {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.worked-example .we-step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+[data-theme="dark"] .worked-example .we-step {
+  background: var(--bg-card);
+}
+.worked-example .we-step strong {
+  color: var(--accent);
+  font-size: 0.92rem;
+  display: block;
+  margin-bottom: 6px;
+}
+.worked-example .we-step .katex-display {
+  margin: 10px 0;
+}
+.worked-solution {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+.worked-solution .katex-display { margin: 0.65rem 0; }
+
+/* ─── FORMULA BOX ─── */
+.formula-box {
+  background: var(--bg-card);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  margin: 24px 0;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  overflow-x: auto;
+}
+.formula-box .formula-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--text-secondary); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 12px;
+}
+.formula-box .katex-display { margin: 10px 0 0 0; }
+
+/* ─── SEPARATOR ─── */
+.sep { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+/* ─── PRACTICE INPUT ─── */
+.practice-input-group { margin: 20px 0; }
+.practice-prompt { font-weight: 600; margin-bottom: 12px; font-size: 1.02rem; }
+.practice-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.practice-row input[type="text"] {
+  flex: 1; min-width: 160px; padding: 10px 16px;
+  border: 2px solid var(--border); border-radius: 8px;
+  font-family: var(--font-mono); font-size: 1rem;
+  background: var(--bg); color: var(--text);
+  transition: border-color 0.2s;
+}
+.practice-row input[type="text"]:focus { outline: none; border-color: var(--accent); }
+.practice-row button {
+  padding: 10px 24px; border: none; border-radius: 8px;
+  background: var(--accent); color: #fff; font-weight: 700;
+  font-family: var(--font-body); font-size: 0.95rem;
+  cursor: pointer; transition: all 0.2s;
+}
+.practice-row button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.practice-feedback {
+  margin-top: 10px; padding: 10px 16px; border-radius: 8px;
+  font-size: 0.92rem; display: none;
+}
+.practice-feedback.show { display: block; animation: fadeSlideIn 0.3s ease; }
+.practice-feedback.correct { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+.practice-feedback.wrong { background: var(--red-light); color: var(--red); border: 1px solid var(--red); }
+
+/* ─── CHECKLIST ─── */
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  padding: 12px 16px; border: 1px solid var(--border);
+  border-radius: 8px; margin-bottom: 8px;
+  cursor: pointer; font-size: 0.95rem;
+  background: var(--bg-card); transition: all 0.2s;
+  display: flex; align-items: center; gap: 12px;
+  user-select: none;
+}
+.checklist li:hover { border-color: var(--accent); }
+.checklist li .check-icon {
+  width: 24px; height: 24px; border-radius: 6px;
+  border: 2px solid var(--border); display: flex;
+  align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+  font-size: 0.8rem; color: transparent;
+}
+.checklist li.checked { background: var(--green-light); border-color: var(--green); }
+.checklist li.checked .check-icon { background: var(--green); border-color: var(--green); color: #fff; }
+
+/* ─── INTERACTIVE WIDGETS ─── */
+.interactive-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow-lg);
+}
+.widget-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 16px;
+  text-align: center;
+}
+.widget-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.widget-canvas-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.widget-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.widget-controls label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.widget-controls input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 220px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.widget-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-controls input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-readout {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 90px;
+  text-align: center;
+}
+.widget-sum-readout {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.widget-sum-readout .sum-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+/* ─── TWO COLUMNS ─── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ─── FOOTER ─── */
+.footer-wrap {
+  text-align: center; padding: 40px 24px;
+  color: var(--text-secondary); font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem; color: var(--text);
+  margin-bottom: 4px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 1100px) {
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .main-wrap { padding: 0 16px; margin-top: 60px; }
+  pre { font-size: 0.8rem; padding: 16px; }
+  
+  .formula-box { padding: 16px; }
+  .top-nav { padding: 0 16px; }
+  }
+
+/* Print */
+@media print {
+  .flashcard-inner { transform: none !important; }
+  .flashcard-back { transform: none !important; position: relative !important; backface-visibility: visible !important; }
+  .flashcard-front { display: none !important; }
+  .flashcard { height: auto !important; min-height: auto !important; }
+  .top-nav, .progress-track, .sidebar, .topnav-actions, .quiz-retry, .mastery-dash,
+  .flashcard-toolbar button, .score-badge { display: none !important; }
+  .main-wrap { margin: 0 auto; max-width: 100%; }
+  body { font-size: 11pt; background: white; color: black; }
+  pre { border: 1px solid #ccc; white-space: pre-wrap; }
+  .card, .formula-box, .concept-box, .quiz { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+  details { break-inside: avoid; }
+  .interactive-widget { display: none; }
+  
+  
+  
+  
+  a { color: inherit; text-decoration: none; }
+}
+
+/* ─── TOP-NAV (matching Units 2-6) ─── */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; height: 56px;
+  transition: background 0.3s, border 0.3s;
+}
+[data-theme="dark"] .top-nav { background: rgba(21, 16, 16, 0.92); }
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-logo { height: 36px; width: auto; border-radius: 0; object-fit: contain; }
+.nav-badge {
+  background: var(--accent); color: #fff;
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+  padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px;
+}
+.nav-btn {
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px;
+  padding: 6px 14px; font-size: 0.82rem;
+  cursor: pointer; font-family: var(--font-body); font-weight: 600;
+  transition: all 0.2s;
+}
+.nav-btn:hover { background: var(--accent-light); border-color: var(--accent); transform: translateY(-1px); }
+.nav-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ─── BILINGUAL TOGGLE ─── */
+body:not(.lang-zh) [data-lang="zh"] { display: none; }
+body.lang-zh [data-lang="en"] { display: none; }
+
+/* consult-cta: lead-gen conversion surface (Sprint A) */
+.consult-cta { background: linear-gradient(180deg, var(--accent-light, #F2E4E4) 0%, var(--bg-card, #fff) 100%); border: 2px solid var(--accent); border-radius: var(--radius, 12px); padding: 22px 26px; margin: 30px 0 8px; text-align: center; }
+.consult-cta__lead { font-family: var(--font-display); font-size: 1.25rem; color: var(--accent); margin: 0 0 6px; }
+.consult-cta__body { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; margin: 0 auto 16px; max-width: 48ch; }
+.consult-cta__btn { display: inline-block; background: var(--ink); color: var(--bg-card); font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 12px 22px; border-radius: 12px; transition: transform 0.15s, opacity 0.2s; }
+.consult-cta__btn:hover { opacity: 0.88; transform: translateY(-1px); }
+/* design-refresh links */ .card a:not(.feeder-link), .concept-box a, .going-deeper a, .section > p a { color: var(--pop); text-underline-offset: 2px; }
+@media print { .consult-cta { border: 1px solid #999; background: #fff; } .consult-cta__btn { background: #fff !important; color: #000 !important; border: 1px solid #999; } .consult-cta__btn[data-lang="en"]::after { content: " (dingruischolars.com/signup)"; font-weight: 400; } .consult-cta__btn[data-lang="zh"]::after { content: " (dingruischolars.com/signup-ch)"; font-weight: 400; } }
+
+/* __sg_mobile_spacing__ tighten phone layout + fix top-nav clip (injected by declutter_sg.py) */
+@media (max-width: 600px){
+  .main-wrap{ margin: 64px auto 56px !important; padding: 0 14px !important; }
+  .hero{ padding: 40px 18px 32px !important; margin-bottom: 26px !important; }
+  .hero-sub{ font-size: 0.96rem !important; }
+  .section{ margin-bottom: 36px !important; }
+  .section h2{ font-size: 1.45rem !important; }
+  .section h3{ margin: 24px 0 10px !important; }
+  .card{ padding: 18px 16px !important; }
+  .concept-box{ padding: 16px 16px !important; }
+  .quiz{ padding: 18px 14px !important; }
+  .formula-box{ padding: 16px 12px !important; }
+  .worked-solution{ padding: 16px 16px !important; }
+  .sep{ margin: 28px 0 !important; }
+  .detail-body{ padding: 16px !important; }
+  .top-nav{ padding: 0 10px !important; }
+  .nav-left{ gap: 6px !important; min-width: 0; }
+  .nav-right{ gap: 4px !important; }
+  .nav-btn{ padding: 6px 9px !important; font-size: 0.78rem !important; }
+  .score-badge{ display: none !important; }
+}
+@media (max-width: 430px){
+  .nav-left .nav-badge:nth-child(2){ display: none !important; }
+}
+/* __end_sg_mobile_spacing__ */
+
+  /* mobile-overflow-lock v1: lock to viewport width on phone/tablet, no horizontal pan (laptop sidebar layout >=1100px unaffected) */
+  @media (max-width: 1024px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .main-wrap, .hero, .hero-sub, .consult-cta, .sg-appendix { max-width: 100%; }
+    img, table, video, iframe, pre { max-width: 100%; }
+    .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+  }
+</style>
+<!-- BEGIN unit-nav-css -->
+<style data-section="unit-nav">
+.unit-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 980px;
+  margin: 64px auto 32px;
+  padding: 0 24px;
+}
+.unit-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  padding: 18px 20px;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border, #DDD0C8);
+  border-radius: 12px;
+  color: inherit;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.unit-nav__link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #7A2E2E);
+  box-shadow: 0 6px 16px -4px rgba(60, 20, 30, 0.12);
+}
+.unit-nav__link--next {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.unit-nav__arrow {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent, #7A2E2E);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.unit-nav__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.unit-nav__hint {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #6B5058);
+}
+.unit-nav__title {
+  font-family: var(--font-display, 'DM Serif Display', Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--text, #2C1B1F);
+}
+.unit-nav__placeholder {
+  border: 1px dashed var(--border, #DDD0C8);
+  border-radius: 12px;
+  background: transparent;
+  opacity: 0.6;
+}
+@media (max-width: 640px) {
+  .unit-nav { grid-template-columns: 1fr; gap: 10px; margin-top: 48px; }
+  .unit-nav__link--next { flex-direction: row; text-align: left; }
+}
+@media print { .unit-nav { display: none; } }
+</style>
+<!-- END unit-nav-css -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus — Unit C2: Vector-Valued Functions and Curves",
+  "description": "University Calculus Unit C2: Vector-Valued Functions and Curves. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_C2_Vector_Valued_Functions.html",
+  "inLanguage": [
+    "en"
+  ],
+  "learningResourceType": "Study Guide",
+  "educationalLevel": "University",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFKAuoDASIAAhEBAxEB/8QAHAABAQADAQEBAQAAAAAAAAAAAAEGBwgFBAID/8QAaxAAAQMDAQUBCAcQCwwHBgcAAQACAwQFEQYHEiExQRMIFCIyUWFxgRUXN5GUsbMWIzM2QlJUYnJ0dZOhstLTJDRVVnOCkpW0w9ElNThFU1djg4SiwdQmJ0NERmV2KGSFhqTwGEhmo8Lh9f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgQDBf/EADQRAQACAgAEAwUHBAIDAAAAAAABAgMRBBIhMTJBURMzYXGBFCI0kaGx0SNSU/BCQ2PB4f/aAAwDAQACEQMRAD8A6jREWV1EREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARREFREKAiIgIomfMgqZRT8qBniqiICIiAiBEBERAREygJlTgqgZRAiAiic0FTKiIKinxK9UBFFUBFECCooqgIiICZU9SvqQEUVQEQogIiICIiAiKIKmfMiiCoonrQVMoiAiIgIoqgIiICIiAiIgJ6kRARPUiAiJ0QEREBERAREQEyoqgIiICIiAiIgIiICIiAiIgIiICKKoCKZRBUURBURRAVREBFOHmX4q54aSAz1c0dPEOb5XBrR6zwQf0RYzdNf6JtkZfVaotpxzZBL27v5Me8fyLF6vbhoyLPYQ3esxyMdM1gP4xzT+RNutcOS3astmotP0O3qzPqZG1unrlBB/2b4po5XH0tO6B/KKyC2bYtCVkojluNTQuOMd9UjwD62BzR6yo3C08NljvVsFReVQam03XvDKHUFqqnuOA2Ksjc4nyboOfyL13BzfGaR6QpcZiY7vyiqIhEREDoiJ6kFCnrT0IgqdVEKCqInqQOXFPOr05KIKinmVQRE9SflQVFEPRBUREBEU9aAUREBVREFUREFRFEDqicccU6ICqIgnRERBVFUQFDzQ8lUBREQVF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CIiqCZRE6IKiBRBUUwqgKJyRBVE6J1QEREFUToiCqBEKAqpkeVBxQVFEQOKInVBVEQIHNEVQQoqogIiYQVREQFeSiBBRlREQFVB5kQE69UKdED1omUwgIiICIiAqoiAr51MKoIUTogQMIhRBVFVEBERARMcUQPWiFEBECICqiIBRECAEKIgoQophACqZTKAiIgIiICIiAiIgiqIgiqKdEBE5qoJ5kRVBEVRBEVU9KCqIiC8UUTzoKor1UKAEREBVREBOKeVOqAiqiAgREF64UKKoJyRCFUETqhCo8qCIqp0QVFEQFVEQOqKqIBTmiICeZVTqgIivVBCiIgBERARVRA6IPIqogdVeaiqCInmRAREQERCgBERAREQMomEQEVUQEQKoCiIEDHBPSidEBAiIHpTqieYIKinJOKCphQKoCIiAiIgIiICFEQTor1REDqpw44VRBCqiIHVERAREQEREBQKogiqIgKKogdEREBERBFURBFURBFURBCnVVEERVEEVREBERAUKqIInDCqIIiqIInVVEERVEBERBFURAKiqICIiAp6lUQTgiqFBOqoROXVBOSKlMIIipQIIiqBBETCqCJyVQoIiuEwgiqhTCAiqYQFFR6EQFFUQEQqICvJROiBhVMIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAohVQAiKBBUUCpQEQckQRUlCoguEygU6oKiIgIgRBCqiICIp1QVCUU6oKhRCggVQclOqCoURA4oiJI/9k=" class="nav-logo" alt="DingRui Scholars logo">
+    <span class="nav-brand">Dingrui Scholars</span>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn" id="tocToggle" onclick="document.getElementById('sidebar').classList.toggle('open')" title="Contents"><span data-lang="en">Contents</span><span data-lang="zh">目录</span></button>
+    <button class="nav-btn" id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+    <button class="nav-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode"><span data-lang="en">Dark</span><span data-lang="zh">深色</span></button>
+  </div>
+</nav>
+<div class="progress-bar"><div id="progressFill"></div></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-title"><span data-lang="en">Table of Contents</span><span data-lang="zh">目录</span></div>
+  <a href="#hero"><span data-lang="en">Overview</span><span data-lang="zh">概览</span></a>
+  <a href="#s1">1 &middot; <span data-lang="en">Vector Functions and Space Curves</span><span data-lang="zh">向量函数与空间曲线</span></a>
+  <a href="#s2">2 &middot; <span data-lang="en">Derivatives and Integrals of Vector Functions</span><span data-lang="zh">向量函数的导数与积分</span></a>
+  <a href="#s3">3 &middot; <span data-lang="en">Arc Length</span><span data-lang="zh">弧长</span></a>
+  <a href="#s4">4 &middot; <span data-lang="en">Curvature</span><span data-lang="zh">曲率</span></a>
+  <a href="#s5">5 &middot; <span data-lang="en">The Unit Tangent and Normal Vectors</span><span data-lang="zh">单位切向量与法向量</span></a>
+  <a href="#s6">6 &middot; <span data-lang="en">Velocity and Acceleration</span><span data-lang="zh">速度与加速度</span></a>
+  <a href="#s7">7 &middot; <span data-lang="en">Going Deeper</span><span data-lang="zh">深入探究</span></a>
+  <a href="#flashcards"><span data-lang="en">Flashcards</span><span data-lang="zh">记忆卡片</span></a>
+  <a href="#unit-quiz"><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></a>
+  <a href="#checklist"><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握度清单</span></a>
+</aside>
+
+<main class="main-wrap">
+<section class="hero" id="hero">
+  <div class="hero-overline"><span data-lang="en">University Calculus &middot; Calculus III</span><span data-lang="zh">大学微积分 &middot; 微积分 III</span></div>
+  <h1><span data-lang="en">Unit C2: Vector-Valued Functions and Curves</span><span data-lang="zh">第 C2 单元：向量值函数与曲线</span></h1>
+  <p class="hero-sub"><span data-lang="en">How a single parameter sweeps out a curve in space, and how derivatives, arc length, and curvature describe its motion and shape.</span><span data-lang="zh">一个参数如何在空间中扫出一条曲线，以及导数、弧长和曲率如何刻画它的运动与形状。</span></p>
+  <div class="hero-meta">
+    <span class="chip">Calculus III</span>
+    <span class="chip"><span data-lang="en">Multivariable</span><span data-lang="zh">多元微积分</span></span>
+    <span class="chip"><span data-lang="en">Vector Calculus</span><span data-lang="zh">向量微积分</span></span>
+    <span class="chip">MIT 18.02 / GT 2551 / Princeton MAT 201</span>
+  </div>
+  <div class="concept-box">
+    <strong><span data-lang="en">Read me first.</span><span data-lang="zh">请先阅读。</span></strong>
+    <span data-lang="en">This unit treats curves in space through vector-valued functions. We define these functions and their space curves, differentiate and integrate them componentwise, and then measure curves with arc length and curvature. The unit tangent and normal vectors set up a moving frame, velocity and acceleration interpret the calculus as motion, and the closing section reaches the Frenet-Serret formulas and torsion. Work each example by hand before opening the solution.</span><span data-lang="zh">本单元通过向量值函数（<code>vector-valued function</code>）研究空间中的曲线。我们先定义这类函数及其空间曲线（<code>space curve</code>），按分量进行求导和积分，再用弧长（<code>arc length</code>）和曲率（<code>curvature</code>）来度量曲线。单位切向量（<code>unit tangent vector</code>）和法向量建立起一个动标架，速度（<code>velocity</code>）和加速度（<code>acceleration</code>）把微积分诠释为运动，最后一节抵达 Frenet-Serret 公式与挠率。打开解答之前，请先亲手算完每道例题。</span>
+  </div>
+</section>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">大一课程卡住了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</span><span data-lang="zh">预约 Dingrui Scholars 导师 15 分钟免费咨询。我们帮你在下次期中考前突破难关。</span></p>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c2_vector_valued_functions__sg__en" target="_blank" rel="noopener">Book a free consult &rarr;</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c2_vector_valued_functions__sg__zh" target="_blank" rel="noopener">预约免费咨询 &rarr;</a>
+</aside>
+
+
+<section class="section" id="s1">
+  <div class="section-label"><span data-lang="en">Section 1</span><span data-lang="zh">第 1 节</span></div>
+  <h2><span data-lang="en">Vector Functions and Space Curves</span><span data-lang="zh">向量函数与空间曲线</span></h2>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">A vector-valued function assigns a position vector to each value of a single real parameter. As the parameter varies, the tip of the vector traces a curve in space. Everything you know about single-variable calculus carries over componentwise, so a space curve is studied through its three scalar coordinate functions.</span><span data-lang="zh">向量值函数（<code>vector-valued function</code>）把一个实参数的每个取值对应到一个位置向量（<code>position vector</code>）。当参数变化时，向量的端点在空间中扫出一条曲线。你对一元微积分的全部认识都可以按分量逐一沿用，因此一条空间曲线（<code>space curve</code>）是通过它的三个标量坐标函数来研究的。</span>
+  </div>
+
+  <p><strong><span data-lang="en">Definition (vector function).</span><span data-lang="zh">定义（向量函数）。</span></strong> <span data-lang="en">A <em>vector-valued function</em> is a function $\mathbf{r}:I\to\mathbb{R}^3$ whose domain is a subset $I\subseteq\mathbb{R}$ and whose values are vectors. We write</span><span data-lang="zh">一个<em>向量值函数</em>是一个函数 $\mathbf{r}:I\to\mathbb{R}^3$，其定义域是子集 $I\subseteq\mathbb{R}$，取值为向量。我们记作</span></p>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">component form</span><span data-lang="zh">分量形式</span></div>
+  $$\mathbf{r}(t)=\langle f(t),\,g(t),\,h(t)\rangle = f(t)\,\mathbf{i}+g(t)\,\mathbf{j}+h(t)\,\mathbf{k},$$
+  </div>
+
+  <p><span data-lang="en">where $f,g,h$ are the real-valued <em>component functions</em> of $\mathbf{r}$. The natural domain of $\mathbf{r}$ is the intersection of the domains of $f$, $g$, and $h$. The <em>space curve</em> traced by $\mathbf{r}$ is the set $C=\{\mathbf{r}(t):t\in I\}$, and the equations $x=f(t)$, $y=g(t)$, $z=h(t)$ are <em>parametric equations</em> of $C$.</span><span data-lang="zh">其中 $f,g,h$ 是 $\mathbf{r}$ 的实值<em>分量函数</em>（<code>component functions</code>）。$\mathbf{r}$ 的自然定义域是 $f$、$g$、$h$ 三者定义域的交集。$\mathbf{r}$ 所扫出的<em>空间曲线</em>是集合 $C=\{\mathbf{r}(t):t\in I\}$，而方程 $x=f(t)$、$y=g(t)$、$z=h(t)$ 是 $C$ 的<em>参数方程</em>（<code>parametric equations</code>）。</span></p>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Limits and continuity.</span><span data-lang="zh">极限与连续性。</span></strong> <span data-lang="en">Limits of vector functions are taken componentwise. If each component limit exists, then $\displaystyle\lim_{t\to a}\mathbf{r}(t)=\Big\langle \lim_{t\to a}f(t),\,\lim_{t\to a}g(t),\,\lim_{t\to a}h(t)\Big\rangle$. The function $\mathbf{r}$ is <em>continuous at $a$</em> when $\lim_{t\to a}\mathbf{r}(t)=\mathbf{r}(a)$, which holds exactly when all three components are continuous at $a$.</span><span data-lang="zh">向量函数的极限按分量取。若每个分量的极限都存在，则 $\displaystyle\lim_{t\to a}\mathbf{r}(t)=\Big\langle \lim_{t\to a}f(t),\,\lim_{t\to a}g(t),\,\lim_{t\to a}h(t)\Big\rangle$。当 $\lim_{t\to a}\mathbf{r}(t)=\mathbf{r}(a)$ 时，函数 $\mathbf{r}$ <em>在 $a$ 处连续</em>，这恰好等价于三个分量都在 $a$ 处连续。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Worked Example 1.1: the circular helix</span><span data-lang="zh">例题 1.1：圆柱螺旋线</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Consider $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$. The first two components satisfy $x^2+y^2=\cos^2 t+\sin^2 t=1$, so the projection of the curve onto the $xy$-plane is the unit circle, traced counterclockwise. Meanwhile $z=t$ increases steadily, lifting the point at a constant rate. The result is a helix that winds around the cylinder $x^2+y^2=1$.</span><span data-lang="zh">考虑 $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$。前两个分量满足 $x^2+y^2=\cos^2 t+\sin^2 t=1$，因此曲线在 $xy$ 平面上的投影是单位圆，沿逆时针方向描出。与此同时 $z=t$ 稳定增大，以恒定速率把点抬高。结果是一条绕在圆柱 $x^2+y^2=1$ 上的螺旋线。</span></p>
+    <p><span data-lang="en">One full turn corresponds to $t$ advancing by $2\pi$, during which $z$ rises by exactly $2\pi$ (the pitch of the helix).</span><span data-lang="zh">转一整圈对应 $t$ 增加 $2\pi$，在此期间 $z$ 恰好上升 $2\pi$（即螺旋线的螺距）。</span></p>
+    $$\mathbf{r}(0)=\langle 1,0,0\rangle,\qquad \mathbf{r}(\tfrac{\pi}{2})=\langle 0,1,\tfrac{\pi}{2}\rangle.$$
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 1.2: a curve from intersecting surfaces</span><span data-lang="zh">例题 1.2：由曲面相交得到的曲线</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Parametrize the curve of intersection of the cylinder $x^2+y^2=4$ with the plane $z=x+2$. The cylinder suggests $x=2\cos t$, $y=2\sin t$. Substituting into the plane gives $z=2\cos t+2$.</span><span data-lang="zh">把圆柱 $x^2+y^2=4$ 与平面 $z=x+2$ 的交线参数化。圆柱提示取 $x=2\cos t$、$y=2\sin t$。代入平面方程得 $z=2\cos t+2$。</span></p>
+    $$\mathbf{r}(t)=\langle 2\cos t,\ 2\sin t,\ 2\cos t+2\rangle,\qquad 0\le t\le 2\pi.$$
+    <p><span data-lang="en">This is an ellipse sitting in the tilted plane, projecting down to the circle of radius $2$.</span><span data-lang="zh">这是一个位于倾斜平面内的椭圆，向下投影为半径为 $2$ 的圆。</span></p>
+  </div></div></details>
+
+  <p><span data-lang="en">The intersection idea generalizes. Whenever a curve is described as the common solution of two surface equations, choose a parameter that makes one surface easy, then read the remaining coordinate off the other surface. The next example shows the same maneuver for a paraboloid cut by a plane, where the resulting curve is genuinely three-dimensional.</span><span data-lang="zh">这种"求交"的思路可以推广。每当一条曲线被描述为两个曲面方程的公共解时，就选一个能让其中一个曲面变简单的参数，再从另一个曲面读出剩下的坐标。下一个例子对被平面切割的抛物面施以同样的手法，所得曲线是真正三维的。</span></p>
+
+  <details><summary><span data-lang="en">Worked Example 1.3: a curve on a paraboloid</span><span data-lang="zh">例题 1.3：抛物面上的曲线</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Parametrize the intersection of the paraboloid $z=x^2+y^2$ with the plane $y=x$. On the plane we have $y=x$, so let $x=t$. Then $y=t$ and $z=x^2+y^2=t^2+t^2=2t^2$.</span><span data-lang="zh">把抛物面 $z=x^2+y^2$ 与平面 $y=x$ 的交线参数化。在该平面上有 $y=x$，故令 $x=t$。于是 $y=t$，且 $z=x^2+y^2=t^2+t^2=2t^2$。</span></p>
+    $$\mathbf{r}(t)=\langle t,\ t,\ 2t^2\rangle,\qquad t\in\mathbb{R}.$$
+    <p><span data-lang="en">Check a point: at $t=1$, $\mathbf{r}(1)=\langle 1,1,2\rangle$, and indeed $1^2+1^2=2=z$ and $y=x$. The curve is a parabola opening upward, lying in the vertical plane $y=x$. Notice that nothing forced a trigonometric parametrization here: the constraint $y=x$ is linear, so a polynomial parameter is the natural choice. Matching the parametrization to the algebraic shape of the constraints, circles and ellipses get sines and cosines, lines get a linear parameter, is the single most useful habit in this section.</span><span data-lang="zh">验证一个点：当 $t=1$ 时 $\mathbf{r}(1)=\langle 1,1,2\rangle$，确有 $1^2+1^2=2=z$ 且 $y=x$。该曲线是一条开口向上的抛物线，位于竖直平面 $y=x$ 内。注意这里并没有什么强迫我们用三角参数化（<code>parametrization</code>）：约束 $y=x$ 是线性的，因此多项式参数才是自然选择。让参数化匹配约束的代数形状，即圆和椭圆配正弦余弦、直线配线性参数，是本节最有用的一个习惯。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 1.4: a limit and a removable discontinuity</span><span data-lang="zh">例题 1.4：极限与可去间断点</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Evaluate $\displaystyle\lim_{t\to 0}\Big\langle \frac{\sin t}{t},\ \frac{e^{t}-1}{t},\ t^2+3\Big\rangle$. Take the limit in each slot:</span><span data-lang="zh">计算 $\displaystyle\lim_{t\to 0}\Big\langle \frac{\sin t}{t},\ \frac{e^{t}-1}{t},\ t^2+3\Big\rangle$。逐个分量取极限：</span></p>
+    $$\lim_{t\to 0}\frac{\sin t}{t}=1,\qquad \lim_{t\to 0}\frac{e^{t}-1}{t}=1,\qquad \lim_{t\to 0}(t^2+3)=3,$$
+    $$\Rightarrow\quad \lim_{t\to 0}\mathbf{r}(t)=\langle 1,\ 1,\ 3\rangle.$$
+    <p><span data-lang="en">The first two components are not defined at $t=0$ as written, so $\mathbf{r}$ has a removable discontinuity there. Defining $\mathbf{r}(0)=\langle 1,1,3\rangle$ patches it into a continuous function, exactly as one repairs a removable discontinuity of a scalar function. This is the componentwise limit theorem doing real work.</span><span data-lang="zh">按原式书写，前两个分量在 $t=0$ 处未定义，因此 $\mathbf{r}$ 在该处有一个可去间断点。定义 $\mathbf{r}(0)=\langle 1,1,3\rangle$ 即可把它补成一个连续函数，正如修补一个标量函数的可去间断点一样。这正是按分量取极限的定理在发挥实际作用。</span></p>
+  </div></div></details>
+
+  <div class="concept-box green">
+    <strong><span data-lang="en">Smooth curves and orientation.</span><span data-lang="zh">光滑曲线与定向。</span></strong> <span data-lang="en">A parametrization is <em>smooth</em> on an interval when $\mathbf{r}'$ is continuous and $\mathbf{r}'(t)\neq\mathbf{0}$ there. The nonvanishing condition matters: it guarantees a well-defined tangent direction at every point and rules out cusps, where the curve reverses direction sharply. For instance $\mathbf{r}(t)=\langle t^3,\ t^2\rangle$ has $\mathbf{r}'(0)=\mathbf{0}$, and the curve $y=x^{2/3}$ it traces has a cusp at the origin even though each component is differentiable. A parametrization also carries an <em>orientation</em>, the direction of increasing $t$; replacing $t$ by $-t$ or by $a+b-t$ traverses the same point set the opposite way, which flips the sign of the tangent vector and of any line integral computed along it later.</span><span data-lang="zh">当 $\mathbf{r}'$ 连续且在区间上处处 $\mathbf{r}'(t)\neq\mathbf{0}$ 时，参数化在该区间上是<em>光滑</em>的。这个非零条件很关键：它保证每一点都有良好定义的切线方向，并排除尖点（曲线在此处骤然反向）。例如 $\mathbf{r}(t)=\langle t^3,\ t^2\rangle$ 有 $\mathbf{r}'(0)=\mathbf{0}$，它所描出的曲线 $y=x^{2/3}$ 在原点处有一个尖点，尽管每个分量都可微。参数化还自带一个<em>定向</em>，即 $t$ 增大的方向；把 $t$ 替换为 $-t$ 或 $a+b-t$ 会以相反方向遍历同一个点集，这会翻转切向量的符号，也会翻转日后沿它计算的任何线积分的符号。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Worked Example 1.5: matching a parametrization to a description</span><span data-lang="zh">例题 1.5：把参数化与描述相匹配</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Find a smooth parametrization of the line segment from $P=(1,2,3)$ to $Q=(4,0,-1)$, traversed once from $P$ to $Q$. The standard device is to write $\mathbf{r}(t)=(1-t)\,\overrightarrow{OP}+t\,\overrightarrow{OQ}$ for $0\le t\le 1$, which is $P$ at $t=0$ and $Q$ at $t=1$:</span><span data-lang="zh">求从 $P=(1,2,3)$ 到 $Q=(4,0,-1)$ 的线段的光滑参数化，从 $P$ 到 $Q$ 走一次。标准手法是对 $0\le t\le 1$ 写 $\mathbf{r}(t)=(1-t)\,\overrightarrow{OP}+t\,\overrightarrow{OQ}$，它在 $t=0$ 时为 $P$，在 $t=1$ 时为 $Q$：</span></p>
+    $$\mathbf{r}(t)=\langle 1+3t,\ 2-2t,\ 3-4t\rangle,\qquad 0\le t\le 1.$$
+    <p><span data-lang="en">Here $\mathbf{r}'(t)=\langle 3,-2,-4\rangle$ is constant and nonzero, so the parametrization is smooth with the correct orientation from $P$ to $Q$. To reverse direction, use $\mathbf{r}(1-t)$ instead; to traverse the full line rather than the segment, drop the restriction on $t$.</span><span data-lang="zh">这里 $\mathbf{r}'(t)=\langle 3,-2,-4\rangle$ 是常向量且非零，故参数化光滑，且具有从 $P$ 到 $Q$ 的正确定向。若要反向，改用 $\mathbf{r}(1-t)$；若要遍历整条直线而非线段，去掉对 $t$ 的限制即可。</span></p>
+  </div></div></details>
+
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">A curve and its parametrization are not the same object. Two different functions can trace the same set of points: $\mathbf{r}_1(t)=\langle\cos t,\sin t,0\rangle$ and $\mathbf{r}_2(t)=\langle\cos 2t,\sin 2t,0\rangle$ both trace the unit circle, but they run at different speeds and cover it a different number of times on $[0,2\pi]$. Quantities that depend only on the point set (the curve itself), such as arc length over a full loop or curvature at a point, are geometric. Quantities like velocity and speed depend on the parametrization. When a problem asks about "the curve," decide first whether the answer should change if you re-time the motion: if it should not, you are looking for a geometric quantity and any convenient parametrization will do.</span><span data-lang="zh">曲线和它的参数化不是同一个对象。两个不同的函数可以描出同一个点集：$\mathbf{r}_1(t)=\langle\cos t,\sin t,0\rangle$ 与 $\mathbf{r}_2(t)=\langle\cos 2t,\sin 2t,0\rangle$ 都描出单位圆，但它们运行速率不同，在 $[0,2\pi]$ 上覆盖它的次数也不同。只依赖点集（即曲线本身）的量，例如绕一整圈的弧长或某点处的曲率，是几何量。而速度（<code>velocity</code>）和速率这类量则依赖于参数化。当题目问"这条曲线"时，先判断：如果你重新安排运动的时间节奏，答案是否应当改变？若不应改变，那你要找的就是几何量，任何方便的参数化都可以用。</span>
+  </div>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">What is the natural domain of $\mathbf{r}(t)=\big\langle \ln t,\ \sqrt{4-t^2},\ \tfrac{1}{t-1}\big\rangle$?</span><span data-lang="zh">$\mathbf{r}(t)=\big\langle \ln t,\ \sqrt{4-t^2},\ \tfrac{1}{t-1}\big\rangle$ 的自然定义域是什么？</span></div><span class="quiz-number">1.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$0\le t\le 2$</div><div class="quiz-opt" data-idx="1">$0<t\le 2$ <span data-lang="en">with</span><span data-lang="zh">且</span> $t\neq 1$</div><div class="quiz-opt" data-idx="2">$t>0$</div><div class="quiz-opt" data-idx="3"><span data-lang="en">all real $t$</span><span data-lang="zh">所有实数 $t$</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. $\ln t$ needs $t>0$, $\sqrt{4-t^2}$ needs $-2\le t\le 2$, and $\tfrac{1}{t-1}$ excludes $t=1$. The intersection is $0<t\le 2$, $t\neq 1$.</span><span data-lang="zh">正确。$\ln t$ 要求 $t>0$，$\sqrt{4-t^2}$ 要求 $-2\le t\le 2$，而 $\tfrac{1}{t-1}$ 排除 $t=1$。三者的交集是 $0<t\le 2$ 且 $t\neq 1$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Intersect the three component domains: $t>0$ from the log, $|t|\le 2$ from the square root, and $t\neq 1$ from the fraction.</span><span data-lang="zh">把三个分量的定义域求交：对数给出 $t>0$，平方根给出 $|t|\le 2$，分式给出 $t\neq 1$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="section-label"><span data-lang="en">Section 2</span><span data-lang="zh">第 2 节</span></div>
+  <h2><span data-lang="en">Derivatives and Integrals of Vector Functions</span><span data-lang="zh">向量函数的导数与积分</span></h2>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">The derivative of a vector function is itself defined by a difference quotient, just as in single-variable calculus, and it works out to ordinary differentiation in each component. Geometrically $\mathbf{r}'(t)$ is a <em>tangent vector</em> to the curve, pointing in the direction of increasing parameter.</span><span data-lang="zh">向量函数的导数（<code>derivative</code>）本身由差商定义，正如一元微积分那样，结果是对每个分量做普通求导。从几何上看，$\mathbf{r}'(t)$ 是曲线的一个<em>切向量</em>（<code>tangent vector</code>），指向参数增大的方向。</span>
+  </div>
+
+  <p><strong><span data-lang="en">Definition (derivative).</span><span data-lang="zh">定义（导数）。</span></strong> <span data-lang="en">The derivative of $\mathbf{r}$ at $t$ is</span><span data-lang="zh">$\mathbf{r}$ 在 $t$ 处的导数为</span></p>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">limit definition and componentwise rule</span><span data-lang="zh">极限定义与按分量法则</span></div>
+  $$\mathbf{r}'(t)=\frac{d\mathbf{r}}{dt}=\lim_{\Delta t\to 0}\frac{\mathbf{r}(t+\Delta t)-\mathbf{r}(t)}{\Delta t}=\langle f'(t),\,g'(t),\,h'(t)\rangle,$$
+  </div>
+
+  <p><span data-lang="en">provided each component is differentiable. When $\mathbf{r}'(t)\neq\mathbf{0}$, the line through $\mathbf{r}(t)$ in the direction $\mathbf{r}'(t)$ is the <em>tangent line</em>, and $\mathbf{T}(t)=\mathbf{r}'(t)/|\mathbf{r}'(t)|$ is the <em>unit tangent vector</em>.</span><span data-lang="zh">前提是每个分量都可微。当 $\mathbf{r}'(t)\neq\mathbf{0}$ 时，过 $\mathbf{r}(t)$ 且沿方向 $\mathbf{r}'(t)$ 的直线就是<em>切线</em>，而 $\mathbf{T}(t)=\mathbf{r}'(t)/|\mathbf{r}'(t)|$ 是<em>单位切向量</em>（<code>unit tangent vector</code>）。</span></p>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">differentiation rules</span><span data-lang="zh">求导法则</span></div>
+  $$\frac{d}{dt}\big[\mathbf{u}\cdot\mathbf{v}\big]=\mathbf{u}'\cdot\mathbf{v}+\mathbf{u}\cdot\mathbf{v}',\qquad \frac{d}{dt}\big[\mathbf{u}\times\mathbf{v}\big]=\mathbf{u}'\times\mathbf{v}+\mathbf{u}\times\mathbf{v}',$$
+  $$\frac{d}{dt}\big[\mathbf{u}(s(t))\big]=s'(t)\,\mathbf{u}'(s(t))\quad(\text{chain rule}).$$
+  </div>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Integration.</span><span data-lang="zh">积分。</span></strong> <span data-lang="en">The integral of a vector function is also taken componentwise. If $\mathbf{R}'(t)=\mathbf{r}(t)$ then $\int \mathbf{r}(t)\,dt=\mathbf{R}(t)+\mathbf{C}$, where $\mathbf{C}$ is a constant vector. The definite integral satisfies a vector form of the Fundamental Theorem of Calculus, $\int_a^b \mathbf{r}(t)\,dt=\mathbf{R}(b)-\mathbf{R}(a)$.</span><span data-lang="zh">向量函数的积分也是按分量取的。若 $\mathbf{R}'(t)=\mathbf{r}(t)$，则 $\int \mathbf{r}(t)\,dt=\mathbf{R}(t)+\mathbf{C}$，其中 $\mathbf{C}$ 是一个常向量。定积分满足微积分基本定理的向量形式 $\int_a^b \mathbf{r}(t)\,dt=\mathbf{R}(b)-\mathbf{R}(a)$。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Worked Example 2.1: tangent line to a helix</span><span data-lang="zh">例题 2.1：螺旋线的切线</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">For $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$, differentiate componentwise:</span><span data-lang="zh">对 $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$，按分量求导：</span></p>
+    $$\mathbf{r}'(t)=\langle -\sin t,\ \cos t,\ 1\rangle.$$
+    <p><span data-lang="en">At $t=\tfrac{\pi}{2}$ the point is $\mathbf{r}(\tfrac{\pi}{2})=\langle 0,1,\tfrac{\pi}{2}\rangle$ and the tangent direction is $\mathbf{r}'(\tfrac{\pi}{2})=\langle -1,0,1\rangle$. A parametrization of the tangent line is</span><span data-lang="zh">在 $t=\tfrac{\pi}{2}$ 处，点为 $\mathbf{r}(\tfrac{\pi}{2})=\langle 0,1,\tfrac{\pi}{2}\rangle$，切线方向为 $\mathbf{r}'(\tfrac{\pi}{2})=\langle -1,0,1\rangle$。切线的一个参数化为</span></p>
+    $$\ell(u)=\langle 0,1,\tfrac{\pi}{2}\rangle+u\langle -1,0,1\rangle=\langle -u,\ 1,\ \tfrac{\pi}{2}+u\rangle.$$
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 2.2: differentiating a dot product two ways</span><span data-lang="zh">例题 2.2：用两种方法对点积求导</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Let $\mathbf{u}(t)=\langle t,\ t^2,\ 1\rangle$ and $\mathbf{v}(t)=\langle \cos t,\ 0,\ t\rangle$. We verify the product rule $\tfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]=\mathbf{u}'\cdot\mathbf{v}+\mathbf{u}\cdot\mathbf{v}'$ by computing both sides.</span><span data-lang="zh">设 $\mathbf{u}(t)=\langle t,\ t^2,\ 1\rangle$、$\mathbf{v}(t)=\langle \cos t,\ 0,\ t\rangle$。我们通过计算等式两边来验证乘积法则 $\tfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]=\mathbf{u}'\cdot\mathbf{v}+\mathbf{u}\cdot\mathbf{v}'$。</span></p>
+    <p><span data-lang="en">Direct route: $\mathbf{u}\cdot\mathbf{v}=t\cos t+0+t=t\cos t+t$, so $\tfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]=\cos t-t\sin t+1$.</span><span data-lang="zh">直接法：$\mathbf{u}\cdot\mathbf{v}=t\cos t+0+t=t\cos t+t$，故 $\tfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]=\cos t-t\sin t+1$。</span></p>
+    <p><span data-lang="en">Product-rule route: $\mathbf{u}'=\langle 1,\ 2t,\ 0\rangle$, $\mathbf{v}'=\langle -\sin t,\ 0,\ 1\rangle$, so</span><span data-lang="zh">乘积法则法：$\mathbf{u}'=\langle 1,\ 2t,\ 0\rangle$、$\mathbf{v}'=\langle -\sin t,\ 0,\ 1\rangle$，于是</span></p>
+    $$\mathbf{u}'\cdot\mathbf{v}=\cos t+0+0=\cos t,\qquad \mathbf{u}\cdot\mathbf{v}'=-t\sin t+0+1.$$
+    <p><span data-lang="en">Adding gives $\cos t-t\sin t+1$, matching the direct computation. The product rule lets you differentiate $|\mathbf{r}(t)|^2=\mathbf{r}\cdot\mathbf{r}$ without first extracting a square root, which is the trick behind several later derivations.</span><span data-lang="zh">相加得 $\cos t-t\sin t+1$，与直接计算一致。乘积法则让你无需先开平方根就能对 $|\mathbf{r}(t)|^2=\mathbf{r}\cdot\mathbf{r}$ 求导，这正是后面若干推导背后的技巧。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 2.3: an antiderivative with an initial condition</span><span data-lang="zh">例题 2.3：带初始条件的原函数</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Find $\mathbf{r}(t)$ given $\mathbf{r}'(t)=\langle 2t,\ \cos t,\ e^{t}\rangle$ and $\mathbf{r}(0)=\langle 1,\ 2,\ 0\rangle$. Integrate componentwise:</span><span data-lang="zh">已知 $\mathbf{r}'(t)=\langle 2t,\ \cos t,\ e^{t}\rangle$ 和 $\mathbf{r}(0)=\langle 1,\ 2,\ 0\rangle$，求 $\mathbf{r}(t)$。按分量积分：</span></p>
+    $$\mathbf{r}(t)=\Big\langle t^2,\ \sin t,\ e^{t}\Big\rangle+\mathbf{C}.$$
+    <p><span data-lang="en">Apply the initial condition. At $t=0$ the antiderivative without the constant is $\langle 0,\ 0,\ 1\rangle$, so $\langle 0,0,1\rangle+\mathbf{C}=\langle 1,2,0\rangle$ forces $\mathbf{C}=\langle 1,\ 2,\ -1\rangle$. Therefore</span><span data-lang="zh">代入初始条件。在 $t=0$ 处，去掉常数的原函数为 $\langle 0,\ 0,\ 1\rangle$，故 $\langle 0,0,1\rangle+\mathbf{C}=\langle 1,2,0\rangle$ 迫使 $\mathbf{C}=\langle 1,\ 2,\ -1\rangle$。因此</span></p>
+    $$\mathbf{r}(t)=\langle t^2+1,\ \sin t+2,\ e^{t}-1\rangle.$$
+    <p><span data-lang="en">The constant of integration is a single vector with three independent components, so one vector initial condition pins down all three constants at once.</span><span data-lang="zh">积分常数是一个带三个独立分量的单一向量，因此一个向量初始条件就能一次性确定全部三个常数。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 2.4: a definite vector integral</span><span data-lang="zh">例题 2.4：向量定积分</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Compute $\displaystyle\int_0^{1}\langle 4t^3,\ \tfrac{1}{1+t^2},\ 6t\rangle\,dt$. Integrate each slot over $[0,1]$:</span><span data-lang="zh">计算 $\displaystyle\int_0^{1}\langle 4t^3,\ \tfrac{1}{1+t^2},\ 6t\rangle\,dt$。在 $[0,1]$ 上逐分量积分：</span></p>
+    $$\int_0^1 4t^3\,dt=\big[t^4\big]_0^1=1,\quad \int_0^1\frac{dt}{1+t^2}=\big[\arctan t\big]_0^1=\frac{\pi}{4},\quad \int_0^1 6t\,dt=\big[3t^2\big]_0^1=3.$$
+    $$\int_0^{1}\mathbf{r}(t)\,dt=\Big\langle 1,\ \frac{\pi}{4},\ 3\Big\rangle.$$
+    <p><span data-lang="en">A definite vector integral returns a single constant vector, just as a definite scalar integral returns a number. This is the displacement vector when $\mathbf{r}(t)$ is read as a velocity.</span><span data-lang="zh">向量定积分返回一个常向量，正如标量定积分返回一个数。当把 $\mathbf{r}(t)$ 视为速度时，这就是位移向量。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 2.5: a smooth-versus-non-smooth tangent</span><span data-lang="zh">例题 2.5：光滑与非光滑切向量的对比</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Compare two parametrizations of the same parabola $y=x^2$. First, $\mathbf{r}_1(t)=\langle t,\ t^2,\ 0\rangle$ gives $\mathbf{r}_1'(t)=\langle 1,\ 2t,\ 0\rangle$, which is never zero, so $\mathbf{r}_1$ is smooth and has a well-defined tangent direction everywhere. Second, $\mathbf{r}_2(t)=\langle t^3,\ t^6,\ 0\rangle$ traces the same parabola but $\mathbf{r}_2'(t)=\langle 3t^2,\ 6t^5,\ 0\rangle$, which is $\mathbf{0}$ at $t=0$.</span><span data-lang="zh">比较同一抛物线 $y=x^2$ 的两个参数化。第一个，$\mathbf{r}_1(t)=\langle t,\ t^2,\ 0\rangle$ 给出 $\mathbf{r}_1'(t)=\langle 1,\ 2t,\ 0\rangle$，它永不为零，故 $\mathbf{r}_1$ 光滑，处处有良好定义的切线方向。第二个，$\mathbf{r}_2(t)=\langle t^3,\ t^6,\ 0\rangle$ 描出同一抛物线，但 $\mathbf{r}_2'(t)=\langle 3t^2,\ 6t^5,\ 0\rangle$ 在 $t=0$ 处为 $\mathbf{0}$。</span></p>
+    <p><span data-lang="en">At $t=0$ the unit tangent $\mathbf{T}=\mathbf{r}_2'/|\mathbf{r}_2'|$ is undefined for $\mathbf{r}_2$, even though the underlying curve is perfectly smooth there. The defect is in the parametrization, not the geometry: $\mathbf{r}_2$ instantaneously stops at the origin. This is why "smooth curve" should be read as "admits a smooth parametrization," and why we routinely reparametrize to remove such artificial stalls before computing $\mathbf{T}$, $\mathbf{N}$, or curvature.</span><span data-lang="zh">在 $t=0$ 处，对 $\mathbf{r}_2$ 而言单位切向量 $\mathbf{T}=\mathbf{r}_2'/|\mathbf{r}_2'|$ 没有定义，尽管底层曲线在那里完全光滑。缺陷出在参数化上，而非几何上：$\mathbf{r}_2$ 在原点处瞬间停了下来。这正是为何"光滑曲线"应读作"存在某个光滑参数化"，也是为何在计算 $\mathbf{T}$、$\mathbf{N}$ 或曲率之前，我们惯常要重新参数化以消除这种人为的停滞。</span></p>
+  </div></div></details>
+
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">The product rule for the cross product is order-sensitive. Writing $\tfrac{d}{dt}[\mathbf{u}\times\mathbf{v}]=\mathbf{v}'\times\mathbf{u}+\mathbf{u}\times\mathbf{v}'$ swaps the factors in the first term and silently negates it, because $\mathbf{u}'\times\mathbf{v}=-\mathbf{v}\times\mathbf{u}'$. The correct statement keeps each factor in its original position: $\tfrac{d}{dt}[\mathbf{u}\times\mathbf{v}]=\mathbf{u}'\times\mathbf{v}+\mathbf{u}\times\mathbf{v}'$. The dot-product rule is safe to write in either order since the dot product commutes, but never reorder a cross product when differentiating.</span><span data-lang="zh">叉积的乘积法则对顺序敏感。写成 $\tfrac{d}{dt}[\mathbf{u}\times\mathbf{v}]=\mathbf{v}'\times\mathbf{u}+\mathbf{u}\times\mathbf{v}'$ 会把第一项的两个因子对调，从而悄悄地变号，因为 $\mathbf{u}'\times\mathbf{v}=-\mathbf{v}\times\mathbf{u}'$。正确写法让每个因子保持原来的位置：$\tfrac{d}{dt}[\mathbf{u}\times\mathbf{v}]=\mathbf{u}'\times\mathbf{v}+\mathbf{u}\times\mathbf{v}'$。点积法则由于点积可交换，两种顺序都安全，但求导时绝不可对叉积调换顺序。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Going deeper: why a constant-length vector is perpendicular to its derivative</span><span data-lang="zh">深入探究：为什么定长向量与其导数垂直</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><strong><span data-lang="en">Claim.</span><span data-lang="zh">命题。</span></strong> <span data-lang="en">If $|\mathbf{r}(t)|=c$ is constant, then $\mathbf{r}'(t)\perp\mathbf{r}(t)$ for all $t$.</span><span data-lang="zh">若 $|\mathbf{r}(t)|=c$ 为常数，则对所有 $t$ 有 $\mathbf{r}'(t)\perp\mathbf{r}(t)$。</span></p>
+    <p><strong><span data-lang="en">Proof.</span><span data-lang="zh">证明。</span></strong> <span data-lang="en">Constant length means $\mathbf{r}(t)\cdot\mathbf{r}(t)=|\mathbf{r}(t)|^2=c^2$ is constant. Differentiate both sides using the product rule for the dot product:</span><span data-lang="zh">长度恒定意味着 $\mathbf{r}(t)\cdot\mathbf{r}(t)=|\mathbf{r}(t)|^2=c^2$ 为常数。用点积的乘积法则对两边求导：</span></p>
+    $$\frac{d}{dt}\big[\mathbf{r}\cdot\mathbf{r}\big]=\mathbf{r}'\cdot\mathbf{r}+\mathbf{r}\cdot\mathbf{r}'=2\,\mathbf{r}\cdot\mathbf{r}'=0.$$
+    <p><span data-lang="en">Hence $\mathbf{r}\cdot\mathbf{r}'=0$, so the two vectors are orthogonal. This is exactly why the unit tangent $\mathbf{T}$, which has constant length $1$, is always perpendicular to $\mathbf{T}'$, a fact used to build the normal vector in Section 5.</span><span data-lang="zh">于是 $\mathbf{r}\cdot\mathbf{r}'=0$，两向量正交。这正是为何长度恒为 $1$ 的单位切向量 $\mathbf{T}$ 总与 $\mathbf{T}'$ 垂直，这一事实将在第 5 节用来构造法向量。</span></p>
+    <p><strong><span data-lang="en">Converse and geometry.</span><span data-lang="zh">逆命题与几何意义。</span></strong> <span data-lang="en">The argument is reversible: if $\mathbf{r}\cdot\mathbf{r}'\equiv 0$ then $\tfrac{d}{dt}|\mathbf{r}|^2=0$, so the length is constant. Geometrically, a particle whose velocity is always perpendicular to its position vector moves on a sphere centered at the origin, never approaching or receding. This single lemma is the engine behind the orthogonality of the entire TNB frame.</span><span data-lang="zh">这个论证是可逆的：若 $\mathbf{r}\cdot\mathbf{r}'\equiv 0$，则 $\tfrac{d}{dt}|\mathbf{r}|^2=0$，故长度恒定。从几何上看，速度始终垂直于位置向量的质点在以原点为中心的球面上运动，既不靠近也不远离。这一条引理正是整个 TNB 标架正交性背后的引擎。</span></p>
+  </div></div></details>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">If $\mathbf{r}(t)=\langle t^2,\ e^{3t},\ \sin t\rangle$, then $\mathbf{r}'(0)=$</span><span data-lang="zh">若 $\mathbf{r}(t)=\langle t^2,\ e^{3t},\ \sin t\rangle$，则 $\mathbf{r}'(0)=$</span></div><span class="quiz-number">2.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\langle 0,1,0\rangle$</div><div class="quiz-opt" data-idx="1">$\langle 0,3,1\rangle$ <span data-lang="en">only after evaluating wrongly</span><span data-lang="zh">（仅在算错后才得到）</span></div><div class="quiz-opt" data-idx="2">$\langle 0,3,1\rangle$</div><div class="quiz-opt" data-idx="3">$\langle 2,3,1\rangle$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. $\mathbf{r}'(t)=\langle 2t,\ 3e^{3t},\ \cos t\rangle$, and at $t=0$ this is $\langle 0,\ 3,\ 1\rangle$.</span><span data-lang="zh">正确。$\mathbf{r}'(t)=\langle 2t,\ 3e^{3t},\ \cos t\rangle$，在 $t=0$ 处即为 $\langle 0,\ 3,\ 1\rangle$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Differentiate each component: $\tfrac{d}{dt}t^2=2t$, $\tfrac{d}{dt}e^{3t}=3e^{3t}$, $\tfrac{d}{dt}\sin t=\cos t$. Evaluate at $t=0$.</span><span data-lang="zh">对每个分量求导：$\tfrac{d}{dt}t^2=2t$、$\tfrac{d}{dt}e^{3t}=3e^{3t}$、$\tfrac{d}{dt}\sin t=\cos t$。再在 $t=0$ 处求值。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="section-label"><span data-lang="en">Section 3</span><span data-lang="zh">第 3 节</span></div>
+  <h2><span data-lang="en">Arc Length</span><span data-lang="zh">弧长</span></h2>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">The length of a curve is the integral of the speed $|\mathbf{r}'(t)|$. Reparametrizing by arc length $s$ produces the most natural description of a curve, one that moves at unit speed and depends only on the geometry of the path, not on how fast it is traced.</span><span data-lang="zh">曲线的长度是速率 $|\mathbf{r}'(t)|$ 的积分。用弧长（<code>arc length</code>）$s$ 重新参数化会给出曲线最自然的描述：它以单位速率运动，且只依赖于路径的几何，与描出它的快慢无关。</span>
+  </div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">arc length of a smooth curve</span><span data-lang="zh">光滑曲线的弧长</span></div>
+  $$L=\int_a^b |\mathbf{r}'(t)|\,dt=\int_a^b \sqrt{[f'(t)]^2+[g'(t)]^2+[h'(t)]^2}\;dt.$$
+  </div>
+
+  <p><strong><span data-lang="en">The arc length function.</span><span data-lang="zh">弧长函数。</span></strong> <span data-lang="en">Fixing a base point $t=a$, define the <em>arc length function</em></span><span data-lang="zh">固定一个基点 $t=a$，定义<em>弧长函数</em>（<code>arc length function</code>）</span></p>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">arc length function and its derivative</span><span data-lang="zh">弧长函数及其导数</span></div>
+  $$s(t)=\int_a^t |\mathbf{r}'(u)|\,du,\qquad \frac{ds}{dt}=|\mathbf{r}'(t)|.$$
+  </div>
+
+  <p><span data-lang="en">Because $ds/dt=|\mathbf{r}'(t)|>0$ for a smooth curve, $s$ is increasing and invertible, so we may write $t=t(s)$ and obtain $\mathbf{r}(t(s))$, the <em>arc length parametrization</em>. It satisfies $|\mathbf{r}'(s)|=1$.</span><span data-lang="zh">由于对光滑曲线有 $ds/dt=|\mathbf{r}'(t)|>0$，$s$ 单调递增且可逆，故可写 $t=t(s)$，从而得到 $\mathbf{r}(t(s))$，即<em>弧长参数化</em>。它满足 $|\mathbf{r}'(s)|=1$。</span></p>
+
+  <details><summary><span data-lang="en">Worked Example 3.1: length of one turn of a helix</span><span data-lang="zh">例题 3.1：螺旋线一圈的长度</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">For $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$ on $0\le t\le 2\pi$, we have $\mathbf{r}'(t)=\langle -\sin t,\ \cos t,\ 1\rangle$, so</span><span data-lang="zh">对 $0\le t\le 2\pi$ 上的 $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$，有 $\mathbf{r}'(t)=\langle -\sin t,\ \cos t,\ 1\rangle$，故</span></p>
+    $$|\mathbf{r}'(t)|=\sqrt{\sin^2 t+\cos^2 t+1}=\sqrt{2}.$$
+    $$L=\int_0^{2\pi}\sqrt{2}\,dt=2\pi\sqrt{2}.$$
+    <p><span data-lang="en">The speed is constant, which is what makes the helix so convenient as a first example.</span><span data-lang="zh">速率是常数，这正是螺旋线作为首个例子如此方便的原因。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 3.2: arc length reparametrization of a helix</span><span data-lang="zh">例题 3.2：螺旋线的弧长重新参数化</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Continuing with the helix, $s(t)=\int_0^t \sqrt{2}\,du=\sqrt{2}\,t$, so $t=s/\sqrt{2}$. Substituting gives the unit-speed form</span><span data-lang="zh">继续用这条螺旋线，$s(t)=\int_0^t \sqrt{2}\,du=\sqrt{2}\,t$，故 $t=s/\sqrt{2}$。代入得到单位速率形式</span></p>
+    $$\mathbf{r}(s)=\Big\langle \cos\tfrac{s}{\sqrt{2}},\ \sin\tfrac{s}{\sqrt{2}},\ \tfrac{s}{\sqrt{2}}\Big\rangle.$$
+    <p><span data-lang="en">Check: $\mathbf{r}'(s)=\tfrac{1}{\sqrt{2}}\langle -\sin\tfrac{s}{\sqrt{2}},\ \cos\tfrac{s}{\sqrt{2}},\ 1\rangle$, and $|\mathbf{r}'(s)|=\tfrac{1}{\sqrt{2}}\cdot\sqrt{2}=1$, as required.</span><span data-lang="zh">验证：$\mathbf{r}'(s)=\tfrac{1}{\sqrt{2}}\langle -\sin\tfrac{s}{\sqrt{2}},\ \cos\tfrac{s}{\sqrt{2}},\ 1\rangle$，且 $|\mathbf{r}'(s)|=\tfrac{1}{\sqrt{2}}\cdot\sqrt{2}=1$，符合要求。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 3.3: a length integral that simplifies to a perfect square</span><span data-lang="zh">例题 3.3：化为完全平方的长度积分</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Find the length of the curve $\mathbf{r}(t)=\langle \sqrt{2}\,t,\ e^{t},\ e^{-t}\rangle$ on $0\le t\le 1$. Curves like this are designed so the square-root integrand collapses to a perfect square.</span><span data-lang="zh">求曲线 $\mathbf{r}(t)=\langle \sqrt{2}\,t,\ e^{t},\ e^{-t}\rangle$ 在 $0\le t\le 1$ 上的长度。这类曲线是经过设计的，好让根号下的被积式化为一个完全平方。</span></p>
+    <p><span data-lang="en">Differentiate: $\mathbf{r}'(t)=\langle \sqrt{2},\ e^{t},\ -e^{-t}\rangle$. Then</span><span data-lang="zh">求导：$\mathbf{r}'(t)=\langle \sqrt{2},\ e^{t},\ -e^{-t}\rangle$。于是</span></p>
+    $$|\mathbf{r}'(t)|^2=2+e^{2t}+e^{-2t}=e^{2t}+2+e^{-2t}=(e^{t}+e^{-t})^2.$$
+    <p><span data-lang="en">The constant $2$ is exactly the cross term of the square $(e^{t}+e^{-t})^2=e^{2t}+2+e^{-2t}$, so $|\mathbf{r}'(t)|=e^{t}+e^{-t}$ and</span><span data-lang="zh">常数 $2$ 恰好是平方 $(e^{t}+e^{-t})^2=e^{2t}+2+e^{-2t}$ 中的交叉项，故 $|\mathbf{r}'(t)|=e^{t}+e^{-t}$，从而</span></p>
+    $$L=\int_0^1 (e^{t}+e^{-t})\,dt=\big[e^{t}-e^{-t}\big]_0^1=e-e^{-1}.$$
+    <p><span data-lang="en">The designed-in perfect square is the standard trick that makes a square-root integrand integrable. When a length integral looks hopeless, check whether the radicand factors as $(\text{something})^2$ before reaching for numerical methods.</span><span data-lang="zh">这种刻意设计的完全平方是让根号被积式可积的标准技巧。当一个长度积分看起来毫无希望时，在动用数值方法之前，先检查被开方式能否因式分解为 $(\text{某式})^2$。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 3.4: arc length of a polynomial space curve</span><span data-lang="zh">例题 3.4：多项式空间曲线的弧长</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Find the length of $\mathbf{r}(t)=\langle 2t,\ t^2,\ \tfrac13 t^3\rangle$ on $0\le t\le 2$. Differentiate: $\mathbf{r}'(t)=\langle 2,\ 2t,\ t^2\rangle$, so</span><span data-lang="zh">求 $\mathbf{r}(t)=\langle 2t,\ t^2,\ \tfrac13 t^3\rangle$ 在 $0\le t\le 2$ 上的长度。求导：$\mathbf{r}'(t)=\langle 2,\ 2t,\ t^2\rangle$，故</span></p>
+    $$|\mathbf{r}'(t)|^2=4+4t^2+t^4=(t^2+2)^2,$$
+    <p><span data-lang="en">since $(t^2+2)^2=t^4+4t^2+4$. Therefore $|\mathbf{r}'(t)|=t^2+2$ (positive for all $t$), and</span><span data-lang="zh">因为 $(t^2+2)^2=t^4+4t^2+4$。因此 $|\mathbf{r}'(t)|=t^2+2$（对所有 $t$ 都为正），从而</span></p>
+    $$L=\int_0^2 (t^2+2)\,dt=\Big[\tfrac{t^3}{3}+2t\Big]_0^2=\tfrac{8}{3}+4=\frac{20}{3}.$$
+    <p><span data-lang="en">The lesson repeats: a square root integrand is tractable exactly when the radicand is a perfect square in $t$. Spotting the factorization is half the battle in arc-length problems set by hand.</span><span data-lang="zh">这一教训再次出现：根号被积式恰好在被开方式是关于 $t$ 的完全平方时才可处理。在手算的弧长问题中，看出这个因式分解就成功了一半。</span></p>
+  </div></div></details>
+
+  <div class="concept-box orange">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Arc length is $\int_a^b|\mathbf{r}'(t)|\,dt$, the integral of the <em>magnitude</em> of the velocity, not the magnitude of the integral. Writing $L=\big|\int_a^b\mathbf{r}'(t)\,dt\big|$ computes the straight-line distance between the endpoints, $|\mathbf{r}(b)-\mathbf{r}(a)|$, which undercounts every curve that is not a straight segment. For one full turn of the helix the true length is $2\pi\sqrt2\approx 8.89$, while $|\mathbf{r}(2\pi)-\mathbf{r}(0)|=|\langle 0,0,2\pi\rangle|=2\pi\approx 6.28$. Keep the absolute value inside the integral.</span><span data-lang="zh">弧长是 $\int_a^b|\mathbf{r}'(t)|\,dt$，即速度<em>模长</em>的积分，而不是积分的模长。写成 $L=\big|\int_a^b\mathbf{r}'(t)\,dt\big|$ 算出的是两端点之间的直线距离 $|\mathbf{r}(b)-\mathbf{r}(a)|$，它会低估每一条非直线段的曲线。对螺旋线的一整圈，真实长度是 $2\pi\sqrt2\approx 8.89$，而 $|\mathbf{r}(2\pi)-\mathbf{r}(0)|=|\langle 0,0,2\pi\rangle|=2\pi\approx 6.28$。要把绝对值留在积分号内部。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Going deeper: arc length does not depend on the parametrization</span><span data-lang="zh">深入探究：弧长不依赖于参数化</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><strong><span data-lang="en">Claim.</span><span data-lang="zh">命题。</span></strong> <span data-lang="en">If a curve is retraced by a smooth, increasing change of parameter $t=t(\tau)$, the arc length integral gives the same value.</span><span data-lang="zh">若一条曲线被一个光滑、递增的参数变换 $t=t(\tau)$ 重新描出，则弧长积分给出相同的值。</span></p>
+    <p><strong><span data-lang="en">Proof.</span><span data-lang="zh">证明。</span></strong> <span data-lang="en">Let the new parametrization be $\boldsymbol{\rho}(\tau)=\mathbf{r}(t(\tau))$ with $t'(\tau)>0$ and $t(\alpha)=a$, $t(\beta)=b$. By the chain rule $\boldsymbol{\rho}'(\tau)=\mathbf{r}'(t(\tau))\,t'(\tau)$, so taking magnitudes and using $t'(\tau)>0$,</span><span data-lang="zh">设新参数化为 $\boldsymbol{\rho}(\tau)=\mathbf{r}(t(\tau))$，其中 $t'(\tau)>0$ 且 $t(\alpha)=a$、$t(\beta)=b$。由链式法则 $\boldsymbol{\rho}'(\tau)=\mathbf{r}'(t(\tau))\,t'(\tau)$，取模长并利用 $t'(\tau)>0$，得</span></p>
+    $$|\boldsymbol{\rho}'(\tau)|=|\mathbf{r}'(t(\tau))|\,t'(\tau).$$
+    <p><span data-lang="en">Now compute the new length integral and substitute $u=t(\tau)$, $du=t'(\tau)\,d\tau$:</span><span data-lang="zh">现在计算新的长度积分，并代换 $u=t(\tau)$、$du=t'(\tau)\,d\tau$：</span></p>
+    $$\int_\alpha^\beta |\boldsymbol{\rho}'(\tau)|\,d\tau=\int_\alpha^\beta |\mathbf{r}'(t(\tau))|\,t'(\tau)\,d\tau=\int_a^b |\mathbf{r}'(u)|\,du.$$
+    <p><span data-lang="en">The two integrals agree, so arc length is a genuine property of the curve, not of the schedule used to traverse it. This is precisely why reparametrizing by $s$ in the previous example was legitimate: it relabels points without changing distances. If $t'(\tau)<0$ the curve is traced backward and the limits swap, but the unsigned length is unchanged.</span><span data-lang="zh">两个积分相等，因此弧长是曲线本身的固有性质，而非遍历它所用的时间安排的性质。这正是为何上例中按 $s$ 重新参数化是合法的：它只是给点重新贴标签，并不改变距离。若 $t'(\tau)<0$，曲线被反向描出且积分上下限互换，但无符号的长度不变。</span></p>
+  </div></div></details>
+
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The length of $\mathbf{r}(t)=\langle 3\cos t,\ 3\sin t,\ 4t\rangle$ for $0\le t\le \pi$ is</span><span data-lang="zh">$\mathbf{r}(t)=\langle 3\cos t,\ 3\sin t,\ 4t\rangle$ 在 $0\le t\le \pi$ 上的长度是</span></div><span class="quiz-number">3.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$5\pi$</div><div class="quiz-opt" data-idx="1">$7\pi$</div><div class="quiz-opt" data-idx="2">$3\pi$</div><div class="quiz-opt" data-idx="3">$25\pi$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. $\mathbf{r}'=\langle -3\sin t,\ 3\cos t,\ 4\rangle$, so $|\mathbf{r}'|=\sqrt{9+16}=5$ and $L=\int_0^{\pi}5\,dt=5\pi$.</span><span data-lang="zh">正确。$\mathbf{r}'=\langle -3\sin t,\ 3\cos t,\ 4\rangle$，故 $|\mathbf{r}'|=\sqrt{9+16}=5$，且 $L=\int_0^{\pi}5\,dt=5\pi$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Compute $|\mathbf{r}'(t)|=\sqrt{9\sin^2 t+9\cos^2 t+16}=\sqrt{25}=5$, then integrate the constant over $[0,\pi]$.</span><span data-lang="zh">先算 $|\mathbf{r}'(t)|=\sqrt{9\sin^2 t+9\cos^2 t+16}=\sqrt{25}=5$，再在 $[0,\pi]$ 上对常数积分。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="section-label"><span data-lang="en">Section 4</span><span data-lang="zh">第 4 节</span></div>
+  <h2><span data-lang="en">Curvature</span><span data-lang="zh">曲率</span></h2>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">Curvature measures how fast a curve changes direction per unit length. It is the magnitude of the rate of change of the unit tangent with respect to arc length, and it is zero for a straight line and constant for a circle.</span><span data-lang="zh">曲率（<code>curvature</code>）衡量曲线每单位长度改变方向的快慢。它是单位切向量关于弧长的变化率的模长，对直线为零，对圆为常数。</span>
+  </div>
+
+  <p><strong><span data-lang="en">Definition (curvature).</span><span data-lang="zh">定义（曲率）。</span></strong> <span data-lang="en">With $\mathbf{T}=\mathbf{r}'/|\mathbf{r}'|$ the unit tangent and $s$ arc length,</span><span data-lang="zh">设 $\mathbf{T}=\mathbf{r}'/|\mathbf{r}'|$ 为单位切向量，$s$ 为弧长，则</span></p>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">curvature</span><span data-lang="zh">曲率</span></div>
+  $$\kappa=\left|\frac{d\mathbf{T}}{ds}\right|=\frac{|\mathbf{T}'(t)|}{|\mathbf{r}'(t)|}.$$
+  </div>
+
+  <p><span data-lang="en">For a curve in space the following formula is usually far easier to apply, since it avoids computing $\mathbf{T}$ explicitly:</span><span data-lang="zh">对空间中的曲线，下面这个公式通常用起来要容易得多，因为它避免了显式计算 $\mathbf{T}$：</span></p>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">cross-product formula for curvature</span><span data-lang="zh">曲率的叉积公式</span></div>
+  $$\kappa(t)=\frac{|\mathbf{r}'(t)\times\mathbf{r}''(t)|}{|\mathbf{r}'(t)|^3}.$$
+  </div>
+
+  <p><span data-lang="en">For a plane curve $y=f(x)$, this specializes to $\kappa=\dfrac{|f''(x)|}{\big(1+[f'(x)]^2\big)^{3/2}}$. The reciprocal $\rho=1/\kappa$ is the <em>radius of curvature</em>.</span><span data-lang="zh">对平面曲线 $y=f(x)$，这化为 $\kappa=\dfrac{|f''(x)|}{\big(1+[f'(x)]^2\big)^{3/2}}$。其倒数 $\rho=1/\kappa$ 是<em>曲率半径</em>。</span></p>
+
+  <details><summary><span data-lang="en">Worked Example 4.1: curvature of a circle of radius $a$</span><span data-lang="zh">例题 4.1：半径为 $a$ 的圆的曲率</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Take $\mathbf{r}(t)=\langle a\cos t,\ a\sin t,\ 0\rangle$. Then</span><span data-lang="zh">取 $\mathbf{r}(t)=\langle a\cos t,\ a\sin t,\ 0\rangle$。则</span></p>
+    $$\mathbf{r}'(t)=\langle -a\sin t,\ a\cos t,\ 0\rangle,\qquad \mathbf{r}''(t)=\langle -a\cos t,\ -a\sin t,\ 0\rangle.$$
+    $$\mathbf{r}'\times\mathbf{r}''=\langle 0,\ 0,\ a^2\rangle,\quad |\mathbf{r}'\times\mathbf{r}''|=a^2,\quad |\mathbf{r}'|^3=a^3.$$
+    $$\kappa=\frac{a^2}{a^3}=\frac{1}{a}.$$
+    <p><span data-lang="en">A circle has constant curvature equal to the reciprocal of its radius, exactly as intuition demands.</span><span data-lang="zh">圆具有恒定曲率，等于其半径的倒数，与直觉完全一致。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 4.2: curvature of a parabola at its vertex</span><span data-lang="zh">例题 4.2：抛物线顶点处的曲率</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">For the plane curve $y=x^2$, use $\kappa=\dfrac{|f''(x)|}{(1+[f'(x)]^2)^{3/2}}$ with $f'(x)=2x$ and $f''(x)=2$:</span><span data-lang="zh">对平面曲线 $y=x^2$，用公式 $\kappa=\dfrac{|f''(x)|}{(1+[f'(x)]^2)^{3/2}}$，其中 $f'(x)=2x$、$f''(x)=2$：</span></p>
+    $$\kappa(x)=\frac{2}{(1+4x^2)^{3/2}}.$$
+    <p><span data-lang="en">At the vertex $x=0$ this gives $\kappa(0)=2$, the maximum curvature, so the radius of curvature there is $\rho=\tfrac12$. As $|x|\to\infty$, $\kappa\to 0$: the parabola flattens out far from the vertex. The osculating circle at the vertex has radius $\tfrac12$ and sits inside the parabola, hugging it more tightly than any other circle.</span><span data-lang="zh">在顶点 $x=0$ 处这给出 $\kappa(0)=2$，即最大曲率，故那里的曲率半径为 $\rho=\tfrac12$。当 $|x|\to\infty$ 时 $\kappa\to 0$：抛物线在远离顶点处变得平缓。顶点处的密切圆半径为 $\tfrac12$，位于抛物线内侧，比任何其他圆都更贴合它。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 4.3: curvature of the twisted cubic</span><span data-lang="zh">例题 4.3：扭三次曲线的曲率</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Find the curvature of $\mathbf{r}(t)=\langle t,\ t^2,\ t^3\rangle$ at $t=0$ and at general $t$. Compute the derivatives:</span><span data-lang="zh">求 $\mathbf{r}(t)=\langle t,\ t^2,\ t^3\rangle$ 在 $t=0$ 处以及一般 $t$ 处的曲率。计算各阶导数：</span></p>
+    $$\mathbf{r}'(t)=\langle 1,\ 2t,\ 3t^2\rangle,\qquad \mathbf{r}''(t)=\langle 0,\ 2,\ 6t\rangle.$$
+    $$\mathbf{r}'\times\mathbf{r}''=\langle (2t)(6t)-(3t^2)(2),\ (3t^2)(0)-(1)(6t),\ (1)(2)-(2t)(0)\rangle=\langle 6t^2,\ -6t,\ 2\rangle.$$
+    <p><span data-lang="en">Then $|\mathbf{r}'\times\mathbf{r}''|=\sqrt{36t^4+36t^2+4}=2\sqrt{9t^4+9t^2+1}$ and $|\mathbf{r}'|=\sqrt{1+4t^2+9t^4}$, so</span><span data-lang="zh">于是 $|\mathbf{r}'\times\mathbf{r}''|=\sqrt{36t^4+36t^2+4}=2\sqrt{9t^4+9t^2+1}$，$|\mathbf{r}'|=\sqrt{1+4t^2+9t^4}$，故</span></p>
+    $$\kappa(t)=\frac{2\sqrt{9t^4+9t^2+1}}{(1+4t^2+9t^4)^{3/2}}.$$
+    <p><span data-lang="en">At $t=0$ everything but the constants drops: $\kappa(0)=\dfrac{2\sqrt{1}}{1^{3/2}}=2$. The twisted cubic is the standard example of a genuinely non-planar curve, and the cross-product formula handles it without ever forming $\mathbf{T}$.</span><span data-lang="zh">在 $t=0$ 处，除常数外的项全部消失：$\kappa(0)=\dfrac{2\sqrt{1}}{1^{3/2}}=2$。扭三次曲线是真正非平面曲线的标准例子，而叉积公式处理它时根本无需构造 $\mathbf{T}$。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 4.4: the osculating circle of $y=x^2$ at the vertex</span><span data-lang="zh">例题 4.4：$y=x^2$ 在顶点处的密切圆</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">The osculating circle at a point shares the curve's position, tangent, and curvature there; its radius is $\rho=1/\kappa$ and its center sits a distance $\rho$ from the point along $\mathbf{N}$. From Worked Example 4.2, $\kappa(0)=2$, so $\rho=\tfrac12$. At the vertex $(0,0)$ the parabola opens upward, so $\mathbf{N}$ points in the $+y$ direction and the center is at $\big(0,\ \tfrac12\big)$. The osculating circle is</span><span data-lang="zh">某点处的密切圆与曲线在该点共享位置、切线和曲率；其半径为 $\rho=1/\kappa$，圆心沿 $\mathbf{N}$ 方向距该点 $\rho$。由例题 4.2，$\kappa(0)=2$，故 $\rho=\tfrac12$。在顶点 $(0,0)$ 处抛物线开口向上，故 $\mathbf{N}$ 指向 $+y$ 方向，圆心在 $\big(0,\ \tfrac12\big)$。密切圆为</span></p>
+    $$x^2+\Big(y-\tfrac12\Big)^2=\tfrac14.$$
+    <p><span data-lang="en">This circle matches $y=x^2$ to second order at the origin: same point, same horizontal tangent, same bending. It is the circle a car would trace if, at the vertex, the steering wheel froze at its current angle. Approximating a curve locally by its osculating circle is the geometric meaning of curvature.</span><span data-lang="zh">这个圆在原点处与 $y=x^2$ 二阶吻合：同一点、同一水平切线、同样的弯曲程度。它就是一辆车在顶点处把方向盘锁死在当前角度时会描出的那个圆。用密切圆在局部逼近曲线，正是曲率的几何含义。</span></p>
+  </div></div></details>
+
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">The denominator of the curvature formula is $|\mathbf{r}'|^3$, the speed cubed, not $|\mathbf{r}''|$ or $|\mathbf{r}'|$. Forgetting the cube is the most common slip and it makes curvature change under reparametrization, which is impossible since curvature is geometric. A quick sanity check: $\kappa$ must carry units of $1/\text{length}$. In $\kappa=|\mathbf{r}'\times\mathbf{r}''|/|\mathbf{r}'|^3$ the numerator scales like (length/time)(length/time$^2$) and the denominator like (length/time)$^3$, leaving $1/\text{length}$. The plane-curve formula likewise has the $3/2$ power that produces exactly this cancellation; dropping it gives a quantity that wrongly depends on how the axes are scaled.</span><span data-lang="zh">曲率公式的分母是 $|\mathbf{r}'|^3$，即速率的立方，而不是 $|\mathbf{r}''|$ 或 $|\mathbf{r}'|$。漏掉这个立方是最常见的失误，它会让曲率在重新参数化下发生改变，而这是不可能的，因为曲率是几何量。快速验算：$\kappa$ 的量纲必须是 $1/\text{长度}$。在 $\kappa=|\mathbf{r}'\times\mathbf{r}''|/|\mathbf{r}'|^3$ 中，分子的量纲像（长度/时间）(长度/时间$^2$)，分母像（长度/时间）$^3$，相约后留下 $1/\text{长度}$。平面曲线公式同样带有 $3/2$ 次幂以产生恰好的相约；漏掉它会得到一个错误地依赖坐标轴缩放方式的量。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Going deeper: deriving the cross-product formula</span><span data-lang="zh">深入探究：推导叉积公式</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Write $\mathbf{r}'=|\mathbf{r}'|\,\mathbf{T}=\dfrac{ds}{dt}\,\mathbf{T}$. Differentiating with the product rule,</span><span data-lang="zh">写 $\mathbf{r}'=|\mathbf{r}'|\,\mathbf{T}=\dfrac{ds}{dt}\,\mathbf{T}$。用乘积法则求导：</span></p>
+    $$\mathbf{r}''=\frac{d^2s}{dt^2}\,\mathbf{T}+\frac{ds}{dt}\,\mathbf{T}'.$$
+    <p><span data-lang="en">Now take the cross product $\mathbf{r}'\times\mathbf{r}''$. The $\mathbf{T}\times\mathbf{T}$ term vanishes, leaving</span><span data-lang="zh">现在作叉积 $\mathbf{r}'\times\mathbf{r}''$。$\mathbf{T}\times\mathbf{T}$ 这一项消失，留下</span></p>
+    $$\mathbf{r}'\times\mathbf{r}''=\Big(\frac{ds}{dt}\Big)^2\,\mathbf{T}\times\mathbf{T}'.$$
+    <p><span data-lang="en">Since $\mathbf{T}$ is a unit vector, $\mathbf{T}'\perp\mathbf{T}$ (Section 2), so $|\mathbf{T}\times\mathbf{T}'|=|\mathbf{T}'|$. Taking magnitudes and using $|ds/dt|=|\mathbf{r}'|$,</span><span data-lang="zh">由于 $\mathbf{T}$ 是单位向量，$\mathbf{T}'\perp\mathbf{T}$（见第 2 节），故 $|\mathbf{T}\times\mathbf{T}'|=|\mathbf{T}'|$。取模长并利用 $|ds/dt|=|\mathbf{r}'|$，得</span></p>
+    $$|\mathbf{r}'\times\mathbf{r}''|=|\mathbf{r}'|^2\,|\mathbf{T}'|.$$
+    <p><span data-lang="en">Divide by $|\mathbf{r}'|^3$ and recall $\kappa=|\mathbf{T}'|/|\mathbf{r}'|$ to recover $\kappa=|\mathbf{r}'\times\mathbf{r}''|/|\mathbf{r}'|^3$.</span><span data-lang="zh">两边除以 $|\mathbf{r}'|^3$，并回忆 $\kappa=|\mathbf{T}'|/|\mathbf{r}'|$，即得 $\kappa=|\mathbf{r}'\times\mathbf{r}''|/|\mathbf{r}'|^3$。</span></p>
+  </div></div></details>
+
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The curvature of the helix $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$ is</span><span data-lang="zh">螺旋线 $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$ 的曲率是</span></div><span class="quiz-number">4.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$1$</div><div class="quiz-opt" data-idx="1">$\sqrt{2}$</div><div class="quiz-opt" data-idx="2">$\tfrac{1}{\sqrt{2}}$</div><div class="quiz-opt" data-idx="3">$\tfrac{1}{2}$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. $\mathbf{r}'=\langle -\sin t,\cos t,1\rangle$, $\mathbf{r}''=\langle -\cos t,-\sin t,0\rangle$, so $\mathbf{r}'\times\mathbf{r}''=\langle \sin t,\ -\cos t,\ 1\rangle$ with magnitude $\sqrt{2}$, while $|\mathbf{r}'|^3=2\sqrt{2}$. Thus $\kappa=\sqrt{2}/(2\sqrt{2})=\tfrac12$.</span><span data-lang="zh">正确。$\mathbf{r}'=\langle -\sin t,\cos t,1\rangle$、$\mathbf{r}''=\langle -\cos t,-\sin t,0\rangle$，故 $\mathbf{r}'\times\mathbf{r}''=\langle \sin t,\ -\cos t,\ 1\rangle$，模长为 $\sqrt{2}$，而 $|\mathbf{r}'|^3=2\sqrt{2}$。于是 $\kappa=\sqrt{2}/(2\sqrt{2})=\tfrac12$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Use $\kappa=|\mathbf{r}'\times\mathbf{r}''|/|\mathbf{r}'|^3$. Here $|\mathbf{r}'\times\mathbf{r}''|=\sqrt{2}$ and $|\mathbf{r}'|=\sqrt{2}$, so $\kappa=\sqrt{2}/(\sqrt{2})^3=\tfrac12$.</span><span data-lang="zh">用 $\kappa=|\mathbf{r}'\times\mathbf{r}''|/|\mathbf{r}'|^3$。这里 $|\mathbf{r}'\times\mathbf{r}''|=\sqrt{2}$、$|\mathbf{r}'|=\sqrt{2}$，故 $\kappa=\sqrt{2}/(\sqrt{2})^3=\tfrac12$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="section-label"><span data-lang="en">Section 5</span><span data-lang="zh">第 5 节</span></div>
+  <h2><span data-lang="en">The Unit Tangent and Normal Vectors</span><span data-lang="zh">单位切向量与法向量</span></h2>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">At each point of a smooth curve we attach a moving orthonormal frame: the unit tangent $\mathbf{T}$, the principal unit normal $\mathbf{N}$, and the binormal $\mathbf{B}=\mathbf{T}\times\mathbf{N}$. This <em>TNB frame</em> travels with the curve and encodes its local geometry.</span><span data-lang="zh">在光滑曲线的每一点，我们都附上一个运动的标准正交标架：单位切向量 $\mathbf{T}$、主单位法向量 $\mathbf{N}$，以及副法向量 $\mathbf{B}=\mathbf{T}\times\mathbf{N}$。这个 <em>TNB 标架</em>随曲线移动，编码了它的局部几何。</span>
+  </div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">unit tangent, principal normal, binormal</span><span data-lang="zh">单位切向量、主法向量、副法向量</span></div>
+  $$\mathbf{T}(t)=\frac{\mathbf{r}'(t)}{|\mathbf{r}'(t)|},\qquad \mathbf{N}(t)=\frac{\mathbf{T}'(t)}{|\mathbf{T}'(t)|},\qquad \mathbf{B}(t)=\mathbf{T}(t)\times\mathbf{N}(t).$$
+  </div>
+
+  <p><span data-lang="en">Because $\mathbf{T}$ has constant length $1$, its derivative $\mathbf{T}'$ is orthogonal to $\mathbf{T}$ (Section 2), so $\mathbf{N}$ is a genuine unit normal. The plane spanned by $\mathbf{T}$ and $\mathbf{N}$ at a point is the <em>osculating plane</em>; the circle in that plane with radius $\rho=1/\kappa$ tangent to the curve is the <em>osculating circle</em>.</span><span data-lang="zh">由于 $\mathbf{T}$ 长度恒为 $1$，其导数 $\mathbf{T}'$ 与 $\mathbf{T}$ 正交（见第 2 节），故 $\mathbf{N}$ 是货真价实的单位法向量。某点处由 $\mathbf{T}$ 和 $\mathbf{N}$ 张成的平面是<em>密切平面</em>；该平面内半径为 $\rho=1/\kappa$ 且与曲线相切的圆就是<em>密切圆</em>。</span></p>
+
+  <details><summary><span data-lang="en">Worked Example 5.1: T and N for a helix</span><span data-lang="zh">例题 5.1：螺旋线的 T 与 N</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">For $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$ we have $\mathbf{r}'(t)=\langle -\sin t,\ \cos t,\ 1\rangle$ and $|\mathbf{r}'|=\sqrt{2}$, so</span><span data-lang="zh">对 $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$，有 $\mathbf{r}'(t)=\langle -\sin t,\ \cos t,\ 1\rangle$ 和 $|\mathbf{r}'|=\sqrt{2}$，故</span></p>
+    $$\mathbf{T}(t)=\frac{1}{\sqrt{2}}\langle -\sin t,\ \cos t,\ 1\rangle.$$
+    <p><span data-lang="en">Differentiate: $\mathbf{T}'(t)=\tfrac{1}{\sqrt{2}}\langle -\cos t,\ -\sin t,\ 0\rangle$, with $|\mathbf{T}'|=\tfrac{1}{\sqrt{2}}$. Hence</span><span data-lang="zh">求导：$\mathbf{T}'(t)=\tfrac{1}{\sqrt{2}}\langle -\cos t,\ -\sin t,\ 0\rangle$，其中 $|\mathbf{T}'|=\tfrac{1}{\sqrt{2}}$。因此</span></p>
+    $$\mathbf{N}(t)=\langle -\cos t,\ -\sin t,\ 0\rangle.$$
+    <p><span data-lang="en">The normal always points horizontally toward the central axis of the helix.</span><span data-lang="zh">法向量始终水平地指向螺旋线的中心轴。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 5.2: the binormal and the osculating plane of a helix</span><span data-lang="zh">例题 5.2：螺旋线的副法向量与密切平面</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Continue with the helix, where $\mathbf{T}(t)=\tfrac{1}{\sqrt2}\langle -\sin t,\cos t,1\rangle$ and $\mathbf{N}(t)=\langle -\cos t,-\sin t,0\rangle$. The binormal is</span><span data-lang="zh">继续用这条螺旋线，其中 $\mathbf{T}(t)=\tfrac{1}{\sqrt2}\langle -\sin t,\cos t,1\rangle$、$\mathbf{N}(t)=\langle -\cos t,-\sin t,0\rangle$。副法向量为</span></p>
+    $$\mathbf{B}=\mathbf{T}\times\mathbf{N}=\frac{1}{\sqrt2}\big\langle (\cos t)(0)-(1)(-\sin t),\ (1)(-\cos t)-(-\sin t)(0),\ (-\sin t)(-\sin t)-(\cos t)(-\cos t)\big\rangle.$$
+    $$\mathbf{B}(t)=\frac{1}{\sqrt2}\langle \sin t,\ -\cos t,\ 1\rangle.$$
+    <p><span data-lang="en">Check that $|\mathbf{B}|=\tfrac{1}{\sqrt2}\sqrt{\sin^2 t+\cos^2 t+1}=1$, as a binormal must be. At $t=0$ the point is $\langle 1,0,0\rangle$ and $\mathbf{B}(0)=\tfrac{1}{\sqrt2}\langle 0,-1,1\rangle$. The osculating plane there passes through $\langle 1,0,0\rangle$ with normal $\mathbf{B}(0)$, giving $0(x-1)-1(y-0)+1(z-0)=0$, that is $z=y$. The TNB frame is right-handed: $\mathbf{T}\times\mathbf{N}=\mathbf{B}$, $\mathbf{N}\times\mathbf{B}=\mathbf{T}$, $\mathbf{B}\times\mathbf{T}=\mathbf{N}$.</span><span data-lang="zh">验证 $|\mathbf{B}|=\tfrac{1}{\sqrt2}\sqrt{\sin^2 t+\cos^2 t+1}=1$，副法向量本应如此。在 $t=0$ 处，点为 $\langle 1,0,0\rangle$，$\mathbf{B}(0)=\tfrac{1}{\sqrt2}\langle 0,-1,1\rangle$。那里的密切平面过 $\langle 1,0,0\rangle$ 且以 $\mathbf{B}(0)$ 为法向量，给出 $0(x-1)-1(y-0)+1(z-0)=0$，即 $z=y$。TNB 标架是右手系：$\mathbf{T}\times\mathbf{N}=\mathbf{B}$、$\mathbf{N}\times\mathbf{B}=\mathbf{T}$、$\mathbf{B}\times\mathbf{T}=\mathbf{N}$。</span></p>
+  </div></div></details>
+
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">The principal normal $\mathbf{N}=\mathbf{T}'/|\mathbf{T}'|$ is built from the derivative of the <em>unit</em> tangent, not from $\mathbf{r}''$. It is tempting to set $\mathbf{N}$ parallel to $\mathbf{r}''$, but $\mathbf{r}''$ generally has a tangential component $a_T\mathbf{T}$ as well, so $\mathbf{r}''$ is not perpendicular to the curve unless the speed happens to be constant. Always normalize $\mathbf{r}'$ first to get $\mathbf{T}$, then differentiate $\mathbf{T}$. Equivalently, $\mathbf{N}$ is the direction of $\mathbf{r}''$ after subtracting off its projection onto $\mathbf{T}$.</span><span data-lang="zh">主法向量 $\mathbf{N}=\mathbf{T}'/|\mathbf{T}'|$ 是由<em>单位</em>切向量的导数构造的，而不是由 $\mathbf{r}''$ 构造的。人们很容易把 $\mathbf{N}$ 设成与 $\mathbf{r}''$ 平行，但 $\mathbf{r}''$ 一般还带有一个切向分量 $a_T\mathbf{T}$，因此除非速率恰好恒定，$\mathbf{r}''$ 并不垂直于曲线。始终先把 $\mathbf{r}'$ 归一化得到 $\mathbf{T}$，再对 $\mathbf{T}$ 求导。等价地，$\mathbf{N}$ 是 $\mathbf{r}''$ 减去其在 $\mathbf{T}$ 上的投影后的方向。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Going deeper: $\mathbf{N}$ always points toward the concave side</span><span data-lang="zh">深入探究：$\mathbf{N}$ 总是指向凹侧</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><strong><span data-lang="en">Claim.</span><span data-lang="zh">命题。</span></strong> <span data-lang="en">The principal normal $\mathbf{N}$ points to the side the curve is turning toward, the concave (inner) side of the bend.</span><span data-lang="zh">主法向量 $\mathbf{N}$ 指向曲线正在转向的那一侧，即弯道的凹侧（内侧）。</span></p>
+    <p><strong><span data-lang="en">Argument.</span><span data-lang="zh">论证。</span></strong> <span data-lang="en">Parametrize by arc length so $\mathbf{T}=d\mathbf{r}/ds$ is the unit tangent. By the first Frenet equation $d\mathbf{T}/ds=\kappa\mathbf{N}$ with $\kappa\ge 0$, so $\mathbf{N}$ has the same direction as $d\mathbf{T}/ds$, the rate at which the tangent direction rotates. Since $\mathbf{T}$ is a unit vector, its tip moves on the unit sphere, and the velocity of that tip points in the direction the tangent is swinging. That is exactly the direction into the turn. Concretely, on a circle traversed counterclockwise the tangent always rotates toward the center, so $\mathbf{N}$ points radially inward, matching Worked Example 5.1 where $\mathbf{N}=\langle -\cos t,-\sin t,0\rangle$ aims at the axis. Because $\kappa$ is defined to be nonnegative, $\mathbf{N}$ is unambiguous wherever $\kappa>0$; at an inflection point ($\kappa=0$) the normal is momentarily undefined, which is the curve's way of telling you it is, for that instant, going straight.</span><span data-lang="zh">按弧长参数化，使 $\mathbf{T}=d\mathbf{r}/ds$ 为单位切向量。由第一条 Frenet 方程 $d\mathbf{T}/ds=\kappa\mathbf{N}$ 且 $\kappa\ge 0$，故 $\mathbf{N}$ 与 $d\mathbf{T}/ds$ 同向，后者是切线方向旋转的速率。由于 $\mathbf{T}$ 是单位向量，其端点在单位球面上运动，该端点的速度指向切线正在摆动的方向，那恰好就是转弯朝向的方向。具体地，在逆时针绕行的圆上，切线总是朝中心旋转，故 $\mathbf{N}$ 沿径向指向内侧，这与例题 5.1 中 $\mathbf{N}=\langle -\cos t,-\sin t,0\rangle$ 指向中心轴相吻合。由于 $\kappa$ 被定义为非负，只要 $\kappa>0$，$\mathbf{N}$ 就毫无歧义；在拐点（$\kappa=0$）处法向量一时无定义，这是曲线在告诉你它此刻正沿直线前进。</span></p>
+  </div></div></details>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">For any smooth curve, the principal unit normal $\mathbf{N}$ satisfies</span><span data-lang="zh">对任意光滑曲线，主单位法向量 $\mathbf{N}$ 满足</span></div><span class="quiz-number">5.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">$\mathbf{N}$ is parallel to $\mathbf{T}$</span><span data-lang="zh">$\mathbf{N}$ 与 $\mathbf{T}$ 平行</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">$\mathbf{N}$ is a unit vector orthogonal to $\mathbf{T}$</span><span data-lang="zh">$\mathbf{N}$ 是与 $\mathbf{T}$ 正交的单位向量</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">$\mathbf{N}=\mathbf{r}''$ always</span><span data-lang="zh">总有 $\mathbf{N}=\mathbf{r}''$</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">$\mathbf{N}$ points in the direction of motion</span><span data-lang="zh">$\mathbf{N}$ 指向运动方向</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. $\mathbf{N}=\mathbf{T}'/|\mathbf{T}'|$ is a unit vector, and since $|\mathbf{T}|=1$ forces $\mathbf{T}'\perp\mathbf{T}$, $\mathbf{N}$ is orthogonal to the tangent.</span><span data-lang="zh">正确。$\mathbf{N}=\mathbf{T}'/|\mathbf{T}'|$ 是单位向量，而 $|\mathbf{T}|=1$ 迫使 $\mathbf{T}'\perp\mathbf{T}$，故 $\mathbf{N}$ 与切向量正交。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">$\mathbf{N}$ is the unit vector in the direction of $\mathbf{T}'$. Constant length of $\mathbf{T}$ makes $\mathbf{T}'$, hence $\mathbf{N}$, perpendicular to $\mathbf{T}$.</span><span data-lang="zh">$\mathbf{N}$ 是沿 $\mathbf{T}'$ 方向的单位向量。$\mathbf{T}$ 长度恒定使得 $\mathbf{T}'$，进而 $\mathbf{N}$，垂直于 $\mathbf{T}$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="section-label"><span data-lang="en">Section 6</span><span data-lang="zh">第 6 节</span></div>
+  <h2><span data-lang="en">Velocity and Acceleration</span><span data-lang="zh">速度与加速度</span></h2>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">When $\mathbf{r}(t)$ is the position of a moving particle, its first derivative is velocity and its second derivative is acceleration. Acceleration decomposes naturally into a tangential part (change in speed) and a normal part (change in direction), governed by the curvature.</span><span data-lang="zh">当 $\mathbf{r}(t)$ 是一个运动质点的位置时，它的一阶导数是速度（<code>velocity</code>），二阶导数是加速度（<code>acceleration</code>）。加速度自然分解为切向部分（速率的变化）和法向部分（方向的变化），后者由曲率支配。</span>
+  </div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">velocity, speed, acceleration</span><span data-lang="zh">速度、速率、加速度</span></div>
+  $$\mathbf{v}(t)=\mathbf{r}'(t),\qquad \text{speed}=|\mathbf{v}(t)|=\frac{ds}{dt},\qquad \mathbf{a}(t)=\mathbf{r}''(t).$$
+  </div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">tangential and normal components of acceleration</span><span data-lang="zh">加速度的切向与法向分量</span></div>
+  $$\mathbf{a}=a_T\,\mathbf{T}+a_N\,\mathbf{N},\qquad a_T=\frac{d}{dt}|\mathbf{v}|=\frac{\mathbf{v}\cdot\mathbf{a}}{|\mathbf{v}|},\qquad a_N=\kappa|\mathbf{v}|^2=\frac{|\mathbf{v}\times\mathbf{a}|}{|\mathbf{v}|}.$$
+  </div>
+
+  <p><span data-lang="en">Note there is no binormal component: acceleration always lies in the osculating plane. Recovering position from acceleration is an integration problem, with the velocity and position at one instant supplying the constants of integration.</span><span data-lang="zh">注意没有副法向分量：加速度始终位于密切平面内。从加速度反求位置是一个积分问题，由某一时刻的速度与位置提供积分常数。</span></p>
+
+  <details><summary><span data-lang="en">Worked Example 6.1: decomposing acceleration</span><span data-lang="zh">例题 6.1：分解加速度</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Let $\mathbf{r}(t)=\langle t,\ t^2,\ 0\rangle$. Then $\mathbf{v}=\langle 1,\ 2t,\ 0\rangle$ and $\mathbf{a}=\langle 0,\ 2,\ 0\rangle$. At $t=1$:</span><span data-lang="zh">设 $\mathbf{r}(t)=\langle t,\ t^2,\ 0\rangle$。则 $\mathbf{v}=\langle 1,\ 2t,\ 0\rangle$、$\mathbf{a}=\langle 0,\ 2,\ 0\rangle$。在 $t=1$ 处：</span></p>
+    $$|\mathbf{v}|=\sqrt{1+4}=\sqrt{5},\qquad \mathbf{v}\cdot\mathbf{a}=4,\qquad a_T=\frac{4}{\sqrt{5}}.$$
+    $$\mathbf{v}\times\mathbf{a}=\langle 0,\ 0,\ 2\rangle,\qquad a_N=\frac{|\mathbf{v}\times\mathbf{a}|}{|\mathbf{v}|}=\frac{2}{\sqrt{5}}.$$
+    <p><span data-lang="en">Check: $a_T^2+a_N^2=\tfrac{16}{5}+\tfrac{4}{5}=4=|\mathbf{a}|^2$, confirming the decomposition.</span><span data-lang="zh">验证：$a_T^2+a_N^2=\tfrac{16}{5}+\tfrac{4}{5}=4=|\mathbf{a}|^2$，证实了该分解。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 6.2: position from acceleration</span><span data-lang="zh">例题 6.2：由加速度求位置</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">A particle has $\mathbf{a}(t)=\langle 0,\ 0,\ -g\rangle$ with $\mathbf{v}(0)=\langle v_0,\ 0,\ 0\rangle$ and $\mathbf{r}(0)=\mathbf{0}$. Integrate twice:</span><span data-lang="zh">一个质点有 $\mathbf{a}(t)=\langle 0,\ 0,\ -g\rangle$，且 $\mathbf{v}(0)=\langle v_0,\ 0,\ 0\rangle$、$\mathbf{r}(0)=\mathbf{0}$。积分两次：</span></p>
+    $$\mathbf{v}(t)=\langle v_0,\ 0,\ -gt\rangle,\qquad \mathbf{r}(t)=\Big\langle v_0 t,\ 0,\ -\tfrac{1}{2}gt^2\Big\rangle.$$
+    <p><span data-lang="en">This is projectile motion: constant horizontal velocity and a parabolic drop, the vector-calculus version of the familiar kinematic equations.</span><span data-lang="zh">这就是抛体运动：水平速度恒定，竖直方向抛物线式下落，即熟悉的运动学方程的向量微积分版本。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 6.3: uniform circular motion and centripetal acceleration</span><span data-lang="zh">例题 6.3：匀速圆周运动与向心加速度</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">A particle moves on a circle of radius $R$ at constant angular rate $\omega$: $\mathbf{r}(t)=\langle R\cos\omega t,\ R\sin\omega t,\ 0\rangle$. Then</span><span data-lang="zh">一个质点以恒定角速率 $\omega$ 在半径为 $R$ 的圆上运动：$\mathbf{r}(t)=\langle R\cos\omega t,\ R\sin\omega t,\ 0\rangle$。则</span></p>
+    $$\mathbf{v}=\langle -R\omega\sin\omega t,\ R\omega\cos\omega t,\ 0\rangle,\qquad |\mathbf{v}|=R\omega\ (\text{constant}),$$
+    $$\mathbf{a}=\langle -R\omega^2\cos\omega t,\ -R\omega^2\sin\omega t,\ 0\rangle=-\omega^2\,\mathbf{r}.$$
+    <p><span data-lang="en">The acceleration points straight back at the center and has magnitude $|\mathbf{a}|=R\omega^2$. Since the speed is constant, $a_T=0$, so all of this acceleration is normal: $a_N=\kappa|\mathbf{v}|^2=\tfrac{1}{R}(R\omega)^2=R\omega^2$, matching $|\mathbf{a}|$ exactly. This is the centripetal acceleration of introductory physics, recovered as the pure normal component.</span><span data-lang="zh">加速度笔直指回圆心，模长为 $|\mathbf{a}|=R\omega^2$。由于速率恒定，$a_T=0$，故全部加速度都是法向的：$a_N=\kappa|\mathbf{v}|^2=\tfrac{1}{R}(R\omega)^2=R\omega^2$，恰好等于 $|\mathbf{a}|$。这就是普通物理中的向心加速度，作为纯法向分量被重新得到。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 6.4: tangential and normal components on a space curve</span><span data-lang="zh">例题 6.4：空间曲线上的切向与法向分量</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">For $\mathbf{r}(t)=\langle t,\ t^2,\ \tfrac{2}{3}t^3\rangle$, find $a_T$ and $a_N$ at $t=1$. Compute</span><span data-lang="zh">对 $\mathbf{r}(t)=\langle t,\ t^2,\ \tfrac{2}{3}t^3\rangle$，求 $t=1$ 处的 $a_T$ 与 $a_N$。计算</span></p>
+    $$\mathbf{v}=\langle 1,\ 2t,\ 2t^2\rangle,\qquad \mathbf{a}=\langle 0,\ 2,\ 4t\rangle.$$
+    <p><span data-lang="en">At $t=1$: $\mathbf{v}=\langle 1,2,2\rangle$, $|\mathbf{v}|=3$, $\mathbf{a}=\langle 0,2,4\rangle$. Then</span><span data-lang="zh">在 $t=1$ 处：$\mathbf{v}=\langle 1,2,2\rangle$、$|\mathbf{v}|=3$、$\mathbf{a}=\langle 0,2,4\rangle$。则</span></p>
+    $$a_T=\frac{\mathbf{v}\cdot\mathbf{a}}{|\mathbf{v}|}=\frac{0+4+8}{3}=4,$$
+    $$\mathbf{v}\times\mathbf{a}=\langle (2)(4)-(2)(2),\ (2)(0)-(1)(4),\ (1)(2)-(2)(0)\rangle=\langle 4,\ -4,\ 2\rangle,$$
+    $$a_N=\frac{|\mathbf{v}\times\mathbf{a}|}{|\mathbf{v}|}=\frac{\sqrt{16+16+4}}{3}=\frac{6}{3}=2.$$
+    <p><span data-lang="en">Check: $a_T^2+a_N^2=16+4=20=|\mathbf{a}|^2=0+4+16$. The Pythagorean check ($a_T^2+a_N^2=|\mathbf{a}|^2$) is the fastest way to catch an arithmetic slip, since $\mathbf{T}\perp\mathbf{N}$.</span><span data-lang="zh">验证：$a_T^2+a_N^2=16+4=20=|\mathbf{a}|^2=0+4+16$。由于 $\mathbf{T}\perp\mathbf{N}$，这个勾股验算（$a_T^2+a_N^2=|\mathbf{a}|^2$）是发现算术失误最快的方法。</span></p>
+  </div></div></details>
+
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">The tangential component is $a_T=\dfrac{d}{dt}|\mathbf{v}|$, the rate of change of <em>speed</em>, not $|\mathbf{a}|$ or $|\mathbf{v}'|$. Speeding up gives $a_T>0$, slowing down gives $a_T<0$, and turning at constant speed gives $a_T=0$ even though $|\mathbf{a}|>0$. Confusing $\tfrac{d}{dt}|\mathbf{v}|$ with $|\tfrac{d}{dt}\mathbf{v}|=|\mathbf{a}|$ is the classic trap: the derivative of the magnitude is almost never the magnitude of the derivative. Use $a_T=\mathbf{v}\cdot\mathbf{a}/|\mathbf{v}|$, which extracts only the component of $\mathbf{a}$ along the direction of motion.</span><span data-lang="zh">切向分量是 $a_T=\dfrac{d}{dt}|\mathbf{v}|$，即<em>速率</em>的变化率，而不是 $|\mathbf{a}|$ 或 $|\mathbf{v}'|$。加速时 $a_T>0$，减速时 $a_T<0$，而以恒定速率转弯时 $a_T=0$，尽管此时 $|\mathbf{a}|>0$。把 $\tfrac{d}{dt}|\mathbf{v}|$ 与 $|\tfrac{d}{dt}\mathbf{v}|=|\mathbf{a}|$ 混淆是经典陷阱：模长的导数几乎从不等于导数的模长。请用 $a_T=\mathbf{v}\cdot\mathbf{a}/|\mathbf{v}|$，它只提取 $\mathbf{a}$ 沿运动方向的那个分量。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Going deeper: deriving $\mathbf{a}=a_T\mathbf{T}+a_N\mathbf{N}$ with $a_N=\kappa|\mathbf{v}|^2$</span><span data-lang="zh">深入探究：推导 $\mathbf{a}=a_T\mathbf{T}+a_N\mathbf{N}$ 及 $a_N=\kappa|\mathbf{v}|^2$</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Start from $\mathbf{v}=|\mathbf{v}|\,\mathbf{T}=\dfrac{ds}{dt}\,\mathbf{T}$. Differentiate with the product rule:</span><span data-lang="zh">从 $\mathbf{v}=|\mathbf{v}|\,\mathbf{T}=\dfrac{ds}{dt}\,\mathbf{T}$ 出发。用乘积法则求导：</span></p>
+    $$\mathbf{a}=\frac{d\mathbf{v}}{dt}=\frac{d^2s}{dt^2}\,\mathbf{T}+\frac{ds}{dt}\,\frac{d\mathbf{T}}{dt}.$$
+    <p><span data-lang="en">Now convert $d\mathbf{T}/dt$ to arc length using the chain rule and the first Frenet equation $d\mathbf{T}/ds=\kappa\mathbf{N}$:</span><span data-lang="zh">现在用链式法则和第一条 Frenet 方程 $d\mathbf{T}/ds=\kappa\mathbf{N}$，把 $d\mathbf{T}/dt$ 转换到弧长：</span></p>
+    $$\frac{d\mathbf{T}}{dt}=\frac{d\mathbf{T}}{ds}\frac{ds}{dt}=\kappa\frac{ds}{dt}\,\mathbf{N}.$$
+    <p><span data-lang="en">Substitute back and write $|\mathbf{v}|=ds/dt$:</span><span data-lang="zh">代回，并记 $|\mathbf{v}|=ds/dt$：</span></p>
+    $$\mathbf{a}=\underbrace{\frac{d^2s}{dt^2}}_{a_T}\,\mathbf{T}+\underbrace{\kappa\Big(\frac{ds}{dt}\Big)^2}_{a_N}\,\mathbf{N}=\frac{d|\mathbf{v}|}{dt}\,\mathbf{T}+\kappa|\mathbf{v}|^2\,\mathbf{N}.$$
+    <p><span data-lang="en">This proves three facts at once: acceleration has no binormal component (it lives in the osculating plane), the tangential part is the rate of change of speed, and the normal part is $\kappa|\mathbf{v}|^2$. The last identity also gives the practical formula $a_N=|\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|$, since crossing $\mathbf{v}=|\mathbf{v}|\mathbf{T}$ with $\mathbf{a}$ kills the tangential term and leaves $|\mathbf{v}|\,a_N\,(\mathbf{T}\times\mathbf{N})$, whose magnitude is $|\mathbf{v}|\,a_N$.</span><span data-lang="zh">这一次证明了三个事实：加速度没有副法向分量（它位于密切平面内）、切向部分是速率的变化率、法向部分为 $\kappa|\mathbf{v}|^2$。最后这个恒等式还给出实用公式 $a_N=|\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|$，因为把 $\mathbf{v}=|\mathbf{v}|\mathbf{T}$ 与 $\mathbf{a}$ 作叉积会消去切向项，留下 $|\mathbf{v}|\,a_N\,(\mathbf{T}\times\mathbf{N})$，其模长为 $|\mathbf{v}|\,a_N$。</span></p>
+  </div></div></details>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">If a particle moves so that its speed $|\mathbf{v}|$ is constant, then</span><span data-lang="zh">若一个质点运动时速率 $|\mathbf{v}|$ 保持恒定，则</span></div><span class="quiz-number">6.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">its acceleration is zero</span><span data-lang="zh">它的加速度为零</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">its acceleration is parallel to $\mathbf{v}$</span><span data-lang="zh">它的加速度与 $\mathbf{v}$ 平行</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">$a_T=0$, so acceleration is purely normal</span><span data-lang="zh">$a_T=0$，故加速度是纯法向的</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">its curvature is zero</span><span data-lang="zh">它的曲率为零</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Constant speed means $a_T=\tfrac{d}{dt}|\mathbf{v}|=0$, so $\mathbf{a}=a_N\mathbf{N}$ is entirely normal. The particle can still turn, so acceleration need not vanish.</span><span data-lang="zh">正确。速率恒定意味着 $a_T=\tfrac{d}{dt}|\mathbf{v}|=0$，故 $\mathbf{a}=a_N\mathbf{N}$ 完全是法向的。质点仍可转弯，因此加速度不一定为零。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">$a_T=\tfrac{d}{dt}|\mathbf{v}|$. Constant speed kills only the tangential part; the normal part $a_N=\kappa|\mathbf{v}|^2$ can remain nonzero.</span><span data-lang="zh">$a_T=\tfrac{d}{dt}|\mathbf{v}|$。速率恒定只消去切向部分；法向部分 $a_N=\kappa|\mathbf{v}|^2$ 仍可非零。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="section-label"><span data-lang="en">Section 7</span><span data-lang="zh">第 7 节</span></div>
+  <h2><span data-lang="en">Going Deeper</span><span data-lang="zh">深入探究</span></h2>
+
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">The tangent, normal, and binormal vectors evolve along a curve according to the Frenet-Serret equations, which package curvature and a new quantity, torsion, into a single linear system. Torsion measures how the curve twists out of its osculating plane.</span><span data-lang="zh">切向量、法向量和副法向量沿曲线按 Frenet-Serret 方程演化，该方程把曲率与一个新量——挠率——打包进一个线性方程组。挠率衡量曲线扭出其密切平面的程度。</span>
+  </div>
+
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">torsion and the Frenet-Serret formulas</span><span data-lang="zh">挠率与 Frenet-Serret 公式</span></div>
+  $$\tau=\frac{(\mathbf{r}'\times\mathbf{r}'')\cdot\mathbf{r}'''}{|\mathbf{r}'\times\mathbf{r}''|^2},$$
+  $$\frac{d\mathbf{T}}{ds}=\kappa\,\mathbf{N},\qquad \frac{d\mathbf{N}}{ds}=-\kappa\,\mathbf{T}+\tau\,\mathbf{B},\qquad \frac{d\mathbf{B}}{ds}=-\tau\,\mathbf{N}.$$
+  </div>
+
+  <p><span data-lang="en">A plane curve has $\tau=0$ everywhere: its binormal is constant and the osculating plane never tilts. Curvature and torsion together determine a space curve uniquely up to rigid motion, the content of the <em>fundamental theorem of space curves</em>.</span><span data-lang="zh">平面曲线处处 $\tau=0$：其副法向量为常向量，密切平面永不倾斜。曲率与挠率合在一起，在刚体运动的意义下唯一地确定一条空间曲线，这正是<em>空间曲线基本定理</em>的内容。</span></p>
+
+  <details><summary><span data-lang="en">Worked Example 7.1: torsion of the helix</span><span data-lang="zh">例题 7.1：螺旋线的挠率</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">For $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$: $\mathbf{r}'=\langle -\sin t,\cos t,1\rangle$, $\mathbf{r}''=\langle -\cos t,-\sin t,0\rangle$, $\mathbf{r}'''=\langle \sin t,-\cos t,0\rangle$.</span><span data-lang="zh">对 $\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle$：$\mathbf{r}'=\langle -\sin t,\cos t,1\rangle$、$\mathbf{r}''=\langle -\cos t,-\sin t,0\rangle$、$\mathbf{r}'''=\langle \sin t,-\cos t,0\rangle$。</span></p>
+    $$\mathbf{r}'\times\mathbf{r}''=\langle \sin t,\ -\cos t,\ 1\rangle,\qquad |\mathbf{r}'\times\mathbf{r}''|^2=2.$$
+    $$(\mathbf{r}'\times\mathbf{r}'')\cdot\mathbf{r}'''=\sin^2 t+\cos^2 t+0=1\ \Rightarrow\ \tau=\frac{1}{2}.$$
+    <p><span data-lang="en">Both curvature and torsion equal $\tfrac12$ for this helix: it bends and twists at equal, constant rates.</span><span data-lang="zh">这条螺旋线的曲率与挠率都等于 $\tfrac12$：它以相等、恒定的速率弯曲并扭转。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Going deeper: Kepler's second law from a central force</span><span data-lang="zh">深入探究：由有心力推出开普勒第二定律</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Suppose acceleration is always directed along the position vector, $\mathbf{a}=c(t)\,\mathbf{r}$ for some scalar function $c$ (a central force). Consider the vector $\mathbf{r}\times\mathbf{v}$ and differentiate:</span><span data-lang="zh">假设加速度始终沿位置向量方向，即对某个标量函数 $c$ 有 $\mathbf{a}=c(t)\,\mathbf{r}$（有心力）。考虑向量 $\mathbf{r}\times\mathbf{v}$ 并求导：</span></p>
+    $$\frac{d}{dt}(\mathbf{r}\times\mathbf{v})=\mathbf{v}\times\mathbf{v}+\mathbf{r}\times\mathbf{a}=\mathbf{0}+\mathbf{r}\times(c\,\mathbf{r})=\mathbf{0}.$$
+    <p><span data-lang="en">So $\mathbf{r}\times\mathbf{v}=\mathbf{L}$ is a constant vector. The motion is therefore planar (it stays in the plane through the origin perpendicular to $\mathbf{L}$), and the magnitude $|\mathbf{r}\times\mathbf{v}|$ being constant is exactly Kepler's statement that equal areas are swept in equal times.</span><span data-lang="zh">故 $\mathbf{r}\times\mathbf{v}=\mathbf{L}$ 是一个常向量。因此运动是平面的（它始终位于过原点且垂直于 $\mathbf{L}$ 的平面内），而 $|\mathbf{r}\times\mathbf{v}|$ 为常数恰好就是开普勒所说的"相等时间内扫过相等面积"。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 7.2: confirming a curve is planar via torsion</span><span data-lang="zh">例题 7.2：用挠率确认曲线为平面曲线</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">Show that $\mathbf{r}(t)=\langle t,\ t^2,\ 3t+2t^2\rangle$ lies in a plane. The fast way is the torsion test. Compute</span><span data-lang="zh">证明 $\mathbf{r}(t)=\langle t,\ t^2,\ 3t+2t^2\rangle$ 位于一个平面内。最快的办法是挠率判别。计算</span></p>
+    $$\mathbf{r}'=\langle 1,\ 2t,\ 3+4t\rangle,\quad \mathbf{r}''=\langle 0,\ 2,\ 4\rangle,\quad \mathbf{r}'''=\langle 0,\ 0,\ 0\rangle.$$
+    <p><span data-lang="en">Since $\mathbf{r}'''=\mathbf{0}$, the triple product $(\mathbf{r}'\times\mathbf{r}'')\cdot\mathbf{r}'''=0$, so $\tau\equiv 0$ and the curve is planar. To name the plane directly, notice $z=3t+2t^2=3x+2y$ because $x=t$ and $y=t^2$. So every point satisfies $3x+2y-z=0$, a single plane through the origin. The torsion test agreed with the algebra, and it would have worked even if the plane were not obvious by inspection.</span><span data-lang="zh">由于 $\mathbf{r}'''=\mathbf{0}$，三重积 $(\mathbf{r}'\times\mathbf{r}'')\cdot\mathbf{r}'''=0$，故 $\tau\equiv 0$，曲线是平面的。要直接写出该平面，注意因为 $x=t$、$y=t^2$，所以 $z=3t+2t^2=3x+2y$。于是每个点都满足 $3x+2y-z=0$，这是一个过原点的平面。挠率判别与代数结果一致，而且即使凭观察看不出这个平面，它也照样有效。</span></p>
+  </div></div></details>
+
+  <details><summary><span data-lang="en">Worked Example 7.3: curvature and torsion of a scaled helix</span><span data-lang="zh">例题 7.3：缩放螺旋线的曲率与挠率</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><span data-lang="en">For the general helix $\mathbf{r}(t)=\langle a\cos t,\ a\sin t,\ bt\rangle$ with $a>0$, the standard results are</span><span data-lang="zh">对一般螺旋线 $\mathbf{r}(t)=\langle a\cos t,\ a\sin t,\ bt\rangle$（$a>0$），标准结果为</span></p>
+    $$\kappa=\frac{a}{a^2+b^2},\qquad \tau=\frac{b}{a^2+b^2}.$$
+    <p><span data-lang="en">Sketch of the curvature: $\mathbf{r}'=\langle -a\sin t,\ a\cos t,\ b\rangle$ with $|\mathbf{r}'|=\sqrt{a^2+b^2}$, and $\mathbf{r}''=\langle -a\cos t,-a\sin t,0\rangle$, giving $|\mathbf{r}'\times\mathbf{r}''|=a\sqrt{a^2+b^2}$, so $\kappa=a\sqrt{a^2+b^2}/(a^2+b^2)^{3/2}=a/(a^2+b^2)$. Setting $a=b=1$ recovers $\kappa=\tau=\tfrac12$ from Worked Example 7.1. Two limits are instructive: as $b\to 0$ the helix collapses to a circle of radius $a$ and $\kappa\to 1/a$, $\tau\to 0$ (planar); as $b\to\infty$ the helix stretches into a near-straight vertical line and both $\kappa,\tau\to 0$. Curvature and torsion together, both constant here, characterize the helix as the only curve with constant nonzero $\kappa$ and constant nonzero $\tau$.</span><span data-lang="zh">曲率的推导概要：$\mathbf{r}'=\langle -a\sin t,\ a\cos t,\ b\rangle$，$|\mathbf{r}'|=\sqrt{a^2+b^2}$；$\mathbf{r}''=\langle -a\cos t,-a\sin t,0\rangle$，给出 $|\mathbf{r}'\times\mathbf{r}''|=a\sqrt{a^2+b^2}$，故 $\kappa=a\sqrt{a^2+b^2}/(a^2+b^2)^{3/2}=a/(a^2+b^2)$。取 $a=b=1$ 即可重新得到例题 7.1 中的 $\kappa=\tau=\tfrac12$。两个极限很有启发：当 $b\to 0$ 时螺旋线收缩为半径 $a$ 的圆，$\kappa\to 1/a$、$\tau\to 0$（平面）；当 $b\to\infty$ 时螺旋线拉伸成近乎竖直的直线，$\kappa,\tau$ 都 $\to 0$。这里曲率与挠率都恒定，二者合在一起把螺旋线刻画为唯一一类具有恒定非零 $\kappa$ 与恒定非零 $\tau$ 的曲线。</span></p>
+  </div></div></details>
+
+  <div class="concept-box orange">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">The torsion formula has $|\mathbf{r}'\times\mathbf{r}''|^2$ in the denominator, the magnitude <em>squared</em>, while the curvature formula uses $|\mathbf{r}'|^3$. Mixing the two denominators is a frequent slip. Also, torsion is a signed quantity: a positive $\tau$ means the curve twists like a right-handed screw out of its osculating plane, a negative $\tau$ a left-handed one. Do not insert absolute-value bars around the triple product in the numerator. The sign of $\tau$ carries real geometric information that $|\kappa|\ge 0$ does not.</span><span data-lang="zh">挠率公式的分母是 $|\mathbf{r}'\times\mathbf{r}''|^2$，即模长的<em>平方</em>，而曲率公式用的是 $|\mathbf{r}'|^3$。把两个分母弄混是常见失误。此外，挠率是有符号的量：$\tau$ 为正表示曲线像右旋螺丝那样扭出密切平面，$\tau$ 为负则是左旋。不要在分子的三重积外面加绝对值。$\tau$ 的符号携带着 $|\kappa|\ge 0$ 所没有的真实几何信息。</span>
+  </div>
+
+  <details><summary><span data-lang="en">Going deeper: why a vanishing torsion forces planarity</span><span data-lang="zh">深入探究：为什么挠率为零迫使曲线平面化</span></summary><div class="detail-body"><div class="worked-solution">
+    <p><strong><span data-lang="en">Claim.</span><span data-lang="zh">命题。</span></strong> <span data-lang="en">If $\tau\equiv 0$ on a curve with $\kappa>0$, the curve lies in a fixed plane.</span><span data-lang="zh">若一条 $\kappa>0$ 的曲线上处处 $\tau\equiv 0$，则该曲线位于一个固定平面内。</span></p>
+    <p><strong><span data-lang="en">Proof.</span><span data-lang="zh">证明。</span></strong> <span data-lang="en">Work in arc length. The third Frenet equation reads $d\mathbf{B}/ds=-\tau\mathbf{N}$. If $\tau\equiv 0$ then $d\mathbf{B}/ds=\mathbf{0}$, so the binormal $\mathbf{B}$ is a constant vector $\mathbf{B}_0$. Now examine how the position projects onto $\mathbf{B}_0$. Consider $g(s)=(\mathbf{r}(s)-\mathbf{r}(0))\cdot\mathbf{B}_0$ and differentiate:</span><span data-lang="zh">在弧长参数下进行。第三条 Frenet 方程为 $d\mathbf{B}/ds=-\tau\mathbf{N}$。若 $\tau\equiv 0$，则 $d\mathbf{B}/ds=\mathbf{0}$，故副法向量 $\mathbf{B}$ 是常向量 $\mathbf{B}_0$。现在考察位置在 $\mathbf{B}_0$ 上的投影。设 $g(s)=(\mathbf{r}(s)-\mathbf{r}(0))\cdot\mathbf{B}_0$ 并求导：</span></p>
+    $$g'(s)=\mathbf{r}'(s)\cdot\mathbf{B}_0=\mathbf{T}(s)\cdot\mathbf{B}_0=0,$$
+    <p><span data-lang="en">because $\mathbf{T}$ is always orthogonal to $\mathbf{B}$. Since $g'(s)\equiv 0$ and $g(0)=0$, we get $g(s)\equiv 0$, that is $(\mathbf{r}(s)-\mathbf{r}(0))\cdot\mathbf{B}_0=0$ for all $s$. This is the equation of the plane through $\mathbf{r}(0)$ with normal $\mathbf{B}_0$, and the entire curve satisfies it. Hence the curve is planar, and the converse (a planar curve has $\tau\equiv 0$) follows by reversing the argument. This completes the if-and-only-if behind the section quiz.</span><span data-lang="zh">因为 $\mathbf{T}$ 始终与 $\mathbf{B}$ 正交。由于 $g'(s)\equiv 0$ 且 $g(0)=0$，得 $g(s)\equiv 0$，即对所有 $s$ 有 $(\mathbf{r}(s)-\mathbf{r}(0))\cdot\mathbf{B}_0=0$。这正是过 $\mathbf{r}(0)$ 且以 $\mathbf{B}_0$ 为法向量的平面方程，整条曲线都满足它。故曲线是平面的；逆命题（平面曲线有 $\tau\equiv 0$）由反向论证得出。这就补全了本节测验背后的充要条件。</span></p>
+  </div></div></details>
+
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">A space curve lies entirely in a single plane if and only if</span><span data-lang="zh">一条空间曲线完全位于同一个平面内，当且仅当</span></div><span class="quiz-number">7.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">its torsion $\tau$ is identically zero</span><span data-lang="zh">它的挠率 $\tau$ 恒为零</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">its curvature $\kappa$ is identically zero</span><span data-lang="zh">它的曲率 $\kappa$ 恒为零</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">its speed is constant</span><span data-lang="zh">它的速率恒定</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">$\mathbf{T}$ is constant</span><span data-lang="zh">$\mathbf{T}$ 是常向量</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Torsion measures twisting out of the osculating plane; $\tau\equiv 0$ means the binormal is constant, so the curve never leaves one fixed plane.</span><span data-lang="zh">正确。挠率衡量扭出密切平面的程度；$\tau\equiv 0$ 意味着副法向量恒定，故曲线永不离开同一个固定平面。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Curvature zero would make the curve a straight line. Planarity is governed by torsion: $\tau\equiv 0$ keeps the osculating plane fixed.</span><span data-lang="zh">曲率为零会使曲线成为一条直线。平面性由挠率决定：$\tau\equiv 0$ 让密切平面保持固定。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Want to go further, faster?</span><span data-lang="zh">想走得更远、更快？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will help you master this unit and map your path forward.</span><span data-lang="zh">预约 Dingrui Scholars 导师 15 分钟免费咨询。我们将帮助你掌握本单元，并规划下一步的学习路径。</span></p>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c2_vector_valued_functions__sg__en" target="_blank" rel="noopener">Book a free consult &rarr;</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c2_vector_valued_functions__sg__zh" target="_blank" rel="noopener">预约免费咨询 &rarr;</a>
+</aside>
+
+<section id="flashcards">
+  <h2><span data-lang="en">Flashcards</span><span data-lang="zh">记忆卡片</span></h2>
+  <div class="flashcard-toolbar">
+    <span class="fc-count" id="fcCount"><span data-lang="en">0 / 12 flipped</span><span data-lang="zh">0 / 12 已翻转</span></span>
+    <div>
+      <button class="nav-btn" onclick="shuffleFlashcards()"><span data-lang="en">Shuffle</span><span data-lang="zh">随机</span></button>
+      <button class="nav-btn" onclick="resetFlashcards()"><span data-lang="en">Reset</span><span data-lang="zh">重置</span></button>
+    </div>
+  </div>
+  <div class="flashcard-grid" id="flashcardGrid">
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Component form of a vector function $\mathbf{r}(t)$</span><span data-lang="zh">向量函数 $\mathbf{r}(t)$ 的分量形式</span></div><div class="flashcard-back">$\mathbf{r}(t)=\langle f(t),g(t),h(t)\rangle=f\,\mathbf{i}+g\,\mathbf{j}+h\,\mathbf{k}$<span data-lang="en">; limits and derivatives are taken componentwise.</span><span data-lang="zh">；极限与导数都按分量取。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Derivative of $\mathbf{r}(t)$</span><span data-lang="zh">$\mathbf{r}(t)$ 的导数</span></div><div class="flashcard-back">$\mathbf{r}'(t)=\langle f'(t),g'(t),h'(t)\rangle$<span data-lang="en">, a tangent vector pointing in the direction of increasing $t$.</span><span data-lang="zh">，是指向 $t$ 增大方向的切向量。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Product rule for the dot product</span><span data-lang="zh">点积的乘积法则</span></div><div class="flashcard-back">$\dfrac{d}{dt}[\mathbf{u}\cdot\mathbf{v}]=\mathbf{u}'\cdot\mathbf{v}+\mathbf{u}\cdot\mathbf{v}'$.</div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">If $|\mathbf{r}(t)|$ is constant, then</span><span data-lang="zh">若 $|\mathbf{r}(t)|$ 为常数，则</span></div><div class="flashcard-back">$\mathbf{r}'(t)\perp\mathbf{r}(t)$ <span data-lang="en">for all $t$. (Differentiate $\mathbf{r}\cdot\mathbf{r}$.)</span><span data-lang="zh">对所有 $t$ 成立。（对 $\mathbf{r}\cdot\mathbf{r}$ 求导。）</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Arc length of $\mathbf{r}$ on $[a,b]$</span><span data-lang="zh">$\mathbf{r}$ 在 $[a,b]$ 上的弧长</span></div><div class="flashcard-back">$L=\displaystyle\int_a^b|\mathbf{r}'(t)|\,dt$<span data-lang="en">, and $\dfrac{ds}{dt}=|\mathbf{r}'(t)|$.</span><span data-lang="zh">，且 $\dfrac{ds}{dt}=|\mathbf{r}'(t)|$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Unit tangent $\mathbf{T}(t)$</span><span data-lang="zh">单位切向量 $\mathbf{T}(t)$</span></div><div class="flashcard-back">$\mathbf{T}(t)=\dfrac{\mathbf{r}'(t)}{|\mathbf{r}'(t)|}$.</div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Curvature $\kappa$ (two formulas)</span><span data-lang="zh">曲率 $\kappa$（两个公式）</span></div><div class="flashcard-back">$\kappa=\left|\dfrac{d\mathbf{T}}{ds}\right|=\dfrac{|\mathbf{r}'\times\mathbf{r}''|}{|\mathbf{r}'|^3}$.</div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Curvature of a circle of radius $a$</span><span data-lang="zh">半径为 $a$ 的圆的曲率</span></div><div class="flashcard-back">$\kappa=\dfrac{1}{a}$<span data-lang="en">; the radius of curvature is $\rho=1/\kappa$.</span><span data-lang="zh">；曲率半径为 $\rho=1/\kappa$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Principal unit normal $\mathbf{N}$ and binormal $\mathbf{B}$</span><span data-lang="zh">主单位法向量 $\mathbf{N}$ 与副法向量 $\mathbf{B}$</span></div><div class="flashcard-back">$\mathbf{N}=\dfrac{\mathbf{T}'}{|\mathbf{T}'|}$, $\ \mathbf{B}=\mathbf{T}\times\mathbf{N}$<span data-lang="en">; the $\mathbf{T},\mathbf{N},\mathbf{B}$ triple is orthonormal.</span><span data-lang="zh">；$\mathbf{T},\mathbf{N},\mathbf{B}$ 三者构成标准正交组。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Tangential and normal acceleration</span><span data-lang="zh">切向与法向加速度</span></div><div class="flashcard-back">$\mathbf{a}=a_T\mathbf{T}+a_N\mathbf{N}$, <span data-lang="en">with</span><span data-lang="zh">其中</span> $a_T=\dfrac{\mathbf{v}\cdot\mathbf{a}}{|\mathbf{v}|}$ <span data-lang="en">and</span><span data-lang="zh">且</span> $a_N=\dfrac{|\mathbf{v}\times\mathbf{a}|}{|\mathbf{v}|}=\kappa|\mathbf{v}|^2$.</div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Torsion $\tau$</span><span data-lang="zh">挠率 $\tau$</span></div><div class="flashcard-back">$\tau=\dfrac{(\mathbf{r}'\times\mathbf{r}'')\cdot\mathbf{r}'''}{|\mathbf{r}'\times\mathbf{r}''|^2}$<span data-lang="en">; a curve is planar iff $\tau\equiv 0$.</span><span data-lang="zh">；曲线为平面曲线当且仅当 $\tau\equiv 0$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Frenet-Serret formulas</span><span data-lang="zh">Frenet-Serret 公式</span></div><div class="flashcard-back">$\mathbf{T}'=\kappa\mathbf{N}$, $\ \mathbf{N}'=-\kappa\mathbf{T}+\tau\mathbf{B}$, $\ \mathbf{B}'=-\tau\mathbf{N}$ <span data-lang="en">(derivatives with respect to $s$).</span><span data-lang="zh">（对 $s$ 求导）。</span></div></div></div>
+  </div>
+</section>
+
+
+<section class="section" id="unit-quiz">
+  <div class="section-label"><span data-lang="en">Check Yourself</span><span data-lang="zh">自我检测</span></div>
+  <h2><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></h2>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">If $\mathbf{r}(t)=\langle t^3,\ \ln t,\ \cos t\rangle$, then $\mathbf{r}'(t)=$</span><span data-lang="zh">若 $\mathbf{r}(t)=\langle t^3,\ \ln t,\ \cos t\rangle$，则 $\mathbf{r}'(t)=$</span></div><span class="quiz-number">Q1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\langle 3t^2,\ t,\ \sin t\rangle$</div><div class="quiz-opt" data-idx="1">$\langle 3t^2,\ \tfrac{1}{t},\ -\sin t\rangle$</div><div class="quiz-opt" data-idx="2">$\langle t^2,\ \tfrac{1}{t},\ -\sin t\rangle$</div><div class="quiz-opt" data-idx="3">$\langle 3t^2,\ \tfrac{1}{t},\ \sin t\rangle$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Differentiate componentwise: $3t^2$, $1/t$, and $-\sin t$.</span><span data-lang="zh">正确。按分量求导：$3t^2$、$1/t$、$-\sin t$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Watch the chain on $\ln t$ giving $1/t$ and the sign on $\cos t$ giving $-\sin t$.</span><span data-lang="zh">注意 $\ln t$ 求导给出 $1/t$，$\cos t$ 求导给出 $-\sin t$ 的符号。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The arc length of $\mathbf{r}(t)=\langle t,\ t,\ t\rangle$ from $t=0$ to $t=2$ is</span><span data-lang="zh">$\mathbf{r}(t)=\langle t,\ t,\ t\rangle$ 从 $t=0$ 到 $t=2$ 的弧长是</span></div><span class="quiz-number">Q2</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$2$</div><div class="quiz-opt" data-idx="1">$6$</div><div class="quiz-opt" data-idx="2">$2\sqrt{3}$</div><div class="quiz-opt" data-idx="3">$\sqrt{3}$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. $\mathbf{r}'=\langle 1,1,1\rangle$, $|\mathbf{r}'|=\sqrt{3}$, so $L=\int_0^2\sqrt{3}\,dt=2\sqrt{3}$.</span><span data-lang="zh">正确。$\mathbf{r}'=\langle 1,1,1\rangle$、$|\mathbf{r}'|=\sqrt{3}$，故 $L=\int_0^2\sqrt{3}\,dt=2\sqrt{3}$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The speed is the constant $\sqrt{1+1+1}=\sqrt{3}$; multiply by the length of the interval, $2$.</span><span data-lang="zh">速率是常数 $\sqrt{1+1+1}=\sqrt{3}$；乘以区间长度 $2$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The curvature of a straight line is</span><span data-lang="zh">直线的曲率是</span></div><span class="quiz-number">Q3</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">undefined</span><span data-lang="zh">无定义</span></div><div class="quiz-opt" data-idx="1">$1$</div><div class="quiz-opt" data-idx="2"><span data-lang="en">infinite</span><span data-lang="zh">无穷大</span></div><div class="quiz-opt" data-idx="3">$0$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. A line has constant direction, so $\mathbf{T}'=\mathbf{0}$ and $\kappa=0$.</span><span data-lang="zh">正确。直线方向恒定，故 $\mathbf{T}'=\mathbf{0}$，$\kappa=0$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The unit tangent of a line never changes, so its rate of change, the curvature, is zero.</span><span data-lang="zh">直线的单位切向量永不改变，故其变化率（即曲率）为零。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">For a particle with velocity $\mathbf{v}$ and acceleration $\mathbf{a}$, the normal component of acceleration is</span><span data-lang="zh">对速度为 $\mathbf{v}$、加速度为 $\mathbf{a}$ 的质点，加速度的法向分量是</span></div><span class="quiz-number">Q4</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$a_N=\dfrac{|\mathbf{v}\times\mathbf{a}|}{|\mathbf{v}|}$</div><div class="quiz-opt" data-idx="1">$a_N=\dfrac{\mathbf{v}\cdot\mathbf{a}}{|\mathbf{v}|}$</div><div class="quiz-opt" data-idx="2">$a_N=|\mathbf{a}|$</div><div class="quiz-opt" data-idx="3">$a_N=\kappa|\mathbf{v}|$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. $a_N=\kappa|\mathbf{v}|^2=|\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|$. The dot-product version gives the tangential component instead.</span><span data-lang="zh">正确。$a_N=\kappa|\mathbf{v}|^2=|\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|$。点积版本给出的是切向分量。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The dot product yields $a_T$; the cross product yields $a_N=|\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|$.</span><span data-lang="zh">点积得到 $a_T$；叉积得到 $a_N=|\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">If $\mathbf{u}(t)$ is differentiable, then $\dfrac{d}{dt}\big[\mathbf{u}(t)\cdot\mathbf{u}(t)\big]=$</span><span data-lang="zh">若 $\mathbf{u}(t)$ 可微，则 $\dfrac{d}{dt}\big[\mathbf{u}(t)\cdot\mathbf{u}(t)\big]=$</span></div><span class="quiz-number">Q5</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\mathbf{u}\cdot\mathbf{u}'$</div><div class="quiz-opt" data-idx="1">$|\mathbf{u}'|^2$</div><div class="quiz-opt" data-idx="2">$2\,\mathbf{u}\cdot\mathbf{u}'$</div><div class="quiz-opt" data-idx="3">$2\mathbf{u}$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. By the product rule for the dot product, $\tfrac{d}{dt}(\mathbf{u}\cdot\mathbf{u})=\mathbf{u}'\cdot\mathbf{u}+\mathbf{u}\cdot\mathbf{u}'=2\,\mathbf{u}\cdot\mathbf{u}'$.</span><span data-lang="zh">正确。由点积的乘积法则，$\tfrac{d}{dt}(\mathbf{u}\cdot\mathbf{u})=\mathbf{u}'\cdot\mathbf{u}+\mathbf{u}\cdot\mathbf{u}'=2\,\mathbf{u}\cdot\mathbf{u}'$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Apply the dot-product product rule; the two equal terms combine to $2\,\mathbf{u}\cdot\mathbf{u}'$.</span><span data-lang="zh">应用点积的乘积法则；两个相等的项合并为 $2\,\mathbf{u}\cdot\mathbf{u}'$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">A curve has nonzero torsion at a point. This tells you the curve</span><span data-lang="zh">某曲线在一点处挠率非零。这告诉你曲线</span></div><span class="quiz-number">Q6</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">is a straight line there</span><span data-lang="zh">在该处是一条直线</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">is twisting out of its osculating plane there</span><span data-lang="zh">在该处正扭出其密切平面</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">has zero curvature there</span><span data-lang="zh">在该处曲率为零</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">lies in a plane</span><span data-lang="zh">位于一个平面内</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Torsion measures the rate at which the binormal turns, that is, how fast the curve leaves its osculating plane.</span><span data-lang="zh">正确。挠率衡量副法向量转动的速率，也就是曲线离开其密切平面的快慢。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Nonzero torsion is precisely non-planarity: the osculating plane is tilting as you move along the curve.</span><span data-lang="zh">挠率非零恰恰就是非平面性：沿曲线前进时密切平面在倾斜。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+
+<section class="section" id="checklist">
+  <div class="section-label"><span data-lang="en">Before You Move On</span><span data-lang="zh">继续之前</span></div>
+  <h2><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握度清单</span></h2>
+  <p><span data-lang="en">Tap each item you can do without notes. </span><span data-lang="zh">点击你无需参考资料即可完成的项目。</span><span id="checkProgress"><span data-lang="en">0 / 8 mastered</span><span data-lang="zh">0 / 8 已掌握</span></span></p>
+  <ul id="checklistUl" class="checklist">
+    <li onclick="toggleCheck(this)"><span data-lang="en">Write a vector function for a given space curve and find its natural domain.</span><span data-lang="zh">为给定的空间曲线写出向量函数，并求其自然定义域。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Differentiate and integrate a vector function componentwise and apply the dot- and cross-product rules.</span><span data-lang="zh">按分量对向量函数求导和积分，并应用点积与叉积法则。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Find the tangent line to a curve at a point.</span><span data-lang="zh">求曲线在某点处的切线。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Compute arc length and reparametrize a curve by arc length.</span><span data-lang="zh">计算弧长，并按弧长重新参数化曲线。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Compute curvature using both the definition and the cross-product formula.</span><span data-lang="zh">用定义和叉积公式两种方法计算曲率。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Build the unit tangent, principal normal, and binormal at a point.</span><span data-lang="zh">在某点处构造单位切向量、主法向量和副法向量。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Decompose acceleration into tangential and normal components.</span><span data-lang="zh">把加速度分解为切向与法向分量。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Explain torsion and recover position from a given acceleration.</span><span data-lang="zh">解释挠率，并由给定的加速度反求位置。</span></li>
+  </ul>
+</section>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span></span>
+  <a href="../Practice%20Questions/Unit_C2_Vector_Valued_Functions_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <a href="../Practice%20Questions/Solutions/Unit_C2_Vector_Valued_Functions_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+</main>
+<script>
+// SCORE TRACKING
+let quizScore = { correct: 0, total: 0 };
+
+function updateScoreBadge() {
+  const badge = document.getElementById('scoreBadge');
+  if (!badge) return;
+  if (quizScore.total === 0) {
+    badge.textContent = '0 / 0';
+    badge.classList.add('zero');
+  } else {
+    badge.textContent = quizScore.correct + ' / ' + quizScore.total;
+    badge.classList.remove('zero');
+  }
+}
+
+// THEME
+function setThemeBtnLabel(toLight) {
+  const tt = document.getElementById('themeToggle');
+  if (!tt) return;
+  tt.innerHTML = toLight
+    ? '<span data-lang="en">Light</span><span data-lang="zh">浅色</span>'
+    : '<span data-lang="en">Dark</span><span data-lang="zh">深色</span>';
+}
+function toggleLang(){document.body.classList.toggle('lang-zh');}
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  setThemeBtnLabel(!isDark);
+}
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  setThemeBtnLabel(true);
+}
+
+// PROGRESS BAR
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+  const fill = document.getElementById('progressFill');
+  if (fill) fill.style.width = pct + '%';
+});
+
+// ACTIVE TOC
+const sections = document.querySelectorAll('.section, .hero');
+const tocLinks = document.querySelectorAll('.sidebar a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector('.sidebar a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-80px 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// QUIZZES
+document.querySelectorAll('.quiz').forEach(quiz => {
+  const answer = parseInt(quiz.dataset.answer);
+  const opts = quiz.querySelectorAll('.quiz-opt');
+  const expCorrect = quiz.querySelector('.quiz-explain.correct-exp');
+  const expWrong = quiz.querySelector('.quiz-explain.wrong-exp');
+  opts.forEach(opt => {
+    opt.addEventListener('click', () => {
+      if (opt.classList.contains('disabled')) return;
+      const idx = parseInt(opt.dataset.idx);
+      opts.forEach(o => o.classList.add('disabled'));
+      quizScore.total++;
+      if (idx === answer) {
+        opt.classList.add('correct');
+        quizScore.correct++;
+        if (expCorrect) expCorrect.classList.add('show');
+      } else {
+        opt.classList.add('wrong');
+        opts[answer].classList.add('correct');
+        if (expWrong) expWrong.classList.add('show');
+        const retry = quiz.querySelector('.quiz-retry');
+        if (retry) retry.classList.add('show');
+      }
+      updateScoreBadge();
+    });
+  });
+});
+
+function retryQuiz(btn) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('disabled', 'correct', 'wrong'));
+  quiz.querySelectorAll('.quiz-explain').forEach(e => e.classList.remove('show'));
+  btn.classList.remove('show');
+  quizScore.total--;
+  updateScoreBadge();
+}
+
+// FLASHCARDS
+function flipCard(el) {
+  el.classList.toggle('flipped');
+  updateFlashcardCount();
+}
+function updateFlashcardCount() {
+  const total = document.querySelectorAll('#flashcardGrid .flashcard').length;
+  const flipped = document.querySelectorAll('#flashcardGrid .flashcard.flipped').length;
+  const c = document.getElementById('fcCount');
+  if (c) c.textContent = document.body.classList.contains('lang-zh') ? (flipped + ' / ' + total + ' 已翻转') : (flipped + ' / ' + total + ' flipped');
+}
+function resetFlashcards() {
+  document.querySelectorAll('#flashcardGrid .flashcard').forEach(c => c.classList.remove('flipped'));
+  updateFlashcardCount();
+}
+function shuffleFlashcards() {
+  const grid = document.getElementById('flashcardGrid');
+  const cards = [...grid.children];
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.appendChild(cards[j]);
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+}
+
+// CHECKLIST
+function toggleCheck(li) {
+  li.classList.toggle('checked');
+  const total = document.querySelectorAll('#checklistUl li').length;
+  const checked = document.querySelectorAll('#checklistUl li.checked').length;
+  const p = document.getElementById('checkProgress');
+  if (p) p.textContent = document.body.classList.contains('lang-zh') ? (checked + ' / ' + total + ' 已掌握') : (checked + ' / ' + total + ' mastered');
+}
+</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

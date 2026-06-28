@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit D3: Second-Order Linear ODEs: Homogeneous | Practice</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-D3  dingrui:doc-type practice -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Practice.html">
+<meta name="description" content="University-level practice problems for Unit D3: Second-Order Linear ODEs: Homogeneous. Characteristic equations, Wronskian, reduction of order, and free-vibration IVPs, with full worked solutions from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit D3: Second-Order Linear ODEs: Homogeneous | Practice">
+<meta property="og:description" content="University-level practice problems for Unit D3: Second-Order Linear ODEs: Homogeneous, with full worked solutions from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Practice.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit D3: Second-Order Linear ODEs: Homogeneous | Practice">
+<meta name="twitter:description" content="University-level practice problems for Unit D3: Second-Order Linear ODEs: Homogeneous, with full worked solutions from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{
+    font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;
+    font-size:11pt;line-height:1.45;
+    max-width:8.5in;margin:0 auto;
+    padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);
+  }
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .nameline{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:10.5pt;margin:4px 0 22px;color:#222;}
+  .nameline .blank{display:inline-block;border-bottom:1px solid #555;min-width:240px;margin-left:6px;}
+  .nameline .blank.period{min-width:90px;}
+  .draft-banner{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;}
+  .draft-banner code{font-family:'JetBrains Mono',monospace;font-style:normal;}
+
+  .part{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:'Source Sans 3',sans-serif;
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:6px 2px;margin:18px 0 8px;
+  }
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .instructions{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;font-style:italic;margin-bottom:12px;line-height:1.45;}
+
+  .q{
+    border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;
+    padding:12px 18px 14px;margin-bottom:16px;background:#fff;
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:10px;font-family:'Source Sans 3',sans-serif;}
+  .q-head .title{margin-left:auto;font-size:9.5pt;color:#666;font-style:italic;}
+  .q-body{font-size:11.5pt;line-height:1.5;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;}
+
+  .work{min-height:90px;border-top:1px dashed #c9c4bd;margin-top:8px;}
+  .work.s{min-height:50px;} .work.m{min-height:120px;} .work.l{min-height:170px;} .work.xl{min-height:240px;}
+
+  .frq-parts{margin-top:6px;}
+  .frq-parts .part-item{margin:6px 0 4px;}
+  .frq-parts .part-item > .tag{font-family:'Source Sans 3',sans-serif;font-weight:700;margin-right:6px;}
+  .frq-parts .part-item .marks-inline{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;font-weight:700;float:right;letter-spacing:.05em;}
+  .frq-parts .part-item .sub-part{margin:4px 0 4px 18px;}
+
+  table.data{border-collapse:collapse;margin:8px auto;font-size:10.5pt;}
+  table.data th, table.data td{border:1px solid #444;padding:4px 14px;text-align:center;font-family:'Source Sans 3',sans-serif;}
+  table.data th{background:#f1ece4;font-weight:700;}
+
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+
+  .page-break{page-break-after:always;break-after:page;height:0;}
+
+  @media (max-width: 600px){
+    body{font-size:10.5pt;}
+    .nameline{flex-direction:column;align-items:flex-start;gap:6px;}
+    .nameline .blank{min-width:200px;}
+  }
+  @media print{
+    @page { size: letter; margin: 0.6in 0.65in; }
+    html,body{background:#fff;}
+    body{padding:0;max-width:none;font-size:11pt;}
+    .q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}
+    .draft-banner{display:none;}
+  }
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit D3: Second-Order Linear ODEs: Homogeneous | Practice",
+  "description": "University-level practice problems for Unit D3: Second-Order Linear ODEs: Homogeneous, with full worked solutions from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Practice.html",
+  "inLanguage": "en",
+  "learningResourceType": "Practice problems",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body>
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit D3 &middot; Calculus IV</span><span data-lang="zh">第D3单元 &middot; 微积分IV</span></div>
+<h1 class="chapter-title"><span data-lang="en">Second-Order Linear ODEs: Homogeneous</span><span data-lang="zh">二阶线性常微分方程：齐次方程</span></h1>
+<p class="chapter-sub"><span data-lang="en">University-Style Practice Problems</span><span data-lang="zh">大学风格练习题</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 6</b>: superposition, characteristic equation (distinct real, complex, repeated roots), Wronskian and fundamental sets, reduction of order<span class="scope">CALC IV</span></span><span data-lang="zh">第 <b>1 至 6</b> 节：叠加原理、特征方程（不同实根、复数根、重复根）、朗斯基行列式与基本解组、降阶法<span class="scope">CALC IV</span></span></p>
+<hr class="thick"><hr class="thin">
+<div class="nameline"><span><span data-lang="en">Name:</span><span data-lang="zh">姓名：</span><span class="blank"></span></span><span><span data-lang="en">Date:</span><span data-lang="zh">日期：</span><span class="blank period"></span></span></div>
+<p class="draft-banner"><code>v1.0</code> &middot; 10 Qs &middot; 82 marks &middot; Parts CORE / PROOF / APPLIED &middot; MEDIUM to HARD &middot; Sections 1 to 6 &middot; <span data-lang="en">solutions:</span><span data-lang="zh">解析：</span> <code>Solutions/Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Solutions.html</code></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算能力 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">The Characteristic Equation</span><span data-lang="zh">特征方程</span></h2>
+<p class="instructions"><span data-lang="en">For each ODE, write the characteristic equation, identify which root case applies, and state the general solution. Show the discriminant $b^{2}-4ac$ explicitly. Verify your solution by substituting back into the ODE before applying initial conditions.</span><span data-lang="zh">对每个常微分方程，写出特征方程，判断适用的根的情形，并写出通解。明确展示判别式 $b^{2}-4ac$。在代入初始条件前，将解代回方程进行验证。</span></p>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">characteristic equation: distinct real roots</span><span data-lang="zh">特征方程：不同实根</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Solve each initial-value problem (IVP). State the characteristic equation and both roots in each case.</span><span data-lang="zh">求解下列各初值问题（IVP）。写出每种情形的特征方程及两个根。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $y'' - 5y' + 6y = 0$, $\quad y(0)=2$, $\;y'(0)=5$. <span class="marks-inline">[4]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $y'' + y' - 12y = 0$, $\quad y(0)=1$, $\;y'(0)=-1$. <span class="marks-inline">[4]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">characteristic equation: complex conjugate roots</span><span data-lang="zh">特征方程：复共轭根</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">In each part, identify $\lambda$ and $\mu$ from $r = \lambda \pm i\mu$, write the real general solution using $e^{\lambda t}\cos\mu t$ and $e^{\lambda t}\sin\mu t$, then apply the given initial conditions.</span><span data-lang="zh">在每部分中，从 $r = \lambda \pm i\mu$ 中确定 $\lambda$ 和 $\mu$，用 $e^{\lambda t}\cos\mu t$ 和 $e^{\lambda t}\sin\mu t$ 写出实数形式的通解，然后代入给定的初始条件。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $y'' + 2y' + 5y = 0$, $\quad y(0)=3$, $\;y'(0)=1$. <span class="marks-inline">[4]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $y'' - 4y' + 13y = 0$, $\quad y(0)=0$, $\;y'(0)=6$. <span class="marks-inline">[4]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head">
+    <span class="pill qnum">Q3</span><span class="pill med">MEDIUM</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">Wronskian and fundamental sets</span><span data-lang="zh">朗斯基行列式与基本解组</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Compute the Wronskian $W(y_1,y_2)=y_1 y_2'-y_2 y_1'$ for each pair and state whether the pair forms a fundamental set for the given equation.</span><span data-lang="zh">计算每对函数的朗斯基行列式 $W(y_1,y_2)=y_1 y_2'-y_2 y_1'$，并判断该对函数是否构成给定方程的基本解组。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $y_1 = e^{-t}\cos 2t$, $y_2 = e^{-t}\sin 2t$ for $y'' + 2y' + 5y = 0$. <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $y_1 = e^{3t}$, $y_2 = te^{3t}$ for $y'' - 6y' + 9y = 0$. <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q4</span><span class="pill hard">HARD</span>
+    <span class="pill core">CORE</span>
+    <span class="pill topic"><span data-lang="en">repeated-root IVP and critical damping</span><span data-lang="zh">重根初值问题与临界阻尼</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the IVP $y'' + 6y' + 9y = 0$, $\quad y(0) = 4$, $\;y'(0) = -6$.</span><span data-lang="zh">考虑初值问题 $y'' + 6y' + 9y = 0$，$\quad y(0) = 4$，$\;y'(0) = -6$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Find the general solution by solving the characteristic equation. Confirm that the second solution $te^{rt}$ is not a scalar multiple of $e^{rt}$ by computing the Wronskian of the pair.</span><span data-lang="zh">通过求解特征方程得到通解。通过计算这对函数的朗斯基行列式，确认第二个解 $te^{rt}$ 不是 $e^{rt}$ 的数量倍。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Apply the initial conditions to determine $c_1$ and $c_2$, and write the particular solution. Verify by substitution that your answer satisfies the IVP.</span><span data-lang="zh">代入初始条件确定 $c_1$ 和 $c_2$，写出特解。通过代入验证你的答案满足该初值问题。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Superposition, the Wronskian, and Reduction of Order</span><span data-lang="zh">叠加原理、朗斯基行列式与降阶法</span></h2>
+<p class="instructions"><span data-lang="en">These items are graded on the logic of the argument. State every hypothesis you invoke. In derivations, show each algebraic step; a correct answer with missing steps earns at most half credit.</span><span data-lang="zh">这些题目按论证逻辑评分。陈述你所引用的每个假设。在推导过程中，展示每个代数步骤；答案正确但步骤缺失，最多只能得一半分数。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q5</span><span class="pill med">MEDIUM</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">principle of superposition</span><span data-lang="zh">叠加原理</span></span>
+    <span class="pill marks">[6 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $L[y] = y'' + p(t)y' + q(t)y$ where $p,q$ are continuous on an interval $I$.</span><span data-lang="zh">设 $L[y] = y'' + p(t)y' + q(t)y$，其中 $p,q$ 在区间 $I$ 上连续。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Prove that $L$ is a linear operator: that is, show $L[c_1 y_1 + c_2 y_2] = c_1 L[y_1] + c_2 L[y_2]$ for any differentiable $y_1$, $y_2$ and constants $c_1$, $c_2$.</span><span data-lang="zh">证明 $L$ 是线性算子，即对任意可微函数 $y_1$、$y_2$ 及常数 $c_1$、$c_2$，证明 $L[c_1 y_1 + c_2 y_2] = c_1 L[y_1] + c_2 L[y_2]$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Hence deduce: if $y_1$ and $y_2$ are both solutions of $L[y]=0$, then $y = c_1 y_1 + c_2 y_2$ is also a solution for any constants $c_1$, $c_2$. State precisely which property of $L$ you used and why it would fail for a nonlinear ODE such as $y'' + (y')^{2} = 0$.</span><span data-lang="zh">由此推断：若 $y_1$ 和 $y_2$ 都是 $L[y]=0$ 的解，则对任意常数 $c_1$、$c_2$，$y = c_1 y_1 + c_2 y_2$ 也是解。准确陈述所用的 $L$ 的哪个性质，并说明为何对非线性方程（如 $y'' + (y')^{2} = 0$）该性质不成立。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q6</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">Wronskian, linear independence, and Abel's identity</span><span data-lang="zh">朗斯基行列式、线性无关性与阿贝尔恒等式</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $y_1, y_2$ be solutions of $y'' + p(t)y' + q(t)y = 0$ on an interval $I$ where $p,q$ are continuous.</span><span data-lang="zh">设 $y_1, y_2$ 是 $y'' + p(t)y' + q(t)y = 0$ 在区间 $I$ 上的解，其中 $p,q$ 连续。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Show that if $y_1, y_2$ are linearly dependent on $I$, then $W(y_1,y_2)(t) = 0$ for all $t \in I$. (Hint: write $y_2 = k y_1$ and compute directly.)</span><span data-lang="zh">证明：若 $y_1, y_2$ 在 $I$ 上线性相关，则对所有 $t \in I$ 都有 $W(y_1,y_2)(t) = 0$。（提示：令 $y_2 = k y_1$ 并直接计算。）</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Derive Abel's identity: show that $W' = -p(t)W$ and hence $W(t) = W(t_0)\,e^{-\int_{t_0}^{t}p(s)\,ds}$. Conclude that $W$ is either identically zero or never zero on $I$.</span><span data-lang="zh">推导阿贝尔恒等式：证明 $W' = -p(t)W$，从而得出 $W(t) = W(t_0)\,e^{-\int_{t_0}^{t}p(s)\,ds}$。结论是 $W$ 在 $I$ 上恒为零或处处不为零。</span> <span class="marks-inline">[5]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Use Abel's identity to find, up to a multiplicative constant, the Wronskian of any two solutions of $y'' + 4y' + 4y = 0$, without solving the equation. Then verify by computing $W$ from the actual solutions.</span><span data-lang="zh">利用阿贝尔恒等式，在不求解方程的情况下，确定 $y'' + 4y' + 4y = 0$ 的任意两个解的朗斯基行列式（精确到一个乘法常数）。然后通过实际解计算 $W$ 加以验证。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q7</span><span class="pill hard">HARD</span>
+    <span class="pill proof">PROOF</span>
+    <span class="pill topic"><span data-lang="en">reduction of order: second solution from a known one</span><span data-lang="zh">降阶法：从已知解求第二个解</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">The equation $t^{2}y'' - 3ty' + 4y = 0$ ($t > 0$) has a known solution $y_1 = t^{2}$.</span><span data-lang="zh">方程 $t^{2}y'' - 3ty' + 4y = 0$（$t > 0$）有一个已知解 $y_1 = t^{2}$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Verify by substitution that $y_1 = t^{2}$ is indeed a solution.</span><span data-lang="zh">通过代入验证 $y_1 = t^{2}$ 确实是该方程的解。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Set $y_2 = v(t)\,t^{2}$, substitute into the equation divided by $t^{2}$, and show that the equation for $v$ reduces to a first-order linear ODE in $w = v'$. State the ODE clearly.</span><span data-lang="zh">令 $y_2 = v(t)\,t^{2}$，代入除以 $t^{2}$ 后的方程，证明关于 $v$ 的方程可化简为关于 $w = v'$ 的一阶线性常微分方程。清晰写出该方程。</span> <span class="marks-inline">[4]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Solve for $w$ and integrate to find $v$; hence write down $y_2$ and confirm that $\{y_1, y_2\}$ is a fundamental set by computing $W(y_1,y_2)$.</span><span data-lang="zh">求解 $w$ 并积分得到 $v$；写出 $y_2$，并通过计算 $W(y_1,y_2)$ 确认 $\{y_1, y_2\}$ 是基本解组。</span> <span class="marks-inline">[4]</span><div class="work m"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合应用题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Initial-Value Problems, Amplitude-Phase Form, and Free Vibration</span><span data-lang="zh">初值问题、振幅相位形式与自由振动</span></h2>
+<p class="instructions"><span data-lang="en">Set up each problem cleanly. Express solutions in exact form. For amplitude-phase conversions, use $R\cos(\mu t - \phi)$ with $R>0$ and $\phi \in [0, 2\pi)$. In physical problems, interpret the solution in words as well as formulas.</span><span data-lang="zh">清晰建立每道题的模型。以精确形式表示解。振幅相位转换时，使用 $R\cos(\mu t - \phi)$，其中 $R>0$ 且 $\phi \in [0, 2\pi)$。在物理问题中，除公式外还需用文字解释解的含义。</span></p>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q8</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">complex-root IVP rewritten in amplitude-phase form</span><span data-lang="zh">复数根初值问题改写为振幅相位形式</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider $y'' + 2y' + 10y = 0$, $\quad y(0) = 4$, $\;y'(0) = -2$.</span><span data-lang="zh">考虑 $y'' + 2y' + 10y = 0$，$\quad y(0) = 4$，$\;y'(0) = -2$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Find the characteristic roots and write the general solution $y = e^{\lambda t}(c_1 \cos\mu t + c_2 \sin\mu t)$.</span><span data-lang="zh">求特征根，写出通解 $y = e^{\lambda t}(c_1 \cos\mu t + c_2 \sin\mu t)$。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Apply the initial conditions to find $c_1$ and $c_2$.</span><span data-lang="zh">代入初始条件求 $c_1$ 和 $c_2$。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Rewrite the particular solution in amplitude-phase form $R e^{\lambda t}\cos(\mu t - \phi)$. Compute $R$ and $\phi$ exactly, and state the quasi-period.</span><span data-lang="zh">将特解改写为振幅相位形式 $R e^{\lambda t}\cos(\mu t - \phi)$。精确计算 $R$ 和 $\phi$，并写出准周期。</span> <span class="marks-inline">[3]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(d)</span> <span data-lang="en">State whether the system is underdamped, critically damped, or overdamped, and briefly explain what happens to $y(t)$ as $t \to \infty$.</span><span data-lang="zh">判断系统是欠阻尼、临界阻尼还是过阻尼，并简要说明当 $t \to \infty$ 时 $y(t)$ 的行为。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q9</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">free-vibration model: overdamped and critically damped cases</span><span data-lang="zh">自由振动模型：过阻尼与临界阻尼情形</span></span>
+    <span class="pill marks">[10 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">A damped mass-spring system satisfies $my'' + by' + ky = 0$. In each part, determine the root case, solve the IVP, and describe the qualitative long-term behaviour of the displacement $y(t)$.</span><span data-lang="zh">有阻尼弹簧质量系统满足 $my'' + by' + ky = 0$。在每部分中，判断根的情形，求解初值问题，并描述位移 $y(t)$ 的定性长期行为。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> $m=1$, $b=5$, $k=4$: $\;y(0)=2$, $\;y'(0)=0$ <span data-lang="en">(overdamped). Find the general solution, apply the ICs, and show that $y(t) \to 0$ monotonically as $t \to \infty$.</span><span data-lang="zh">（过阻尼）。求通解，代入初始条件，并证明当 $t \to \infty$ 时 $y(t)$ 单调趋向 $0$。</span> <span class="marks-inline">[5]</span><div class="work l"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> $m=1$, $b=4$, $k=4$: $\;y(0)=1$, $\;y'(0)=-5$ <span data-lang="en">(critically damped). Find the particular solution and show that it crosses zero exactly once for $t>0$. Identify the crossing time.</span><span data-lang="zh">（临界阻尼）。求特解，证明其在 $t>0$ 时恰好过零一次。求过零时刻。</span> <span class="marks-inline">[5]</span><div class="work l"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head">
+    <span class="pill qnum">Q10</span><span class="pill hard">HARD</span>
+    <span class="pill applied">APPLIED</span>
+    <span class="pill topic"><span data-lang="en">boundary-value problem and the role of the Wronskian</span><span data-lang="zh">边值问题与朗斯基行列式的作用</span></span>
+    <span class="pill marks">[8 marks]</span>
+  </div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Consider the boundary-value problem (BVP) $y'' + 4y = 0$ on $[0, L]$.</span><span data-lang="zh">考虑 $[0, L]$ 上的边值问题（BVP）：$y'' + 4y = 0$。</span></p>
+    <div class="frq-parts">
+      <div class="part-item"><span class="tag">(a)</span> <span data-lang="en">Find the general solution.</span><span data-lang="zh">求通解。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+      <div class="part-item"><span class="tag">(b)</span> <span data-lang="en">Apply the boundary conditions $y(0)=0$ and $y(L)=0$. Show that the BVP has a nontrivial solution if and only if $L = n\pi/2$ for some positive integer $n$, and find the corresponding nontrivial solutions.</span><span data-lang="zh">代入边界条件 $y(0)=0$ 和 $y(L)=0$。证明当且仅当 $L = n\pi/2$（$n$ 为正整数）时，边值问题有非平凡解，并求出相应的非平凡解。</span> <span class="marks-inline">[4]</span><div class="work m"></div></div>
+      <div class="part-item"><span class="tag">(c)</span> <span data-lang="en">Contrast with an IVP: explain in one or two sentences why the Wronskian argument that guarantees a unique solution to an IVP does not apply to a BVP.</span><span data-lang="zh">与初值问题对比：用一两句话说明，保证初值问题有唯一解的朗斯基行列式论证为何不适用于边值问题。</span> <span class="marks-inline">[2]</span><div class="work s"></div></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">大一课程中这一单元遇到了困难？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约与灯瑞学者导师的免费15分钟咨询。在你的下次期中或期末考试前，我们帮你突破难关。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_d3_second_order_linear_odes_homogeneous__practice__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../Study%20Guides/Unit_D3_Second_Order_Linear_ODEs_Homogeneous.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Practice</span><span data-lang="zh">练习</span></span>
+  <a href="Solutions/Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit D3 Practice</span><span data-lang="zh">大学微积分 &middot; 第D3单元练习</span> <code style="color:#555;">v1.0</code></span>
+  <span><span data-lang="en">Sections 1 to 6 &middot; 82 marks total</span><span data-lang="zh">第1至6节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

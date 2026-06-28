@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="University Calculus Unit B1: Integration Techniques I: Substitution and Parts. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="theme-color" content="#7A2E2E">
+<meta name="color-scheme" content="light dark">
+<title>University Calculus — Unit B1: Integration Techniques I: Substitution and Parts | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_B1_Integration_Techniques_I.html">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus — Unit B1: Integration Techniques I: Substitution and Parts | Dingrui Scholars">
+<meta property="og:description" content="University Calculus Unit B1: Integration Techniques I: Substitution and Parts. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_B1_Integration_Techniques_I.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="University Calculus — Unit B1: Integration Techniques I: Substitution and Parts | Dingrui Scholars">
+<meta name="twitter:description" content="University Calculus Unit B1: Integration Techniques I: Substitution and Parts. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+<style>
+:root {
+  --bg: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --bg-code: #0F0F0F;
+  --text: #0F0F0F;
+  --text-secondary: #585858;
+  --accent: #7A2E2E; --pop: #0099FF; --pop-light: #E8F4FF; --ink: #0F0F0F;
+  --accent-light: #F2E4E4;
+  --accent-dark: #5A1E1E;
+  --green: #2E6B4F;
+  --green-light: #DFF0E8;
+  --orange: #A65E1A;
+  --orange-light: #FBF0E0;
+  --red: #B03030;
+  --red-light: #FCEAEA;
+  --purple: #5E3D7A;
+  --purple-light: #EDE4F5;
+  --gold: #C4956A;
+  --gold-light: #FDF5EC;
+  --border: #E6E6E6;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.10);
+  --radius: 12px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-w: 860px;
+  --toc-w: 260px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F0F0F;
+  --bg-card: #1A1A1A;
+  --bg-code: #000000;
+  --text: #FAFAFA;
+  --text-secondary: #A0A0A0;
+  --accent: #C87070; --pop: #4DB2FF; --pop-light: #12283A; --ink: #FAFAFA;
+  --accent-light: #3A1818;
+  --accent-dark: #E08080;
+  --green: #5CB88A;
+  --green-light: #1A2E24;
+  --orange: #D4944A;
+  --orange-light: #2E2010;
+  --red: #E07070;
+  --red-light: #301515;
+  --purple: #A888C8;
+  --purple-light: #201828;
+  --gold: #D4A870;
+  --gold-light: #2A2018;
+  --border: #2A2A2A;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+
+/* ─── SCORE BADGE (top nav) ─── */
+.score-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--green);
+  background: var(--green-light);
+  border: 1px solid var(--green);
+  padding: 3px 10px; border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.score-badge.zero { color: var(--text-secondary); background: var(--bg); border-color: var(--border); }
+
+/* ─── PROGRESS BAR ─── */
+.progress-track {
+  position: fixed; top: 56px; left: 0; right: 0;
+  height: 3px; background: transparent; z-index: 99;
+}
+.progress-fill {
+  height: 100%; width: 0; background: var(--accent);
+  transition: width 0.15s;
+}
+
+/* ─── SIDEBAR TOC ─── */
+.sidebar {
+  position: fixed; top: 59px; left: 0; bottom: 0;
+  width: var(--toc-w); background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; scrollbar-width: none; padding: 20px 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, background 0.3s;
+  z-index: 90;
+}
+.sidebar::-webkit-scrollbar { display: none; }
+.sidebar.open { transform: translateX(0); box-shadow: var(--shadow-lg); }
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem; padding: 0 20px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.sidebar a {
+  display: block; padding: 8px 20px;
+  color: var(--text-secondary);
+  text-decoration: none; font-size: 0.88rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.sidebar a:hover { color: var(--accent); background: var(--accent-light); }
+.sidebar a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 600; background: linear-gradient(90deg, var(--accent-light), transparent); }
+
+/* ─── MAIN ─── */
+.main-wrap {
+  max-width: var(--max-w);
+  margin: 80px auto 120px;
+  padding: 0 24px;
+
+  transition: width 0.3s ease, margin-left 0.3s ease;}
+@media (min-width: 1100px) {
+  .sidebar { transform: translateX(0); box-shadow: none; }
+  .main-wrap {
+    max-width: none;
+    margin-left: calc(var(--toc-w) + 40px);
+    margin-right: 0;
+    padding: 0 48px;
+  }
+  body.sidebar-collapsed .sidebar { transform: translateX(-100%); }
+}
+
+/* ─── HERO ─── */
+.hero {
+  text-align: center; padding: 56px 24px 48px;
+  background: linear-gradient(180deg, #F4F4F4 0%, transparent 100%);
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(0,0,0,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+[data-theme="dark"] .hero { background: linear-gradient(180deg, rgba(0,0,0, 0.4) 0%, transparent 100%); }
+[data-theme="dark"] .hero::before { background: radial-gradient(ellipse at 70% 20%, rgba(255,255,255,0.04) 0%, transparent 70%); }
+
+.hero-overline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 12px;
+  position: relative;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15; margin-bottom: 16px;
+  position: relative;
+}
+.hero-sub {
+  color: var(--text-secondary); max-width: 650px; margin: 0 auto;
+  position: relative;
+}
+.hero-meta {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin-top: 24px; position: relative;
+}
+.hero-meta .chip {
+  font-size: 0.85rem; font-weight: 600;
+  padding: 6px 16px; border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.chip-maroon { background: var(--bg-card); border: 1px solid var(--accent); color: var(--accent); }
+.chip-green { background: var(--bg-card); border: 1px solid var(--green); color: var(--green); }
+.chip-purple { background: var(--bg-card); border: 1px solid var(--purple); color: var(--purple); }
+
+/* ─── MASTERY DASHBOARD ─── */
+.mastery-dash {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin: -16px 0 40px;
+}
+.mastery-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.mastery-card:hover { transform: translateY(-2px); }
+.mastery-val {
+  font-family: var(--font-mono);
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.mastery-label {
+  font-size: 0.82rem; color: var(--text-secondary);
+  margin-top: 4px; font-weight: 600;
+}
+.mastery-bar {
+  width: 100%; height: 4px; border-radius: 2px;
+  background: var(--border); margin-top: 10px;
+  overflow: hidden;
+}
+.mastery-bar-fill {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+@media (max-width: 600px) { .mastery-dash { grid-template-columns: 1fr; } }
+
+/* ─── SECTION ─── */
+.section { margin-bottom: 56px; scroll-margin-top: 80px; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem; margin-bottom: 16px;
+  line-height: 1.25; border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 8px; display: inline-block;
+}
+.section h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem; margin: 32px 0 12px;
+  line-height: 1.3; color: var(--text);
+}
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.card-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.card-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 700; flex-shrink: 0;
+}
+.icon-blue { background: var(--accent-light); color: var(--accent); }
+.icon-green { background: var(--green-light); color: var(--green); }
+.icon-orange { background: var(--orange-light); color: var(--orange); }
+.icon-red { background: var(--red-light); color: var(--red); }
+.icon-purple { background: var(--purple-light); color: var(--purple); }
+.card-title { font-weight: 700; font-size: 1.05rem; }
+
+/* ─── CODE/WORKED EXAMPLE BLOCKS ─── */
+pre {
+  background: var(--bg-code); color: #CDD6F4;
+  padding: 20px 24px; border-radius: var(--radius);
+  overflow-x: auto; font-family: var(--font-mono);
+  font-size: 0.88rem; line-height: 1.65; margin: 16px 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+code { font-family: var(--font-mono); font-size: 0.9em; }
+:not(pre) > code {
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 6px; border-radius: 4px; font-weight: 500;
+}
+pre .cm { color: #6C7086; }
+pre .num { color: #F9E2AF; font-weight: 600; }
+pre .str { color: #A6E3A1; font-weight: 600; }
+
+/* ─── KEY CONCEPT BOX ─── */
+.concept-box {
+  border-left: 5px solid var(--accent);
+  background: var(--bg-card);
+  padding: 20px 24px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+.concept-box.green { border-left-color: var(--green); }
+.concept-box.orange { border-left-color: var(--orange); }
+.concept-box.red { border-left-color: var(--red); }
+.concept-box.purple { border-left-color: var(--purple); }
+.concept-box > strong:first-child {
+  display: inline-block; margin-bottom: 8px;
+  font-family: var(--font-mono); text-transform: uppercase;
+  font-size: 0.8rem; letter-spacing: 0.5px;
+}
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--bg-card); }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: var(--accent-light); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.3px; text-transform: uppercase; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--accent-light); }
+
+/* ─── QUIZ ─── */
+.quiz { margin: 24px 0; background: var(--bg-card); padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); position: relative; }
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.quiz-q { font-weight: 600; font-size: 1.05rem; flex: 1; }
+.quiz-number {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 8px; border-radius: 6px;
+  flex-shrink: 0; margin-left: 12px;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 12px 18px; border: 2px solid var(--border);
+  border-radius: 8px; cursor: pointer;
+  font-size: 0.95rem; transition: all 0.2s;
+  background: var(--bg); font-weight: 500;
+  position: relative;
+}
+.quiz-opt:hover:not(.disabled) { border-color: var(--accent); background: var(--accent-light); }
+.quiz-opt.correct { border-color: var(--green); background: var(--green-light); color: var(--green); }
+.quiz-opt.wrong { border-color: var(--red); background: var(--red-light); color: var(--red); }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.8; }
+.quiz-opt.correct::after { content: '✓'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-opt.wrong::after { content: '✗'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-explain { margin-top: 16px; padding: 14px 18px; border-radius: 8px; font-size: 0.9rem; display: none; line-height: 1.6; }
+.quiz-explain.show { display: block; animation: fadeSlideIn 0.35s ease; }
+.quiz-explain.correct-exp { background: var(--green-light); color: #1a4030; border: 1px solid var(--green); }
+.quiz-explain.wrong-exp { background: var(--red-light); color: #6b1d1d; border: 1px solid var(--red); }
+[data-theme="dark"] .quiz-explain.correct-exp { color: var(--green); }
+[data-theme="dark"] .quiz-explain.wrong-exp { color: var(--red); }
+.quiz-retry {
+  display: none; margin-top: 12px;
+  padding: 8px 18px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.quiz-retry.show { display: inline-block; animation: fadeSlideIn 0.35s ease; }
+.quiz-retry:hover { background: var(--accent-light); border-color: var(--accent); }
+
+@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ─── ACCORDION / DETAILS ─── */
+details { margin: 16px 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); overflow: hidden; box-shadow: var(--shadow); }
+summary {
+  padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 0.95rem;
+  user-select: none; list-style: none; display: flex; align-items: center; gap: 10px;
+  background: var(--bg); transition: background 0.2s;
+}
+summary:hover { background: var(--accent-light); }
+summary::before { content: '▸'; transition: transform 0.2s; font-size: 1rem; color: var(--accent); }
+details[open] summary { border-bottom: 1px solid var(--border); }
+details[open] summary::before { transform: rotate(90deg); }
+details .detail-body { padding: 20px; font-size: 0.95rem; background: var(--bg-card); }
+
+/* ─── QUICK REF ─── */
+.qref { background: var(--bg-card); border: 2px dashed var(--accent); border-radius: var(--radius); padding: 24px; margin: 24px 0; }
+.qref-title { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; text-align: center; }
+
+/* ─── FLASHCARD ─── */
+
+/* ─── FLASHCARDS (unified: grid overlay, equalized, no scrollbars) ─── */
+.flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.flashcard {
+  perspective: 1000px;
+  cursor: pointer;
+  display: grid;
+}
+.flashcard-inner {
+  display: grid;
+  grid-template-areas: "card";
+  min-height: 200px;
+  height: 100%;
+  position: relative;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+.flashcard-front, .flashcard-back {
+  grid-area: card;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  word-break: break-word;
+  hyphens: auto;
+}
+.flashcard-front {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: clamp(0.92rem, 2.1vw, 1.05rem);
+  line-height: 1.45;
+  padding: 22px 20px 34px;
+  gap: 8px;
+}
+.flashcard-front::after {
+  content: 'TAP TO FLIP';
+  position: absolute; bottom: 10px; left: 0; right: 0;
+  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+  color: var(--text-secondary); opacity: 0.5; letter-spacing: 1.5px;
+}
+.flashcard-back {
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  color: var(--text);
+  transform: rotateY(180deg);
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.6;
+  padding: 26px 22px;
+  gap: 12px;
+  /* Cleaner prose wrapping: no mid-word splits, no auto-hyphens,
+     balanced lines so commas/periods don't orphan at line starts */
+  word-break: normal;
+  hyphens: manual;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+.flashcard-back .katex-display {
+  margin: 6px 0 !important;
+  font-size: 1.25em;
+  max-width: 100%;
+  overflow: hidden;
+}
+.flashcard-back .katex-display > .katex { max-width: 100%; }
+.flashcard-back .katex { font-size: 1em; }
+/* Give <br>-separated lines real breathing room (numbered lists etc.) */
+.flashcard-back br { content: ""; display: block; margin-bottom: 8px; }
+.flashcard-back > * { max-width: 100%; }
+@media (max-width: 600px) {
+  .flashcard-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ─── WORKED EXAMPLES (standardized) ─── */
+.worked-example {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 88%, var(--accent-light) 12%), var(--bg-card));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+[data-theme="dark"] .worked-example {
+  background: linear-gradient(180deg, rgba(58,32,32,0.32), rgba(30,24,24,0.98));
+}
+.worked-example h4,
+.worked-example .we-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin: 0 0 16px 0;
+}
+.worked-example .we-steps {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.worked-example .we-step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+[data-theme="dark"] .worked-example .we-step {
+  background: var(--bg-card);
+}
+.worked-example .we-step strong {
+  color: var(--accent);
+  font-size: 0.92rem;
+  display: block;
+  margin-bottom: 6px;
+}
+.worked-example .we-step .katex-display {
+  margin: 10px 0;
+}
+.worked-solution {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+.worked-solution .katex-display { margin: 0.65rem 0; }
+
+/* ─── FORMULA BOX ─── */
+.formula-box {
+  background: var(--bg-card);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  margin: 24px 0;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  overflow-x: auto;
+}
+.formula-box .formula-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--text-secondary); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 12px;
+}
+.formula-box .katex-display { margin: 10px 0 0 0; }
+
+/* ─── SEPARATOR ─── */
+.sep { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+/* ─── PRACTICE INPUT ─── */
+.practice-input-group { margin: 20px 0; }
+.practice-prompt { font-weight: 600; margin-bottom: 12px; font-size: 1.02rem; }
+.practice-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.practice-row input[type="text"] {
+  flex: 1; min-width: 160px; padding: 10px 16px;
+  border: 2px solid var(--border); border-radius: 8px;
+  font-family: var(--font-mono); font-size: 1rem;
+  background: var(--bg); color: var(--text);
+  transition: border-color 0.2s;
+}
+.practice-row input[type="text"]:focus { outline: none; border-color: var(--accent); }
+.practice-row button {
+  padding: 10px 24px; border: none; border-radius: 8px;
+  background: var(--accent); color: #fff; font-weight: 700;
+  font-family: var(--font-body); font-size: 0.95rem;
+  cursor: pointer; transition: all 0.2s;
+}
+.practice-row button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.practice-feedback {
+  margin-top: 10px; padding: 10px 16px; border-radius: 8px;
+  font-size: 0.92rem; display: none;
+}
+.practice-feedback.show { display: block; animation: fadeSlideIn 0.3s ease; }
+.practice-feedback.correct { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+.practice-feedback.wrong { background: var(--red-light); color: var(--red); border: 1px solid var(--red); }
+
+/* ─── CHECKLIST ─── */
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  padding: 12px 16px; border: 1px solid var(--border);
+  border-radius: 8px; margin-bottom: 8px;
+  cursor: pointer; font-size: 0.95rem;
+  background: var(--bg-card); transition: all 0.2s;
+  display: flex; align-items: center; gap: 12px;
+  user-select: none;
+}
+.checklist li:hover { border-color: var(--accent); }
+.checklist li .check-icon {
+  width: 24px; height: 24px; border-radius: 6px;
+  border: 2px solid var(--border); display: flex;
+  align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+  font-size: 0.8rem; color: transparent;
+}
+.checklist li.checked { background: var(--green-light); border-color: var(--green); }
+.checklist li.checked .check-icon { background: var(--green); border-color: var(--green); color: #fff; }
+
+/* ─── INTERACTIVE WIDGETS ─── */
+.interactive-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow-lg);
+}
+.widget-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 16px;
+  text-align: center;
+}
+.widget-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.widget-canvas-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.widget-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.widget-controls label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.widget-controls input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 220px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.widget-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-controls input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-readout {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 90px;
+  text-align: center;
+}
+.widget-sum-readout {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.widget-sum-readout .sum-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+/* ─── TWO COLUMNS ─── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ─── FOOTER ─── */
+.footer-wrap {
+  text-align: center; padding: 40px 24px;
+  color: var(--text-secondary); font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem; color: var(--text);
+  margin-bottom: 4px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 1100px) {
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .main-wrap { padding: 0 16px; margin-top: 60px; }
+  pre { font-size: 0.8rem; padding: 16px; }
+  
+  .formula-box { padding: 16px; }
+  .top-nav { padding: 0 16px; }
+  }
+
+/* Print */
+@media print {
+  .flashcard-inner { transform: none !important; }
+  .flashcard-back { transform: none !important; position: relative !important; backface-visibility: visible !important; }
+  .flashcard-front { display: none !important; }
+  .flashcard { height: auto !important; min-height: auto !important; }
+  .top-nav, .progress-track, .sidebar, .topnav-actions, .quiz-retry, .mastery-dash,
+  .flashcard-toolbar button, .score-badge { display: none !important; }
+  .main-wrap { margin: 0 auto; max-width: 100%; }
+  body { font-size: 11pt; background: white; color: black; }
+  pre { border: 1px solid #ccc; white-space: pre-wrap; }
+  .card, .formula-box, .concept-box, .quiz { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+  details { break-inside: avoid; }
+  .interactive-widget { display: none; }
+  
+  
+  
+  
+  a { color: inherit; text-decoration: none; }
+}
+
+/* ─── TOP-NAV (matching Units 2-6) ─── */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; height: 56px;
+  transition: background 0.3s, border 0.3s;
+}
+[data-theme="dark"] .top-nav { background: rgba(21, 16, 16, 0.92); }
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-logo { height: 36px; width: auto; border-radius: 0; object-fit: contain; }
+.nav-badge {
+  background: var(--accent); color: #fff;
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+  padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px;
+}
+.nav-btn {
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px;
+  padding: 6px 14px; font-size: 0.82rem;
+  cursor: pointer; font-family: var(--font-body); font-weight: 600;
+  transition: all 0.2s;
+}
+.nav-btn:hover { background: var(--accent-light); border-color: var(--accent); transform: translateY(-1px); }
+.nav-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ─── BILINGUAL TOGGLE ─── */
+body:not(.lang-zh) [data-lang="zh"] { display: none; }
+body.lang-zh [data-lang="en"] { display: none; }
+
+/* consult-cta: lead-gen conversion surface (Sprint A) */
+.consult-cta { background: linear-gradient(180deg, var(--accent-light, #F2E4E4) 0%, var(--bg-card, #fff) 100%); border: 2px solid var(--accent); border-radius: var(--radius, 12px); padding: 22px 26px; margin: 30px 0 8px; text-align: center; }
+.consult-cta__lead { font-family: var(--font-display); font-size: 1.25rem; color: var(--accent); margin: 0 0 6px; }
+.consult-cta__body { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; margin: 0 auto 16px; max-width: 48ch; }
+.consult-cta__btn { display: inline-block; background: var(--ink); color: var(--bg-card); font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 12px 22px; border-radius: 12px; transition: transform 0.15s, opacity 0.2s; }
+.consult-cta__btn:hover { opacity: 0.88; transform: translateY(-1px); }
+/* design-refresh links */ .card a:not(.feeder-link), .concept-box a, .going-deeper a, .section > p a { color: var(--pop); text-underline-offset: 2px; }
+@media print { .consult-cta { border: 1px solid #999; background: #fff; } .consult-cta__btn { background: #fff !important; color: #000 !important; border: 1px solid #999; } .consult-cta__btn[data-lang="en"]::after { content: " (dingruischolars.com/signup)"; font-weight: 400; } .consult-cta__btn[data-lang="zh"]::after { content: " (dingruischolars.com/signup-ch)"; font-weight: 400; } }
+
+/* __sg_mobile_spacing__ tighten phone layout + fix top-nav clip (injected by declutter_sg.py) */
+@media (max-width: 600px){
+  .main-wrap{ margin: 64px auto 56px !important; padding: 0 14px !important; }
+  .hero{ padding: 40px 18px 32px !important; margin-bottom: 26px !important; }
+  .hero-sub{ font-size: 0.96rem !important; }
+  .section{ margin-bottom: 36px !important; }
+  .section h2{ font-size: 1.45rem !important; }
+  .section h3{ margin: 24px 0 10px !important; }
+  .card{ padding: 18px 16px !important; }
+  .concept-box{ padding: 16px 16px !important; }
+  .quiz{ padding: 18px 14px !important; }
+  .formula-box{ padding: 16px 12px !important; }
+  .worked-solution{ padding: 16px 16px !important; }
+  .sep{ margin: 28px 0 !important; }
+  .detail-body{ padding: 16px !important; }
+  .top-nav{ padding: 0 10px !important; }
+  .nav-left{ gap: 6px !important; min-width: 0; }
+  .nav-right{ gap: 4px !important; }
+  .nav-btn{ padding: 6px 9px !important; font-size: 0.78rem !important; }
+  .score-badge{ display: none !important; }
+}
+@media (max-width: 430px){
+  .nav-left .nav-badge:nth-child(2){ display: none !important; }
+}
+/* __end_sg_mobile_spacing__ */
+
+  /* mobile-overflow-lock v1: lock to viewport width on phone/tablet, no horizontal pan (laptop sidebar layout >=1100px unaffected) */
+  @media (max-width: 1024px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .main-wrap, .hero, .hero-sub, .consult-cta, .sg-appendix { max-width: 100%; }
+    img, table, video, iframe, pre { max-width: 100%; }
+    .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+  }
+</style>
+<!-- BEGIN unit-nav-css -->
+<style data-section="unit-nav">
+.unit-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 980px;
+  margin: 64px auto 32px;
+  padding: 0 24px;
+}
+.unit-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  padding: 18px 20px;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border, #DDD0C8);
+  border-radius: 12px;
+  color: inherit;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.unit-nav__link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #7A2E2E);
+  box-shadow: 0 6px 16px -4px rgba(60, 20, 30, 0.12);
+}
+.unit-nav__link--next {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.unit-nav__arrow {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent, #7A2E2E);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.unit-nav__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.unit-nav__hint {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #6B5058);
+}
+.unit-nav__title {
+  font-family: var(--font-display, 'DM Serif Display', Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--text, #2C1B1F);
+}
+.unit-nav__placeholder {
+  border: 1px dashed var(--border, #DDD0C8);
+  border-radius: 12px;
+  background: transparent;
+  opacity: 0.6;
+}
+@media (max-width: 640px) {
+  .unit-nav { grid-template-columns: 1fr; gap: 10px; margin-top: 48px; }
+  .unit-nav__link--next { flex-direction: row; text-align: left; }
+}
+@media print { .unit-nav { display: none; } }
+</style>
+<!-- END unit-nav-css -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus — Unit B1: Integration Techniques I: Substitution and Parts",
+  "description": "University Calculus Unit B1: Integration Techniques I: Substitution and Parts. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_B1_Integration_Techniques_I.html",
+  "inLanguage": [
+    "en"
+  ],
+  "learningResourceType": "Study Guide",
+  "educationalLevel": "University",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFKAuoDASIAAhEBAxEB/8QAHAABAQADAQEBAQAAAAAAAAAAAAEGBwgFBAID/8QAaxAAAQMDAQUBCAcQCwwHBgcAAQACAwQFEQYHEiExQRMIFCIyUWFxgRUXN5GUsbMWIzM2QlJUYnJ0dZOhstLTJDRVVnOCkpW0w9ElNThFU1djg4SiwdQmJ0NERmV2KGSFhqTwGEhmo8Lh9f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgQDBf/EADQRAQACAgAEAwUHBAIDAAAAAAABAgMRBBIhMTJBURMzYXGBFCI0kaGx0SNSU/BCQ2PB4f/aAAwDAQACEQMRAD8A6jREWV1EREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARREFREKAiIgIomfMgqZRT8qBniqiICIiAiBEBERAREygJlTgqgZRAiAiic0FTKiIKinxK9UBFFUBFECCooqgIiICZU9SvqQEUVQEQogIiICIiAiKIKmfMiiCoonrQVMoiAiIgIoqgIiICIiAiIgJ6kRARPUiAiJ0QEREBERAREQEyoqgIiICIiAiIgIiICIiAiIgIiICKKoCKZRBUURBURRAVREBFOHmX4q54aSAz1c0dPEOb5XBrR6zwQf0RYzdNf6JtkZfVaotpxzZBL27v5Me8fyLF6vbhoyLPYQ3esxyMdM1gP4xzT+RNutcOS3astmotP0O3qzPqZG1unrlBB/2b4po5XH0tO6B/KKyC2bYtCVkojluNTQuOMd9UjwD62BzR6yo3C08NljvVsFReVQam03XvDKHUFqqnuOA2Ksjc4nyboOfyL13BzfGaR6QpcZiY7vyiqIhEREDoiJ6kFCnrT0IgqdVEKCqInqQOXFPOr05KIKinmVQRE9SflQVFEPRBUREBEU9aAUREBVREFUREFRFEDqicccU6ICqIgnRERBVFUQFDzQ8lUBREQVF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CIiqCZRE6IKiBRBUUwqgKJyRBVE6J1QEREFUToiCqBEKAqpkeVBxQVFEQOKInVBVEQIHNEVQQoqogIiYQVREQFeSiBBRlREQFVB5kQE69UKdED1omUwgIiICIiAqoiAr51MKoIUTogQMIhRBVFVEBERARMcUQPWiFEBECICqiIBRECAEKIgoQophACqZTKAiIgIiICIiAiIgiqIgiqKdEBE5qoJ5kRVBEVRBEVU9KCqIiC8UUTzoKor1UKAEREBVREBOKeVOqAiqiAgREF64UKKoJyRCFUETqhCo8qCIqp0QVFEQFVEQOqKqIBTmiICeZVTqgIivVBCiIgBERARVRA6IPIqogdVeaiqCInmRAREQERCgBERAREQMomEQEVUQEQKoCiIEDHBPSidEBAiIHpTqieYIKinJOKCphQKoCIiAiIgIiICFEQTor1REDqpw44VRBCqiIHVERAREQEREBQKogiqIgKKogdEREBERBFURBFURBFURBCnVVEERVEEVREBERAUKqIInDCqIIiqIInVVEERVEBERBFURAKiqICIiAp6lUQTgiqFBOqoROXVBOSKlMIIipQIIiqBBETCqCJyVQoIiuEwgiqhTCAiqYQFFR6EQFFUQEQqICvJROiBhVMIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAohVQAiKBBUUCpQEQckQRUlCoguEygU6oKiIgIgRBCqiICIp1QVCUU6oKhRCggVQclOqCoURA4oiJI/9k=" class="nav-logo" alt="DingRui Scholars logo">
+    <span class="nav-brand">Dingrui Scholars</span>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn" id="tocToggle" onclick="document.getElementById('sidebar').classList.toggle('open')" title="Contents"><span data-lang="en">Contents</span><span data-lang="zh">目录</span></button>
+    <button class="nav-btn" id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+    <button class="nav-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode"><span data-lang="en">Dark</span><span data-lang="zh">深色</span></button>
+  </div>
+</nav>
+<div class="progress-bar"><div id="progressFill"></div></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-title"><span data-lang="en">Table of Contents</span><span data-lang="zh">目录</span></div>
+  <a href="#hero"><span data-lang="en">Overview</span><span data-lang="zh">概述</span></a>
+  <a href="#s1"><span data-lang="en">1 &middot; Review of Substitution</span><span data-lang="zh">1 &middot; 换元法复习</span></a>
+  <a href="#s2"><span data-lang="en">2 &middot; Integration by Parts</span><span data-lang="zh">2 &middot; 分部积分法</span></a>
+  <a href="#s3"><span data-lang="en">3 &middot; Repeated Integration by Parts</span><span data-lang="zh">3 &middot; 多次分部积分</span></a>
+  <a href="#s4"><span data-lang="en">4 &middot; Tabular Integration</span><span data-lang="zh">4 &middot; 表格积分法</span></a>
+  <a href="#s5"><span data-lang="en">5 &middot; Definite Integrals by Parts</span><span data-lang="zh">5 &middot; 定积分分部积分</span></a>
+  <a href="#s6"><span data-lang="en">6 &middot; Choosing a Method</span><span data-lang="zh">6 &middot; 方法选择</span></a>
+  <a href="#s7"><span data-lang="en">7 &middot; Going Deeper</span><span data-lang="zh">7 &middot; 深入探讨</span></a>
+  <a href="#flashcards"><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></a>
+  <a href="#unit-quiz"><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></a>
+  <a href="#checklist"><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握清单</span></a>
+</aside>
+
+<main class="main-wrap">
+<section class="hero" id="hero">
+  <div class="hero-overline"><span data-lang="en">University Calculus &middot; Calculus II</span><span data-lang="zh">大学微积分 &middot; 微积分 II</span></div>
+  <h1><span data-lang="en">Unit B1: Integration Techniques I: Substitution and Parts</span><span data-lang="zh">单元 B1：积分技巧 I：换元法与分部积分</span></h1>
+  <p class="hero-sub"><span data-lang="en">The two foundational antidifferentiation methods of Calculus II, substitution and integration by parts, presented with theorem, derivation, and worked example.</span><span data-lang="zh">微积分 II 中两种最基础的求原函数方法——换元法（<code>substitution</code>）与分部积分法（<code>integration by parts</code>）——附定理、推导与例题讲解。</span></p>
+  <div class="hero-meta">
+    <span class="chip">Calculus II</span>
+    <span class="chip"><span data-lang="en">Single-Variable</span><span data-lang="zh">单变量</span></span>
+    <span class="chip"><span data-lang="en">Integrals &amp; Series</span><span data-lang="zh">积分与级数</span></span>
+    <span class="chip">MIT 18.01 / GT 1552 / Princeton MAT 104</span>
+  </div>
+  <div class="concept-box">
+    <strong><span data-lang="en">Read me first.</span><span data-lang="zh">阅前须知。</span></strong>
+    <span data-lang="en">This unit assumes you can differentiate fluently and recognize basic antiderivatives. We build substitution as the chain rule reversed and integration by parts as the product rule reversed, then combine them. Work each example by hand before opening the solution, and verify your answer by differentiating it.</span><span data-lang="zh">本单元假设你已能熟练求导并能识别基本原函数（<code>antiderivative</code>）。我们将换元法理解为链式法则（<code>Chain Rule</code>）的逆运算，将分部积分法理解为乘积法则（<code>Product Rule</code>）的逆运算，最终将二者结合使用。每道例题请先自己动手推导，再打开解答，并通过对结果求导来验证答案。</span>
+  </div>
+</section>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">这部分在大一课程中卡住了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</span><span data-lang="zh">预约与 Dingrui Scholars 导师的免费 15 分钟咨询，在下次期中考前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_b1_integration_techniques_i__sg__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+
+<section class="section" id="s1">
+  <div class="section-label"><span data-lang="en">Section 1</span><span data-lang="zh">第一节</span></div>
+  <h2><span data-lang="en">Review of Substitution</span><span data-lang="zh">换元法复习</span></h2>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">Substitution is the chain rule read in reverse. If an integrand contains an inner function $u=g(x)$ together with (a constant multiple of) its derivative $g'(x)$, replacing $g(x)$ by $u$ and $g'(x)\,dx$ by $du$ collapses the integral to one in the single variable $u$.</span><span data-lang="zh">换元法（<code>substitution</code>）是链式法则（<code>Chain Rule</code>）的逆运算。若被积函数中含有内层函数 $u=g(x)$ 及其导数 $g'(x)$ 的常数倍，则将 $g(x)$ 换为 $u$、将 $g'(x)\,dx$ 换为 $du$，可将积分化为单变量 $u$ 的积分。</span></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Substitution rule</span><span data-lang="zh">换元法公式</span></div>
+    $$\int f\bigl(g(x)\bigr)\,g'(x)\,dx \;=\; \int f(u)\,du, \qquad u=g(x),\; du=g'(x)\,dx.$$
+  </div>
+  <div data-lang="en"><p>The method works when the integrand decomposes as an outer function evaluated at an inner function, multiplied by the inner derivative up to a constant. In practice one chooses $u$ to be the inner function, computes $du$, and checks that the remaining factors are accounted for by $du$ (constants may be absorbed freely, since $\int c\,h\,dx = c\int h\,dx$).</p></div>
+  <div data-lang="zh"><p>当被积函数可分解为"外层函数作用在内层函数上，再乘以内层函数导数的常数倍"时，此方法适用。实际操作中，令 $u$ 为内层函数，计算 $du$，再检查剩余因子是否均由 $du$ 涵盖（常数可自由提取，因为 $\int c\,h\,dx = c\int h\,dx$）。</p></div>
+  <div data-lang="en"><p>Three signals reliably point to a substitution. First, a composition: an integrand of the form $f(g(x))$ where $g$ is more than a bare $x$, such as $e^{x^2}$, $\sin(3x+1)$, or $\sqrt{1-x^2}$. Second, a visible derivative: a factor that is, up to a constant, $g'(x)$ for that same inner function. Third, the $u'/u$ shape, an integrand that is a fraction whose numerator is the derivative of its denominator, which always integrates to a logarithm. When you spot one of these, name the inner function $u$, differentiate to get $du$, and rewrite every piece of the integrand in terms of $u$ and $du$ before integrating. The discipline of converting the integral completely, leaving no stray $x$, is what separates a clean substitution from a stalled one.</p></div>
+  <div data-lang="zh"><p>以下三种信号可靠地指向换元法。其一，复合结构：被积函数形如 $f(g(x))$，其中 $g$ 不是单纯的 $x$，例如 $e^{x^2}$、$\sin(3x+1)$ 或 $\sqrt{1-x^2}$。其二，可见的导数：被积函数中含有某个因子，它在相差常数倍的意义下恰好是内层函数的导数 $g'(x)$。其三，$u'/u$ 形式：被积函数是一个分式，分子恰好是分母的导数，此类积分必然给出对数结果。发现上述任一信号后，命内层函数为 $u$，求微分得 $du$，并将被积函数的每一部分改写为 $u$ 和 $du$ 的表达式再进行积分。完整转换、不留残余 $x$ 的规范操作，是区分成功换元与失败换元的关键。</p></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Standard antiderivatives reached by substitution</span><span data-lang="zh">换元法得到的标准原函数</span></div>
+    $$\int \tan x\,dx=-\ln|\cos x|+C,\qquad \int \sec x\,dx=\ln|\sec x+\tan x|+C.$$
+  </div>
+  <div data-lang="en"><p>Both of these are worth memorizing as the output of a substitution rather than as isolated facts. For $\int\tan x\,dx=\int \frac{\sin x}{\cos x}\,dx$, the choice $u=\cos x$ gives $du=-\sin x\,dx$, so the integral becomes $-\int du/u=-\ln|u|+C$. The $\sec x$ result comes from the standard trick of multiplying numerator and denominator by $\sec x+\tan x$, after which the numerator is exactly the derivative of the denominator. Recognizing an integrand as $u'/u$ is one of the most productive patterns in all of integration: it always produces a logarithm of the absolute value of the denominator.</p></div>
+  <div data-lang="zh"><p>这两个结果都值得作为"换元法的输出"来记忆，而非孤立的结论。对于 $\int\tan x\,dx=\int \frac{\sin x}{\cos x}\,dx$，令 $u=\cos x$，则 $du=-\sin x\,dx$，积分变为 $-\int du/u=-\ln|u|+C$。$\sec x$ 的结果来自一个标准技巧：分子分母同乘 $\sec x+\tan x$，此后分子恰好是分母的导数。认识到 $u'/u$ 型被积函数是积分中最高效的模式之一：它必然产生分母绝对值的对数。</p></div>
+  <h3><span data-lang="en">Mechanics of the substitution and the role of constants</span><span data-lang="zh">换元法的操作细节与常数的作用</span></h3>
+  <div data-lang="en"><p>The phrase "up to a constant multiple" deserves emphasis. If the integrand contains $g'(x)$ scaled by some constant $c$, that constant simply factors out: $\int f(g(x))\,c\,g'(x)\,dx=c\int f(u)\,du$. What substitution cannot do is repair a factor that is a non-constant function of $x$ left over after $du$ is accounted for. If, after writing $du=g'(x)\,dx$, some stray $x$ remains that cannot be rewritten in terms of $u$, the substitution has failed and a different $u$, or a different method entirely, is needed.</p></div>
+  <div data-lang="zh"><p>"相差常数倍"这一表述值得特别强调。若被积函数中含有被常数 $c$ 缩放的 $g'(x)$，该常数只需直接提到积分号外：$\int f(g(x))\,c\,g'(x)\,dx=c\int f(u)\,du$。换元法无法修补的情况是：写出 $du=g'(x)\,dx$ 后，仍有无法用 $u$ 表示的残余 $x$ 因子。若出现这种情况，说明换元失败，需要选取不同的 $u$ 或改用完全不同的方法。</p></div>
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Treating $dx$ and $du$ as interchangeable without solving for the differential. A frequent mistake on $\int x\,e^{x^2}\,dx$ is to set $u=x^2$ and then write $\int x\,e^{u}\,dx$, leaving both an $x$ and a $dx$ in the integral. The fix is to compute $du=2x\,dx$ first, solve it for the exact piece appearing in the integrand ($x\,dx=\tfrac12\,du$), and substitute that block as a unit. Every $x$ and every $dx$ must be converted; a leftover $x$ means the substitution is incomplete.</span><span data-lang="zh">在没有求解微分的情况下，将 $dx$ 与 $du$ 互换使用。对于 $\int x\,e^{x^2}\,dx$，常见错误是令 $u=x^2$，然后写成 $\int x\,e^{u}\,dx$，积分中同时残留 $x$ 和 $dx$。正确做法是先计算 $du=2x\,dx$，再将积分中出现的精确因子（$x\,dx=\tfrac12\,du$）作为整体代入。每一个 $x$ 和每一个 $dx$ 都必须完成转换；残留的 $x$ 意味着换元不完整。</span></div>
+  <details><summary><span data-lang="en">Worked Example 1.1: a linear inner function</span><span data-lang="zh">例题 1.1：线性内层函数</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int x\,e^{x^2}\,dx$. Let $u=x^2$, so $du=2x\,dx$ and $x\,dx=\tfrac12\,du$.</p>
+    $$\int x\,e^{x^2}\,dx=\frac12\int e^{u}\,du=\frac12 e^{u}+C=\frac12 e^{x^2}+C.$$
+    <p>The factor $x$ outside the exponential is exactly what the substitution consumes, up to the constant $\tfrac12$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int x\,e^{x^2}\,dx$。令 $u=x^2$，则 $du=2x\,dx$，故 $x\,dx=\tfrac12\,du$。</p>
+    $$\int x\,e^{x^2}\,dx=\frac12\int e^{u}\,du=\frac12 e^{u}+C=\frac12 e^{x^2}+C.$$
+    <p>指数外的因子 $x$ 恰好被换元消耗，相差常数 $\tfrac12$。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 1.2: rational integrand</span><span data-lang="zh">例题 1.2：有理型被积函数</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int \frac{\ln x}{x}\,dx$. Let $u=\ln x$, so $du=\tfrac{1}{x}\,dx$.</p>
+    $$\int \frac{\ln x}{x}\,dx=\int u\,du=\frac{u^2}{2}+C=\frac{(\ln x)^2}{2}+C.$$
+    <p>The deciding observation is that the factor $\tfrac{1}{x}$ is precisely $\tfrac{d}{dx}\ln x$. The whole integrand is therefore $u\,du$ in disguise, and the answer is a power of $u$. Differentiating $\tfrac12(\ln x)^2$ by the chain rule returns $(\ln x)\cdot\tfrac1x$, confirming the result.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int \frac{\ln x}{x}\,dx$。令 $u=\ln x$，则 $du=\tfrac{1}{x}\,dx$。</p>
+    $$\int \frac{\ln x}{x}\,dx=\int u\,du=\frac{u^2}{2}+C=\frac{(\ln x)^2}{2}+C.$$
+    <p>关键观察在于：因子 $\tfrac{1}{x}$ 恰好是 $\tfrac{d}{dx}\ln x$。因此整个被积函数本质上是 $u\,du$，答案是 $u$ 的幂次。对 $\tfrac12(\ln x)^2$ 用链式法则求导得 $(\ln x)\cdot\tfrac1x$，验证了结果。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 1.3: a root in the inner function</span><span data-lang="zh">例题 1.3：内层函数含根号</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int \frac{x}{\sqrt{4-x^2}}\,dx$. Let $u=4-x^2$, so $du=-2x\,dx$, which gives $x\,dx=-\tfrac12\,du$. The integrand's $\sqrt{4-x^2}$ becomes $\sqrt{u}=u^{1/2}$:</p>
+    $$\int \frac{x}{\sqrt{4-x^2}}\,dx=-\frac12\int u^{-1/2}\,du=-\frac12\cdot 2u^{1/2}+C=-\sqrt{4-x^2}+C.$$
+    <p>Differentiating $-\sqrt{4-x^2}$ returns $\tfrac{x}{\sqrt{4-x^2}}$, which checks. Note that the bare $x$ in the numerator is essential: without it, the integral $\int \tfrac{dx}{\sqrt{4-x^2}}=\arcsin(x/2)+C$ is a different problem entirely, solved by a trigonometric substitution rather than this algebraic one.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int \frac{x}{\sqrt{4-x^2}}\,dx$。令 $u=4-x^2$，则 $du=-2x\,dx$，故 $x\,dx=-\tfrac12\,du$。被积函数中的 $\sqrt{4-x^2}$ 变为 $\sqrt{u}=u^{1/2}$：</p>
+    $$\int \frac{x}{\sqrt{4-x^2}}\,dx=-\frac12\int u^{-1/2}\,du=-\frac12\cdot 2u^{1/2}+C=-\sqrt{4-x^2}+C.$$
+    <p>对 $-\sqrt{4-x^2}$ 求导得 $\tfrac{x}{\sqrt{4-x^2}}$，验证正确。注意分子中单独出现的 $x$ 是必不可少的：若没有它，$\int \tfrac{dx}{\sqrt{4-x^2}}=\arcsin(x/2)+C$ 是完全不同的问题，需用三角换元法而非此代数换元法求解。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 1.4: rewriting before substituting</span><span data-lang="zh">例题 1.4：换元前先改写</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int \tan^{2}x\,\sec^{2}x\,dx$. The factor $\sec^2 x$ is the derivative of $\tan x$, which signals $u=\tan x$, $du=\sec^2 x\,dx$:</p>
+    $$\int \tan^{2}x\,\sec^{2}x\,dx=\int u^{2}\,du=\frac{u^3}{3}+C=\frac{\tan^{3}x}{3}+C.$$
+    <p>The art is in reading the integrand for a function paired with its own derivative. Here $\tan x$ and $\sec^2 x$ form exactly such a pair, so the integral collapses to a power rule in $u$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int \tan^{2}x\,\sec^{2}x\,dx$。因子 $\sec^2 x$ 是 $\tan x$ 的导数，提示令 $u=\tan x$，$du=\sec^2 x\,dx$：</p>
+    $$\int \tan^{2}x\,\sec^{2}x\,dx=\int u^{2}\,du=\frac{u^3}{3}+C=\frac{\tan^{3}x}{3}+C.$$
+    <p>核心在于识别被积函数中某个函数与其自身导数配对的结构。这里 $\tan x$ 与 $\sec^2 x$ 恰好构成这样一对，积分因此化为 $u$ 的幂次法则。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 1.5: a definite integral with converted limits</span><span data-lang="zh">例题 1.5：转换积分限的定积分</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int_0^{2} x\,e^{x^2}\,dx$ using the change-of-variables rule for definite integrals. Let $u=x^2$, $du=2x\,dx$, so $x\,dx=\tfrac12\,du$. Convert the limits: when $x=0$, $u=0$; when $x=2$, $u=4$. The entire problem is then carried out in $u$:</p>
+    $$\int_0^{2} x\,e^{x^2}\,dx=\frac12\int_0^{4} e^{u}\,du=\frac12\bigl[e^{u}\bigr]_0^{4}=\frac{e^{4}-1}{2}.$$
+    <p>Because the limits were converted to $u$-values, there is no back-substitution to $x$. The alternative, finding the indefinite antiderivative $\tfrac12 e^{x^2}$ and evaluating at $x=2$ and $x=0$, gives the same $\tfrac12(e^4-1)$, but converting the limits is cleaner and removes a step where errors creep in.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>利用定积分的换元公式求 $\displaystyle\int_0^{2} x\,e^{x^2}\,dx$。令 $u=x^2$，$du=2x\,dx$，故 $x\,dx=\tfrac12\,du$。转换积分限：当 $x=0$ 时 $u=0$；当 $x=2$ 时 $u=4$。整个计算在 $u$ 变量下进行：</p>
+    $$\int_0^{2} x\,e^{x^2}\,dx=\frac12\int_0^{4} e^{u}\,du=\frac12\bigl[e^{u}\bigr]_0^{4}=\frac{e^{4}-1}{2}.$$
+    <p>因为积分限已转换为 $u$ 的值，无需将结果回代为 $x$。另一种方法是求不定原函数（<code>antiderivative</code>）$\tfrac12 e^{x^2}$，再代入 $x=2$ 和 $x=0$，结果相同，均为 $\tfrac12(e^4-1)$，但转换积分限更简洁，也少了一步容易出错的环节。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Going deeper: why substitution is exactly the chain rule reversed</span><span data-lang="zh">深入探讨：为何换元法恰好是链式法则的逆运算</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Let $F$ be an antiderivative of $f$, so $F'=f$. By the chain rule,</p>
+    $$\frac{d}{dx}\,F\bigl(g(x)\bigr)=F'\bigl(g(x)\bigr)\,g'(x)=f\bigl(g(x)\bigr)\,g'(x).$$
+    <p>Integrating both sides recovers $\int f(g(x))g'(x)\,dx=F(g(x))+C=\int f(u)\,du$ with $u=g(x)$. Thus the substitution rule is not a separate axiom; it is the antiderivative form of the chain rule.</p>
+    <p>For a definite integral the same identity, combined with the fundamental theorem of calculus, gives the change-of-variables rule with transformed limits. If $g$ is continuously differentiable on $[a,b]$ and $f$ is continuous on the range of $g$, then</p>
+    $$\int_a^b f\bigl(g(x)\bigr)\,g'(x)\,dx=\int_{g(a)}^{g(b)} f(u)\,du.$$
+    <p>The proof is one line: let $F'=f$, so by the chain rule $F\circ g$ is an antiderivative of $(f\circ g)\,g'$, and the fundamental theorem gives $\bigl[F(g(x))\bigr]_a^b=F(g(b))-F(g(a))=\bigl[F(u)\bigr]_{g(a)}^{g(b)}$. The practical payoff is that once the limits are converted to $u$-values there is no need to revert to $x$ at the end.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>设 $F$ 是 $f$ 的原函数，即 $F'=f$。由链式法则（<code>Chain Rule</code>）：</p>
+    $$\frac{d}{dx}\,F\bigl(g(x)\bigr)=F'\bigl(g(x)\bigr)\,g'(x)=f\bigl(g(x)\bigr)\,g'(x).$$
+    <p>两边积分即得 $\int f(g(x))g'(x)\,dx=F(g(x))+C=\int f(u)\,du$（其中 $u=g(x)$）。因此换元法不是一条独立的公理，而是链式法则在求原函数层面的体现。</p>
+    <p>对于定积分，同一等式结合微积分基本定理（<code>FTC</code>），给出带换元积分限的变量替换公式。若 $g$ 在 $[a,b]$ 上连续可微，$f$ 在 $g$ 的值域上连续，则</p>
+    $$\int_a^b f\bigl(g(x)\bigr)\,g'(x)\,dx=\int_{g(a)}^{g(b)} f(u)\,du.$$
+    <p>证明只需一行：令 $F'=f$，由链式法则知 $F\circ g$ 是 $(f\circ g)\,g'$ 的原函数，再由微积分基本定理得 $\bigl[F(g(x))\bigr]_a^b=F(g(b))-F(g(a))=\bigl[F(u)\bigr]_{g(a)}^{g(b)}$。实际意义在于：一旦积分限转换为 $u$ 的值，最终无需回代为 $x$。</p>
+  </div>
+  </div></details>
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">Which substitution best evaluates $\displaystyle\int \frac{x}{1+x^2}\,dx$?</span><span data-lang="zh">求 $\displaystyle\int \frac{x}{1+x^2}\,dx$ 最合适的换元是哪个？</span></div><span class="quiz-number">1.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$u=x$</div><div class="quiz-opt" data-idx="1">$u=1+x^2$</div><div class="quiz-opt" data-idx="2">$u=\sqrt{1+x^2}$</div><div class="quiz-opt" data-idx="3">$u=\arctan x$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. With $u=1+x^2$, $du=2x\,dx$, so the integral becomes $\tfrac12\int du/u=\tfrac12\ln(1+x^2)+C$.</span><span data-lang="zh">正确。令 $u=1+x^2$，则 $du=2x\,dx$，积分变为 $\tfrac12\int du/u=\tfrac12\ln(1+x^2)+C$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Choose the inner function whose derivative supplies the leftover factor $x$. That is $u=1+x^2$, giving $du=2x\,dx$.</span><span data-lang="zh">选取内层函数，使其导数恰好提供残余因子 $x$。即 $u=1+x^2$，给出 $du=2x\,dx$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="section-label"><span data-lang="en">Section 2</span><span data-lang="zh">第二节</span></div>
+  <h2><span data-lang="en">Integration by Parts</span><span data-lang="zh">分部积分法</span></h2>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">Integration by parts is the product rule read in reverse. It trades the integral of a product $u\,dv$ for the (ideally simpler) integral of $v\,du$, and is the method of choice when the integrand is a product of functions of different types, such as a polynomial times an exponential, or a logarithm by itself.</span><span data-lang="zh">分部积分法（<code>integration by parts</code>）是乘积法则（<code>Product Rule</code>）的逆运算。它将乘积 $u\,dv$ 的积分转化为（理想情况下更简单的）$v\,du$ 的积分，适用于被积函数是不同类型函数之积的情形，例如多项式乘指数函数，或孤立的对数函数。</span></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Integration by parts</span><span data-lang="zh">分部积分公式</span></div>
+    $$\int u\,dv \;=\; uv-\int v\,du.$$
+  </div>
+  <div data-lang="en"><p>To apply the formula one splits the integrand into a part $u$ to be differentiated and a part $dv$ to be integrated, computes $du$ and $v$, and writes down $uv-\int v\,du$. The split is well chosen when $\int v\,du$ is easier than the original. The mnemonic <strong>LIATE</strong> (Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential) ranks candidates for $u$: the function earlier in the list is usually the better choice for $u$.</p></div>
+  <div data-lang="zh"><p>应用公式时，将被积函数拆分为待微分部分 $u$ 和待积分部分 $dv$，计算 $du$ 和 $v$，写出 $uv-\int v\,du$。当 $\int v\,du$ 比原式更简单时，拆分是合理的。记忆口诀 <strong>LIATE</strong>（对数、反三角、代数、三角、指数）给出 $u$ 候选的优先级：排在前面的函数通常是更好的 $u$ 选择。</p></div>
+  <div data-lang="en"><p>The logic behind LIATE is worth internalizing rather than memorizing blindly. A good $u$ becomes simpler when differentiated, and a good $dv$ stays manageable when integrated. Logarithms and inverse trig functions have no elementary antiderivative that is simpler than themselves, so they make poor choices for $dv$ and are placed first as preferred $u$. Exponentials and the basic trig functions integrate to something of the same size, so they are happy as $dv$ and sit last. Polynomials shrink in degree under differentiation, so they belong in the middle as natural $u$ candidates whenever the other factor integrates cleanly. When two orderings both look plausible, the test is simply which one makes $\int v\,du$ easier than the integral you started with.</p></div>
+  <div data-lang="zh"><p>LIATE 背后的逻辑值得内化，而不只是死记。好的 $u$ 经微分后变得更简单；好的 $dv$ 积分后仍可操控。对数和反三角函数没有比自身更简单的初等原函数，因此不宜作为 $dv$，排在最前作为优先 $u$。指数和基本三角函数积分后规模不变，适合作为 $dv$，排在最后。多项式经微分后次数降低，只要另一个因子可以干净地积分，多项式就自然是中间位置的 $u$ 候选。当两种选法看起来都合理时，检验标准很简单：哪一种使 $\int v\,du$ 比原式更简单。</p></div>
+  <div data-lang="en"><p>Notice also that $v$ is any one antiderivative of $dv$, and the constant of integration in $v$ may be chosen freely. Usually the simplest choice ($+0$) is best, but occasionally a clever shift of the constant in $v$ cancels an awkward boundary term, a trick that streamlines several standard integrals.</p></div>
+  <div data-lang="zh"><p>另需注意，$v$ 是 $dv$ 的任意一个原函数，$v$ 中的积分常数可自由选取。通常选最简形式（即 $+0$）最合适，但偶尔巧妙地移动 $v$ 中的常数可以消去麻烦的边界项，这一技巧可以简化若干标准积分。</p></div>
+  <details><summary><span data-lang="en">Worked Example 2.1: polynomial times exponential</span><span data-lang="zh">例题 2.1：多项式乘指数函数</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int x\,e^{x}\,dx$. Take $u=x$ (algebraic, differentiates to a constant) and $dv=e^{x}\,dx$, so $du=dx$ and $v=e^{x}$.</p>
+    $$\int x\,e^{x}\,dx=x e^{x}-\int e^{x}\,dx=x e^{x}-e^{x}+C=(x-1)e^{x}+C.$$
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int x\,e^{x}\,dx$。令 $u=x$（代数型，微分后为常数），$dv=e^{x}\,dx$，则 $du=dx$，$v=e^{x}$。</p>
+    $$\int x\,e^{x}\,dx=x e^{x}-\int e^{x}\,dx=x e^{x}-e^{x}+C=(x-1)e^{x}+C.$$
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 2.2: the logarithm trick</span><span data-lang="zh">例题 2.2：对数函数技巧</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int \ln x\,dx$. There is no obvious product, so take $u=\ln x$ and $dv=dx$, giving $du=\tfrac{1}{x}\,dx$ and $v=x$.</p>
+    $$\int \ln x\,dx=x\ln x-\int x\cdot\frac{1}{x}\,dx=x\ln x-\int 1\,dx=x\ln x-x+C.$$
+    <p>The same idea handles every isolated function whose derivative is simpler than itself. The hidden $dv=dx$ supplies $v=x$, and the integrand $v\,du$ becomes elementary.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int \ln x\,dx$。没有明显的乘积结构，令 $u=\ln x$，$dv=dx$，则 $du=\tfrac{1}{x}\,dx$，$v=x$。</p>
+    $$\int \ln x\,dx=x\ln x-\int x\cdot\frac{1}{x}\,dx=x\ln x-\int 1\,dx=x\ln x-x+C.$$
+    <p>同样的思路适用于所有"导数比自身更简单"的孤立函数。隐含的 $dv=dx$ 提供 $v=x$，被积量 $v\,du$ 随即变为初等形式。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 2.3: inverse trig by parts</span><span data-lang="zh">例题 2.3：反三角函数的分部积分</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int \arctan x\,dx$. As with $\ln x$, take $u=\arctan x$ and $dv=dx$, so $du=\tfrac{1}{1+x^2}\,dx$ and $v=x$:</p>
+    $$\int \arctan x\,dx=x\arctan x-\int \frac{x}{1+x^2}\,dx.$$
+    <p>The residual integral is a substitution, $w=1+x^2$, $dw=2x\,dx$, giving $\int\tfrac{x}{1+x^2}\,dx=\tfrac12\ln(1+x^2)$. Therefore</p>
+    $$\int \arctan x\,dx=x\arctan x-\frac12\ln(1+x^2)+C.$$
+    <p>This is the canonical example of an integral that needs parts to start and substitution to finish. The Inverse-trig "I" in LIATE outranks everything else, which is exactly why $\arctan x$ becomes $u$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int \arctan x\,dx$。与 $\ln x$ 同理，令 $u=\arctan x$，$dv=dx$，则 $du=\tfrac{1}{1+x^2}\,dx$，$v=x$：</p>
+    $$\int \arctan x\,dx=x\arctan x-\int \frac{x}{1+x^2}\,dx.$$
+    <p>剩余积分用换元法，令 $w=1+x^2$，$dw=2x\,dx$，得 $\int\tfrac{x}{1+x^2}\,dx=\tfrac12\ln(1+x^2)$。因此</p>
+    $$\int \arctan x\,dx=x\arctan x-\frac12\ln(1+x^2)+C.$$
+    <p>这是"分部积分开头、换元收尾"的典型例子。LIATE 中反三角函数（"I"）优先级最高，这正是 $\arctan x$ 成为 $u$ 的原因。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 2.4: a polynomial times a sine</span><span data-lang="zh">例题 2.4：多项式乘正弦函数</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int x\sin x\,dx$. By LIATE the algebraic factor $x$ becomes $u$ and $dv=\sin x\,dx$, so $du=dx$ and $v=-\cos x$:</p>
+    $$\int x\sin x\,dx=-x\cos x-\int(-\cos x)\,dx=-x\cos x+\int\cos x\,dx=-x\cos x+\sin x+C.$$
+    <p>The sign bookkeeping is where most slips occur: $v=-\cos x$ carries a minus that then meets the minus in $-\int v\,du$, producing the $+\int\cos x\,dx$. Differentiating $-x\cos x+\sin x$ returns $-\cos x+x\sin x+\cos x=x\sin x$, which confirms the answer.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int x\sin x\,dx$。按 LIATE，代数因子 $x$ 作为 $u$，$dv=\sin x\,dx$，则 $du=dx$，$v=-\cos x$：</p>
+    $$\int x\sin x\,dx=-x\cos x-\int(-\cos x)\,dx=-x\cos x+\int\cos x\,dx=-x\cos x+\sin x+C.$$
+    <p>符号追踪是最容易出错的地方：$v=-\cos x$ 带有一个负号，与 $-\int v\,du$ 中的负号相遇，产生 $+\int\cos x\,dx$。对 $-x\cos x+\sin x$ 求导得 $-\cos x+x\sin x+\cos x=x\sin x$，验证正确。</p>
+  </div>
+  </div></details>
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Choosing $u$ and $dv$ the wrong way around and making the integral worse. For $\int x e^{x}\,dx$ the choice $u=e^{x}$, $dv=x\,dx$ gives $v=\tfrac{x^2}{2}$ and a new integral $\int \tfrac{x^2}{2}e^{x}\,dx$ with a higher power of $x$ than before. The integral is not wrong, just unproductive: parts is only useful when $\int v\,du$ is simpler than $\int u\,dv$. The fix is to let the polynomial be $u$ so that differentiation lowers its degree, exactly as LIATE prescribes.</span><span data-lang="zh">将 $u$ 和 $dv$ 的选取搞反，使积分变得更复杂。对于 $\int x e^{x}\,dx$，若令 $u=e^{x}$、$dv=x\,dx$，则 $v=\tfrac{x^2}{2}$，产生新积分 $\int \tfrac{x^2}{2}e^{x}\,dx$，$x$ 的次数反而升高。这个积分本身没有错，只是毫无进展：分部积分法只有在 $\int v\,du$ 比原式更简单时才有用。正确做法是让多项式作为 $u$，使微分降次，这正是 LIATE 的规定。</span></div>
+  <details><summary><span data-lang="en">Going deeper: deriving the formula from the product rule</span><span data-lang="zh">深入探讨：从乘积法则推导分部积分公式</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Let $u(x)$ and $v(x)$ be differentiable. The product rule gives</p>
+    $$\frac{d}{dx}\bigl(u v\bigr)=u\,\frac{dv}{dx}+v\,\frac{du}{dx}.$$
+    <p>Integrate both sides with respect to $x$. The left side integrates to $uv$, so</p>
+    $$uv=\int u\,dv+\int v\,du \quad\Longrightarrow\quad \int u\,dv=uv-\int v\,du.$$
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>设 $u(x)$ 和 $v(x)$ 均可微。由乘积法则（<code>Product Rule</code>）：</p>
+    $$\frac{d}{dx}\bigl(u v\bigr)=u\,\frac{dv}{dx}+v\,\frac{du}{dx}.$$
+    <p>两边对 $x$ 积分，左边积分得 $uv$，因此</p>
+    $$uv=\int u\,dv+\int v\,du \quad\Longrightarrow\quad \int u\,dv=uv-\int v\,du.$$
+  </div>
+  </div></details>
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">For $\displaystyle\int x\cos x\,dx$, which choice of $u$ follows LIATE?</span><span data-lang="zh">对于 $\displaystyle\int x\cos x\,dx$，按 LIATE 应如何选取 $u$？</span></div><span class="quiz-number">2.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$u=x$, $dv=\cos x\,dx$</div><div class="quiz-opt" data-idx="1">$u=\cos x$, $dv=x\,dx$</div><div class="quiz-opt" data-idx="2">$u=x\cos x$, $dv=dx$</div><div class="quiz-opt" data-idx="3">$u=1$, $dv=x\cos x\,dx$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Algebraic ($x$) precedes Trigonometric ($\cos x$) in LIATE, so $u=x$. Then $\int x\cos x\,dx=x\sin x+\cos x+C$.</span><span data-lang="zh">正确。LIATE 中代数型（$x$）优先于三角型（$\cos x$），故 $u=x$。于是 $\int x\cos x\,dx=x\sin x+\cos x+C$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Algebraic outranks Trigonometric in LIATE, so the polynomial $x$ should be $u$ and $\cos x\,dx$ should be $dv$.</span><span data-lang="zh">LIATE 中代数型优先于三角型，多项式 $x$ 应作为 $u$，$\cos x\,dx$ 作为 $dv$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="section-label"><span data-lang="en">Section 3</span><span data-lang="zh">第三节</span></div>
+  <h2><span data-lang="en">Repeated Integration by Parts</span><span data-lang="zh">多次分部积分</span></h2>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">When one application of parts leaves a residual integral that is still a product, apply parts again. Two patterns dominate: the polynomial degree drops by one each time until it vanishes, and the cyclic case in which the original integral reappears and can be solved algebraically.</span><span data-lang="zh">当一次分部积分后剩余积分仍是乘积形式时，再次应用分部积分法。两种主要模式：多项式次数每次降一，直到消失为零；以及循环型——原积分重新出现，可代数求解。</span></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">The cyclic (reappearing integral) pattern</span><span data-lang="zh">循环型（原积分再现）模式</span></div>
+    $$I=\int e^{ax}\cos(bx)\,dx \;\Longrightarrow\; I=\frac{e^{ax}\bigl(a\cos bx+b\sin bx\bigr)}{a^2+b^2}+C.$$
+  </div>
+  <div data-lang="en"><p>In the cyclic case two applications of parts return a multiple of the original integral $I$ on the right side. Collecting the $I$ terms and dividing solves for $I$ without ever reducing it to an elementary antiderivative directly.</p></div>
+  <div data-lang="zh"><p>在循环型情形中，两次分部积分后右侧出现原积分 $I$ 的倍数。收集 $I$ 项后除以系数，即可直接解出 $I$，无需将其化为某个初等原函数。</p></div>
+  <div data-lang="en"><p>The two patterns are distinguished by what happens to the polynomial-or-non-polynomial factor under repeated differentiation. If you are differentiating a polynomial, each pass lowers its degree by one, so a degree-$n$ polynomial terminates after exactly $n+1$ rows. If instead both factors merely cycle under differentiation and integration (as $e^{ax}$ and $\sin bx$ do), the integral never terminates by attrition; it must be closed algebraically when the original integral reappears. Recognizing which pattern you are in before you start saves a great deal of wasted work.</p></div>
+  <div data-lang="zh"><p>两种模式的区分在于：反复微分后，多项式（或非多项式）因子发生了什么变化。若微分的是多项式，每次次数降一，$n$ 次多项式恰好在 $n+1$ 行后终止。若两个因子在微分和积分下只是循环（如 $e^{ax}$ 和 $\sin bx$），积分永远不会自然终止，必须在原积分重现时代数求解。在动手之前先判断属于哪种模式，可以避免大量徒劳的计算。</p></div>
+  <div class="concept-box orange"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">In the cyclic case, switching the roles of $u$ and $dv$ between the first and second application. If the first step differentiates $e^{x}$ and integrates the trig factor, the second step must do the same (differentiate the exponential, integrate the trig factor). Swapping roles midstream, say differentiating the trig factor on the second pass, simply undoes the first step and returns you to the original integral with no progress. Keep the assignment of $u$ and $dv$ consistent across both passes so that $I$ genuinely reappears.</span><span data-lang="zh">在循环型情形中，第一次和第二次应用时互换 $u$ 和 $dv$ 的角色。若第一步对 $e^{x}$ 微分、对三角因子积分，则第二步必须采用相同的策略（对指数微分、对三角积分）。中途互换角色（例如第二次对三角因子微分）只会撤销第一步，使你回到原积分而毫无进展。两次应用中 $u$ 和 $dv$ 的分配必须保持一致，$I$ 才能真正重现。</span></div>
+  <details><summary><span data-lang="en">Worked Example 3.1: degree-two polynomial</span><span data-lang="zh">例题 3.1：二次多项式</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int x^2 e^{x}\,dx$. First take $u=x^2$, $dv=e^{x}\,dx$:</p>
+    $$\int x^2 e^{x}\,dx=x^2 e^{x}-2\int x e^{x}\,dx.$$
+    <p>From Worked Example 2.1, $\int x e^{x}\,dx=(x-1)e^{x}+C$. Hence</p>
+    $$\int x^2 e^{x}\,dx=x^2 e^{x}-2(x-1)e^{x}+C=(x^2-2x+2)e^{x}+C.$$
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int x^2 e^{x}\,dx$。先令 $u=x^2$，$dv=e^{x}\,dx$：</p>
+    $$\int x^2 e^{x}\,dx=x^2 e^{x}-2\int x e^{x}\,dx.$$
+    <p>由例题 2.1，$\int x e^{x}\,dx=(x-1)e^{x}+C$。故</p>
+    $$\int x^2 e^{x}\,dx=x^2 e^{x}-2(x-1)e^{x}+C=(x^2-2x+2)e^{x}+C.$$
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 3.2: the cyclic case</span><span data-lang="zh">例题 3.2：循环型情形</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle I=\int e^{x}\sin x\,dx$. Take $u=e^{x}$, $dv=\sin x\,dx$, so $v=-\cos x$:</p>
+    $$I=-e^{x}\cos x+\int e^{x}\cos x\,dx.$$
+    <p>Apply parts again to the new integral with $u=e^{x}$, $dv=\cos x\,dx$, $v=\sin x$:</p>
+    $$\int e^{x}\cos x\,dx=e^{x}\sin x-\int e^{x}\sin x\,dx=e^{x}\sin x-I.$$
+    <p>Substitute and solve: $I=-e^{x}\cos x+e^{x}\sin x-I$, so $2I=e^{x}(\sin x-\cos x)$ and</p>
+    $$I=\frac{e^{x}(\sin x-\cos x)}{2}+C.$$
+    <p>The constant $C$ is reinstated only at the very end. While solving algebraically for $I$ we treat $I$ as a single unknown quantity and the bare antiderivatives without their constants; the family of antiderivatives is recovered by appending $+C$ once $I$ is isolated.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle I=\int e^{x}\sin x\,dx$。令 $u=e^{x}$，$dv=\sin x\,dx$，则 $v=-\cos x$：</p>
+    $$I=-e^{x}\cos x+\int e^{x}\cos x\,dx.$$
+    <p>对新积分再次应用分部积分，令 $u=e^{x}$，$dv=\cos x\,dx$，$v=\sin x$：</p>
+    $$\int e^{x}\cos x\,dx=e^{x}\sin x-\int e^{x}\sin x\,dx=e^{x}\sin x-I.$$
+    <p>代入并求解：$I=-e^{x}\cos x+e^{x}\sin x-I$，故 $2I=e^{x}(\sin x-\cos x)$，从而</p>
+    $$I=\frac{e^{x}(\sin x-\cos x)}{2}+C.$$
+    <p>积分常数 $C$ 仅在最后代数解出 $I$ 之后加回。求解过程中，将 $I$ 视为单一未知量，原函数不携带常数；求出 $I$ 后再补上 $+C$ 即得全体原函数。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 3.3: the general $e^{ax}\cos(bx)$ pattern</span><span data-lang="zh">例题 3.3：一般 $e^{ax}\cos(bx)$ 型</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle I=\int e^{2x}\cos(3x)\,dx$, an instance of the boxed formula with $a=2$, $b=3$. Take $u=e^{2x}$, $dv=\cos(3x)\,dx$, so $v=\tfrac13\sin(3x)$:</p>
+    $$I=\frac{1}{3}e^{2x}\sin(3x)-\frac{2}{3}\int e^{2x}\sin(3x)\,dx.$$
+    <p>Apply parts again to the new integral with $u=e^{2x}$, $dv=\sin(3x)\,dx$, $v=-\tfrac13\cos(3x)$:</p>
+    $$\int e^{2x}\sin(3x)\,dx=-\frac{1}{3}e^{2x}\cos(3x)+\frac{2}{3}\int e^{2x}\cos(3x)\,dx=-\frac{1}{3}e^{2x}\cos(3x)+\frac{2}{3}I.$$
+    <p>Substitute back: $I=\tfrac13 e^{2x}\sin(3x)-\tfrac23\bigl(-\tfrac13 e^{2x}\cos(3x)+\tfrac23 I\bigr)$, which is $I=\tfrac13 e^{2x}\sin(3x)+\tfrac29 e^{2x}\cos(3x)-\tfrac49 I$. Collecting, $\tfrac{13}{9}I=\tfrac19 e^{2x}\bigl(3\sin(3x)+2\cos(3x)\bigr)$, so</p>
+    $$I=\frac{e^{2x}\bigl(2\cos(3x)+3\sin(3x)\bigr)}{13}+C,$$
+    <p>which matches the closed form $\tfrac{e^{ax}(a\cos bx+b\sin bx)}{a^2+b^2}$ with $a^2+b^2=4+9=13$. Memorizing the closed form is convenient, but reconstructing it by two passes of parts is a reliable fallback when the formula slips.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle I=\int e^{2x}\cos(3x)\,dx$，这是方框公式中 $a=2$、$b=3$ 的特例。令 $u=e^{2x}$，$dv=\cos(3x)\,dx$，则 $v=\tfrac13\sin(3x)$：</p>
+    $$I=\frac{1}{3}e^{2x}\sin(3x)-\frac{2}{3}\int e^{2x}\sin(3x)\,dx.$$
+    <p>对新积分再次应用分部积分，令 $u=e^{2x}$，$dv=\sin(3x)\,dx$，$v=-\tfrac13\cos(3x)$：</p>
+    $$\int e^{2x}\sin(3x)\,dx=-\frac{1}{3}e^{2x}\cos(3x)+\frac{2}{3}\int e^{2x}\cos(3x)\,dx=-\frac{1}{3}e^{2x}\cos(3x)+\frac{2}{3}I.$$
+    <p>代入：$I=\tfrac13 e^{2x}\sin(3x)-\tfrac23\bigl(-\tfrac13 e^{2x}\cos(3x)+\tfrac23 I\bigr)$，即 $I=\tfrac13 e^{2x}\sin(3x)+\tfrac29 e^{2x}\cos(3x)-\tfrac49 I$。整理得 $\tfrac{13}{9}I=\tfrac19 e^{2x}\bigl(3\sin(3x)+2\cos(3x)\bigr)$，故</p>
+    $$I=\frac{e^{2x}\bigl(2\cos(3x)+3\sin(3x)\bigr)}{13}+C,$$
+    <p>与封闭公式 $\tfrac{e^{ax}(a\cos bx+b\sin bx)}{a^2+b^2}$（$a^2+b^2=4+9=13$）吻合。记住封闭公式固然方便，但用两次分部积分重新推导是忘记公式时的可靠备用方法。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 3.4: a degree-two polynomial against a cosine</span><span data-lang="zh">例题 3.4：二次多项式乘余弦函数</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int x^2 \cos x\,dx$. This is the polynomial-attrition pattern, not the cyclic one: each pass lowers the degree of $x^2$. Take $u=x^2$, $dv=\cos x\,dx$, $v=\sin x$:</p>
+    $$\int x^2\cos x\,dx=x^2\sin x-2\int x\sin x\,dx.$$
+    <p>From Worked Example 2.4, $\int x\sin x\,dx=-x\cos x+\sin x$. Substitute:</p>
+    $$\int x^2\cos x\,dx=x^2\sin x-2\bigl(-x\cos x+\sin x\bigr)+C=x^2\sin x+2x\cos x-2\sin x+C.$$
+    <p>Two applications suffice because the degree dropped from $2$ to $1$ to $0$. A differentiation check returns $2x\sin x+x^2\cos x+2\cos x-2x\sin x-2\cos x=x^2\cos x$, as required. Contrast this with Worked Example 3.2, where neither factor was a polynomial and the integral instead had to be closed algebraically.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int x^2 \cos x\,dx$。这是多项式消耗型而非循环型：每次次数降一。令 $u=x^2$，$dv=\cos x\,dx$，$v=\sin x$：</p>
+    $$\int x^2\cos x\,dx=x^2\sin x-2\int x\sin x\,dx.$$
+    <p>由例题 2.4，$\int x\sin x\,dx=-x\cos x+\sin x$。代入：</p>
+    $$\int x^2\cos x\,dx=x^2\sin x-2\bigl(-x\cos x+\sin x\bigr)+C=x^2\sin x+2x\cos x-2\sin x+C.$$
+    <p>两次应用即足，因为次数从 $2$ 降到 $1$ 再到 $0$。验证：对结果求导得 $2x\sin x+x^2\cos x+2\cos x-2x\sin x-2\cos x=x^2\cos x$，正确。对比例题 3.2——该例中两个因子都不是多项式，积分必须代数求解。</p>
+  </div>
+  </div></details>
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">How many times must integration by parts be applied to reduce $\displaystyle\int x^3 e^{x}\,dx$ to an integral with no polynomial factor?</span><span data-lang="zh">对 $\displaystyle\int x^3 e^{x}\,dx$ 需要应用几次分部积分，才能消去所有多项式因子？</span></div><span class="quiz-number">3.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">Once</span><span data-lang="zh">一次</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">Twice</span><span data-lang="zh">两次</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">Three times</span><span data-lang="zh">三次</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">It never terminates</span><span data-lang="zh">永远不会终止</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Each application drops the degree by one, so a degree-three polynomial requires three applications to reach $\int e^{x}\,dx$.</span><span data-lang="zh">正确。每次应用使次数降一，三次多项式需要三次才能化为 $\int e^{x}\,dx$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Each pass with $u$ taken as the polynomial lowers its degree by one. From degree three that is three applications.</span><span data-lang="zh">每次以多项式作为 $u$ 时，次数降一。从三次出发，需要三次应用。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="section-label"><span data-lang="en">Section 4</span><span data-lang="zh">第四节</span></div>
+  <h2><span data-lang="en">Tabular Integration</span><span data-lang="zh">表格积分法</span></h2>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">Tabular integration is a bookkeeping shortcut for repeated integration by parts. It is ideal when one factor differentiates to zero after finitely many steps (a polynomial) and the other integrates easily without growing in complexity.</span><span data-lang="zh">表格积分法是多次分部积分的记账捷径。当一个因子经有限次微分后变为零（即多项式），而另一个因子可以方便地反复积分而不增加复杂度时，此方法最为适用。</span></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Tabular formula for a polynomial times an easily integrated factor</span><span data-lang="zh">多项式乘易积函数的表格公式</span></div>
+    $$\int p(x)\,g(x)\,dx=p\,G_1-p'\,G_2+p''\,G_3-\cdots,$$
+  </div>
+  <div data-lang="en"><p>where the first column lists $p$ and its successive derivatives (differentiate down to $0$) and the second column lists successive antiderivatives $G_1,G_2,\dots$ of $g$. Multiply along the diagonals and alternate the signs $+,-,+,-,\dots$ The method is exactly repeated parts; the table merely automates the choice $u=$ polynomial at every step.</p></div>
+  <div data-lang="zh"><p>其中第一列列出 $p$ 及其各阶导数（逐步微分至 $0$），第二列列出 $g$ 的逐次原函数 $G_1,G_2,\dots$。沿对角线相乘并交替使用符号 $+,-,+,-,\dots$。该方法本质上是多次分部积分；表格只是在每一步自动选取 $u=$ 多项式。</p></div>
+  <div data-lang="en"><p>Two reading rules keep the table honest. First, the signs alternate starting with $+$ on the top diagonal, so the $k$-th term carries the sign $(-1)^{k}$ if the first term is counted as $k=0$. Second, each diagonal product pairs an entry of the derivative column with the antiderivative one row below it; the very last derivative entry (the $0$) has no partner and contributes nothing. When the derivative column truly reaches $0$, the table is complete and no leftover integral remains. When it does not reach $0$, you stop at a convenient row and append the integral of the product of the last row's entries, with the running sign, as a residual.</p></div>
+  <div data-lang="zh"><p>两条读表规则确保表格的正确性。其一，符号从最顶对角线的 $+$ 开始交替，第 $k$ 项（从 $k=0$ 计数）的符号为 $(-1)^k$。其二，每条对角线乘积将微分列的某一项与其下一行的原函数配对；最后一条微分列条目（即 $0$）没有对应的配对项，不贡献任何内容。当微分列真正达到 $0$ 时，表格完成，无剩余积分。若无法达到 $0$，可在方便的行处停止，将最后一行两列条目之积乘以当前符号作为剩余积分附加。</p></div>
+  <details><summary><span data-lang="en">Worked Example 4.1: tabular method on a cubic</span><span data-lang="zh">例题 4.1：三次多项式的表格法</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int x^3 \sin x\,dx$. Differentiate $x^3$ in the left column and integrate $\sin x$ in the right column:</p>
+    $$\begin{array}{c|cc}\text{sign}&D\;(x^3)&I\;(\sin x)\\\hline +&x^3&-\cos x\\ -&3x^2&-\sin x\\ +&6x&\cos x\\ -&6&\sin x\\ +&0&\end{array}$$
+    <p>Multiply along the diagonals with the leading signs:</p>
+    $$\int x^3\sin x\,dx=-x^3\cos x+3x^2\sin x+6x\cos x-6\sin x+C.$$
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int x^3 \sin x\,dx$。左列对 $x^3$ 逐次微分，右列对 $\sin x$ 逐次积分：</p>
+    $$\begin{array}{c|cc}\text{符号}&D\;(x^3)&I\;(\sin x)\\\hline +&x^3&-\cos x\\ -&3x^2&-\sin x\\ +&6x&\cos x\\ -&6&\sin x\\ +&0&\end{array}$$
+    <p>沿对角线相乘并加上各项符号：</p>
+    $$\int x^3\sin x\,dx=-x^3\cos x+3x^2\sin x+6x\cos x-6\sin x+C.$$
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 4.2: when tabular still helps without a vanishing column</span><span data-lang="zh">例题 4.2：微分列不消失时表格法仍然有效</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>For $\displaystyle\int x^2 e^{2x}\,dx$ the left column terminates at $0$ after two derivatives, and antiderivatives of $e^{2x}$ are $\tfrac12 e^{2x},\tfrac14 e^{2x},\tfrac18 e^{2x}$. Diagonals give</p>
+    $$\int x^2 e^{2x}\,dx=\frac{x^2}{2}e^{2x}-\frac{2x}{4}e^{2x}+\frac{2}{8}e^{2x}+C=\frac{e^{2x}}{4}\bigl(2x^2-2x+1\bigr)+C.$$
+    <p>The care point here is that each step down the right column integrates the previous antiderivative, not the original $e^{2x}$. Because $\int e^{2x}\,dx=\tfrac12 e^{2x}$, every descent multiplies in another $\tfrac12$, producing $\tfrac12,\tfrac14,\tfrac18$. A common slip is to write $e^{2x},e^{2x},e^{2x}$ down the column, forgetting that integrating $e^{2x}$ repeatedly accumulates factors of $\tfrac12$.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>对于 $\displaystyle\int x^2 e^{2x}\,dx$，左列经两次微分后归零，$e^{2x}$ 的逐次原函数为 $\tfrac12 e^{2x},\tfrac14 e^{2x},\tfrac18 e^{2x}$。沿对角线计算：</p>
+    $$\int x^2 e^{2x}\,dx=\frac{x^2}{2}e^{2x}-\frac{2x}{4}e^{2x}+\frac{2}{8}e^{2x}+C=\frac{e^{2x}}{4}\bigl(2x^2-2x+1\bigr)+C.$$
+    <p>注意：右列每向下一步，是对上一个原函数再次积分，而非对原始 $e^{2x}$ 积分。由于 $\int e^{2x}\,dx=\tfrac12 e^{2x}$，每次下降都累积一个 $\tfrac12$ 因子，得到 $\tfrac12,\tfrac14,\tfrac18$。常见错误是在右列全部写成 $e^{2x},e^{2x},e^{2x}$，忘记了重复积分会积累 $\tfrac12$ 因子。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 4.3: a residual integral that does not vanish</span><span data-lang="zh">例题 4.3：含不消失剩余积分的情形</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Tabular integration also handles cases where the derivative column never reaches $0$, provided you stop and pick up a residual integral. Consider $\displaystyle\int x\,\sec^2 x\,dx$. Differentiate $x$ (reaching $0$ after one step) and integrate $\sec^2 x$ to $\tan x$:</p>
+    $$\begin{array}{c|cc}\text{sign}&D\;(x)&I\;(\sec^2 x)\\\hline +&x&\tan x\\ -&1&\ldots\end{array}$$
+    <p>The first diagonal gives $+x\tan x$. The next row pairs the derivative $1$ with the antiderivative $\tan x$ under the running sign $-$, leaving the residual $-\int 1\cdot\tan x\,dx$. Since $\int\tan x\,dx=-\ln|\cos x|$, we obtain</p>
+    $$\int x\sec^2 x\,dx=x\tan x-\int \tan x\,dx=x\tan x+\ln|\cos x|+C.$$
+    <p>Here the polynomial $x$ does terminate, so a single diagonal plus one residual integral finishes the job. The lesson is that tabular bookkeeping is valid even when the second column does not integrate to itself.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>表格积分法也能处理微分列无法归零的情形，只需在合适处停止并附加剩余积分。考虑 $\displaystyle\int x\,\sec^2 x\,dx$。对 $x$ 微分（一步后归零），对 $\sec^2 x$ 积分得 $\tan x$：</p>
+    $$\begin{array}{c|cc}\text{符号}&D\;(x)&I\;(\sec^2 x)\\\hline +&x&\tan x\\ -&1&\ldots\end{array}$$
+    <p>第一条对角线给出 $+x\tan x$。下一行将导数 $1$ 与原函数 $\tan x$ 在符号 $-$ 下配对，留下剩余积分 $-\int 1\cdot\tan x\,dx$。由于 $\int\tan x\,dx=-\ln|\cos x|$，得到</p>
+    $$\int x\sec^2 x\,dx=x\tan x-\int \tan x\,dx=x\tan x+\ln|\cos x|+C.$$
+    <p>这里多项式 $x$ 确实终止，因此一条对角线加一个剩余积分即可完成。这说明即使右列不是自积分型，表格记账方法依然有效。</p>
+  </div>
+  </div></details>
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Getting the alternating signs wrong by attaching them to the wrong diagonal. The signs run $+,-,+,-,\dots$ down the diagonals beginning with $+$, and each sign multiplies a product of the derivative entry with the antiderivative one row down, not the entries in the same row. Students often line the signs up with the rows of the differentiation column instead, which shifts every sign by one and flips the answer. Write the sign column explicitly, as in the tables above, to avoid the slip.</span><span data-lang="zh">将交替符号错误地附加到错误的对角线上。符号从 $+$ 开始沿对角线交替，即 $+,-,+,-,\dots$；每个符号乘以微分列某项与其下一行原函数的乘积，而非同一行两列的乘积。学生常将符号与微分列的行对齐，这会使每个符号偏移一位，导致答案正负号全错。如上表所示，明确写出符号列可以避免此错误。</span></div>
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">Tabular integration is most directly applicable when one factor is</span><span data-lang="zh">表格积分法最直接适用于以下哪种情形：其中一个因子是</span></div><span class="quiz-number">4.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">a logarithm</span><span data-lang="zh">对数函数</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">an inverse trig function</span><span data-lang="zh">反三角函数</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">a quotient of polynomials</span><span data-lang="zh">多项式的商</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">a polynomial that differentiates to zero</span><span data-lang="zh">经有限次微分后变为零的多项式</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. A polynomial differentiates to $0$ after finitely many steps, terminating the table cleanly.</span><span data-lang="zh">正确。多项式经有限次微分后归零，使表格干净地终止。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The table terminates only when the differentiated column reaches $0$, which happens for a polynomial.</span><span data-lang="zh">只有当微分列达到 $0$ 时，表格才能终止，而这只发生在多项式的情形下。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="section-label"><span data-lang="en">Section 5</span><span data-lang="zh">第五节</span></div>
+  <h2><span data-lang="en">Definite Integrals by Parts</span><span data-lang="zh">定积分的分部积分</span></h2>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">For a definite integral, carry the limits through the parts formula. The boundary term $uv$ is evaluated at the endpoints, and the remaining integral keeps the same limits. There is no need to back-substitute to the original variable.</span><span data-lang="zh">对于定积分（<code>definite integral</code>），将积分限带入分部积分公式。边界项 $uv$ 在端点处取值，剩余积分保持相同的积分限。无需将变量回代为原变量。</span></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Integration by parts on $[a,b]$</span><span data-lang="zh">$[a,b]$ 上的分部积分公式</span></div>
+    $$\int_a^b u\,dv=\Bigl[uv\Bigr]_a^b-\int_a^b v\,du=u(b)v(b)-u(a)v(a)-\int_a^b v\,du.$$
+  </div>
+  <div data-lang="en"><p>The same LIATE guidance applies to the choice of $u$ and $dv$. Evaluate the boundary term as a number and then handle the residual definite integral, applying parts again or substitution as needed.</p></div>
+  <div data-lang="zh"><p>$u$ 和 $dv$ 的选取仍遵循 LIATE 原则。将边界项化为数值，再处理剩余定积分，视需要再次应用分部积分法或换元法。</p></div>
+  <div data-lang="en"><p>A subtle point arises when the residual integral itself requires a substitution. If you change variables inside $\int_a^b v\,du$, you must either convert the limits to the new variable or revert to the original variable before substituting the original limits. The boundary term $[uv]_a^b$, by contrast, is always evaluated in the original variable $x$ at the original endpoints, because $u$ and $v$ are functions of $x$. Mixing the two conventions is the most common source of error in definite-integral problems that combine parts with substitution.</p></div>
+  <div data-lang="zh"><p>一个微妙之处在于：当剩余积分本身需要换元时，在 $\int_a^b v\,du$ 内部换元后，必须将积分限转换为新变量，或者回代原变量后再代入原来的端点值。相比之下，边界项 $[uv]_a^b$ 始终在原变量 $x$ 下、在原端点处求值，因为 $u$ 和 $v$ 都是 $x$ 的函数。将两种做法混用，是结合分部积分与换元法的定积分问题中最常见的错误根源。</p></div>
+  <div class="concept-box orange"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Forgetting to evaluate the boundary term $[uv]_a^b$ and instead leaving it as an indefinite expression $uv$. In a definite integral the boundary term is a number obtained by plugging in $b$ and $a$ and subtracting; only the residual $\int_a^b v\,du$ remains as an integral. Writing $\int_a^b u\,dv=uv-\int_a^b v\,du$ with an un-evaluated $uv$ is incomplete and usually leads to an answer that still contains the variable of integration. Always reduce $[uv]_a^b$ to $u(b)v(b)-u(a)v(a)$ before reporting the value.</span><span data-lang="zh">忘记对边界项 $[uv]_a^b$ 求值，而将其作为不定表达式 $uv$ 保留。在定积分中，边界项是代入 $b$ 和 $a$ 后相减所得的数值；只有剩余的 $\int_a^b v\,du$ 仍是积分。写出 $\int_a^b u\,dv=uv-\int_a^b v\,du$ 而不对 $uv$ 求值是不完整的，通常导致答案仍含积分变量。报告结果前务必将 $[uv]_a^b$ 化为 $u(b)v(b)-u(a)v(a)$。</span></div>
+  <details><summary><span data-lang="en">Worked Example 5.1: a definite parts integral</span><span data-lang="zh">例题 5.1：定积分的分部积分</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int_0^{1} x e^{x}\,dx$. With $u=x$, $dv=e^{x}\,dx$, $du=dx$, $v=e^{x}$:</p>
+    $$\int_0^{1} x e^{x}\,dx=\Bigl[x e^{x}\Bigr]_0^{1}-\int_0^{1} e^{x}\,dx=\bigl(1\cdot e\bigr)-\Bigl[e^{x}\Bigr]_0^{1}=e-(e-1)=1.$$
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int_0^{1} x e^{x}\,dx$。令 $u=x$，$dv=e^{x}\,dx$，则 $du=dx$，$v=e^{x}$：</p>
+    $$\int_0^{1} x e^{x}\,dx=\Bigl[x e^{x}\Bigr]_0^{1}-\int_0^{1} e^{x}\,dx=\bigl(1\cdot e\bigr)-\Bigl[e^{x}\Bigr]_0^{1}=e-(e-1)=1.$$
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 5.2: logarithm on an interval</span><span data-lang="zh">例题 5.2：区间上的对数积分</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int_1^{e} \ln x\,dx$. Using $\int\ln x\,dx=x\ln x-x$ from Worked Example 2.2:</p>
+    $$\int_1^{e}\ln x\,dx=\Bigl[x\ln x-x\Bigr]_1^{e}=\bigl(e\cdot 1-e\bigr)-\bigl(1\cdot 0-1\bigr)=0-(-1)=1.$$
+    <p>At the upper limit $x=e$ we used $\ln e=1$, and at the lower limit $x=1$ we used $\ln 1=0$. The area under $\ln x$ from $1$ to $e$ is therefore exactly one square unit, a clean result that is easy to sanity-check against the graph: $\ln x$ rises from $0$ to $1$ across an interval of width $e-1\approx 1.718$, so an area near $1$ is plausible.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int_1^{e} \ln x\,dx$。利用例题 2.2 中的 $\int\ln x\,dx=x\ln x-x$：</p>
+    $$\int_1^{e}\ln x\,dx=\Bigl[x\ln x-x\Bigr]_1^{e}=\bigl(e\cdot 1-e\bigr)-\bigl(1\cdot 0-1\bigr)=0-(-1)=1.$$
+    <p>在上限 $x=e$ 处用 $\ln e=1$，在下限 $x=1$ 处用 $\ln 1=0$。因此 $\ln x$ 在 $1$ 到 $e$ 的面积恰好是一个平方单位，这是一个优美的结果：$\ln x$ 在宽度为 $e-1\approx 1.718$ 的区间上从 $0$ 升至 $1$，面积约为 $1$ 是合理的。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 5.3: parts combined with a substitution and converted limits</span><span data-lang="zh">例题 5.3：分部积分结合换元与积分限转换</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int_0^{1} \arctan x\,dx$. Take $u=\arctan x$, $dv=dx$, so $du=\tfrac{1}{1+x^2}\,dx$, $v=x$:</p>
+    $$\int_0^{1}\arctan x\,dx=\Bigl[x\arctan x\Bigr]_0^{1}-\int_0^{1}\frac{x}{1+x^2}\,dx.$$
+    <p>The boundary term is $1\cdot\arctan 1-0=\tfrac{\pi}{4}$. For the residual, substitute $w=1+x^2$, $dw=2x\,dx$; the limits become $w(0)=1$ and $w(1)=2$:</p>
+    $$\int_0^{1}\frac{x}{1+x^2}\,dx=\frac12\int_1^{2}\frac{dw}{w}=\frac12\bigl[\ln w\bigr]_1^{2}=\frac12\ln 2.$$
+    <p>Therefore $\displaystyle\int_0^{1}\arctan x\,dx=\frac{\pi}{4}-\frac12\ln 2\approx 0.4388$. The boundary term stayed in $x$ at the original endpoints, while the residual integral switched cleanly to $w$ with its own limits $1$ and $2$. This is the disciplined way to combine the two methods.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int_0^{1} \arctan x\,dx$。令 $u=\arctan x$，$dv=dx$，则 $du=\tfrac{1}{1+x^2}\,dx$，$v=x$：</p>
+    $$\int_0^{1}\arctan x\,dx=\Bigl[x\arctan x\Bigr]_0^{1}-\int_0^{1}\frac{x}{1+x^2}\,dx.$$
+    <p>边界项为 $1\cdot\arctan 1-0=\tfrac{\pi}{4}$。对剩余积分，令 $w=1+x^2$，$dw=2x\,dx$；积分限变为 $w(0)=1$，$w(1)=2$：</p>
+    $$\int_0^{1}\frac{x}{1+x^2}\,dx=\frac12\int_1^{2}\frac{dw}{w}=\frac12\bigl[\ln w\bigr]_1^{2}=\frac12\ln 2.$$
+    <p>因此 $\displaystyle\int_0^{1}\arctan x\,dx=\frac{\pi}{4}-\frac12\ln 2\approx 0.4388$。边界项始终在原变量 $x$ 下于原端点处求值，而剩余积分干净地切换至 $w$，使用各自的积分限 $1$ 和 $2$。这是规范结合两种方法的做法。</p>
+  </div>
+  </div></details>
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">What is $\displaystyle\int_0^{\pi} x\sin x\,dx$?</span><span data-lang="zh">$\displaystyle\int_0^{\pi} x\sin x\,dx$ 等于多少？</span></div><span class="quiz-number">5.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$0$</div><div class="quiz-opt" data-idx="1">$\pi$</div><div class="quiz-opt" data-idx="2">$2\pi$</div><div class="quiz-opt" data-idx="3">$\pi^2$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. With $u=x$, $dv=\sin x\,dx$, $v=-\cos x$: $[-x\cos x]_0^{\pi}+\int_0^{\pi}\cos x\,dx=\pi+0=\pi$.</span><span data-lang="zh">正确。令 $u=x$，$dv=\sin x\,dx$，$v=-\cos x$：$[-x\cos x]_0^{\pi}+\int_0^{\pi}\cos x\,dx=\pi+0=\pi$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Take $u=x$, $v=-\cos x$. The boundary term is $-\pi\cos\pi=\pi$ and the residual $\int_0^{\pi}\cos x\,dx=0$, giving $\pi$.</span><span data-lang="zh">令 $u=x$，$v=-\cos x$。边界项为 $-\pi\cos\pi=\pi$，剩余积分 $\int_0^{\pi}\cos x\,dx=0$，故答案为 $\pi$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="section-label"><span data-lang="en">Section 6</span><span data-lang="zh">第六节</span></div>
+  <h2><span data-lang="en">Choosing a Method</span><span data-lang="zh">方法选择</span></h2>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">Substitution and parts solve different shapes. Reach for substitution when the integrand contains an inner function and (a multiple of) its derivative. Reach for parts when the integrand is a product of unlike functions, or an isolated logarithm or inverse trig function. When both seem to apply, a substitution often simplifies the integrand before parts finishes the job.</span><span data-lang="zh">换元法和分部积分法解决不同形状的问题。当被积函数含有内层函数及其导数的常数倍时，选换元法；当被积函数是不同类型函数之积，或是孤立的对数、反三角函数时，选分部积分法。当两种方法似乎都适用时，通常先用换元法化简，再用分部积分收尾。</span></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">Decision summary</span><span data-lang="zh">决策摘要</span></div>
+    $$\underbrace{\int f(g(x))\,g'(x)\,dx}_{\text{substitution}},\qquad \underbrace{\int (\text{poly})(\text{exp/trig})\,dx,\;\int\ln x\,dx,\;\int\arctan x\,dx}_{\text{parts}}.$$
+  </div>
+  <div data-lang="en"><p>A practical test: differentiate part of the integrand and look for the rest. If a chunk is the derivative of another chunk, substitution wins. If no such pairing exists but the integrand is a product of functions from different LIATE classes, parts wins. Some integrals need both, applied in sequence.</p></div>
+  <div data-lang="zh"><p>实用检验方法：对被积函数的一部分求导，看是否能在其余部分中找到它。若某一块是另一块的导数，换元法胜出。若不存在这样的配对，但被积函数是来自不同 LIATE 类别函数的乘积，则分部积分法胜出。有些积分需要两种方法按顺序联用。</p></div>
+  <div data-lang="en"><p>It also pays to scan for a few preliminary moves that are neither substitution nor parts but that turn an intractable integrand into a routine one. Algebraic simplification (cancelling a common factor, splitting a fraction into partial pieces, or completing a square), a trigonometric identity (such as $\sin^2 x=\tfrac{1-\cos 2x}{2}$), or simply rewriting a root as a fractional power can all reveal the structure that substitution or parts then exploits. The strategic order is: simplify first, look for a substitution second, and reach for parts when the integrand is an irreducible product of unlike functions.</p></div>
+  <div data-lang="zh"><p>同样值得在动手前扫描几种预处理手段——它们既不是换元也不是分部积分，却能将棘手的被积函数化为常规形式。代数化简（约去公因子、将分式拆分为部分分式、配方）、三角恒等式（如 $\sin^2 x=\tfrac{1-\cos 2x}{2}$），或将根号改写为分数幂，都能揭示换元法或分部积分法可以利用的结构。策略顺序是：先化简，再寻找换元，当被积函数是不同类型函数的不可约乘积时再用分部积分。</p></div>
+  <div class="concept-box orange"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Reaching for integration by parts on an integral that is really a substitution, and grinding through an endless chain that never closes. The integrand $\int \tfrac{x}{1+x^2}\,dx$ tempts some students to split off $u=x$ and integrate $\tfrac{1}{1+x^2}$, producing $x\arctan x-\int\arctan x\,dx$, a harder integral than the original. The signature you missed is that the numerator $x$ is half the derivative of the denominator $1+x^2$: this is a one-line substitution giving $\tfrac12\ln(1+x^2)+C$. Always test for the $u'/u$ pattern before committing to parts.</span><span data-lang="zh">对本质上是换元法的积分强行使用分部积分，陷入无休止的递推而永远无法收口。$\int \tfrac{x}{1+x^2}\,dx$ 会诱使部分学生令 $u=x$、对 $\tfrac{1}{1+x^2}$ 积分，产生 $x\arctan x-\int\arctan x\,dx$，比原式更复杂。被忽略的特征是：分子 $x$ 恰好是分母 $1+x^2$ 导数的一半——这是一行换元，结果为 $\tfrac12\ln(1+x^2)+C$。在决定使用分部积分前，务必先检验 $u'/u$ 型模式。</span></div>
+  <details><summary><span data-lang="en">Worked Example 6.1: substitution then parts</span><span data-lang="zh">例题 6.1：先换元后分部积分</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int \cos(\sqrt{x})\,dx$. Substitute $t=\sqrt{x}$, so $x=t^2$ and $dx=2t\,dt$:</p>
+    $$\int\cos(\sqrt{x})\,dx=\int \cos t\,(2t)\,dt=2\int t\cos t\,dt.$$
+    <p>Now use parts with $u=t$, $dv=\cos t\,dt$: $\int t\cos t\,dt=t\sin t+\cos t$. Therefore</p>
+    $$\int\cos(\sqrt{x})\,dx=2\bigl(\sqrt{x}\sin\sqrt{x}+\cos\sqrt{x}\bigr)+C.$$
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int \cos(\sqrt{x})\,dx$。令 $t=\sqrt{x}$，则 $x=t^2$，$dx=2t\,dt$：</p>
+    $$\int\cos(\sqrt{x})\,dx=\int \cos t\,(2t)\,dt=2\int t\cos t\,dt.$$
+    <p>再用分部积分，令 $u=t$，$dv=\cos t\,dt$：$\int t\cos t\,dt=t\sin t+\cos t$。因此</p>
+    $$\int\cos(\sqrt{x})\,dx=2\bigl(\sqrt{x}\sin\sqrt{x}+\cos\sqrt{x}\bigr)+C.$$
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 6.2: recognizing a pure substitution disguised as a product</span><span data-lang="zh">例题 6.2：识别伪装成乘积的纯换元积分</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int x^3\,e^{x^2}\,dx$. This looks like parts, but write $x^3=x^2\cdot x$ and substitute $u=x^2$, $du=2x\,dx$:</p>
+    $$\int x^3 e^{x^2}\,dx=\frac12\int u\,e^{u}\,du=\frac12\bigl(u-1\bigr)e^{u}+C=\frac12\bigl(x^2-1\bigr)e^{x^2}+C,$$
+    <p>where the inner $\int u e^{u}\,du$ is finished by parts. Substitution first removed the awkward $x^2$ in the exponent.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int x^3\,e^{x^2}\,dx$。看似分部积分，但将 $x^3=x^2\cdot x$，令 $u=x^2$，$du=2x\,dx$：</p>
+    $$\int x^3 e^{x^2}\,dx=\frac12\int u\,e^{u}\,du=\frac12\bigl(u-1\bigr)e^{u}+C=\frac12\bigl(x^2-1\bigr)e^{x^2}+C,$$
+    <p>其中内层 $\int u e^{u}\,du$ 用分部积分收尾。先换元消去了指数中麻烦的 $x^2$。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 6.3: simplify first, then integrate</span><span data-lang="zh">例题 6.3：先化简再积分</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int \frac{x^2}{x^2+1}\,dx$. Neither substitution nor parts attacks this directly, but algebraic division does: $\tfrac{x^2}{x^2+1}=1-\tfrac{1}{x^2+1}$. Now each piece is standard:</p>
+    $$\int \frac{x^2}{x^2+1}\,dx=\int 1\,dx-\int \frac{1}{x^2+1}\,dx=x-\arctan x+C.$$
+    <p>The lesson generalizes: when the degree of the numerator is at least the degree of the denominator, divide first. The leftover proper fraction is then a substitution, a partial-fraction problem, or a recognizable arctangent form.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int \frac{x^2}{x^2+1}\,dx$。换元法和分部积分法都无法直接处理，但多项式除法可以：$\tfrac{x^2}{x^2+1}=1-\tfrac{1}{x^2+1}$。每一项都是标准形式：</p>
+    $$\int \frac{x^2}{x^2+1}\,dx=\int 1\,dx-\int \frac{1}{x^2+1}\,dx=x-\arctan x+C.$$
+    <p>这个方法可以推广：当分子次数不低于分母次数时，先做多项式除法。剩余的真分式再通过换元法、部分分式分解，或可识别的反正切形式处理。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 6.4: a trig identity unlocks the integral</span><span data-lang="zh">例题 6.4：三角恒等式打开积分</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Evaluate $\displaystyle\int \sin^2 x\,dx$. Parts cycles back on itself here, but the power-reduction identity $\sin^2 x=\tfrac{1-\cos 2x}{2}$ flattens the problem:</p>
+    $$\int \sin^2 x\,dx=\int \frac{1-\cos 2x}{2}\,dx=\frac{x}{2}-\frac{\sin 2x}{4}+C.$$
+    <p>The $\int\cos 2x\,dx=\tfrac12\sin 2x$ is itself a linear substitution. Recognizing that an identity, not a technique, was the right first move is exactly the judgment this section is meant to build.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>求 $\displaystyle\int \sin^2 x\,dx$。分部积分在这里会循环，但降幂公式 $\sin^2 x=\tfrac{1-\cos 2x}{2}$ 可以将问题展开：</p>
+    $$\int \sin^2 x\,dx=\int \frac{1-\cos 2x}{2}\,dx=\frac{x}{2}-\frac{\sin 2x}{4}+C.$$
+    <p>其中 $\int\cos 2x\,dx=\tfrac12\sin 2x$ 本身是一个线性换元。认识到应先用恒等式而非技巧，正是本节要培养的判断力。</p>
+  </div>
+  </div></details>
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">Which integral is solved most directly by substitution rather than parts?</span><span data-lang="zh">以下哪个积分最直接地用换元法而非分部积分来求解？</span></div><span class="quiz-number">6.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\displaystyle\int \frac{e^{x}}{1+e^{x}}\,dx$</div><div class="quiz-opt" data-idx="1">$\displaystyle\int x\cos x\,dx$</div><div class="quiz-opt" data-idx="2">$\displaystyle\int \ln x\,dx$</div><div class="quiz-opt" data-idx="3">$\displaystyle\int \arctan x\,dx$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. With $u=1+e^{x}$, $du=e^{x}\,dx$, the integral is $\int du/u=\ln(1+e^{x})+C$, a textbook substitution.</span><span data-lang="zh">正确。令 $u=1+e^{x}$，$du=e^{x}\,dx$，积分变为 $\int du/u=\ln(1+e^{x})+C$，是教科书式的换元。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The first integrand has an inner function $1+e^{x}$ whose derivative $e^{x}$ sits in the numerator, the signature of substitution. The others are parts integrals.</span><span data-lang="zh">第一个被积函数含有内层函数 $1+e^{x}$，其导数 $e^{x}$ 出现在分子，这是换元法的特征。其余选项是分部积分的问题。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="section-label"><span data-lang="en">Section 7</span><span data-lang="zh">第七节</span></div>
+  <h2><span data-lang="en">Going Deeper</span><span data-lang="zh">深入探讨</span></h2>
+  <div class="concept-box"><strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong> <span data-lang="en">Integration by parts is not merely a trick: iterating it yields reduction formulas that express an integral in terms of a lower-order one, and the same identity underlies Taylor's theorem with integral remainder. These connections show why parts is a structural tool, not just a computational one.</span><span data-lang="zh">分部积分法不仅仅是一个技巧：反复迭代可以导出递推公式（<code>reduction formula</code>），将高次积分化为低次积分；同一等式也是带积分余项的泰勒定理（<code>Taylor's theorem</code>）的基础。这些联系说明分部积分法是一种结构性工具，而不只是计算手段。</span></div>
+  <div class="formula-box"><div class="formula-label"><span data-lang="en">A reduction formula</span><span data-lang="zh">递推公式</span></div>
+    $$\int \sin^{n}x\,dx=-\frac{\sin^{n-1}x\,\cos x}{n}+\frac{n-1}{n}\int \sin^{n-2}x\,dx,\qquad n\ge 2.$$
+  </div>
+  <div data-lang="en"><p>A reduction formula lets a high-power integral be computed by descending in steps of two (or one) until a base case is reached. Such formulas are derived by a single, carefully arranged application of integration by parts.</p></div>
+  <div data-lang="zh"><p>递推公式使高次幂积分可以每步降低两次（或一次）直到达到基础情形来计算。这类公式由一次精心安排的分部积分推导而来。</p></div>
+  <div data-lang="en"><p>The value of a reduction formula is that it converts an unbounded family of integrals, one for each power $n$, into a single recursive rule plus a base case. Once derived, it is applied mechanically: substitute the current $n$, peel off the boundary term, and recurse on the smaller integral. This is the same logic that powers tabular integration and Taylor's theorem, both of which are repeated parts organized so the bookkeeping is automatic. The three examples below, the $\sin^n$ recursion, the $x^n e^x$ recursion, and the integral-remainder form of Taylor's theorem, are three faces of one idea: integration by parts, iterated with foresight, is a structural tool for generating exact identities, not just a method for grinding out a single antiderivative.</p></div>
+  <div data-lang="zh"><p>递推公式的价值在于：它将无穷族积分（每个次数 $n$ 对应一个）转化为一条递推规则加一个基础情形。一旦推导出来，就可以机械地应用：代入当前的 $n$，剥去边界项，对更小的积分递推。这与表格积分法和泰勒定理的逻辑相同，两者都是将多次分部积分组织成自动记账的形式。以下三个例子——$\sin^n$ 递推、$x^n e^x$ 递推以及泰勒定理的积分余项形式——是同一思想的三个面向：有预见性地迭代分部积分，是生成精确等式的结构性工具，而不只是推导单个原函数的方法。</p></div>
+  <details><summary><span data-lang="en">Worked Example 7.1: applying the reduction formula to $\sin^4 x$</span><span data-lang="zh">例题 7.1：将递推公式应用于 $\sin^4 x$</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Use the boxed reduction formula to evaluate $\displaystyle\int \sin^4 x\,dx$. With $n=4$:</p>
+    $$\int \sin^4 x\,dx=-\frac{\sin^3 x\cos x}{4}+\frac{3}{4}\int \sin^2 x\,dx.$$
+    <p>Now apply it again with $n=2$, using $\int \sin^0 x\,dx=\int 1\,dx=x$:</p>
+    $$\int \sin^2 x\,dx=-\frac{\sin x\cos x}{2}+\frac{1}{2}x.$$
+    <p>Substitute back to assemble the final answer:</p>
+    $$\int \sin^4 x\,dx=-\frac{\sin^3 x\cos x}{4}-\frac{3\sin x\cos x}{8}+\frac{3x}{8}+C.$$
+    <p>The reduction formula turned a fourth-power integral into a finite descent: $n=4\to n=2\to n=0$, two applications and a trivial base case. Without it, one would face several nested rounds of parts or a sequence of double-angle identities.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>用方框中的递推公式求 $\displaystyle\int \sin^4 x\,dx$。取 $n=4$：</p>
+    $$\int \sin^4 x\,dx=-\frac{\sin^3 x\cos x}{4}+\frac{3}{4}\int \sin^2 x\,dx.$$
+    <p>再用 $n=2$ 应用一次，利用基础情形 $\int \sin^0 x\,dx=\int 1\,dx=x$：</p>
+    $$\int \sin^2 x\,dx=-\frac{\sin x\cos x}{2}+\frac{1}{2}x.$$
+    <p>回代得最终答案：</p>
+    $$\int \sin^4 x\,dx=-\frac{\sin^3 x\cos x}{4}-\frac{3\sin x\cos x}{8}+\frac{3x}{8}+C.$$
+    <p>递推公式将四次幂积分化为有限下降：$n=4\to n=2\to n=0$，两次应用加一个平凡的基础情形。若没有它，需要面对多轮嵌套的分部积分或一系列二倍角恒等式。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Worked Example 7.2: the $x^n e^{x}$ reduction formula</span><span data-lang="zh">例题 7.2：$x^n e^{x}$ 的递推公式</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Reduction formulas are not limited to trigonometric powers. A single application of parts to $\int x^n e^{x}\,dx$ with $u=x^n$, $dv=e^{x}\,dx$ gives</p>
+    $$\int x^n e^{x}\,dx=x^n e^{x}-n\int x^{n-1}e^{x}\,dx.$$
+    <p>The recursion drops the exponent by one each time, terminating at $\int x^0 e^{x}\,dx=e^{x}$. Apply it to $\int x^3 e^{x}\,dx$: with $n=3$, then $n=2$, then $n=1$,</p>
+    $$\int x^3 e^{x}\,dx=x^3 e^{x}-3\Bigl(x^2 e^{x}-2\bigl(x e^{x}-e^{x}\bigr)\Bigr)+C=\bigl(x^3-3x^2+6x-6\bigr)e^{x}+C.$$
+    <p>This is the same answer the tabular method of Section 4 produces, which is no coincidence: tabular integration is precisely this reduction recursion written as a table. The reduction formula makes the underlying recursion explicit and easy to prove by induction.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>递推公式不仅适用于三角函数幂次。对 $\int x^n e^{x}\,dx$ 做一次分部积分，令 $u=x^n$，$dv=e^{x}\,dx$，得</p>
+    $$\int x^n e^{x}\,dx=x^n e^{x}-n\int x^{n-1}e^{x}\,dx.$$
+    <p>每次递推指数降一，在 $\int x^0 e^{x}\,dx=e^{x}$ 处终止。对 $\int x^3 e^{x}\,dx$ 应用（$n=3$、$n=2$、$n=1$）：</p>
+    $$\int x^3 e^{x}\,dx=x^3 e^{x}-3\Bigl(x^2 e^{x}-2\bigl(x e^{x}-e^{x}\bigr)\Bigr)+C=\bigl(x^3-3x^2+6x-6\bigr)e^{x}+C.$$
+    <p>这与第四节表格法的结果相同，绝非巧合：表格积分法正是将此递推写成表格形式。递推公式使底层递推显式化，易于用数学归纳法证明。</p>
+  </div>
+  </div></details>
+  <div class="concept-box red"><strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong> <span data-lang="en">Stopping a reduction one step too early or mishandling the base case. For $\int\sin^n x\,dx$ the recursion descends to either $\int\sin^1 x\,dx=-\cos x$ (when $n$ is odd) or $\int\sin^0 x\,dx=x$ (when $n$ is even). Plugging $n=2$ into the formula and then forgetting that $\int\sin^0 x\,dx$ is $x$, not $1$, is a frequent slip that drops an entire term. Track the parity of $n$ and write the correct base case explicitly before back-substituting.</span><span data-lang="zh">递推提前终止一步，或错误处理基础情形。对 $\int\sin^n x\,dx$，递推下降到 $\int\sin^1 x\,dx=-\cos x$（$n$ 为奇数时）或 $\int\sin^0 x\,dx=x$（$n$ 为偶数时）。将 $n=2$ 代入公式后忘记 $\int\sin^0 x\,dx$ 是 $x$ 而非 $1$，是一个常见失误，会丢失整个一项。追踪 $n$ 的奇偶性，并在回代前明确写出正确的基础情形。</span></div>
+  <details><summary><span data-lang="en">Going deeper: deriving the $\sin^n$ reduction formula</span><span data-lang="zh">深入探讨：推导 $\sin^n$ 递推公式</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Write $\sin^n x=\sin^{n-1}x\cdot\sin x$ and apply parts with $u=\sin^{n-1}x$, $dv=\sin x\,dx$, so $du=(n-1)\sin^{n-2}x\cos x\,dx$ and $v=-\cos x$:</p>
+    $$\int\sin^n x\,dx=-\sin^{n-1}x\cos x+(n-1)\int \sin^{n-2}x\cos^2 x\,dx.$$
+    <p>Replace $\cos^2 x=1-\sin^2 x$:</p>
+    $$\int\sin^n x\,dx=-\sin^{n-1}x\cos x+(n-1)\int\sin^{n-2}x\,dx-(n-1)\int\sin^{n}x\,dx.$$
+    <p>Move the last term to the left and divide by $n$ to obtain the reduction formula stated above.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>将 $\sin^n x=\sin^{n-1}x\cdot\sin x$，应用分部积分，令 $u=\sin^{n-1}x$，$dv=\sin x\,dx$，则 $du=(n-1)\sin^{n-2}x\cos x\,dx$，$v=-\cos x$：</p>
+    $$\int\sin^n x\,dx=-\sin^{n-1}x\cos x+(n-1)\int \sin^{n-2}x\cos^2 x\,dx.$$
+    <p>将 $\cos^2 x=1-\sin^2 x$ 代入：</p>
+    $$\int\sin^n x\,dx=-\sin^{n-1}x\cos x+(n-1)\int\sin^{n-2}x\,dx-(n-1)\int\sin^{n}x\,dx.$$
+    <p>将最后一项移到左侧并除以 $n$，即得上方方框中的递推公式。</p>
+  </div>
+  </div></details>
+  <details><summary><span data-lang="en">Going deeper: Taylor's theorem with integral remainder</span><span data-lang="zh">深入探讨：带积分余项的泰勒定理</span></summary><div class="detail-body">
+  <div class="worked-solution" data-lang="en">
+    <p>Starting from the fundamental theorem $f(x)=f(a)+\int_a^{x} f'(t)\,dt$ and applying parts repeatedly with $dv=dt$ (choosing the antiderivative $v=-(x-t)$ so the boundary terms telescope) produces</p>
+    $$f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k+\frac{1}{n!}\int_a^{x}(x-t)^{n}f^{(n+1)}(t)\,dt.$$
+    <p>The integral on the right is the exact remainder. Thus repeated integration by parts is the engine behind Taylor's theorem with the integral form of the remainder.</p>
+    <p>It is worth seeing the first step in full, because it shows where the unusual antiderivative $v=-(x-t)$ comes from. In $\int_a^{x} f'(t)\,dt$ regard $t$ as the variable of integration with $x$ fixed, and apply parts with $u=f'(t)$ and $dv=dt$. The clever move is to take $v=-(x-t)$ rather than the obvious $v=t$; both are antiderivatives of $dt$ in $t$ (since $\tfrac{d}{dt}[-(x-t)]=1$), but the shifted choice makes the boundary term vanish at the upper limit. Then $du=f''(t)\,dt$ and</p>
+    $$\int_a^{x} f'(t)\,dt=\Bigl[-(x-t)f'(t)\Bigr]_a^{x}+\int_a^{x}(x-t)f''(t)\,dt=(x-a)f'(a)+\int_a^{x}(x-t)f''(t)\,dt,$$
+    <p>because the boundary term is $0$ at $t=x$ and $(x-a)f'(a)$ at $t=a$. This recovers the degree-one Taylor polynomial plus a remainder of the same shape with one higher derivative. Choosing $v=-\tfrac{(x-t)^2}{2}$ on the next pass yields the quadratic term, and in general $v=-\tfrac{(x-t)^{k}}{k}$ at the $k$-th step. Each application advances the polynomial by one term and raises the power of $(x-t)$ and the order of the derivative inside the remainder by one, giving the boxed formula by induction. The factorial $\tfrac{1}{n!}$ accumulates from the constants generated at each step.</p>
+  </div>
+  <div class="worked-solution" data-lang="zh">
+    <p>从微积分基本定理（<code>FTC</code>）出发：$f(x)=f(a)+\int_a^{x} f'(t)\,dt$，反复应用分部积分（令 $dv=dt$，选取原函数 $v=-(x-t)$ 使边界项可相消），得到</p>
+    $$f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k+\frac{1}{n!}\int_a^{x}(x-t)^{n}f^{(n+1)}(t)\,dt.$$
+    <p>右边的积分是精确余项。因此多次分部积分是带积分余项形式的泰勒定理的驱动引擎。</p>
+    <p>第一步值得完整展开，因为它揭示了不寻常的原函数 $v=-(x-t)$ 的来源。在 $\int_a^{x} f'(t)\,dt$ 中，将 $t$ 视为积分变量（$x$ 固定），令 $u=f'(t)$，$dv=dt$，应用分部积分。巧妙之处在于选取 $v=-(x-t)$ 而非显然的 $v=t$；两者都是关于 $t$ 的 $dt$ 的原函数（因为 $\tfrac{d}{dt}[-(x-t)]=1$），但移位选择使边界项在上限处消失。于是 $du=f''(t)\,dt$，且</p>
+    $$\int_a^{x} f'(t)\,dt=\Bigl[-(x-t)f'(t)\Bigr]_a^{x}+\int_a^{x}(x-t)f''(t)\,dt=(x-a)f'(a)+\int_a^{x}(x-t)f''(t)\,dt,$$
+    <p>因为边界项在 $t=x$ 处为 $0$，在 $t=a$ 处为 $(x-a)f'(a)$。这恢复了一次泰勒多项式加上同形状但导数阶数更高一阶的余项。下一步选 $v=-\tfrac{(x-t)^2}{2}$ 给出二次项，一般地，第 $k$ 步选 $v=-\tfrac{(x-t)^{k}}{k}$。每次应用使多项式向前推进一项，并将余项中 $(x-t)$ 的幂次和导数阶数各提高一，由归纳法得到方框中的公式。阶乘 $\tfrac{1}{n!}$ 由每步产生的常数积累而来。</p>
+  </div>
+  </div></details>
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">A reduction formula for $\int\sin^n x\,dx$ expresses it in terms of</span><span data-lang="zh">$\int\sin^n x\,dx$ 的递推公式将其化为</span></div><span class="quiz-number">7.1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\int\sin^{n+2}x\,dx$</div><div class="quiz-opt" data-idx="1">$\int\sin^{n+1}x\,dx$</div><div class="quiz-opt" data-idx="2">$\int\sin^{n-2}x\,dx$</div><div class="quiz-opt" data-idx="3">$\int\cos^{n}x\,dx$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. The formula lowers the power by two each step, recursing on $\int\sin^{n-2}x\,dx$ until a base case.</span><span data-lang="zh">正确。公式每步将次数降二，对 $\int\sin^{n-2}x\,dx$ 递推直至基础情形。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">A reduction formula descends in the exponent. This one steps from $n$ down to $n-2$.</span><span data-lang="zh">递推公式使指数下降。此公式从 $n$ 降至 $n-2$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">这部分在大一课程中卡住了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</span><span data-lang="zh">预约与 Dingrui Scholars 导师的免费 15 分钟咨询，在下次期中考前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_b1_integration_techniques_i__sg__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<section id="flashcards">
+  <h2><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></h2>
+  <div class="flashcard-toolbar">
+    <span class="fc-count" id="fcCount"><span data-lang="en">0 / 12 flipped</span><span data-lang="zh">0 / 12 已翻转</span></span>
+    <div>
+      <button class="nav-btn" onclick="shuffleFlashcards()"><span data-lang="en">Shuffle</span><span data-lang="zh">随机排列</span></button>
+      <button class="nav-btn" onclick="resetFlashcards()"><span data-lang="en">Reset</span><span data-lang="zh">重置</span></button>
+    </div>
+  </div>
+  <div class="flashcard-grid" id="flashcardGrid">
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Substitution rule</span><span data-lang="zh">换元法公式</span></div><div class="flashcard-back">$\int f(g(x))g'(x)\,dx=\int f(u)\,du$ with $u=g(x)$, $du=g'(x)\,dx$. <span data-lang="en">The chain rule reversed.</span><span data-lang="zh">链式法则（<code>Chain Rule</code>）的逆运算。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Integration by parts formula</span><span data-lang="zh">分部积分公式</span></div><div class="flashcard-back">$\int u\,dv=uv-\int v\,du$. <span data-lang="en">The product rule reversed.</span><span data-lang="zh">乘积法则（<code>Product Rule</code>）的逆运算。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">LIATE priority for choosing $u$</span><span data-lang="zh">选取 $u$ 的 LIATE 优先级</span></div><div class="flashcard-back"><span data-lang="en">Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential. The earlier class is the better $u$.</span><span data-lang="zh">对数、反三角、代数、三角、指数。排列靠前的类型通常是更好的 $u$ 选择。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front">$\int \ln x\,dx$</div><div class="flashcard-back">$x\ln x-x+C$. <span data-lang="en">Take $u=\ln x$, $dv=dx$.</span><span data-lang="zh">令 $u=\ln x$，$dv=dx$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front">$\int x e^{x}\,dx$</div><div class="flashcard-back">$(x-1)e^{x}+C$ <span data-lang="en">by parts with $u=x$.</span><span data-lang="zh">分部积分，令 $u=x$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front">$\int x^2 e^{x}\,dx$</div><div class="flashcard-back">$(x^2-2x+2)e^{x}+C$ <span data-lang="en">by repeated parts.</span><span data-lang="zh">多次分部积分。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Cyclic case $\int e^{x}\sin x\,dx$</span><span data-lang="zh">循环型 $\int e^{x}\sin x\,dx$</span></div><div class="flashcard-back">$\dfrac{e^{x}(\sin x-\cos x)}{2}+C$. <span data-lang="en">Parts twice, then solve for the integral.</span><span data-lang="zh">分部积分两次，再代数求解原积分。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">When to use tabular integration</span><span data-lang="zh">何时使用表格积分法</span></div><div class="flashcard-back"><span data-lang="en">A polynomial factor that differentiates to $0$ times a factor that integrates easily, such as $\int x^3\sin x\,dx$.</span><span data-lang="zh">一个多项式因子（微分后归零）乘以一个易于积分的因子，例如 $\int x^3\sin x\,dx$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Definite parts on $[a,b]$</span><span data-lang="zh">$[a,b]$ 上的定积分分部积分</span></div><div class="flashcard-back">$\int_a^b u\,dv=[uv]_a^b-\int_a^b v\,du$. <span data-lang="en">Carry the limits; no back-substitution.</span><span data-lang="zh">保留积分限；无需回代。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front">$\int_0^{\pi} x\sin x\,dx$</div><div class="flashcard-back">$\pi$. <span data-lang="en">Boundary term $[-x\cos x]_0^{\pi}=\pi$, residual $\int_0^{\pi}\cos x\,dx=0$.</span><span data-lang="zh">边界项 $[-x\cos x]_0^{\pi}=\pi$，剩余积分 $\int_0^{\pi}\cos x\,dx=0$。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">$\sin^n$ reduction formula</span><span data-lang="zh">$\sin^n$ 递推公式</span></div><div class="flashcard-back">$\int\sin^n x\,dx=-\dfrac{\sin^{n-1}x\cos x}{n}+\dfrac{n-1}{n}\int\sin^{n-2}x\,dx$.</div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Diagnostic: substitution or parts?</span><span data-lang="zh">诊断：换元法还是分部积分？</span></div><div class="flashcard-back"><span data-lang="en">If a chunk is the derivative of another chunk, substitute. If it is a product of unlike LIATE classes, use parts.</span><span data-lang="zh">若某一块是另一块的导数，用换元法；若是来自不同 LIATE 类别的乘积，用分部积分。</span></div></div></div>
+  </div>
+</section>
+
+
+<section class="section" id="unit-quiz">
+  <div class="section-label"><span data-lang="en">Check Yourself</span><span data-lang="zh">自我检测</span></div>
+  <h2><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></h2>
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">Evaluate $\displaystyle\int \sin^{3}x\,\cos x\,dx$.</span><span data-lang="zh">求 $\displaystyle\int \sin^{3}x\,\cos x\,dx$。</span></div><span class="quiz-number">Q1</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\dfrac{\cos^4 x}{4}+C$</div><div class="quiz-opt" data-idx="1">$\dfrac{\sin^4 x}{4}+C$</div><div class="quiz-opt" data-idx="2">$\sin^4 x+C$</div><div class="quiz-opt" data-idx="3">$-\dfrac{\cos^4 x}{4}+C$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Let $u=\sin x$, $du=\cos x\,dx$; then $\int u^3\,du=\tfrac{u^4}{4}+C=\tfrac{\sin^4 x}{4}+C$.</span><span data-lang="zh">正确。令 $u=\sin x$，$du=\cos x\,dx$；则 $\int u^3\,du=\tfrac{u^4}{4}+C=\tfrac{\sin^4 x}{4}+C$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Substitute $u=\sin x$, so $du=\cos x\,dx$ and the integral is $\int u^3\,du=\tfrac{\sin^4 x}{4}+C$.</span><span data-lang="zh">令 $u=\sin x$，则 $du=\cos x\,dx$，积分化为 $\int u^3\,du=\tfrac{\sin^4 x}{4}+C$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">Which is the correct value of $\displaystyle\int x\,e^{x}\,dx$?</span><span data-lang="zh">$\displaystyle\int x\,e^{x}\,dx$ 的正确答案是哪个？</span></div><span class="quiz-number">Q2</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$x e^{x}+C$</div><div class="quiz-opt" data-idx="1">$\dfrac{x^2}{2}e^{x}+C$</div><div class="quiz-opt" data-idx="2">$(x-1)e^{x}+C$</div><div class="quiz-opt" data-idx="3">$(x+1)e^{x}+C$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Parts with $u=x$, $dv=e^x\,dx$ gives $xe^{x}-\int e^{x}\,dx=(x-1)e^{x}+C$.</span><span data-lang="zh">正确。分部积分令 $u=x$，$dv=e^x\,dx$，得 $xe^{x}-\int e^{x}\,dx=(x-1)e^{x}+C$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Use parts with $u=x$, $v=e^{x}$: $xe^{x}-e^{x}+C=(x-1)e^{x}+C$.</span><span data-lang="zh">用分部积分，令 $u=x$，$v=e^{x}$：$xe^{x}-e^{x}+C=(x-1)e^{x}+C$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="0"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">$\displaystyle\int_1^{e}\ln x\,dx$ equals</span><span data-lang="zh">$\displaystyle\int_1^{e}\ln x\,dx$ 等于</span></div><span class="quiz-number">Q3</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$1$</div><div class="quiz-opt" data-idx="1">$e-1$</div><div class="quiz-opt" data-idx="2">$e$</div><div class="quiz-opt" data-idx="3">$0$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. $\int\ln x\,dx=x\ln x-x$, so $[x\ln x-x]_1^{e}=(e-e)-(0-1)=1$.</span><span data-lang="zh">正确。$\int\ln x\,dx=x\ln x-x$，故 $[x\ln x-x]_1^{e}=(e-e)-(0-1)=1$。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">An antiderivative is $x\ln x-x$. Evaluating from $1$ to $e$ gives $0-(-1)=1$.</span><span data-lang="zh">原函数是 $x\ln x-x$。从 $1$ 到 $e$ 求值得 $0-(-1)=1$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="3"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">For $\displaystyle\int x^2\cos x\,dx$, tabular integration terminates after how many derivative steps of $x^2$?</span><span data-lang="zh">对 $\displaystyle\int x^2\cos x\,dx$，表格积分法中 $x^2$ 经几步微分后终止？</span></div><span class="quiz-number">Q4</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">Zero</span><span data-lang="zh">零步</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">One</span><span data-lang="zh">一步</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">Two</span><span data-lang="zh">两步</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">Three</span><span data-lang="zh">三步</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. The column reads $x^2,\,2x,\,2,\,0$: three differentiations bring it to $0$.</span><span data-lang="zh">正确。微分列为 $x^2,\,2x,\,2,\,0$：三次微分后归零。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Differentiate $x^2$ until $0$: $x^2\to 2x\to 2\to 0$, which is three steps.</span><span data-lang="zh">对 $x^2$ 连续微分直到 $0$：$x^2\to 2x\to 2\to 0$，共三步。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="1"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">The integral $\displaystyle\int e^{x}\cos x\,dx$ is solved by</span><span data-lang="zh">积分 $\displaystyle\int e^{x}\cos x\,dx$ 应用哪种方法求解？</span></div><span class="quiz-number">Q5</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="en">a single substitution</span><span data-lang="zh">单次换元</span></div><div class="quiz-opt" data-idx="1"><span data-lang="en">applying parts twice and solving for the original integral</span><span data-lang="zh">两次分部积分后代数求解原积分</span></div><div class="quiz-opt" data-idx="2"><span data-lang="en">tabular integration that terminates</span><span data-lang="zh">可以终止的表格积分法</span></div><div class="quiz-opt" data-idx="3"><span data-lang="en">partial fractions</span><span data-lang="zh">部分分式分解</span></div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Two applications of parts reproduce a multiple of the original integral, which is then solved algebraically.</span><span data-lang="zh">正确。两次分部积分后，原积分的倍数重新出现，代数求解即可。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">Neither factor differentiates to zero, so the table never terminates. Two passes of parts make the original integral reappear, and you solve for it.</span><span data-lang="zh">两个因子均不会微分为零，表格永远不会终止。两次分部积分使原积分重现，再代数求解。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+
+  <div class="quiz" data-answer="2"><div class="quiz-header"><div class="quiz-q"><span data-lang="en">Which integral calls for substitution before parts?</span><span data-lang="zh">哪个积分需要先换元再分部积分？</span></div><span class="quiz-number">Q6</span></div><div class="quiz-options"><div class="quiz-opt" data-idx="0">$\displaystyle\int x\sin x\,dx$</div><div class="quiz-opt" data-idx="1">$\displaystyle\int \ln x\,dx$</div><div class="quiz-opt" data-idx="2">$\displaystyle\int \cos(\sqrt{x})\,dx$</div><div class="quiz-opt" data-idx="3">$\displaystyle\int x^2 e^{x}\,dx$</div></div><div class="quiz-explain correct-exp"><span data-lang="en">Correct. Substitute $t=\sqrt{x}$ to get $2\int t\cos t\,dt$, then finish with parts.</span><span data-lang="zh">正确。令 $t=\sqrt{x}$ 得 $2\int t\cos t\,dt$，再用分部积分收尾。</span></div><div class="quiz-explain wrong-exp"><span data-lang="en">The radical inside the cosine demands $t=\sqrt{x}$ first; parts then finishes $\int t\cos t\,dt$.</span><span data-lang="zh">余弦内的根号要求先令 $t=\sqrt{x}$；分部积分再完成 $\int t\cos t\,dt$。</span></div><button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button></div>
+</section>
+
+
+<section class="section" id="checklist">
+  <div class="section-label"><span data-lang="en">Before You Move On</span><span data-lang="zh">继续前请确认</span></div>
+  <h2><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握清单</span></h2>
+  <p><span data-lang="en">Tap each item you can do without notes. </span><span data-lang="zh">点击你无需笔记即可完成的项目。</span><span id="checkProgress"><span data-lang="en">0 / 8 mastered</span><span data-lang="zh">0 / 8 已掌握</span></span></p>
+  <ul id="checklistUl" class="checklist">
+    <li onclick="toggleCheck(this)"><span data-lang="en">State the substitution rule and explain why it is the chain rule reversed.</span><span data-lang="zh">陈述换元法公式，并解释为何它是链式法则的逆运算。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Choose a correct $u$ for a substitution and carry the constant factors through cleanly.</span><span data-lang="zh">为换元选取正确的 $u$，并干净地处理常数因子。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">State the integration by parts formula and derive it from the product rule.</span><span data-lang="zh">陈述分部积分公式，并从乘积法则推导它。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Apply LIATE to pick $u$ and $dv$ for a product integrand.</span><span data-lang="zh">用 LIATE 准则为乘积型被积函数选取 $u$ 和 $dv$。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Evaluate an integral that requires integration by parts more than once, including the cyclic case.</span><span data-lang="zh">求解需要多次分部积分的积分，包括循环型情形。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Use tabular integration on a polynomial times an exponential or trig factor.</span><span data-lang="zh">对多项式乘指数或三角因子使用表格积分法。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Compute a definite integral by parts, carrying the limits without back-substitution.</span><span data-lang="zh">用分部积分法计算定积分，保留积分限而无需回代。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Decide between substitution and parts, and combine them when an integral needs both.</span><span data-lang="zh">在换元法和分部积分法之间做出选择，并在积分需要时联合使用两种方法。</span></li>
+  </ul>
+</section>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span></span>
+  <a href="../Practice%20Questions/Unit_B1_Integration_Techniques_I_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <a href="../Practice%20Questions/Solutions/Unit_B1_Integration_Techniques_I_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+</main>
+<script>
+// SCORE TRACKING
+let quizScore = { correct: 0, total: 0 };
+
+function updateScoreBadge() {
+  const badge = document.getElementById('scoreBadge');
+  if (!badge) return;
+  if (quizScore.total === 0) {
+    badge.textContent = '0 / 0';
+    badge.classList.add('zero');
+  } else {
+    badge.textContent = quizScore.correct + ' / ' + quizScore.total;
+    badge.classList.remove('zero');
+  }
+}
+
+// ─── LANGUAGE (default English; toggle persists only within the page) ───
+function toggleLang() {
+  document.body.classList.toggle('lang-zh');
+}
+
+// THEME
+function setThemeBtnLabel(toLight) {
+  const tt = document.getElementById('themeToggle');
+  if (!tt) return;
+  tt.innerHTML = toLight
+    ? '<span data-lang="en">Light</span><span data-lang="zh">浅色</span>'
+    : '<span data-lang="en">Dark</span><span data-lang="zh">深色</span>';
+}
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  setThemeBtnLabel(!isDark);
+}
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  setThemeBtnLabel(true);
+}
+
+// PROGRESS BAR
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+  const fill = document.getElementById('progressFill');
+  if (fill) fill.style.width = pct + '%';
+});
+
+// ACTIVE TOC
+const sections = document.querySelectorAll('.section, .hero');
+const tocLinks = document.querySelectorAll('.sidebar a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector('.sidebar a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-80px 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// QUIZZES
+document.querySelectorAll('.quiz').forEach(quiz => {
+  const answer = parseInt(quiz.dataset.answer);
+  const opts = quiz.querySelectorAll('.quiz-opt');
+  const expCorrect = quiz.querySelector('.quiz-explain.correct-exp');
+  const expWrong = quiz.querySelector('.quiz-explain.wrong-exp');
+  opts.forEach(opt => {
+    opt.addEventListener('click', () => {
+      if (opt.classList.contains('disabled')) return;
+      const idx = parseInt(opt.dataset.idx);
+      opts.forEach(o => o.classList.add('disabled'));
+      quizScore.total++;
+      if (idx === answer) {
+        opt.classList.add('correct');
+        quizScore.correct++;
+        if (expCorrect) expCorrect.classList.add('show');
+      } else {
+        opt.classList.add('wrong');
+        opts[answer].classList.add('correct');
+        if (expWrong) expWrong.classList.add('show');
+        const retry = quiz.querySelector('.quiz-retry');
+        if (retry) retry.classList.add('show');
+      }
+      updateScoreBadge();
+    });
+  });
+});
+
+function retryQuiz(btn) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('disabled', 'correct', 'wrong'));
+  quiz.querySelectorAll('.quiz-explain').forEach(e => e.classList.remove('show'));
+  btn.classList.remove('show');
+  quizScore.total--;
+  updateScoreBadge();
+}
+
+// FLASHCARDS
+function flipCard(el) {
+  el.classList.toggle('flipped');
+  updateFlashcardCount();
+}
+function updateFlashcardCount() {
+  const total = document.querySelectorAll('#flashcardGrid .flashcard').length;
+  const flipped = document.querySelectorAll('#flashcardGrid .flashcard.flipped').length;
+  const c = document.getElementById('fcCount');
+  if (c) {
+    const isZh = document.body.classList.contains('lang-zh');
+    c.innerHTML = isZh
+      ? '<span data-lang="en">' + flipped + ' / ' + total + ' flipped</span><span data-lang="zh">' + flipped + ' / ' + total + ' 已翻转</span>'
+      : '<span data-lang="en">' + flipped + ' / ' + total + ' flipped</span><span data-lang="zh">' + flipped + ' / ' + total + ' 已翻转</span>';
+  }
+}
+function resetFlashcards() {
+  document.querySelectorAll('#flashcardGrid .flashcard').forEach(c => c.classList.remove('flipped'));
+  updateFlashcardCount();
+}
+function shuffleFlashcards() {
+  const grid = document.getElementById('flashcardGrid');
+  const cards = [...grid.children];
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.appendChild(cards[j]);
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+}
+
+// CHECKLIST
+function toggleCheck(li) {
+  li.classList.toggle('checked');
+  const total = document.querySelectorAll('#checklistUl li').length;
+  const checked = document.querySelectorAll('#checklistUl li.checked').length;
+  const p = document.getElementById('checkProgress');
+  if (p) p.innerHTML = '<span data-lang="en">' + checked + ' / ' + total + ' mastered</span><span data-lang="zh">' + checked + ' / ' + total + ' 已掌握</span>';
+}
+</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

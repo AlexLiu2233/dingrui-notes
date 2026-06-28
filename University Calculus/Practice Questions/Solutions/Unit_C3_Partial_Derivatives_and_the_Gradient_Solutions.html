@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit C3: Partial Derivatives and the Gradient | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-C3  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_C3_Partial_Derivatives_and_the_Gradient_Solutions.html">
+<meta name="description" content="Worked solutions for Unit C3: Partial Derivatives and the Gradient in University Calculus. Step-by-step two-path limit proofs, polar-coordinate squeezes, Clairaut verification, chain-rule derivations, implicit partial differentiation, and gradient applications from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit C3: Partial Derivatives and the Gradient | Solutions">
+<meta property="og:description" content="Worked solutions for Unit C3: Partial Derivatives and the Gradient in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_C3_Partial_Derivatives_and_the_Gradient_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit C3: Partial Derivatives and the Gradient | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit C3: Partial Derivatives and the Gradient in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit C3: Partial Derivatives and the Gradient | Solutions",
+  "description": "Worked solutions for Unit C3: Partial Derivatives and the Gradient in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_C3_Partial_Derivatives_and_the_Gradient_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit C3 &middot; Solutions</span><span data-lang="zh">C3 单元 &middot; 解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">Partial Derivatives and the Gradient &middot; Solutions</span><span data-lang="zh">偏导数与梯度 &middot; 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题配套解答</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 6</b>: functions of several variables, domain and level curves, limits and continuity in two variables, partial derivatives, Clairaut's theorem, the multivariable chain rule, and the gradient<span class="scope">CALC III</span></span><span data-lang="zh">第 <b>1 至 6</b> 节：多元函数、定义域与水平曲线、二元极限与连续性、偏导数、克莱罗定理、多元链式法则及梯度<span class="scope">CALC III</span></span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to</span><span data-lang="zh">配套</span> <code style="font-style:normal;">Unit_C3_Partial_Derivatives_and_the_Gradient_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; <span data-lang="en">method walk with</span><span data-lang="zh">方法解析含</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method /</span><span data-lang="zh">方法 /</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer /</span><span data-lang="zh">答案 /</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning mark callouts</span><span data-lang="zh">推理得分点标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; <span data-lang="en">CORE TECHNIQUES</span><span data-lang="zh">核心技术</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算熟练度 &middot; 28 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">domain and level curves of a two-variable function</span><span data-lang="zh">二元函数的定义域与水平曲线</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $f(x,y) = \ln(4 - x^2 - y^2)$. (a) State the natural domain. (b) Find level curves $f = k$ and their range. (c) Describe how the level curves change as $k$ increases toward $\ln 4$.</span><span data-lang="zh">设 $f(x,y) = \ln(4 - x^2 - y^2)$。(a) 给出自然定义域。(b) 求水平曲线 $f = k$ 及其取值范围。(c) 描述当 $k$ 趋向 $\ln 4$ 时水平曲线的变化。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\{(x,y): x^2+y^2 < 4\}$, <span data-lang="en">open disk of radius $2$</span><span data-lang="zh">半径为 $2$ 的开圆盘</span> &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $x^2+y^2 = 4 - e^k$, <span data-lang="en">circles; $k \in (-\infty, \ln 4)$</span><span data-lang="zh">圆；$k \in (-\infty, \ln 4)$</span> &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">circles shrink to a point, surface steepens</span><span data-lang="zh">圆收缩至一点，曲面变陡</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Domain from the logarithm constraint</span><span data-lang="zh">(a) 由对数约束确定定义域</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">The logarithm requires a strictly positive argument. (M1)</span><span data-lang="zh">对数要求真数严格为正。(M1)</span></p>
+      $$ 4 - x^2 - y^2 > 0 \iff x^2 + y^2 < 4. $$
+      <p><span data-lang="en">The domain is the open disk of radius $2$ centred at the origin. The boundary circle $x^2 + y^2 = 4$ makes the argument zero, so $\ln 0$ is undefined; the boundary is excluded. (A1, R1)</span><span data-lang="zh">定义域是以原点为圆心、半径为 $2$ 的开圆盘。边界圆 $x^2 + y^2 = 4$ 使真数为零，$\ln 0$ 无意义，故边界不包含在内。(A1, R1)</span></p>
+      <h4><span data-lang="en">(b) Level curves and their range</span><span data-lang="zh">(b) 水平曲线及其取值范围</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Set $f(x,y) = k$: (M1)</span><span data-lang="zh">令 $f(x,y) = k$：(M1)</span></p>
+      $$ \ln(4 - x^2 - y^2) = k \implies 4 - x^2 - y^2 = e^k \implies x^2 + y^2 = 4 - e^k. $$
+      <p><span data-lang="en">For this circle to exist in the domain we need $4 - e^k > 0$, i.e. $e^k < 4$, i.e. $k < \ln 4$. There is no upper bound below $\ln 4$: any $k < \ln 4$ works. The range of $f$ is $(-\infty, \ln 4)$. (A1, A1)</span><span data-lang="zh">要使该圆在定义域内存在，需 $4 - e^k > 0$，即 $e^k < 4$，即 $k < \ln 4$。在 $\ln 4$ 以下没有下界，任意 $k < \ln 4$ 均可。$f$ 的值域为 $(-\infty, \ln 4)$。(A1, A1)</span></p>
+      <h4><span data-lang="en">(c) Geometry as $k \to \ln 4$</span><span data-lang="zh">(c) $k \to \ln 4$ 时的几何形态</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">As $k$ increases toward $\ln 4$, the radius $\sqrt{4 - e^k} \to 0$, so the level circles shrink toward the centre $(0,0)$. (M1) Level curves crowding together near the centre signals that the surface $z = \ln(4-x^2-y^2)$ is dropping steeply: the function falls to $-\infty$ as you approach the boundary from inside, so near the centre (high $k$) the contours compress, indicating steepness. (A1)</span><span data-lang="zh">当 $k$ 趋向 $\ln 4$ 时，半径 $\sqrt{4 - e^k} \to 0$，水平圆向圆心 $(0,0)$ 收缩。(M1) 水平曲线在圆心附近聚集，表明曲面 $z = \ln(4-x^2-y^2)$ 急剧下降：从内部趋向边界时，函数趋向 $-\infty$，因此在圆心附近（$k$ 较大处）等值线密集，反映出曲面的陡峭程度。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">For $f = \ln(g(x,y))$: the domain is where $g > 0$ (strict inequality), and each level curve is a curve of $g$. The crowding of level curves as $k \to \ln 4$ is the contour map telling you the surface rises without bound toward that level, not falls; wait, here $f \to -\infty$ as $(x,y)$ approaches the boundary circle, so from inside the domain the level circles near the boundary correspond to very negative $k$, while the circles near the origin correspond to $k$ just below $\ln 4$. Concretely: the function is largest at the origin ($f(0,0) = \ln 4$) and decreases toward the boundary where $f \to -\infty$. Closely-spaced level curves near the boundary reflect the rapid fall.</span><span data-lang="zh">对于 $f = \ln(g(x,y))$：定义域为 $g > 0$（严格不等式）处，每条水平曲线都是 $g$ 的等值线。当 $k \to \ln 4$ 时水平曲线密集，等值线图表明：此处 $f \to -\infty$（当 $(x,y)$ 趋向边界圆时），故定义域内靠近边界的水平圆对应极负的 $k$，靠近原点的水平圆对应略低于 $\ln 4$ 的 $k$。具体而言：函数在原点处最大（$f(0,0) = \ln 4$），向边界方向递减至 $-\infty$。靠近边界处密集的水平曲线反映了函数的急剧下降。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">first and second partial derivatives</span><span data-lang="zh">一阶与二阶偏导数</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $f(x,y) = x^3 y^2 - 4xy + e^{x+2y}$. Compute all first and second partial derivatives; verify $f_{xy} = f_{yx}$.</span><span data-lang="zh">设 $f(x,y) = x^3 y^2 - 4xy + e^{x+2y}$。计算所有一阶和二阶偏导数，验证 $f_{xy} = f_{yx}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">$f_x$</span> $= 3x^2y^2 - 4y + e^{x+2y}$ &nbsp;&middot;&nbsp; <span class="ans">$f_y$</span> $= 2x^3y - 4x + 2e^{x+2y}$ &nbsp;&middot;&nbsp; <span class="ans">$f_{xy} = f_{yx}$</span> $= 6x^2y - 4 + 2e^{x+2y}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) First partial derivatives</span><span data-lang="zh">(a) 一阶偏导数</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Differentiate with respect to $x$, treating $y$ as a constant: (M1)</span><span data-lang="zh">对 $x$ 求偏导，将 $y$ 视为常数：(M1)</span></p>
+      $$ f_x = 3x^2 y^2 - 4y + e^{x+2y}. $$
+      <p><span data-lang="en">(A1) Differentiate with respect to $y$, treating $x$ as a constant:</span><span data-lang="zh">(A1) 对 $y$ 求偏导，将 $x$ 视为常数：</span></p>
+      $$ f_y = 2x^3 y - 4x + 2e^{x+2y}. $$
+      <p><span data-lang="en">(A1) Note that $\frac{\partial}{\partial y}e^{x+2y} = 2e^{x+2y}$ by the chain rule with inner derivative $2$.</span><span data-lang="zh">(A1) 注意由链式法则，内层导数为 $2$，故 $\frac{\partial}{\partial y}e^{x+2y} = 2e^{x+2y}$。</span></p>
+      <h4><span data-lang="en">(b) Second partial derivatives</span><span data-lang="zh">(b) 二阶偏导数</span> <span class="marks-call">M1·A1·A1·A1</span></h4>
+      <p><span data-lang="en">Differentiate $f_x$ with respect to $x$: (M1)</span><span data-lang="zh">对 $f_x$ 关于 $x$ 求导：(M1)</span></p>
+      $$ f_{xx} = 6xy^2 + e^{x+2y}. $$
+      <p><span data-lang="en">Differentiate $f_y$ with respect to $y$:</span><span data-lang="zh">对 $f_y$ 关于 $y$ 求导：</span></p>
+      $$ f_{yy} = 2x^3 + 4e^{x+2y}. $$
+      <p><span data-lang="en">Mixed partial, $f_{xy} = \frac{\partial}{\partial y}(f_x)$: differentiate $f_x = 3x^2y^2 - 4y + e^{x+2y}$ with respect to $y$: (A1)</span><span data-lang="zh">混合偏导数 $f_{xy} = \frac{\partial}{\partial y}(f_x)$：对 $f_x = 3x^2y^2 - 4y + e^{x+2y}$ 关于 $y$ 求导：(A1)</span></p>
+      $$ f_{xy} = 6x^2 y - 4 + 2e^{x+2y}. $$
+      <p><span data-lang="en">Mixed partial, $f_{yx} = \frac{\partial}{\partial x}(f_y)$: differentiate $f_y = 2x^3 y - 4x + 2e^{x+2y}$ with respect to $x$: (A1)</span><span data-lang="zh">混合偏导数 $f_{yx} = \frac{\partial}{\partial x}(f_y)$：对 $f_y = 2x^3 y - 4x + 2e^{x+2y}$ 关于 $x$ 求导：(A1)</span></p>
+      $$ f_{yx} = 6x^2 y - 4 + 2e^{x+2y}. $$
+      <p><span data-lang="en">(A1) The two expressions are identical.</span><span data-lang="zh">(A1) 两个表达式完全相同。</span></p>
+      <h4><span data-lang="en">(c) Clairaut verification</span><span data-lang="zh">(c) 克莱罗定理验证</span> <span class="marks-call">R1</span></h4>
+      <p><span data-lang="en">$f_{xy} = f_{yx} = 6x^2y - 4 + 2e^{x+2y}$, confirming Clairaut's theorem, which states that if $f_{xy}$ and $f_{yx}$ are both continuous on an open disk, then they are equal there. Since $f$ is a polynomial plus an exponential, all its partials are continuous everywhere, so the equality is guaranteed. (R1)</span><span data-lang="zh">$f_{xy} = f_{yx} = 6x^2y - 4 + 2e^{x+2y}$，验证了克莱罗定理：若 $f_{xy}$ 和 $f_{yx}$ 在某开圆盘上均连续，则二者在该圆盘上相等。由于 $f$ 是多项式与指数函数之和，其所有偏导数处处连续，等式因此成立。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">When computing mixed partials, keep the intermediate expressions $f_x$ and $f_y$ written out before differentiating again; do not try to skip to the answer. The two routes $(f_x)_y$ and $(f_y)_x$ are the internal check: if they do not match, you have made an arithmetic error. Here the key step is correctly applying the chain rule to $e^{x+2y}$: $\partial/\partial x$ pulls down $1$, while $\partial/\partial y$ pulls down $2$.</span><span data-lang="zh">计算混合偏导数时，应先写出中间表达式 $f_x$ 和 $f_y$，再进行二次求导，不要跳步。$(f_x)_y$ 与 $(f_y)_x$ 两条路径是内部检验：若结果不一致，则运算有误。此题关键在于对 $e^{x+2y}$ 正确应用链式法则：对 $x$ 求导引出系数 $1$，对 $y$ 求导引出系数 $2$。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">chain rule with one independent variable</span><span data-lang="zh">单自变量链式法则</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $w = x^2 y - y^2 z$ with $x = t^2$, $y = \sin t$, $z = e^t$. Draw a dependency tree and find $dw/dt$.</span><span data-lang="zh">设 $w = x^2 y - y^2 z$，其中 $x = t^2$，$y = \sin t$，$z = e^t$。画出依赖树并求 $dw/dt$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">$dw/dt$</span> $= 4t^3 \sin t + t^4 \cos t - 2\sin t \cos t \cdot e^t - \sin^2 t \cdot e^t$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Dependency tree and elementary derivatives</span><span data-lang="zh">(a) 依赖树与初等导数</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">The tree has $w$ at the top, three intermediate variables $x$, $y$, $z$, and $t$ at the bottom. Each intermediate links to $t$ with one edge. (M1)</span><span data-lang="zh">树以 $w$ 为顶，$x$、$y$、$z$ 为中间变量，$t$ 在底层。每个中间变量通过一条边连接至 $t$。(M1)</span></p>
+      <p><span data-lang="en">The six elementary derivatives are:</span><span data-lang="zh">六个初等导数为：</span></p>
+      $$ w_x = 2xy, \quad w_y = x^2 - 2yz, \quad w_z = -y^2, $$
+      $$ \frac{dx}{dt} = 2t, \quad \frac{dy}{dt} = \cos t, \quad \frac{dz}{dt} = e^t. $$
+      <p><span data-lang="en">(A1 for the $w$-partials, A1 for the $t$-derivatives)</span><span data-lang="zh">（$w$ 的偏导数得 A1，$t$ 的导数得 A1）</span></p>
+      <h4><span data-lang="en">(b) Assemble via the chain rule</span><span data-lang="zh">(b) 由链式法则组合</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Sum one term per path from $t$ up to $w$: (M1)</span><span data-lang="zh">对从 $t$ 到 $w$ 的每条路径求和一项：(M1)</span></p>
+      $$ \frac{dw}{dt} = w_x \frac{dx}{dt} + w_y \frac{dy}{dt} + w_z \frac{dz}{dt}. $$
+      $$ = (2xy)(2t) + (x^2 - 2yz)(\cos t) + (-y^2)(e^t). $$
+      <p><span data-lang="en">Substitute $x = t^2$, $y = \sin t$, $z = e^t$: (A1)</span><span data-lang="zh">代入 $x = t^2$，$y = \sin t$，$z = e^t$：(A1)</span></p>
+      $$ = 2(t^2)(\sin t)(2t) + \bigl((t^2)^2 - 2(\sin t)(e^t)\bigr)\cos t + (-\sin^2 t)(e^t). $$
+      $$ = 4t^3 \sin t + (t^4 - 2e^t \sin t)\cos t - e^t \sin^2 t. $$
+      $$ = 4t^3 \sin t + t^4 \cos t - 2e^t \sin t \cos t - e^t \sin^2 t. $$
+      <p>(A1)</p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">The number of terms in the chain-rule sum equals the number of intermediate variables, here three ($x$, $y$, $z$). A very common error is to write only one or two terms, forgetting a path. Drawing the tree forces you to count all paths before writing the formula. After assembling symbolically, substitute at the very end to avoid propagating algebra errors.</span><span data-lang="zh">链式法则求和中的项数等于中间变量的个数，此处为三个（$x$、$y$、$z$）。常见错误是只写一两项而遗漏某条路径。画出依赖树能强制你在写公式前数清所有路径。先进行符号组合，最后再代入具体值，可避免代数错误的传播。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">gradient computation and steepest-ascent direction</span><span data-lang="zh">梯度计算与最速上升方向</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $f(x,y) = x^2 - xy + 2y^2$. (a) $\nabla f$ at $(2,-1)$; (b) unit steepest-ascent direction and max rate; (c) level curve equation and perpendicularity check.</span><span data-lang="zh">设 $f(x,y) = x^2 - xy + 2y^2$。(a) 求点 $(2,-1)$ 处的 $\nabla f$；(b) 最速上升方向的单位向量及最大增长率；(c) 水平曲线方程及垂直性验证。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\nabla f(2,-1) = \langle 5, -6 \rangle$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\mathbf{u} = \frac{1}{\sqrt{61}}\langle 5,-6\rangle$, <span data-lang="en">rate</span><span data-lang="zh">增长率</span> $= \sqrt{61}$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $x^2 - xy + 2y^2 = 8$; $\nabla f \perp$ <span data-lang="en">level curve</span><span data-lang="zh">水平曲线</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Gradient at $(2,-1)$</span><span data-lang="zh">(a) 点 $(2,-1)$ 处的梯度</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Compute the first partials: (M1)</span><span data-lang="zh">计算一阶偏导数：(M1)</span></p>
+      $$ f_x = 2x - y, \quad f_y = -x + 4y. $$
+      <p><span data-lang="en">Evaluate at $(2,-1)$: $f_x(2,-1) = 4-(-1) = 5$ and $f_y(2,-1) = -2 + 4(-1) = -6$. So</span><span data-lang="zh">在点 $(2,-1)$ 处求值：$f_x(2,-1) = 4-(-1) = 5$，$f_y(2,-1) = -2 + 4(-1) = -6$。故</span></p>
+      $$ \nabla f(2,-1) = \langle 5, -6\rangle. \quad \text{(A1)} $$
+      <h4><span data-lang="en">(b) Steepest-ascent unit vector and maximum rate</span><span data-lang="zh">(b) 最速上升单位向量与最大增长率</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The direction of steepest increase is $\nabla f / |\nabla f|$. (M1) The magnitude is</span><span data-lang="zh">最速上升方向为 $\nabla f / |\nabla f|$。(M1) 模长为</span></p>
+      $$ |\nabla f(2,-1)| = \sqrt{25 + 36} = \sqrt{61}. $$
+      <p><span data-lang="en">The unit direction is $\mathbf{u} = \dfrac{1}{\sqrt{61}}\langle 5,-6\rangle$ and the maximum rate of increase is $\sqrt{61}$. (A1)</span><span data-lang="zh">单位方向向量为 $\mathbf{u} = \dfrac{1}{\sqrt{61}}\langle 5,-6\rangle$，最大增长率为 $\sqrt{61}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Level curve and perpendicularity</span><span data-lang="zh">(c) 水平曲线与垂直性</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Evaluate $f(2,-1) = 4 - (2)(-1) + 2(1) = 4 + 2 + 2 = 8$. The level curve through $(2,-1)$ is (M1)</span><span data-lang="zh">计算 $f(2,-1) = 4 - (2)(-1) + 2(1) = 4 + 2 + 2 = 8$。过点 $(2,-1)$ 的水平曲线为 (M1)</span></p>
+      $$ x^2 - xy + 2y^2 = 8. $$
+      <p><span data-lang="en">Geometrically, $\nabla f$ is perpendicular to this curve because the gradient is always orthogonal to the level sets of $f$: any tangent vector $\mathbf{r}'$ to the level curve satisfies $\nabla f \cdot \mathbf{r}' = 0$ by differentiating the constant relation $f(\mathbf{r}(t)) = 8$ with the chain rule. (A1)</span><span data-lang="zh">从几何上看，$\nabla f$ 与该水平曲线垂直，因为梯度总是正交于 $f$ 的水平集：对常值关系 $f(\mathbf{r}(t)) = 8$ 用链式法则求导，可得水平曲线的任意切向量 $\mathbf{r}'$ 均满足 $\nabla f \cdot \mathbf{r}' = 0$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">Three outputs come from one gradient vector: the direction of steepest ascent (unit vector $\nabla f / |\nabla f|$), the maximum rate of increase (scalar $|\nabla f|$), and the normal to the level curve. Keep them distinct. In (c), note $f(2,-1) = 4 + 2 + 2 = 8$: a sign error on $-xy$ is the most common slip, since $x = 2$, $y = -1$ gives $-xy = -( 2)(-1) = +2$.</span><span data-lang="zh">一个梯度向量给出三类信息：最速上升方向（单位向量 $\nabla f / |\nabla f|$）、最大增长率（标量 $|\nabla f|$）以及水平曲线的法向量。注意区分三者。在 (c) 中，$f(2,-1) = 4 + 2 + 2 = 8$：$-xy$ 项最容易出现符号错误，因 $x = 2$，$y = -1$，故 $-xy = -(2)(-1) = +2$。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; <span data-lang="en">DEFINITIONS AND PROOF</span><span data-lang="zh">定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">two-path test: proving a limit does not exist</span><span data-lang="zh">双路径检验：证明极限不存在</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Show $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^2-y^2}{x^2+y^2}$ does not exist. (b) Show $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^2 y}{x^4+y^2}$ does not exist; explain why straight-line paths are insufficient.</span><span data-lang="zh">(a) 证明 $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^2-y^2}{x^2+y^2}$ 不存在。(b) 证明 $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^2 y}{x^4+y^2}$ 不存在；解释为何仅凭直线路径不足以说明问题。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">paths $y=0$ and $x=0$ give $1$ and $-1$; limit DNE</span><span data-lang="zh">路径 $y=0$ 与 $x=0$ 分别给出 $1$ 和 $-1$；极限不存在</span> &nbsp;&middot;&nbsp; <span class="ans">(b)</span> <span data-lang="en">all lines give $0$; parabola $y=x^2$ gives $\tfrac12$; limit DNE</span><span data-lang="zh">所有直线给出 $0$；抛物线 $y=x^2$ 给出 $\tfrac12$；极限不存在</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Two straight-line paths giving different values</span><span data-lang="zh">(a) 两条直线路径给出不同值</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><strong><span data-lang="en">Path 1:</span><span data-lang="zh">路径 1：</span></strong> $y = 0$ <span data-lang="en">(approach along the $x$-axis). Substitute $y = 0$: (M1)</span><span data-lang="zh">（沿 $x$ 轴趋近）。代入 $y = 0$：(M1)</span></p>
+      $$ \frac{x^2 - 0}{x^2 + 0} = \frac{x^2}{x^2} = 1. $$
+      <p><span data-lang="en">As $x \to 0$, the value is constantly $1$, so the limit along this path is $1$. (A1)</span><span data-lang="zh">当 $x \to 0$ 时，值恒为 $1$，故沿此路径的极限为 $1$。(A1)</span></p>
+      <p><strong><span data-lang="en">Path 2:</span><span data-lang="zh">路径 2：</span></strong> $x = 0$ <span data-lang="en">(approach along the $y$-axis). Substitute $x = 0$: (M1)</span><span data-lang="zh">（沿 $y$ 轴趋近）。代入 $x = 0$：(M1)</span></p>
+      $$ \frac{0 - y^2}{0 + y^2} = \frac{-y^2}{y^2} = -1. $$
+      <p><span data-lang="en">The limit along this path is $-1$. (A1) Since the two paths give different values ($1 \ne -1$), the two-variable limit does not exist.</span><span data-lang="zh">沿此路径的极限为 $-1$。(A1) 由于两条路径给出不同的值（$1 \ne -1$），二元极限不存在。</span></p>
+      <h4><span data-lang="en">(b) Straight lines all give $0$, but a parabola gives $\tfrac12$</span><span data-lang="zh">(b) 所有直线给出 $0$，但抛物线给出 $\tfrac12$</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><strong><span data-lang="en">Every line $y = mx$:</span><span data-lang="zh">每条直线 $y = mx$：</span></strong> <span data-lang="en">Substitute $y = mx$ ($m$ any real constant): (M1)</span><span data-lang="zh">代入 $y = mx$（$m$ 为任意实常数）：(M1)</span></p>
+      $$ \frac{x^2 \cdot mx}{x^4 + m^2 x^2} = \frac{mx^3}{x^2(x^2 + m^2)} = \frac{mx}{x^2 + m^2}. $$
+      <p><span data-lang="en">As $x \to 0$, this tends to $\dfrac{m \cdot 0}{0 + m^2} = 0$ (for $m \ne 0$), and for $m=0$ the numerator is identically $0$. So every straight-line path gives limit $0$. (A1)</span><span data-lang="zh">当 $x \to 0$ 时，趋向 $\dfrac{m \cdot 0}{0 + m^2} = 0$（$m \ne 0$ 时），$m = 0$ 时分子恒为 $0$。故所有直线路径均给出极限 $0$。(A1)</span></p>
+      <p><strong><span data-lang="en">Parabolic path $y = x^2$:</span><span data-lang="zh">抛物线路径 $y = x^2$：</span></strong> <span data-lang="en">Substitute $y = x^2$: (M1)</span><span data-lang="zh">代入 $y = x^2$：(M1)</span></p>
+      $$ \frac{x^2 \cdot x^2}{x^4 + (x^2)^2} = \frac{x^4}{x^4 + x^4} = \frac{x^4}{2x^4} = \frac{1}{2}. $$
+      <p><span data-lang="en">The value is constantly $\tfrac12$ along this path, so the limit along the parabola is $\tfrac12 \ne 0$. (A1) Since two paths disagree, the limit does not exist. The example also demonstrates that checking only straight lines cannot prove a limit exists: path-testing can only disprove a limit, never establish it.</span><span data-lang="zh">沿此路径的值恒为 $\tfrac12$，故沿抛物线的极限为 $\tfrac12 \ne 0$。(A1) 由于两条路径结果不一致，极限不存在。此例同时说明，仅检验直线路径无法证明极限存在：路径检验只能否定极限的存在，无法证明它存在。</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">To prove a two-variable limit does not exist, two disagreeing paths suffice. But to prove a limit exists you need a bound that works simultaneously in every direction, not just along specific curves. Straight-line paths catch many failures but not all: this example (with $y = x^2$) is the canonical warning. The lesson is that "two paths agree" is never enough to conclude a limit exists in two variables.</span><span data-lang="zh">证明二元极限不存在，两条路径结果不一致即可。但要证明极限存在，需要一个在所有方向同时成立的上界，而非仅沿特定曲线。直线路径能捕捉到许多反例，但并非全部：此例（$y = x^2$）是经典警示。教训是："两条路径结果一致"在二元极限中永远不足以断定极限存在。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">polar-coordinate squeeze to prove a limit exists</span><span data-lang="zh">极坐标夹逼法证明极限存在</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Prove using polar coordinates: (a) $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^3}{x^2+y^2} = 0$; (b) $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^2y^2}{x^2+y^2} = 0$.</span><span data-lang="zh">使用极坐标证明：(a) $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^3}{x^2+y^2} = 0$；(b) $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^2y^2}{x^2+y^2} = 0$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $|f| \le r|\cos^3\theta| \le r \to 0$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $|f| \le r^2 |\cos^2\theta \sin^2\theta| \le r^2 \to 0$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Polar bound for $x^3/(x^2+y^2)$</span><span data-lang="zh">(a) $x^3/(x^2+y^2)$ 的极坐标上界估计</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Set $x = r\cos\theta$, $y = r\sin\theta$ so $x^2 + y^2 = r^2$. (M1)</span><span data-lang="zh">令 $x = r\cos\theta$，$y = r\sin\theta$，则 $x^2 + y^2 = r^2$。(M1)</span></p>
+      $$ \left|\frac{x^3}{x^2+y^2}\right| = \left|\frac{r^3\cos^3\theta}{r^2}\right| = r\,|\cos^3\theta|. $$
+      <p><span data-lang="en">(A1) Since $|\cos\theta| \le 1$ for all $\theta$, we have $r\,|\cos^3\theta| \le r$. (M1) As $r \to 0$ (i.e. $(x,y)\to(0,0)$), this upper bound tends to $0$, independent of $\theta$. By the squeeze theorem (with lower bound $0$),</span><span data-lang="zh">(A1) 由于对所有 $\theta$ 均有 $|\cos\theta| \le 1$，故 $r\,|\cos^3\theta| \le r$。(M1) 当 $r \to 0$（即 $(x,y)\to(0,0)$）时，该上界趋向 $0$，与 $\theta$ 无关。由夹逼定理（下界为 $0$），</span></p>
+      $$ 0 \le \left|\frac{x^3}{x^2+y^2}\right| \le r \to 0, $$
+      <p><span data-lang="en">so the limit is $0$. (A1)</span><span data-lang="zh">故极限为 $0$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Polar bound for $x^2y^2/(x^2+y^2)$</span><span data-lang="zh">(b) $x^2y^2/(x^2+y^2)$ 的极坐标上界估计</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">In polar form: (M1)</span><span data-lang="zh">极坐标形式：(M1)</span></p>
+      $$ \left|\frac{x^2y^2}{x^2+y^2}\right| = \left|\frac{r^4\cos^2\theta\sin^2\theta}{r^2}\right| = r^2|\cos^2\theta\sin^2\theta|. $$
+      <p><span data-lang="en">(A1) Since $|\cos^2\theta\sin^2\theta| \le 1$ for all $\theta$ (product of two factors each at most $1$), we have (M1)</span><span data-lang="zh">(A1) 由于对所有 $\theta$ 均有 $|\cos^2\theta\sin^2\theta| \le 1$（两个均不超过 $1$ 的因子之积），故 (M1)</span></p>
+      $$ \left|\frac{x^2y^2}{x^2+y^2}\right| \le r^2. $$
+      <p><span data-lang="en">As $r \to 0$, $r^2 \to 0$ regardless of $\theta$. By the squeeze theorem, the limit is $0$. (A1)</span><span data-lang="zh">当 $r \to 0$ 时，$r^2 \to 0$，与 $\theta$ 无关。由夹逼定理，极限为 $0$。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">The polar-coordinate strategy converts a two-variable limit into a one-variable limit in $r$: if the resulting expression is bounded by a function of $r$ alone that tends to $0$, the limit is $0$ in all directions simultaneously. The bound $|\cos^n\theta| \le 1$ (and similarly for $\sin$) is the workhorse. Notice that path-testing alone would never prove these limits exist; only the $\theta$-independent bound gives the proof.</span><span data-lang="zh">极坐标策略将二元极限转化为关于 $r$ 的一元极限：若所得表达式能被仅依赖 $r$ 且趋向 $0$ 的函数上界估计，则极限在所有方向同时为 $0$。$|\cos^n\theta| \le 1$（$\sin$ 亦然）是核心工具。注意仅凭路径检验无法证明这些极限存在，只有与 $\theta$ 无关的上界才能给出证明。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">Clairaut's theorem: statement, verification, and counterexample insight</span><span data-lang="zh">克莱罗定理：陈述、验证与反例分析</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) State Clairaut's theorem. (b) For $f(x,y) = x^4y^3 - \sin(xy^2)$, compute $f_{xy}$ and $f_{yx}$ in full. (c) Show $u = e^x\cos y$ is harmonic and verify $u_{xy} = u_{yx}$.</span><span data-lang="zh">(a) 陈述克莱罗定理。(b) 对 $f(x,y) = x^4y^3 - \sin(xy^2)$，完整计算 $f_{xy}$ 和 $f_{yx}$。(c) 证明 $u = e^x\cos y$ 是调和函数并验证 $u_{xy} = u_{yx}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">if $f_{xy}$ and $f_{yx}$ are continuous on an open disk, they are equal</span><span data-lang="zh">若 $f_{xy}$ 和 $f_{yx}$ 在某开圆盘上均连续，则二者相等</span> &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $f_{xy} = f_{yx} = 12x^3y^2 - 2y\cos(xy^2) + 2xy^3\sin(xy^2)$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $u_{xx}+u_{yy}=0$; $u_{xy}=u_{yx}=-e^x\sin y$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Statement of Clairaut's theorem</span><span data-lang="zh">(a) 克莱罗定理的陈述</span> <span class="marks-call">A1·R1</span></h4>
+      <p><strong><span data-lang="en">Clairaut's theorem.</span><span data-lang="zh">克莱罗定理。</span></strong> <span data-lang="en">If $f$ is defined on an open disk $D$ containing $(a,b)$ and if the mixed partial derivatives $f_{xy}$ and $f_{yx}$ are both continuous on $D$, then $f_{xy}(a,b) = f_{yx}(a,b)$. (A1, R1) The continuity hypothesis is necessary: counterexamples exist for functions where the mixed partials fail to be continuous.</span><span data-lang="zh">若 $f$ 在包含点 $(a,b)$ 的开圆盘 $D$ 上有定义，且混合偏导数 $f_{xy}$ 和 $f_{yx}$ 在 $D$ 上均连续，则 $f_{xy}(a,b) = f_{yx}(a,b)$。(A1, R1) 连续性假设是必要的：对混合偏导数不连续的函数，存在反例。</span></p>
+      <h4><span data-lang="en">(b) Mixed partials of $f(x,y) = x^4y^3 - \sin(xy^2)$</span><span data-lang="zh">(b) $f(x,y) = x^4y^3 - \sin(xy^2)$ 的混合偏导数</span> <span class="marks-call">M1·A1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Compute $f_x$ first (treat $y$ as constant): (M1)</span><span data-lang="zh">先计算 $f_x$（将 $y$ 视为常数）：(M1)</span></p>
+      $$ f_x = 4x^3 y^3 - y^2\cos(xy^2). $$
+      <p><span data-lang="en">Explanation: $\frac{\partial}{\partial x}\sin(xy^2) = \cos(xy^2)\cdot y^2$ by the chain rule. (A1)</span><span data-lang="zh">说明：由链式法则，$\frac{\partial}{\partial x}\sin(xy^2) = \cos(xy^2)\cdot y^2$。(A1)</span></p>
+      <p><span data-lang="en">Differentiate $f_x$ with respect to $y$ to get $f_{xy}$: (M1)</span><span data-lang="zh">对 $f_x$ 关于 $y$ 求导得 $f_{xy}$：(M1)</span></p>
+      $$ f_{xy} = \frac{\partial}{\partial y}\bigl(4x^3 y^3 - y^2\cos(xy^2)\bigr). $$
+      $$ = 12x^3 y^2 - \bigl[2y\cos(xy^2) + y^2 \cdot (-\sin(xy^2))\cdot 2xy\bigr]. $$
+      $$ = 12x^3 y^2 - 2y\cos(xy^2) + 2xy^3\sin(xy^2). $$
+      <p><span data-lang="en">(A1) Now compute $f_y$ (treat $x$ as constant):</span><span data-lang="zh">(A1) 再计算 $f_y$（将 $x$ 视为常数）：</span></p>
+      $$ f_y = 3x^4 y^2 - 2xy\cos(xy^2). $$
+      <p><span data-lang="en">Explanation: $\frac{\partial}{\partial y}\sin(xy^2) = \cos(xy^2)\cdot 2xy$. Differentiate $f_y$ with respect to $x$ to get $f_{yx}$:</span><span data-lang="zh">说明：$\frac{\partial}{\partial y}\sin(xy^2) = \cos(xy^2)\cdot 2xy$。对 $f_y$ 关于 $x$ 求导得 $f_{yx}$：</span></p>
+      $$ f_{yx} = \frac{\partial}{\partial x}\bigl(3x^4 y^2 - 2xy\cos(xy^2)\bigr). $$
+      $$ = 12x^3 y^2 - \bigl[2y\cos(xy^2) + 2xy\cdot(-\sin(xy^2))\cdot y^2\bigr]. $$
+      $$ = 12x^3 y^2 - 2y\cos(xy^2) + 2xy^3\sin(xy^2). $$
+      <p><span data-lang="en">(A1) Both mixed partials agree: $f_{xy} = f_{yx} = 12x^3y^2 - 2y\cos(xy^2) + 2xy^3\sin(xy^2)$.</span><span data-lang="zh">(A1) 两个混合偏导数一致：$f_{xy} = f_{yx} = 12x^3y^2 - 2y\cos(xy^2) + 2xy^3\sin(xy^2)$。</span></p>
+      <h4><span data-lang="en">(c) Laplace's equation and mixed-partial check for $u = e^x\cos y$</span><span data-lang="zh">(c) $u = e^x\cos y$ 满足拉普拉斯方程及混合偏导数验证</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Differentiate twice in each variable. In $x$: (M1)</span><span data-lang="zh">对每个变量各求二阶导数。关于 $x$：(M1)</span></p>
+      $$ u_x = e^x\cos y, \qquad u_{xx} = e^x\cos y. $$
+      <p><span data-lang="en">In $y$:</span><span data-lang="zh">关于 $y$：</span></p>
+      $$ u_y = -e^x\sin y, \qquad u_{yy} = -e^x\cos y. $$
+      <p><span data-lang="en">Sum: $u_{xx} + u_{yy} = e^x\cos y - e^x\cos y = 0$, so $u$ is harmonic. (A1)</span><span data-lang="zh">求和：$u_{xx} + u_{yy} = e^x\cos y - e^x\cos y = 0$，故 $u$ 是调和函数。(A1)</span></p>
+      <p><span data-lang="en">Mixed partials: $u_{xy} = \frac{\partial}{\partial y}(e^x\cos y) = -e^x\sin y$ and $u_{yx} = \frac{\partial}{\partial x}(-e^x\sin y) = -e^x\sin y$. They agree, as Clairaut guarantees. (A1)</span><span data-lang="zh">混合偏导数：$u_{xy} = \frac{\partial}{\partial y}(e^x\cos y) = -e^x\sin y$，$u_{yx} = \frac{\partial}{\partial x}(-e^x\sin y) = -e^x\sin y$。二者一致，与克莱罗定理保证一致。(A1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">In (b), apply the product rule carefully when differentiating $y^2\cos(xy^2)$ with respect to $y$: the factor $y^2$ differentiates to $2y$ and the factor $\cos(xy^2)$ differentiates to $-\sin(xy^2)\cdot 2xy$ by the chain rule. Getting all three terms in each mixed partial and matching them is the payoff. For harmonic functions in (c), the sum $u_{xx}+u_{yy}=0$ is not a coincidence: it is the defining equation of steady-state heat distributions and electrostatics.</span><span data-lang="zh">在 (b) 中，对 $y^2\cos(xy^2)$ 关于 $y$ 求导时，需仔细应用乘积法则：因子 $y^2$ 求导得 $2y$，因子 $\cos(xy^2)$ 由链式法则求导得 $-\sin(xy^2)\cdot 2xy$。在每个混合偏导数中得到全部三项并使之吻合是本题的关键。在 (c) 中，$u_{xx}+u_{yy}=0$ 并非巧合：它是稳态热分布与静电学的定义方程，即调和函数的定义。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; <span data-lang="en">APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合题 &middot; 28 分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">chain rule with two independent variables and a Laplacian identity</span><span data-lang="zh">双自变量链式法则与拉普拉斯恒等式</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Let $z = f(x,y)$, $x = s+t$, $y = s-t$. (a) Find $\partial z/\partial s$ and $\partial z/\partial t$. (b) Find $\partial^2 z/\partial s^2$ and $\partial^2 z/\partial t^2$. (c) Show $\partial^2 z/\partial s^2 - \partial^2 z/\partial t^2 = 4f_{xy}$; interpret for harmonic $f$.</span><span data-lang="zh">设 $z = f(x,y)$，$x = s+t$，$y = s-t$。(a) 求 $\partial z/\partial s$ 和 $\partial z/\partial t$。(b) 求 $\partial^2 z/\partial s^2$ 和 $\partial^2 z/\partial t^2$。(c) 证明 $\partial^2 z/\partial s^2 - \partial^2 z/\partial t^2 = 4f_{xy}$，并对调和函数 $f$ 给出解释。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\partial z/\partial s = f_x + f_y$, $\partial z/\partial t = f_x - f_y$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\partial^2 z/\partial s^2 = f_{xx}+2f_{xy}+f_{yy}$, $\partial^2 z/\partial t^2 = f_{xx}-2f_{xy}+f_{yy}$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">difference $= 4f_{xy}$; harmonic $f$ gives $\partial^2 z/\partial s^2 + \partial^2 z/\partial t^2 = 0$</span><span data-lang="zh">差 $= 4f_{xy}$；调和 $f$ 给出 $\partial^2 z/\partial s^2 + \partial^2 z/\partial t^2 = 0$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) First-order chain rule</span><span data-lang="zh">(a) 一阶链式法则</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">The parameter derivatives are $\partial x/\partial s = 1$, $\partial y/\partial s = 1$, $\partial x/\partial t = 1$, $\partial y/\partial t = -1$. (M1)</span><span data-lang="zh">参数导数为 $\partial x/\partial s = 1$，$\partial y/\partial s = 1$，$\partial x/\partial t = 1$，$\partial y/\partial t = -1$。(M1)</span></p>
+      $$ \frac{\partial z}{\partial s} = f_x \frac{\partial x}{\partial s} + f_y \frac{\partial y}{\partial s} = f_x(1) + f_y(1) = f_x + f_y. \quad \text{(A1)} $$
+      $$ \frac{\partial z}{\partial t} = f_x \frac{\partial x}{\partial t} + f_y \frac{\partial y}{\partial t} = f_x(1) + f_y(-1) = f_x - f_y. \quad \text{(A1)} $$
+      <h4><span data-lang="en">(b) Second-order chain rule</span><span data-lang="zh">(b) 二阶链式法则</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Differentiate $\partial z/\partial s = f_x + f_y$ with respect to $s$, using the chain rule again on $f_x$ and $f_y$: (M1)</span><span data-lang="zh">对 $\partial z/\partial s = f_x + f_y$ 关于 $s$ 求导，对 $f_x$ 和 $f_y$ 再次应用链式法则：(M1)</span></p>
+      $$ \frac{\partial^2 z}{\partial s^2} = \frac{\partial}{\partial s}(f_x + f_y) = \left(f_{xx}\frac{\partial x}{\partial s} + f_{xy}\frac{\partial y}{\partial s}\right) + \left(f_{yx}\frac{\partial x}{\partial s} + f_{yy}\frac{\partial y}{\partial s}\right). $$
+      $$ = (f_{xx}\cdot 1 + f_{xy}\cdot 1) + (f_{yx}\cdot 1 + f_{yy}\cdot 1) = f_{xx} + f_{xy} + f_{yx} + f_{yy}. $$
+      <p><span data-lang="en">By Clairaut's theorem $f_{xy} = f_{yx}$, so $\partial^2 z/\partial s^2 = f_{xx} + 2f_{xy} + f_{yy}$. (A1)</span><span data-lang="zh">由克莱罗定理 $f_{xy} = f_{yx}$，故 $\partial^2 z/\partial s^2 = f_{xx} + 2f_{xy} + f_{yy}$。(A1)</span></p>
+      <p><span data-lang="en">Differentiate $\partial z/\partial t = f_x - f_y$ with respect to $t$: (M1)</span><span data-lang="zh">对 $\partial z/\partial t = f_x - f_y$ 关于 $t$ 求导：(M1)</span></p>
+      $$ \frac{\partial^2 z}{\partial t^2} = \frac{\partial}{\partial t}(f_x - f_y) = \left(f_{xx}\frac{\partial x}{\partial t} + f_{xy}\frac{\partial y}{\partial t}\right) - \left(f_{yx}\frac{\partial x}{\partial t} + f_{yy}\frac{\partial y}{\partial t}\right). $$
+      $$ = (f_{xx}\cdot 1 + f_{xy}\cdot(-1)) - (f_{yx}\cdot 1 + f_{yy}\cdot(-1)) = f_{xx} - f_{xy} - f_{yx} + f_{yy}. $$
+      <p><span data-lang="en">Using $f_{xy} = f_{yx}$: $\partial^2 z/\partial t^2 = f_{xx} - 2f_{xy} + f_{yy}$. (A1)</span><span data-lang="zh">使用 $f_{xy} = f_{yx}$：$\partial^2 z/\partial t^2 = f_{xx} - 2f_{xy} + f_{yy}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Difference identity and harmonic interpretation</span><span data-lang="zh">(c) 差式恒等式与调和函数解释</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Subtract the two results: (M1)</span><span data-lang="zh">两式相减：(M1)</span></p>
+      $$ \frac{\partial^2 z}{\partial s^2} - \frac{\partial^2 z}{\partial t^2} = (f_{xx}+2f_{xy}+f_{yy}) - (f_{xx}-2f_{xy}+f_{yy}) = 4f_{xy}. \quad \text{(A1)} $$
+      <p><span data-lang="en">If $f$ satisfies Laplace's equation $f_{xx} + f_{yy} = 0$, note that both $\partial^2 z/\partial s^2 = f_{xx}+2f_{xy}+f_{yy}$ and $\partial^2 z/\partial t^2 = f_{xx}-2f_{xy}+f_{yy}$ equal $2f_{xy}$ and $-2f_{xy}$ after using $f_{xx} = -f_{yy}$, so their sum $\partial^2 z/\partial s^2 + \partial^2 z/\partial t^2 = 2(f_{xx}+f_{yy}) = 0$. In particular if additionally $f_{xy} = 0$, then both second derivatives in $(s,t)$ vanish. More generally, for harmonic $f$ the second-order information splits cleanly between the $s$ and $t$ directions. (R1)</span><span data-lang="zh">若 $f$ 满足拉普拉斯方程 $f_{xx} + f_{yy} = 0$，利用 $f_{xx} = -f_{yy}$，$\partial^2 z/\partial s^2 = f_{xx}+2f_{xy}+f_{yy}$ 和 $\partial^2 z/\partial t^2 = f_{xx}-2f_{xy}+f_{yy}$ 分别等于 $2f_{xy}$ 和 $-2f_{xy}$，故其和 $\partial^2 z/\partial s^2 + \partial^2 z/\partial t^2 = 2(f_{xx}+f_{yy}) = 0$。特别地，若还有 $f_{xy} = 0$，则 $(s,t)$ 方向的两个二阶导数均为零。更一般地，对调和函数 $f$，二阶信息在 $s$ 和 $t$ 方向之间清晰地分离。(R1)</span></p>
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">The substitution $x = s+t$, $y = s-t$ is a rotation by 45 degrees composed with a dilation, and it converts the Laplacian $f_{xx}+f_{yy}$ into $\frac{1}{2}(\partial^2 z/\partial s^2 + \partial^2 z/\partial t^2)$, which vanishes for harmonic $f$. This calculation is the first step in deriving the wave equation's d'Alembert solution: when $f_{xx} = f_{tt}$ (the wave equation), the substitution $s=x+t$, $u=x-t$ reduces it to $\partial^2 z/\partial s\,\partial u = 0$, whose general solution is $f(x,t) = F(x+t)+G(x-t)$.</span><span data-lang="zh">换元 $x = s+t$，$y = s-t$ 等价于旋转 $45°$ 再伸缩，它将拉普拉斯算子 $f_{xx}+f_{yy}$ 转化为 $\frac{1}{2}(\partial^2 z/\partial s^2 + \partial^2 z/\partial t^2)$，对调和函数 $f$ 该式为零。这一计算是推导波动方程达朗贝尔解的第一步：当 $f_{xx} = f_{tt}$（波动方程）时，换元 $s=x+t$，$u=x-t$ 将其化为 $\partial^2 z/\partial s\,\partial u = 0$，其通解为 $f(x,t) = F(x+t)+G(x-t)$。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">implicit partial differentiation from a surface constraint</span><span data-lang="zh">曲面约束下的隐函数偏微分</span></span><span class="pill marks">[9 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Surface $F(x,y,z) = x^2z + y^2z^3 - 3xyz = 5$ defines $z = z(x,y)$ implicitly. (a) Find $F_x$, $F_y$, $F_z$. (b) Find $\partial z/\partial x$ and $\partial z/\partial y$. (c) Evaluate both at $(1,1,1)$.</span><span data-lang="zh">曲面 $F(x,y,z) = x^2z + y^2z^3 - 3xyz = 5$ 将 $z = z(x,y)$ 隐式确定。(a) 求 $F_x$、$F_y$、$F_z$。(b) 求 $\partial z/\partial x$ 和 $\partial z/\partial y$。(c) 在点 $(1,1,1)$ 处求值。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $F_x = 2xz - 3yz$, $F_y = 2yz^3 - 3xz$, $F_z = x^2 + 3y^2z^2 - 3xy$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\partial z/\partial x = -(2xz-3yz)/(x^2+3y^2z^2-3xy)$, $\partial z/\partial y = -(2yz^3-3xz)/(x^2+3y^2z^2-3xy)$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $\partial z/\partial x = \tfrac{1}{1} = 1$, $\partial z/\partial y = \tfrac{1}{1} = 1$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Partial derivatives of $F$</span><span data-lang="zh">(a) $F$ 的偏导数</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Treat $F(x,y,z) = x^2z + y^2z^3 - 3xyz$ as a function of three independent variables and differentiate each one in turn, holding the other two fixed. (M1)</span><span data-lang="zh">将 $F(x,y,z) = x^2z + y^2z^3 - 3xyz$ 视为三个独立变量的函数，依次对每个变量求导，保持其余两个固定。(M1)</span></p>
+      $$ F_x = 2xz - 3yz. \quad \text{(A1)} $$
+      $$ F_y = 2yz^3 - 3xz. $$
+      $$ F_z = x^2 + 3y^2z^2 - 3xy. \quad \text{(A1)} $$
+      <h4><span data-lang="en">(b) Implicit partial derivatives</span><span data-lang="zh">(b) 隐函数偏导数</span> <span class="marks-call">M1·A1·A1·A1</span></h4>
+      <p><span data-lang="en">The implicit function theorem (for $F_z \ne 0$) gives (M1)</span><span data-lang="zh">隐函数定理（在 $F_z \ne 0$ 处）给出 (M1)</span></p>
+      $$ \frac{\partial z}{\partial x} = -\frac{F_x}{F_z} = -\frac{2xz - 3yz}{x^2 + 3y^2z^2 - 3xy}. \quad \text{(A1)} $$
+      $$ \frac{\partial z}{\partial y} = -\frac{F_y}{F_z} = -\frac{2yz^3 - 3xz}{x^2 + 3y^2z^2 - 3xy}. \quad \text{(A1)} $$
+      <p><span data-lang="en">(A1 for correct sign convention and both formulas)</span><span data-lang="zh">（符号约定正确且两个公式均正确得 A1）</span></p>
+      <h4><span data-lang="en">(c) Evaluation at $(1,1,1)$</span><span data-lang="zh">(c) 在点 $(1,1,1)$ 处求值</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The formulas in (b) express $\partial z/\partial x$ and $\partial z/\partial y$ as ratios of partial derivatives of $F$, valid at any point $(x,y,z)$ where $F_z \ne 0$. Substitute $(x,y,z) = (1,1,1)$: (M1)</span><span data-lang="zh">(b) 中的公式将 $\partial z/\partial x$ 和 $\partial z/\partial y$ 表示为 $F$ 的偏导数之比，在任意满足 $F_z \ne 0$ 的点 $(x,y,z)$ 处均成立。代入 $(x,y,z) = (1,1,1)$：(M1)</span></p>
+      $$ F_x(1,1,1) = 2(1)(1) - 3(1)(1) = 2 - 3 = -1. $$
+      $$ F_y(1,1,1) = 2(1)(1)^3 - 3(1)(1) = 2 - 3 = -1. $$
+      $$ F_z(1,1,1) = (1)^2 + 3(1)^2(1)^2 - 3(1)(1) = 1 + 3 - 3 = 1 \ne 0. $$
+      $$ \frac{\partial z}{\partial x}\bigg|_{(1,1,1)} = -\frac{F_x}{F_z} = -\frac{-1}{1} = 1. \qquad \frac{\partial z}{\partial y}\bigg|_{(1,1,1)} = -\frac{F_y}{F_z} = -\frac{-1}{1} = 1. \quad \text{(A1)} $$
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">The implicit differentiation formulas $\partial z/\partial x = -F_x/F_z$ and $\partial z/\partial y = -F_y/F_z$ come from differentiating the constraint $F(x,y,z(x,y)) = \text{const}$ with respect to $x$ (and $y$), applying the chain rule, and solving for $\partial z/\partial x$. The formula holds wherever $F_z \ne 0$, which is the condition of the implicit function theorem. Evaluating at a specific point simply substitutes the coordinates into the general expression; you do not need to solve for $z$ explicitly.</span><span data-lang="zh">隐函数微分公式 $\partial z/\partial x = -F_x/F_z$ 和 $\partial z/\partial y = -F_y/F_z$ 来自对约束 $F(x,y,z(x,y)) = \text{const}$ 关于 $x$（及 $y$）求导，应用链式法则后解出 $\partial z/\partial x$。该公式在 $F_z \ne 0$ 处成立，正是隐函数定理的条件。在特定点处求值只需将坐标代入一般表达式，无需显式解出 $z$。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">gradient, level surfaces, and normal vector to a surface</span><span data-lang="zh">梯度、水平曲面与曲面法向量</span></span><span class="pill marks">[9 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Surface $F(x,y,z) = x^2+2y^2-z = 4$; function $g(x,y) = x^2+2y^2$. (a) $\nabla F$ at $P=(1,1,-1)$; verify $P$ on $S$. (b) Tangent plane at $P$. (c) $\nabla g(1,1)$; max rate; steepest direction; tangent to level curve.</span><span data-lang="zh">曲面 $F(x,y,z) = x^2+2y^2-z = 4$；函数 $g(x,y) = x^2+2y^2$。(a) 求点 $P=(1,1,-1)$ 处的 $\nabla F$；验证 $P$ 在 $S$ 上。(b) 求 $P$ 处的切平面。(c) 求 $\nabla g(1,1)$、最大增长率、最速上升方向及水平曲线处的切向量。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\nabla F(1,1,-1) = \langle 2,4,-1\rangle$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $2(x-1)+4(y-1)-(z+1)=0$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $\nabla g = \langle 2,4\rangle$; <span data-lang="en">rate</span><span data-lang="zh">增长率</span> $= 2\sqrt{5}$; $\mathbf{u} = \tfrac{1}{2\sqrt{5}}\langle 2,4\rangle$; <span data-lang="en">tangent</span><span data-lang="zh">切向量</span> $= \tfrac{1}{2\sqrt{5}}\langle -4,2\rangle$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Gradient of $F$ and verification that $P \in S$</span><span data-lang="zh">(a) $F$ 的梯度及 $P \in S$ 的验证</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">The partial derivatives of $F(x,y,z) = x^2 + 2y^2 - z$ are: (M1)</span><span data-lang="zh">$F(x,y,z) = x^2 + 2y^2 - z$ 的偏导数为：(M1)</span></p>
+      $$ F_x = 2x, \quad F_y = 4y, \quad F_z = -1. $$
+      <p><span data-lang="en">So $\nabla F = \langle 2x, 4y, -1\rangle$. At $P = (1,1,-1)$:</span><span data-lang="zh">故 $\nabla F = \langle 2x, 4y, -1\rangle$。在点 $P = (1,1,-1)$ 处：</span></p>
+      $$ \nabla F(1,1,-1) = \langle 2, 4, -1\rangle. \quad \text{(A1)} $$
+      <p><span data-lang="en">Verify $P \in S$: $F(1,1,-1) = 1 + 2 - (-1) = 1 + 2 + 1 = 4$. Yes, $P$ lies on $S$. (A1)</span><span data-lang="zh">验证 $P \in S$：$F(1,1,-1) = 1 + 2 - (-1) = 1 + 2 + 1 = 4$。是的，$P$ 在 $S$ 上。(A1)</span></p>
+      <h4><span data-lang="en">(b) Tangent plane at $P$</span><span data-lang="zh">(b) 点 $P$ 处的切平面</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">The gradient $\nabla F(P)$ is the normal vector to $S$ at $P$, so the tangent plane is (M1)</span><span data-lang="zh">梯度 $\nabla F(P)$ 是曲面 $S$ 在点 $P$ 处的法向量，故切平面为 (M1)</span></p>
+      $$ F_x(P)(x - 1) + F_y(P)(y - 1) + F_z(P)(z - (-1)) = 0, $$
+      $$ 2(x - 1) + 4(y - 1) - 1(z + 1) = 0, $$
+      $$ 2x + 4y - z = 7. \quad \text{(A1)} $$
+      <h4><span data-lang="en">(c) Gradient of $g$, maximum rate, steepest direction, and tangent to level curve</span><span data-lang="zh">(c) $g$ 的梯度、最大增长率、最速上升方向与水平曲线切向量</span> <span class="marks-call">M1·A1·A1·A1</span></h4>
+      <p><span data-lang="en">The partial derivatives of $g(x,y) = x^2 + 2y^2$ are $g_x = 2x$ and $g_y = 4y$. At $(1,1)$: (M1)</span><span data-lang="zh">$g(x,y) = x^2 + 2y^2$ 的偏导数为 $g_x = 2x$，$g_y = 4y$。在点 $(1,1)$ 处：(M1)</span></p>
+      $$ \nabla g(1,1) = \langle 2, 4\rangle. $$
+      <p><span data-lang="en">The maximum rate of increase is the magnitude:</span><span data-lang="zh">最大增长率为梯度的模长：</span></p>
+      $$ |\nabla g(1,1)| = \sqrt{4 + 16} = \sqrt{20} = 2\sqrt{5}. \quad \text{(A1)} $$
+      <p><span data-lang="en">The unit direction of steepest increase is:</span><span data-lang="zh">最速上升方向的单位向量为：</span></p>
+      $$ \mathbf{u} = \frac{\nabla g}{|\nabla g|} = \frac{1}{2\sqrt{5}}\langle 2, 4\rangle = \frac{1}{\sqrt{5}}\langle 1, 2\rangle. \quad \text{(A1)} $$
+      <p><span data-lang="en">A unit vector tangent to the level curve $g = 3$ at $(1,1)$ is perpendicular to $\nabla g$. Rotating $\langle 2,4\rangle$ by $90°$ gives $\langle -4, 2\rangle$. Normalising:</span><span data-lang="zh">水平曲线 $g = 3$ 在点 $(1,1)$ 处的单位切向量与 $\nabla g$ 垂直。将 $\langle 2,4\rangle$ 旋转 $90°$ 得 $\langle -4, 2\rangle$。单位化：</span></p>
+      $$ \mathbf{t} = \frac{1}{2\sqrt{5}}\langle -4, 2\rangle = \frac{1}{\sqrt{5}}\langle -2, 1\rangle. \quad \text{(A1)} $$
+      <div class="insight"><strong><span data-lang="en">Insight.</span><span data-lang="zh">分析。</span></strong> <span data-lang="en">The surface $F(x,y,z) = x^2+2y^2-z = 4$ is the graph $z = x^2+2y^2-4$, an elliptic paraboloid. The gradient $\nabla F$ in three variables gives the normal to the surface, while $\nabla g$ in two variables gives the normal to the level curve $g = \text{const}$ in the $xy$-plane. These are related: the tangent plane in (b) uses the three-variable gradient, and the level curve perpendicularity in (c) uses the two-variable gradient. The tangent vector to a level curve is always a $90°$ rotation of the gradient; in two dimensions, rotating $\langle a, b\rangle$ by $90°$ gives $\langle -b, a\rangle$.</span><span data-lang="zh">曲面 $F(x,y,z) = x^2+2y^2-z = 4$ 是图像 $z = x^2+2y^2-4$，为椭圆抛物面。三元函数的梯度 $\nabla F$ 给出曲面法向量，二元函数的梯度 $\nabla g$ 给出 $xy$ 平面中水平曲线 $g = \text{const}$ 的法向量。二者相关：(b) 中的切平面使用三元梯度，(c) 中的水平曲线垂直性使用二元梯度。水平曲线的切向量总是梯度旋转 $90°$ 所得；在二维情形，将 $\langle a, b\rangle$ 旋转 $90°$ 得 $\langle -b, a\rangle$。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中卡在这个单元了吗？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约一次与鼎睿学者辅导老师的免费 15 分钟咨询。我们将在您的下次期中或期末考试前帮您突破瓶颈。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_c3_partial_derivatives_and_the_gradient__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_C3_Partial_Derivatives_and_the_Gradient.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_C3_Partial_Derivatives_and_the_Gradient_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit C3 Solutions</span><span data-lang="zh">大学微积分 &middot; C3 单元解答</span> <code style="color:#555;">v1.0</code></span>
+  <span><span data-lang="en">Sections 1 to 6 &middot; 82 marks total</span><span data-lang="zh">第 1 至 6 节 &middot; 共 82 分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

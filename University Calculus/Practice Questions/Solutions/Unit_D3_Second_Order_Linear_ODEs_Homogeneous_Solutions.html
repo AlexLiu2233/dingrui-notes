@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit D3: Second-Order Linear ODEs: Homogeneous | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-D3  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Solutions.html">
+<meta name="description" content="Worked solutions for Unit D3: Second-Order Linear ODEs: Homogeneous in University Calculus. Characteristic equations, Wronskian proofs, reduction of order, and free-vibration IVPs from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit D3: Second-Order Linear ODEs: Homogeneous | Solutions">
+<meta property="og:description" content="Worked solutions for Unit D3: Second-Order Linear ODEs: Homogeneous in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit D3: Second-Order Linear ODEs: Homogeneous | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit D3: Second-Order Linear ODEs: Homogeneous in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit D3: Second-Order Linear ODEs: Homogeneous | Solutions",
+  "description": "Worked solutions for Unit D3: Second-Order Linear ODEs: Homogeneous in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit D3 &middot; Solutions</span><span data-lang="zh">第D3单元 &middot; 解析</span></div>
+<h1 class="chapter-title"><span data-lang="en">Second-Order Linear ODEs: Homogeneous &middot; Solutions</span><span data-lang="zh">二阶线性常微分方程：齐次方程 &middot; 解析</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学风格练习题配套解析</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 6</b>: superposition, characteristic equation (distinct real, complex, repeated roots), Wronskian and fundamental sets, reduction of order<span class="scope">CALC IV</span></span><span data-lang="zh">第 <b>1 至 6</b> 节：叠加原理、特征方程（不同实根、复数根、重复根）、朗斯基行列式与基本解组、降阶法<span class="scope">CALC IV</span></span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to</span><span data-lang="zh">配套练习：</span> <code style="font-style:normal;">Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; <span data-lang="en">method walk with</span><span data-lang="zh">方法讲解含</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> <span data-lang="en">method /</span><span data-lang="zh">方法 /</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> <span data-lang="en">answer /</span><span data-lang="zh">答案 /</span> <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> <span data-lang="en">reasoning mark callouts</span><span data-lang="zh">推理得分点标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算能力 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">characteristic equation: distinct real roots</span><span data-lang="zh">特征方程：不同实根</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) $y''-5y'+6y=0$, $y(0)=2$, $y'(0)=5$. (b) $y''+y'-12y=0$, $y(0)=1$, $y'(0)=-1$.</span><span data-lang="zh">（a）$y''-5y'+6y=0$，$y(0)=2$，$y'(0)=5$。（b）$y''+y'-12y=0$，$y(0)=1$，$y'(0)=-1$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y = e^{2t} + e^{3t}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $y = \tfrac{3}{7}e^{3t} + \tfrac{4}{7}e^{-4t}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Distinct real roots, IVP</span><span data-lang="zh">（a）不同实根，初值问题</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2} - 5r + 6 = 0$. Discriminant: $25 - 24 = 1 > 0$, so two distinct real roots. (M1)</span><span data-lang="zh">特征方程：$r^{2} - 5r + 6 = 0$。判别式：$25 - 24 = 1 > 0$，故有两个不同实根。(M1)</span></p>
+      <p><span data-lang="en">Factor: $(r-2)(r-3) = 0$, giving $r_1 = 2$, $r_2 = 3$. General solution: $y = c_1 e^{2t} + c_2 e^{3t}$.</span><span data-lang="zh">分解：$(r-2)(r-3) = 0$，得 $r_1 = 2$，$r_2 = 3$。通解：$y = c_1 e^{2t} + c_2 e^{3t}$。</span></p>
+      <p><span data-lang="en">Verification: $y'' - 5y' + 6y = (4c_1 e^{2t}+9c_2 e^{3t}) - 5(2c_1 e^{2t}+3c_2 e^{3t}) + 6(c_1 e^{2t}+c_2 e^{3t}) = 0$. (A1)</span><span data-lang="zh">验证：$y'' - 5y' + 6y = (4c_1 e^{2t}+9c_2 e^{3t}) - 5(2c_1 e^{2t}+3c_2 e^{3t}) + 6(c_1 e^{2t}+c_2 e^{3t}) = 0$。(A1)</span></p>
+      <p><span data-lang="en">Apply ICs. $y(0) = c_1 + c_2 = 2$. Then $y' = 2c_1 e^{2t} + 3c_2 e^{3t}$, so $y'(0) = 2c_1 + 3c_2 = 5$. (M1)</span><span data-lang="zh">代入初始条件：$y(0) = c_1 + c_2 = 2$。又 $y' = 2c_1 e^{2t} + 3c_2 e^{3t}$，故 $y'(0) = 2c_1 + 3c_2 = 5$。(M1)</span></p>
+      <p><span data-lang="en">Subtract twice the first equation from the second: $(2c_1+3c_2)-2(c_1+c_2)=5-4$, giving $c_2 = 1$, hence $c_1 = 1$. Particular solution: $y = e^{2t} + e^{3t}$. (A1)</span><span data-lang="zh">用第二式减去第一式的两倍：$(2c_1+3c_2)-2(c_1+c_2)=5-4$，得 $c_2 = 1$，故 $c_1 = 1$。特解：$y = e^{2t} + e^{3t}$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Distinct real roots, one negative</span><span data-lang="zh">（b）不同实根，其中一根为负</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2} + r - 12 = 0$. Discriminant: $1 + 48 = 49 > 0$. Factor: $(r-3)(r+4) = 0$, so $r_1 = 3$, $r_2 = -4$. (M1)</span><span data-lang="zh">特征方程：$r^{2} + r - 12 = 0$。判别式：$1 + 48 = 49 > 0$。分解：$(r-3)(r+4) = 0$，得 $r_1 = 3$，$r_2 = -4$。(M1)</span></p>
+      <p><span data-lang="en">General solution: $y = c_1 e^{3t} + c_2 e^{-4t}$. Substitution confirms it satisfies the ODE. (A1)</span><span data-lang="zh">通解：$y = c_1 e^{3t} + c_2 e^{-4t}$。代入验证满足方程。(A1)</span></p>
+      <p><span data-lang="en">$y(0) = c_1 + c_2 = 1$; $y' = 3c_1 e^{3t} - 4c_2 e^{-4t}$, so $y'(0) = 3c_1 - 4c_2 = -1$. (M1)</span><span data-lang="zh">$y(0) = c_1 + c_2 = 1$；$y' = 3c_1 e^{3t} - 4c_2 e^{-4t}$，故 $y'(0) = 3c_1 - 4c_2 = -1$。(M1)</span></p>
+      <p><span data-lang="en">System: $c_1 + c_2 = 1$ and $3c_1 - 4c_2 = -1$. Multiply the first by $4$ and add: $7c_1 = 3$, so $c_1 = \tfrac{3}{7}$ and $c_2 = 1 - \tfrac{3}{7} = \tfrac{4}{7}$. Check: $y'(0) = 3\cdot\tfrac{3}{7} - 4\cdot\tfrac{4}{7} = \tfrac{9-16}{7} = -1$. Particular solution: $y = \tfrac{3}{7}e^{3t} + \tfrac{4}{7}e^{-4t}$. (A1)</span><span data-lang="zh">方程组：$c_1 + c_2 = 1$ 且 $3c_1 - 4c_2 = -1$。第一式乘以 $4$ 后相加：$7c_1 = 3$，故 $c_1 = \tfrac{3}{7}$，$c_2 = 1 - \tfrac{3}{7} = \tfrac{4}{7}$。验证：$y'(0) = 3\cdot\tfrac{3}{7} - 4\cdot\tfrac{4}{7} = \tfrac{9-16}{7} = -1$。特解：$y = \tfrac{3}{7}e^{3t} + \tfrac{4}{7}e^{-4t}$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">When the discriminant $b^{2}-4ac > 0$, the two exponential solutions $e^{r_1 t}$ and $e^{r_2 t}$ are automatically linearly independent (their Wronskian equals $(r_2-r_1)e^{(r_1+r_2)t} \ne 0$), so the general solution always spans the full two-dimensional solution space. Always verify your particular solution satisfies both ODE and ICs before reporting it.</span><span data-lang="zh">当判别式 $b^{2}-4ac > 0$ 时，两个指数解 $e^{r_1 t}$ 和 $e^{r_2 t}$ 自动线性无关（其朗斯基行列式等于 $(r_2-r_1)e^{(r_1+r_2)t} \ne 0$），故通解始终张成完整的二维解空间。在最终报告前，务必验证特解同时满足方程和初始条件。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">characteristic equation: complex conjugate roots</span><span data-lang="zh">特征方程：复共轭根</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) $y''+2y'+5y=0$, $y(0)=3$, $y'(0)=1$. (b) $y''-4y'+13y=0$, $y(0)=0$, $y'(0)=6$.</span><span data-lang="zh">（a）$y''+2y'+5y=0$，$y(0)=3$，$y'(0)=1$。（b）$y''-4y'+13y=0$，$y(0)=0$，$y'(0)=6$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y = e^{-t}(3\cos 2t + 2\sin 2t)$ &nbsp;·&nbsp; <span class="ans">(b)</span> $y = 2e^{2t}\sin 3t$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Complex roots $\lambda = -1$, $\mu = 2$</span><span data-lang="zh">（a）复数根 $\lambda = -1$，$\mu = 2$</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2}+2r+5=0$. Discriminant: $4 - 20 = -16 < 0$, so complex roots. (M1)</span><span data-lang="zh">特征方程：$r^{2}+2r+5=0$。判别式：$4 - 20 = -16 < 0$，故为复数根。(M1)</span></p>
+      <p><span data-lang="en">Roots: $r = \tfrac{-2 \pm \sqrt{-16}}{2} = -1 \pm 2i$, so $\lambda = -1$, $\mu = 2$. General solution: $y = e^{-t}(c_1\cos 2t + c_2\sin 2t)$. (A1)</span><span data-lang="zh">根：$r = \tfrac{-2 \pm \sqrt{-16}}{2} = -1 \pm 2i$，故 $\lambda = -1$，$\mu = 2$。通解：$y = e^{-t}(c_1\cos 2t + c_2\sin 2t)$。(A1)</span></p>
+      <p><span data-lang="en">The ODE is satisfied by structure (Euler's formula). Apply ICs: $y(0)=c_1=3$. (M1)</span><span data-lang="zh">方程由结构满足（欧拉公式）。代入初始条件：$y(0)=c_1=3$。(M1)</span></p>
+      <p><span data-lang="en">Differentiate: $y' = -e^{-t}(c_1\cos 2t + c_2\sin 2t) + e^{-t}(-2c_1\sin 2t + 2c_2\cos 2t)$. At $t=0$: $y'(0) = -c_1 + 2c_2 = -3 + 2c_2 = 1$, so $c_2 = 2$. Particular solution: $y = e^{-t}(3\cos 2t + 2\sin 2t)$. Verify: $y(0)=3$, $y'(0)=-3+4=1$. (A1)</span><span data-lang="zh">求导：$y' = -e^{-t}(c_1\cos 2t + c_2\sin 2t) + e^{-t}(-2c_1\sin 2t + 2c_2\cos 2t)$。在 $t=0$ 处：$y'(0) = -c_1 + 2c_2 = -3 + 2c_2 = 1$，故 $c_2 = 2$。特解：$y = e^{-t}(3\cos 2t + 2\sin 2t)$。验证：$y(0)=3$，$y'(0)=-3+4=1$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Complex roots $\lambda = 2$, $\mu = 3$</span><span data-lang="zh">（b）复数根 $\lambda = 2$，$\mu = 3$</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2}-4r+13=0$. Discriminant: $16-52=-36<0$. Roots: $r = 2\pm 3i$, so $\lambda=2$, $\mu=3$. (M1)</span><span data-lang="zh">特征方程：$r^{2}-4r+13=0$。判别式：$16-52=-36<0$。根：$r = 2\pm 3i$，故 $\lambda=2$，$\mu=3$。(M1)</span></p>
+      <p><span data-lang="en">General solution: $y = e^{2t}(c_1\cos 3t + c_2\sin 3t)$. (A1)</span><span data-lang="zh">通解：$y = e^{2t}(c_1\cos 3t + c_2\sin 3t)$。(A1)</span></p>
+      <p><span data-lang="en">$y(0) = c_1 = 0$. $y' = 2e^{2t}(c_1\cos 3t + c_2\sin 3t) + e^{2t}(-3c_1\sin 3t + 3c_2\cos 3t)$. At $t=0$: $y'(0) = 2c_1 + 3c_2 = 0 + 3c_2 = 6$, so $c_2 = 2$. (M1)</span><span data-lang="zh">$y(0) = c_1 = 0$。$y' = 2e^{2t}(c_1\cos 3t + c_2\sin 3t) + e^{2t}(-3c_1\sin 3t + 3c_2\cos 3t)$。在 $t=0$ 处：$y'(0) = 2c_1 + 3c_2 = 0 + 3c_2 = 6$，故 $c_2 = 2$。(M1)</span></p>
+      <p><span data-lang="en">Particular solution: $y = 2e^{2t}\sin 3t$. Verify: $y(0)=0$, $y'(0)=2\cdot 3=6$. (A1)</span><span data-lang="zh">特解：$y = 2e^{2t}\sin 3t$。验证：$y(0)=0$，$y'(0)=2\cdot 3=6$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">When the discriminant is negative, the characteristic roots are $\lambda \pm i\mu$ (never write $\pm i\beta$ without identifying the real part $\lambda$ first). The real pair $e^{\lambda t}\cos\mu t$ and $e^{\lambda t}\sin\mu t$ comes from Euler's formula applied to $e^{(\lambda\pm i\mu)t}$; both are real solutions because the ODE has real coefficients. An imaginary $\lambda$ (pure imaginary roots) gives undamped oscillation; a negative real $\lambda$ gives a decaying envelope.</span><span data-lang="zh">当判别式为负时，特征根为 $\lambda \pm i\mu$（在确定实部 $\lambda$ 之前，切勿仅写 $\pm i\beta$）。实数对 $e^{\lambda t}\cos\mu t$ 和 $e^{\lambda t}\sin\mu t$ 来自对 $e^{(\lambda\pm i\mu)t}$ 应用欧拉公式；由于方程系数为实数，两者均为实数解。纯虚数根（$\lambda=0$）对应无阻尼振荡；负实部 $\lambda$ 对应衰减包络。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">Wronskian and fundamental sets</span><span data-lang="zh">朗斯基行列式与基本解组</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) $y_1 = e^{-t}\cos 2t$, $y_2 = e^{-t}\sin 2t$ for $y''+2y'+5y=0$. (b) $y_1 = e^{3t}$, $y_2 = te^{3t}$ for $y''-6y'+9y=0$.</span><span data-lang="zh">（a）$y_1 = e^{-t}\cos 2t$，$y_2 = e^{-t}\sin 2t$，对应 $y''+2y'+5y=0$。（b）$y_1 = e^{3t}$，$y_2 = te^{3t}$，对应 $y''-6y'+9y=0$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $W = 2e^{-2t} \ne 0$, <span data-lang="en">fundamental set</span><span data-lang="zh">基本解组</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $W = e^{6t} \ne 0$, <span data-lang="en">fundamental set</span><span data-lang="zh">基本解组</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Complex-root pair</span><span data-lang="zh">（a）复数根解对</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Compute $y_1' = -e^{-t}\cos 2t - 2e^{-t}\sin 2t = e^{-t}(-\cos 2t - 2\sin 2t)$ and $y_2' = -e^{-t}\sin 2t + 2e^{-t}\cos 2t = e^{-t}(-\sin 2t + 2\cos 2t)$. (M1)</span><span data-lang="zh">计算 $y_1' = -e^{-t}\cos 2t - 2e^{-t}\sin 2t = e^{-t}(-\cos 2t - 2\sin 2t)$ 和 $y_2' = -e^{-t}\sin 2t + 2e^{-t}\cos 2t = e^{-t}(-\sin 2t + 2\cos 2t)$。(M1)</span></p>
+      $$ W = y_1 y_2' - y_2 y_1' = e^{-t}\cos 2t \cdot e^{-t}(-\sin 2t+2\cos 2t) - e^{-t}\sin 2t \cdot e^{-t}(-\cos 2t-2\sin 2t). $$
+      <p><span data-lang="en">Expand: $e^{-2t}[-\cos 2t\sin 2t + 2\cos^{2}2t + \sin 2t\cos 2t + 2\sin^{2}2t] = e^{-2t}\cdot 2(\cos^{2}2t+\sin^{2}2t) = 2e^{-2t}$. (A1)</span><span data-lang="zh">展开：$e^{-2t}[-\cos 2t\sin 2t + 2\cos^{2}2t + \sin 2t\cos 2t + 2\sin^{2}2t] = e^{-2t}\cdot 2(\cos^{2}2t+\sin^{2}2t) = 2e^{-2t}$。(A1)</span></p>
+      <p><span data-lang="en">Since $W = 2e^{-2t} \ne 0$ for all $t$, the pair is linearly independent and forms a fundamental set for $y''+2y'+5y=0$. (R1)</span><span data-lang="zh">由于对所有 $t$ 都有 $W = 2e^{-2t} \ne 0$，故该解对线性无关，构成 $y''+2y'+5y=0$ 的基本解组。(R1)</span></p>
+      <h4><span data-lang="en">(b) Repeated-root pair</span><span data-lang="zh">（b）重根解对</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">$y_1 = e^{3t}$, $y_1' = 3e^{3t}$; $y_2 = te^{3t}$, $y_2' = e^{3t} + 3te^{3t}$. (M1)</span><span data-lang="zh">$y_1 = e^{3t}$，$y_1' = 3e^{3t}$；$y_2 = te^{3t}$，$y_2' = e^{3t} + 3te^{3t}$。(M1)</span></p>
+      $$ W = e^{3t}(e^{3t}+3te^{3t}) - te^{3t}\cdot 3e^{3t} = e^{6t} + 3te^{6t} - 3te^{6t} = e^{6t}. $$
+      <p><span data-lang="en">(A1) Since $W = e^{6t} > 0$ for all $t$, the pair is linearly independent and forms a fundamental set. (R1)</span><span data-lang="zh">(A1) 由于对所有 $t$ 都有 $W = e^{6t} > 0$，故该解对线性无关，构成基本解组。(R1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The Wronskian is the determinant of the matrix whose columns are a solution and its derivative. Abel's identity tells us $W(t) = W(0)e^{-\int p(s)\,ds}$, so checking $W$ at one convenient point settles independence everywhere on the interval. For the repeated-root pair, students often fear the pair is dependent because both involve $e^{3t}$, but the extra factor of $t$ makes $te^{3t}$ a genuinely different function, and the Wronskian $e^{6t}$ is never zero.</span><span data-lang="zh">朗斯基行列式是以解及其导数为列所构成矩阵的行列式。阿贝尔恒等式告诉我们 $W(t) = W(0)e^{-\int p(s)\,ds}$，因此只需在一个方便的点检验 $W$，即可确定整个区间上的线性无关性。对于重根解对，学生常担心两个函数都含 $e^{3t}$ 而线性相关，但多出的因子 $t$ 使 $te^{3t}$ 成为真正不同的函数，朗斯基行列式 $e^{6t}$ 从不为零。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill hard">HARD</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">repeated-root IVP and critical damping</span><span data-lang="zh">重根初值问题与临界阻尼</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$y''+6y'+9y=0$, $y(0)=4$, $y'(0)=-6$. (a) General solution and Wronskian. (b) Particular solution verified by substitution.</span><span data-lang="zh">$y''+6y'+9y=0$，$y(0)=4$，$y'(0)=-6$。（a）通解与朗斯基行列式。（b）代入验证特解。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y=(c_1+c_2 t)e^{-3t}$, $W=e^{-6t}$ &nbsp;·&nbsp; <span class="ans">(b)</span> $y=(4+6t)e^{-3t}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Characteristic equation, general solution, Wronskian</span><span data-lang="zh">（a）特征方程、通解、朗斯基行列式</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2}+6r+9=0$. Discriminant: $36-36=0$, a repeated root. Factor: $(r+3)^{2}=0$, so $r=-3$ (double). (M1)</span><span data-lang="zh">特征方程：$r^{2}+6r+9=0$。判别式：$36-36=0$，为重根。分解：$(r+3)^{2}=0$，故 $r=-3$（二重根）。(M1)</span></p>
+      <p><span data-lang="en">The two independent solutions are $y_1 = e^{-3t}$ and $y_2 = te^{-3t}$. General solution: $y = (c_1+c_2 t)e^{-3t}$. (A1)</span><span data-lang="zh">两个线性无关解为 $y_1 = e^{-3t}$ 和 $y_2 = te^{-3t}$。通解：$y = (c_1+c_2 t)e^{-3t}$。(A1)</span></p>
+      <p><span data-lang="en">Wronskian: $y_1' = -3e^{-3t}$, $y_2' = e^{-3t} - 3te^{-3t}$. $W = e^{-3t}(e^{-3t}-3te^{-3t}) - te^{-3t}(-3e^{-3t}) = e^{-6t} - 3te^{-6t} + 3te^{-6t} = e^{-6t} \ne 0$. (A1)</span><span data-lang="zh">朗斯基行列式：$y_1' = -3e^{-3t}$，$y_2' = e^{-3t} - 3te^{-3t}$。$W = e^{-3t}(e^{-3t}-3te^{-3t}) - te^{-3t}(-3e^{-3t}) = e^{-6t} - 3te^{-6t} + 3te^{-6t} = e^{-6t} \ne 0$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Apply ICs and verify</span><span data-lang="zh">（b）代入初始条件并验证</span> <span class="marks-call">M1·A1·B1</span></h4>
+      <p><span data-lang="en">$y(0) = c_1 = 4$. Differentiate: $y' = c_2 e^{-3t} + (c_1+c_2 t)(-3)e^{-3t}$. At $t=0$: $y'(0) = c_2 - 3c_1 = c_2 - 12 = -6$, so $c_2 = 6$. (M1)</span><span data-lang="zh">$y(0) = c_1 = 4$。求导：$y' = c_2 e^{-3t} + (c_1+c_2 t)(-3)e^{-3t}$。在 $t=0$ 处：$y'(0) = c_2 - 3c_1 = c_2 - 12 = -6$，故 $c_2 = 6$。(M1)</span></p>
+      <p><span data-lang="en">Particular solution: $y = (4+6t)e^{-3t}$. (A1)</span><span data-lang="zh">特解：$y = (4+6t)e^{-3t}$。(A1)</span></p>
+      <p><span data-lang="en">Verification: $y' = 6e^{-3t} - 3(4+6t)e^{-3t} = (6-12-18t)e^{-3t} = (-6-18t)e^{-3t}$. $y'' = (-18)e^{-3t} - (-6-18t)(3)e^{-3t} = (-18+18+54t)e^{-3t} = 54te^{-3t}$. Then $y''+6y'+9y = 54te^{-3t} + 6(-6-18t)e^{-3t} + 9(4+6t)e^{-3t} = (54t - 36 - 108t + 36 + 54t)e^{-3t} = 0$. (B1) Also $y(0)=4$ and $y'(0)=-6$ confirmed.</span><span data-lang="zh">验证：$y' = 6e^{-3t} - 3(4+6t)e^{-3t} = (6-12-18t)e^{-3t} = (-6-18t)e^{-3t}$。$y'' = (-18)e^{-3t} - (-6-18t)(3)e^{-3t} = (-18+18+54t)e^{-3t} = 54te^{-3t}$。则 $y''+6y'+9y = 54te^{-3t} + 6(-6-18t)e^{-3t} + 9(4+6t)e^{-3t} = (54t - 36 - 108t + 36 + 54t)e^{-3t} = 0$。(B1) 同时确认 $y(0)=4$，$y'(0)=-6$。</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The repeated-root case corresponds to critical damping in a mass-spring system: the fastest possible return to equilibrium without oscillation. The extra factor of $t$ in the second solution is not a guess; it is forced by the fact that the characteristic polynomial has $(r+3)^{2}$ as a double factor, meaning the operator $(D+3)^{2}$ annihilates both $e^{-3t}$ and $te^{-3t}$. Never write the general solution as $c_1 e^{-3t} + c_2 e^{-3t} = (c_1+c_2)e^{-3t}$: that is only one arbitrary constant, not two.</span><span data-lang="zh">重根情形对应弹簧质量系统中的临界阻尼：在不发生振荡的前提下，以最快速度回到平衡位置。第二个解中多出的因子 $t$ 并非猜测，而是由特征多项式含 $(r+3)^{2}$ 这一二重因子所决定，即算子 $(D+3)^{2}$ 同时零化 $e^{-3t}$ 和 $te^{-3t}$。切勿将通解写成 $c_1 e^{-3t} + c_2 e^{-3t} = (c_1+c_2)e^{-3t}$：那只有一个任意常数，而非两个。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill med">MEDIUM</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">principle of superposition</span><span data-lang="zh">叠加原理</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$L[y]=y''+p(t)y'+q(t)y$. (a) Prove $L[c_1 y_1+c_2 y_2]=c_1 L[y_1]+c_2 L[y_2]$. (b) Deduce the superposition principle and explain why it fails for $y''+(y')^{2}=0$.</span><span data-lang="zh">$L[y]=y''+p(t)y'+q(t)y$。（a）证明 $L[c_1 y_1+c_2 y_2]=c_1 L[y_1]+c_2 L[y_2]$。（b）由此推导叠加原理，并说明为何对 $y''+(y')^{2}=0$ 该原理不成立。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">linearity of differentiation</span><span data-lang="zh">微分的线性性</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">$(y')^{2}$ is not linear in $y'$</span><span data-lang="zh">$(y')^{2}$ 对 $y'$ 非线性</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Linearity of $L$</span><span data-lang="zh">（a）$L$ 的线性性</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">Let $u = c_1 y_1 + c_2 y_2$. Since differentiation is linear, $u' = c_1 y_1' + c_2 y_2'$ and $u'' = c_1 y_1'' + c_2 y_2''$. (M1)</span><span data-lang="zh">令 $u = c_1 y_1 + c_2 y_2$。由于微分运算是线性的，$u' = c_1 y_1' + c_2 y_2'$，$u'' = c_1 y_1'' + c_2 y_2''$。(M1)</span></p>
+      $$ L[u] = u'' + p(t)u' + q(t)u = (c_1 y_1'' + c_2 y_2'') + p(t)(c_1 y_1' + c_2 y_2') + q(t)(c_1 y_1 + c_2 y_2). $$
+      <p><span data-lang="en">Collecting by subscript: $= c_1(y_1''+p(t)y_1'+q(t)y_1) + c_2(y_2''+p(t)y_2'+q(t)y_2) = c_1 L[y_1] + c_2 L[y_2]$. (A1) The key step is that multiplication by $p(t)$ and $q(t)$ distributes across the linear combination, which is why we require these coefficients to be functions of $t$ only, not of $y$. (R1)</span><span data-lang="zh">按下标合并：$= c_1(y_1''+p(t)y_1'+q(t)y_1) + c_2(y_2''+p(t)y_2'+q(t)y_2) = c_1 L[y_1] + c_2 L[y_2]$。(A1) 关键步骤在于 $p(t)$ 和 $q(t)$ 的乘法可分配到线性组合中，这正是要求这些系数仅为 $t$ 的函数而非 $y$ 的函数的原因。(R1)</span></p>
+      <h4><span data-lang="en">(b) Superposition and failure for nonlinear ODEs</span><span data-lang="zh">（b）叠加原理及其对非线性方程的失效</span> <span class="marks-call">M1·A1·R1</span></h4>
+      <p><span data-lang="en">If $L[y_1]=0$ and $L[y_2]=0$, then by part (a): $L[c_1 y_1+c_2 y_2] = c_1 \cdot 0 + c_2 \cdot 0 = 0$. (M1) So $c_1 y_1 + c_2 y_2$ is also a solution. (A1)</span><span data-lang="zh">若 $L[y_1]=0$ 且 $L[y_2]=0$，由（a）得：$L[c_1 y_1+c_2 y_2] = c_1 \cdot 0 + c_2 \cdot 0 = 0$。(M1) 故 $c_1 y_1 + c_2 y_2$ 也是解。(A1)</span></p>
+      <p><span data-lang="en">For $y'' + (y')^{2} = 0$, the analogous operator $N[y]=y''+(y')^{2}$ satisfies $N[c_1 y_1 + c_2 y_2] = c_1 y_1'' + c_2 y_2'' + (c_1 y_1' + c_2 y_2')^{2}$. The squared term expands to $c_1^{2}(y_1')^{2} + 2c_1 c_2 y_1' y_2' + c_2^{2}(y_2')^{2}$, which is not $c_1 N[y_1] + c_2 N[y_2] = c_1\bigl(y_1''+(y_1')^{2}\bigr) + c_2\bigl(y_2''+(y_2')^{2}\bigr)$: the extraneous cross term $2c_1 c_2 y_1' y_2'$ cannot be absorbed. Hence $N$ is not linear, and superposition fails. (R1)</span><span data-lang="zh">对于 $y'' + (y')^{2} = 0$，类比算子 $N[y]=y''+(y')^{2}$ 满足 $N[c_1 y_1 + c_2 y_2] = c_1 y_1'' + c_2 y_2'' + (c_1 y_1' + c_2 y_2')^{2}$。平方项展开为 $c_1^{2}(y_1')^{2} + 2c_1 c_2 y_1' y_2' + c_2^{2}(y_2')^{2}$，这不等于 $c_1 N[y_1] + c_2 N[y_2] = c_1\bigl(y_1''+(y_1')^{2}\bigr) + c_2\bigl(y_2''+(y_2')^{2}\bigr)$：多余的交叉项 $2c_1 c_2 y_1' y_2'$ 无法被吸收。故 $N$ 非线性，叠加原理失效。(R1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">Linearity of the operator $L$ is the single axiom that the entire theory of homogeneous second-order ODEs rests on: it gives a vector space of solutions, and the dimension of that space (exactly 2) then tells us how many free constants the general solution carries. Every structural result, from fundamental sets to the Wronskian test, is a consequence of this linearity. Once the ODE is nonlinear, none of this machinery applies.</span><span data-lang="zh">算子 $L$ 的线性性是整个二阶齐次常微分方程理论所依赖的唯一公理：它赋予解空间向量空间的结构，而该空间的维数（恰好为2）决定了通解中任意常数的个数。从基本解组到朗斯基行列式检验，所有结构性结果均是线性性的推论。一旦方程非线性，这些理论工具全部失效。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">Wronskian, linear independence, and Abel's identity</span><span data-lang="zh">朗斯基行列式、线性无关性与阿贝尔恒等式</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Dependent pair implies $W=0$. (b) Derive Abel's identity $W'=-p(t)W$. (c) Apply to $y''+4y'+4y=0$ and verify.</span><span data-lang="zh">（a）线性相关解对意味着 $W=0$。（b）推导阿贝尔恒等式 $W'=-p(t)W$。（c）应用于 $y''+4y'+4y=0$ 并验证。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">$W=0$ when $y_2=ky_1$</span><span data-lang="zh">当 $y_2=ky_1$ 时 $W=0$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $W(t)=Ce^{-\int p\,ds}$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">$W=Ce^{-4t}$; confirmed $W=e^{-4t}$ for $y_1=e^{-2t}, y_2=te^{-2t}$</span><span data-lang="zh">$W=Ce^{-4t}$；对 $y_1=e^{-2t}, y_2=te^{-2t}$ 验证 $W=e^{-4t}$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Dependence implies $W=0$</span><span data-lang="zh">（a）线性相关意味着 $W=0$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Suppose $y_2 = k y_1$ for a constant $k$. Then $y_2' = k y_1'$. (M1)</span><span data-lang="zh">设 $y_2 = k y_1$，$k$ 为常数。则 $y_2' = k y_1'$。(M1)</span></p>
+      $$ W(y_1,y_2) = y_1 y_2' - y_2 y_1' = y_1(ky_1') - (ky_1)y_1' = ky_1 y_1' - ky_1 y_1' = 0. $$
+      <p><span data-lang="en">(A1) Since $W=0$ at every $t$, in particular $W$ is identically zero.</span><span data-lang="zh">(A1) 由于对每个 $t$ 都有 $W=0$，特别地，$W$ 恒为零。</span></p>
+      <h4><span data-lang="en">(b) Abel's identity</span><span data-lang="zh">（b）阿贝尔恒等式</span> <span class="marks-call">M1·M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">Differentiate $W = y_1 y_2' - y_2 y_1'$: (M1)</span><span data-lang="zh">对 $W = y_1 y_2' - y_2 y_1'$ 求导：(M1)</span></p>
+      $$ W' = y_1' y_2' + y_1 y_2'' - y_2' y_1' - y_2 y_1'' = y_1 y_2'' - y_2 y_1''. $$
+      <p><span data-lang="en">Since $y_1$ and $y_2$ both solve $y'' + p(t)y' + q(t)y = 0$, we have $y_1'' = -p y_1' - q y_1$ and $y_2'' = -p y_2' - q y_2$. (M1) Substituting: (A1)</span><span data-lang="zh">由于 $y_1$ 和 $y_2$ 都满足 $y'' + p(t)y' + q(t)y = 0$，有 $y_1'' = -p y_1' - q y_1$ 和 $y_2'' = -p y_2' - q y_2$。(M1) 代入：(A1)</span></p>
+      $$ W' = y_1(-py_2'-qy_2) - y_2(-py_1'-qy_1) = -p(y_1 y_2' - y_2 y_1') - q(y_1 y_2 - y_2 y_1) = -pW. $$
+      <p><span data-lang="en">The ODE $W' = -p(t)W$ is separable: $\dfrac{dW}{W} = -p(t)\,dt$. Integrating from $t_0$ to $t$: (M1)</span><span data-lang="zh">常微分方程 $W' = -p(t)W$ 是可分离的：$\dfrac{dW}{W} = -p(t)\,dt$。从 $t_0$ 到 $t$ 积分：(M1)</span></p>
+      $$ W(t) = W(t_0)\,e^{-\int_{t_0}^{t}p(s)\,ds}. $$
+      <p><span data-lang="en">Since the exponential factor is never zero, $W(t)$ has the same sign as $W(t_0)$ everywhere on $I$. Hence $W$ is either identically zero (if $W(t_0)=0$) or never zero. (A1)</span><span data-lang="zh">由于指数因子从不为零，$W(t)$ 在 $I$ 上处处与 $W(t_0)$ 同号。故 $W$ 在 $I$ 上恒为零（当 $W(t_0)=0$ 时）或处处不为零。(A1)</span></p>
+      <h4><span data-lang="en">(c) Application to $y''+4y'+4y=0$</span><span data-lang="zh">（c）应用于 $y''+4y'+4y=0$</span> <span class="marks-call">M1·A1·B1</span></h4>
+      <p><span data-lang="en">Here $p(t)=4$, so Abel's identity gives $W(t) = Ce^{-4t}$ for some constant $C$. (M1)</span><span data-lang="zh">此处 $p(t)=4$，由阿贝尔恒等式得 $W(t) = Ce^{-4t}$，$C$ 为某常数。(M1)</span></p>
+      <p><span data-lang="en">The characteristic equation is $r^{2}+4r+4=(r+2)^{2}=0$, so $r=-2$ (double). The fundamental pair is $y_1=e^{-2t}$, $y_2=te^{-2t}$. (A1)</span><span data-lang="zh">特征方程为 $r^{2}+4r+4=(r+2)^{2}=0$，故 $r=-2$（二重根）。基本解对为 $y_1=e^{-2t}$，$y_2=te^{-2t}$。(A1)</span></p>
+      <p><span data-lang="en">Direct computation: $y_1'=-2e^{-2t}$, $y_2'=e^{-2t}-2te^{-2t}$. $W = e^{-2t}(e^{-2t}-2te^{-2t}) - te^{-2t}(-2e^{-2t}) = e^{-4t} - 2te^{-4t}+2te^{-4t} = e^{-4t}$. So $C=1$ in this case. (B1)</span><span data-lang="zh">直接计算：$y_1'=-2e^{-2t}$，$y_2'=e^{-2t}-2te^{-2t}$。$W = e^{-2t}(e^{-2t}-2te^{-2t}) - te^{-2t}(-2e^{-2t}) = e^{-4t} - 2te^{-4t}+2te^{-4t} = e^{-4t}$。故此情形下 $C=1$。(B1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">Abel's identity is the key reason we only need to check the Wronskian at one convenient point: the exponential formula $W(t)=W(t_0)e^{-\int p}$ shows $W$ cannot change sign. This makes independence an all-or-nothing property on any interval where $p$ is continuous. Notice that Abel's formula involves only $p$, not $q$; you can find the Wronskian shape without solving the ODE at all.</span><span data-lang="zh">阿贝尔恒等式是只需在一个方便的点检验朗斯基行列式的根本原因：指数公式 $W(t)=W(t_0)e^{-\int p}$ 表明 $W$ 不能变号。这使线性无关性在 $p$ 连续的任意区间上成为"全有或全无"的性质。注意阿贝尔公式只涉及 $p$，不涉及 $q$；无需求解方程即可确定朗斯基行列式的形式。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">reduction of order: second solution from a known one</span><span data-lang="zh">降阶法：从已知解求第二个解</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$t^{2}y''-3ty'+4y=0$ ($t>0$), $y_1=t^{2}$. (a) Verify $y_1$. (b) Substitute $y_2=v(t)t^{2}$ and reduce. (c) Solve for $v$ and confirm $\{y_1,y_2\}$ is a fundamental set.</span><span data-lang="zh">$t^{2}y''-3ty'+4y=0$（$t>0$），$y_1=t^{2}$。（a）验证 $y_1$。（b）代入 $y_2=v(t)t^{2}$ 并化简。（c）求解 $v$，确认 $\{y_1,y_2\}$ 为基本解组。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">verified</span><span data-lang="zh">已验证</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $tw'' + w' = 0$ &nbsp;·&nbsp; <span class="ans">(c)</span> $y_2 = t^{2}\ln t$, $W = t^{3} \ne 0$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Verify $y_1 = t^{2}$</span><span data-lang="zh">（a）验证 $y_1 = t^{2}$</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">$y_1 = t^{2}$, $y_1' = 2t$, $y_1'' = 2$. Substituting: (M1)</span><span data-lang="zh">$y_1 = t^{2}$，$y_1' = 2t$，$y_1'' = 2$。代入：(M1)</span></p>
+      $$ t^{2}(2) - 3t(2t) + 4t^{2} = 2t^{2} - 6t^{2} + 4t^{2} = 0. $$
+      <p><span data-lang="en">(A1) Confirmed.</span><span data-lang="zh">(A1) 验证成立。</span></p>
+      <h4><span data-lang="en">(b) Reduction of order</span><span data-lang="zh">（b）降阶法</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Set $y_2 = v(t)t^{2}$. Then $y_2' = v't^{2} + 2tv$ and $y_2'' = v''t^{2} + 4tv' + 2v$. (M1)</span><span data-lang="zh">令 $y_2 = v(t)t^{2}$。则 $y_2' = v't^{2} + 2tv$，$y_2'' = v''t^{2} + 4tv' + 2v$。(M1)</span></p>
+      <p><span data-lang="en">Substitute into $t^{2}y''-3ty'+4y=0$: (M1)</span><span data-lang="zh">代入 $t^{2}y''-3ty'+4y=0$：(M1)</span></p>
+      $$ t^{2}(v''t^{2}+4tv'+2v) - 3t(v't^{2}+2tv) + 4vt^{2} = 0. $$
+      $$ t^{4}v'' + 4t^{3}v' + 2t^{2}v - 3t^{3}v' - 6t^{2}v + 4t^{2}v = 0. $$
+      $$ t^{4}v'' + t^{3}v' + (2-6+4)t^{2}v = 0 \implies t^{4}v'' + t^{3}v' = 0. $$
+      <p><span data-lang="en">Divide by $t^{3}$ (valid for $t>0$): $tv'' + v' = 0$. (A1) Setting $w = v'$ gives the first-order ODE $tw' + w = 0$. (A1)</span><span data-lang="zh">除以 $t^{3}$（$t>0$ 时有效）：$tv'' + v' = 0$。(A1) 令 $w = v'$ 得一阶常微分方程 $tw' + w = 0$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Solve and confirm fundamental set</span><span data-lang="zh">（c）求解并确认基本解组</span> <span class="marks-call">M1·A1·M1·A1</span></h4>
+      <p><span data-lang="en">The equation $tw' + w = 0$ is separable: $\dfrac{dw}{w} = -\dfrac{dt}{t}$, so $\ln|w| = -\ln t + C_0$, giving $w = \dfrac{A}{t}$. (M1)</span><span data-lang="zh">方程 $tw' + w = 0$ 是可分离的：$\dfrac{dw}{w} = -\dfrac{dt}{t}$，故 $\ln|w| = -\ln t + C_0$，得 $w = \dfrac{A}{t}$。(M1)</span></p>
+      <p><span data-lang="en">Integrate: $v = A\ln t + B$. Taking $A=1$, $B=0$ (we need only one new $v$), $v = \ln t$, so $y_2 = t^{2}\ln t$. (A1)</span><span data-lang="zh">积分：$v = A\ln t + B$。取 $A=1$，$B=0$（只需一个新的 $v$），$v = \ln t$，故 $y_2 = t^{2}\ln t$。(A1)</span></p>
+      <p><span data-lang="en">Wronskian: $y_1=t^{2}$, $y_2=t^{2}\ln t$, $y_1'=2t$, $y_2'=2t\ln t+t$. (M1)</span><span data-lang="zh">朗斯基行列式：$y_1=t^{2}$，$y_2=t^{2}\ln t$，$y_1'=2t$，$y_2'=2t\ln t+t$。(M1)</span></p>
+      $$ W = t^{2}(2t\ln t+t) - t^{2}\ln t\cdot 2t = 2t^{3}\ln t + t^{3} - 2t^{3}\ln t = t^{3}. $$
+      <p><span data-lang="en">Since $W = t^{3} > 0$ for $t>0$, the pair $\{t^{2},\, t^{2}\ln t\}$ is linearly independent and forms a fundamental set. (A1)</span><span data-lang="zh">由于 $t>0$ 时 $W = t^{3} > 0$，解对 $\{t^{2},\, t^{2}\ln t\}$ 线性无关，构成基本解组。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">Reduction of order is a completely general method: given any one nonzero solution $y_1$, the ansatz $y_2=v y_1$ turns the second-order ODE into a first-order ODE for $v'$, with no $v$ term (since $y_1$ itself satisfies the homogeneous equation, the $v$ terms cancel exactly). This is the mechanism behind the repeated-root second solution $te^{rt}$: setting $y_2 = v(t)e^{rt}$ reduces to $v''=0$, giving $v=At+B$, and taking $v=t$ produces the new solution.</span><span data-lang="zh">降阶法是一种完全通用的方法：给定任意一个非零解 $y_1$，设 $y_2=v y_1$ 将二阶常微分方程转化为关于 $v'$ 的一阶方程，且不含 $v$ 项（因为 $y_1$ 本身满足齐次方程，$v$ 的各项恰好相消）。这正是重根情形第二个解 $te^{rt}$ 的机制：令 $y_2 = v(t)e^{rt}$ 化简为 $v''=0$，得 $v=At+B$，取 $v=t$ 即得新解。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合应用题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">complex-root IVP rewritten in amplitude-phase form</span><span data-lang="zh">复数根初值问题改写为振幅相位形式</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$y''+2y'+10y=0$, $y(0)=4$, $y'(0)=-2$. (a) Roots and general solution. (b) Apply ICs. (c) Amplitude-phase form. (d) Damping classification.</span><span data-lang="zh">$y''+2y'+10y=0$，$y(0)=4$，$y'(0)=-2$。（a）特征根与通解。（b）代入初始条件。（c）振幅相位形式。（d）阻尼分类。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $r=-1\pm 3i$, $y=e^{-t}(c_1\cos 3t+c_2\sin 3t)$ &nbsp;·&nbsp; <span class="ans">(b)</span> $c_1=4$, $c_2=\tfrac{2}{3}$ &nbsp;·&nbsp; <span class="ans">(c)</span> $R=\tfrac{2\sqrt{37}}{3}$, $\phi=\arctan\tfrac{1}{6}$, <span data-lang="en">quasi-period</span><span data-lang="zh">准周期</span> $\tfrac{2\pi}{3}$ &nbsp;·&nbsp; <span class="ans">(d)</span> <span data-lang="en">underdamped, $y\to 0$</span><span data-lang="zh">欠阻尼，$y\to 0$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Characteristic roots and general solution</span><span data-lang="zh">（a）特征根与通解</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2}+2r+10=0$. Discriminant: $4-40=-36<0$. Roots: $r = \dfrac{-2\pm\sqrt{-36}}{2} = -1\pm 3i$, so $\lambda=-1$, $\mu=3$. (M1)</span><span data-lang="zh">特征方程：$r^{2}+2r+10=0$。判别式：$4-40=-36<0$。根：$r = \dfrac{-2\pm\sqrt{-36}}{2} = -1\pm 3i$，故 $\lambda=-1$，$\mu=3$。(M1)</span></p>
+      <p><span data-lang="en">General solution: $y = e^{-t}(c_1\cos 3t + c_2\sin 3t)$. (A1)</span><span data-lang="zh">通解：$y = e^{-t}(c_1\cos 3t + c_2\sin 3t)$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Apply initial conditions</span><span data-lang="zh">（b）代入初始条件</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">$y(0) = c_1 = 4$. Differentiate using the product rule: $y' = -e^{-t}(c_1\cos 3t+c_2\sin 3t) + e^{-t}(-3c_1\sin 3t+3c_2\cos 3t)$. (M1)</span><span data-lang="zh">$y(0) = c_1 = 4$。用乘积法则求导：$y' = -e^{-t}(c_1\cos 3t+c_2\sin 3t) + e^{-t}(-3c_1\sin 3t+3c_2\cos 3t)$。(M1)</span></p>
+      <p><span data-lang="en">At $t=0$: $y'(0) = -c_1 + 3c_2 = -4 + 3c_2 = -2$, so $3c_2 = 2$, giving $c_2 = \tfrac{2}{3}$. (A1) Particular solution: $y = e^{-t}\!\left(4\cos 3t + \tfrac{2}{3}\sin 3t\right)$. Verify: $y(0)=4$, $y'(0)=-4+3\cdot\tfrac{2}{3}=-4+2=-2$. (A1)</span><span data-lang="zh">在 $t=0$ 处：$y'(0) = -c_1 + 3c_2 = -4 + 3c_2 = -2$，故 $3c_2 = 2$，$c_2 = \tfrac{2}{3}$。(A1) 特解：$y = e^{-t}\!\left(4\cos 3t + \tfrac{2}{3}\sin 3t\right)$。验证：$y(0)=4$，$y'(0)=-4+3\cdot\tfrac{2}{3}=-4+2=-2$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Amplitude-phase form</span><span data-lang="zh">（c）振幅相位形式</span> <span class="marks-call">M1·A1·A1</span></h4>
+      <p><span data-lang="en">Write $4\cos 3t + \tfrac{2}{3}\sin 3t = R\cos(3t-\phi)$ where $R = \sqrt{4^{2}+(\tfrac{2}{3})^{2}} = \sqrt{16+\tfrac{4}{9}} = \sqrt{\tfrac{148}{9}} = \tfrac{2\sqrt{37}}{3}$ and $\tan\phi = \dfrac{2/3}{4} = \dfrac{1}{6}$, so $\phi = \arctan\tfrac{1}{6}$. (M1)</span><span data-lang="zh">将 $4\cos 3t + \tfrac{2}{3}\sin 3t = R\cos(3t-\phi)$，其中 $R = \sqrt{4^{2}+(\tfrac{2}{3})^{2}} = \sqrt{16+\tfrac{4}{9}} = \sqrt{\tfrac{148}{9}} = \tfrac{2\sqrt{37}}{3}$，$\tan\phi = \dfrac{2/3}{4} = \dfrac{1}{6}$，故 $\phi = \arctan\tfrac{1}{6}$。(M1)</span></p>
+      <p><span data-lang="en">The particular solution in amplitude-phase form is $y = \dfrac{2\sqrt{37}}{3}\,e^{-t}\cos\!\left(3t-\arctan\tfrac{1}{6}\right)$. (A1)</span><span data-lang="zh">振幅相位形式的特解为 $y = \dfrac{2\sqrt{37}}{3}\,e^{-t}\cos\!\left(3t-\arctan\tfrac{1}{6}\right)$。(A1)</span></p>
+      <p><span data-lang="en">The quasi-period (period of the oscillatory factor) is $T = \dfrac{2\pi}{\mu} = \dfrac{2\pi}{3}$. (A1)</span><span data-lang="zh">准周期（振荡因子的周期）为 $T = \dfrac{2\pi}{\mu} = \dfrac{2\pi}{3}$。(A1)</span></p>
+      <h4><span data-lang="en">(d) Damping classification</span><span data-lang="zh">（d）阻尼分类</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Since the discriminant $b^{2}-4mk = 4-40 < 0$ (or equivalently, the characteristic roots are complex with nonzero imaginary part), the system is underdamped. (M1) The factor $e^{-t}$ is a decaying envelope, so $y(t)\to 0$ as $t\to\infty$, while the $\cos$ factor produces oscillation with decreasing amplitude. (A1)</span><span data-lang="zh">由于判别式 $b^{2}-4mk = 4-40 < 0$（等价地，特征根为虚部非零的复数），系统为欠阻尼。(M1) 因子 $e^{-t}$ 是衰减包络，故 $y(t)\to 0$（当 $t\to\infty$），而 $\cos$ 因子产生振幅不断减小的振荡。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The amplitude-phase form $Re^{\lambda t}\cos(\mu t-\phi)$ isolates the physical content: $R$ is the initial amplitude, $\phi$ is the phase lag, and $e^{\lambda t}$ is the damping envelope. Reading these off requires decomposing $c_1\cos\mu t + c_2\sin\mu t$ via the identity $R\cos(\mu t-\phi)=R\cos\phi\cos\mu t + R\sin\phi\sin\mu t$, giving $c_1=R\cos\phi$ and $c_2=R\sin\phi$. The quasi-period $2\pi/\mu$ differs from the natural period $2\pi/\omega_0$ of the undamped system; damping slows the oscillation.</span><span data-lang="zh">振幅相位形式 $Re^{\lambda t}\cos(\mu t-\phi)$ 分离出了物理内容：$R$ 为初始振幅，$\phi$ 为相位滞后，$e^{\lambda t}$ 为阻尼包络。提取这些量需要利用恒等式 $R\cos(\mu t-\phi)=R\cos\phi\cos\mu t + R\sin\phi\sin\mu t$，将 $c_1\cos\mu t + c_2\sin\mu t$ 分解，得 $c_1=R\cos\phi$，$c_2=R\sin\phi$。准周期 $2\pi/\mu$ 与无阻尼系统的固有周期 $2\pi/\omega_0$ 不同；阻尼会使振荡减慢。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">free-vibration model: overdamped and critically damped cases</span><span data-lang="zh">自由振动模型：过阻尼与临界阻尼情形</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) $y''+5y'+4y=0$, $y(0)=2$, $y'(0)=0$ (overdamped). (b) $y''+4y'+4y=0$, $y(0)=1$, $y'(0)=-5$ (critically damped).</span><span data-lang="zh">（a）$y''+5y'+4y=0$，$y(0)=2$，$y'(0)=0$（过阻尼）。（b）$y''+4y'+4y=0$，$y(0)=1$，$y'(0)=-5$（临界阻尼）。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y=\tfrac{8}{3}e^{-t}-\tfrac{2}{3}e^{-4t}$, <span data-lang="en">$y(t)\to 0$ monotonically</span><span data-lang="zh">$y(t)$ 单调趋向 $0$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $y=(1-3t)e^{-2t}$, <span data-lang="en">zero crossing at $t=\tfrac{1}{3}$</span><span data-lang="zh">过零点在 $t=\tfrac{1}{3}$</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Overdamped: distinct negative real roots</span><span data-lang="zh">（a）过阻尼：两个不同负实根</span> <span class="marks-call">M1·A1·M1·A1·R1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2}+5r+4=0$. Discriminant: $25-16=9>0$, two distinct real roots. Factor: $(r+1)(r+4)=0$, so $r_1=-1$, $r_2=-4$. (M1)</span><span data-lang="zh">特征方程：$r^{2}+5r+4=0$。判别式：$25-16=9>0$，两个不同实根。分解：$(r+1)(r+4)=0$，故 $r_1=-1$，$r_2=-4$。(M1)</span></p>
+      <p><span data-lang="en">General solution: $y = c_1 e^{-t} + c_2 e^{-4t}$. (A1)</span><span data-lang="zh">通解：$y = c_1 e^{-t} + c_2 e^{-4t}$。(A1)</span></p>
+      <p><span data-lang="en">Apply ICs: $y(0)=c_1+c_2=2$. $y'=-c_1 e^{-t}-4c_2 e^{-4t}$, so $y'(0)=-c_1-4c_2=0$, giving $c_1=-4c_2$. (M1) Substituting: $-4c_2+c_2=2 \Rightarrow -3c_2=2 \Rightarrow c_2=-\tfrac{2}{3}$, $c_1=\tfrac{8}{3}$. (A1)</span><span data-lang="zh">代入初始条件：$y(0)=c_1+c_2=2$。$y'=-c_1 e^{-t}-4c_2 e^{-4t}$，故 $y'(0)=-c_1-4c_2=0$，得 $c_1=-4c_2$。(M1) 代入：$-4c_2+c_2=2 \Rightarrow -3c_2=2 \Rightarrow c_2=-\tfrac{2}{3}$，$c_1=\tfrac{8}{3}$。(A1)</span></p>
+      <p><span data-lang="en">Particular solution: $y=\tfrac{8}{3}e^{-t}-\tfrac{2}{3}e^{-4t}$. Both exponentials decay to zero, and since $c_1>0$ and $c_2<0$, $y$ starts at $2$, and $y(t) > 0$ for all $t>0$ (check $y=\tfrac{2}{3}(4e^{-t}-e^{-4t})$; the factor is $4e^{-t}-e^{-4t}=e^{-t}(4-e^{-3t})$, which is positive for all $t>0$ since $e^{-3t}<4$). Hence $y\to 0$ monotonically. (R1)</span><span data-lang="zh">特解：$y=\tfrac{8}{3}e^{-t}-\tfrac{2}{3}e^{-4t}$。两个指数项均衰减至零，由于 $c_1>0$ 且 $c_2<0$，$y$ 从 $2$ 出发，对所有 $t>0$ 均有 $y(t) > 0$（验证：$y=\tfrac{2}{3}(4e^{-t}-e^{-4t})$，因子为 $4e^{-t}-e^{-4t}=e^{-t}(4-e^{-3t})$，由于 $e^{-3t}<4$ 对所有 $t>0$ 成立，故为正）。因此 $y$ 单调趋向 $0$。(R1)</span></p>
+      <h4><span data-lang="en">(b) Critically damped: repeated root</span><span data-lang="zh">（b）临界阻尼：重根</span> <span class="marks-call">M1·A1·M1·A1·R1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2}+4r+4=(r+2)^{2}=0$, repeated root $r=-2$. General solution: $y=(c_1+c_2 t)e^{-2t}$. (M1)</span><span data-lang="zh">特征方程：$r^{2}+4r+4=(r+2)^{2}=0$，重根 $r=-2$。通解：$y=(c_1+c_2 t)e^{-2t}$。(M1)</span></p>
+      <p><span data-lang="en">$y(0)=c_1=1$. Differentiate: $y'=c_2 e^{-2t}+(c_1+c_2 t)(-2)e^{-2t}$. At $t=0$: $y'(0)=c_2-2c_1=c_2-2=-5$, so $c_2=-3$. (M1) Particular solution: $y=(1-3t)e^{-2t}$. (A1)</span><span data-lang="zh">$y(0)=c_1=1$。求导：$y'=c_2 e^{-2t}+(c_1+c_2 t)(-2)e^{-2t}$。在 $t=0$ 处：$y'(0)=c_2-2c_1=c_2-2=-5$，故 $c_2=-3$。(M1) 特解：$y=(1-3t)e^{-2t}$。(A1)</span></p>
+      <p><span data-lang="en">Verify: $y(0)=1$, $y'(0)=-3-2(1)=-5$. To find the zero crossing: set $1-3t=0$, giving $t=\tfrac{1}{3}>0$. (R1) For $0<t<\tfrac{1}{3}$, $y>0$; for $t>\tfrac{1}{3}$, $y<0$, so $y$ crosses zero exactly once at $t=\tfrac{1}{3}$ and then decays to $0$ from below. (A1)</span><span data-lang="zh">验证：$y(0)=1$，$y'(0)=-3-2(1)=-5$。求过零点：令 $1-3t=0$，得 $t=\tfrac{1}{3}>0$。(R1) 当 $0<t<\tfrac{1}{3}$ 时 $y>0$；当 $t>\tfrac{1}{3}$ 时 $y<0$，故 $y$ 恰好在 $t=\tfrac{1}{3}$ 处过零一次，此后从下方衰减至 $0$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The three discriminant cases for $my''+by'+ky=0$ map directly to damping regimes: $b^{2}>4mk$ gives overdamping (two negative real roots, exponential decay, no oscillation); $b^{2}=4mk$ gives critical damping (repeated negative real root, fastest non-oscillatory return to equilibrium); $b^{2}<4mk$ gives underdamping (complex roots, decaying oscillation). Critical damping is the boundary: any less damping and the system oscillates. Engineers design door closers and shock absorbers near this boundary.</span><span data-lang="zh">$my''+by'+ky=0$ 的三种判别式情形直接对应阻尼状态：$b^{2}>4mk$ 为过阻尼（两个负实根，指数衰减，无振荡）；$b^{2}=4mk$ 为临界阻尼（重负实根，以最快速度无振荡地回到平衡）；$b^{2}<4mk$ 为欠阻尼（复数根，衰减振荡）。临界阻尼是分界线：阻尼稍小则系统振荡。工程师在设计门闭合器和减震器时会接近这一边界进行调整。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">boundary-value problem and the role of the Wronskian</span><span data-lang="zh">边值问题与朗斯基行列式的作用</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">$y''+4y=0$ on $[0,L]$. (a) General solution. (b) BCs $y(0)=y(L)=0$: nontrivial solutions iff $L=n\pi/2$. (c) Contrast IVP uniqueness with BVP.</span><span data-lang="zh">$[0,L]$ 上的 $y''+4y=0$。（a）通解。（b）边界条件 $y(0)=y(L)=0$：当且仅当 $L=n\pi/2$ 时有非平凡解。（c）对比初值问题的唯一性与边值问题的情况。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $y=c_1\cos 2x+c_2\sin 2x$ &nbsp;·&nbsp; <span class="ans">(b)</span> $L=n\pi/2$, $y_n=\sin 2x$ <span data-lang="en">family</span><span data-lang="zh">族</span> &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">BVP imposes conditions at two endpoints, not at one; the Wronskian argument applies only to initial data at a single point</span><span data-lang="zh">边值问题在两个端点施加条件，而非一个点；朗斯基行列式论证仅适用于单点处的初始数据</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) General solution</span><span data-lang="zh">（a）通解</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">Characteristic equation: $r^{2}+4=0$, so $r=\pm 2i$, giving $\lambda=0$, $\mu=2$. (M1) General solution: $y = c_1\cos 2x + c_2\sin 2x$. (A1)</span><span data-lang="zh">特征方程：$r^{2}+4=0$，故 $r=\pm 2i$，得 $\lambda=0$，$\mu=2$。(M1) 通解：$y = c_1\cos 2x + c_2\sin 2x$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Boundary conditions and eigenvalues</span><span data-lang="zh">（b）边界条件与特征值</span> <span class="marks-call">M1·M1·A1·A1</span></h4>
+      <p><span data-lang="en">Apply $y(0)=0$: $c_1\cos 0 + c_2\sin 0 = c_1 = 0$. (M1) So $y = c_2\sin 2x$. Apply $y(L)=0$: $c_2\sin 2L = 0$. (M1)</span><span data-lang="zh">代入 $y(0)=0$：$c_1\cos 0 + c_2\sin 0 = c_1 = 0$。(M1) 故 $y = c_2\sin 2x$。代入 $y(L)=0$：$c_2\sin 2L = 0$。(M1)</span></p>
+      <p><span data-lang="en">For a nontrivial solution we need $c_2\ne 0$, so $\sin 2L = 0$, i.e. $2L = n\pi$ for positive integers $n$, i.e. $L = \tfrac{n\pi}{2}$. (A1)</span><span data-lang="zh">要得到非平凡解，需 $c_2\ne 0$，故 $\sin 2L = 0$，即对正整数 $n$ 有 $2L = n\pi$，即 $L = \tfrac{n\pi}{2}$。(A1)</span></p>
+      <p><span data-lang="en">The corresponding nontrivial solutions are $y_n = \sin 2x$ (with $c_2$ arbitrary and nonzero) for each $n$; equivalently $y = A\sin\!\left(\tfrac{n\pi x}{L}\right)$. These are the eigenfunctions (modes) of the BVP. (A1)</span><span data-lang="zh">对应的非平凡解为 $y_n = \sin 2x$（$c_2$ 为任意非零值），对每个 $n$；等价地 $y = A\sin\!\left(\tfrac{n\pi x}{L}\right)$。这些是边值问题的特征函数（振型）。(A1)</span></p>
+      <h4><span data-lang="en">(c) IVP uniqueness versus BVP non-uniqueness</span><span data-lang="zh">（c）初值问题的唯一性与边值问题的非唯一性对比</span> <span class="marks-call">M1·A1</span></h4>
+      <p><span data-lang="en">For an IVP, both conditions $y(t_0)=\alpha$ and $y'(t_0)=\beta$ are imposed at the same point $t_0$. The system of equations for $c_1, c_2$ has coefficient determinant exactly $W(t_0)$, which is nonzero when $\{y_1,y_2\}$ is a fundamental set, guaranteeing a unique solution. (M1)</span><span data-lang="zh">对于初值问题，条件 $y(t_0)=\alpha$ 和 $y'(t_0)=\beta$ 均在同一点 $t_0$ 处施加。关于 $c_1, c_2$ 的方程组的系数行列式恰为 $W(t_0)$，当 $\{y_1,y_2\}$ 为基本解组时不为零，保证唯一解。(M1)</span></p>
+      <p><span data-lang="en">For a BVP, the two conditions are at different points: $y(0)=0$ and $y(L)=0$. After applying $y(0)=0$ to get $c_1=0$, the remaining equation $c_2\sin 2L=0$ may have the trivial solution $c_2=0$ only (when $\sin 2L\ne 0$, giving only the zero solution) or infinitely many solutions (when $\sin 2L=0$). The Wronskian at $t_0$ controls the initial-data system at one point; it says nothing about whether conditions at a remote second point are compatible. (A1)</span><span data-lang="zh">对于边值问题，两个条件在不同点处：$y(0)=0$ 和 $y(L)=0$。由 $y(0)=0$ 得 $c_1=0$ 后，剩余方程 $c_2\sin 2L=0$ 可能只有平凡解 $c_2=0$（当 $\sin 2L\ne 0$ 时，仅有零解），也可能有无穷多解（当 $\sin 2L=0$ 时）。$t_0$ 处的朗斯基行列式控制的是单点处的初始数据方程组，对于远端第二点处的条件是否相容，它什么也说明不了。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The existence and uniqueness theorem for IVPs requires initial data at a single point and uses the invertibility of the $2\times 2$ Wronskian matrix there. BVPs split the data across two points: the result can be no solution, exactly one solution, or infinitely many, depending on whether the boundary conditions are "resonant" with the equation. The values $L=n\pi/2$ where nontrivial solutions appear are exactly the eigenvalues of the operator $-d^{2}/dx^{2}$ with Dirichlet boundary conditions, the prototype of Sturm-Liouville theory.</span><span data-lang="zh">初值问题的存在唯一性定理要求初始数据在单个点处给出，并利用该点处 $2\times 2$ 朗斯基矩阵的可逆性。边值问题将数据分散在两个点：结果可能无解、恰好一解或无穷多解，取决于边界条件是否与方程"共振"。出现非平凡解的 $L=n\pi/2$ 恰好是带狄利克雷边界条件的算子 $-d^{2}/dx^{2}$ 的特征值，是施图姆-刘维尔理论的原型。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">大一课程中这一单元遇到了困难？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约与灯瑞学者导师的免费15分钟咨询。在你的下次期中或期末考试前，我们帮你突破难关。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_d3_second_order_linear_odes_homogeneous__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_D3_Second_Order_Linear_ODEs_Homogeneous.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_D3_Second_Order_Linear_ODEs_Homogeneous_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit D3 Solutions</span><span data-lang="zh">大学微积分 &middot; 第D3单元解析</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">配套练习 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 6 &middot; 82 marks total</span><span data-lang="zh">第1至6节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

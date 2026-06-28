@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Calculus | Unit B2: Integration Techniques II | Solutions | Dingrui Scholars</title>
+<!-- dingrui:version v1.0  dingrui:pair-key UC-B2  dingrui:doc-type solutions -->
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B2_Integration_Techniques_II_Solutions.html">
+<meta name="description" content="Worked solutions for Unit B2: Integration Techniques II in University Calculus. Step by step trig integrals, trig substitution, and partial fractions from Dingrui Scholars.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus | Unit B2: Integration Techniques II | Solutions">
+<meta property="og:description" content="Worked solutions for Unit B2: Integration Techniques II in University Calculus, from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B2_Integration_Techniques_II_Solutions.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="University Calculus | Unit B2: Integration Techniques II | Solutions">
+<meta name="twitter:description" content="Worked solutions for Unit B2: Integration Techniques II in University Calculus, from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style data-theme="light">
+  :root{
+    --ink:#141414; --muted:#555; --paper:#ffffff; --rule:#111;
+    --maroon:#7A2E2E; --maroon-ink:#ffffff;
+    --med-bg:#FFF3DE;  --med-ink:#8A5A10;  --med-rule:#D9A94A;
+    --hard-bg:#FBE4E4; --hard-ink:#8E2020; --hard-rule:#C85454;
+    --topic-bg:#EFE9E4; --topic-ink:#4A3A2A; --topic-rule:#B5A68F;
+    --core-bg:#ECECEE;  --core-ink:#333;     --core-rule:#9A9A9A;
+    --proof-bg:#EDE4F5;  --proof-ink:#5E3D7A;  --proof-rule:#A888C8;
+    --applied-bg:#E4ECF7;   --applied-ink:#1E3F75;   --applied-rule:#7A9BCD;
+    --marks-bg:#F5F0EB; --marks-ink:#2C1B1F; --marks-rule:#B5A68F;
+    --sol-bg:#F1F7EE;  --sol-rule:#5E8E47;  --sol-ink:#2F4E1E;
+    --sol-accent:#3E7228;
+    --insight-bg:#FBF6EC; --insight-rule:#C49350; --insight-ink:#5E4014;
+  }
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);color:var(--ink);}
+  body{font-family:'Times New Roman',Times,Georgia,'PingFang SC','Microsoft YaHei',serif;font-size:11pt;line-height:1.45;max-width:8.5in;margin:0 auto;padding:clamp(16px, 3.5vw, 0.4in) clamp(14px, 4vw, 0.55in) clamp(20px, 4vw, 0.55in);}
+  .brand{letter-spacing:.55em;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10pt;color:var(--maroon);text-align:center;margin-bottom:4px;}
+  .chapter-tag{font-family:'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10.5pt;color:#333;text-align:center;}
+  .chapter-title{font-family:'DM Serif Display',serif;font-size:26pt;line-height:1.1;text-align:center;margin:2px 0 6px;color:var(--ink);}
+  .chapter-sub{font-family:'Source Sans 3',sans-serif;font-size:11pt;color:#444;text-align:center;font-style:italic;}
+  .legend{display:flex;gap:8px;justify-content:center;margin:10px 0 6px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:3px 10px;border-radius:999px;border:1px solid;line-height:1.15;white-space:nowrap;}
+  .pill.med {background:var(--med-bg); color:var(--med-ink); border-color:var(--med-rule);}
+  .pill.hard{background:var(--hard-bg);color:var(--hard-ink);border-color:var(--hard-rule);}
+  .pill.topic{background:var(--topic-bg);color:var(--topic-ink);border-color:var(--topic-rule);}
+  .pill.core{background:var(--core-bg);color:var(--core-ink);border-color:var(--core-rule);}
+  .pill.proof{background:var(--proof-bg);color:var(--proof-ink);border-color:var(--proof-rule);}
+  .pill.applied {background:var(--applied-bg); color:var(--applied-ink); border-color:var(--applied-rule);}
+  .pill.marks{background:var(--marks-bg);color:var(--marks-ink);border-color:var(--marks-rule);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+  .pill.qnum{background:var(--maroon);color:var(--maroon-ink);border-color:var(--maroon);min-width:50px;text-align:center;}
+  .topics-line{font-family:'Source Sans 3',sans-serif;font-size:10pt;color:#444;text-align:center;margin-bottom:12px;}
+  .topics-line b{color:var(--ink);}
+  .topics-line .scope{display:inline-block;background:#EFE9E4;color:#4A3A2A;border:1px solid #B5A68F;border-radius:3px;padding:1px 8px;font-size:9pt;font-weight:700;letter-spacing:.1em;margin-left:6px;vertical-align:1px;}
+  hr.thick{border:none;border-top:2.5px solid var(--rule);margin:8px 0 4px;}
+  hr.thin {border:none;border-top:1px solid #666;margin:2px 0 14px;}
+  .part{display:flex;justify-content:space-between;align-items:baseline;font-family:'Source Sans 3',sans-serif;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;margin:18px 0 8px;}
+  .part .part-label{font-size:14pt;font-weight:700;letter-spacing:.18em;}
+  .part .part-meta{font-size:10pt;color:#444;font-style:italic;}
+  .section-head{font-family:'DM Serif Display',serif;font-size:16pt;margin:6px 0 4px;color:var(--maroon);}
+  .q{border:1px solid #c9c4bd;border-left:3px solid var(--maroon);border-radius:6px;padding:14px 20px 6px;margin-bottom:22px;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+  .q.frq{border-left-color:#1E3F75;}
+  .q-head{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px;font-family:'Source Sans 3',sans-serif;}
+  .q-body{font-size:11pt;line-height:1.55;}
+  .q-body p{margin:6px 0;}
+  .q-body .prompt{margin:6px 0 10px;font-style:italic;color:#444;border-left:2px solid #d8cdb8;padding-left:10px;}
+  .solution{margin:14px 0 8px;background:var(--sol-bg);border-left:3px solid var(--sol-rule);border-radius:0 4px 4px 0;padding:12px 18px 14px;font-size:11pt;line-height:1.6;}
+  .solution .answer-line{font-family:'Source Sans 3',sans-serif;font-weight:700;color:var(--sol-ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #d4e4cb;letter-spacing:.04em;font-size:11pt;}
+  .solution .answer-line .ans{color:var(--sol-accent);font-size:1.08em;letter-spacing:.08em;}
+  .solution .rationale{color:#2a2a2a;}
+  .solution .rationale p{margin:5px 0;}
+  .solution h4{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:10.5pt;color:var(--sol-ink);margin:10px 0 4px;letter-spacing:.05em;text-transform:uppercase;}
+  .solution ul, .solution ol{margin:6px 0 6px 22px;line-height:1.7;}
+  .solution .marks-call{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;letter-spacing:.04em;margin-left:6px;vertical-align:1px;}
+  .solution .insight{margin-top:10px;background:var(--insight-bg);border-left:2px solid var(--insight-rule);padding:8px 12px;font-size:10.5pt;color:var(--insight-ink);border-radius:0 3px 3px 0;}
+  .solution .insight strong{color:#7A4810;}
+  footer.page-foot{margin-top:28px;border-top:1px solid #aaa;padding-top:6px;font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#666;display:flex;justify-content:space-between;}
+  footer.page-foot .mark{color:var(--maroon);font-weight:700;letter-spacing:.1em;}
+  .page-break{page-break-after:always;break-after:page;height:0;}
+  @media (max-width: 600px){body{font-size:10.5pt;}}
+  @media print{@page { size: letter; margin: 0.6in 0.65in; }html,body{background:#fff;}body{padding:0;max-width:none;font-size:11pt;}.q{box-shadow:none;break-inside:avoid;page-break-inside:avoid;}.solution{background:#f0f6ec;}}
+
+  /* consult-cta: lead-gen conversion surface (UC P+S, EN-first) */
+  .consult-cta{background:#FBF4F4;border:2px solid var(--maroon);border-radius:8px;padding:18px 22px;margin:26px 0 8px;text-align:center;font-family:'Source Sans 3',sans-serif;break-inside:avoid;page-break-inside:avoid;}
+  .consult-cta__lead{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--maroon);margin:0 0 6px;}
+  .consult-cta__body{color:#444;font-size:0.95rem;line-height:1.5;margin:0 auto 14px;max-width:50ch;}
+  .consult-cta__btn{display:inline-block;background:var(--ink);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:0.95rem;text-decoration:none;padding:10px 20px;border-radius:8px;transition:opacity 0.2s;}
+  .consult-cta__btn:hover{opacity:0.88;}
+  @media print{.consult-cta{border:1px solid #999;background:#fff;}.consult-cta__btn{background:#fff !important;color:#000 !important;border:1px solid #999;}.consult-cta__btn::after{content:" (dingruischolars.com/signup)";font-weight:400;}}
+
+  /* bilingual toggle */
+  body:not(.lang-zh) [data-lang="zh"]{display:none;}
+  body.lang-zh [data-lang="en"]{display:none;}
+  #langToggle{position:fixed;top:10px;right:10px;z-index:200;background:var(--maroon);color:#fff;border:none;padding:6px 14px;border-radius:999px;font-family:'Source Sans 3','PingFang SC','Microsoft YaHei',sans-serif;font-weight:700;font-size:9pt;letter-spacing:.1em;cursor:pointer;box-shadow:0 2px 6px rgba(122,46,46,0.25);}
+  #langToggle:hover{background:#5C1E1E;}
+  @media print{#langToggle{display:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus | Unit B2: Integration Techniques II | Solutions",
+  "description": "Worked solutions for Unit B2: Integration Techniques II in University Calculus, from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Practice%20Questions/Solutions/Unit_B2_Integration_Techniques_II_Solutions.html",
+  "inLanguage": "en",
+  "learningResourceType": "Solutions",
+  "educationalLevel": "Undergraduate",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<button id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+
+<div class="brand">U&nbsp;N&nbsp;I&nbsp;V&nbsp;E&nbsp;R&nbsp;S&nbsp;I&nbsp;T&nbsp;Y&nbsp;&nbsp;C&nbsp;A&nbsp;L&nbsp;C&nbsp;U&nbsp;L&nbsp;U&nbsp;S</div>
+<div class="chapter-tag"><span data-lang="en">Unit B2 &middot; Solutions</span><span data-lang="zh">第B2单元 &middot; 解答</span></div>
+<h1 class="chapter-title"><span data-lang="en">Integration Techniques II &middot; Solutions</span><span data-lang="zh">积分技巧 II &middot; 解答</span></h1>
+<p class="chapter-sub"><span data-lang="en">Companion to the University-Style Practice Set</span><span data-lang="zh">大学水平练习题配套解答</span></p>
+<div class="legend">
+  <span class="pill med">MEDIUM</span>
+  <span class="pill hard">HARD</span>
+  <span class="pill core">CORE</span>
+  <span class="pill proof">PROOF</span>
+  <span class="pill applied">APPLIED</span>
+</div>
+<p class="topics-line"><span data-lang="en">Sections <b>1 to 6</b>: trig integrals (sin/cos/sec/tan powers), trig substitution (all three cases), partial fractions (linear, repeated, irreducible quadratic), rationalising substitutions, and integration strategy<span class="scope">CALC II</span></span><span data-lang="zh">第 <b>1 至 6</b> 节：三角积分（sin/cos/sec/tan 的幂次）、三角换元法（三种情形）、部分分数分解（线性因子、重复因子、不可约二次因子）、有理化换元，以及积分策略<span class="scope">CALC II</span></span></p>
+<hr class="thick"><hr class="thin">
+
+<p style="font-family:'Source Sans 3',sans-serif;font-size:9.75pt;color:#7A2E2E;font-style:italic;text-align:center;margin:0 0 8px;border:1px dashed #c9a4a4;border-radius:4px;padding:4px 8px;"><code style="font-style:normal;">v1.0</code> &middot; <span data-lang="en">companion to <code style="font-style:normal;">Unit_B2_Integration_Techniques_II_Practice.html</code> &middot; 10 Qs &middot; 82 marks &middot; method walk with <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> method / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> answer / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> reasoning mark callouts</span><span data-lang="zh">配套 <code style="font-style:normal;">Unit_B2_Integration_Techniques_II_Practice.html</code> &middot; 10题 &middot; 82分 &middot; 含 <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">M1</span> 方法 / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">A1</span> 答案 / <span style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;background:#E5EFD9;color:#41652C;border:1px solid #9BBD7A;padding:0 6px;border-radius:3px;">R1</span> 推理得分标注</span></p>
+
+<!-- ════════════════════════════════ PART I ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART I &nbsp;·&nbsp; CORE TECHNIQUES</span><span data-lang="zh">第I部分 &nbsp;·&nbsp; 核心技巧</span></span><span class="part-meta"><span data-lang="en">Computational fluency &middot; 28 marks</span><span data-lang="zh">计算能力 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<!-- Q1 -->
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q1</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">trig integrals: powers of sine and cosine</span><span data-lang="zh">三角积分：正弦与余弦的幂次</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate: (a) $\int \sin^4 x\,dx$; (b) $\int \sin^3 x \cos^4 x\,dx$; (c) $\int \tan^4 x\,dx$.</span><span data-lang="zh">计算：(a) $\int \sin^4 x\,dx$；(b) $\int \sin^3 x \cos^4 x\,dx$；(c) $\int \tan^4 x\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\tfrac{3x}{8} - \tfrac{1}{4}\sin 2x + \tfrac{1}{32}\sin 4x + C$ &nbsp;·&nbsp; <span class="ans">(b)</span> $-\tfrac{\cos^5 x}{5} + \tfrac{\cos^7 x}{7} + C$ &nbsp;·&nbsp; <span class="ans">(c)</span> $\tfrac{\tan^3 x}{3} - \tan x + x + C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Both powers even: use half-angle identities twice <span class="marks-call">M1·M1·A1</span></span><span data-lang="zh">(a) 两个幂次均为偶数：连续两次使用半角恒等式 <span class="marks-call">M1·M1·A1</span></span></h4>
+      <p><span data-lang="en">Both exponents are even, so use the half-angle identity $\sin^2 x = \tfrac{1}{2}(1 - \cos 2x)$: (M1)</span><span data-lang="zh">两个指数均为偶数，故使用半角恒等式 $\sin^2 x = \tfrac{1}{2}(1 - \cos 2x)$：(M1)</span></p>
+      $$ \sin^4 x = \left(\frac{1-\cos 2x}{2}\right)^2 = \frac{1 - 2\cos 2x + \cos^2 2x}{4}. $$
+      <p><span data-lang="en">Apply the half-angle identity a second time to $\cos^2 2x = \tfrac{1}{2}(1 + \cos 4x)$: (M1)</span><span data-lang="zh">对 $\cos^2 2x = \tfrac{1}{2}(1 + \cos 4x)$ 再次应用半角恒等式：(M1)</span></p>
+      $$ \sin^4 x = \frac{1}{4}\left(1 - 2\cos 2x + \frac{1+\cos 4x}{2}\right) = \frac{3}{8} - \frac{\cos 2x}{2} + \frac{\cos 4x}{8}. $$
+      <p><span data-lang="en">Integrating term by term:</span><span data-lang="zh">逐项积分：</span></p>
+      $$ \int \sin^4 x\,dx = \frac{3x}{8} - \frac{\sin 2x}{4} + \frac{\sin 4x}{32} + C. $$
+      <p><span data-lang="en">Verification by differentiation: $\frac{d}{dx}\!\left(\frac{3x}{8} - \frac{\sin 2x}{4} + \frac{\sin 4x}{32}\right) = \frac{3}{8} - \frac{\cos 2x}{2} + \frac{\cos 4x}{8} = \sin^4 x$. (A1)</span><span data-lang="zh">微分验证：$\frac{d}{dx}\!\left(\frac{3x}{8} - \frac{\sin 2x}{4} + \frac{\sin 4x}{32}\right) = \frac{3}{8} - \frac{\cos 2x}{2} + \frac{\cos 4x}{8} = \sin^4 x$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Odd power of sine: reserve one $\sin x$, substitute $u = \cos x$ <span class="marks-call">M1·M1·A1</span></span><span data-lang="zh">(b) 正弦为奇数次幂：保留一个 $\sin x$，令 $u = \cos x$ 换元 <span class="marks-call">M1·M1·A1</span></span></h4>
+      <p><span data-lang="en">The power of sine is odd. Reserve one factor of $\sin x$ for $du = -\sin x\,dx$ and write $\sin^2 x = 1 - \cos^2 x$: (M1)</span><span data-lang="zh">正弦的次幂为奇数。保留一个 $\sin x$ 用于 $du = -\sin x\,dx$，并将 $\sin^2 x = 1 - \cos^2 x$ 代入：(M1)</span></p>
+      $$ \int \sin^3 x \cos^4 x\,dx = \int (1 - \cos^2 x)\cos^4 x \cdot \sin x\,dx. $$
+      <p><span data-lang="en">Let $u = \cos x$, $du = -\sin x\,dx$: (M1)</span><span data-lang="zh">令 $u = \cos x$，$du = -\sin x\,dx$：(M1)</span></p>
+      $$ -\int (1 - u^2)u^4\,du = -\int (u^4 - u^6)\,du = -\frac{u^5}{5} + \frac{u^7}{7} + C = -\frac{\cos^5 x}{5} + \frac{\cos^7 x}{7} + C. $$
+      <p><span data-lang="en">Verification: $\frac{d}{dx}\!\left(-\frac{\cos^5 x}{5} + \frac{\cos^7 x}{7}\right) = \cos^4 x\sin x - \cos^6 x\sin x = \sin x\cos^4 x(1 - \cos^2 x) = \sin^3 x\cos^4 x$. (A1)</span><span data-lang="zh">验证：$\frac{d}{dx}\!\left(-\frac{\cos^5 x}{5} + \frac{\cos^7 x}{7}\right) = \cos^4 x\sin x - \cos^6 x\sin x = \sin x\cos^4 x(1 - \cos^2 x) = \sin^3 x\cos^4 x$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Use $\tan^2 x = \sec^2 x - 1$ to reduce the power <span class="marks-call">M1·A1</span></span><span data-lang="zh">(c) 用 $\tan^2 x = \sec^2 x - 1$ 降幂 <span class="marks-call">M1·A1</span></span></h4>
+      <p><span data-lang="en">Write $\tan^4 x = \tan^2 x(\sec^2 x - 1) = \tan^2 x\sec^2 x - \tan^2 x$. For the second piece apply the identity again: $\tan^2 x = \sec^2 x - 1$. (M1)</span><span data-lang="zh">将 $\tan^4 x = \tan^2 x(\sec^2 x - 1) = \tan^2 x\sec^2 x - \tan^2 x$。对第二项再次应用恒等式：$\tan^2 x = \sec^2 x - 1$。(M1)</span></p>
+      $$ \int \tan^4 x\,dx = \int \tan^2 x\sec^2 x\,dx - \int (\sec^2 x - 1)\,dx. $$
+      <p><span data-lang="en">The first integral uses $u = \tan x$, $du = \sec^2 x\,dx$, giving $\frac{\tan^3 x}{3}$. The second integrates directly:</span><span data-lang="zh">第一个积分令 $u = \tan x$，$du = \sec^2 x\,dx$，得 $\frac{\tan^3 x}{3}$。第二个直接积分：</span></p>
+      $$ \int \tan^4 x\,dx = \frac{\tan^3 x}{3} - \tan x + x + C. $$
+      <p><span data-lang="en">Verification: $\frac{d}{dx}\!\left(\frac{\tan^3 x}{3} - \tan x + x\right) = \tan^2 x\sec^2 x - \sec^2 x + 1 = \sec^2 x(\tan^2 x - 1) + 1 = \sec^2 x(\tan^2 x - 1) + 1$. Using $\sec^2 x = 1 + \tan^2 x$: $(1+\tan^2 x)(\tan^2 x - 1) + 1 = \tan^4 x - 1 + 1 = \tan^4 x$. (A1)</span><span data-lang="zh">验证：$\frac{d}{dx}\!\left(\frac{\tan^3 x}{3} - \tan x + x\right) = \tan^2 x\sec^2 x - \sec^2 x + 1 = \sec^2 x(\tan^2 x - 1) + 1$。利用 $\sec^2 x = 1 + \tan^2 x$：$(1+\tan^2 x)(\tan^2 x - 1) + 1 = \tan^4 x - 1 + 1 = \tan^4 x$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The parity rule is the compass: even powers of both $\sin$ and $\cos$ always need half-angle identities; an odd power of either creates a spare factor for $du$. For pure $\tan^n x$ with no $\sec$, the reduction $\tan^2 x = \sec^2 x - 1$ must be applied repeatedly, peeling away two powers at a time until the integrand reduces to $\sec^2 x$ and $1$. Never attempt $u = \tan x$ on a $\tan^n x$ integral without a spare $\sec^2 x$ in sight.</span><span data-lang="zh">奇偶规则是方向标：$\sin$ 和 $\cos$ 同为偶数次幂时，必须使用半角恒等式；任一函数为奇数次幂时，可留出一个因子用于 $du$。对于不含 $\sec$ 的纯 $\tan^n x$ 积分，须反复应用 $\tan^2 x = \sec^2 x - 1$ 降幂，每次减少两个次幂，直到被积函数化为 $\sec^2 x$ 和 $1$。若积分中没有多余的 $\sec^2 x$，切勿对 $\tan^n x$ 直接令 $u = \tan x$。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q">
+  <div class="q-head"><span class="pill qnum">Q2</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">trig integrals: sec/tan family</span><span data-lang="zh">三角积分：sec/tan 族</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate: (a) $\int \tan^3 x\sec^4 x\,dx$; (b) $\int \sec^6 x\,dx$.</span><span data-lang="zh">计算：(a) $\int \tan^3 x\sec^4 x\,dx$；(b) $\int \sec^6 x\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\tfrac{\tan^4 x}{4} + \tfrac{\tan^6 x}{6} + C$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\tan x + \tfrac{2\tan^3 x}{3} + \tfrac{\tan^5 x}{5} + C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Even secant power: let $u = \tan x$ <span class="marks-call">M1·M1·A1</span></span><span data-lang="zh">(a) 正割为偶数次幂：令 $u = \tan x$ <span class="marks-call">M1·M1·A1</span></span></h4>
+      <p><span data-lang="en">The secant power is even, so reserve one $\sec^2 x$ for $du = \sec^2 x\,dx$ with $u = \tan x$, and convert the remaining $\sec^2 x = 1 + \tan^2 x$: (M1)</span><span data-lang="zh">正割次幂为偶数，保留一个 $\sec^2 x$ 用于 $du = \sec^2 x\,dx$，令 $u = \tan x$，并将剩余部分 $\sec^2 x = 1 + \tan^2 x$ 代入：(M1)</span></p>
+      $$ \int \tan^3 x \sec^4 x\,dx = \int \tan^3 x(1 + \tan^2 x)\sec^2 x\,dx. $$
+      <p><span data-lang="en">Let $u = \tan x$: (M1)</span><span data-lang="zh">令 $u = \tan x$：(M1)</span></p>
+      $$ \int u^3(1 + u^2)\,du = \int (u^3 + u^5)\,du = \frac{u^4}{4} + \frac{u^6}{6} + C = \frac{\tan^4 x}{4} + \frac{\tan^6 x}{6} + C. $$
+      <p><span data-lang="en">Verification: $\frac{d}{dx}\!\left(\frac{\tan^4 x}{4} + \frac{\tan^6 x}{6}\right) = \tan^3 x\sec^2 x + \tan^5 x\sec^2 x = \sec^2 x\tan^3 x(1 + \tan^2 x) = \tan^3 x\sec^4 x$. (A1)</span><span data-lang="zh">验证：$\frac{d}{dx}\!\left(\frac{\tan^4 x}{4} + \frac{\tan^6 x}{6}\right) = \tan^3 x\sec^2 x + \tan^5 x\sec^2 x = \sec^2 x\tan^3 x(1 + \tan^2 x) = \tan^3 x\sec^4 x$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Even secant power with no tangent: reserve $\sec^2 x$, convert the rest <span class="marks-call">M1·M1·A1</span></span><span data-lang="zh">(b) 无正切的偶数次正割：保留 $\sec^2 x$，转换其余部分 <span class="marks-call">M1·M1·A1</span></span></h4>
+      <p><span data-lang="en">Reserve $\sec^2 x\,dx = du$ with $u = \tan x$ and write $\sec^4 x = (1 + \tan^2 x)^2 = 1 + 2\tan^2 x + \tan^4 x$: (M1)</span><span data-lang="zh">令 $u = \tan x$，保留 $\sec^2 x\,dx = du$，并将 $\sec^4 x = (1 + \tan^2 x)^2 = 1 + 2\tan^2 x + \tan^4 x$ 代入：(M1)</span></p>
+      $$ \int \sec^6 x\,dx = \int \sec^4 x \cdot \sec^2 x\,dx = \int (1 + 2\tan^2 x + \tan^4 x)\sec^2 x\,dx. $$
+      <p><span data-lang="en">With $u = \tan x$: (M1)</span><span data-lang="zh">令 $u = \tan x$：(M1)</span></p>
+      $$ \int (1 + 2u^2 + u^4)\,du = u + \frac{2u^3}{3} + \frac{u^5}{5} + C = \tan x + \frac{2\tan^3 x}{3} + \frac{\tan^5 x}{5} + C. $$
+      <p><span data-lang="en">Verification: $\frac{d}{dx}\!\left(\tan x + \frac{2\tan^3 x}{3} + \frac{\tan^5 x}{5}\right) = \sec^2 x + 2\tan^2 x\sec^2 x + \tan^4 x\sec^2 x = \sec^2 x(1 + 2\tan^2 x + \tan^4 x) = \sec^2 x(1+\tan^2 x)^2 = \sec^6 x$. (A1)</span><span data-lang="zh">验证：$\frac{d}{dx}\!\left(\tan x + \frac{2\tan^3 x}{3} + \frac{\tan^5 x}{5}\right) = \sec^2 x + 2\tan^2 x\sec^2 x + \tan^4 x\sec^2 x = \sec^2 x(1 + 2\tan^2 x + \tan^4 x) = \sec^2 x(1+\tan^2 x)^2 = \sec^6 x$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">For the $\int \tan^m x\sec^n x\,dx$ family, even $n$ always admits $u = \tan x$ by reserving one $\sec^2 x$ and expanding the rest via $\sec^2 x = 1 + \tan^2 x$. Odd $m$ always admits $u = \sec x$ by reserving $\sec x\tan x$ and converting $\tan^2 x = \sec^2 x - 1$. The two methods converge to different-looking answers that differ by a constant, both correct.</span><span data-lang="zh">对于 $\int \tan^m x\sec^n x\,dx$ 类型的积分，当 $n$ 为偶数时，可令 $u = \tan x$，保留一个 $\sec^2 x$ 并用 $\sec^2 x = 1 + \tan^2 x$ 展开其余部分；当 $m$ 为奇数时，可令 $u = \sec x$，保留 $\sec x\tan x$ 并用 $\tan^2 x = \sec^2 x - 1$ 转换。两种方法所得答案形式不同，但相差一个常数，均正确。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q3</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">trig substitution: sine and tangent cases</span><span data-lang="zh">三角换元：正弦与正切情形</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate: (a) $\int \frac{x^2}{\sqrt{9-x^2}}\,dx$; (b) $\int \frac{dx}{(4+x^2)^2}$.</span><span data-lang="zh">计算：(a) $\int \frac{x^2}{\sqrt{9-x^2}}\,dx$；(b) $\int \frac{dx}{(4+x^2)^2}$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $-\tfrac{x\sqrt{9-x^2}}{2} + \tfrac{9}{2}\arcsin\tfrac{x}{3} + C$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\tfrac{x}{8(4+x^2)} + \tfrac{1}{16}\arctan\tfrac{x}{2} + C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Sine substitution: $x = 3\sin\theta$ <span class="marks-call">M1·M1·A1·A1</span></span><span data-lang="zh">(a) 正弦换元：$x = 3\sin\theta$ <span class="marks-call">M1·M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">The form $\sqrt{9 - x^2} = \sqrt{3^2 - x^2}$ calls for $x = 3\sin\theta$, $dx = 3\cos\theta\,d\theta$, $\sqrt{9 - x^2} = 3\cos\theta$ on $-\tfrac{\pi}{2}\le\theta\le\tfrac{\pi}{2}$. (M1)</span><span data-lang="zh">$\sqrt{9 - x^2} = \sqrt{3^2 - x^2}$ 的形式要求令 $x = 3\sin\theta$，$dx = 3\cos\theta\,d\theta$，$\sqrt{9 - x^2} = 3\cos\theta$，其中 $-\tfrac{\pi}{2}\le\theta\le\tfrac{\pi}{2}$。(M1)</span></p>
+      $$ \int \frac{9\sin^2\theta}{3\cos\theta}\cdot 3\cos\theta\,d\theta = 9\int \sin^2\theta\,d\theta = 9\int \frac{1-\cos 2\theta}{2}\,d\theta = \frac{9\theta}{2} - \frac{9\sin 2\theta}{4} + C. $$
+      <p><span data-lang="en">(M1) Now $\sin 2\theta = 2\sin\theta\cos\theta$. From the reference triangle (opposite $x$, hypotenuse $3$, adjacent $\sqrt{9-x^2}$): $\sin\theta = x/3$, $\cos\theta = \sqrt{9-x^2}/3$, and $\theta = \arcsin(x/3)$. (A1)</span><span data-lang="zh">(M1) 现有 $\sin 2\theta = 2\sin\theta\cos\theta$。由参考三角形（对边 $x$，斜边 $3$，邻边 $\sqrt{9-x^2}$）得：$\sin\theta = x/3$，$\cos\theta = \sqrt{9-x^2}/3$，$\theta = \arcsin(x/3)$。(A1)</span></p>
+      $$ = \frac{9}{2}\arcsin\frac{x}{3} - \frac{9}{4}\cdot 2\cdot\frac{x}{3}\cdot\frac{\sqrt{9-x^2}}{3} + C = \frac{9}{2}\arcsin\frac{x}{3} - \frac{x\sqrt{9-x^2}}{2} + C. $$
+      <p><span data-lang="en">(A1) Verification: $\tfrac{d}{dx}\arcsin\tfrac{x}{3}=\tfrac{1}{\sqrt{1-x^2/9}}\cdot\tfrac{1}{3}=\tfrac{1}{\sqrt{9-x^2}}$, so $\tfrac{d}{dx}\bigl(\tfrac{9}{2}\arcsin\tfrac{x}{3}\bigr)=\tfrac{9}{2\sqrt{9-x^2}}$. Also $\tfrac{d}{dx}\bigl(-\tfrac{x\sqrt{9-x^2}}{2}\bigr)=-\tfrac{\sqrt{9-x^2}}{2}+\tfrac{x^2}{2\sqrt{9-x^2}}=\tfrac{2x^2-9}{2\sqrt{9-x^2}}$. Sum: $\tfrac{9}{2\sqrt{9-x^2}}+\tfrac{2x^2-9}{2\sqrt{9-x^2}}=\tfrac{2x^2}{2\sqrt{9-x^2}}=\tfrac{x^2}{\sqrt{9-x^2}}$. Confirmed.</span><span data-lang="zh">(A1) 验证：$\tfrac{d}{dx}\arcsin\tfrac{x}{3}=\tfrac{1}{\sqrt{1-x^2/9}}\cdot\tfrac{1}{3}=\tfrac{1}{\sqrt{9-x^2}}$，故 $\tfrac{d}{dx}\bigl(\tfrac{9}{2}\arcsin\tfrac{x}{3}\bigr)=\tfrac{9}{2\sqrt{9-x^2}}$。又 $\tfrac{d}{dx}\bigl(-\tfrac{x\sqrt{9-x^2}}{2}\bigr)=-\tfrac{\sqrt{9-x^2}}{2}+\tfrac{x^2}{2\sqrt{9-x^2}}=\tfrac{2x^2-9}{2\sqrt{9-x^2}}$。两项相加：$\tfrac{9}{2\sqrt{9-x^2}}+\tfrac{2x^2-9}{2\sqrt{9-x^2}}=\tfrac{x^2}{\sqrt{9-x^2}}$。验证正确。</span></p>
+      <h4><span data-lang="en">(b) Tangent substitution: $x = 2\tan\theta$ <span class="marks-call">M1·M1·A1·A1</span></span><span data-lang="zh">(b) 正切换元：$x = 2\tan\theta$ <span class="marks-call">M1·M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">The form $(4 + x^2)^2$ calls for $x = 2\tan\theta$, $dx = 2\sec^2\theta\,d\theta$, $4 + x^2 = 4\sec^2\theta$. (M1)</span><span data-lang="zh">$(4 + x^2)^2$ 的形式要求令 $x = 2\tan\theta$，$dx = 2\sec^2\theta\,d\theta$，$4 + x^2 = 4\sec^2\theta$。(M1)</span></p>
+      $$ \int \frac{2\sec^2\theta\,d\theta}{16\sec^4\theta} = \frac{1}{8}\int \cos^2\theta\,d\theta = \frac{1}{8}\int \frac{1+\cos 2\theta}{2}\,d\theta = \frac{\theta}{16} + \frac{\sin 2\theta}{32} + C. $$
+      <p><span data-lang="en">(M1) From the reference triangle (opposite $x$, adjacent $2$, hypotenuse $\sqrt{4+x^2}$): $\theta = \arctan(x/2)$, $\sin\theta = x/\sqrt{4+x^2}$, $\cos\theta = 2/\sqrt{4+x^2}$, and $\sin 2\theta = 2\sin\theta\cos\theta = 4x/(4+x^2)$. (A1)</span><span data-lang="zh">(M1) 由参考三角形（对边 $x$，邻边 $2$，斜边 $\sqrt{4+x^2}$）得：$\theta = \arctan(x/2)$，$\sin\theta = x/\sqrt{4+x^2}$，$\cos\theta = 2/\sqrt{4+x^2}$，$\sin 2\theta = 2\sin\theta\cos\theta = 4x/(4+x^2)$。(A1)</span></p>
+      $$ = \frac{1}{16}\arctan\frac{x}{2} + \frac{4x}{32(4+x^2)} + C = \frac{1}{16}\arctan\frac{x}{2} + \frac{x}{8(4+x^2)} + C. $$
+      <p><span data-lang="en">(A1) Verification at $x=0$: antiderivative is $0$, and the integrand is $1/16 > 0$, consistent with $d/dx(\frac{1}{16}\arctan 0 + 0) = \frac{1}{16}\cdot\frac{1}{2} + \frac{1}{8}\cdot\frac{4-0}{16} = \frac{1}{32} + \frac{1}{32} = \frac{1}{16} = \frac{1}{(4+0)^2}$. Correct.</span><span data-lang="zh">(A1) 在 $x=0$ 处验证：原函数为 $0$，被积函数为 $1/16 > 0$，与 $d/dx(\frac{1}{16}\arctan 0 + 0) = \frac{1}{32} + \frac{1}{32} = \frac{1}{16} = \frac{1}{(4+0)^2}$ 一致。正确。</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">Always read every trig function of $\theta$ off the reference triangle before writing the final answer. For the sine substitution (opposite $x$, hypotenuse $a$) the triangle gives $\cos\theta = \sqrt{a^2-x^2}/a$, so $\sin 2\theta = 2(x/a)(\sqrt{a^2-x^2}/a)$. For the tangent substitution (opposite $x$, adjacent $a$) the hypotenuse is $\sqrt{a^2+x^2}$. Skipping the reference triangle and leaving the answer in $\theta$ is the single most common error.</span><span data-lang="zh">在写出最终答案之前，务必从参考三角形读取 $\theta$ 的所有三角函数值。对于正弦换元（对边 $x$，斜边 $a$），三角形给出 $\cos\theta = \sqrt{a^2-x^2}/a$，从而 $\sin 2\theta = 2(x/a)(\sqrt{a^2-x^2}/a)$。对于正切换元（对边 $x$，邻边 $a$），斜边为 $\sqrt{a^2+x^2}$。省略参考三角形、将答案留在 $\theta$ 中，是最常见的错误。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q4</span><span class="pill med">MEDIUM</span><span class="pill core">CORE</span><span class="pill topic"><span data-lang="en">partial fractions: distinct linear factors</span><span data-lang="zh">部分分数：不同线性因子</span></span><span class="pill marks">[6 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate: (a) $\int \frac{3x+1}{x^2-x-6}\,dx$; (b) $\int \frac{5x^2-3x-2}{x(x-1)(x+2)}\,dx$.</span><span data-lang="zh">计算：(a) $\int \frac{3x+1}{x^2-x-6}\,dx$；(b) $\int \frac{5x^2-3x-2}{x(x-1)(x+2)}\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $2\ln|x-3| + \ln|x+2| + C$ &nbsp;·&nbsp; <span class="ans">(b)</span> $\ln|x| + 4\ln|x+2| + C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Factor denominator; cover-up for coefficients <span class="marks-call">M1·A1·A1</span></span><span data-lang="zh">(a) 分解分母；覆盖法求系数 <span class="marks-call">M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">Factor: $x^2 - x - 6 = (x-3)(x+2)$. Write (M1)</span><span data-lang="zh">因式分解：$x^2 - x - 6 = (x-3)(x+2)$。写出 (M1)</span></p>
+      $$ \frac{3x+1}{(x-3)(x+2)} = \frac{A}{x-3} + \frac{B}{x+2}. $$
+      <p><span data-lang="en">Clear denominators: $3x + 1 = A(x+2) + B(x-3)$. Set $x=3$: $10 = 5A$, so $A=2$. Set $x=-2$: $-5 = -5B$, so $B=1$.</span><span data-lang="zh">去分母：$3x + 1 = A(x+2) + B(x-3)$。令 $x=3$：$10 = 5A$，故 $A=2$。令 $x=-2$：$-5 = -5B$，故 $B=1$。</span></p>
+      <p><span data-lang="en">Verification by recombining: $\dfrac{2}{x-3}+\dfrac{1}{x+2} = \dfrac{2(x+2)+(x-3)}{(x-3)(x+2)} = \dfrac{3x+1}{x^2-x-6}$. Confirmed. (A1)</span><span data-lang="zh">通分验证：$\dfrac{2}{x-3}+\dfrac{1}{x+2} = \dfrac{2(x+2)+(x-3)}{(x-3)(x+2)} = \dfrac{3x+1}{x^2-x-6}$。验证正确。(A1)</span></p>
+      $$ \int \frac{3x+1}{x^2-x-6}\,dx = 2\ln|x-3| + \ln|x+2| + C. \quad\text{(A1)} $$
+      <h4><span data-lang="en">(b) Three distinct linear factors; cover-up method <span class="marks-call">M1·A1·A1</span></span><span data-lang="zh">(b) 三个不同线性因子；覆盖法 <span class="marks-call">M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">Write (M1)</span><span data-lang="zh">写出 (M1)</span></p>
+      $$ \frac{5x^2-3x-2}{x(x-1)(x+2)} = \frac{A}{x} + \frac{B}{x-1} + \frac{C}{x+2}. $$
+      <p><span data-lang="en">Clear denominators: $5x^2-3x-2 = A(x-1)(x+2) + Bx(x+2) + Cx(x-1)$.</span><span data-lang="zh">去分母：$5x^2-3x-2 = A(x-1)(x+2) + Bx(x+2) + Cx(x-1)$。</span></p>
+      <p><span data-lang="en">Cover-up: Set $x=0$: $-2 = A(-1)(2)$, so $A=1$. (A1) Set $x=1$: $5-3-2=0 = B(1)(3)$, so $B=0$. Set $x=-2$: $20+6-2=24 = C(-2)(-3)=6C$, so $C=4$.</span><span data-lang="zh">覆盖法：令 $x=0$：$-2 = A(-1)(2)$，故 $A=1$。(A1) 令 $x=1$：$5-3-2=0 = B(1)(3)$，故 $B=0$。令 $x=-2$：$20+6-2=24 = C(-2)(-3)=6C$，故 $C=4$。</span></p>
+      <p><span data-lang="en">Verification: $\dfrac{1}{x}+\dfrac{4}{x+2} = \dfrac{(x-1)(x+2)+4x(x-1)}{x(x-1)(x+2)} = \dfrac{(x-1)(5x+2)}{x(x-1)(x+2)} = \dfrac{5x^2-3x-2}{x(x-1)(x+2)}$. Confirmed. (A1)</span><span data-lang="zh">验证：$\dfrac{1}{x}+\dfrac{4}{x+2} = \dfrac{(x-1)(x+2)+4x(x-1)}{x(x-1)(x+2)} = \dfrac{5x^2-3x-2}{x(x-1)(x+2)}$。验证正确。(A1)</span></p>
+      $$ \int \frac{5x^2-3x-2}{x(x-1)(x+2)}\,dx = \ln|x| + 4\ln|x+2| + C. $$
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The cover-up (Heaviside) method is fastest for distinct linear factors: to find the coefficient for the factor $(x-r)$, set $x=r$ in the numerator after cancelling $(x-r)$ from both sides. Always verify the decomposition by recombining over the common denominator before integrating; a coefficient error found early costs one line, whereas one found after integration costs much more.</span><span data-lang="zh">覆盖法（Heaviside 法）对不同线性因子最为高效：求因子 $(x-r)$ 的系数时，将两边同乘公分母后令 $x=r$ 代入。积分前务必通分还原以验证分解；及早发现系数错误只需一行，而积分后才发现则代价高得多。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART II ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART II &nbsp;·&nbsp; DEFINITIONS AND PROOF</span><span data-lang="zh">第II部分 &nbsp;·&nbsp; 定义与证明</span></span><span class="part-meta"><span data-lang="en">Rigorous arguments &middot; 26 marks</span><span data-lang="zh">严格论证 &middot; 26分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<!-- Q5 -->
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q5</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">trig power reduction: deriving the half-angle identity route</span><span data-lang="zh">三角降幂：推导半角恒等式路径</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">(a) Show $\sin^4 x = \tfrac{3}{8} - \tfrac{1}{2}\cos 2x + \tfrac{1}{8}\cos 4x$ using only $\sin^2 x = \tfrac{1}{2}(1-\cos 2x)$; (b) hence find $\int_0^{\pi/2}\sin^4 x\,dx$; (c) deduce $\int_0^{\pi/2}\sin^4 x\,dx = \int_0^{\pi/2}\cos^4 x\,dx$ without recomputing the right side.</span><span data-lang="zh">(a) 仅用 $\sin^2 x = \tfrac{1}{2}(1-\cos 2x)$ 证明 $\sin^4 x = \tfrac{3}{8} - \tfrac{1}{2}\cos 2x + \tfrac{1}{8}\cos 4x$；(b) 由此求 $\int_0^{\pi/2}\sin^4 x\,dx$；(c) 无须重新计算右边，推断 $\int_0^{\pi/2}\sin^4 x\,dx = \int_0^{\pi/2}\cos^4 x\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> <span data-lang="en">identity derived below</span><span data-lang="zh">恒等式推导见下</span> &nbsp;·&nbsp; <span class="ans">(b)</span> $\tfrac{3\pi}{16}$ &nbsp;·&nbsp; <span class="ans">(c)</span> <span data-lang="en">equality by complementary-angle symmetry</span><span data-lang="zh">由余角对称性得等式成立</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Expand $(\sin^2 x)^2$, then reduce $\cos^2 2x$ <span class="marks-call">M1·M1·A1·A1</span></span><span data-lang="zh">(a) 展开 $(\sin^2 x)^2$，再化简 $\cos^2 2x$ <span class="marks-call">M1·M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">Starting from $\sin^2 x = \tfrac{1}{2}(1 - \cos 2x)$, square both sides: (M1)</span><span data-lang="zh">从 $\sin^2 x = \tfrac{1}{2}(1 - \cos 2x)$ 出发，对两边平方：(M1)</span></p>
+      $$ \sin^4 x = \left(\frac{1-\cos 2x}{2}\right)^2 = \frac{1 - 2\cos 2x + \cos^2 2x}{4}. $$
+      <p><span data-lang="en">Apply the same identity a second time to the $\cos^2 2x$ term: replace $x$ by $2x$ to give $\cos^2 2x = \tfrac{1}{2}(1 + \cos 4x)$. (M1)</span><span data-lang="zh">对 $\cos^2 2x$ 项再次应用同一恒等式：将 $x$ 替换为 $2x$ 得 $\cos^2 2x = \tfrac{1}{2}(1 + \cos 4x)$。(M1)</span></p>
+      $$ \sin^4 x = \frac{1}{4}\left(1 - 2\cos 2x + \frac{1 + \cos 4x}{2}\right) = \frac{1}{4}\cdot\frac{2 - 4\cos 2x + 1 + \cos 4x}{2} = \frac{3 - 4\cos 2x + \cos 4x}{8}. $$
+      <p><span data-lang="en">(A1) Writing out the three terms:</span><span data-lang="zh">(A1) 写出三项：</span></p>
+      $$ \sin^4 x = \frac{3}{8} - \frac{1}{2}\cos 2x + \frac{1}{8}\cos 4x. \quad\text{(A1)} $$
+      <p><span data-lang="en">No other identities were assumed; both applications used only $\cos^2\alpha = \tfrac{1}{2}(1+\cos 2\alpha)$ with $\alpha = x$ then $\alpha = 2x$.</span><span data-lang="zh">未假设其他恒等式；两次均仅使用 $\cos^2\alpha = \tfrac{1}{2}(1+\cos 2\alpha)$，分别取 $\alpha = x$ 和 $\alpha = 2x$。</span></p>
+      <h4><span data-lang="en">(b) Integrate the reduced form and evaluate between $0$ and $\pi/2$ <span class="marks-call">M1·A1</span></span><span data-lang="zh">(b) 对化简后的式子积分并在 $0$ 至 $\pi/2$ 间求值 <span class="marks-call">M1·A1</span></span></h4>
+      <p><span data-lang="en">The antiderivative is (M1)</span><span data-lang="zh">原函数为 (M1)</span></p>
+      $$ F(x) = \frac{3x}{8} - \frac{\sin 2x}{4} + \frac{\sin 4x}{32}. $$
+      <p><span data-lang="en">Evaluate:</span><span data-lang="zh">代入积分限：</span></p>
+      $$ F\!\left(\frac{\pi}{2}\right) = \frac{3\pi}{16} - \frac{\sin\pi}{4} + \frac{\sin 2\pi}{32} = \frac{3\pi}{16} - 0 + 0 = \frac{3\pi}{16}. $$
+      $$ F(0) = 0. $$
+      <p><span data-lang="en">Hence $\displaystyle\int_0^{\pi/2}\sin^4 x\,dx = \frac{3\pi}{16}$. (A1)</span><span data-lang="zh">故 $\displaystyle\int_0^{\pi/2}\sin^4 x\,dx = \frac{3\pi}{16}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Complementary-angle symmetry <span class="marks-call">R1·A1</span></span><span data-lang="zh">(c) 余角对称性 <span class="marks-call">R1·A1</span></span></h4>
+      <p><span data-lang="en">Use the substitution $x = \tfrac{\pi}{2} - t$, $dx = -dt$ in the right-hand integral: (R1)</span><span data-lang="zh">在右边积分中令 $x = \tfrac{\pi}{2} - t$，$dx = -dt$：(R1)</span></p>
+      $$ \int_0^{\pi/2}\cos^4 x\,dx = \int_{\pi/2}^{0}\cos^4\!\left(\frac{\pi}{2}-t\right)(-dt) = \int_0^{\pi/2}\sin^4 t\,dt. $$
+      <p><span data-lang="en">Since $\cos\!\left(\frac{\pi}{2}-t\right) = \sin t$, the two integrals are identical. (A1) Alternatively, the expansion $\cos^4 x = \tfrac{3}{8} + \tfrac{1}{2}\cos 2x + \tfrac{1}{8}\cos 4x$ differs from the $\sin^4 x$ expansion only in the sign of the $\cos 2x$ term, and $\int_0^{\pi/2}\cos 2x\,dx = \tfrac{1}{2}[\sin 2x]_0^{\pi/2} = 0$, so the definite integrals coincide regardless.</span><span data-lang="zh">因 $\cos\!\left(\frac{\pi}{2}-t\right) = \sin t$，两个积分完全相同。(A1) 另一方面，展开式 $\cos^4 x = \tfrac{3}{8} + \tfrac{1}{2}\cos 2x + \tfrac{1}{8}\cos 4x$ 与 $\sin^4 x$ 的展开式仅 $\cos 2x$ 项的符号不同，而 $\int_0^{\pi/2}\cos 2x\,dx = \tfrac{1}{2}[\sin 2x]_0^{\pi/2} = 0$，故两个定积分相等。</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The half-angle route is the only general method for even powers of $\sin$ and $\cos$; the key is applying the identity repeatedly until the highest remaining power of cosine is odd (hence directly integrable) or a new double-angle appears. The symmetry argument in (c) is a special case of the reflection principle $\int_0^{\pi/2} f(\sin x)\,dx = \int_0^{\pi/2} f(\cos x)\,dx$, a result worth memorising for definite-integral competition problems.</span><span data-lang="zh">半角恒等式路径是处理 $\sin$ 和 $\cos$ 偶数次幂积分的唯一一般方法；关键在于反复应用恒等式，直到余弦最高次幂为奇数（可直接积分）或出现新的倍角。(c) 中的对称论证是反射原理 $\int_0^{\pi/2} f(\sin x)\,dx = \int_0^{\pi/2} f(\cos x)\,dx$ 的特殊情形，值得在定积分竞赛题中牢记。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q6</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">partial fractions: setting up and proving the form with a repeated and an irreducible-quadratic factor</span><span data-lang="zh">部分分数：建立并证明含重复因子与不可约二次因子的分解形式</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">For $R(x) = \dfrac{4x^3+3x^2+8x+3}{(x+1)^2(x^2+3)}$: (a) write the general PF form and justify each term; (b) determine all four coefficients; (c) verify by recombining.</span><span data-lang="zh">对于 $R(x) = \dfrac{4x^3+3x^2+8x+3}{(x+1)^2(x^2+3)}$：(a) 写出一般部分分数形式并说明每项的依据；(b) 求出全部四个系数；(c) 通分还原验证。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\dfrac{A}{x+1}+\dfrac{B}{(x+1)^2}+\dfrac{Cx+D}{x^2+3}$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $A=\tfrac{11}{4},\ B=-\tfrac{3}{2},\ C=\tfrac{5}{4},\ D=-\tfrac{3}{4}$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> <span data-lang="en">verified below</span><span data-lang="zh">验证见下</span></div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) General form and justification <span class="marks-call">A1·A1</span></span><span data-lang="zh">(a) 一般形式及其依据 <span class="marks-call">A1·A1</span></span></h4>
+      <p><span data-lang="en">$(x+1)^2$ is a repeated linear factor: it contributes one term per power, i.e. $\tfrac{A}{x+1}$ and $\tfrac{B}{(x+1)^2}$. (A1)</span><span data-lang="zh">$(x+1)^2$ 是重复线性因子：每个次幂各贡献一项，即 $\tfrac{A}{x+1}$ 和 $\tfrac{B}{(x+1)^2}$。(A1)</span></p>
+      <p><span data-lang="en">$x^2+3$ is irreducible over $\mathbb{R}$ (discriminant $-12&lt;0$): it contributes a linear numerator $Cx+D$. (A1)</span><span data-lang="zh">$x^2+3$ 在 $\mathbb{R}$ 上不可约（判别式 $-12&lt;0$）：贡献线性分子 $Cx+D$。(A1)</span></p>
+      $$ R(x) = \frac{A}{x+1}+\frac{B}{(x+1)^2}+\frac{Cx+D}{x^2+3}. $$
+      <h4><span data-lang="en">(b) Clear denominators and match coefficients <span class="marks-call">M1·M1·M1·A1·A1</span></span><span data-lang="zh">(b) 去分母并比较系数 <span class="marks-call">M1·M1·M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">Multiply both sides by $(x+1)^2(x^2+3)$: (M1)</span><span data-lang="zh">两边同乘 $(x+1)^2(x^2+3)$：(M1)</span></p>
+      $$ 4x^3+3x^2+8x+3 = A(x+1)(x^2+3)+B(x^2+3)+(Cx+D)(x+1)^2. $$
+      <p><span data-lang="en">Expand each piece and collect by degree: (M1)</span><span data-lang="zh">展开各项并按次数归类：(M1)</span></p>
+      $$ A(x+1)(x^2+3) = Ax^3+Ax^2+3Ax+3A, $$
+      $$ B(x^2+3) = Bx^2+3B, $$
+      $$ (Cx+D)(x+1)^2 = Cx^3+(2C+D)x^2+(C+2D)x+D. $$
+      <p><span data-lang="en">Matching powers: $[x^3]:\ A+C=4$; $[x^2]:\ A+B+2C+D=3$; $[x^1]:\ 3A+C+2D=8$; $[x^0]:\ 3A+3B+D=3$. (M1)</span><span data-lang="zh">比较各次系数：$[x^3]:\ A+C=4$；$[x^2]:\ A+B+2C+D=3$；$[x^1]:\ 3A+C+2D=8$；$[x^0]:\ 3A+3B+D=3$。(M1)</span></p>
+      <p><span data-lang="en">From $[x^3]$ and $[x^1]$: $C=4-A$ and $3A+(4-A)+2D=8\Rightarrow A+D=2\Rightarrow D=2-A$. (A1)</span><span data-lang="zh">由 $[x^3]$ 和 $[x^1]$：$C=4-A$，且 $3A+(4-A)+2D=8\Rightarrow A+D=2\Rightarrow D=2-A$。(A1)</span></p>
+      <p><span data-lang="en">Substituting into $[x^2]$: $A+B+2(4-A)+(2-A)=3\Rightarrow B-2A=-7\Rightarrow B=2A-7$.</span><span data-lang="zh">代入 $[x^2]$：$A+B+2(4-A)+(2-A)=3\Rightarrow B-2A=-7\Rightarrow B=2A-7$。</span></p>
+      <p><span data-lang="en">Substituting into $[x^0]$: $3A+3(2A-7)+(2-A)=3\Rightarrow 8A=22\Rightarrow A=\tfrac{11}{4}$.</span><span data-lang="zh">代入 $[x^0]$：$3A+3(2A-7)+(2-A)=3\Rightarrow 8A=22\Rightarrow A=\tfrac{11}{4}$。</span></p>
+      <p><span data-lang="en">Hence $C=\tfrac{5}{4}$, $D=-\tfrac{3}{4}$, $B=-\tfrac{3}{2}$. (A1)</span><span data-lang="zh">故 $C=\tfrac{5}{4}$，$D=-\tfrac{3}{4}$，$B=-\tfrac{3}{2}$。(A1)</span></p>
+      <h4><span data-lang="en">(c) Recombination verification <span class="marks-call">M1·A1·A1</span></span><span data-lang="zh">(c) 通分还原验证 <span class="marks-call">M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">Multiply out the numerator contributions over the common denominator: (M1)</span><span data-lang="zh">在公分母下展开各分子贡献：(M1)</span></p>
+      $$ \frac{11}{4}(x+1)(x^2+3) = \frac{11x^3+11x^2+33x+33}{4}, $$
+      $$ -\frac{3}{2}(x^2+3) = \frac{-6x^2-18}{4}, $$
+      $$ \frac{1}{4}(5x-3)(x^2+2x+1) = \frac{5x^3+7x^2-x-3}{4}. $$
+      <p><span data-lang="en">Summing by degree: (A1)</span><span data-lang="zh">按次数求和：(A1)</span></p>
+      $$ [x^3]:\ \frac{11+5}{4}=4;\quad [x^2]:\ \frac{11-6+7}{4}=3;\quad [x^1]:\ \frac{33-1}{4}=8;\quad [x^0]:\ \frac{33-18-3}{4}=3. $$
+      <p><span data-lang="en">Recombined numerator: $4x^3+3x^2+8x+3$. Confirmed. (A1)</span><span data-lang="zh">还原后的分子：$4x^3+3x^2+8x+3$。验证正确。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The cover-up shortcut applies only to the coefficient of the highest power of a repeated linear factor; the remaining coefficients require a full linear system. An irreducible quadratic always takes a linear numerator $Cx+D$: a constant alone is too restrictive for a general rational function over that factor. Verifying by recombination before integrating catches coefficient errors early.</span><span data-lang="zh">覆盖法捷径仅适用于重复线性因子最高次幂的系数；其余系数需通过完整线性方程组求解。不可约二次因子的分子必须为线性形式 $Cx+D$：仅用常数对一般有理函数而言限制过强。积分前通分验证可及早发现系数错误。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q7</span><span class="pill hard">HARD</span><span class="pill proof">PROOF</span><span class="pill topic"><span data-lang="en">trig substitution: secant case and back-substitution via reference triangle</span><span data-lang="zh">三角换元：正割情形与参考三角形反代换</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate $\int \frac{dx}{x^2\sqrt{x^2-16}}$ for $x>4$.</span><span data-lang="zh">计算 $\int \frac{dx}{x^2\sqrt{x^2-16}}$，其中 $x>4$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $x=4\sec\theta$, <span data-lang="en">integral becomes</span><span data-lang="zh">积分化为</span> $\tfrac{1}{16}\int\cos\theta\,d\theta$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\tfrac{\sin\theta}{16}+C$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $\dfrac{\sqrt{x^2-16}}{16x}+C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) State the substitution and rewrite everything in $\theta$ <span class="marks-call">M1·M1·A1</span></span><span data-lang="zh">(a) 给出换元并将一切用 $\theta$ 表示 <span class="marks-call">M1·M1·A1</span></span></h4>
+      <p><span data-lang="en">The form $\sqrt{x^2 - 16} = \sqrt{x^2 - 4^2}$ calls for $x = 4\sec\theta$, with $a = 4$. (M1)</span><span data-lang="zh">$\sqrt{x^2 - 16} = \sqrt{x^2 - 4^2}$ 的形式要求令 $x = 4\sec\theta$，其中 $a = 4$。(M1)</span></p>
+      <p><span data-lang="en">Then $dx = 4\sec\theta\tan\theta\,d\theta$ and, for $0 \le \theta < \tfrac{\pi}{2}$ (i.e. $x > 4$), $\sqrt{x^2 - 16} = \sqrt{16\sec^2\theta - 16} = 4|\tan\theta| = 4\tan\theta$. (M1)</span><span data-lang="zh">则 $dx = 4\sec\theta\tan\theta\,d\theta$，且在 $0 \le \theta < \tfrac{\pi}{2}$（即 $x > 4$）时，$\sqrt{x^2 - 16} = \sqrt{16\sec^2\theta - 16} = 4|\tan\theta| = 4\tan\theta$。(M1)</span></p>
+      $$ \int \frac{4\sec\theta\tan\theta\,d\theta}{16\sec^2\theta \cdot 4\tan\theta} = \frac{1}{16}\int \frac{d\theta}{\sec\theta} = \frac{1}{16}\int \cos\theta\,d\theta. \quad\text{(A1)} $$
+      <h4><span data-lang="en">(b) Evaluate the trigonometric integral <span class="marks-call">M1·A1</span></span><span data-lang="zh">(b) 计算三角积分 <span class="marks-call">M1·A1</span></span></h4>
+      <p><span data-lang="en">$\dfrac{1}{16}\int \cos\theta\,d\theta = \dfrac{\sin\theta}{16} + C.$ (M1·A1)</span><span data-lang="zh">$\dfrac{1}{16}\int \cos\theta\,d\theta = \dfrac{\sin\theta}{16} + C$。(M1·A1)</span></p>
+      <h4><span data-lang="en">(c) Reference triangle and back-substitution <span class="marks-call">M1·M1·A1</span></span><span data-lang="zh">(c) 参考三角形与反代换 <span class="marks-call">M1·M1·A1</span></span></h4>
+      <p><span data-lang="en">Draw the reference triangle for $x = 4\sec\theta$: (M1)</span><span data-lang="zh">画出 $x = 4\sec\theta$ 的参考三角形：(M1)</span></p>
+      <ul>
+        <li><span data-lang="en">Hypotenuse $= x$; adjacent side $= 4$; opposite side $= \sqrt{x^2 - 16}$.</span><span data-lang="zh">斜边 $= x$；邻边 $= 4$；对边 $= \sqrt{x^2 - 16}$。</span></li>
+      </ul>
+      <p><span data-lang="en">Read off: $\sin\theta = \dfrac{\sqrt{x^2-16}}{x}$. (M1)</span><span data-lang="zh">从三角形读出：$\sin\theta = \dfrac{\sqrt{x^2-16}}{x}$。(M1)</span></p>
+      $$ \int \frac{dx}{x^2\sqrt{x^2-16}} = \frac{\sin\theta}{16} + C = \frac{\sqrt{x^2-16}}{16x} + C. $$
+      <p><span data-lang="en">Verification by differentiation: $\dfrac{d}{dx}\!\left(\dfrac{\sqrt{x^2-16}}{16x}\right) = \dfrac{1}{16}\cdot\dfrac{x\cdot\frac{x}{\sqrt{x^2-16}} - \sqrt{x^2-16}}{x^2} = \dfrac{1}{16x^2}\cdot\dfrac{x^2-(x^2-16)}{\sqrt{x^2-16}} = \dfrac{16}{16x^2\sqrt{x^2-16}} = \dfrac{1}{x^2\sqrt{x^2-16}}$. (A1)</span><span data-lang="zh">微分验证：$\dfrac{d}{dx}\!\left(\dfrac{\sqrt{x^2-16}}{16x}\right) = \dfrac{1}{16}\cdot\dfrac{x\cdot\frac{x}{\sqrt{x^2-16}} - \sqrt{x^2-16}}{x^2} = \dfrac{1}{16x^2}\cdot\dfrac{16}{\sqrt{x^2-16}} = \dfrac{1}{x^2\sqrt{x^2-16}}$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">For the secant substitution on $\sqrt{x^2 - a^2}$ with $x > a > 0$: the reference triangle has hypotenuse $x$ and adjacent $a$, giving opposite $\sqrt{x^2-a^2}$. Always write $\sin\theta = \sqrt{x^2-a^2}/x$ from the triangle before substituting. The sign of $\tan\theta = \sqrt{x^2-a^2}/a$ is positive on the first quadrant branch $x > a$, so no absolute value is needed there. Remember to convert back to $x$ via the triangle before finishing.</span><span data-lang="zh">对 $\sqrt{x^2 - a^2}$（$x > a > 0$）使用正割换元时：参考三角形的斜边为 $x$，邻边为 $a$，对边为 $\sqrt{x^2-a^2}$。在反代换前务必从三角形写出 $\sin\theta = \sqrt{x^2-a^2}/x$。在第一象限分支 $x > a$ 上，$\tan\theta = \sqrt{x^2-a^2}/a$ 为正，无需绝对值。最终结果必须通过参考三角形还原为 $x$ 的函数。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════════════════════════════════ PART III ════════════════════════════════ -->
+<div class="part"><span class="part-label"><span data-lang="en">PART III &nbsp;·&nbsp; APPLICATIONS AND SYNTHESIS</span><span data-lang="zh">第III部分 &nbsp;·&nbsp; 应用与综合</span></span><span class="part-meta"><span data-lang="en">Extended problems &middot; 28 marks</span><span data-lang="zh">综合题 &middot; 28分</span></span></div>
+<h2 class="section-head"><span data-lang="en">Worked Solutions</span><span data-lang="zh">解题过程</span></h2>
+
+<!-- Q8 -->
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q8</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">trig substitution with completing the square: definite integral</span><span data-lang="zh">配方后的三角换元：定积分</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate $\int_0^1 \frac{x^2}{\sqrt{x^2-2x+5}}\,dx$.</span><span data-lang="zh">计算 $\int_0^1 \frac{x^2}{\sqrt{x^2-2x+5}}\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $(x-1)^2+4$; <span data-lang="en">substitute $x-1=2\tan\theta$; new limits $\theta=-\arctan\tfrac{1}{2}$ to $0$</span><span data-lang="zh">令 $x-1=2\tan\theta$；新积分限 $\theta=-\arctan\tfrac{1}{2}$ 至 $0$</span> &nbsp;·&nbsp; <span class="ans">(b)</span> <span data-lang="en">trig integral evaluated below</span><span data-lang="zh">三角积分计算见下</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $4-\tfrac{3\sqrt{5}}{2}-\ln\!\tfrac{\sqrt{5}+1}{2}$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Complete the square and identify the substitution <span class="marks-call">M1·A1·A1</span></span><span data-lang="zh">(a) 配方并确定换元 <span class="marks-call">M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">$x^2 - 2x + 5 = (x-1)^2 + 4$. (M1) This is of the form $u^2 + 4$ with $u = x-1$, calling for the tangent substitution $u = 2\tan\theta$, i.e. $x - 1 = 2\tan\theta$, $dx = 2\sec^2\theta\,d\theta$, $\sqrt{(x-1)^2+4} = 2\sec\theta$. (A1)</span><span data-lang="zh">$x^2 - 2x + 5 = (x-1)^2 + 4$。(M1) 令 $u = x-1$，这是 $u^2 + 4$ 的形式，需使用正切换元 $u = 2\tan\theta$，即 $x - 1 = 2\tan\theta$，$dx = 2\sec^2\theta\,d\theta$，$\sqrt{(x-1)^2+4} = 2\sec\theta$。(A1)</span></p>
+      <p><span data-lang="en">New limits: when $x=0$, $\tan\theta = -\tfrac{1}{2}$, so $\theta = \arctan(-\tfrac{1}{2}) = -\arctan\tfrac{1}{2}$. When $x=1$, $\tan\theta = 0$, so $\theta = 0$. (A1)</span><span data-lang="zh">新积分限：当 $x=0$ 时，$\tan\theta = -\tfrac{1}{2}$，故 $\theta = -\arctan\tfrac{1}{2}$；当 $x=1$ 时，$\tan\theta = 0$，故 $\theta = 0$。(A1)</span></p>
+      <h4><span data-lang="en">(b) Rewrite numerator and evaluate the trig integral <span class="marks-call">M1·M1·M1·A1·A1</span></span><span data-lang="zh">(b) 改写分子并计算三角积分 <span class="marks-call">M1·M1·M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">With $x = 1 + 2\tan\theta$, the numerator $x^2 = (1+2\tan\theta)^2 = 1 + 4\tan\theta + 4\tan^2\theta$. (M1)</span><span data-lang="zh">令 $x = 1 + 2\tan\theta$，分子 $x^2 = (1+2\tan\theta)^2 = 1 + 4\tan\theta + 4\tan^2\theta$。(M1)</span></p>
+      $$ \int \frac{(1+4\tan\theta+4\tan^2\theta)\cdot 2\sec^2\theta\,d\theta}{2\sec\theta} = \int (1+4\tan\theta+4\tan^2\theta)\sec\theta\,d\theta. $$
+      <p><span data-lang="en">Split into three integrals: (M1)</span><span data-lang="zh">拆分为三个积分：(M1)</span></p>
+      $$ I_1 = \int \sec\theta\,d\theta = \ln|\sec\theta+\tan\theta|, $$
+      $$ I_2 = 4\int \tan\theta\sec\theta\,d\theta = 4\sec\theta, $$
+      $$ I_3 = 4\int \tan^2\theta\sec\theta\,d\theta. $$
+      <p><span data-lang="en">For $I_3$, use $\tan^2\theta = \sec^2\theta - 1$: $I_3 = 4\int(\sec^3\theta - \sec\theta)\,d\theta$. Recall $\int\sec^3\theta\,d\theta = \tfrac{1}{2}(\sec\theta\tan\theta + \ln|\sec\theta+\tan\theta|)$: (M1)</span><span data-lang="zh">对 $I_3$，用 $\tan^2\theta = \sec^2\theta - 1$：$I_3 = 4\int(\sec^3\theta - \sec\theta)\,d\theta$。利用 $\int\sec^3\theta\,d\theta = \tfrac{1}{2}(\sec\theta\tan\theta + \ln|\sec\theta+\tan\theta|)$：(M1)</span></p>
+      $$ I_3 = 4\left[\frac{\sec\theta\tan\theta + \ln|\sec\theta+\tan\theta|}{2} - \ln|\sec\theta+\tan\theta|\right] = 2\sec\theta\tan\theta - 2\ln|\sec\theta+\tan\theta|. $$
+      <p><span data-lang="en">Total antiderivative: $F(\theta) = \ln|\sec\theta+\tan\theta| + 4\sec\theta + 2\sec\theta\tan\theta - 2\ln|\sec\theta+\tan\theta|$</span><span data-lang="zh">总原函数：$F(\theta) = \ln|\sec\theta+\tan\theta| + 4\sec\theta + 2\sec\theta\tan\theta - 2\ln|\sec\theta+\tan\theta|$</span></p>
+      $$ = 4\sec\theta + 2\sec\theta\tan\theta - \ln|\sec\theta+\tan\theta|. $$
+      <p><span data-lang="en">(A1) Now evaluate between $\theta = -\arctan\tfrac{1}{2}$ and $\theta = 0$. At $\theta=0$: $\sec 0=1$, $\tan 0=0$: $F(0) = 4 + 0 - \ln 1 = 4$. (A1)</span><span data-lang="zh">(A1) 在 $\theta = -\arctan\tfrac{1}{2}$ 至 $\theta = 0$ 间求值。当 $\theta=0$ 时：$\sec 0=1$，$\tan 0=0$，故 $F(0) = 4 + 0 - \ln 1 = 4$。(A1)</span></p>
+      <p><span data-lang="en">At $\theta=-\arctan\tfrac{1}{2}$: $\tan\theta = -\tfrac{1}{2}$, $\sec\theta = \sqrt{1+\tfrac{1}{4}} = \tfrac{\sqrt{5}}{2}$:</span><span data-lang="zh">当 $\theta=-\arctan\tfrac{1}{2}$ 时：$\tan\theta = -\tfrac{1}{2}$，$\sec\theta = \sqrt{1+\tfrac{1}{4}} = \tfrac{\sqrt{5}}{2}$：</span></p>
+      $$ F(-\arctan\tfrac{1}{2}) = 4\cdot\frac{\sqrt{5}}{2} + 2\cdot\frac{\sqrt{5}}{2}\cdot\left(-\frac{1}{2}\right) - \ln\left|\frac{\sqrt{5}}{2} - \frac{1}{2}\right| = 2\sqrt{5} - \frac{\sqrt{5}}{2} - \ln\frac{\sqrt{5}-1}{2}. $$
+      <h4><span data-lang="en">(c) Final numerical value <span class="marks-call">A1·A1</span></span><span data-lang="zh">(c) 最终数值 <span class="marks-call">A1·A1</span></span></h4>
+      <p><span data-lang="en">The definite integral equals $F(0) - F(-\arctan\tfrac{1}{2})$: (A1)</span><span data-lang="zh">定积分等于 $F(0) - F(-\arctan\tfrac{1}{2})$：(A1)</span></p>
+      $$ = 4 - 2\sqrt{5} + \frac{\sqrt{5}}{2} + \ln\frac{\sqrt{5}-1}{2} = 4 - \frac{3\sqrt{5}}{2} + \ln\frac{\sqrt{5}-1}{2}. $$
+      <p><span data-lang="en">This is positive: numerically $4 - \tfrac{3\times2.236}{2} + \ln(0.618) \approx 4 - 3.354 - 0.481 \approx 0.165 > 0$. (A1)</span><span data-lang="zh">此值为正：数值上 $4 - \tfrac{3\times2.236}{2} + \ln(0.618) \approx 4 - 3.354 - 0.481 \approx 0.165 > 0$。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">Completing the square is the mandatory preprocessing step for any integral whose radicand is a quadratic without a perfect-square factor. The pattern is: (1) complete the square to get $(x-h)^2 + k^2$ or $k^2 - (x-h)^2$; (2) shift $u = x-h$; (3) apply the standard trig substitution to $\sqrt{u^2+k^2}$ or $\sqrt{k^2-u^2}$. After completing the square, also express the numerator in terms of the new variable $u$ (here $x = 1+2\tan\theta$ means $x^2$ must be expanded in $\tan\theta$).</span><span data-lang="zh">配方是处理根号内为非完全平方二次式的积分时不可省略的预处理步骤。步骤如下：(1) 配方得 $(x-h)^2 + k^2$ 或 $k^2 - (x-h)^2$；(2) 令 $u = x-h$ 平移；(3) 对 $\sqrt{u^2+k^2}$ 或 $\sqrt{k^2-u^2}$ 应用标准三角换元。配方后还需将分子用新变量 $u$ 表示（此处 $x = 1+2\tan\theta$ 意味着 $x^2$ 须展开为 $\tan\theta$ 的函数）。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q9</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">partial fractions with irreducible quadratic: area between curves</span><span data-lang="zh">含不可约二次因子的部分分数：曲线间面积</span></span><span class="pill marks">[10 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Find the area between $y=\dfrac{6x^2+4}{(x^2+1)(x^2+4)}$ and $y=0$ for $0\le x\le 2$.</span><span data-lang="zh">求曲线 $y=\dfrac{6x^2+4}{(x^2+1)(x^2+4)}$ 与 $y=0$ 在 $0\le x\le 2$ 之间所围区域的面积。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\dfrac{B}{x^2+1}+\dfrac{D}{x^2+4}$ <span data-lang="en">with</span><span data-lang="zh">其中</span> $B=-\tfrac{2}{3},\ D=\tfrac{20}{3}$ &nbsp;&middot;&nbsp; <span class="ans">(b)</span> $\bigl[-\tfrac{2}{3}\arctan x+\tfrac{10}{3}\arctan\tfrac{x}{2}\bigr]_0^2$ &nbsp;&middot;&nbsp; <span class="ans">(c)</span> $\tfrac{5\pi}{6}-\tfrac{2}{3}\arctan 2$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Partial-fraction decomposition with two irreducible quadratics <span class="marks-call">M1·M1·A1·A1</span></span><span data-lang="zh">(a) 两个不可约二次因子的部分分数分解 <span class="marks-call">M1·M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">Each factor $x^2+1$ and $x^2+4$ is irreducible over the reals (negative discriminants). Since the numerator degree (2) is less than the denominator degree (4), the fraction is proper. Write: (M1)</span><span data-lang="zh">$x^2+1$ 和 $x^2+4$ 在实数域上均不可约（判别式为负）。由于分子次数（2）小于分母次数（4），该分式为真分式。写出：(M1)</span></p>
+      $$ \frac{6x^2+4}{(x^2+1)(x^2+4)} = \frac{Ax+B}{x^2+1} + \frac{Cx+D}{x^2+4}. $$
+      <p><span data-lang="en">Because the integrand is an even function of $x$ (the numerator and denominator both contain only even powers), the partial-fraction decomposition must also be even. Therefore $A = C = 0$, and we need only find $B$ and $D$: (M1)</span><span data-lang="zh">由于被积函数是 $x$ 的偶函数（分子和分母均只含偶数次幂），部分分数分解也必须为偶函数，故 $A = C = 0$，只需求 $B$ 和 $D$：(M1)</span></p>
+      $$ \frac{6x^2+4}{(x^2+1)(x^2+4)} = \frac{B}{x^2+1} + \frac{D}{x^2+4}. $$
+      <p><span data-lang="en">Clear denominators: $6x^2+4 = B(x^2+4) + D(x^2+1)$. Matching coefficients: $[x^2]: B+D=6$; $[x^0]: 4B+D=4$. Subtracting: $3B=-2$, so $B=-\tfrac{2}{3}$, $D=\tfrac{20}{3}$. (A1)</span><span data-lang="zh">去分母：$6x^2+4 = B(x^2+4) + D(x^2+1)$。比较系数：$[x^2]: B+D=6$；$[x^0]: 4B+D=4$。相减得 $3B=-2$，故 $B=-\tfrac{2}{3}$，$D=\tfrac{20}{3}$。(A1)</span></p>
+      <p><span data-lang="en">Verification: $-\tfrac{2}{3}(x^2+4)+\tfrac{20}{3}(x^2+1) = \frac{-2x^2-8+20x^2+20}{3} = \frac{18x^2+12}{3} = 6x^2+4$. Confirmed. (A1)</span><span data-lang="zh">验证：$-\tfrac{2}{3}(x^2+4)+\tfrac{20}{3}(x^2+1) = \frac{18x^2+12}{3} = 6x^2+4$。验证正确。(A1)</span></p>
+      <h4><span data-lang="en">(b) Evaluate the definite integral <span class="marks-call">M1·M1·A1·A1</span></span><span data-lang="zh">(b) 计算定积分 <span class="marks-call">M1·M1·A1·A1</span></span></h4>
+      $$ \int_0^2 \frac{6x^2+4}{(x^2+1)(x^2+4)}\,dx = \int_0^2 \left(\frac{-2/3}{x^2+1} + \frac{20/3}{x^2+4}\right)dx. $$
+      <p><span data-lang="en">(M1) Use $\int\frac{dx}{x^2+a^2} = \frac{1}{a}\arctan\frac{x}{a}+C$: (M1)</span><span data-lang="zh">(M1) 利用 $\int\frac{dx}{x^2+a^2} = \frac{1}{a}\arctan\frac{x}{a}+C$：(M1)</span></p>
+      $$ = \left[-\frac{2}{3}\arctan x + \frac{20}{3}\cdot\frac{1}{2}\arctan\frac{x}{2}\right]_0^2 = \left[-\frac{2}{3}\arctan x + \frac{10}{3}\arctan\frac{x}{2}\right]_0^2. $$
+      <p><span data-lang="en">At $x=2$: $-\tfrac{2}{3}\arctan 2 + \tfrac{10}{3}\arctan 1 = -\tfrac{2}{3}\arctan 2 + \tfrac{10}{3}\cdot\tfrac{\pi}{4} = -\tfrac{2}{3}\arctan 2 + \tfrac{5\pi}{6}$. (A1)</span><span data-lang="zh">当 $x=2$ 时：$-\tfrac{2}{3}\arctan 2 + \tfrac{10}{3}\arctan 1 = -\tfrac{2}{3}\arctan 2 + \tfrac{5\pi}{6}$。(A1)</span></p>
+      <p><span data-lang="en">At $x=0$: $0 + 0 = 0$.</span><span data-lang="zh">当 $x=0$ 时：$0 + 0 = 0$。</span></p>
+      <p><span data-lang="en">Area $= \dfrac{5\pi}{6} - \dfrac{2}{3}\arctan 2$. (A1)</span><span data-lang="zh">面积 $= \dfrac{5\pi}{6} - \dfrac{2}{3}\arctan 2$。(A1)</span></p>
+      <h4><span data-lang="en">(c) State exact area and verify positivity <span class="marks-call">A1·A1</span></span><span data-lang="zh">(c) 写出精确面积并验证为正 <span class="marks-call">A1·A1</span></span></h4>
+      <p><span data-lang="en">Area $= \dfrac{5\pi}{6} - \dfrac{2}{3}\arctan 2$. (A1)</span><span data-lang="zh">面积 $= \dfrac{5\pi}{6} - \dfrac{2}{3}\arctan 2$。(A1)</span></p>
+      <p><span data-lang="en">Numerically: $\arctan 2 \approx 1.107$, so $\dfrac{2}{3}(1.107)\approx 0.738$ and $\dfrac{5\pi}{6}\approx 2.618$. Area $\approx 2.618 - 0.738 = 1.880 > 0$. The integrand is positive for $x\in[0,2]$, so the area is indeed positive. (A1)</span><span data-lang="zh">数值上：$\arctan 2 \approx 1.107$，故 $\dfrac{2}{3}(1.107)\approx 0.738$，$\dfrac{5\pi}{6}\approx 2.618$，面积 $\approx 2.618 - 0.738 = 1.880 > 0$。被积函数在 $x\in[0,2]$ 上为正，故面积确实为正。(A1)</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">When the denominator factors into two distinct irreducible quadratics, the general form has linear numerators $Ax+B$ and $Cx+D$ over each factor. But symmetry can reduce the work dramatically: if the integrand is even (only even powers of $x$), the odd coefficients $A$ and $C$ must be zero, halving the number of unknowns. Always check for parity before setting up the full linear system.</span><span data-lang="zh">当分母分解为两个不同的不可约二次因子时，一般形式在每个因子上取线性分子 $Ax+B$ 和 $Cx+D$。但对称性可大幅减少工作量：若被积函数为偶函数（只含 $x$ 的偶数次幂），则奇次系数 $A$ 和 $C$ 必须为零，从而将未知数减半。建立完整线性方程组前，务必先检查奇偶性。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q frq">
+  <div class="q-head"><span class="pill qnum">Q10</span><span class="pill hard">HARD</span><span class="pill applied">APPLIED</span><span class="pill topic"><span data-lang="en">strategy and combined techniques: rationalising substitution then partial fractions</span><span data-lang="zh">策略与综合方法：有理化换元后接部分分数</span></span><span class="pill marks">[8 marks]</span></div>
+  <div class="q-body">
+    <p class="prompt"><span data-lang="en">Evaluate $\int \frac{1}{1+\sqrt{x+1}}\,dx$ using $u=\sqrt{x+1}$.</span><span data-lang="zh">使用 $u=\sqrt{x+1}$ 计算 $\int \frac{1}{1+\sqrt{x+1}}\,dx$。</span></p>
+  </div>
+  <div class="solution">
+    <div class="answer-line"><span data-lang="en">Answers:</span><span data-lang="zh">答案：</span> &nbsp;<span class="ans">(a)</span> $\int\frac{2u}{1+u}\,du$ &nbsp;·&nbsp; <span class="ans">(b)</span> $2 - \frac{2}{1+u} = 2u - 2\ln|1+u|$ <span data-lang="en">after long division</span><span data-lang="zh">长除法后得</span> &nbsp;·&nbsp; <span class="ans">(c)</span> $2\sqrt{x+1} - 2\ln(1+\sqrt{x+1}) + C$</div>
+    <div class="rationale">
+      <h4><span data-lang="en">(a) Apply the rationalising substitution <span class="marks-call">M1·M1·A1</span></span><span data-lang="zh">(a) 应用有理化换元 <span class="marks-call">M1·M1·A1</span></span></h4>
+      <p><span data-lang="en">Let $u = \sqrt{x+1}$, so $u^2 = x+1$ and $x = u^2 - 1$, $dx = 2u\,du$. (M1) Substitute: (M1)</span><span data-lang="zh">令 $u = \sqrt{x+1}$，则 $u^2 = x+1$，$x = u^2 - 1$，$dx = 2u\,du$。(M1) 代入：(M1)</span></p>
+      $$ \int \frac{1}{1+u}\cdot 2u\,du = \int \frac{2u}{1+u}\,du. $$
+      <p><span data-lang="en">The integrand is a rational function of $u$. (A1)</span><span data-lang="zh">被积函数是 $u$ 的有理函数。(A1)</span></p>
+      <h4><span data-lang="en">(b) Long division, then integrate <span class="marks-call">M1·A1·A1</span></span><span data-lang="zh">(b) 长除法后积分 <span class="marks-call">M1·A1·A1</span></span></h4>
+      <p><span data-lang="en">The degree of the numerator equals the degree of the denominator, so perform polynomial long division: (M1)</span><span data-lang="zh">分子次数等于分母次数，故进行多项式长除法：(M1)</span></p>
+      $$ \frac{2u}{1+u} = \frac{2u}{u+1} = 2 - \frac{2}{u+1}. $$
+      <p><span data-lang="en">Check: $2(u+1) - 2 = 2u$. Confirmed. The proper-fraction part is $-\tfrac{2}{u+1}$, which is already in partial-fraction form (one linear factor in the denominator). (A1)</span><span data-lang="zh">验证：$2(u+1) - 2 = 2u$。正确。真分式部分为 $-\tfrac{2}{u+1}$，已是部分分数形式（分母为一个线性因子）。(A1)</span></p>
+      $$ \int \left(2 - \frac{2}{u+1}\right)du = 2u - 2\ln|u+1| + C. $$
+      <p><span data-lang="en">(A1) Verification: $\frac{d}{du}(2u - 2\ln|u+1|) = 2 - \frac{2}{u+1} = \frac{2u}{u+1}$. Confirmed.</span><span data-lang="zh">(A1) 验证：$\frac{d}{du}(2u - 2\ln|u+1|) = 2 - \frac{2}{u+1} = \frac{2u}{u+1}$。正确。</span></p>
+      <h4><span data-lang="en">(c) Back-substitute $u = \sqrt{x+1}$ <span class="marks-call">M1·A1</span></span><span data-lang="zh">(c) 反代换 $u = \sqrt{x+1}$ <span class="marks-call">M1·A1</span></span></h4>
+      <p><span data-lang="en">Since $x \ge -1$ we have $u = \sqrt{x+1} \ge 0$, so $u+1 \ge 1 > 0$ and the absolute value is unnecessary: (M1)</span><span data-lang="zh">由于 $x \ge -1$，有 $u = \sqrt{x+1} \ge 0$，故 $u+1 \ge 1 > 0$，绝对值符号可省略：(M1)</span></p>
+      $$ \int \frac{dx}{1+\sqrt{x+1}} = 2\sqrt{x+1} - 2\ln(1+\sqrt{x+1}) + C. $$
+      <p><span data-lang="en">Verification: let $F(x) = 2\sqrt{x+1} - 2\ln(1+\sqrt{x+1})$. Then</span><span data-lang="zh">验证：令 $F(x) = 2\sqrt{x+1} - 2\ln(1+\sqrt{x+1})$，则</span></p>
+      $$ F'(x) = \frac{1}{\sqrt{x+1}} - 2\cdot\frac{1}{1+\sqrt{x+1}}\cdot\frac{1}{2\sqrt{x+1}} = \frac{1}{\sqrt{x+1}} - \frac{1}{\sqrt{x+1}(1+\sqrt{x+1})} = \frac{1}{\sqrt{x+1}}\cdot\frac{(1+\sqrt{x+1})-1}{1+\sqrt{x+1}} = \frac{1}{1+\sqrt{x+1}}. $$
+      <p><span data-lang="en">(A1) Matches the integrand exactly.</span><span data-lang="zh">(A1) 与被积函数完全吻合。</span></p>
+      <div class="insight"><strong>Insight.</strong> <span data-lang="en">The rationalising substitution $u = \sqrt[n]{\text{expression}}$ converts any integral involving $n$-th roots into a rational integral at the cost of introducing $dx = nu^{n-1}\,du$. The resulting rational function is often improper (degree of numerator $\ge$ degree of denominator), so long division is mandatory before partial fractions. The strategy of Section 6 of the study guide is exactly this: classify the integrand, choose the method that simplifies it most (here, a substitution that removes the radical), then follow the remaining rational-function pipeline.</span><span data-lang="zh">有理化换元 $u = \sqrt[n]{\text{表达式}}$ 可将任何含 $n$ 次根号的积分化为有理积分，代价是引入 $dx = nu^{n-1}\,du$。所得有理函数通常为假分式（分子次数不低于分母次数），因此在进行部分分数分解前必须先做长除法。学习指南第6节的策略正是如此：对被积函数分类，选择最能简化它的方法（此处为去除根号的换元），再沿有理函数处理流程继续。</span></div>
+    </div>
+  </div>
+</div>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this unit in your first-year course?</span><span data-lang="zh">在大一课程中被本单元难住了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm or final.</span><span data-lang="zh">预约丁睿学者导师，免费进行15分钟咨询。我们帮你在下次期中或期末考试前突破难关。</span></p>
+  <a class="consult-cta__btn" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_b2_integration_techniques_ii__solutions__en" target="_blank" rel="noopener"><span data-lang="en">Book a free consult &rarr;</span><span data-lang="zh">预约免费咨询 &rarr;</span></a>
+</aside>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <a href="../../Study%20Guides/Unit_B2_Integration_Techniques_II.html"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span> &rarr;</a>
+  <a href="../Unit_B2_Integration_Techniques_II_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span></span>
+</nav>
+<footer class="page-foot">
+  <span><span class="mark">DINGRUI&nbsp;SCHOLARS</span> &middot; <span data-lang="en">University Calculus &middot; Unit B2 Solutions</span><span data-lang="zh">大学微积分 &middot; 第B2单元解答</span> <code style="color:#555;">v1.0</code> &middot; <span data-lang="en">Companion to Practice v1.0</span><span data-lang="zh">配套练习题 v1.0</span></span>
+  <span><span data-lang="en">Sections 1 to 6 &middot; 82 marks total</span><span data-lang="zh">第1至6节 &middot; 共82分</span></span>
+</footer>
+
+<script>function toggleLang(){document.body.classList.toggle('lang-zh');}</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>

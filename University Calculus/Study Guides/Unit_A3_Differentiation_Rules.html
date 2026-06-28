@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="University Calculus Unit A3: Differentiation Rules. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="theme-color" content="#7A2E2E">
+<meta name="color-scheme" content="light dark">
+<title>University Calculus — Unit A3: Differentiation Rules | Dingrui Scholars</title>
+<link rel="canonical" href="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_A3_Differentiation_Rules.html">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDVTGZ6RJ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SDVTGZ6RJ9');</script>
+<!-- OpenGraph / Twitter share cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dingrui Scholars">
+<meta property="og:title" content="University Calculus — Unit A3: Differentiation Rules | Dingrui Scholars">
+<meta property="og:description" content="University Calculus Unit A3: Differentiation Rules. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta property="og:url" content="https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_A3_Differentiation_Rules.html">
+<meta property="og:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="University Calculus — Unit A3: Differentiation Rules | Dingrui Scholars">
+<meta name="twitter:description" content="University Calculus Unit A3: Differentiation Rules. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.">
+<meta name="twitter:image" content="https://alexliu2233.github.io/dingrui-products/LOGO.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+<style>
+:root {
+  --bg: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --bg-code: #0F0F0F;
+  --text: #0F0F0F;
+  --text-secondary: #585858;
+  --accent: #7A2E2E; --pop: #0099FF; --pop-light: #E8F4FF; --ink: #0F0F0F;
+  --accent-light: #F2E4E4;
+  --accent-dark: #5A1E1E;
+  --green: #2E6B4F;
+  --green-light: #DFF0E8;
+  --orange: #A65E1A;
+  --orange-light: #FBF0E0;
+  --red: #B03030;
+  --red-light: #FCEAEA;
+  --purple: #5E3D7A;
+  --purple-light: #EDE4F5;
+  --gold: #C4956A;
+  --gold-light: #FDF5EC;
+  --border: #E6E6E6;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.10);
+  --radius: 12px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-w: 860px;
+  --toc-w: 260px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F0F0F;
+  --bg-card: #1A1A1A;
+  --bg-code: #000000;
+  --text: #FAFAFA;
+  --text-secondary: #A0A0A0;
+  --accent: #C87070; --pop: #4DB2FF; --pop-light: #12283A; --ink: #FAFAFA;
+  --accent-light: #3A1818;
+  --accent-dark: #E08080;
+  --green: #5CB88A;
+  --green-light: #1A2E24;
+  --orange: #D4944A;
+  --orange-light: #2E2010;
+  --red: #E07070;
+  --red-light: #301515;
+  --purple: #A888C8;
+  --purple-light: #201828;
+  --gold: #D4A870;
+  --gold-light: #2A2018;
+  --border: #2A2A2A;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+
+/* ─── SCORE BADGE (top nav) ─── */
+.score-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--green);
+  background: var(--green-light);
+  border: 1px solid var(--green);
+  padding: 3px 10px; border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.score-badge.zero { color: var(--text-secondary); background: var(--bg); border-color: var(--border); }
+
+/* ─── PROGRESS BAR ─── */
+.progress-track {
+  position: fixed; top: 56px; left: 0; right: 0;
+  height: 3px; background: transparent; z-index: 99;
+}
+.progress-fill {
+  height: 100%; width: 0; background: var(--accent);
+  transition: width 0.15s;
+}
+
+/* ─── SIDEBAR TOC ─── */
+.sidebar {
+  position: fixed; top: 59px; left: 0; bottom: 0;
+  width: var(--toc-w); background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; scrollbar-width: none; padding: 20px 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, background 0.3s;
+  z-index: 90;
+}
+.sidebar::-webkit-scrollbar { display: none; }
+.sidebar.open { transform: translateX(0); box-shadow: var(--shadow-lg); }
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem; padding: 0 20px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.sidebar a {
+  display: block; padding: 8px 20px;
+  color: var(--text-secondary);
+  text-decoration: none; font-size: 0.88rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.sidebar a:hover { color: var(--accent); background: var(--accent-light); }
+.sidebar a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 600; background: linear-gradient(90deg, var(--accent-light), transparent); }
+
+/* ─── MAIN ─── */
+.main-wrap {
+  max-width: var(--max-w);
+  margin: 80px auto 120px;
+  padding: 0 24px;
+
+  transition: width 0.3s ease, margin-left 0.3s ease;}
+@media (min-width: 1100px) {
+  .sidebar { transform: translateX(0); box-shadow: none; }
+  .main-wrap {
+    max-width: none;
+    margin-left: calc(var(--toc-w) + 40px);
+    margin-right: 0;
+    padding: 0 48px;
+  }
+  body.sidebar-collapsed .sidebar { transform: translateX(-100%); }
+}
+
+/* ─── HERO ─── */
+.hero {
+  text-align: center; padding: 56px 24px 48px;
+  background: linear-gradient(180deg, #F4F4F4 0%, transparent 100%);
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(0,0,0,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+[data-theme="dark"] .hero { background: linear-gradient(180deg, rgba(0,0,0, 0.4) 0%, transparent 100%); }
+[data-theme="dark"] .hero::before { background: radial-gradient(ellipse at 70% 20%, rgba(255,255,255,0.04) 0%, transparent 70%); }
+
+.hero-overline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 12px;
+  position: relative;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15; margin-bottom: 16px;
+  position: relative;
+}
+.hero-sub {
+  color: var(--text-secondary); max-width: 650px; margin: 0 auto;
+  position: relative;
+}
+.hero-meta {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin-top: 24px; position: relative;
+}
+.hero-meta .chip {
+  font-size: 0.85rem; font-weight: 600;
+  padding: 6px 16px; border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.chip-maroon { background: var(--bg-card); border: 1px solid var(--accent); color: var(--accent); }
+.chip-green { background: var(--bg-card); border: 1px solid var(--green); color: var(--green); }
+.chip-purple { background: var(--bg-card); border: 1px solid var(--purple); color: var(--purple); }
+
+/* ─── MASTERY DASHBOARD ─── */
+.mastery-dash {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin: -16px 0 40px;
+}
+.mastery-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.mastery-card:hover { transform: translateY(-2px); }
+.mastery-val {
+  font-family: var(--font-mono);
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.mastery-label {
+  font-size: 0.82rem; color: var(--text-secondary);
+  margin-top: 4px; font-weight: 600;
+}
+.mastery-bar {
+  width: 100%; height: 4px; border-radius: 2px;
+  background: var(--border); margin-top: 10px;
+  overflow: hidden;
+}
+.mastery-bar-fill {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+@media (max-width: 600px) { .mastery-dash { grid-template-columns: 1fr; } }
+
+/* ─── SECTION ─── */
+.section { margin-bottom: 56px; scroll-margin-top: 80px; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem; margin-bottom: 16px;
+  line-height: 1.25; border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 8px; display: inline-block;
+}
+.section h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem; margin: 32px 0 12px;
+  line-height: 1.3; color: var(--text);
+}
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.card-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.card-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 700; flex-shrink: 0;
+}
+.icon-blue { background: var(--accent-light); color: var(--accent); }
+.icon-green { background: var(--green-light); color: var(--green); }
+.icon-orange { background: var(--orange-light); color: var(--orange); }
+.icon-red { background: var(--red-light); color: var(--red); }
+.icon-purple { background: var(--purple-light); color: var(--purple); }
+.card-title { font-weight: 700; font-size: 1.05rem; }
+
+/* ─── CODE/WORKED EXAMPLE BLOCKS ─── */
+pre {
+  background: var(--bg-code); color: #CDD6F4;
+  padding: 20px 24px; border-radius: var(--radius);
+  overflow-x: auto; font-family: var(--font-mono);
+  font-size: 0.88rem; line-height: 1.65; margin: 16px 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+code { font-family: var(--font-mono); font-size: 0.9em; }
+:not(pre) > code {
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 6px; border-radius: 4px; font-weight: 500;
+}
+pre .cm { color: #6C7086; }
+pre .num { color: #F9E2AF; font-weight: 600; }
+pre .str { color: #A6E3A1; font-weight: 600; }
+
+/* ─── KEY CONCEPT BOX ─── */
+.concept-box {
+  border-left: 5px solid var(--accent);
+  background: var(--bg-card);
+  padding: 20px 24px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+.concept-box.green { border-left-color: var(--green); }
+.concept-box.orange { border-left-color: var(--orange); }
+.concept-box.red { border-left-color: var(--red); }
+.concept-box.purple { border-left-color: var(--purple); }
+.concept-box > strong:first-child {
+  display: inline-block; margin-bottom: 8px;
+  font-family: var(--font-mono); text-transform: uppercase;
+  font-size: 0.8rem; letter-spacing: 0.5px;
+}
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--bg-card); }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: var(--accent-light); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.3px; text-transform: uppercase; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--accent-light); }
+
+/* ─── QUIZ ─── */
+.quiz { margin: 24px 0; background: var(--bg-card); padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); position: relative; }
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.quiz-q { font-weight: 600; font-size: 1.05rem; flex: 1; }
+.quiz-number {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+  background: var(--accent-light); color: var(--accent);
+  padding: 3px 8px; border-radius: 6px;
+  flex-shrink: 0; margin-left: 12px;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 12px 18px; border: 2px solid var(--border);
+  border-radius: 8px; cursor: pointer;
+  font-size: 0.95rem; transition: all 0.2s;
+  background: var(--bg); font-weight: 500;
+  position: relative;
+}
+.quiz-opt:hover:not(.disabled) { border-color: var(--accent); background: var(--accent-light); }
+.quiz-opt.correct { border-color: var(--green); background: var(--green-light); color: var(--green); }
+.quiz-opt.wrong { border-color: var(--red); background: var(--red-light); color: var(--red); }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.8; }
+.quiz-opt.correct::after { content: '✓'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-opt.wrong::after { content: '✗'; position: absolute; right: 14px; font-weight: 700; }
+.quiz-explain { margin-top: 16px; padding: 14px 18px; border-radius: 8px; font-size: 0.9rem; display: none; line-height: 1.6; }
+.quiz-explain.show { display: block; animation: fadeSlideIn 0.35s ease; }
+.quiz-explain.correct-exp { background: var(--green-light); color: #1a4030; border: 1px solid var(--green); }
+.quiz-explain.wrong-exp { background: var(--red-light); color: #6b1d1d; border: 1px solid var(--red); }
+[data-theme="dark"] .quiz-explain.correct-exp { color: var(--green); }
+[data-theme="dark"] .quiz-explain.wrong-exp { color: var(--red); }
+.quiz-retry {
+  display: none; margin-top: 12px;
+  padding: 8px 18px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.quiz-retry.show { display: inline-block; animation: fadeSlideIn 0.35s ease; }
+.quiz-retry:hover { background: var(--accent-light); border-color: var(--accent); }
+
+@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ─── ACCORDION / DETAILS ─── */
+details { margin: 16px 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); overflow: hidden; box-shadow: var(--shadow); }
+summary {
+  padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 0.95rem;
+  user-select: none; list-style: none; display: flex; align-items: center; gap: 10px;
+  background: var(--bg); transition: background 0.2s;
+}
+summary:hover { background: var(--accent-light); }
+summary::before { content: '▸'; transition: transform 0.2s; font-size: 1rem; color: var(--accent); }
+details[open] summary { border-bottom: 1px solid var(--border); }
+details[open] summary::before { transform: rotate(90deg); }
+details .detail-body { padding: 20px; font-size: 0.95rem; background: var(--bg-card); }
+
+/* ─── QUICK REF ─── */
+.qref { background: var(--bg-card); border: 2px dashed var(--accent); border-radius: var(--radius); padding: 24px; margin: 24px 0; }
+.qref-title { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; text-align: center; }
+
+/* ─── FLASHCARD ─── */
+
+/* ─── FLASHCARDS (unified: grid overlay, equalized, no scrollbars) ─── */
+.flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.flashcard {
+  perspective: 1000px;
+  cursor: pointer;
+  display: grid;
+}
+.flashcard-inner {
+  display: grid;
+  grid-template-areas: "card";
+  min-height: 200px;
+  height: 100%;
+  position: relative;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+.flashcard-front, .flashcard-back {
+  grid-area: card;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  word-break: break-word;
+  hyphens: auto;
+}
+.flashcard-front {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: clamp(0.92rem, 2.1vw, 1.05rem);
+  line-height: 1.45;
+  padding: 22px 20px 34px;
+  gap: 8px;
+}
+.flashcard-front::after {
+  content: 'TAP TO FLIP';
+  position: absolute; bottom: 10px; left: 0; right: 0;
+  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+  color: var(--text-secondary); opacity: 0.5; letter-spacing: 1.5px;
+}
+.flashcard-back {
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  color: var(--text);
+  transform: rotateY(180deg);
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.6;
+  padding: 26px 22px;
+  gap: 12px;
+  /* Cleaner prose wrapping: no mid-word splits, no auto-hyphens,
+     balanced lines so commas/periods don't orphan at line starts */
+  word-break: normal;
+  hyphens: manual;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+.flashcard-back .katex-display {
+  margin: 6px 0 !important;
+  font-size: 1.25em;
+  max-width: 100%;
+  overflow: hidden;
+}
+.flashcard-back .katex-display > .katex { max-width: 100%; }
+.flashcard-back .katex { font-size: 1em; }
+/* Give <br>-separated lines real breathing room (numbered lists etc.) */
+.flashcard-back br { content: ""; display: block; margin-bottom: 8px; }
+.flashcard-back > * { max-width: 100%; }
+@media (max-width: 600px) {
+  .flashcard-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ─── WORKED EXAMPLES (standardized) ─── */
+.worked-example {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 88%, var(--accent-light) 12%), var(--bg-card));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+[data-theme="dark"] .worked-example {
+  background: linear-gradient(180deg, rgba(58,32,32,0.32), rgba(30,24,24,0.98));
+}
+.worked-example h4,
+.worked-example .we-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin: 0 0 16px 0;
+}
+.worked-example .we-steps {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.worked-example .we-step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+[data-theme="dark"] .worked-example .we-step {
+  background: var(--bg-card);
+}
+.worked-example .we-step strong {
+  color: var(--accent);
+  font-size: 0.92rem;
+  display: block;
+  margin-bottom: 6px;
+}
+.worked-example .we-step .katex-display {
+  margin: 10px 0;
+}
+.worked-solution {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+.worked-solution .katex-display { margin: 0.65rem 0; }
+
+/* ─── FORMULA BOX ─── */
+.formula-box {
+  background: var(--bg-card);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  margin: 24px 0;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  overflow-x: auto;
+}
+.formula-box .formula-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--text-secondary); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 12px;
+}
+.formula-box .katex-display { margin: 10px 0 0 0; }
+
+/* ─── SEPARATOR ─── */
+.sep { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+/* ─── PRACTICE INPUT ─── */
+.practice-input-group { margin: 20px 0; }
+.practice-prompt { font-weight: 600; margin-bottom: 12px; font-size: 1.02rem; }
+.practice-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.practice-row input[type="text"] {
+  flex: 1; min-width: 160px; padding: 10px 16px;
+  border: 2px solid var(--border); border-radius: 8px;
+  font-family: var(--font-mono); font-size: 1rem;
+  background: var(--bg); color: var(--text);
+  transition: border-color 0.2s;
+}
+.practice-row input[type="text"]:focus { outline: none; border-color: var(--accent); }
+.practice-row button {
+  padding: 10px 24px; border: none; border-radius: 8px;
+  background: var(--accent); color: #fff; font-weight: 700;
+  font-family: var(--font-body); font-size: 0.95rem;
+  cursor: pointer; transition: all 0.2s;
+}
+.practice-row button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.practice-feedback {
+  margin-top: 10px; padding: 10px 16px; border-radius: 8px;
+  font-size: 0.92rem; display: none;
+}
+.practice-feedback.show { display: block; animation: fadeSlideIn 0.3s ease; }
+.practice-feedback.correct { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+.practice-feedback.wrong { background: var(--red-light); color: var(--red); border: 1px solid var(--red); }
+
+/* ─── CHECKLIST ─── */
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  padding: 12px 16px; border: 1px solid var(--border);
+  border-radius: 8px; margin-bottom: 8px;
+  cursor: pointer; font-size: 0.95rem;
+  background: var(--bg-card); transition: all 0.2s;
+  display: flex; align-items: center; gap: 12px;
+  user-select: none;
+}
+.checklist li:hover { border-color: var(--accent); }
+.checklist li .check-icon {
+  width: 24px; height: 24px; border-radius: 6px;
+  border: 2px solid var(--border); display: flex;
+  align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+  font-size: 0.8rem; color: transparent;
+}
+.checklist li.checked { background: var(--green-light); border-color: var(--green); }
+.checklist li.checked .check-icon { background: var(--green); border-color: var(--green); color: #fff; }
+
+/* ─── INTERACTIVE WIDGETS ─── */
+.interactive-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow-lg);
+}
+.widget-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 16px;
+  text-align: center;
+}
+.widget-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.widget-canvas-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.widget-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.widget-controls label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.widget-controls input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 220px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.widget-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-controls input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.widget-readout {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 90px;
+  text-align: center;
+}
+.widget-sum-readout {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.widget-sum-readout .sum-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+/* ─── TWO COLUMNS ─── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ─── FOOTER ─── */
+.footer-wrap {
+  text-align: center; padding: 40px 24px;
+  color: var(--text-secondary); font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem; color: var(--text);
+  margin-bottom: 4px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 1100px) {
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .main-wrap { padding: 0 16px; margin-top: 60px; }
+  pre { font-size: 0.8rem; padding: 16px; }
+  
+  .formula-box { padding: 16px; }
+  .top-nav { padding: 0 16px; }
+  }
+
+/* Print */
+@media print {
+  .flashcard-inner { transform: none !important; }
+  .flashcard-back { transform: none !important; position: relative !important; backface-visibility: visible !important; }
+  .flashcard-front { display: none !important; }
+  .flashcard { height: auto !important; min-height: auto !important; }
+  .top-nav, .progress-track, .sidebar, .topnav-actions, .quiz-retry, .mastery-dash,
+  .flashcard-toolbar button, .score-badge { display: none !important; }
+  .main-wrap { margin: 0 auto; max-width: 100%; }
+  body { font-size: 11pt; background: white; color: black; }
+  pre { border: 1px solid #ccc; white-space: pre-wrap; }
+  .card, .formula-box, .concept-box, .quiz { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+  details { break-inside: avoid; }
+  .interactive-widget { display: none; }
+  
+  
+  
+  
+  a { color: inherit; text-decoration: none; }
+}
+
+/* ─── TOP-NAV (matching Units 2-6) ─── */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; height: 56px;
+  transition: background 0.3s, border 0.3s;
+}
+[data-theme="dark"] .top-nav { background: rgba(21, 16, 16, 0.92); }
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-right { display: flex; align-items: center; gap: 6px; }
+.nav-logo { height: 36px; width: auto; border-radius: 0; object-fit: contain; }
+.nav-badge {
+  background: var(--accent); color: #fff;
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+  padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px;
+}
+.nav-btn {
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px;
+  padding: 6px 14px; font-size: 0.82rem;
+  cursor: pointer; font-family: var(--font-body); font-weight: 600;
+  transition: all 0.2s;
+}
+.nav-btn:hover { background: var(--accent-light); border-color: var(--accent); transform: translateY(-1px); }
+.nav-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ─── BILINGUAL TOGGLE ─── */
+body:not(.lang-zh) [data-lang="zh"] { display: none; }
+body.lang-zh [data-lang="en"] { display: none; }
+
+/* consult-cta: lead-gen conversion surface (Sprint A) */
+.consult-cta { background: linear-gradient(180deg, var(--accent-light, #F2E4E4) 0%, var(--bg-card, #fff) 100%); border: 2px solid var(--accent); border-radius: var(--radius, 12px); padding: 22px 26px; margin: 30px 0 8px; text-align: center; }
+.consult-cta__lead { font-family: var(--font-display); font-size: 1.25rem; color: var(--accent); margin: 0 0 6px; }
+.consult-cta__body { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; margin: 0 auto 16px; max-width: 48ch; }
+.consult-cta__btn { display: inline-block; background: var(--ink); color: var(--bg-card); font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 12px 22px; border-radius: 12px; transition: transform 0.15s, opacity 0.2s; }
+.consult-cta__btn:hover { opacity: 0.88; transform: translateY(-1px); }
+/* design-refresh links */ .card a:not(.feeder-link), .concept-box a, .going-deeper a, .section > p a { color: var(--pop); text-underline-offset: 2px; }
+@media print { .consult-cta { border: 1px solid #999; background: #fff; } .consult-cta__btn { background: #fff !important; color: #000 !important; border: 1px solid #999; } .consult-cta__btn[data-lang="en"]::after { content: " (dingruischolars.com/signup)"; font-weight: 400; } .consult-cta__btn[data-lang="zh"]::after { content: " (dingruischolars.com/signup-ch)"; font-weight: 400; } }
+
+/* __sg_mobile_spacing__ tighten phone layout + fix top-nav clip (injected by declutter_sg.py) */
+@media (max-width: 600px){
+  .main-wrap{ margin: 64px auto 56px !important; padding: 0 14px !important; }
+  .hero{ padding: 40px 18px 32px !important; margin-bottom: 26px !important; }
+  .hero-sub{ font-size: 0.96rem !important; }
+  .section{ margin-bottom: 36px !important; }
+  .section h2{ font-size: 1.45rem !important; }
+  .section h3{ margin: 24px 0 10px !important; }
+  .card{ padding: 18px 16px !important; }
+  .concept-box{ padding: 16px 16px !important; }
+  .quiz{ padding: 18px 14px !important; }
+  .formula-box{ padding: 16px 12px !important; }
+  .worked-solution{ padding: 16px 16px !important; }
+  .sep{ margin: 28px 0 !important; }
+  .detail-body{ padding: 16px !important; }
+  .top-nav{ padding: 0 10px !important; }
+  .nav-left{ gap: 6px !important; min-width: 0; }
+  .nav-right{ gap: 4px !important; }
+  .nav-btn{ padding: 6px 9px !important; font-size: 0.78rem !important; }
+  .score-badge{ display: none !important; }
+}
+@media (max-width: 430px){
+  .nav-left .nav-badge:nth-child(2){ display: none !important; }
+}
+/* __end_sg_mobile_spacing__ */
+
+  /* mobile-overflow-lock v1: lock to viewport width on phone/tablet, no horizontal pan (laptop sidebar layout >=1100px unaffected) */
+  @media (max-width: 1024px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .main-wrap, .hero, .hero-sub, .consult-cta, .sg-appendix { max-width: 100%; }
+    img, table, video, iframe, pre { max-width: 100%; }
+    .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+  }
+</style>
+<!-- BEGIN unit-nav-css -->
+<style data-section="unit-nav">
+.unit-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 980px;
+  margin: 64px auto 32px;
+  padding: 0 24px;
+}
+.unit-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  padding: 18px 20px;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border, #DDD0C8);
+  border-radius: 12px;
+  color: inherit;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.unit-nav__link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #7A2E2E);
+  box-shadow: 0 6px 16px -4px rgba(60, 20, 30, 0.12);
+}
+.unit-nav__link--next {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.unit-nav__arrow {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent, #7A2E2E);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.unit-nav__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.unit-nav__hint {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-secondary, #6B5058);
+}
+.unit-nav__title {
+  font-family: var(--font-display, 'DM Serif Display', Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--text, #2C1B1F);
+}
+.unit-nav__placeholder {
+  border: 1px dashed var(--border, #DDD0C8);
+  border-radius: 12px;
+  background: transparent;
+  opacity: 0.6;
+}
+@media (max-width: 640px) {
+  .unit-nav { grid-template-columns: 1fr; gap: 10px; margin-top: 48px; }
+  .unit-nav__link--next { flex-direction: row; text-align: left; }
+}
+@media print { .unit-nav { display: none; } }
+</style>
+<!-- END unit-nav-css -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "University Calculus — Unit A3: Differentiation Rules",
+  "description": "University Calculus Unit A3: Differentiation Rules. Rigorous first-year university notes to the MIT, Georgia Tech, and Princeton standard, with worked examples, proofs, quizzes, dark mode, and print-friendly formatting from Dingrui Scholars.",
+  "url": "https://alexliu2233.github.io/dingrui-products/University%20Calculus/Study%20Guides/Unit_A3_Differentiation_Rules.html",
+  "inLanguage": [
+    "en"
+  ],
+  "learningResourceType": "Study Guide",
+  "educationalLevel": "University",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Dingrui Scholars",
+    "url": "https://www.dingruischolars.com"
+  }
+}
+</script>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFKAuoDASIAAhEBAxEB/8QAHAABAQADAQEBAQAAAAAAAAAAAAEGBwgFBAID/8QAaxAAAQMDAQUBCAcQCwwHBgcAAQACAwQFEQYHEiExQRMIFCIyUWFxgRUXN5GUsbMWIzM2QlJUYnJ0dZOhstLTJDRVVnOCkpW0w9ElNThFU1djg4SiwdQmJ0NERmV2KGSFhqTwGEhmo8Lh9f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgQDBf/EADQRAQACAgAEAwUHBAIDAAAAAAABAgMRBBIhMTJBURMzYXGBFCI0kaGx0SNSU/BCQ2PB4f/aAAwDAQACEQMRAD8A6jREWV1EREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARREFREKAiIgIomfMgqZRT8qBniqiICIiAiBEBERAREygJlTgqgZRAiAiic0FTKiIKinxK9UBFFUBFECCooqgIiICZU9SvqQEUVQEQogIiICIiAiKIKmfMiiCoonrQVMoiAiIgIoqgIiICIiAiIgJ6kRARPUiAiJ0QEREBERAREQEyoqgIiICIiAiIgIiICIiAiIgIiICKKoCKZRBUURBURRAVREBFOHmX4q54aSAz1c0dPEOb5XBrR6zwQf0RYzdNf6JtkZfVaotpxzZBL27v5Me8fyLF6vbhoyLPYQ3esxyMdM1gP4xzT+RNutcOS3astmotP0O3qzPqZG1unrlBB/2b4po5XH0tO6B/KKyC2bYtCVkojluNTQuOMd9UjwD62BzR6yo3C08NljvVsFReVQam03XvDKHUFqqnuOA2Ksjc4nyboOfyL13BzfGaR6QpcZiY7vyiqIhEREDoiJ6kFCnrT0IgqdVEKCqInqQOXFPOr05KIKinmVQRE9SflQVFEPRBUREBEU9aAUREBVREFUREFRFEDqicccU6ICqIgnRERBVFUQFDzQ8lUBREQVF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CIiqCZRE6IKiBRBUUwqgKJyRBVE6J1QEREFUToiCqBEKAqpkeVBxQVFEQOKInVBVEQIHNEVQQoqogIiYQVREQFeSiBBRlREQFVB5kQE69UKdED1omUwgIiICIiAqoiAr51MKoIUTogQMIhRBVFVEBERARMcUQPWiFEBECICqiIBRECAEKIgoQophACqZTKAiIgIiICIiAiIgiqIgiqKdEBE5qoJ5kRVBEVRBEVU9KCqIiC8UUTzoKor1UKAEREBVREBOKeVOqAiqiAgREF64UKKoJyRCFUETqhCo8qCIqp0QVFEQFVEQOqKqIBTmiICeZVTqgIivVBCiIgBERARVRA6IPIqogdVeaiqCInmRAREQERCgBERAREQMomEQEVUQEQKoCiIEDHBPSidEBAiIHpTqieYIKinJOKCphQKoCIiAiIgIiICFEQTor1REDqpw44VRBCqiIHVERAREQEREBQKogiqIgKKogdEREBERBFURBFURBFURBCnVVEERVEEVREBERAUKqIInDCqIIiqIInVVEERVEBERBFURAKiqICIiAp6lUQTgiqFBOqoROXVBOSKlMIIipQIIiqBBETCqCJyVQoIiuEwgiqhTCAiqYQFFR6EQFFUQEQqICvJROiBhVMIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAohVQAiKBBUUCpQEQckQRUlCoguEygU6oKiIgIgRBCqiICIp1QVCUU6oKhRCggVQclOqCoURA4oiJI/9k=" class="nav-logo" alt="DingRui Scholars logo">
+    <span class="nav-brand">Dingrui Scholars</span>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn" id="tocToggle" onclick="document.getElementById('sidebar').classList.toggle('open')" title="Contents"><span data-lang="en">Contents</span><span data-lang="zh">目录</span></button>
+    <button class="nav-btn" id="langToggle" onclick="toggleLang()" title="Switch language / 切换语言"><span data-lang="en">中文</span><span data-lang="zh">EN</span></button>
+    <button class="nav-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode"><span data-lang="en">Dark</span><span data-lang="zh">深色</span></button>
+  </div>
+</nav>
+<div class="progress-bar"><div id="progressFill"></div></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-title"><span data-lang="en">Table of Contents</span><span data-lang="zh">目录</span></div>
+  <a href="#hero"><span data-lang="en">Overview</span><span data-lang="zh">概览</span></a>
+  <a href="#s1"><span data-lang="en">1 &middot; Constant Multiple and Sum Rules</span><span data-lang="zh">1 &middot; 常数倍法则与和法则</span></a>
+  <a href="#s2"><span data-lang="en">2 &middot; The Product Rule</span><span data-lang="zh">2 &middot; 乘积法则</span></a>
+  <a href="#s3"><span data-lang="en">3 &middot; The Quotient Rule</span><span data-lang="zh">3 &middot; 商的法则</span></a>
+  <a href="#s4"><span data-lang="en">4 &middot; The Chain Rule</span><span data-lang="zh">4 &middot; 链式法则</span></a>
+  <a href="#s5"><span data-lang="en">5 &middot; Combining the Rules</span><span data-lang="zh">5 &middot; 法则的综合运用</span></a>
+  <a href="#s6"><span data-lang="en">6 &middot; Derivatives of Polynomials and Rational Functions</span><span data-lang="zh">6 &middot; 多项式与有理函数的导数</span></a>
+  <a href="#s7"><span data-lang="en">7 &middot; Common Pitfalls and What Comes Next</span><span data-lang="zh">7 &middot; 常见陷阱与后续内容</span></a>
+  <a href="#flashcards"><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></a>
+  <a href="#unit-quiz"><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></a>
+  <a href="#checklist"><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握度清单</span></a>
+</aside>
+
+<main class="main-wrap">
+<section class="hero" id="hero">
+  <div class="hero-overline"><span data-lang="en">University Calculus &middot; Calculus I</span><span data-lang="zh">大学微积分 &middot; 微积分 I</span></div>
+  <h1><span data-lang="en">Unit A3: Differentiation Rules</span><span data-lang="zh">单元 A3：求导法则</span></h1>
+  <p class="hero-sub"><span data-lang="en">The algebraic toolkit for derivatives: constant multiple, sum, product, quotient, and chain rules, combined to differentiate any polynomial or rational function.</span><span data-lang="zh">求导数（<code>derivative</code>）的代数工具箱：常数倍法则、和法则、乘积法则、商的法则与链式法则（<code>Chain Rule</code>），综合起来即可对任意多项式或有理函数求导。</span></p>
+  <div class="hero-meta">
+    <span class="chip"><span data-lang="en">Calculus I</span><span data-lang="zh">微积分 I</span></span>
+    <span class="chip"><span data-lang="en">Single-Variable</span><span data-lang="zh">单变量</span></span>
+    <span class="chip"><span data-lang="en">Foundational</span><span data-lang="zh">基础</span></span>
+    <span class="chip">MIT 18.01 / GT 1551 / Princeton MAT 103</span>
+  </div>
+  <div class="concept-box">
+    <strong><span data-lang="en">Read me first.</span><span data-lang="zh">请先读我。</span></strong>
+    <span data-lang="en">Unit A2 defined the derivative as a limit. Computing that limit by hand for every function is impractical, so this unit builds the standard rules that turn differentiation into algebra. Master the product, quotient, and chain rules here, because every later unit (transcendental functions, implicit differentiation, integration) leans on them.</span><span data-lang="zh">单元 A2 把导数（<code>derivative</code>）定义为一个极限（<code>limit</code>）。对每个函数都手工计算这个极限并不现实，因此本单元建立起一套标准法则，把求导（<code>differentiation</code>）变成纯代数运算。务必在这里掌握乘积法则（<code>Product Rule</code>）、商的法则（<code>Quotient Rule</code>）和链式法则（<code>Chain Rule</code>），因为后面每个单元（超越函数、隐函数求导 <code>implicit differentiation</code>、积分 <code>integral</code>）都要依赖它们。</span>
+  </div>
+</section>
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">大一微积分卡壳了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</span><span data-lang="zh">预约 Dingrui Scholars 导师的 15 分钟免费咨询，在下次期中考前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_a3_differentiation_rules__sg__en" target="_blank" rel="noopener">Book a free consult &rarr;</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_a3_differentiation_rules__sg__zh" target="_blank" rel="noopener">预约免费咨询 &rarr;</a>
+</aside>
+
+
+<section class="section" id="s1">
+  <div class="section-label"><span data-lang="en">Section 1</span><span data-lang="zh">第 1 节</span></div>
+  <h2><span data-lang="en">Constant Multiple and Sum Rules</span><span data-lang="zh">常数倍法则与和法则</span></h2>
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong>
+    <span data-lang="en">Differentiation is a linear operation. A constant scalar passes straight through the derivative, and the derivative of a sum is the sum of the derivatives. Together with the power rule, these two facts let you differentiate any polynomial term by term.</span><span data-lang="zh">求导（<code>differentiation</code>）是一个线性运算。常数因子可以直接穿过导数（<code>derivative</code>），而和的导数等于各项导数之和。再配合幂法则（<code>power rule</code>），仅凭这两条事实就能逐项对任意多项式求导。</span>
+  </div>
+  <div class="formula-box">
+    <div class="formula-label"><span data-lang="en">Linearity of the derivative</span><span data-lang="zh">导数的线性性</span></div>
+    $$ \frac{d}{dx}\big[c\,f(x)\big] = c\,f'(x), \qquad \frac{d}{dx}\big[f(x) \pm g(x)\big] = f'(x) \pm g'(x). $$
+  </div>
+  <p><span data-lang="en">Here $c$ is a constant. The two statements combine into a single rule: for constants $a$ and $b$, the derivative of $a\,f(x) + b\,g(x)$ is $a\,f'(x) + b\,g'(x)$. Recall the building block from Unit A2, the power rule $\dfrac{d}{dx}x^n = n x^{n-1}$, valid for every real exponent $n$.</span><span data-lang="zh">这里 $c$ 是常数。两条结论可以合并为一条法则：对常数 $a$ 和 $b$，$a\,f(x) + b\,g(x)$ 的导数为 $a\,f'(x) + b\,g'(x)$。回忆单元 A2 的基本砖块——幂法则（<code>power rule</code>）$\dfrac{d}{dx}x^n = n x^{n-1}$，对任意实指数 $n$ 都成立。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 1.1: differentiate a cubic</span><span data-lang="zh">例题 1.1：对一个三次多项式求导</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $f(x) = 5x^3 - 7x^2 + 2x - 9$.</p>
+    <p>Apply linearity term by term, then the power rule on each power. The constant $-9$ has derivative $0$.</p>
+    $$ f'(x) = 5\cdot 3x^2 - 7\cdot 2x + 2\cdot 1 - 0 = 15x^2 - 14x + 2. $$
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $f(x) = 5x^3 - 7x^2 + 2x - 9$ 求导。</p>
+    <p>逐项使用线性性，再对每个幂使用幂法则。常数项 $-9$ 的导数为 $0$。</p>
+    $$ f'(x) = 5\cdot 3x^2 - 7\cdot 2x + 2\cdot 1 - 0 = 15x^2 - 14x + 2. $$
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Going deeper: why the sum rule holds</span><span data-lang="zh">深入一步：和法则为什么成立</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Form the difference quotient of $f+g$ and split it using the limit laws from Unit A1.</p>
+    $$ \frac{(f+g)(x+h) - (f+g)(x)}{h} = \frac{f(x+h)-f(x)}{h} + \frac{g(x+h)-g(x)}{h}. $$
+    <p>Each piece converges as $h \to 0$, so the limit of the sum is the sum of the limits, giving $(f+g)'(x) = f'(x) + g'(x)$. The constant multiple rule follows the same way, factoring $c$ out of the difference quotient.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>写出 $f+g$ 的差商，再用单元 A1 的极限法则（<code>limit laws</code>）把它拆开。</p>
+    $$ \frac{(f+g)(x+h) - (f+g)(x)}{h} = \frac{f(x+h)-f(x)}{h} + \frac{g(x+h)-g(x)}{h}. $$
+    <p>当 $h \to 0$ 时每一部分都收敛，因此和的极限等于极限之和，得到 $(f+g)'(x) = f'(x) + g'(x)$。常数倍法则同理可证，只需把 $c$ 从差商里提出来即可。</p>
+    </div></div>
+  </details>
+  <p><span data-lang="en">Linearity is the single fact that turns differentiation into a mechanical, term-by-term process. Once you accept that a constant rides through unchanged and that a sum splits, you never again differentiate a polynomial as a whole object: you differentiate each power and reassemble. The same principle handles negative and fractional powers, since the power rule $\frac{d}{dx}x^n = n x^{n-1}$ holds for every real $n$. A term written as a root or a reciprocal should first be rewritten as a power so the rule applies cleanly.</span><span data-lang="zh">线性性这一条事实，就足以把求导变成机械的、逐项进行的过程。一旦接受常数原样穿过、和可以拆开，你就再也不会把多项式当成一个整体去求导：你对每个幂分别求导，再重新拼起来。同一原则也适用于负指数和分数指数，因为幂法则 $\frac{d}{dx}x^n = n x^{n-1}$ 对任意实数 $n$ 都成立。写成根号或倒数的项，应先改写成幂的形式，法则才能干净地套用。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 1.2: mixed powers, roots, and reciprocals</span><span data-lang="zh">例题 1.2：混合幂、根号与倒数</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $g(x) = 4\sqrt{x} + \dfrac{3}{x^2} - \dfrac{x}{2} + 6$.</p>
+    <p>Rewrite every term as a constant times a power of $x$ before differentiating: $4\sqrt{x} = 4x^{1/2}$, $\dfrac{3}{x^2} = 3x^{-2}$, and $\dfrac{x}{2} = \tfrac12 x$. The constant $6$ contributes nothing.</p>
+    $$ g'(x) = 4\cdot\tfrac12 x^{-1/2} + 3\cdot(-2)x^{-3} - \tfrac12 = 2x^{-1/2} - 6x^{-3} - \tfrac12. $$
+    <p>Returning to root and reciprocal notation, $g'(x) = \dfrac{2}{\sqrt{x}} - \dfrac{6}{x^3} - \dfrac12$. The rewrite step is what makes the power rule legal here, since differentiating $\sqrt{x}$ or $1/x^2$ directly is where most slips occur.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $g(x) = 4\sqrt{x} + \dfrac{3}{x^2} - \dfrac{x}{2} + 6$ 求导。</p>
+    <p>求导前先把每一项改写成常数乘以 $x$ 的幂：$4\sqrt{x} = 4x^{1/2}$，$\dfrac{3}{x^2} = 3x^{-2}$，$\dfrac{x}{2} = \tfrac12 x$。常数 $6$ 不贡献任何东西。</p>
+    $$ g'(x) = 4\cdot\tfrac12 x^{-1/2} + 3\cdot(-2)x^{-3} - \tfrac12 = 2x^{-1/2} - 6x^{-3} - \tfrac12. $$
+    <p>再换回根号与倒数记法，$g'(x) = \dfrac{2}{\sqrt{x}} - \dfrac{6}{x^3} - \dfrac12$。正是这一步改写让幂法则在这里合法可用，因为直接对 $\sqrt{x}$ 或 $1/x^2$ 求导正是大多数人出错之处。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 1.3: linearity with an unknown constant</span><span data-lang="zh">例题 1.3：含未知常数的线性性</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>A curve is $y = ax^4 - 5x + a^2$, where $a$ is a fixed constant. Find $y'$ and the slope at $x = 1$.</p>
+    <p>Treat $a$ and $a^2$ as constants. Only $x$ is the variable, so $a^2$ differentiates to $0$ just like any number.</p>
+    $$ y' = 4ax^3 - 5. $$
+    <p>At $x = 1$ the slope is $y'(1) = 4a - 5$. Recognizing which symbols are constants is half the battle in later units, where parameters appear constantly alongside the variable.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>曲线为 $y = ax^4 - 5x + a^2$，其中 $a$ 是固定常数。求 $y'$ 以及在 $x = 1$ 处的斜率。</p>
+    <p>把 $a$ 与 $a^2$ 都当作常数。只有 $x$ 是变量，所以 $a^2$ 和任何数字一样，求导后为 $0$。</p>
+    $$ y' = 4ax^3 - 5. $$
+    <p>在 $x = 1$ 处斜率为 $y'(1) = 4a - 5$。辨认哪些符号是常数，在后续单元里已经成功了一半，因为那时参数会和变量一起频繁出现。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 1.4: from derivative to tangent line</span><span data-lang="zh">例题 1.4：从导数到切线</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Find the equation of the tangent line to $f(x) = x^3 - 4x$ at $x = 1$.</p>
+    <p>Differentiate by linearity and the power rule: $f'(x) = 3x^2 - 4$. The slope at $x = 1$ is $f'(1) = 3 - 4 = -1$, and the point is $\big(1, f(1)\big) = (1, -3)$. The point-slope form gives</p>
+    $$ y - (-3) = -1(x - 1) \quad\Longrightarrow\quad y = -x - 2. $$
+    <p>This is the central use of the derivative: it converts an algebraic formula into the slope of the curve at a chosen point, and the differentiation rules of this unit are what make that slope cheap to compute.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>求 $f(x) = x^3 - 4x$ 在 $x = 1$ 处的切线（<code>tangent line</code>）方程。</p>
+    <p>用线性性与幂法则求导：$f'(x) = 3x^2 - 4$。在 $x = 1$ 处的斜率为 $f'(1) = 3 - 4 = -1$，切点为 $\big(1, f(1)\big) = (1, -3)$。点斜式给出</p>
+    $$ y - (-3) = -1(x - 1) \quad\Longrightarrow\quad y = -x - 2. $$
+    <p>这正是导数的核心用途：它把一个代数公式转化为曲线在指定点处的斜率，而本单元的求导法则正是让这个斜率变得廉价可算的工具。</p>
+    </div></div>
+  </details>
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong>
+    <span data-lang="en">A frequent mistake is to write $\dfrac{d}{dx}\big(c\,f(x)\big) = c'\,f(x) + c\,f'(x)$, treating the constant $c$ as if it needed the product rule. The product rule is technically valid but wasteful here, and it tempts you to carry a stray $c' = 0$ term that some then mishandle. A constant multiple simply scales the derivative: $\dfrac{d}{dx}\big(c\,f\big) = c\,f'$. Reserve the product rule for genuine products of two functions that each depend on $x$.</span><span data-lang="zh">一个常见的错误是写成 $\dfrac{d}{dx}\big(c\,f(x)\big) = c'\,f(x) + c\,f'(x)$，把常数 $c$ 当成需要用乘积法则（<code>Product Rule</code>）处理。在这里用乘积法则技术上没错，但是浪费，而且容易让你拖着一个多余的 $c' = 0$ 项，有人之后还会处理错。常数倍只是给导数做一个缩放：$\dfrac{d}{dx}\big(c\,f\big) = c\,f'$。乘积法则应留给两个都依赖 $x$ 的函数的真正乘积。</span>
+  </div>
+  <div class="quiz" data-answer="1">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">If $f(x) = 4x^5 + 3$, then $f'(x)$ equals:</span><span data-lang="zh">若 $f(x) = 4x^5 + 3$，则 $f'(x)$ 等于：</span></div><span class="quiz-number">1.1</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$20x^5$</div>
+      <div class="quiz-opt" data-idx="1">$20x^4$</div>
+      <div class="quiz-opt" data-idx="2">$20x^4 + 3$</div>
+      <div class="quiz-opt" data-idx="3">$4x^4$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. The constant $3$ differentiates to $0$, and $4\cdot 5 x^4 = 20x^4$.</span><span data-lang="zh">正确。常数 $3$ 求导后为 $0$，而 $4\cdot 5 x^4 = 20x^4$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Differentiate term by term: $\frac{d}{dx}(4x^5) = 20x^4$ by the constant multiple and power rules, and $\frac{d}{dx}(3) = 0$.</span><span data-lang="zh">逐项求导：由常数倍法则与幂法则，$\frac{d}{dx}(4x^5) = 20x^4$，且 $\frac{d}{dx}(3) = 0$。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+</section>
+
+<section class="section" id="s2">
+  <div class="section-label"><span data-lang="en">Section 2</span><span data-lang="zh">第 2 节</span></div>
+  <h2><span data-lang="en">The Product Rule</span><span data-lang="zh">乘积法则</span></h2>
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong>
+    <span data-lang="en">The derivative of a product is not the product of the derivatives. Instead each factor is differentiated in turn while the other is held, and the results are added. This corrects the common first guess and is one of the most frequently misused rules in the course.</span><span data-lang="zh">乘积的导数（<code>derivative</code>）并不是各导数的乘积。正确做法是：依次对每个因子求导，同时保持另一个因子不变，再把结果相加。这纠正了大家常见的第一直觉，也是本课程最常被用错的法则之一。</span>
+  </div>
+  <div class="formula-box">
+    <div class="formula-label"><span data-lang="en">Product rule</span><span data-lang="zh">乘积法则（<code>Product Rule</code>）</span></div>
+    $$ \frac{d}{dx}\big[u(x)\,v(x)\big] = u'(x)\,v(x) + u(x)\,v'(x). $$
+  </div>
+  <p><span data-lang="en">A useful mnemonic is "first times derivative of second, plus second times derivative of first." The rule extends to three factors: $(uvw)' = u'vw + uv'w + uvw'$.</span><span data-lang="zh">一个好用的口诀是「前者乘后者的导数，加上后者乘前者的导数」。该法则可推广到三个因子：$(uvw)' = u'vw + uv'w + uvw'$。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 2.1: a product of two factors</span><span data-lang="zh">例题 2.1：两个因子的乘积</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = (x^2 + 1)(3x - 5)$.</p>
+    <p>Let $u = x^2 + 1$ so $u' = 2x$, and $v = 3x - 5$ so $v' = 3$. Then</p>
+    $$ y' = u'v + uv' = (2x)(3x-5) + (x^2+1)(3) = 6x^2 - 10x + 3x^2 + 3 = 9x^2 - 10x + 3. $$
+    <p>Expanding first and differentiating gives the same answer, a good check.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = (x^2 + 1)(3x - 5)$ 求导。</p>
+    <p>令 $u = x^2 + 1$，则 $u' = 2x$；令 $v = 3x - 5$，则 $v' = 3$。于是</p>
+    $$ y' = u'v + uv' = (2x)(3x-5) + (x^2+1)(3) = 6x^2 - 10x + 3x^2 + 3 = 9x^2 - 10x + 3. $$
+    <p>先展开再求导会得到相同答案，是一个不错的验算。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Going deeper: deriving the product rule</span><span data-lang="zh">深入一步：推导乘积法则</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Add and subtract the cross term $u(x+h)\,v(x)$ in the numerator of the difference quotient.</p>
+    $$ \frac{u(x+h)v(x+h) - u(x)v(x)}{h} = u(x+h)\,\frac{v(x+h)-v(x)}{h} + v(x)\,\frac{u(x+h)-u(x)}{h}. $$
+    <p>As $h \to 0$, the factor $u(x+h) \to u(x)$ because $u$ is differentiable hence continuous, and the two difference quotients tend to $v'(x)$ and $u'(x)$. The limit is $u(x)v'(x) + v(x)u'(x)$.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>在差商的分子里同时加上和减去交叉项 $u(x+h)\,v(x)$。</p>
+    $$ \frac{u(x+h)v(x+h) - u(x)v(x)}{h} = u(x+h)\,\frac{v(x+h)-v(x)}{h} + v(x)\,\frac{u(x+h)-u(x)}{h}. $$
+    <p>当 $h \to 0$ 时，因子 $u(x+h) \to u(x)$（因为 $u$ 可微，故连续），两个差商分别趋于 $v'(x)$ 与 $u'(x)$。极限即为 $u(x)v'(x) + v(x)u'(x)$。</p>
+    </div></div>
+  </details>
+  <p><span data-lang="en">The cross-term trick in that derivation is worth remembering because the same add-and-subtract device reappears when proving the quotient and chain rules. Notice also what the rule does not require: $u$ and $v$ need not be polynomials. As soon as both factors are differentiable at $x$, the product is differentiable there and the formula applies, whether the factors are powers, trigonometric functions, or exponentials.</span><span data-lang="zh">这个推导里的交叉项技巧值得记住，因为同样的「加一项减一项」手法在证明商的法则与链式法则时还会再次出现。另外要注意这条法则不要求什么：$u$ 与 $v$ 不必是多项式。只要两个因子在 $x$ 处都可微，乘积在该处就可微，公式即可套用，不论因子是幂、三角函数还是指数函数。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 2.2: a three-factor product</span><span data-lang="zh">例题 2.2：三个因子的乘积</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = x\,(x+2)\,(x-3)$ using the three-factor product rule.</p>
+    <p>With $u = x$, $v = x+2$, $w = x-3$ and $u' = v' = w' = 1$, the rule $(uvw)' = u'vw + uv'w + uvw'$ gives</p>
+    $$ y' = (x+2)(x-3) + x(x-3) + x(x+2). $$
+    <p>Expanding, $y' = (x^2 - x - 6) + (x^2 - 3x) + (x^2 + 2x) = 3x^2 - 2x - 6$. Multiplying the original out to $x^3 - x^2 - 6x$ and differentiating directly gives the same $3x^2 - 2x - 6$, confirming the three-factor pattern.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>用三因子乘积法则对 $y = x\,(x+2)\,(x-3)$ 求导。</p>
+    <p>取 $u = x$、$v = x+2$、$w = x-3$，且 $u' = v' = w' = 1$，法则 $(uvw)' = u'vw + uv'w + uvw'$ 给出</p>
+    $$ y' = (x+2)(x-3) + x(x-3) + x(x+2). $$
+    <p>展开得 $y' = (x^2 - x - 6) + (x^2 - 3x) + (x^2 + 2x) = 3x^2 - 2x - 6$。把原式乘开为 $x^3 - x^2 - 6x$ 再直接求导，同样得到 $3x^2 - 2x - 6$，验证了三因子模式。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 2.3: product rule with a square-root factor</span><span data-lang="zh">例题 2.3：含根号因子的乘积法则</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = \sqrt{x}\,(x^2 - 4)$ and simplify.</p>
+    <p>Let $u = x^{1/2}$ so $u' = \tfrac12 x^{-1/2}$, and $v = x^2 - 4$ so $v' = 2x$. Then</p>
+    $$ y' = \tfrac12 x^{-1/2}(x^2 - 4) + x^{1/2}(2x) = \frac{x^2 - 4}{2\sqrt{x}} + 2x\sqrt{x}. $$
+    <p>Put both terms over $2\sqrt{x}$: $y' = \dfrac{x^2 - 4 + 4x^2}{2\sqrt{x}} = \dfrac{5x^2 - 4}{2\sqrt{x}}$. Combining over a common denominator is the standard final step when one factor is a root.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = \sqrt{x}\,(x^2 - 4)$ 求导并化简。</p>
+    <p>令 $u = x^{1/2}$，则 $u' = \tfrac12 x^{-1/2}$；令 $v = x^2 - 4$，则 $v' = 2x$。于是</p>
+    $$ y' = \tfrac12 x^{-1/2}(x^2 - 4) + x^{1/2}(2x) = \frac{x^2 - 4}{2\sqrt{x}} + 2x\sqrt{x}. $$
+    <p>把两项通分到 $2\sqrt{x}$：$y' = \dfrac{x^2 - 4 + 4x^2}{2\sqrt{x}} = \dfrac{5x^2 - 4}{2\sqrt{x}}$。当一个因子是根号时，通分合并是标准的收尾步骤。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 2.4: product rule from a table of values</span><span data-lang="zh">例题 2.4：由数值表使用乘积法则</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Suppose $u$ and $v$ are differentiable with $u(2) = 3$, $u'(2) = -1$, $v(2) = 5$, and $v'(2) = 4$. Find $(uv)'(2)$.</p>
+    <p>The product rule needs no formula for $u$ or $v$, only their values and derivatives at the point. Substitute directly:</p>
+    $$ (uv)'(2) = u'(2)\,v(2) + u(2)\,v'(2) = (-1)(5) + (3)(4) = -5 + 12 = 7. $$
+    <p>This is exactly the form the rule takes on exams that give a table instead of formulas, and it underlines that the product rule is about the functions and their slopes at a point, not about any particular algebraic expression.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>设 $u$ 与 $v$ 可微，且 $u(2) = 3$、$u'(2) = -1$、$v(2) = 5$、$v'(2) = 4$。求 $(uv)'(2)$。</p>
+    <p>乘积法则不需要 $u$ 或 $v$ 的具体公式，只需要它们在该点的值和导数。直接代入：</p>
+    $$ (uv)'(2) = u'(2)\,v(2) + u(2)\,v'(2) = (-1)(5) + (3)(4) = -5 + 12 = 7. $$
+    <p>这正是考试给出数值表而非公式时该法则呈现的形式，它强调乘积法则关心的是函数及其在某点的斜率，而不是某个特定的代数表达式。</p>
+    </div></div>
+  </details>
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong>
+    <span data-lang="en">The single most common derivative mistake in the course is writing $(uv)' = u'v'$. For $y = x^2 e^x$ that would give $2x e^x$, which is wrong. The correct derivative carries two terms, $u'v + uv' = 2x e^x + x^2 e^x$. Whenever you see two expressions multiplied and each contains the variable, stop and write both terms before simplifying. If you can expand the product into a sum first, do so as an independent check.</span><span data-lang="zh">本课程最常见的求导错误就是写成 $(uv)' = u'v'$。对 $y = x^2 e^x$ 这会给出 $2x e^x$，是错的。正确的导数带有两项：$u'v + uv' = 2x e^x + x^2 e^x$。每当你看到两个表达式相乘、而且各自都含有变量时，先停下来写全两项再化简。如果能先把乘积展开成和，就用它来做一次独立验算。</span>
+  </div>
+  <div class="quiz" data-answer="2">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">For $y = x^2 e^x$, the derivative $y'$ is:</span><span data-lang="zh">对 $y = x^2 e^x$，导数 $y'$ 为：</span></div><span class="quiz-number">2.1</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$2x e^x$</div>
+      <div class="quiz-opt" data-idx="1">$2x e^x \cdot e^x$</div>
+      <div class="quiz-opt" data-idx="2">$2x e^x + x^2 e^x$</div>
+      <div class="quiz-opt" data-idx="3">$x^2 e^x$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. With $u = x^2$ and $v = e^x$, $y' = 2x\,e^x + x^2 e^x = e^x(2x + x^2)$.</span><span data-lang="zh">正确。取 $u = x^2$、$v = e^x$，$y' = 2x\,e^x + x^2 e^x = e^x(2x + x^2)$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Use the product rule: $u'v + uv' = (2x)e^x + x^2 e^x$. The derivatives are not simply multiplied.</span><span data-lang="zh">使用乘积法则：$u'v + uv' = (2x)e^x + x^2 e^x$。两个导数不能简单相乘。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+</section>
+
+<section class="section" id="s3">
+  <div class="section-label"><span data-lang="en">Section 3</span><span data-lang="zh">第 3 节</span></div>
+  <h2><span data-lang="en">The Quotient Rule</span><span data-lang="zh">商的法则</span></h2>
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong>
+    <span data-lang="en">The quotient rule differentiates a ratio of functions. Order matters in the numerator because of the minus sign, and the denominator is squared. When the numerator is a constant, the simpler reciprocal rule applies.</span><span data-lang="zh">商的法则（<code>Quotient Rule</code>）用于对两个函数的比值求导。由于有减号，分子里的顺序很重要，而分母要平方。当分子是常数时，可以改用更简单的倒数法则（<code>reciprocal rule</code>）。</span>
+  </div>
+  <div class="formula-box">
+    <div class="formula-label"><span data-lang="en">Quotient rule</span><span data-lang="zh">商的法则</span></div>
+    $$ \frac{d}{dx}\!\left[\frac{u(x)}{v(x)}\right] = \frac{u'(x)\,v(x) - u(x)\,v'(x)}{\big[v(x)\big]^2}, \qquad v(x) \neq 0. $$
+  </div>
+  <p><span data-lang="en">The mnemonic "low d-high minus high d-low, over the square of what is below" fixes the order. The reciprocal rule is the special case $u = 1$: $\dfrac{d}{dx}\dfrac{1}{v} = -\dfrac{v'}{v^2}$.</span><span data-lang="zh">口诀「下乘上的导减上乘下的导，除以下面的平方」可以固定住顺序。倒数法则是 $u = 1$ 的特例：$\dfrac{d}{dx}\dfrac{1}{v} = -\dfrac{v'}{v^2}$。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 3.1: a rational function</span><span data-lang="zh">例题 3.1：一个有理函数</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $f(x) = \dfrac{x}{x^2 + 1}$.</p>
+    <p>Take $u = x$ with $u' = 1$, and $v = x^2 + 1$ with $v' = 2x$. Then</p>
+    $$ f'(x) = \frac{(1)(x^2+1) - (x)(2x)}{(x^2+1)^2} = \frac{x^2 + 1 - 2x^2}{(x^2+1)^2} = \frac{1 - x^2}{(x^2+1)^2}. $$
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $f(x) = \dfrac{x}{x^2 + 1}$ 求导。</p>
+    <p>取 $u = x$，$u' = 1$；取 $v = x^2 + 1$，$v' = 2x$。于是</p>
+    $$ f'(x) = \frac{(1)(x^2+1) - (x)(2x)}{(x^2+1)^2} = \frac{x^2 + 1 - 2x^2}{(x^2+1)^2} = \frac{1 - x^2}{(x^2+1)^2}. $$
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 3.2: a quotient with a nontrivial denominator</span><span data-lang="zh">例题 3.2：分母不平凡的商</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $f(x) = \dfrac{2x - 1}{x^2 + x}$.</p>
+    <p>Take $u = 2x - 1$ with $u' = 2$, and $v = x^2 + x$ with $v' = 2x + 1$. The quotient rule gives</p>
+    $$ f'(x) = \frac{2(x^2 + x) - (2x - 1)(2x + 1)}{(x^2 + x)^2}. $$
+    <p>Expand the numerator carefully: $2x^2 + 2x - (4x^2 - 1) = 2x^2 + 2x - 4x^2 + 1 = -2x^2 + 2x + 1$. So</p>
+    $$ f'(x) = \frac{-2x^2 + 2x + 1}{(x^2 + x)^2}, \qquad x \neq 0,\ x \neq -1. $$
+    <p>The minus sign in the quotient rule distributes over the whole product $(2x-1)(2x+1)$, which is exactly where sign errors creep in.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $f(x) = \dfrac{2x - 1}{x^2 + x}$ 求导。</p>
+    <p>取 $u = 2x - 1$，$u' = 2$；取 $v = x^2 + x$，$v' = 2x + 1$。商的法则给出</p>
+    $$ f'(x) = \frac{2(x^2 + x) - (2x - 1)(2x + 1)}{(x^2 + x)^2}. $$
+    <p>小心展开分子：$2x^2 + 2x - (4x^2 - 1) = 2x^2 + 2x - 4x^2 + 1 = -2x^2 + 2x + 1$。于是</p>
+    $$ f'(x) = \frac{-2x^2 + 2x + 1}{(x^2 + x)^2}, \qquad x \neq 0,\ x \neq -1. $$
+    <p>商的法则里的减号要分配到整个乘积 $(2x-1)(2x+1)$ 上，这正是符号错误最容易溜进来的地方。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 3.3: the reciprocal rule in action</span><span data-lang="zh">例题 3.3：倒数法则的运用</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $f(x) = \dfrac{1}{x^2 + 3x + 5}$ using the reciprocal rule.</p>
+    <p>The reciprocal rule $\dfrac{d}{dx}\dfrac{1}{v} = -\dfrac{v'}{v^2}$ avoids the full quotient rule whenever the numerator is constant. Here $v = x^2 + 3x + 5$ with $v' = 2x + 3$, so</p>
+    $$ f'(x) = -\frac{2x + 3}{(x^2 + 3x + 5)^2}. $$
+    <p>The full quotient rule with $u = 1$, $u' = 0$ reproduces the same thing, but the reciprocal form is faster and less error-prone when the top is just a number.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>用倒数法则对 $f(x) = \dfrac{1}{x^2 + 3x + 5}$ 求导。</p>
+    <p>每当分子是常数时，倒数法则 $\dfrac{d}{dx}\dfrac{1}{v} = -\dfrac{v'}{v^2}$ 可以省去完整的商的法则。这里 $v = x^2 + 3x + 5$，$v' = 2x + 3$，所以</p>
+    $$ f'(x) = -\frac{2x + 3}{(x^2 + 3x + 5)^2}. $$
+    <p>取 $u = 1$、$u' = 0$ 用完整的商的法则会得到同样结果，但当分子只是一个数字时，倒数形式更快、也更不容易出错。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Going deeper: deriving the quotient rule from the product rule</span><span data-lang="zh">深入一步：由乘积法则推导商的法则</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>You do not have to take the quotient rule on faith. Write $f = u/v$ as the product $f = u\cdot v^{-1}$ and differentiate with the product rule, using the chain rule on $v^{-1}$.</p>
+    $$ f' = u'\,v^{-1} + u\cdot(-1)v^{-2}v' = \frac{u'}{v} - \frac{u\,v'}{v^2}. $$
+    <p>Put both terms over the common denominator $v^2$:</p>
+    $$ f' = \frac{u'v}{v^2} - \frac{u\,v'}{v^2} = \frac{u'v - u\,v'}{v^2}. $$
+    <p>This is the quotient rule, and the derivation also explains the structure: the squared denominator comes from the $v^{-2}$ in the chain step, and the minus sign comes from the derivative of $v^{-1}$. Seeing it this way means you only ever need to memorize the product and chain rules.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>你不必盲信商的法则。把 $f = u/v$ 写成乘积 $f = u\cdot v^{-1}$，用乘积法则求导，并对 $v^{-1}$ 使用链式法则（<code>Chain Rule</code>）。</p>
+    $$ f' = u'\,v^{-1} + u\cdot(-1)v^{-2}v' = \frac{u'}{v} - \frac{u\,v'}{v^2}. $$
+    <p>把两项通分到公分母 $v^2$：</p>
+    $$ f' = \frac{u'v}{v^2} - \frac{u\,v'}{v^2} = \frac{u'v - u\,v'}{v^2}. $$
+    <p>这就是商的法则，推导也解释了它的结构：平方的分母来自链式步骤中的 $v^{-2}$，减号来自 $v^{-1}$ 的导数。这样看，你只需要记住乘积法则和链式法则即可。</p>
+    </div></div>
+  </details>
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong>
+    <span data-lang="en">Two errors dominate the quotient rule. The first is reversing the numerator to $u\,v' - u'v$, which flips the sign of the whole derivative. Keep "low d-high minus high d-low": the kept-denominator term comes first. The second is writing $\left(\dfrac{u}{v}\right)' = \dfrac{u'}{v'}$, the analogue of the product-rule blunder. For $f = x/(x^2+1)$ that false rule gives $1/(2x)$, nothing like the correct $\dfrac{1-x^2}{(x^2+1)^2}$.</span><span data-lang="zh">商的法则有两个主要错误。第一是把分子写反成 $u\,v' - u'v$，这会让整个导数变号。记住「下乘上的导减上乘下的导」：保留分母的那一项排在前面。第二是写成 $\left(\dfrac{u}{v}\right)' = \dfrac{u'}{v'}$，这是乘积法则那个失误的翻版。对 $f = x/(x^2+1)$，这条错误法则会给出 $1/(2x)$，与正确答案 $\dfrac{1-x^2}{(x^2+1)^2}$ 毫不相干。</span>
+  </div>
+  <div class="quiz" data-answer="3">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">For $f(x) = \dfrac{1}{x^2}$, the reciprocal rule gives $f'(x) =$</span><span data-lang="zh">对 $f(x) = \dfrac{1}{x^2}$，倒数法则给出 $f'(x) =$</span></div><span class="quiz-number">3.1</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$\dfrac{1}{2x}$</div>
+      <div class="quiz-opt" data-idx="1">$\dfrac{2}{x^3}$</div>
+      <div class="quiz-opt" data-idx="2">$-\dfrac{1}{x^3}$</div>
+      <div class="quiz-opt" data-idx="3">$-\dfrac{2}{x^3}$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. Writing $f = x^{-2}$ gives $f' = -2x^{-3} = -\tfrac{2}{x^3}$, matching the reciprocal rule with $v = x^2$.</span><span data-lang="zh">正确。写成 $f = x^{-2}$ 得 $f' = -2x^{-3} = -\tfrac{2}{x^3}$，与取 $v = x^2$ 的倒数法则一致。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Either use $-v'/v^2 = -2x/x^4 = -2/x^3$, or rewrite as $x^{-2}$ and apply the power rule.</span><span data-lang="zh">既可用 $-v'/v^2 = -2x/x^4 = -2/x^3$，也可改写成 $x^{-2}$ 再用幂法则。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+</section>
+
+<section class="section" id="s4">
+  <div class="section-label"><span data-lang="en">Section 4</span><span data-lang="zh">第 4 节</span></div>
+  <h2><span data-lang="en">The Chain Rule</span><span data-lang="zh">链式法则</span></h2>
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong>
+    <span data-lang="en">The chain rule differentiates a composition. You differentiate the outer function evaluated at the inner function, then multiply by the derivative of the inner function. This "outside times inside" step is the engine behind every nested expression in calculus.</span><span data-lang="zh">链式法则（<code>Chain Rule</code>）用于对复合函数求导。先对外层函数求导（在内层函数处取值），再乘以内层函数的导数。这一步「外层乘内层」是微积分中每个嵌套表达式背后的引擎。</span>
+  </div>
+  <div class="formula-box">
+    <div class="formula-label"><span data-lang="en">Chain rule</span><span data-lang="zh">链式法则</span></div>
+    $$ \frac{d}{dx}\,f\big(g(x)\big) = f'\big(g(x)\big)\,g'(x), \qquad \frac{dy}{dx} = \frac{dy}{du}\,\frac{du}{dx}. $$
+  </div>
+  <p><span data-lang="en">The Leibniz form on the right makes the bookkeeping vivid: set $u = g(x)$, differentiate $y$ with respect to $u$, and multiply by $du/dx$. A frequent special case is the general power rule, $\dfrac{d}{dx}\big[g(x)\big]^n = n\,[g(x)]^{n-1} g'(x)$.</span><span data-lang="zh">右边的莱布尼茨（Leibniz）形式把记账过程描绘得很直观：令 $u = g(x)$，先对 $u$ 求 $y$ 的导数，再乘以 $du/dx$。一个常见特例是广义幂法则（<code>general power rule</code>）$\dfrac{d}{dx}\big[g(x)\big]^n = n\,[g(x)]^{n-1} g'(x)$。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 4.1: a power of a polynomial</span><span data-lang="zh">例题 4.1：多项式的幂</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = (3x^2 + 1)^4$.</p>
+    <p>The outer function is $u^4$ and the inner function is $u = 3x^2 + 1$, with $u' = 6x$. By the general power rule,</p>
+    $$ y' = 4(3x^2 + 1)^3 \cdot 6x = 24x\,(3x^2 + 1)^3. $$
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = (3x^2 + 1)^4$ 求导。</p>
+    <p>外层函数是 $u^4$，内层函数是 $u = 3x^2 + 1$，$u' = 6x$。由广义幂法则，</p>
+    $$ y' = 4(3x^2 + 1)^3 \cdot 6x = 24x\,(3x^2 + 1)^3. $$
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Going deeper: a double composition</span><span data-lang="zh">深入一步：二重复合</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = \sqrt{\,\sin(x^2)\,}$. Peel one layer at a time from the outside in.</p>
+    $$ y' = \frac{1}{2\sqrt{\sin(x^2)}}\cdot \cos(x^2)\cdot 2x = \frac{x\cos(x^2)}{\sqrt{\sin(x^2)}}. $$
+    <p>Each application of the chain rule contributes one factor: the square root layer, the sine layer, and finally the derivative of $x^2$.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = \sqrt{\,\sin(x^2)\,}$ 求导。从外往里一层一层地剥。</p>
+    $$ y' = \frac{1}{2\sqrt{\sin(x^2)}}\cdot \cos(x^2)\cdot 2x = \frac{x\cos(x^2)}{\sqrt{\sin(x^2)}}. $$
+    <p>链式法则每用一次就贡献一个因子：根号层、正弦层，最后是 $x^2$ 的导数。</p>
+    </div></div>
+  </details>
+  <p><span data-lang="en">The chain rule is the workhorse of differentiation: almost every nontrivial derivative you compute later, from $e^{kx}$ to $\ln(\sec x)$, is an application of it. The mental model that prevents errors is to read the expression from the outside in, asking which operation is performed last. That outermost function gets differentiated first, evaluated at the unchanged inside, and then you multiply by the derivative of the inside. The inside may itself be composite, in which case you repeat.</span><span data-lang="zh">链式法则是求导的主力：之后你算的几乎每个不平凡的导数，从 $e^{kx}$ 到 $\ln(\sec x)$，都是它的应用。防止出错的思维模型是从外往里读表达式，问哪个运算是最后执行的。那个最外层函数先被求导，内层保持不变地代入，然后再乘以内层的导数。内层本身可能也是复合的，这时就重复这一过程。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 4.2: a rational power of a polynomial</span><span data-lang="zh">例题 4.2：多项式的分数次幂</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = \sqrt{4x^2 + 9} = (4x^2 + 9)^{1/2}$.</p>
+    <p>The outer function is $u^{1/2}$ with derivative $\tfrac12 u^{-1/2}$, and the inner function is $u = 4x^2 + 9$ with $u' = 8x$. The general power rule gives</p>
+    $$ y' = \tfrac12 (4x^2 + 9)^{-1/2}\cdot 8x = \frac{4x}{\sqrt{4x^2 + 9}}. $$
+    <p>Square roots are just the exponent $1/2$; rewriting them that way makes the chain rule entirely routine.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = \sqrt{4x^2 + 9} = (4x^2 + 9)^{1/2}$ 求导。</p>
+    <p>外层函数是 $u^{1/2}$，导数为 $\tfrac12 u^{-1/2}$；内层函数是 $u = 4x^2 + 9$，$u' = 8x$。广义幂法则给出</p>
+    $$ y' = \tfrac12 (4x^2 + 9)^{-1/2}\cdot 8x = \frac{4x}{\sqrt{4x^2 + 9}}. $$
+    <p>根号无非就是 $1/2$ 次幂；把它这样改写，链式法则就变得完全例行化。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 4.3: chain rule replacing the quotient rule</span><span data-lang="zh">例题 4.3：用链式法则替代商的法则</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = \dfrac{1}{(x^3 + 1)^2}$ by writing it as a negative power.</p>
+    <p>Rewrite $y = (x^3 + 1)^{-2}$. The outer function is $u^{-2}$ with derivative $-2u^{-3}$, and the inner is $u = x^3 + 1$ with $u' = 3x^2$. The general power rule gives</p>
+    $$ y' = -2(x^3 + 1)^{-3}\cdot 3x^2 = -\frac{6x^2}{(x^3 + 1)^3}. $$
+    <p>Recasting a reciprocal as a negative power often turns a quotient-rule problem into a one-line chain-rule problem. Recognizing when to rewrite is a skill worth practicing deliberately.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>把 $y = \dfrac{1}{(x^3 + 1)^2}$ 写成负指数幂再求导。</p>
+    <p>改写 $y = (x^3 + 1)^{-2}$。外层函数是 $u^{-2}$，导数为 $-2u^{-3}$；内层是 $u = x^3 + 1$，$u' = 3x^2$。广义幂法则给出</p>
+    $$ y' = -2(x^3 + 1)^{-3}\cdot 3x^2 = -\frac{6x^2}{(x^3 + 1)^3}. $$
+    <p>把倒数改写成负指数幂，常常能把一道商的法则题变成一行就能解决的链式法则题。识别何时该改写，是一项值得刻意练习的技能。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Going deeper: why the chain rule holds, and the subtlety it hides</span><span data-lang="zh">深入一步：链式法则为何成立，以及它隐藏的微妙之处</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Set $y = f(g(x))$ and $u = g(x)$. The naive argument multiplies and divides by $\Delta u = g(x+h) - g(x)$:</p>
+    $$ \frac{f(g(x+h)) - f(g(x))}{h} = \frac{f(u + \Delta u) - f(u)}{\Delta u}\cdot\frac{\Delta u}{h}. $$
+    <p>As $h \to 0$, continuity of $g$ forces $\Delta u \to 0$, so the first factor tends to $f'(u)$ and the second to $g'(x)$, giving $f'(g(x))\,g'(x)$.</p>
+    <p>The subtlety is that $\Delta u$ can equal $0$ for $h$ near $0$, making the division illegal. The honest fix defines an auxiliary function $E(\Delta u)$ equal to $\dfrac{f(u+\Delta u) - f(u)}{\Delta u} - f'(u)$ when $\Delta u \neq 0$ and equal to $0$ when $\Delta u = 0$. Then $E$ is continuous at $0$ with $E(0) = 0$, and $f(u+\Delta u) - f(u) = \big(f'(u) + E(\Delta u)\big)\Delta u$ holds for every $\Delta u$. Dividing by $h$ and letting $h \to 0$ gives $f'(u)\,g'(x)$ cleanly. This is the standard rigorous proof and the reason careful texts introduce that error term.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>令 $y = f(g(x))$，$u = g(x)$。朴素的论证是同乘同除 $\Delta u = g(x+h) - g(x)$：</p>
+    $$ \frac{f(g(x+h)) - f(g(x))}{h} = \frac{f(u + \Delta u) - f(u)}{\Delta u}\cdot\frac{\Delta u}{h}. $$
+    <p>当 $h \to 0$ 时，$g$ 的连续性迫使 $\Delta u \to 0$，于是第一个因子趋于 $f'(u)$，第二个趋于 $g'(x)$，得到 $f'(g(x))\,g'(x)$。</p>
+    <p>微妙之处在于：当 $h$ 接近 $0$ 时 $\Delta u$ 可能等于 $0$，使得该除法非法。严谨的补救是定义一个辅助函数 $E(\Delta u)$：当 $\Delta u \neq 0$ 时它等于 $\dfrac{f(u+\Delta u) - f(u)}{\Delta u} - f'(u)$，当 $\Delta u = 0$ 时它等于 $0$。这样 $E$ 在 $0$ 处连续且 $E(0) = 0$，并且 $f(u+\Delta u) - f(u) = \big(f'(u) + E(\Delta u)\big)\Delta u$ 对每个 $\Delta u$ 都成立。除以 $h$ 并令 $h \to 0$，干净地得到 $f'(u)\,g'(x)$。这是标准的严格证明，也是严谨教材引入那个误差项的原因。</p>
+    </div></div>
+  </details>
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong>
+    <span data-lang="en">The signature chain-rule mistake is forgetting the inner derivative: writing $\dfrac{d}{dx}(3x^2+1)^4 = 4(3x^2+1)^3$ and stopping, instead of multiplying by $g'(x) = 6x$. The missing factor $g'(x)$ is the whole point of the rule. A quick self-check: if the inside is anything other than plain $x$, you owe one more factor. Differentiating the inside as if it were $x$ alone, so that $g'(x)$ silently becomes $1$, is the same error in disguise.</span><span data-lang="zh">链式法则的标志性错误是忘掉内层导数：写成 $\dfrac{d}{dx}(3x^2+1)^4 = 4(3x^2+1)^3$ 就停下，而没有乘以 $g'(x) = 6x$。漏掉的因子 $g'(x)$ 正是这条法则的全部要点。一个快速自检：只要内层不是单纯的 $x$，你就还欠一个因子。把内层当成只有 $x$ 来求导、让 $g'(x)$ 悄悄变成 $1$，是同一个错误换了个伪装。</span>
+  </div>
+  <div class="quiz" data-answer="0">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">If $y = (x^3 + 2)^5$, then $y'$ equals:</span><span data-lang="zh">若 $y = (x^3 + 2)^5$，则 $y'$ 等于：</span></div><span class="quiz-number">4.1</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$15x^2(x^3 + 2)^4$</div>
+      <div class="quiz-opt" data-idx="1">$5(x^3 + 2)^4$</div>
+      <div class="quiz-opt" data-idx="2">$5(3x^2)^4$</div>
+      <div class="quiz-opt" data-idx="3">$15x^2(x^3 + 2)^5$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. The general power rule gives $5(x^3+2)^4 \cdot 3x^2 = 15x^2(x^3+2)^4$.</span><span data-lang="zh">正确。广义幂法则给出 $5(x^3+2)^4 \cdot 3x^2 = 15x^2(x^3+2)^4$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Differentiate the outer power, keep the inner expression, then multiply by the inner derivative $3x^2$: $5(x^3+2)^4 \cdot 3x^2$.</span><span data-lang="zh">先对外层幂求导，保留内层表达式，再乘以内层导数 $3x^2$：$5(x^3+2)^4 \cdot 3x^2$。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+</section>
+
+<section class="section" id="s5">
+  <div class="section-label"><span data-lang="en">Section 5</span><span data-lang="zh">第 5 节</span></div>
+  <h2><span data-lang="en">Combining the Rules</span><span data-lang="zh">法则的综合运用</span></h2>
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong>
+    <span data-lang="en">Real expressions nest products inside quotients inside compositions. The strategy is to identify the outermost operation first, apply the matching rule, and recurse on the pieces. Keeping the structure visible prevents the dropped factors that plague rushed work.</span><span data-lang="zh">真实的表达式会把乘积嵌进商里、再嵌进复合里。策略是先认出最外层运算，套用对应法则，再对各个部分递归处理。把结构保持可见，能防止匆忙作答时常见的漏因子。</span>
+  </div>
+  <div class="formula-box">
+    <div class="formula-label"><span data-lang="en">Order of attack</span><span data-lang="zh">攻克顺序</span></div>
+    $$ \text{outermost operation} \;\Rightarrow\; \text{its rule} \;\Rightarrow\; \text{differentiate each part, recursing as needed.} $$
+  </div>
+  <p><span data-lang="en">Ask which single operation is performed last when you evaluate the expression at a number. If it is a division, start with the quotient rule. If it is a composition, start with the chain rule. The inner derivatives may themselves require the product or chain rule.</span><span data-lang="zh">问自己：当你把表达式代入一个数字求值时，最后执行的是哪一个运算。如果是除法，就从商的法则开始；如果是复合，就从链式法则开始。内层的导数本身可能又需要乘积法则或链式法则。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 5.1: chain rule inside a product</span><span data-lang="zh">例题 5.1：乘积内部的链式法则</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = x^2 (2x + 1)^3$.</p>
+    <p>The last operation is multiplication, so use the product rule with $u = x^2$ and $v = (2x+1)^3$. The factor $v$ needs the chain rule: $v' = 3(2x+1)^2\cdot 2 = 6(2x+1)^2$.</p>
+    $$ y' = 2x\,(2x+1)^3 + x^2\cdot 6(2x+1)^2 = 2x(2x+1)^2\big[(2x+1) + 3x\big] = 2x(2x+1)^2(5x + 1). $$
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = x^2 (2x + 1)^3$ 求导。</p>
+    <p>最后一个运算是乘法，所以用乘积法则，取 $u = x^2$、$v = (2x+1)^3$。因子 $v$ 需要链式法则：$v' = 3(2x+1)^2\cdot 2 = 6(2x+1)^2$。</p>
+    $$ y' = 2x\,(2x+1)^3 + x^2\cdot 6(2x+1)^2 = 2x(2x+1)^2\big[(2x+1) + 3x\big] = 2x(2x+1)^2(5x + 1). $$
+    </div></div>
+  </details>
+  <p><span data-lang="en">The factoring step at the end of that example is not optional polish; it is how you keep later work tractable. When you differentiate a product of powers, both terms share a common factor (here $2x(2x+1)^2$), and pulling it out turns a messy expression into a compact one that is far easier to set equal to zero when you hunt for critical points in Unit A7. Train yourself to factor before declaring the answer finished.</span><span data-lang="zh">那道例题末尾的提取公因式不是可有可无的修饰，而是你让后续工作可控的方法。对幂的乘积求导时，两项都含有一个公因子（这里是 $2x(2x+1)^2$），把它提出来，就把一个杂乱的表达式变成紧凑的形式，在单元 A7 寻找临界点（令导数为零）时会容易得多。训练自己在宣布答案完成前先因式分解。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 5.2: a product inside a quotient</span><span data-lang="zh">例题 5.2：商内部的乘积</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = \dfrac{x(x+1)}{x - 2}$.</p>
+    <p>The last operation is division, so the quotient rule is outermost with $u = x(x+1) = x^2 + x$ and $v = x - 2$. Here $u' = 2x + 1$ after expanding, so no nested product rule is needed, and $v' = 1$.</p>
+    $$ y' = \frac{(2x+1)(x-2) - (x^2 + x)(1)}{(x-2)^2}. $$
+    <p>Expand the numerator: $(2x^2 - 3x - 2) - (x^2 + x) = x^2 - 4x - 2$. Therefore</p>
+    $$ y' = \frac{x^2 - 4x - 2}{(x-2)^2}, \qquad x \neq 2. $$
+    <p>Expanding $u$ first sidestepped a nested product rule. Choosing whether to expand or to keep factors is a judgment call: expand when the algebra is short, keep factored form when it is not.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = \dfrac{x(x+1)}{x - 2}$ 求导。</p>
+    <p>最后一个运算是除法，所以商的法则在最外层，取 $u = x(x+1) = x^2 + x$、$v = x - 2$。这里展开后 $u' = 2x + 1$，因此不需要嵌套的乘积法则，且 $v' = 1$。</p>
+    $$ y' = \frac{(2x+1)(x-2) - (x^2 + x)(1)}{(x-2)^2}. $$
+    <p>展开分子：$(2x^2 - 3x - 2) - (x^2 + x) = x^2 - 4x - 2$。因此</p>
+    $$ y' = \frac{x^2 - 4x - 2}{(x-2)^2}, \qquad x \neq 2. $$
+    <p>先展开 $u$ 就绕过了一次嵌套的乘积法则。选择展开还是保留因式是一种判断：代数运算短就展开，否则就保留因式形式。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 5.3: a triple nesting</span><span data-lang="zh">例题 5.3：三重嵌套</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = \big(x^2 + (2x+1)^3\big)^5$.</p>
+    <p>Outermost is the fifth power, so $y' = 5\big(x^2 + (2x+1)^3\big)^4\cdot\dfrac{d}{dx}\big(x^2 + (2x+1)^3\big)$. The inside is a sum; its derivative uses linearity and a second chain rule:</p>
+    $$ \frac{d}{dx}\big(x^2 + (2x+1)^3\big) = 2x + 3(2x+1)^2\cdot 2 = 2x + 6(2x+1)^2. $$
+    <p>Assembling,</p>
+    $$ y' = 5\big(x^2 + (2x+1)^3\big)^4\big(2x + 6(2x+1)^2\big). $$
+    <p>Each layer was handled by exactly one rule, applied from the outside in. The discipline of writing the unfinished derivative with a placeholder before filling the inside keeps long chains organized.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = \big(x^2 + (2x+1)^3\big)^5$ 求导。</p>
+    <p>最外层是五次幂，所以 $y' = 5\big(x^2 + (2x+1)^3\big)^4\cdot\dfrac{d}{dx}\big(x^2 + (2x+1)^3\big)$。内层是一个和；它的导数用线性性和第二次链式法则：</p>
+    $$ \frac{d}{dx}\big(x^2 + (2x+1)^3\big) = 2x + 3(2x+1)^2\cdot 2 = 2x + 6(2x+1)^2. $$
+    <p>组装起来，</p>
+    $$ y' = 5\big(x^2 + (2x+1)^3\big)^4\big(2x + 6(2x+1)^2\big). $$
+    <p>每一层都恰好由一条法则处理，从外往里依次应用。在填内层之前先用占位符写下未完成的导数，这一纪律能让长链条保持条理。</p>
+    </div></div>
+  </details>
+  <div class="concept-box orange">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong>
+    <span data-lang="en">When two rules combine, students often apply the outer rule and then forget that an inner factor needs its own rule. In $x^2(2x+1)^3$, applying the product rule but differentiating $(2x+1)^3$ as $3(2x+1)^2$ without the chain-rule factor of $2$ drops a coefficient. Always finish each inner derivative completely before moving on. Naming the outermost operation first, then recursing, is the habit that prevents these silent omissions.</span><span data-lang="zh">当两条法则叠加时，学生常常套用了外层法则，却忘了某个内层因子需要它自己的法则。在 $x^2(2x+1)^3$ 中，用了乘积法则，却把 $(2x+1)^3$ 求导成 $3(2x+1)^2$、漏掉链式法则的因子 $2$，就丢了一个系数。一定要把每个内层导数完整算完再往下走。先命名最外层运算、再递归，正是防止这类无声遗漏的习惯。</span>
+  </div>
+  <div class="quiz" data-answer="1">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">To differentiate $\dfrac{(x+1)^2}{x-3}$, which rule applies first?</span><span data-lang="zh">对 $\dfrac{(x+1)^2}{x-3}$ 求导时，哪条法则先用？</span></div><span class="quiz-number">5.1</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0"><span data-lang="en">the chain rule, then the product rule</span><span data-lang="zh">先链式法则，再乘积法则</span></div>
+      <div class="quiz-opt" data-idx="1"><span data-lang="en">the quotient rule, with the chain rule on the numerator</span><span data-lang="zh">商的法则，并对分子用链式法则</span></div>
+      <div class="quiz-opt" data-idx="2"><span data-lang="en">the product rule only</span><span data-lang="zh">只用乘积法则</span></div>
+      <div class="quiz-opt" data-idx="3"><span data-lang="en">the constant multiple rule</span><span data-lang="zh">常数倍法则</span></div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. The last operation is division, so start with the quotient rule; the numerator $(x+1)^2$ then needs the chain rule.</span><span data-lang="zh">正确。最后一个运算是除法，所以从商的法则开始；分子 $(x+1)^2$ 接着需要链式法则。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">The expression is a quotient, so the quotient rule is outermost. Differentiating the numerator $(x+1)^2$ uses the chain rule.</span><span data-lang="zh">这个表达式是一个商，所以商的法则在最外层。对分子 $(x+1)^2$ 求导要用链式法则。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+</section>
+
+<section class="section" id="s6">
+  <div class="section-label"><span data-lang="en">Section 6</span><span data-lang="zh">第 6 节</span></div>
+  <h2><span data-lang="en">Derivatives of Polynomials and Rational Functions</span><span data-lang="zh">多项式与有理函数的导数</span></h2>
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong>
+    <span data-lang="en">Every polynomial is differentiable everywhere, and its derivative is again a polynomial of one lower degree. Every rational function is differentiable wherever its denominator is nonzero, with the quotient rule producing another rational function.</span><span data-lang="zh">每个多项式处处可微，其导数又是一个次数低一次的多项式。每个有理函数（<code>rational function</code>）在分母非零处都可微，商的法则会产生另一个有理函数。</span>
+  </div>
+  <div class="formula-box">
+    <div class="formula-label"><span data-lang="en">Polynomial derivative</span><span data-lang="zh">多项式的导数</span></div>
+    $$ \frac{d}{dx}\sum_{k=0}^{n} a_k x^k = \sum_{k=1}^{n} k\,a_k\,x^{k-1}. $$
+  </div>
+  <p><span data-lang="en">The $k = 0$ term, the constant $a_0$, drops out because its derivative is zero. For a rational function $R = P/Q$ with polynomials $P$ and $Q$, the derivative $R'$ exists at every $x$ with $Q(x) \neq 0$, and is itself a rational function.</span><span data-lang="zh">$k = 0$ 这一项，即常数 $a_0$，会被去掉，因为它的导数为零。对有理函数 $R = P/Q$（$P$ 与 $Q$ 都是多项式），导数 $R'$ 在每个满足 $Q(x) \neq 0$ 的 $x$ 处都存在，且它本身也是有理函数。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 6.1: derivative of a rational function</span><span data-lang="zh">例题 6.1：有理函数的导数</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $R(x) = \dfrac{x^2 - 1}{x + 2}$ and note where it is valid.</p>
+    <p>With $P = x^2 - 1$ ($P' = 2x$) and $Q = x + 2$ ($Q' = 1$),</p>
+    $$ R'(x) = \frac{2x(x+2) - (x^2 - 1)(1)}{(x+2)^2} = \frac{2x^2 + 4x - x^2 + 1}{(x+2)^2} = \frac{x^2 + 4x + 1}{(x+2)^2}, \quad x \neq -2. $$
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $R(x) = \dfrac{x^2 - 1}{x + 2}$ 求导，并注明它在何处有效。</p>
+    <p>取 $P = x^2 - 1$（$P' = 2x$）、$Q = x + 2$（$Q' = 1$），</p>
+    $$ R'(x) = \frac{2x(x+2) - (x^2 - 1)(1)}{(x+2)^2} = \frac{2x^2 + 4x - x^2 + 1}{(x+2)^2} = \frac{x^2 + 4x + 1}{(x+2)^2}, \quad x \neq -2. $$
+    </div></div>
+  </details>
+  <p><span data-lang="en">Because differentiation lowers each exponent by one, you can differentiate a polynomial repeatedly until you reach zero. A degree-$n$ polynomial has a nonzero $n$-th derivative, namely a constant, and an identically zero $(n+1)$-th derivative. This finite ladder is special to polynomials and is what makes them so convenient for Taylor approximation later in the sequence.</span><span data-lang="zh">由于求导让每个指数降一，你可以对多项式反复求导，直到结果为零。$n$ 次多项式的第 $n$ 阶导数非零（是一个常数），而第 $(n+1)$ 阶导数恒为零。这道有限的阶梯是多项式特有的，也正是它们在后续课程中便于做泰勒逼近（<code>Taylor</code>）的原因。</span></p>
+  <p><span data-lang="en">The same finiteness explains a fact you will use constantly when sketching curves: the sign of $p'$ controls where a polynomial rises and falls, and the sign of $p''$ controls its concavity. Because each derivative is again a polynomial, you can always solve $p'(x) = 0$ and $p''(x) = 0$ exactly when the degrees are small, which is why polynomial examples dominate the first pass through curve sketching.</span><span data-lang="zh">同样的有限性解释了你在画曲线时会不断用到的一个事实：$p'$ 的符号决定多项式在哪里上升和下降，$p''$ 的符号决定它的凹凸性（<code>concavity</code>）。因为每个导数又是多项式，当次数较小时你总能精确解出 $p'(x) = 0$ 和 $p''(x) = 0$，这就是为什么多项式例子在第一遍学习曲线描绘时占主导地位。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 6.2: higher derivatives of a polynomial</span><span data-lang="zh">例题 6.2：多项式的高阶导数</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>For $p(x) = 2x^4 - x^3 + 5x$, find the first three derivatives.</p>
+    <p>Differentiate term by term each time:</p>
+    $$ p'(x) = 8x^3 - 3x^2 + 5, \qquad p''(x) = 24x^2 - 6x, \qquad p'''(x) = 48x - 6. $$
+    <p>The degree drops by one at every step, from $4$ to $3$ to $2$ to $1$. One more derivative gives the constant $p^{(4)}(x) = 48$, and the next is $p^{(5)}(x) = 0$.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $p(x) = 2x^4 - x^3 + 5x$，求前三阶导数。</p>
+    <p>每次都逐项求导：</p>
+    $$ p'(x) = 8x^3 - 3x^2 + 5, \qquad p''(x) = 24x^2 - 6x, \qquad p'''(x) = 48x - 6. $$
+    <p>次数每步降一，从 $4$ 到 $3$ 到 $2$ 到 $1$。再求一次导得常数 $p^{(4)}(x) = 48$，下一次则是 $p^{(5)}(x) = 0$。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 6.3: simplifying a rational derivative by factoring</span><span data-lang="zh">例题 6.3：通过因式分解化简有理函数的导数</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $R(x) = \dfrac{x^2}{x - 1}$ and locate where the slope is zero.</p>
+    <p>With $P = x^2$ so $P' = 2x$, and $Q = x - 1$ so $Q' = 1$,</p>
+    $$ R'(x) = \frac{2x(x-1) - x^2(1)}{(x-1)^2} = \frac{2x^2 - 2x - x^2}{(x-1)^2} = \frac{x^2 - 2x}{(x-1)^2} = \frac{x(x-2)}{(x-1)^2}. $$
+    <p>The numerator vanishes at $x = 0$ and $x = 2$, so the tangent is horizontal there. The point $x = 1$ is a genuine vertical asymptote, not a zero of $R'$. Factoring the numerator is what exposes the critical points cleanly.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $R(x) = \dfrac{x^2}{x - 1}$ 求导，并找出斜率为零的位置。</p>
+    <p>取 $P = x^2$（$P' = 2x$）、$Q = x - 1$（$Q' = 1$），</p>
+    $$ R'(x) = \frac{2x(x-1) - x^2(1)}{(x-1)^2} = \frac{2x^2 - 2x - x^2}{(x-1)^2} = \frac{x^2 - 2x}{(x-1)^2} = \frac{x(x-2)}{(x-1)^2}. $$
+    <p>分子在 $x = 0$ 和 $x = 2$ 处为零，所以切线在那里水平。点 $x = 1$ 是真正的竖直渐近线，而不是 $R'$ 的零点。把分子因式分解，正是干净地暴露临界点的方法。</p>
+    </div></div>
+  </details>
+  <div class="concept-box orange">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong>
+    <span data-lang="en">A rational function is only differentiable where its denominator is nonzero, yet students routinely report a derivative without stating the excluded points. For $R = (x^2-1)/(x+2)$ the answer is incomplete unless you note $x \neq -2$. Equally, do not cancel a denominator factor against the numerator before differentiating unless it genuinely divides; $\dfrac{x^2}{x-1}$ does not simplify, and pretending it does changes the function.</span><span data-lang="zh">有理函数只在分母非零处可微，但学生常常报出导数却不注明被排除的点。对 $R = (x^2-1)/(x+2)$，除非你注明 $x \neq -2$，否则答案就不完整。同样，求导前不要把分母的因子与分子约掉，除非它真的整除；$\dfrac{x^2}{x-1}$ 并不能化简，假装能化简会改变这个函数。</span>
+  </div>
+  <div class="quiz" data-answer="2">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">The derivative of a degree-$n$ polynomial is a polynomial of degree:</span><span data-lang="zh">$n$ 次多项式的导数是几次多项式：</span></div><span class="quiz-number">6.1</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$n$</div>
+      <div class="quiz-opt" data-idx="1">$n + 1$</div>
+      <div class="quiz-opt" data-idx="2">$n - 1$</div>
+      <div class="quiz-opt" data-idx="3"><span data-lang="en">always $0$</span><span data-lang="zh">总是 $0$</span></div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. The power rule lowers each exponent by one, so the leading term $a_n x^n$ becomes $n a_n x^{n-1}$, giving degree $n-1$.</span><span data-lang="zh">正确。幂法则让每个指数降一，所以首项 $a_n x^n$ 变成 $n a_n x^{n-1}$，次数为 $n-1$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Each term $a_k x^k$ becomes $k a_k x^{k-1}$, so the highest power drops from $n$ to $n-1$.</span><span data-lang="zh">每一项 $a_k x^k$ 变成 $k a_k x^{k-1}$，所以最高次幂从 $n$ 降到 $n-1$。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+</section>
+
+<section class="section" id="s7">
+  <div class="section-label"><span data-lang="en">Section 7</span><span data-lang="zh">第 7 节</span></div>
+  <h2><span data-lang="en">Common Pitfalls and What Comes Next</span><span data-lang="zh">常见陷阱与后续内容</span></h2>
+  <div class="concept-box">
+    <strong><span data-lang="en">Key idea.</span><span data-lang="zh">核心思想。</span></strong>
+    <span data-lang="en">Most errors at this stage are structural rather than arithmetic: applying the wrong rule, forgetting the inner derivative in the chain rule, or reversing the sign in the quotient rule. Catching these is a matter of naming the outermost operation before you write anything.</span><span data-lang="zh">在这个阶段，大多数错误是结构性的而非算术性的：用错法则、链式法则里漏掉内层导数、或把商的法则的符号弄反。要抓住这些错误，关键在于动笔之前先命名最外层运算。</span>
+  </div>
+  <div class="formula-box">
+    <div class="formula-label"><span data-lang="en">The three classic traps</span><span data-lang="zh">三个经典陷阱</span></div>
+    $$ (uv)' \neq u'v', \qquad \big(f(g(x))\big)' \neq f'(g(x)), \qquad \left(\frac{u}{v}\right)' \neq \frac{u'}{v'}. $$
+  </div>
+  <p><span data-lang="en">The left side of each shows the tempting wrong answer. The product rule adds two terms, the chain rule requires the extra factor $g'(x)$, and the quotient rule has a specific numerator with a minus sign over $v^2$. What comes next, in Unit A4, is the derivatives of the transcendental functions (trigonometric, exponential, logarithmic, and inverse), which plug directly into these same product, quotient, and chain rules.</span><span data-lang="zh">每一行左边都是诱人的错误答案。乘积法则要加两项，链式法则需要额外的因子 $g'(x)$，商的法则有一个特定的分子、带减号、再除以 $v^2$。接下来的单元 A4 是超越函数（三角、指数、对数及反函数）的导数，它们会直接代入这同样的乘积、商和链式法则。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 7.1: spotting a missing inner derivative</span><span data-lang="zh">例题 7.1：发现漏掉的内层导数</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>A student writes $\dfrac{d}{dx}\sin(5x) = \cos(5x)$. What is missing?</p>
+    <p>The argument $5x$ is an inner function with derivative $5$, so the chain rule requires</p>
+    $$ \frac{d}{dx}\sin(5x) = \cos(5x)\cdot 5 = 5\cos(5x). $$
+    <p>The corrected answer carries the factor $5$ that the inner derivative supplies.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>一名学生写道 $\dfrac{d}{dx}\sin(5x) = \cos(5x)$。漏了什么？</p>
+    <p>自变量 $5x$ 是一个内层函数，其导数为 $5$，所以链式法则要求</p>
+    $$ \frac{d}{dx}\sin(5x) = \cos(5x)\cdot 5 = 5\cos(5x). $$
+    <p>修正后的答案带上了内层导数提供的因子 $5$。</p>
+    </div></div>
+  </details>
+  <p><span data-lang="en">The throughline of this unit is that differentiation errors are almost never arithmetic; they are structural. You picked the wrong rule, or you applied the right rule but dropped a piece of it. The remedy is a fixed routine: name the outermost operation, write the matching rule with placeholders, then fill each placeholder by recursing. Doing this on paper, even when the problem looks easy, is what separates reliable work from the kind that loses a factor on every third problem.</span><span data-lang="zh">本单元贯穿始终的一点是：求导错误几乎从来不是算术性的，而是结构性的。你要么选错了法则，要么用对了法则却漏掉了它的一部分。补救办法是一套固定流程：命名最外层运算，用占位符写下对应法则，再通过递归把每个占位符填上。即使题目看起来很简单，也在纸上这样做——这正是把可靠的工作和每三题就丢一个因子的工作区分开来的地方。</span></p>
+  <details>
+    <summary><span data-lang="en">Worked Example 7.2: diagnosing a wrong quotient derivative</span><span data-lang="zh">例题 7.2：诊断一个错误的商导数</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>A student claims $\dfrac{d}{dx}\dfrac{x^2}{x+1} = \dfrac{2x}{1} = 2x$. Find and fix the error.</p>
+    <p>The student differentiated numerator and denominator separately, the false rule $\left(\tfrac{u}{v}\right)' = \tfrac{u'}{v'}$. The correct quotient rule with $u = x^2$ and $v = x+1$ gives</p>
+    $$ \frac{d}{dx}\frac{x^2}{x+1} = \frac{2x(x+1) - x^2(1)}{(x+1)^2} = \frac{x^2 + 2x}{(x+1)^2}. $$
+    <p>The two answers disagree even at a single test point: at $x = 1$ the wrong rule gives $2$, while the correct derivative gives $3/4$. Plugging in one number is a fast way to catch a structural error before it propagates.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>一名学生声称 $\dfrac{d}{dx}\dfrac{x^2}{x+1} = \dfrac{2x}{1} = 2x$。找出并改正错误。</p>
+    <p>该学生把分子和分母分别求导，用了错误法则 $\left(\tfrac{u}{v}\right)' = \tfrac{u'}{v'}$。取 $u = x^2$、$v = x+1$，正确的商的法则给出</p>
+    $$ \frac{d}{dx}\frac{x^2}{x+1} = \frac{2x(x+1) - x^2(1)}{(x+1)^2} = \frac{x^2 + 2x}{(x+1)^2}. $$
+    <p>两个答案即使在单个测试点也不一致：在 $x = 1$ 处错误法则给出 $2$，而正确导数给出 $3/4$。代入一个数字，是在结构性错误扩散之前快速抓住它的好办法。</p>
+    </div></div>
+  </details>
+  <details>
+    <summary><span data-lang="en">Worked Example 7.3: a single expression that needs all three rules</span><span data-lang="zh">例题 7.3：一个需要全部三条法则的表达式</span></summary>
+    <div class="detail-body">
+    <div class="worked-solution" data-lang="en">
+    <p>Differentiate $y = \dfrac{(x^2 + 1)^3}{x - 4}$, which combines the quotient, chain, and power rules.</p>
+    <p>Outermost is division, so the quotient rule applies with $u = (x^2+1)^3$ and $v = x - 4$. The numerator derivative needs the chain rule: $u' = 3(x^2+1)^2\cdot 2x = 6x(x^2+1)^2$, and $v' = 1$. Then</p>
+    $$ y' = \frac{6x(x^2+1)^2(x-4) - (x^2+1)^3(1)}{(x-4)^2}. $$
+    <p>Factor $(x^2+1)^2$ from the numerator:</p>
+    $$ y' = \frac{(x^2+1)^2\big[6x(x-4) - (x^2+1)\big]}{(x-4)^2} = \frac{(x^2+1)^2(5x^2 - 24x - 1)}{(x-4)^2}, \quad x \neq 4. $$
+    <p>Three rules, applied outside in, with a common factor pulled out at the end. This is the template for every hard derivative in the next several units.</p>
+    </div>
+    <div class="worked-solution" data-lang="zh">
+    <p>对 $y = \dfrac{(x^2 + 1)^3}{x - 4}$ 求导，它综合了商的法则、链式法则与幂法则。</p>
+    <p>最外层是除法，所以用商的法则，取 $u = (x^2+1)^3$、$v = x - 4$。分子的导数需要链式法则：$u' = 3(x^2+1)^2\cdot 2x = 6x(x^2+1)^2$，且 $v' = 1$。于是</p>
+    $$ y' = \frac{6x(x^2+1)^2(x-4) - (x^2+1)^3(1)}{(x-4)^2}. $$
+    <p>从分子提出公因子 $(x^2+1)^2$：</p>
+    $$ y' = \frac{(x^2+1)^2\big[6x(x-4) - (x^2+1)\big]}{(x-4)^2} = \frac{(x^2+1)^2(5x^2 - 24x - 1)}{(x-4)^2}, \quad x \neq 4. $$
+    <p>三条法则，从外往里应用，最后提出一个公因子。这就是接下来几个单元里每一道难求导题的模板。</p>
+    </div></div>
+  </details>
+  <p><span data-lang="en">Everything in Unit A4 builds directly on this machinery. Once you know $\dfrac{d}{dx}\sin x = \cos x$, $\dfrac{d}{dx}e^x = e^x$, and $\dfrac{d}{dx}\ln x = 1/x$, you differentiate $e^{3x}\sin(x^2)$ or $\dfrac{\ln x}{x^2 + 1}$ purely by feeding those new derivatives into the same product, quotient, and chain rules practiced here. The rules do not change; only the library of basic derivatives grows. Mastering the bookkeeping now pays off every single time afterward.</span><span data-lang="zh">单元 A4 的一切都直接建立在这套机器之上。一旦你知道 $\dfrac{d}{dx}\sin x = \cos x$、$\dfrac{d}{dx}e^x = e^x$、$\dfrac{d}{dx}\ln x = 1/x$，对 $e^{3x}\sin(x^2)$ 或 $\dfrac{\ln x}{x^2 + 1}$ 求导，就只是把这些新导数喂进这里练熟的同一套乘积、商和链式法则。法则不变，变的只是基本导数的库在增长。现在把这套记账功夫练扎实，之后每一次都会得到回报。</span></p>
+  <div class="concept-box red">
+    <strong><span data-lang="en">Common error.</span><span data-lang="zh">常见错误。</span></strong>
+    <span data-lang="en">The deepest trap is choosing the rule by surface appearance rather than by the last operation. An expression like $(x^2+1)^3/(x-4)$ looks like a single power, so some reach for the chain rule first, when the outermost operation is actually division. Evaluate the expression mentally at a number and watch which operation you perform last; that operation names the rule you start with. Misidentifying it cascades into a wrong answer no matter how careful the later algebra is.</span><span data-lang="zh">最深的陷阱是凭表面外观、而非凭最后一个运算来选法则。像 $(x^2+1)^3/(x-4)$ 这样的表达式看起来像一个幂，于是有人先抓链式法则，而其实最外层运算是除法。在心里把表达式代入一个数字，看你最后执行的是哪个运算；那个运算就命名了你该从哪条法则开始。一旦认错，不论后面的代数多么仔细，都会层层连累出一个错误答案。</span>
+  </div>
+  <div class="quiz" data-answer="3">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">Which statement is correct?</span><span data-lang="zh">下列哪条陈述是正确的？</span></div><span class="quiz-number">7.1</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$(uv)' = u'v'$</div>
+      <div class="quiz-opt" data-idx="1">$\left(\frac{u}{v}\right)' = \frac{u'}{v'}$</div>
+      <div class="quiz-opt" data-idx="2">$\big(f(g(x))\big)' = f'(g(x))$</div>
+      <div class="quiz-opt" data-idx="3">$\big(f(g(x))\big)' = f'(g(x))\,g'(x)$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. The chain rule multiplies the outer derivative by the inner derivative $g'(x)$.</span><span data-lang="zh">正确。链式法则把外层导数乘以内层导数 $g'(x)$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">The product, quotient, and chain rules each have a specific form; only the chain rule statement with the extra factor $g'(x)$ is right.</span><span data-lang="zh">乘积、商和链式法则各有特定形式；只有带额外因子 $g'(x)$ 的链式法则陈述是对的。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+</section>
+
+
+<aside class="consult-cta">
+  <p class="consult-cta__lead"><span data-lang="en">Stuck on this in your first-year course?</span><span data-lang="zh">大一微积分卡壳了？</span></p>
+  <p class="consult-cta__body"><span data-lang="en">Book a free 15-minute consult with a Dingrui Scholars tutor. We will get you unstuck before your next midterm.</span><span data-lang="zh">预约 Dingrui Scholars 导师的 15 分钟免费咨询，在下次期中考前帮你突破瓶颈。</span></p>
+  <a class="consult-cta__btn" data-lang="en" href="https://www.dingruischolars.com/signup?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_a3_differentiation_rules__sg__en" target="_blank" rel="noopener">Book a free consult &rarr;</a>
+  <a class="consult-cta__btn" data-lang="zh" href="https://www.dingruischolars.com/signup-ch?utm_source=notes&utm_medium=cta&utm_campaign=university_calculus&utm_content=unit_a3_differentiation_rules__sg__zh" target="_blank" rel="noopener">预约免费咨询 &rarr;</a>
+</aside>
+
+<section id="flashcards">
+  <h2><span data-lang="en">Flashcards</span><span data-lang="zh">闪卡</span></h2>
+  <div class="flashcard-toolbar">
+    <span class="fc-count" id="fcCount"><span data-lang="en">0 / 12 flipped</span><span data-lang="zh">已翻 0 / 12</span></span>
+    <div>
+      <button class="nav-btn" onclick="shuffleFlashcards()"><span data-lang="en">Shuffle</span><span data-lang="zh">打乱</span></button>
+      <button class="nav-btn" onclick="resetFlashcards()"><span data-lang="en">Reset</span><span data-lang="zh">重置</span></button>
+    </div>
+  </div>
+  <div class="flashcard-grid" id="flashcardGrid">
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Constant multiple rule: $\frac{d}{dx}[c\,f(x)]$</span><span data-lang="zh">常数倍法则：$\frac{d}{dx}[c\,f(x)]$</span></div><div class="flashcard-back"><span data-lang="en">$c\,f'(x)$. A constant scalar factors straight through the derivative.</span><span data-lang="zh">$c\,f'(x)$。常数因子直接穿过导数。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Sum rule: $\frac{d}{dx}[f \pm g]$</span><span data-lang="zh">和法则：$\frac{d}{dx}[f \pm g]$</span></div><div class="flashcard-back"><span data-lang="en">$f'(x) \pm g'(x)$. Differentiation distributes over sums and differences.</span><span data-lang="zh">$f'(x) \pm g'(x)$。求导对和与差满足分配律。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Power rule: $\frac{d}{dx}x^n$</span><span data-lang="zh">幂法则：$\frac{d}{dx}x^n$</span></div><div class="flashcard-back"><span data-lang="en">$n\,x^{n-1}$, valid for every real exponent $n$.</span><span data-lang="zh">$n\,x^{n-1}$，对任意实指数 $n$ 都成立。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Product rule: $\frac{d}{dx}[uv]$</span><span data-lang="zh">乘积法则：$\frac{d}{dx}[uv]$</span></div><div class="flashcard-back"><span data-lang="en">$u'v + uv'$. Not the product of the derivatives.</span><span data-lang="zh">$u'v + uv'$。不是两个导数的乘积。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Quotient rule: $\frac{d}{dx}\frac{u}{v}$</span><span data-lang="zh">商的法则：$\frac{d}{dx}\frac{u}{v}$</span></div><div class="flashcard-back"><span data-lang="en">$\dfrac{u'v - uv'}{v^2}$, where $v \neq 0$. Mind the order and the minus sign.</span><span data-lang="zh">$\dfrac{u'v - uv'}{v^2}$，其中 $v \neq 0$。注意顺序和减号。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Reciprocal rule: $\frac{d}{dx}\frac{1}{v}$</span><span data-lang="zh">倒数法则：$\frac{d}{dx}\frac{1}{v}$</span></div><div class="flashcard-back"><span data-lang="en">$-\dfrac{v'}{v^2}$. The quotient rule with numerator $1$.</span><span data-lang="zh">$-\dfrac{v'}{v^2}$。即分子为 $1$ 的商的法则。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Chain rule: $\frac{d}{dx}f(g(x))$</span><span data-lang="zh">链式法则：$\frac{d}{dx}f(g(x))$</span></div><div class="flashcard-back"><span data-lang="en">$f'(g(x))\,g'(x)$. Outer derivative times inner derivative.</span><span data-lang="zh">$f'(g(x))\,g'(x)$。外层导数乘以内层导数。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">General power rule: $\frac{d}{dx}[g(x)]^n$</span><span data-lang="zh">广义幂法则：$\frac{d}{dx}[g(x)]^n$</span></div><div class="flashcard-back"><span data-lang="en">$n\,[g(x)]^{n-1}\,g'(x)$. The chain rule applied to a power.</span><span data-lang="zh">$n\,[g(x)]^{n-1}\,g'(x)$。即对幂应用链式法则。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Leibniz chain form: $\frac{dy}{dx}$</span><span data-lang="zh">链式法则的莱布尼茨形式：$\frac{dy}{dx}$</span></div><div class="flashcard-back"><span data-lang="en">$\dfrac{dy}{du}\dfrac{du}{dx}$, with $u = g(x)$ the inner function.</span><span data-lang="zh">$\dfrac{dy}{du}\dfrac{du}{dx}$，其中 $u = g(x)$ 是内层函数。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Strategy for nested expressions</span><span data-lang="zh">嵌套表达式的策略</span></div><div class="flashcard-back"><span data-lang="en">Name the last operation performed, apply its rule, then recurse on the parts.</span><span data-lang="zh">命名最后执行的运算，套用它的法则，再对各部分递归。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Derivative of a degree-$n$ polynomial</span><span data-lang="zh">$n$ 次多项式的导数</span></div><div class="flashcard-back"><span data-lang="en">A polynomial of degree $n - 1$; the constant term drops out.</span><span data-lang="zh">一个 $n - 1$ 次多项式；常数项被去掉。</span></div></div></div>
+    <div class="flashcard" onclick="flipCard(this)"><div class="flashcard-inner"><div class="flashcard-front"><span data-lang="en">Where is a rational function $P/Q$ differentiable?</span><span data-lang="zh">有理函数 $P/Q$ 在何处可微？</span></div><div class="flashcard-back"><span data-lang="en">At every $x$ with $Q(x) \neq 0$; its derivative is again rational.</span><span data-lang="zh">在每个满足 $Q(x) \neq 0$ 的 $x$ 处；其导数仍是有理函数。</span></div></div></div>
+  </div>
+</section>
+
+
+<section class="section" id="unit-quiz">
+  <div class="section-label"><span data-lang="en">Check Yourself</span><span data-lang="zh">自我检测</span></div>
+  <h2><span data-lang="en">Unit Quiz</span><span data-lang="zh">单元测验</span></h2>
+  <div class="quiz" data-answer="2">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">$\dfrac{d}{dx}\big(7x^4 - 2x + 6\big)$ equals:</span><span data-lang="zh">$\dfrac{d}{dx}\big(7x^4 - 2x + 6\big)$ 等于：</span></div><span class="quiz-number">Q1</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$28x^4 - 2$</div>
+      <div class="quiz-opt" data-idx="1">$7x^3 - 2$</div>
+      <div class="quiz-opt" data-idx="2">$28x^3 - 2$</div>
+      <div class="quiz-opt" data-idx="3">$28x^3 - 2x$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. Term by term: $7\cdot 4 x^3 = 28x^3$, $\frac{d}{dx}(-2x) = -2$, and the constant vanishes.</span><span data-lang="zh">正确。逐项：$7\cdot 4 x^3 = 28x^3$，$\frac{d}{dx}(-2x) = -2$，常数消失。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Use linearity and the power rule on each term: $28x^3 - 2 + 0$.</span><span data-lang="zh">对每一项用线性性和幂法则：$28x^3 - 2 + 0$。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+  <div class="quiz" data-answer="0">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">For $y = (x^2 + 3)(x - 1)$, $y'$ is:</span><span data-lang="zh">对 $y = (x^2 + 3)(x - 1)$，$y'$ 为：</span></div><span class="quiz-number">Q2</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$3x^2 - 2x + 3$</div>
+      <div class="quiz-opt" data-idx="1">$2x$</div>
+      <div class="quiz-opt" data-idx="2">$2x(x-1)$</div>
+      <div class="quiz-opt" data-idx="3">$x^2 + 3$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. Product rule: $2x(x-1) + (x^2+3)(1) = 2x^2 - 2x + x^2 + 3 = 3x^2 - 2x + 3$.</span><span data-lang="zh">正确。乘积法则：$2x(x-1) + (x^2+3)(1) = 2x^2 - 2x + x^2 + 3 = 3x^2 - 2x + 3$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Apply the product rule $u'v + uv'$ with $u = x^2+3$, $v = x-1$, then collect like terms.</span><span data-lang="zh">取 $u = x^2+3$、$v = x-1$，用乘积法则 $u'v + uv'$，再合并同类项。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+  <div class="quiz" data-answer="1">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">$\dfrac{d}{dx}\!\left(\dfrac{2x}{x+1}\right)$ equals:</span><span data-lang="zh">$\dfrac{d}{dx}\!\left(\dfrac{2x}{x+1}\right)$ 等于：</span></div><span class="quiz-number">Q3</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0"><span data-lang="en">$\dfrac{2}{(x+1)^2}$ with a minus sign</span><span data-lang="zh">$\dfrac{2}{(x+1)^2}$ 带一个负号</span></div>
+      <div class="quiz-opt" data-idx="1">$\dfrac{2}{(x+1)^2}$</div>
+      <div class="quiz-opt" data-idx="2">$2$</div>
+      <div class="quiz-opt" data-idx="3">$\dfrac{2x}{(x+1)^2}$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. Quotient rule: $\frac{2(x+1) - 2x(1)}{(x+1)^2} = \frac{2}{(x+1)^2}$.</span><span data-lang="zh">正确。商的法则：$\frac{2(x+1) - 2x(1)}{(x+1)^2} = \frac{2}{(x+1)^2}$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Numerator is $u'v - uv' = 2(x+1) - 2x = 2$, over $(x+1)^2$.</span><span data-lang="zh">分子为 $u'v - uv' = 2(x+1) - 2x = 2$，再除以 $(x+1)^2$。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+  <div class="quiz" data-answer="3">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">If $y = \sqrt{4x + 1}$, then $y'$ equals:</span><span data-lang="zh">若 $y = \sqrt{4x + 1}$，则 $y'$ 等于：</span></div><span class="quiz-number">Q4</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$\dfrac{1}{2\sqrt{4x+1}}$</div>
+      <div class="quiz-opt" data-idx="1">$\dfrac{1}{\sqrt{4x+1}}$</div>
+      <div class="quiz-opt" data-idx="2">$4\sqrt{4x+1}$</div>
+      <div class="quiz-opt" data-idx="3">$\dfrac{2}{\sqrt{4x+1}}$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. Chain rule: $\frac{1}{2\sqrt{4x+1}}\cdot 4 = \frac{2}{\sqrt{4x+1}}$.</span><span data-lang="zh">正确。链式法则：$\frac{1}{2\sqrt{4x+1}}\cdot 4 = \frac{2}{\sqrt{4x+1}}$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Differentiate the square root, then multiply by the inner derivative $4$: $\frac{4}{2\sqrt{4x+1}} = \frac{2}{\sqrt{4x+1}}$.</span><span data-lang="zh">先对根号求导，再乘以内层导数 $4$：$\frac{4}{2\sqrt{4x+1}} = \frac{2}{\sqrt{4x+1}}$。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+  <div class="quiz" data-answer="2">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">For $y = x\,(x^2 + 1)^2$, the derivative $y'$ is:</span><span data-lang="zh">对 $y = x\,(x^2 + 1)^2$，导数 $y'$ 为：</span></div><span class="quiz-number">Q5</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$(x^2+1)^2$</div>
+      <div class="quiz-opt" data-idx="1">$2x(x^2+1)$</div>
+      <div class="quiz-opt" data-idx="2">$(x^2+1)^2 + 4x^2(x^2+1)$</div>
+      <div class="quiz-opt" data-idx="3">$4x^2(x^2+1)$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. Product rule with chain rule on $(x^2+1)^2$: $1\cdot(x^2+1)^2 + x\cdot 2(x^2+1)(2x) = (x^2+1)^2 + 4x^2(x^2+1)$.</span><span data-lang="zh">正确。乘积法则，并对 $(x^2+1)^2$ 用链式法则：$1\cdot(x^2+1)^2 + x\cdot 2(x^2+1)(2x) = (x^2+1)^2 + 4x^2(x^2+1)$。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">Use the product rule; the second factor needs the chain rule, giving $2(x^2+1)\cdot 2x = 4x(x^2+1)$, then times $x$.</span><span data-lang="zh">用乘积法则；第二个因子需要链式法则，得 $2(x^2+1)\cdot 2x = 4x(x^2+1)$，再乘以 $x$。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+  <div class="quiz" data-answer="0">
+    <div class="quiz-header"><div class="quiz-q"><span data-lang="en">Which is the correct quotient rule numerator for $\dfrac{u}{v}$?</span><span data-lang="zh">$\dfrac{u}{v}$ 商的法则的正确分子是哪个？</span></div><span class="quiz-number">Q6</span></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-idx="0">$u'v - uv'$</div>
+      <div class="quiz-opt" data-idx="1">$uv' - u'v$</div>
+      <div class="quiz-opt" data-idx="2">$u'v + uv'$</div>
+      <div class="quiz-opt" data-idx="3">$u'v'$</div>
+    </div>
+    <div class="quiz-explain correct-exp"><span data-lang="en">Correct. The numerator is $u'v - uv'$, over $v^2$. The order and sign are essential.</span><span data-lang="zh">正确。分子是 $u'v - uv'$，再除以 $v^2$。顺序和符号都至关重要。</span></div>
+    <div class="quiz-explain wrong-exp"><span data-lang="en">The quotient rule numerator is $u'v - uv'$; reversing it flips the sign, and adding gives the product rule instead.</span><span data-lang="zh">商的法则的分子是 $u'v - uv'$；写反会变号，写成相加则变成了乘积法则。</span></div>
+    <button class="quiz-retry" onclick="retryQuiz(this)"><span data-lang="en">Try again</span><span data-lang="zh">再试一次</span></button>
+  </div>
+</section>
+
+
+<section class="section" id="checklist">
+  <div class="section-label"><span data-lang="en">Before You Move On</span><span data-lang="zh">继续前先确认</span></div>
+  <h2><span data-lang="en">Readiness Checklist</span><span data-lang="zh">掌握度清单</span></h2>
+  <p><span data-lang="en">Tap each item you can do without notes.</span><span data-lang="zh">点选每一项你不看笔记也能做到的内容。</span> <span id="checkProgress"><span data-lang="en">0 / 8 mastered</span><span data-lang="zh">已掌握 0 / 8</span></span></p>
+  <ul id="checklistUl" class="checklist">
+    <li onclick="toggleCheck(this)"><span data-lang="en">Differentiate any polynomial term by term using linearity and the power rule.</span><span data-lang="zh">用线性性和幂法则逐项对任意多项式求导。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">State and apply the product rule, and explain why $(uv)' \neq u'v'$.</span><span data-lang="zh">陈述并运用乘积法则，并解释为什么 $(uv)' \neq u'v'$。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">State and apply the quotient rule with the correct order and sign.</span><span data-lang="zh">以正确的顺序和符号陈述并运用商的法则。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Use the reciprocal rule as the special case of the quotient rule with numerator $1$.</span><span data-lang="zh">把倒数法则当作分子为 $1$ 的商的法则特例来使用。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Apply the chain rule to compositions, including the general power rule.</span><span data-lang="zh">对复合函数运用链式法则，包括广义幂法则。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Differentiate a double composition by peeling one layer at a time.</span><span data-lang="zh">通过一次剥一层来对二重复合函数求导。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Combine product, quotient, and chain rules by identifying the outermost operation first.</span><span data-lang="zh">先认出最外层运算，再综合运用乘积、商和链式法则。</span></li>
+    <li onclick="toggleCheck(this)"><span data-lang="en">Identify and correct the three classic errors: missing terms, missing inner derivative, and reversed quotient signs.</span><span data-lang="zh">识别并改正三个经典错误：漏项、漏掉内层导数、以及商的符号写反。</span></li>
+  </ul>
+</section>
+
+<style id="dr-related-css">
+.dr-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin:34px 0 8px;padding:16px 18px;border:1px solid var(--border,#E6E6E6);
+  border-radius:12px;background:var(--bg-card,#fff);
+  font-family:var(--font-body,'Source Sans 3',sans-serif);font-size:0.92rem;}
+.dr-related__label{font-family:var(--font-mono,monospace);font-size:0.72rem;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text-secondary,#585858);}
+.dr-related a{color:var(--pop,#0099FF);font-weight:600;text-decoration:none;}
+.dr-related a:hover{text-decoration:underline;}
+.dr-related__cur{color:var(--text-secondary,#585858);font-weight:600;}
+@media print{.dr-related{display:none;}}
+</style>
+<nav class="dr-related" aria-label="Related materials">
+  <span class="dr-related__label"><span data-lang="en">This unit</span><span data-lang="zh">本单元</span></span>
+  <span class="dr-related__cur" aria-current="page"><span data-lang="en">Study guide</span><span data-lang="zh">学习指南</span></span>
+  <a href="../Practice%20Questions/Unit_A3_Differentiation_Rules_Practice.html"><span data-lang="en">Practice</span><span data-lang="zh">练习</span> &rarr;</a>
+  <a href="../Practice%20Questions/Solutions/Unit_A3_Differentiation_Rules_Solutions.html"><span data-lang="en">Solutions</span><span data-lang="zh">解答</span> &rarr;</a>
+</nav>
+</main>
+<script>
+// SCORE TRACKING
+let quizScore = { correct: 0, total: 0 };
+
+function updateScoreBadge() {
+  const badge = document.getElementById('scoreBadge');
+  if (!badge) return;
+  if (quizScore.total === 0) {
+    badge.textContent = '0 / 0';
+    badge.classList.add('zero');
+  } else {
+    badge.textContent = quizScore.correct + ' / ' + quizScore.total;
+    badge.classList.remove('zero');
+  }
+}
+
+// THEME
+function setThemeBtnLabel(toLight) {
+  const tt = document.getElementById('themeToggle');
+  if (!tt) return;
+  tt.innerHTML = toLight
+    ? '<span data-lang="en">Light</span><span data-lang="zh">浅色</span>'
+    : '<span data-lang="en">Dark</span><span data-lang="zh">深色</span>';
+}
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  setThemeBtnLabel(!isDark);
+}
+
+// LANGUAGE (default English; toggle persists only within the page)
+function toggleLang(){document.body.classList.toggle('lang-zh');}
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  setThemeBtnLabel(true);
+}
+
+// PROGRESS BAR
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+  const fill = document.getElementById('progressFill');
+  if (fill) fill.style.width = pct + '%';
+});
+
+// ACTIVE TOC
+const sections = document.querySelectorAll('.section, .hero');
+const tocLinks = document.querySelectorAll('.sidebar a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector('.sidebar a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-80px 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// QUIZZES
+document.querySelectorAll('.quiz').forEach(quiz => {
+  const answer = parseInt(quiz.dataset.answer);
+  const opts = quiz.querySelectorAll('.quiz-opt');
+  const expCorrect = quiz.querySelector('.quiz-explain.correct-exp');
+  const expWrong = quiz.querySelector('.quiz-explain.wrong-exp');
+  opts.forEach(opt => {
+    opt.addEventListener('click', () => {
+      if (opt.classList.contains('disabled')) return;
+      const idx = parseInt(opt.dataset.idx);
+      opts.forEach(o => o.classList.add('disabled'));
+      quizScore.total++;
+      if (idx === answer) {
+        opt.classList.add('correct');
+        quizScore.correct++;
+        if (expCorrect) expCorrect.classList.add('show');
+      } else {
+        opt.classList.add('wrong');
+        opts[answer].classList.add('correct');
+        if (expWrong) expWrong.classList.add('show');
+        const retry = quiz.querySelector('.quiz-retry');
+        if (retry) retry.classList.add('show');
+      }
+      updateScoreBadge();
+    });
+  });
+});
+
+function retryQuiz(btn) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('disabled', 'correct', 'wrong'));
+  quiz.querySelectorAll('.quiz-explain').forEach(e => e.classList.remove('show'));
+  btn.classList.remove('show');
+  quizScore.total--;
+  updateScoreBadge();
+}
+
+// FLASHCARDS
+function flipCard(el) {
+  el.classList.toggle('flipped');
+  updateFlashcardCount();
+}
+function updateFlashcardCount() {
+  const total = document.querySelectorAll('#flashcardGrid .flashcard').length;
+  const flipped = document.querySelectorAll('#flashcardGrid .flashcard.flipped').length;
+  const c = document.getElementById('fcCount');
+  if (c) c.innerHTML = '<span data-lang="en">' + flipped + ' / ' + total + ' flipped</span><span data-lang="zh">已翻 ' + flipped + ' / ' + total + '</span>';
+}
+function resetFlashcards() {
+  document.querySelectorAll('#flashcardGrid .flashcard').forEach(c => c.classList.remove('flipped'));
+  updateFlashcardCount();
+}
+function shuffleFlashcards() {
+  const grid = document.getElementById('flashcardGrid');
+  const cards = [...grid.children];
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.appendChild(cards[j]);
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+}
+
+// CHECKLIST
+function toggleCheck(li) {
+  li.classList.toggle('checked');
+  const total = document.querySelectorAll('#checklistUl li').length;
+  const checked = document.querySelectorAll('#checklistUl li.checked').length;
+  const p = document.getElementById('checkProgress');
+  if (p) p.innerHTML = '<span data-lang="en">' + checked + ' / ' + total + ' mastered</span><span data-lang="zh">已掌握 ' + checked + ' / ' + total + '</span>';
+}
+</script>
+<script>/* dingrui-lang-link: cross-page language continuity via ?lang=zh; no persistence, direct visits default English */
+(function(){
+  try{
+    var q=new URLSearchParams(window.location.search).get('lang');
+    if(q==='zh'&&document.querySelector('[data-lang=zh]'))document.body.classList.add('lang-zh');
+    else if(q==='en')document.body.classList.remove('lang-zh');
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('lang-zh'))return;
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href)return;
+    if(/^(https?:)?\/\//i.test(href)||/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(/[?&]lang=/.test(href))return;
+    var hash='',i=href.indexOf('#');
+    if(i>=0){hash=href.slice(i);href=href.slice(0,i);}
+    a.setAttribute('href',href+(href.indexOf('?')>=0?'&':'?')+'lang=zh'+hash);
+  },true);
+})();</script>
+<!-- dr-mobile-readability (scripts/fit_mobile_readability.py) -->
+<style id="dr-mobile-readability">
+@media (max-width: 820px){
+  /* Nothing is ever wider than the screen. */
+  html, body { max-width: 100%; }
+  .main-wrap, .hero, .section, .concept-box, .formula-box, .quiz, .checklist,
+  .flashcard, .flashcard-grid, .syllabus-map, details, .footer-wrap { max-width: 100%; }
+  img, svg, iframe, .katex-display { max-width: 100%; }
+  /* Prose reflows; long words/URLs/inline code wrap instead of pushing width. */
+  body { overflow-wrap: break-word; word-wrap: break-word; }
+  .section p, .section li, .concept-box, .quiz-q, .quiz-opt, .flashcard-back,
+  .detail-body, blockquote { overflow-wrap: break-word; }
+  /* Code + tables keep an intentional scroll box (they cannot reflow). Many
+     tables are NOT wrapped in .table-wrap, so a wide one pushes the whole page
+     sideways; making the table itself a scrollable block contains it to the
+     viewport (it scrolls inside its own box instead of dragging the page). */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 600px){
+  body { font-size: 16px; }
+  .main-wrap { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .section h2 { font-size: 1.4rem; }
+  .section h3 { font-size: 1.15rem; }
+  .formula-box { padding: 14px 12px; }
+  .concept-box { padding: 14px 14px; }
+  .quiz-opt { padding: 10px 12px; }
+  table { font-size: 0.88rem; }
+
+  /* Squish the top stack so the first topic is reachable on the first screen.
+     !important to win over the earlier injected declutter block. */
+  .main-wrap { margin-top: 54px !important; }
+  .hero { padding: 24px 16px 20px !important; margin-bottom: 16px !important; }
+  .hero h1 { font-size: 1.7rem !important; margin-bottom: 8px !important; }
+  .hero-overline { margin-bottom: 6px !important; }
+  .hero-sub { font-size: 0.9rem !important; line-height: 1.45 !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-meta { margin-top: 12px !important; gap: 8px !important; }
+  .hero-meta .chip { font-size: 0.76rem !important; padding: 4px 11px !important; }
+  .consult-cta { padding: 13px 15px !important; margin: 14px 0 6px !important; }
+  .consult-cta__lead { font-size: 1.05rem !important; margin-bottom: 4px !important; }
+  .consult-cta__body { font-size: 0.86rem !important; line-height: 1.4 !important; margin-bottom: 11px !important; }
+  .consult-cta__btn { padding: 10px 18px !important; }
+
+  /* Flashcards: a 2-up grid on phone reads as intentional (single column was a
+     long, mostly-empty scroll). Math on the back is shrunk to fit by fit-math. */
+  .flashcard-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin: 16px 0 !important; }
+  .flashcard-inner { min-height: 118px !important; }
+  .flashcard-front { padding: 14px 11px 22px !important; font-size: 0.9rem !important; }
+  .flashcard-back { padding: 14px 11px !important; }
+}
+@media (max-width: 430px){
+  body { font-size: 15.5px; }
+  .main-wrap { padding: 0 11px; }
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-sub { -webkit-line-clamp: 2 !important; }
+}
+</style>
+<script id="dr-fit-math-js">
+(function(){
+  var MIN_SCALE = 0.55;        // don't shrink below this; fall back to scroll
+  var MAX_W = 820;             // only adapt on phone/tablet; desktop untouched
+  function fitOne(el){
+    el.style.fontSize = "";                       // reset to re-measure honestly
+    var avail = el.clientWidth;
+    if(!avail) return;                            // hidden (collapsed details) -> skip
+    var w = el.scrollWidth;
+    if(w <= avail + 1) return;                    // already fits
+    var scale = Math.max(avail / w, MIN_SCALE);
+    var fs = parseFloat(getComputedStyle(el).fontSize) || 21;
+    el.style.fontSize = (fs * scale * 0.98) + "px";
+  }
+  function fitAll(){
+    if(window.innerWidth > MAX_W){
+      // back to desktop: clear any phone-era shrink
+      document.querySelectorAll(".katex-display").forEach(function(el){ el.style.fontSize=""; });
+      return;
+    }
+    document.querySelectorAll(".katex-display").forEach(fitOne);
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fitAll); }
+  // KaTeX auto-render runs before DOMContentLoaded; fonts settle later, so fit
+  // again after fonts are ready and on full load.
+  if(document.readyState !== "loading") schedule();
+  else document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", schedule);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule); }
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,150); });
+  // <details> toggle doesn't bubble -> listen in capture phase, re-fit revealed math.
+  document.addEventListener("toggle", function(){ setTimeout(fitAll, 0); }, true);
+  // Theme/lang toggles can change layout width; re-fit shortly after any click.
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("[onclick],button,summary")) setTimeout(fitAll,120);
+  }, true);
+})();
+</script>
+</body>
+</html>
